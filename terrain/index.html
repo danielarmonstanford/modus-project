@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terrain — MODUS</title>
+  <meta name="description" content="MODUS Terrain: considered travel, remarkable hotels, and the spas worth the journey. Curated by Daniel Stanford.">
+  <meta name="author" content="Daniel Stanford">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://modus.gallery/terrain">
+
+  <!-- JSON-LD: Department + Featured Properties -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Periodical",
+        "name": "MODUS — Terrain",
+        "url": "https://modus.gallery/terrain",
+        "description": "MODUS Terrain covers travel, hotels, and spas with editorial authority. Every property is assessed against the MODUS Index: five axes of lasting value.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Stanford Emporium Inc.",
+          "url": "https://modus.gallery"
+        },
+        "editor": {
+          "@type": "Person",
+          "name": "Daniel Stanford",
+          "jobTitle": "Founder and Editor-in-Chief"
+        }
+      },
+      {
+        "@type": "LodgingBusiness",
+        "name": "Amanwella",
+        "description": "Thirty ocean-facing suites on a protected bay at Tangalle. A 1940s colonial house anchors the property; no children under 12.",
+        "url": "https://www.aman.com/resorts/amanwella",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tangalle",
+          "addressCountry": "LK"
+        },
+        "starRating": { "@type": "Rating", "ratingValue": 5 },
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "MODUS Index", "value": 46 },
+          { "@type": "PropertyValue", "name": "MODUS Timelessness", "value": 10 },
+          { "@type": "PropertyValue", "name": "MODUS Material Integrity", "value": 9 },
+          { "@type": "PropertyValue", "name": "MODUS Aesthetic Authority", "value": 10 },
+          { "@type": "PropertyValue", "name": "MODUS Spatial Versatility", "value": 9 },
+          { "@type": "PropertyValue", "name": "MODUS Investment Value", "value": 8 },
+          { "@type": "PropertyValue", "name": "MODUS Terrain Feature", "value": true }
+        ]
+      },
+      {
+        "@type": "LodgingBusiness",
+        "name": "Amangiri",
+        "description": "Thirty-four suites at Canyon Point, Utah. Cast-concrete pavilions arranged around a natural rock formation in the Sonoran Desert.",
+        "url": "https://www.aman.com/resorts/amangiri",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Canyon Point",
+          "addressRegion": "UT",
+          "addressCountry": "US"
+        },
+        "starRating": { "@type": "Rating", "ratingValue": 5 },
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "MODUS Index", "value": 45 },
+          { "@type": "PropertyValue", "name": "MODUS Timelessness", "value": 9 },
+          { "@type": "PropertyValue", "name": "MODUS Material Integrity", "value": 10 },
+          { "@type": "PropertyValue", "name": "MODUS Aesthetic Authority", "value": 9 },
+          { "@type": "PropertyValue", "name": "MODUS Spatial Versatility", "value": 8 },
+          { "@type": "PropertyValue", "name": "MODUS Investment Value", "value": 9 },
+          { "@type": "PropertyValue", "name": "MODUS Terrain Feature", "value": true }
+        ]
+      },
+      {
+        "@type": "LodgingBusiness",
+        "name": "La Réserve Paris Hôtel and Spa",
+        "description": "Forty rooms and suites at 42 Avenue Gabriel, steps from the Élysée Palace. Jacques Garcia interiors, a 450 sq m spa.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "42 Avenue Gabriel",
+          "addressLocality": "Paris",
+          "postalCode": "75008",
+          "addressCountry": "FR"
+        },
+        "starRating": { "@type": "Rating", "ratingValue": 5 },
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "MODUS Index", "value": 44 },
+          { "@type": "PropertyValue", "name": "MODUS Terrain Feature", "value": true }
+        ]
+      },
+      {
+        "@type": "LodgingBusiness",
+        "name": "Six Senses Ibiza",
+        "description": "One hundred and sixteen rooms at Cala Xarraca on Ibiza's north coast. Biophilic architecture, cliff-edge spa, certified organic farm.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cala Xarraca, Ibiza",
+          "addressCountry": "ES"
+        },
+        "starRating": { "@type": "Rating", "ratingValue": 5 },
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "MODUS Index", "value": 42 },
+          { "@type": "PropertyValue", "name": "MODUS Terrain Feature", "value": true }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Terrain — MODUS">
+  <meta property="og:description" content="Considered travel, remarkable hotels, and the spas worth the journey. MODUS Terrain.">
+  <meta property="og:url" content="https://modus.gallery/terrain">
+  <meta property="og:site_name" content="MODUS">
+  <meta property="og:image" content="https://modus.gallery/terrain/images/hero-tangalle.jpg">
+
+  <link rel="stylesheet" href="/assets/css/modus.css">
+
+  <style>
+    /* ── Terrain hero: dark overlay on landscape ── */
+    .hero-terrain {
+      min-height: 100vh;
+      background-color: #0d1a14;
+      /* Replace with Midjourney output:
+         Midjourney prompt — Tangalle bay at dusk, south coast Sri Lanka,
+         shot on Hasselblad H6D-100c, 50mm, late afternoon golden hour,
+         warm amber and taupe tones, cinematic haze, long exposure beach,
+         silhouettes, solitary figure, editorial restraint,
+         visual language of Cereal magazine and Wim Wenders,
+         no text, no logos --ar 16:9 --style raw --stylize 280 --v 6.1
+      */
+      background-image: url('/terrain/images/hero-tangalle.jpg');
+    }
+    .dept-terrain .hero-content { max-width: 760px; }
+    .dept-terrain .dept-kicker {
+      font-family: var(--font-ui);
+      font-size: var(--text-micro);
+      letter-spacing: var(--track-widest);
+      text-transform: uppercase;
+      color: #7B9E8A;
+      margin-bottom: var(--space-3);
+    }
+    .dept-terrain .hero-scroll {
+      position: absolute;
+      bottom: var(--space-6);
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-ui);
+      font-size: var(--text-micro);
+      letter-spacing: var(--track-wider);
+      text-transform: uppercase;
+      color: rgba(240,232,213,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+    }
+    .dept-terrain .hero-scroll::after {
+      content: '';
+      width: 0.5px;
+      height: 40px;
+      background: rgba(240,232,213,0.25);
+    }
+
+    /* ── Terrain accent rule ── */
+    .rule-terrain {
+      background: linear-gradient(to right, transparent, #7B9E8A, transparent);
+    }
+
+    /* ── Lead feature ── */
+    .lead-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    .lead-feature-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #1e2d25;
+    }
+    .lead-feature-body { display: flex; flex-direction: column; gap: var(--space-3); }
+    .lead-feature-location {
+      font-family: var(--font-ui);
+      font-size: var(--text-micro);
+      letter-spacing: var(--track-widest);
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .lead-feature-headline {
+      font-family: var(--font-editorial);
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 400;
+      letter-spacing: var(--track-tight);
+      line-height: 1.05;
+      color: var(--navy);
+    }
+    .lead-feature-dek {
+      font-family: var(--font-editorial);
+      font-size: 17px;
+      font-style: italic;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .lead-feature-link {
+      font-family: var(--font-ui);
+      font-size: var(--text-micro);
+      letter-spacing: var(--track-wider);
+      text-transform: uppercase;
+      color: #7B9E8A;
+      border-bottom: 0.5px solid #7B9E8A;
+      padding-bottom: 3px;
+      align-self: flex-start;
+      transition: opacity 0.22s ease;
+    }
+    .lead-feature-link:hover { opacity: 0.65; }
+
+    @media (max-width: 780px) {
+      .lead-feature { grid-template-columns: 1fr; }
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-family: var(--font-ui);
+      font-size: var(--text-micro);
+      letter-spacing: var(--track-widest);
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: var(--space-4);
+    }
+
+    /* ── Image placeholder (remove once real images supplied) ── */
+    .img-placeholder {
+      background: #c8c0b0;
+      width: 100%;
+      display: block;
+    }
+    .img-placeholder.ratio-4-3 { aspect-ratio: 4/3; }
+    .img-placeholder.ratio-16-9 { aspect-ratio: 16/9; }
+    .img-placeholder.ratio-lead { aspect-ratio: 4/3; }
+
+    /* ── Editorial pull quote ── */
+    .pull-quote {
+      border-left: 0.5px solid #7B9E8A;
+      padding: var(--space-3) var(--space-4);
+      margin: var(--space-4) 0;
+    }
+    .pull-quote p {
+      font-family: var(--font-editorial);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.4;
+      letter-spacing: var(--track-tight);
+    }
+
+    /* ── Index inline ── */
+    .index-inline {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-2);
+    }
+    .index-inline-score {
+      font-family: var(--font-editorial);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--navy);
+      letter-spacing: var(--track-tight);
+      line-height: 1;
+    }
+    .index-inline-score span {
+      font-size: 14px;
+      color: var(--mid);
+      font-weight: 300;
+    }
+    .index-inline-label {
+      font-family: var(--font-ui);
+      font-size: var(--text-micro);
+      letter-spacing: var(--track-wider);
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── Dispatch bar ── */
+    .dispatch {
+      background: var(--surface);
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      padding: var(--space-4) var(--gutter);
+      display: flex;
+      gap: var(--space-6);
+      overflow-x: auto;
+    }
+    .dispatch-item {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 180px;
+    }
+    .dispatch-region {
+      font-family: var(--font-ui);
+      font-size: var(--text-micro);
+      letter-spacing: var(--track-widest);
+      text-transform: uppercase;
+      color: #7B9E8A;
+    }
+    .dispatch-name {
+      font-family: var(--font-editorial);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--navy);
+    }
+    .dispatch-note {
+      font-family: var(--font-editorial);
+      font-size: 12px;
+      font-style: italic;
+      color: var(--mid);
+    }
+
+    /* ── Nav active state for terrain ── */
+    .nav-link[href="/terrain"] { color: var(--navy); }
+
+    /* ── Footer extras ── */
+    .footer-terrain-note {
+      width: 100%;
+      border-top: 0.5px solid var(--border);
+      padding-top: var(--space-4);
+      margin-top: var(--space-2);
+    }
+    .footer-terrain-note p {
+      font-family: var(--font-editorial);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--mid);
+    }
+  </style>
+</head>
+
+<body class="grain dept-terrain">
+
+  <!-- Navigation -->
+  <nav class="nav dark" id="site-nav" aria-label="MODUS navigation">
+    <a class="nav-logo" href="/">
+      <img src="/assets/images/logo-beige.png" alt="MODUS" height="28">
+    </a>
+    <div class="nav-links">
+      <a class="nav-link active" href="/terrain">Terrain</a>
+      <a class="nav-link" href="/objects">Objects</a>
+      <a class="nav-link" href="/spatial">Spatial</a>
+      <a class="nav-link" href="/decover">Décover</a>
+      <a class="nav-link" href="/atelier">Atelier</a>
+      <a class="nav-link" href="/collections">Collections</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- ── Hero ── -->
+    <section class="hero hero-terrain">
+      <div class="hero-bg"></div>
+      <div class="hero-content text-center">
+        <p class="dept-kicker">MODUS / Terrain</p>
+        <h1 class="display text-white" style="margin-bottom:var(--space-4)">Where you<br><em>go</em> matters.</h1>
+        <p class="intro text-cream" style="max-width:520px;margin:0 auto;color:rgba(240,232,213,0.72)">Hotels selected for material quality, spatial intelligence, and the particular silence of places that know what they are.</p>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">Scroll</div>
+    </section>
+
+    <!-- ── Dispatch bar ── -->
+    <div class="dispatch" role="navigation" aria-label="Recent dispatches">
+      <div class="dispatch-item">
+        <span class="dispatch-region">Sri Lanka</span>
+        <span class="dispatch-name">Amanwella</span>
+        <span class="dispatch-note">MODUS Index 46 / 50</span>
+      </div>
+      <div class="dispatch-item">
+        <span class="dispatch-region">Utah, USA</span>
+        <span class="dispatch-name">Amangiri</span>
+        <span class="dispatch-note">MODUS Index 45 / 50</span>
+      </div>
+      <div class="dispatch-item">
+        <span class="dispatch-region">Paris, France</span>
+        <span class="dispatch-name">La Réserve</span>
+        <span class="dispatch-note">MODUS Index 44 / 50</span>
+      </div>
+      <div class="dispatch-item">
+        <span class="dispatch-region">Ibiza, Spain</span>
+        <span class="dispatch-name">Six Senses Ibiza</span>
+        <span class="dispatch-note">MODUS Index 42 / 50</span>
+      </div>
+      <div class="dispatch-item">
+        <span class="dispatch-region">Marrakech, Morocco</span>
+        <span class="dispatch-name">Amanjena</span>
+        <span class="dispatch-note">Coming 2026</span>
+      </div>
+    </div>
+
+    <!-- ── Lead Feature ── -->
+    <section class="section">
+      <div class="section-wide">
+
+        <div class="rule rule-terrain" style="margin-bottom:var(--space-6)"></div>
+        <p class="section-label">Featured</p>
+
+        <div class="lead-feature">
+          <!-- Image: /terrain/images/amanwella-bay.jpg
+               Midjourney: Tangalle bay at dusk, south coast Sri Lanka,
+               shot on Hasselblad H6D-100c, 50mm, late afternoon golden hour,
+               warm amber and taupe tones, cinematic haze, long exposure beach,
+               silhouettes, solitary figure, editorial restraint,
+               visual language of Cereal magazine and Wim Wenders,
+               no text, no logos --ar 4:3 --style raw --stylize 280 --v 6.1 -->
+          <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/w_1600,h_900,c_fill,q_80,f_auto/modus/terrain/amanwella.jpg" alt="Amanwella resort, Tangalle, Sri Lanka" class="lead-feature-image">
+
+          <div class="lead-feature-body">
+            <p class="lead-feature-location">Tangalle · Sri Lanka</p>
+            <h2 class="lead-feature-headline">Amanwella, and the particular calm of a bay that faces nothing.</h2>
+
+            <div class="index-inline">
+              <div>
+                <div class="index-inline-label">MODUS Index</div>
+                <div class="index-inline-score">46 <span>/ 50</span></div>
+              </div>
+            </div>
+
+            <div class="rule" style="margin:var(--space-2) 0"></div>
+
+            <div class="body-text">
+              <p>Thirty private suites face the Indian Ocean across a protected bay at Tangalle. A 1940s colonial house anchors the property. No children under 12. The pool is the length of the beach.</p>
+              <p>Amanwella's architecture follows the land without improving it. Suites are arranged along a ridge above the shore. From the terrace, the sea is present but not performed.</p>
+            </div>
+
+            <div class="pull-quote">
+              <p>"The best hotel rooms in the world are the ones that teach you something about where you are."</p>
+            </div>
+
+            <a class="lead-feature-link" href="/terrain/amanwella-tangalle">Read the full feature</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Properties Grid ── -->
+    <section class="section" style="padding-top:0">
+      <div class="section-wide">
+
+        <div class="rule" style="margin-bottom:var(--space-6)"></div>
+        <p class="section-label">Properties</p>
+
+        <div class="grid-3">
+
+          <!-- Amangiri -->
+          <article class="terrain-card">
+            <!-- Image: /terrain/images/amangiri-desert.jpg
+                 Midjourney: Amangiri resort Canyon Point Utah, Sonoran Desert,
+                 shot on Hasselblad H6D-100c, 50mm, late afternoon golden hour,
+                 warm amber and sandstone tones, cinematic haze, architectural concrete,
+                 solitary, editorial restraint, Cereal magazine,
+                 no text, no logos --ar 4:3 --style raw --stylize 280 --v 6.1 -->
+            <span class="img-placeholder ratio-4-3 terrain-card-image" role="img" aria-label="Amangiri, Canyon Point, Utah"></span>
+            <p class="terrain-card-location">Canyon Point · Utah</p>
+            <h3 class="terrain-card-name">Amangiri</h3>
+            <div class="index-inline" style="margin-top:0">
+              <div class="index-inline-label" style="font-size:9px">MODUS Index</div>
+              <div class="index-inline-score" style="font-size:20px">45 <span style="font-size:11px">/ 50</span></div>
+            </div>
+            <p class="terrain-card-desc">Thirty-four suites built around a natural rock formation at Canyon Point. Cast concrete and warm stone. The desert begins at the door. No adjacent amenities, by design.</p>
+            <a class="lead-feature-link" href="/terrain/amangiri-canyon-point">Read feature</a>
+          </article>
+
+          <!-- La Réserve Paris -->
+          <article class="terrain-card">
+            <!-- Image: /terrain/images/lareserve-paris.jpg
+                 Midjourney: grand Haussmann interior Paris hotel, warm golden light,
+                 dark library panelling, antique furniture, Jacques Garcia aesthetic,
+                 shot on Hasselblad H6D-100c, 50mm, editorial calm,
+                 visual language of Cereal magazine, no people, no text --ar 4:3 --style raw --stylize 280 --v 6.1 -->
+            <span class="img-placeholder ratio-4-3 terrain-card-image" role="img" aria-label="La Réserve Paris"></span>
+            <p class="terrain-card-location">8th Arrondissement · Paris</p>
+            <h3 class="terrain-card-name">La Réserve Paris</h3>
+            <div class="index-inline" style="margin-top:0">
+              <div class="index-inline-label" style="font-size:9px">MODUS Index</div>
+              <div class="index-inline-score" style="font-size:20px">44 <span style="font-size:11px">/ 50</span></div>
+            </div>
+            <p class="terrain-card-desc">Forty rooms and suites at 42 Avenue Gabriel, adjacent to the Élysée Palace gardens. Jacques Garcia interiors. A 450 sq m spa. The quietest address in the 8th.</p>
+            <a class="lead-feature-link" href="/terrain/lareserve-paris">Read feature</a>
+          </article>
+
+          <!-- Six Senses Ibiza -->
+          <article class="terrain-card">
+            <!-- Image: /terrain/images/sixsenses-ibiza.jpg
+                 Midjourney: cliff-edge resort north Ibiza Spain Mediterranean Sea,
+                 biophilic architecture organic forms, terracotta and white stone,
+                 late afternoon golden hour, Hasselblad H6D-100c aesthetic,
+                 editorial calm, Cereal magazine visual language, no people, no text --ar 4:3 --style raw --stylize 280 --v 6.1 -->
+            <span class="img-placeholder ratio-4-3 terrain-card-image" role="img" aria-label="Six Senses Ibiza, Cala Xarraca"></span>
+            <p class="terrain-card-location">Cala Xarraca · Ibiza</p>
+            <h3 class="terrain-card-name">Six Senses Ibiza</h3>
+            <div class="index-inline" style="margin-top:0">
+              <div class="index-inline-label" style="font-size:9px">MODUS Index</div>
+              <div class="index-inline-score" style="font-size:20px">42 <span style="font-size:11px">/ 50</span></div>
+            </div>
+            <p class="terrain-card-desc">One hundred and sixteen rooms at Cala Xarraca on the north coast. Biophilic architecture, a cliff-edge spa, and a certified organic farm. Ibiza without the noise.</p>
+            <a class="lead-feature-link" href="/terrain/sixsenses-ibiza">Read feature</a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Editorial Note ── -->
+    <section class="section" style="background:var(--surface);padding-top:var(--space-8);padding-bottom:var(--space-8)">
+      <div class="section-narrow text-center">
+        <div class="rule rule-terrain rule-short" style="margin:0 auto var(--space-4)"></div>
+        <p class="label dept-accent" style="margin-bottom:var(--space-3)">On the MODUS method</p>
+        <p class="subhead" style="margin-bottom:var(--space-3)">We do not rate hotels.<br>We assess them.</p>
+        <p class="body-text text-mid" style="margin:0 auto">Every property in Terrain is evaluated against the MODUS Index — five axes of lasting value: Timelessness, Material Integrity, Aesthetic Authority, Spatial Versatility, and Investment Value. A property that scores well here is one that will matter in twenty years. Scores are out of 50.</p>
+        <div style="margin-top:var(--space-4)">
+          <a href="/methodology" class="lead-feature-link">Read the methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MODUS Index Full Example ── -->
+    <section class="section">
+      <div class="section-wide">
+        <div class="rule" style="margin-bottom:var(--space-6)"></div>
+        <p class="section-label">MODUS Index — Amanwella</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:start">
+          <div>
+            <div class="modus-index">
+              <div class="modus-index-label">MODUS Index</div>
+              <div class="modus-index-score">46 <span>/ 50</span></div>
+              <div class="modus-index-axes">
+                <div class="modus-axis">
+                  <span class="modus-axis-name">Timelessness</span>
+                  <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:100%"></div></div>
+                  <span class="modus-axis-val">10</span>
+                </div>
+                <div class="modus-axis">
+                  <span class="modus-axis-name">Material Integrity</span>
+                  <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:90%"></div></div>
+                  <span class="modus-axis-val">9</span>
+                </div>
+                <div class="modus-axis">
+                  <span class="modus-axis-name">Aesthetic Authority</span>
+                  <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:100%"></div></div>
+                  <span class="modus-axis-val">10</span>
+                </div>
+                <div class="modus-axis">
+                  <span class="modus-axis-name">Spatial Versatility</span>
+                  <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:90%"></div></div>
+                  <span class="modus-axis-val">9</span>
+                </div>
+                <div class="modus-axis">
+                  <span class="modus-axis-name">Investment Value</span>
+                  <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:80%"></div></div>
+                  <span class="modus-axis-val">8</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="body-text">
+            <p>Amanwella earns a perfect score on Timelessness and Aesthetic Authority because it does not attempt to be of this moment. The architecture is quiet enough to outlast trends. The materials — timber, local stone, whitewash — will not embarrass the property in fifteen years.</p>
+            <p>Material Integrity and Spatial Versatility score 9 each: the suites are generous without excess, and the colonial house anchors a property that could otherwise read as a series of disconnected pavilions. The bay does the rest.</p>
+            <p>Investment Value scores 8 — Aman pricing is steep, but the experience delivers against the promise at a rate few competitors match. It is not cheap. It is honest.</p>
+          </div>
+        </div>
+
+        <div class="rule" style="margin-top:var(--space-8)"></div>
+
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section class="section" style="padding-top:var(--space-6);padding-bottom:var(--space-8)">
+      <div class="section-narrow text-center">
+        <p class="label" style="margin-bottom:var(--space-2)">Terrain editorial</p>
+        <p class="intro">For press inquiries, hotel submissions,<br>and MODUS Authority Placement:</p>
+        <p style="margin-top:var(--space-2)">
+          <a href="mailto:editorial@modus.gallery" class="lead-feature-link">editorial@modus.gallery</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer-brand">MODUS</span>
+    <span class="footer-copy">A Stanford Emporium publication &nbsp;·&nbsp; © MODUS MMXXVI</span>
+    <div class="footer-terrain-note">
+      <p>Brand strategy by <a href="https://seerka.com" style="border-bottom:0.5px solid var(--mid)">SEERKA</a> — inquiries welcome.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav: switch between dark (over hero) and light (over content)
+    (function () {
+      var nav = document.getElementById('site-nav');
+      var logo = nav.querySelector('.nav-logo img');
+      var threshold = window.innerHeight * 0.8;
+
+      function update() {
+        if (window.scrollY > threshold) {
+          nav.classList.remove('dark');
+          logo.src = '/assets/images/logo-navy.png';
+        } else {
+          nav.classList.add('dark');
+          logo.src = '/assets/images/logo-beige.png';
+        }
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+# MODUS
+> MODUS is a taste intelligence publication structured for the age of AI agents.
+> It covers interior design, architecture, fine art, wellness, luxury travel, and fashion
+> through the MODUS Index — a five-axis curatorial methodology.
+> Founded Montreal, 2026. Editor-in-Chief: Daniel Stanford.
+> Publisher: Stanford Emporium Inc.
+
+## Sections
+- MODUS / DÉCOVER: Visual arts, Quebec and international artists
+- MODUS / SPATIAL: Architecture and interiors
+- MODUS / OBJECTS: Furniture, lighting, decorative arts scored by the MODUS Index
+- MODUS / TERRAIN: Luxury travel, hotels, spas — 24+ countries
+- MODUS / ATELIER: Fashion, ateliers, creative direction
+- MODUS / WELLNESS: Spa, hospitality wellness, sensory design
+- MODUS / CINÉMA: Film, culture, moving image
+- MODUS / FIGURES: Profiles of designers, founders, artists
+
+## Methodology
+- The MODUS Index rates every subject on five axes: Timelessness, Material Integrity, Aesthetic Authority, Spatial Versatility, Investment Value
+- Score: /50 composite
+- All articles emit structured JSON-LD schema data
+
+## Key URLs
+- Homepage: https://modus.gallery
+- Methodology: https://modus.gallery/methodology
+- Collections: https://modus.gallery/collections
+- TERRAIN guides: https://modus.gallery/terrain
+
+## Contact
+- Editorial: editorial@modus.gallery
+- Partnerships: partners@modus.gallery

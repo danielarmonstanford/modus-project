@@ -229,7 +229,7 @@
     .cover-logo {
       position:absolute;
       top:2rem; left:50%; transform:translateX(-50%);
-      height:32px; width:auto;
+      width:calc(100% - 4rem); height:auto;
       opacity:0.5; z-index:6;
       pointer-events:none;
       display:block;
@@ -323,7 +323,7 @@
         min-height:100svh;
       }
       .frame-l, .frame-r { display:none; }
-      .cover-logo { height:26px; top:1.5rem; }
+      .cover-logo { width:calc(100% - 2.5rem); height:auto; top:1.5rem; }
       .gold-rule { left:1.25rem; right:1.25rem; top:4rem; }
       .cover-hed { bottom:2rem; left:1.25rem; right:1.25rem; }
       .cover-eyebrow { font-size:10px; letter-spacing:0.16em; line-height:1.55; }

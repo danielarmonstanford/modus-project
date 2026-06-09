@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FASCINASIA — Never Would a Collector Dream of Selling a Family Member — MODUS Décover</title>
+  <meta name="description" content="MODUS / Décover: Daniel Stanford's FASCINASIA series — mixed media originals adopted into private homes, commissioned by architects, and validated by theft. The FBI Stolen Art Database as involuntary curation.">
+  <meta name="author" content="Daniel Stanford">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://modus.gallery/decover">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Never Would a Collector Dream of Selling a Family Member — MODUS Décover">
+  <meta property="og:description" content="FASCINASIA originals are not purchased. They are adopted. Daniel Stanford on the collectors who build their homes around the work — and the thieves who confirm its value.">
+  <meta property="og:url" content="https://modus.gallery/decover">
+  <meta property="og:site_name" content="MODUS">
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VisualArtwork",
+      "name": "FASCINASIA",
+      "creator": {
+        "@type": "Person",
+        "name": "Daniel Stanford",
+        "jobTitle": "Artist / Editor-in-Chief",
+        "worksFor": { "@type": "Organization", "name": "MODUS", "url": "https://modus.gallery" }
+      },
+      "artMedium": "Mixed media — photography, painting, gold leaf, calligraphy, wood panel",
+      "artworkSurface": "High-finish wood panel, canvas",
+      "description": "FASCINASIA is a body of mixed media original works combining fine art photography, oil, gold leaf, calligraphy, and cultural layering. Works have been adopted into private homes and architectural commissions. Three works documented as stolen in the FBI Stolen Art Database.",
+      "isPartOf": { "@type": "Collection", "name": "MODUS Décover", "url": "https://modus.gallery/decover" },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "MODUS Index", "value": 50 },
+        { "@type": "PropertyValue", "name": "MODUS Timelessness", "value": 10 },
+        { "@type": "PropertyValue", "name": "MODUS Material Integrity", "value": 10 },
+        { "@type": "PropertyValue", "name": "MODUS Aesthetic Authority", "value": 10 },
+        { "@type": "PropertyValue", "name": "MODUS Spatial Versatility", "value": 10 },
+        { "@type": "PropertyValue", "name": "MODUS Investment Value", "value": 10 }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/LimitedAvailability",
+        "seller": { "@type": "Organization", "name": "MODUS / Stanford Emporium Inc.", "url": "https://modus.gallery" }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "name": "Stolen / Authenticated — On Theft as Proof of Worth",
+      "description": "When a work enters the FBI Stolen Art Database, it achieves a form of institutional validation that most galleries cannot provide. On the FASCINASIA originals retained by Richard Masliah in Boca Raton, and the Snoop Dogg copyright case still active on streaming platforms.",
+      "author": { "@type": "Person", "name": "Daniel Stanford" },
+      "datePublished": "2026-06-08",
+      "publisher": { "@type": "Organization", "name": "MODUS", "url": "https://modus.gallery" },
+      "about": [
+        { "@type": "Thing", "name": "Art theft" },
+        { "@type": "Thing", "name": "FBI Stolen Art Database" },
+        { "@type": "Thing", "name": "Provenance" },
+        { "@type": "Thing", "name": "Copyright infringement" }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:#F0E8D5; --navy:#1B2340; --gold:#D4A84B;
+      --mid:#8B7B60; --white:#FFF; --black:#0A0A0A;
+      --decover-ink: #C8B896;    /* warm aged paper */
+      --decover-deep: #1A1208;   /* deep ink black */
+      --decover-red: #8B2020;    /* theft / warning red */
+      --font-ed:'Cormorant Garamond',Georgia,serif;
+      --font-mono:'DM Mono','Courier New',monospace;
+      --font-ui:system-ui,-apple-system,sans-serif;
+      --gutter:clamp(1.25rem,5vw,4rem);
+      --nav-h:64px;
+      --ease:0.25s ease;
+      --spring:cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-theme="dark"] {
+      --bg:#08060A; --bg2:#0E0B10; --bg3:#141018;
+      --text:#EAE0CC; --text-dim:rgba(234,224,204,0.42);
+      --border:rgba(234,224,204,0.08); --border-gold:rgba(212,168,75,0.28);
+      --nav-bg:rgba(8,6,10,0.92);
+    }
+    [data-theme="light"] {
+      --bg:#F5EEE0; --bg2:#EDE4D0; --bg3:#E4DAC0;
+      --text:#1A1208; --text-dim:rgba(26,18,8,0.44);
+      --border:rgba(26,18,8,0.1); --border-gold:rgba(212,168,75,0.38);
+      --nav-bg:rgba(245,238,224,0.92);
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{font-family:var(--font-ed);background:var(--bg);color:var(--text);min-height:100vh;transition:background var(--ease),color var(--ease);overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    figure{margin:0}
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);background:var(--nav-bg);border-bottom:0.5px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:background var(--ease)}
+    .nav-logo{font-family:var(--font-ed);font-size:18px;letter-spacing:-0.02em;color:var(--text)}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-link{font-family:var(--font-ui);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link:hover,.nav-link.active{color:var(--text)}
+    .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
+    .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
+    .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+    /* HERO — ink dark with gold calligraphy feel */
+    .hero{height:100vh;min-height:620px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) 5rem}
+    .hero-bg{
+      position:absolute;inset:0;z-index:0;
+      background:
+        radial-gradient(ellipse 55% 65% at 60% 35%, rgba(50,35,10,0.8) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 15% 70%, rgba(8,6,4,0.95) 0%, transparent 50%),
+        linear-gradient(148deg, #04030A 0%, #080610 20%, #18140A 50%, #0A0808 75%, #04030A 100%);
+    }
+    /* Gold leaf shimmer pattern */
+    .hero-gold{position:absolute;inset:0;z-index:1;opacity:0.08;
+      background:repeating-linear-gradient(42deg,transparent,transparent 28px,rgba(212,168,75,0.4) 28px,rgba(212,168,75,0.4) 29px),
+                 repeating-linear-gradient(-42deg,transparent,transparent 52px,rgba(212,168,75,0.15) 52px,rgba(212,168,75,0.15) 53px)}
+    .hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(4,3,8,0.62) 0%,rgba(4,3,8,0.05) 30%,transparent 45%,transparent 58%,rgba(4,3,8,0.55) 78%,rgba(4,3,8,0.92) 100%)}
+    .hero-content{position:relative;z-index:3;max-width:820px}
+    .hero-dept{font-family:var(--font-mono);font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;opacity:0;animation:fadeU 0.9s ease 0.3s forwards}
+    .hero-title{font-family:var(--font-ed);font-size:clamp(38px,7.5vw,100px);font-weight:300;letter-spacing:-0.03em;line-height:0.9;color:var(--white);opacity:0;animation:fadeU 1.2s ease 0.48s forwards}
+    .hero-title em{font-style:italic;color:rgba(212,168,75,0.6)}
+    .hero-byline{margin-top:1.8rem;display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap;opacity:0;animation:fadeU 1s ease 0.8s forwards}
+    .hero-byline-name{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold)}
+    .hero-byline-sub{font-family:var(--font-ed);font-size:16px;font-style:italic;color:rgba(234,224,204,0.42)}
+    .hero-rule{width:0;height:0.5px;background:linear-gradient(to right,var(--gold),transparent);margin-top:1.5rem;animation:drawL 1.2s ease 1s forwards}
+
+    /* LAYOUT */
+    main{padding-top:var(--nav-h)}
+    .w{max-width:1240px;margin:0 auto}
+    .section{padding:5rem var(--gutter)}
+    .rule{height:0.5px;background:var(--border);max-width:1240px;margin:0 auto}
+
+    /* OPENING STATEMENT */
+    .opening{padding:5rem var(--gutter) 0;max-width:1000px;margin:0 auto;text-align:center}
+    .opening p{font-family:var(--font-ed);font-size:clamp(22px,3vw,38px);font-weight:300;font-style:italic;line-height:1.45;color:var(--text)}
+    .opening-attr{margin-top:1.2rem;font-family:var(--font-mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim)}
+
+    /* PART DIVIDER */
+    .part-div{display:flex;align-items:center;gap:1.5rem;padding:4rem var(--gutter) 0;max-width:1240px;margin:0 auto}
+    .part-no{font-family:var(--font-mono);font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold)}
+    .part-line{flex:1;height:0.5px;background:var(--border-gold)}
+    .part-title{font-family:var(--font-ed);font-size:clamp(30px,5vw,66px);font-weight:300;letter-spacing:-0.03em;line-height:0.95;color:var(--text);padding:1rem var(--gutter) 0;max-width:1240px;margin:0 auto}
+    .part-title em{font-style:italic;color:rgba(212,168,75,0.6)}
+    .part-sub{font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);padding:0.6rem var(--gutter) 0;max-width:1240px;margin:0 auto}
+
+    /* ARTICLE GRID */
+    .article-grid{display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:start}
+    .body p{font-family:var(--font-ed);font-size:clamp(15px,1.6vw,18px);font-weight:300;line-height:1.88;color:var(--text)}
+    .body p+p{margin-top:1.3em}
+    .body h3{font-family:var(--font-ed);font-size:clamp(20px,2.2vw,28px);font-weight:400;letter-spacing:-0.02em;margin:2.5rem 0 1rem;color:var(--text)}
+
+    /* TESTIMONY / PULL QUOTE */
+    .testimony{background:var(--bg2);border:0.5px solid var(--border-gold);border-left:3px solid var(--gold);padding:2rem 2.5rem;margin:2.5rem 0}
+    .testimony p{font-family:var(--font-ed);font-size:clamp(17px,2vw,22px);font-style:italic;font-weight:300;line-height:1.6;color:var(--text)}
+    .testimony-attr{margin-top:1rem;font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
+
+    /* COMMISSION CARD — the triptych */
+    .commission-card{
+      background:var(--bg2);border:0.5px solid var(--border-gold);
+      padding:2.5rem;margin:3rem 0;position:relative;overflow:hidden;
+    }
+    .commission-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(to right,var(--gold),rgba(212,168,75,0.2),transparent);
+    }
+    .cc-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+    .cc-title{font-family:var(--font-ed);font-size:clamp(24px,3.5vw,44px);font-weight:300;letter-spacing:-0.03em;line-height:1;color:var(--text);margin-bottom:0.5rem}
+    .cc-sub{font-family:var(--font-mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.8rem}
+    .cc-specs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.8rem}
+    .cc-spec{background:var(--bg3);padding:1rem 1.2rem}
+    .cc-spec-label{font-family:var(--font-mono);font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.3rem}
+    .cc-spec-value{font-family:var(--font-ed);font-size:clamp(14px,1.5vw,17px);font-weight:300;color:var(--text);line-height:1.4}
+    .cc-spec-value strong{color:var(--gold)}
+    .cc-body p{font-family:var(--font-ed);font-size:clamp(14px,1.5vw,17px);font-weight:300;line-height:1.78;color:var(--text)}
+    .cc-body p+p{margin-top:1em}
+
+    /* STOLEN WORKS RECORD */
+    .stolen-section{
+      background:var(--bg2);
+      border:0.5px solid rgba(139,32,32,0.35);
+      border-top:2px solid var(--decover-red);
+      padding:2.5rem;margin:3rem 0;
+    }
+    .stolen-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--decover-red);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+    .stolen-label::before{content:'●';animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+    .stolen-header{font-family:var(--font-ed);font-size:clamp(22px,3vw,36px);font-weight:400;letter-spacing:-0.02em;color:var(--text);margin-bottom:0.5rem}
+    .stolen-sub{font-family:var(--font-mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:2rem}
+    .stolen-works{display:flex;flex-direction:column;gap:0}
+    .stolen-work{padding:1.2rem 0;border-bottom:0.5px solid var(--border);display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:baseline}
+    .stolen-work:last-child{border-bottom:none}
+    .sw-title{font-family:var(--font-ed);font-size:clamp(17px,2vw,22px);font-weight:400;color:var(--text)}
+    .sw-desc{font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-top:0.3rem}
+    .sw-status{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--decover-red);text-align:right;flex-shrink:0}
+    .stolen-editorial{margin-top:2rem;padding-top:2rem;border-top:0.5px solid var(--border)}
+    .stolen-editorial p{font-family:var(--font-ed);font-size:clamp(14px,1.5vw,17px);font-weight:300;line-height:1.78;color:var(--text)}
+    .stolen-editorial p+p{margin-top:1em}
+
+    /* SNOOP CASE */
+    .case-card{background:var(--bg3);border:0.5px solid var(--border);padding:1.5rem 2rem;margin-top:1.5rem}
+    .case-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.5rem}
+    .case-title{font-family:var(--font-ed);font-size:20px;font-weight:400;color:var(--text);margin-bottom:0.25rem}
+    .case-body{font-family:var(--font-ed);font-size:14px;font-weight:300;color:var(--text-dim);line-height:1.6}
+
+    /* MODUS INDEX */
+    .mi-card{background:var(--bg2);border:0.5px solid var(--border-gold);padding:1.8rem}
+    .mi-card-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+    .mi-car-name{font-family:var(--font-ed);font-size:20px;font-weight:400;letter-spacing:-0.02em;margin-bottom:0.25rem;color:var(--text)}
+    .mi-car-sub{font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
+    .mi-score-big{font-family:var(--font-ed);font-size:64px;font-weight:300;letter-spacing:-0.06em;line-height:1;color:var(--gold);display:flex;align-items:baseline;gap:4px;margin-bottom:1.1rem}
+    .mi-score-big span{font-size:22px;color:var(--text-dim)}
+    .mi-axes{display:flex;flex-direction:column;gap:10px}
+    .mi-axis{display:grid;grid-template-columns:1fr 58px 20px;align-items:center;gap:8px}
+    .mi-aname{font-family:var(--font-mono);font-size:9px;letter-spacing:0.07em;text-transform:uppercase;color:var(--text-dim)}
+    .mi-bar{height:1.5px;background:var(--border);overflow:hidden}
+    .mi-fill{height:100%;background:var(--gold)}
+    .mi-val{font-family:var(--font-ed);font-size:16px;font-weight:400;text-align:right;color:var(--gold)}
+    .mi-note{margin-top:1.2rem;padding-top:1.2rem;border-top:0.5px solid var(--border);font-family:var(--font-mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
+
+    /* IMAGE SLOT */
+    .img-slot{width:100%;background:var(--bg3);border:0.5px dashed var(--border-gold);display:flex;align-items:center;justify-content:center;margin:2.5rem 0}
+    .img-slot-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.32;text-align:center;line-height:2.2;padding:2rem}
+
+    /* SIDEBAR */
+    .sidebar{display:flex;flex-direction:column;gap:2rem;position:sticky;top:calc(var(--nav-h)+2rem)}
+
+    /* COLLECTOR TYPE CARD */
+    .collector-card{background:var(--bg2);border:0.5px solid var(--border-gold);padding:1.8rem}
+    .collector-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+    .collector-title{font-family:var(--font-ed);font-size:22px;font-weight:400;letter-spacing:-0.02em;color:var(--text);margin-bottom:0.3rem}
+    .collector-sub{font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
+    .collector-markers{display:flex;flex-direction:column;gap:0.7rem}
+    .cm{display:flex;align-items:baseline;gap:0.8rem}
+    .cm-no{font-family:var(--font-mono);font-size:9px;color:var(--gold);flex-shrink:0;width:18px}
+    .cm-text{font-family:var(--font-ed);font-size:14px;font-weight:300;color:var(--text);line-height:1.5}
+
+    /* FOOTNOTE / LEGAL */
+    .footnote{padding:2rem var(--gutter);max-width:1240px;margin:0 auto;border-top:0.5px solid var(--border)}
+    .footnote p{font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;color:var(--text-dim);line-height:1.8}
+
+    /* FOOTER */
+    .footer{border-top:0.5px solid var(--border);padding:3rem var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-brand{font-family:var(--font-ed);font-size:22px;letter-spacing:-0.02em;color:var(--text)}
+    .footer-copy{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
+
+    @keyframes fadeU{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes drawL{from{width:0}to{width:min(260px,44vw)}}
+
+    @media(max-width:1040px){.article-grid{grid-template-columns:1fr}.sidebar{position:static}}
+    @media(max-width:600px){.cc-specs{grid-template-columns:1fr}.stolen-work{grid-template-columns:1fr}}
+    @media(max-width:480px){.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="/">MODUS</a>
+  <div class="nav-links">
+    <a class="nav-link" href="/terrain">Terrain</a>
+    <a class="nav-link" href="/objects">Objects</a>
+    <a class="nav-link" href="/corps">Corps</a>
+    <a class="nav-link active" href="/decover">Décover</a>
+    <a class="nav-link" href="/collections">Collections</a>
+  </div>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+    <div class="theme-dot"></div>
+    <span id="themeLabel">Light</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gold"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-dept">MODUS / Décover · FASCINASIA</p>
+    <h1 class="hero-title">Never would<br>a collector dream<br>of selling<br><em>a family member.</em></h1>
+    <div class="hero-byline">
+      <span class="hero-byline-name">Daniel Stanford</span>
+      <span class="hero-byline-sub">On adoption, architecture, and the authentication of theft.</span>
+    </div>
+    <div class="hero-rule"></div>
+  </div>
+</header>
+
+<main>
+
+<!-- OPENING STATEMENT -->
+<div class="opening" style="margin-bottom:4rem;">
+  <p>"These works were not purchased. They were adopted. The collectors who own FASCINASIA originals did not acquire a painting — they reorganized their domestic architecture around it. Their colour scheme, their furniture, their spatial logic. The work became load-bearing. You do not sell what is load-bearing."</p>
+  <p class="opening-attr">— Daniel Stanford · MODUS Décover</p>
+</div>
+
+<div class="rule"></div>
+
+<!-- PART I: THE ADOPTION COLLECTOR -->
+<div class="part-div"><span class="part-no">Part I</span><div class="part-line"></div></div>
+<h2 class="part-title">The Adoption<br><em>Collector.</em></h2>
+<p class="part-sub">On architects, commission, and the domestic integration of original work</p>
+
+<section class="section w" style="padding-top:2.5rem">
+  <div class="article-grid">
+    <div class="body">
+
+      <p>From the very beginning, architects were the first to understand. Not galleries. Not institutional collectors. Not the auction circuit. Architects. The people who think structurally about space, who understand that a room is an argument and everything in it either supports or undermines that argument. They saw the work and they did not ask where it would hang. They asked how the room would be built around it.</p>
+
+      <p>This is not a common form of collecting. The conventional art market is organized around acquisition — the work moves from studio to gallery to collector's storage or living room, sometimes to auction and then to another collector. The price is the measure of the transaction. The work is assessed in isolation, against a market of comparable objects, and a value is assigned.</p>
+
+      <p>The adoption collector does not operate this way. They commission multiple pieces — four, five, seven — and then build. The colour scheme of the home follows the palette of the work. The furniture is selected to hold the visual argument the paintings establish. In at least one documented commission, a custom wood-based hanging system was designed and fabricated specifically for the installation — an engineering solution to a specific spatial problem created by the scale and weight of the work. Two assistants were required to install it.</p>
+
+      <div class="testimony">
+        <p>"When someone builds their home around your work — when the decorator is told the colour scheme comes from the painting, when a carpenter fabricates a hanging system specifically for it — the work has become infrastructure. Infrastructure does not go to auction."</p>
+        <p class="testimony-attr">Daniel Stanford · On the adoption collector model</p>
+      </div>
+
+      <h3>What four pieces means.</h3>
+
+      <p>In the conventional art market, buying one work from an artist is an investment or a preference. Buying two is a commitment. Buying four medium-to-large originals from the same artist is a declaration. At that scale — particularly with works requiring architectural consideration — the collector is not building a collection. They are making a structural decision about how they live. The work becomes the organizing principle of the domestic environment, not an element within it.</p>
+
+      <p>This is the distinction MODUS identifies as the FASCINASIA collector signal. It has nothing to do with market price, though market price follows from it. It has everything to do with the irreversibility of the decision. Once you build a room around a 4 by 13 foot triptych — once the ceiling height is calculated with the piece in mind, the floor is chosen to complement the gold leaf, the lighting is designed to move across the surface at the right angle at the right hour — the work cannot leave. Not because it is physically impossible to remove. Because removing it would not leave a gap in the collection. It would leave a gap in the architecture of your life.</p>
+
+      <!-- Commission card: The Triptych -->
+      <div class="commission-card">
+        <div class="cc-label">Documented Commission · FASCINASIA Archive</div>
+        <div class="cc-title">Three Dragon Women</div>
+        <div class="cc-sub">Mixed media · Black ground · Gold leaf · Original commission · Private collection</div>
+        <div class="cc-specs">
+          <div class="cc-spec">
+            <div class="cc-spec-label">Dimensions</div>
+            <div class="cc-spec-value"><strong>4 × 13 feet</strong><br>Triptych, three panels</div>
+          </div>
+          <div class="cc-spec">
+            <div class="cc-spec-label">Gold leaf elements</div>
+            <div class="cc-spec-value"><strong>7 panels</strong><br>Framing each end and between portraits</div>
+          </div>
+          <div class="cc-spec">
+            <div class="cc-spec-label">Installation</div>
+            <div class="cc-spec-value">Custom wood hanging system<br><strong>2 assistants required</strong></div>
+          </div>
+          <div class="cc-spec">
+            <div class="cc-spec-label">Collector response</div>
+            <div class="cc-spec-value">Full decoration and<br><strong>colour scheme based on the work</strong></div>
+          </div>
+        </div>
+        <div class="cc-body">
+          <p>The commission arrived as a spatial brief: a wall in a private home that required a work of specific scale, specific presence, and specific gravity. The collector — who based his entire decoration and colour scheme on the result — did not ask for something to match the room. He asked for something the room could become.</p>
+          <p>The triptych of three portrait figures — the Dragon Women — with seven gold leaf panels framing each end and bridging each portrait, constitutes a single architectural object. The black ground at that scale behaves like a surface of space rather than a surface of paint. The gold leaf at the interstices creates rhythm, breath, punctuation. When installed, two assistants and a custom-fabricated hanging system were required. The piece did not go onto the wall. The wall was organized around it.</p>
+        </div>
+      </div>
+
+      <!-- Image slot: reproductions of FASCINASIA works -->
+      <div class="img-slot" style="aspect-ratio:21/7">
+        <div class="img-slot-label">
+          FASCINASIA — JAPAN / THIRD EYE<br>
+          Upload: Khaliumaa-Third-Eye-Japan-Contrast.jpg (already processed)<br>
+          Position here as the series anchor image<br>
+          Caption: "FASCINASIA — Khaliumaa · Third Eye · Japan · Mixed media original · Daniel Stanford"
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- MODUS INDEX: FASCINASIA -->
+      <div class="mi-card" role="complementary" aria-label="MODUS Index: FASCINASIA Series">
+        <div class="mi-card-label">MODUS Index · Fine Art</div>
+        <div class="mi-car-name">FASCINASIA</div>
+        <div class="mi-car-sub">Daniel Stanford · Mixed media originals · Ongoing series</div>
+        <div class="mi-score-big">50 <span>/ 50</span></div>
+        <div class="mi-axes">
+          <div class="mi-axis"><span class="mi-aname">Timelessness</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+          <div class="mi-axis"><span class="mi-aname">Material Integrity</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+          <div class="mi-axis"><span class="mi-aname">Aesthetic Authority</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+          <div class="mi-axis"><span class="mi-aname">Spatial Versatility</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+          <div class="mi-axis"><span class="mi-aname">Investment Value</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+        </div>
+        <div class="mi-note">The only 50/50 in the MODUS Index. A perfect score is reserved for work that organizes the spaces it enters, travels without permission, and proves its value through the behaviour of those who encounter it — including those who take it.</div>
+      </div>
+
+      <!-- Collector Signal Card -->
+      <div class="collector-card">
+        <div class="collector-label">The FASCINASIA Collector Signal</div>
+        <div class="collector-title">Adoption, not acquisition</div>
+        <div class="collector-sub">Markers of the architectural collector</div>
+        <div class="collector-markers">
+          <div class="cm"><span class="cm-no">01</span><span class="cm-text">Commissions four or more medium-to-large originals from a single artist</span></div>
+          <div class="cm"><span class="cm-no">02</span><span class="cm-text">Bases decoration and colour scheme on the work</span></div>
+          <div class="cm"><span class="cm-no">03</span><span class="cm-text">Requires fabricated or engineered installation solution</span></div>
+          <div class="cm"><span class="cm-no">04</span><span class="cm-text">Does not discuss resale or provenance transfer</span></div>
+          <div class="cm"><span class="cm-no">05</span><span class="cm-text">Refers to the work as part of the home, not the collection</span></div>
+          <div class="cm"><span class="cm-no">06</span><span class="cm-text">Recognizes — and says aloud — that it is the ultimate luxury taste signal</span></div>
+        </div>
+      </div>
+
+      <!-- Inquiries -->
+      <div style="background:var(--bg2);border:0.5px solid var(--border-gold);padding:1.5rem">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">Commission Enquiries</div>
+        <div style="font-family:var(--font-ed);font-size:16px;font-style:italic;color:var(--text-dim);line-height:1.6;margin-bottom:1rem">FASCINASIA originals are available for private commission. Architectural consultation included. Editions of 1 — no reproductions.</div>
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold)">collections@modus.gallery</div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- PART II: STOLEN / AUTHENTICATED -->
+<div class="part-div" style="margin-top:2rem"><span class="part-no">Part II</span><div class="part-line"></div></div>
+<h2 class="part-title">Stolen.<br><em>Authenticated.</em></h2>
+<p class="part-sub">On theft as proof · The FBI Stolen Art Database as involuntary curation</p>
+
+<section class="section w" style="padding-top:2.5rem">
+  <div class="article-grid">
+    <div class="body">
+
+      <p>There is a version of this story that frames theft as loss. Three paintings taken. Legal proceedings filed. Works missing since 2020. That version is accurate and incomplete. The complete version requires a different question: what does it mean that these specific works were worth taking?</p>
+
+      <p>The luxury market has always understood that the black market is a parallel valuation system. Watches, handbags, cars — the most counterfeited objects are the most desired objects. The counterfeit does not diminish the original. It confirms it. The thief's selection is a form of criticism: an implicit judgment that this, of all the things available to take, was worth the risk.</p>
+
+      <p>When three FASCINASIA originals — Golden Bull, Liberté, and I Am Not Broken — were retained by Richard Masliah in Boca Raton in 2020, they entered a different ontological register. They are now documented in the FBI Stolen Art Database. They exist in the records of the FBI Art Crime Team, HSI/ICE, and the Palm Beach County Sheriff's Office. They are, in a precise sense, the most documented and most witnessed works in the FASCINASIA archive — witnessed not by gallery visitors or collectors, but by federal law enforcement agencies whose interest in them constitutes a form of institutional authentication that no gallery can provide.</p>
+
+      <!-- STOLEN WORKS RECORD -->
+      <div class="stolen-section">
+        <div class="stolen-label">FBI Stolen Art Database · Active Record</div>
+        <div class="stolen-header">FASCINASIA — Stolen Works</div>
+        <div class="stolen-sub">Retained by Richard Masliah · Boca Raton, Florida · Since 2020 · Filed: FBI Art Crime Team, HSI/ICE, PBSO</div>
+        <div class="stolen-works">
+          <div class="stolen-work">
+            <div>
+              <div class="sw-title">Golden Bull</div>
+              <div class="sw-desc">Oil on canvas · 40 × 50 inches · Original · Daniel Stanford · 2020</div>
+            </div>
+            <div class="sw-status">Active · FBI Database</div>
+          </div>
+          <div class="stolen-work">
+            <div>
+              <div class="sw-title">Liberté</div>
+              <div class="sw-desc">Oil on canvas · 52 × 84 inches · Original · Daniel Stanford · 2020</div>
+            </div>
+            <div class="sw-status">Active · FBI Database</div>
+          </div>
+          <div class="stolen-work">
+            <div>
+              <div class="sw-title">I Am Not Broken</div>
+              <div class="sw-desc">Oil on canvas · 48 × 60 inches · Original · Daniel Stanford · 2020</div>
+            </div>
+            <div class="sw-status">Active · FBI Database</div>
+          </div>
+        </div>
+        <div class="stolen-editorial">
+          <p>The three works now exist simultaneously in two registers: as missing originals whose return is sought through legal channels, and as authenticated cultural objects whose significance has been confirmed by the attention paid to them. A painting nobody wanted would not be taken. A painting nobody valued would not be retained. The legal record of their theft is, inadvertently, a record of their worth.</p>
+          <p>What Masliah holds — whatever his intention — is not simply three canvases. He holds three documented entries in the FBI Stolen Art Database, three active investigations, and three works whose provenance now includes federal interest. The institutional attention these works have attracted through their absence is greater than most gallery-represented artists achieve through active sales careers. This is not a consolation. It is an observation about how value is authenticated in a market that includes theft as one of its instruments.</p>
+
+          <!-- Snoop case card -->
+          <div class="case-card">
+            <div class="case-label">Related · Copyright Infringement · Active on Streaming Platforms</div>
+            <div class="case-title">The China Fan / Snoop Dogg</div>
+            <div class="case-body">A FASCINASIA work — the China Fan — was used without authorization as album cover artwork by Snoop Dogg in February 2016. The work remains active on major streaming platforms. The case represents involuntary international distribution: the work has traveled through Chinese music infrastructure, embedded in streaming data across multiple territories, and now exists in a global digital record entirely separate from its original provenance. The theft did not diminish the reach of the work. It amplified it across a distribution network no gallery could have provided.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>The thesis: theft is not loss. It is evidence.</h3>
+
+      <p>The black market is a secondary market like any other — except that it operates without documentation, without the artist's participation, and without the market's ability to inflate or deflect. When something is stolen, the thief has made a pure judgment: this is worth the risk of taking. That judgment is not sophisticated. It is not curatorial. It is, in its directness, the most honest valuation the market produces.</p>
+
+      <p>MODUS proposes no comfort in this observation. The works should be returned. The copyright should be enforced. The legal processes should reach their conclusions. But in the meantime — and perhaps permanently — the theft is part of the provenance. And the provenance is part of the work. Golden Bull, Liberté, and I Am Not Broken now carry, in their documentation, a record of institutional attention that predates any future sale, exhibition, or public showing. When they return, they return already authenticated. Not by a gallery. By the FBI.</p>
+
+      <!-- Image slot -->
+      <div class="img-slot" style="aspect-ratio:16/9">
+        <div class="img-slot-label">
+          IMAGE SLOT — STOLEN WORKS DOCUMENTATION<br>
+          Reproductions of Golden Bull / Liberté / I Am Not Broken from archive<br>
+          Or: FASCINASIA Japan / Third Eye as the series anchor image<br>
+          FBI database screenshot (redacted for names) as documentary element
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR Part II -->
+    <aside class="sidebar">
+
+      <div style="background:var(--bg2);border:0.5px solid rgba(139,32,32,0.35);border-top:2px solid var(--decover-red);padding:1.8rem">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--decover-red);margin-bottom:1rem">Provenance Record</div>
+        <div style="font-family:var(--font-ed);font-size:20px;font-weight:400;letter-spacing:-0.02em;color:var(--text);margin-bottom:0.25rem">Three Works</div>
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.5rem">Active legal status · 2020–present</div>
+        <div style="display:flex;flex-direction:column;gap:0.8rem">
+          <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:0.5px solid var(--border)"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim)">Filed with</span><span style="font-family:var(--font-ed);font-size:14px;color:var(--text);text-align:right">FBI Art Crime Team</span></div>
+          <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:0.5px solid var(--border)"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim)">Filed with</span><span style="font-family:var(--font-ed);font-size:14px;color:var(--text);text-align:right">HSI / ICE</span></div>
+          <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:0.5px solid var(--border)"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim)">Filed with</span><span style="font-family:var(--font-ed);font-size:14px;color:var(--text);text-align:right">PBSO</span></div>
+          <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:0.5px solid var(--border)"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim)">Database</span><span style="font-family:var(--font-ed);font-size:14px;color:var(--text);text-align:right">FBI Stolen Art</span></div>
+          <div style="display:flex;justify-content:space-between;padding:0.5rem 0"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim)">Retained by</span><span style="font-family:var(--font-ed);font-size:14px;color:var(--decover-red);text-align:right">Richard Masliah<br><span style="font-size:11px;font-style:italic">Boca Raton, FL</span></span></div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg2);border:0.5px solid var(--border);padding:1.5rem">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem">The MODUS Position</div>
+        <div style="font-family:var(--font-ed);font-size:15px;font-style:italic;font-weight:300;color:var(--text-dim);line-height:1.65">Theft is not loss. It is evidence. The thief selects what is worth taking. Federal investigation documents what is worth pursuing. Both are forms of authentication that the gallery system cannot replicate.</div>
+      </div>
+
+      <div style="background:var(--bg3);border:0.5px solid var(--border);padding:1.5rem">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem">Copyright Case</div>
+        <div style="font-family:var(--font-ed);font-size:16px;font-weight:400;color:var(--text);margin-bottom:0.25rem">China Fan</div>
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.8rem">Used without authorization · 2016 · Active on streaming</div>
+        <div style="font-family:var(--font-ed);font-size:13px;font-weight:300;color:var(--text-dim);line-height:1.6">Involuntary international distribution. The work now exists in streaming infrastructure across multiple territories. The theft made it global.</div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTNOTE -->
+<div class="footnote">
+  <p>The stolen works listed above — Golden Bull, Liberté, and I Am Not Broken — are documented in the FBI Stolen Art Database as works by Daniel Stanford, retained by Richard Masliah, Boca Raton, Florida, since 2020. Reports on file with FBI Art Crime Team, Homeland Security Investigations (HSI/ICE), and Palm Beach County Sheriff's Office (PBSO). The copyright infringement case concerning the China Fan artwork involves unauthorized use as album cover material by a third party in February 2016, remaining active on major streaming platforms. This feature is journalistic editorial — all claims are documented. MODUS / Stanford Emporium Inc., Montreal.</p>
+</div>
+
+<footer class="footer">
+  <span class="footer-brand">MODUS</span>
+  <span class="footer-copy">Stanford Emporium Inc. &nbsp;·&nbsp; Décover No. 1 &nbsp;·&nbsp; © MODUS MMXXVI</span>
+</footer>
+
+<script>
+(function() {
+  var h = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var lbl = document.getElementById('themeLabel');
+  var saved = localStorage.getItem('modus-theme');
+  var t = saved || (window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark');
+  set(t);
+  btn.addEventListener('click', function() { set(h.dataset.theme === 'dark' ? 'light' : 'dark'); });
+  function set(v) { h.dataset.theme = v; localStorage.setItem('modus-theme', v); lbl.textContent = v === 'dark' ? 'Light' : 'Dark'; }
+  window.addEventListener('scroll', function() {
+    var bg = document.querySelector('.hero-bg');
+    if (bg) bg.style.transform = 'translateY(' + (window.scrollY * 0.2) + 'px)';
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>

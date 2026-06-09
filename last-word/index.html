@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Last Word — Daniel Stanford — MODUS</title>
+  <meta name="description" content="MODUS / The Last Word: Daniel Stanford's unfiltered verdict on what impresses and what doesn't. If he says impressed — it's A-list. If not — not worth your time.">
+  <meta name="author" content="Daniel Stanford">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://modus.gallery/last-word">
+  <meta property="og:title" content="The Last Word — Daniel Stanford">
+  <meta property="og:description" content="If he says impressed — A-list. If not — not worth your time. The most honest luxury verdict in publishing.">
+  <meta property="og:url" content="https://modus.gallery/last-word">
+  <meta property="og:site_name" content="MODUS">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "The Last Word",
+    "description": "Daniel Stanford's unfiltered personal verdicts on luxury, culture, design, food, travel, and taste. A-list or forgettable — stated plainly, no hedging.",
+    "author": {
+      "@type": "Person",
+      "name": "Daniel Stanford",
+      "jobTitle": "Editor-in-Chief",
+      "worksFor": { "@type": "Organization", "name": "MODUS", "url": "https://modus.gallery" }
+    },
+    "url": "https://modus.gallery/last-word",
+    "isPartOf": { "@type": "WebSite", "name": "MODUS", "url": "https://modus.gallery" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:#F0E8D5; --navy:#1B2340; --gold:#D4A84B;
+      --a-green: #6B9E6B;   /* A-list — impressed */
+      --f-dim: #6B6B6B;     /* Forgettable — not worth time */
+      --font-ed:'Cormorant Garamond',Georgia,serif;
+      --font-mono:'DM Mono','Courier New',monospace;
+      --font-ui:system-ui,-apple-system,sans-serif;
+      --gutter:clamp(1.25rem,5vw,4rem);
+      --nav-h:64px;
+      --ease:0.25s ease;
+      --spring:cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-theme="dark"] {
+      --bg:#07080D; --bg2:#0C0D15; --bg3:#101218;
+      --text:#EAE0CC; --text-dim:rgba(234,224,204,0.4);
+      --border:rgba(234,224,204,0.07); --border-gold:rgba(212,168,75,0.22);
+      --nav-bg:rgba(7,8,13,0.92);
+    }
+    [data-theme="light"] {
+      --bg:#F4EEE2; --bg2:#EBE4D2; --bg3:#E1D9C8;
+      --text:#1B2340; --text-dim:rgba(27,35,64,0.42);
+      --border:rgba(27,35,64,0.08); --border-gold:rgba(212,168,75,0.32);
+      --nav-bg:rgba(244,238,226,0.92);
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{font-family:var(--font-ed);background:var(--bg);color:var(--text);min-height:100vh;transition:background var(--ease),color var(--ease);overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.025;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);background:var(--nav-bg);border-bottom:0.5px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:background var(--ease)}
+    .nav-logo{font-family:var(--font-ed);font-size:18px;letter-spacing:-0.02em;color:var(--text)}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-link{font-family:var(--font-ui);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link:hover,.nav-link.active{color:var(--text)}
+    .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
+    .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
+    .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+    /* HERO */
+    .hero{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--nav-h) + 4rem) var(--gutter) 4rem;position:relative;overflow:hidden}
+    .hero-bg{
+      position:absolute;inset:0;z-index:0;
+      background:
+        radial-gradient(ellipse 50% 70% at 80% 40%, rgba(212,168,75,0.06) 0%, transparent 60%),
+        linear-gradient(160deg, #04050A 0%, #070810 40%, #0A0908 70%, #05060A 100%);
+    }
+    /* The "hand" line — like a signature stroke */
+    .hero-stroke{
+      position:absolute;bottom:0;left:0;right:0;height:2px;z-index:1;
+      background:linear-gradient(to right, transparent, var(--gold), rgba(212,168,75,0.3), transparent);
+      opacity:0;animation:fadeIn 1s ease 1.5s forwards;
+    }
+    .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,transparent 60%,var(--bg) 100%)}
+    .hero-content{position:relative;z-index:2;max-width:900px}
+
+    .hero-dept{font-family:var(--font-mono);font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;opacity:0;animation:fadeU 0.9s ease 0.3s forwards}
+    .hero-title{font-family:var(--font-ed);font-size:clamp(52px,9vw,120px);font-weight:300;letter-spacing:-0.04em;line-height:0.88;color:var(--text);opacity:0;animation:fadeU 1.2s ease 0.45s forwards}
+    .hero-title em{font-style:italic;color:rgba(212,168,75,0.55)}
+    .hero-byline{margin-top:1.8rem;max-width:560px;opacity:0;animation:fadeU 1s ease 0.8s forwards}
+    .hero-byline p{font-family:var(--font-ed);font-size:clamp(15px,1.8vw,20px);font-weight:300;font-style:italic;line-height:1.6;color:var(--text-dim)}
+    .hero-rule{width:0;height:0.5px;background:linear-gradient(to right,var(--gold),transparent);margin-top:1.8rem;animation:drawL 1.4s ease 1s forwards}
+
+    /* VERDICT KEY */
+    .verdict-key{
+      display:flex;gap:2rem;padding:2rem var(--gutter);
+      max-width:1200px;margin:0 auto;
+      border-bottom:0.5px solid var(--border);
+      flex-wrap:wrap;align-items:center;
+    }
+    .vk-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim);margin-right:0.5rem}
+    .vk-item{display:flex;align-items:center;gap:0.6rem}
+    .vk-badge{font-family:var(--font-mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;padding:3px 10px;border-radius:2px}
+    .vk-badge.a{background:rgba(107,158,107,0.15);color:var(--a-green);border:0.5px solid rgba(107,158,107,0.3)}
+    .vk-badge.f{background:rgba(107,107,107,0.1);color:var(--f-dim);border:0.5px solid rgba(107,107,107,0.2)}
+    .vk-text{font-family:var(--font-ed);font-size:14px;font-style:italic;color:var(--text-dim)}
+
+    /* FILTER BAR */
+    .filter-bar{
+      display:flex;gap:0;padding:0 var(--gutter);
+      max-width:1200px;margin:0 auto;
+      border-bottom:0.5px solid var(--border);
+    }
+    .filter-btn{
+      font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
+      color:var(--text-dim);background:transparent;border:none;
+      padding:1rem 1.5rem;cursor:pointer;
+      border-bottom:2px solid transparent;margin-bottom:-0.5px;
+      transition:color var(--ease),border-color var(--ease);
+    }
+    .filter-btn:hover{color:var(--text)}
+    .filter-btn.active{color:var(--text);border-bottom-color:var(--gold)}
+
+    /* ENTRIES GRID */
+    .entries{
+      max-width:1200px;margin:0 auto;
+      padding:3rem var(--gutter) 6rem;
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
+      gap:1px;background:var(--border);
+    }
+
+    /* SINGLE ENTRY CARD */
+    .entry{
+      background:var(--bg);
+      padding:2rem;
+      display:flex;flex-direction:column;gap:0;
+      transition:background var(--ease);
+      position:relative;
+    }
+    .entry:hover{background:var(--bg2)}
+
+    /* Verdict stripe — top border color */
+    .entry.verdict-a::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(to right,var(--a-green),rgba(107,158,107,0.2),transparent);
+    }
+    .entry.verdict-f::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(to right,var(--f-dim),rgba(107,107,107,0.1),transparent);
+    }
+
+    .entry-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.8rem;gap:1rem;flex-wrap:wrap}
+    .entry-cat{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim)}
+    .entry-date{font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);opacity:0.6}
+
+    .entry-name{font-family:var(--font-ed);font-size:clamp(20px,2.2vw,26px);font-weight:400;letter-spacing:-0.02em;line-height:1.1;color:var(--text);margin-bottom:0.4rem}
+    .entry-type{font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
+
+    .entry-verdict{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      margin-bottom:1.2rem;
+    }
+    .verdict-badge{
+      font-family:var(--font-mono);font-size:9px;letter-spacing:0.2em;
+      text-transform:uppercase;padding:4px 12px;
+    }
+    .verdict-badge.a{
+      background:rgba(107,158,107,0.12);color:var(--a-green);
+      border:0.5px solid rgba(107,158,107,0.3);
+    }
+    .verdict-badge.f{
+      background:rgba(107,107,107,0.08);color:var(--f-dim);
+      border:0.5px solid rgba(107,107,107,0.18);
+    }
+    .verdict-statement{font-family:var(--font-ed);font-size:14px;font-style:italic;color:var(--text-dim)}
+    .verdict-statement.a{color:rgba(107,158,107,0.8)}
+    .verdict-statement.f{color:var(--f-dim)}
+
+    .entry-note{font-family:var(--font-ed);font-size:clamp(14px,1.4vw,16px);font-weight:300;line-height:1.72;color:var(--text);flex:1}
+
+    .entry-sig{
+      margin-top:1.5rem;padding-top:1rem;border-top:0.5px solid var(--border);
+      font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;
+      text-transform:uppercase;color:var(--text-dim);
+      display:flex;justify-content:space-between;align-items:center;
+    }
+
+    /* FEATURED FIRST ENTRY — full width hero card */
+    .entry.featured{
+      grid-column:1/-1;
+      display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+      padding:3rem;
+    }
+    .entry.featured .entry-name{font-size:clamp(28px,4vw,48px)}
+    .entry.featured .entry-note{font-size:clamp(15px,1.6vw,18px)}
+
+    /* EMPTY STATE */
+    .entries-empty{
+      grid-column:1/-1;text-align:center;padding:4rem 2rem;
+      font-family:var(--font-ed);font-size:18px;font-style:italic;color:var(--text-dim);
+    }
+
+    /* SIGNATURE LINE */
+    .signature-section{
+      padding:5rem var(--gutter);max-width:1200px;margin:0 auto;
+      border-top:0.5px solid var(--border);
+      display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+    }
+    .sig-left h2{font-family:var(--font-ed);font-size:clamp(26px,3.5vw,44px);font-weight:300;letter-spacing:-0.02em;color:var(--text);margin-bottom:1rem}
+    .sig-left h2 em{font-style:italic;color:var(--text-dim)}
+    .sig-left p{font-family:var(--font-ed);font-size:clamp(14px,1.5vw,17px);font-weight:300;line-height:1.78;color:var(--text-dim)}
+    .sig-right{display:flex;flex-direction:column;gap:1.5rem}
+    .sig-credential{background:var(--bg2);border:0.5px solid var(--border);padding:1.2rem 1.5rem}
+    .sc-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.3rem}
+    .sc-value{font-family:var(--font-ed);font-size:16px;font-weight:300;color:var(--text);line-height:1.4}
+
+    /* FOOTER */
+    .footer{border-top:0.5px solid var(--border);padding:3rem var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-brand{font-family:var(--font-ed);font-size:22px;letter-spacing:-0.02em;color:var(--text)}
+    .footer-copy{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
+
+    @keyframes fadeU{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes drawL{from{width:0}to{width:min(300px,48vw)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+    @media(max-width:900px){.entry.featured{grid-template-columns:1fr}.signature-section{grid-template-columns:1fr;gap:2.5rem}}
+    @media(max-width:600px){.entries{grid-template-columns:1fr}.verdict-key{gap:1rem}.filter-bar{overflow-x:auto}}
+    @media(max-width:480px){.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="/">MODUS</a>
+  <div class="nav-links">
+    <a class="nav-link" href="/terrain">Terrain</a>
+    <a class="nav-link" href="/objects">Objects</a>
+    <a class="nav-link" href="/corps">Corps</a>
+    <a class="nav-link active" href="/last-word">Last Word</a>
+    <a class="nav-link" href="/join">Join</a>
+  </div>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+    <div class="theme-dot"></div>
+    <span id="themeLabel">Light</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-stroke" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-dept">MODUS / The Last Word</p>
+    <h1 class="hero-title">
+      The Last<br><em>Word.</em>
+    </h1>
+    <div class="hero-byline">
+      <p>Unfiltered. Unjustified. Not up for discussion. Daniel Stanford on what impresses and what doesn't — the most direct luxury verdict in publishing. If he says impressed, it's A-list. If not, it's not worth your time.</p>
+    </div>
+    <div class="hero-rule" aria-hidden="true"></div>
+  </div>
+</header>
+
+<!-- VERDICT KEY -->
+<div class="verdict-key" aria-label="Verdict system explained">
+  <span class="vk-label">The system:</span>
+  <div class="vk-item">
+    <span class="vk-badge a" aria-label="A-list rating">A-List</span>
+    <span class="vk-text">— Impressed. Worth your time and money.</span>
+  </div>
+  <div class="vk-item">
+    <span class="vk-badge f" aria-label="Forgettable rating">Forgettable</span>
+    <span class="vk-text">— Not impressed. Move on.</span>
+  </div>
+  <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-left:auto">No middle ground.</span>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" role="tablist" aria-label="Filter by category">
+  <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+  <button class="filter-btn" data-filter="hotel" role="tab" aria-selected="false">Hotels</button>
+  <button class="filter-btn" data-filter="restaurant" role="tab" aria-selected="false">Food</button>
+  <button class="filter-btn" data-filter="object" role="tab" aria-selected="false">Objects</button>
+  <button class="filter-btn" data-filter="experience" role="tab" aria-selected="false">Experiences</button>
+  <button class="filter-btn" data-filter="health" role="tab" aria-selected="false">Health</button>
+  <button class="filter-btn" data-filter="fashion" role="tab" aria-selected="false">Fashion</button>
+</div>
+
+<!-- ENTRIES -->
+<main id="entries-grid" class="entries" aria-label="The Last Word entries">
+
+  <!-- FEATURED ENTRY: Oscar Patel Protocol -->
+  <article class="entry featured verdict-a" data-category="health" aria-label="Oscar Patel Protocol — A-List">
+    <div>
+      <div class="entry-meta">
+        <span class="entry-cat">Health · Protocol</span>
+        <span class="entry-date">June 2026</span>
+      </div>
+      <h2 class="entry-name">Oscar Patel<br>Health=Looks Protocol</h2>
+      <div class="entry-type">Structural correction · Fascia · Myofunctional therapy</div>
+      <div class="entry-verdict">
+        <span class="verdict-badge a" aria-label="A-List verdict">A-List</span>
+        <span class="verdict-statement a">Impressed.</span>
+      </div>
+    </div>
+    <div>
+      <p class="entry-note">"I am on the protocol now. After twenty-two years of Rolfing Structural Integration and Adaptive Bodywork with John Sutherland, I know when something is working at the root level and when it is performing wellness. Patel's methodology is working at the root. The maxilla-as-architectural-keystone thesis is scientifically sound and practically effective. The connection between skull structure, fascial chain, posture, hormonal environment, and appearance is not theoretical — it is observable. I am observing it. This is the most significant health protocol I have encountered since my first Rolfing series in 2004."</p>
+      <div class="entry-sig">
+        <span>— Daniel Stanford</span>
+        <span>oscarpatel.net</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ENTRY: Porsche 911 GT3 S/C -->
+  <article class="entry verdict-a" data-category="object" aria-label="Porsche 911 GT3 S/C — A-List">
+    <div class="entry-meta">
+      <span class="entry-cat">Objects · Automotive</span>
+      <span class="entry-date">April 2026</span>
+    </div>
+    <h2 class="entry-name">Porsche 911 GT3 S/C</h2>
+    <div class="entry-type">World premiere · Open-air GT3 · 9,000 rpm · Manual</div>
+    <div class="entry-verdict">
+      <span class="verdict-badge a">A-List</span>
+      <span class="verdict-statement a">Impressed.</span>
+    </div>
+    <p class="entry-note">"The question nobody thought to ask — what if you removed the roof from the GT3 — answered exactly right. 9,000 rpm naturally aspirated. Six-speed manual only. Carbon throughout. The engine note is no longer inside a car. It is part of the landscape you are moving through. I drove two 911s. Launch mode lives in the body after. This car will produce the most memorable hour available in a production vehicle in 2026."</p>
+    <div class="entry-sig">
+      <span>— D.S.</span>
+      <a href="/objects" style="color:var(--gold);font-size:9px;letter-spacing:0.14em;text-transform:uppercase">Full feature →</a>
+    </div>
+  </article>
+
+  <!-- ENTRY: Amanwella -->
+  <article class="entry verdict-a" data-category="hotel" aria-label="Amanwella — A-List">
+    <div class="entry-meta">
+      <span class="entry-cat">Hotels · Indian Ocean</span>
+      <span class="entry-date">2026</span>
+    </div>
+    <h2 class="entry-name">Amanwella<br>Tangalle, Sri Lanka</h2>
+    <div class="entry-type">30 suites · Indian Ocean · South Coast</div>
+    <div class="entry-verdict">
+      <span class="verdict-badge a">A-List</span>
+      <span class="verdict-statement a">Impressed.</span>
+    </div>
+    <p class="entry-note">"No children under twelve. No itinerary unless you ask. The pool continues into the sea below. The fish was caught that morning. The silence is the treatment. There is a category of hotel that stops you performing the act of being on holiday and simply places you somewhere. Amanwella is that category."</p>
+    <div class="entry-sig">
+      <span>— D.S.</span>
+      <a href="/terrain" style="color:var(--gold);font-size:9px;letter-spacing:0.14em;text-transform:uppercase">Full feature →</a>
+    </div>
+  </article>
+
+  <!-- ENTRY: Tom Ford Oud Wood (placeholder for Atelier feature) -->
+  <article class="entry verdict-a" data-category="object" aria-label="Tom Ford Oud Wood — A-List">
+    <div class="entry-meta">
+      <span class="entry-cat">Objects · Fragrance</span>
+      <span class="entry-date">2026</span>
+    </div>
+    <h2 class="entry-name">Tom Ford<br>Oud Wood</h2>
+    <div class="entry-type">Atelier fragrance · Private blend · Eastern woods</div>
+    <div class="entry-verdict">
+      <span class="verdict-badge a">A-List</span>
+      <span class="verdict-statement a">Impressed.</span>
+    </div>
+    <p class="entry-note">"The bottle is the argument made before you open it. What is inside confirms it. Oud wood, sandalwood, cardamom — a fragrance that does not announce itself to the room but is found by those who come close enough to be worth finding. Tom Ford understood that the highest expression of taste is restraint in a medium that rewards projection."</p>
+    <div class="entry-sig">
+      <span>— D.S.</span>
+      <span style="color:var(--text-dim)">ATELIER feature coming</span>
+    </div>
+  </article>
+
+  <!-- ENTRY: Generic wellness tourism (forgettable) -->
+  <article class="entry verdict-f" data-category="experience" aria-label="Generic Wellness Retreat — Forgettable">
+    <div class="entry-meta">
+      <span class="entry-cat">Experience · Wellness</span>
+      <span class="entry-date">2026</span>
+    </div>
+    <h2 class="entry-name">The Wellness<br>Retreat Category</h2>
+    <div class="entry-type">Generic · Programme-led · Instagram-optimized</div>
+    <div class="entry-verdict">
+      <span class="verdict-badge f">Forgettable</span>
+      <span class="verdict-statement f">Not impressed.</span>
+    </div>
+    <p class="entry-note">"Three days of cold plunges, sound baths, and breathwork scheduled into a PDF itinerary handed to you at check-in. The spa is beautiful. The practitioners are well-meaning. The results last as long as the tan. A wellness retreat that gives you a programme is performing the idea of healing rather than delivering it. The body knows the difference. CORPS covers the work that addresses the root. This is not that."</p>
+    <div class="entry-sig">
+      <span>— D.S.</span>
+      <a href="/corps" style="color:var(--text-dim);font-size:9px;letter-spacing:0.14em;text-transform:uppercase">What works instead →</a>
+    </div>
+  </article>
+
+  <!-- ENTRY: Ibi.wear Vietnam (placeholder — A-list signal) -->
+  <article class="entry verdict-a" data-category="fashion" aria-label="Ibi.wear — A-List signal">
+    <div class="entry-meta">
+      <span class="entry-cat">Fashion · Vietnam</span>
+      <span class="entry-date">2026</span>
+    </div>
+    <h2 class="entry-name">Ibi.wear<br>Vietnam</h2>
+    <div class="entry-type">Emerging luxury · Ho Chi Minh City · ORIENT signal</div>
+    <div class="entry-verdict">
+      <span class="verdict-badge a">A-List</span>
+      <span class="verdict-statement a">Watching closely.</span>
+    </div>
+    <p class="entry-note">"A Vietnamese fashion brand with genuine aesthetic authority before Western fashion media has arrived. The visual language is its own — not derivative of Paris, not performing Seoul. Vietnam is producing its own luxury vocabulary from the inside out, and Ibi.wear is the clearest current signal of it. MODUS ORIENT will cover this properly. For now: know the name."</p>
+    <div class="entry-sig">
+      <span>— D.S.</span>
+      <a href="https://www.instagram.com/ibi.wear" target="_blank" rel="noopener" style="color:var(--gold);font-size:9px;letter-spacing:0.14em;text-transform:uppercase">@ibi.wear →</a>
+    </div>
+  </article>
+
+  <!-- PLACEHOLDER ENTRIES — for Daniel to fill -->
+  <article class="entry verdict-placeholder" data-category="restaurant" style="background:var(--bg2);border:0.5px dashed var(--border);opacity:0.5" aria-label="Placeholder entry">
+    <div class="entry-meta">
+      <span class="entry-cat">Food · Restaurant</span>
+      <span class="entry-date">Coming</span>
+    </div>
+    <h2 class="entry-name" style="color:var(--text-dim)">Your next verdict</h2>
+    <div class="entry-type">Tell the MODUS team what you've tried lately</div>
+    <div class="entry-verdict" style="margin-top:auto">
+      <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)">Submit at: lastword@modus.gallery</span>
+    </div>
+  </article>
+
+</main>
+
+<!-- SIGNATURE SECTION — who is making these calls -->
+<section class="signature-section" aria-labelledby="sig-title">
+  <div class="sig-left">
+    <h2 id="sig-title">Why this voice<br><em>carries weight.</em></h2>
+    <p>The Last Word is not a panel decision. It is not an algorithm. It is one person's direct response after 25 years inside the industries being judged. You can disagree. You cannot argue that the voice is uninformed.</p>
+  </div>
+  <div class="sig-right" role="list" aria-label="Editor credentials">
+    <div class="sig-credential" role="listitem">
+      <div class="sc-label">Fashion</div>
+      <div class="sc-value">Guess (Love Story, sole art direction credit), Vogue, Victoria's Secret, Revlon, Lancôme</div>
+    </div>
+    <div class="sig-credential" role="listitem">
+      <div class="sc-label">Fine Art</div>
+      <div class="sc-value">FASCINASIA mixed media originals. FBI Stolen Art Database. Architectural commissions across multiple countries.</div>
+    </div>
+    <div class="sig-credential" role="listitem">
+      <div class="sc-label">Bodywork</div>
+      <div class="sc-value">22 years — Rolfing SI, Adaptive Bodywork (John Sutherland), craniosacral, Oscar Patel protocol (active)</div>
+    </div>
+    <div class="sig-credential" role="listitem">
+      <div class="sc-label">Film</div>
+      <div class="sc-value">Executive producer credits across multiple productions. Hell's Kitchen, In the Grey, ACND, 400XY.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-brand">MODUS</span>
+  <span class="footer-copy">Stanford Emporium Inc. &nbsp;·&nbsp; The Last Word &nbsp;·&nbsp; © MODUS MMXXVI</span>
+</footer>
+
+<script>
+(function() {
+  // THEME
+  var h = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var lbl = document.getElementById('themeLabel');
+  var saved = localStorage.getItem('modus-theme');
+  var t = saved || (window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark');
+  set(t);
+  btn.addEventListener('click', function() { set(h.dataset.theme === 'dark' ? 'light' : 'dark'); });
+  function set(v) { h.dataset.theme = v; localStorage.setItem('modus-theme', v); lbl.textContent = v === 'dark' ? 'Light' : 'Dark'; }
+
+  // FILTER
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var entries = document.querySelectorAll('.entries .entry');
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = this.dataset.filter;
+
+      // Update active button
+      filterBtns.forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+
+      // Show/hide entries
+      var visible = 0;
+      entries.forEach(function(entry) {
+        var cat = entry.dataset.category;
+        var show = filter === 'all' || cat === filter;
+        entry.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      // Show empty state if needed
+      var empty = document.querySelector('.entries-empty');
+      if (visible === 0 && !empty) {
+        var msg = document.createElement('p');
+        msg.className = 'entries-empty';
+        msg.textContent = 'No entries in this category yet. Check back soon.';
+        document.getElementById('entries-grid').appendChild(msg);
+      } else if (visible > 0 && empty) {
+        empty.remove();
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

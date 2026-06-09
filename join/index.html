@@ -97,7 +97,7 @@
       backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       transition: background var(--ease);
     }
-    .nav-logo {
+    [data-theme="dark"] .logo-black{display:none} [data-theme="light"] .logo-beige{display:none} .nav-logo {display:flex;align-items:center;min-height:44px;line-height:0} .nav-logo img{height:28px;width:auto} .nav-logo-old {
       font-family: var(--font-ed); font-size: 18px;
       letter-spacing: -0.02em; color: var(--text);
       text-decoration: none;
@@ -563,8 +563,29 @@
 <body>
 
 <!-- NAV -->
+
+<div class="side-overlay" id="sideOverlay"></div>
+<div class="side-menu" id="sideMenu" role="dialog" aria-label="MODUS navigation">
+  <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+  <p class="side-menu-label">MODUS &middot; Navigate</p>
+  <nav class="side-menu-nav">
+    <a href="/atelier">Atelier</a>
+    <a href="/last-word">Last Word</a>
+    <a href="/decover">D&eacute;cover</a>
+    <a href="/terrain">Terrain</a>
+    <a href="/corps">Corps</a>
+    <a href="/objects">Objects</a>
+    <a href="/join">Join</a>
+    <a href="/methodology">Methodology</a>
+    <a href="/contents">Contents</a>
+    <a href="/issue-1">Issue No. 1</a>
+    <a href="/acquire">Acquire</a>
+  </nav>
+  <p class="side-menu-issue">modus.gallery &middot; 2026</p>
+</div>
+
 <nav class="nav">
-  <a class="nav-logo" href="/">MODUS</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button><a class="nav-logo" href="/" aria-label="MODUS home"><img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS" style="height:28px;width:auto"><img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS" style="height:28px;width:auto"></a>
   <a class="nav-back" href="/" aria-label="Back to MODUS">
     <span>← Back</span>
   </a>
@@ -910,6 +931,23 @@
   });
 
 })();
+</script>
+
+
+<script>
+  (function(){
+    var menuBtn=document.getElementById("menuBtn");
+    var menuClose=document.getElementById("menuClose");
+    var sideMenu=document.getElementById("sideMenu");
+    var overlay=document.getElementById("sideOverlay");
+    if(!menuBtn)return;
+    function openMenu(){sideMenu.classList.add("open");overlay.classList.add("open");document.body.style.overflow="hidden";}
+    function closeMenu(){sideMenu.classList.remove("open");overlay.classList.remove("open");document.body.style.overflow="";}
+    menuBtn.addEventListener("click",openMenu);
+    menuClose.addEventListener("click",closeMenu);
+    overlay.addEventListener("click",closeMenu);
+    document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMenu();});
+  })();
 </script>
 
 </body>

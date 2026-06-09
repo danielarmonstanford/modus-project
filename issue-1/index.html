@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MODUS — Issue N°1 — Cover</title>
+<meta name="description" content="MODUS Issue Nº1, 2026 — Cover by Daniel Stanford featuring Khalumia from the FASCINASIA series. A taste intelligence publication.">
+<link rel="canonical" href="https://modus.gallery/issue-1">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="MODUS — Issue N°1 — The Taste Intelligence Issue">
+<meta property="og:description" content="Cover by Daniel Stanford featuring Khalumia from the FASCINASIA series.">
+<meta property="og:image" content="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,w_1200,h_630,q_auto,f_auto/v1780969688/Khalumia_Fortune_D80_6035_fxajcu.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #0E0C0B;
+    --bg-paper:  #14110F;
+    --ink:       #EFE6D2;
+    --ink-soft:  #BFB39A;
+    --ink-faint: #6E6555;
+    --oxblood:   #8C2A2A;
+    --oxblood-bright: #B23A3A;
+    --gold:      #C9A84C;
+    --rule:      rgba(201,168,76,0.20);
+  }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    min-height: 100%;
+  }
+
+  body { overflow-x: hidden; }
+
+  /* Subtle paper grain over the entire cover */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ─── COVER LAYOUT ─── */
+  .cover {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 2.2rem 3rem 1.6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ─── HEAD ─── */
+  .head {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 0.5px solid var(--rule);
+    opacity: 0;
+    animation: fadeDown 1.2s ease 0.15s forwards;
+  }
+
+  .head-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .wordmark {
+    font-size: clamp(38px, 5.5vw, 64px);
+    font-weight: 300;
+    letter-spacing: 0.32em;
+    line-height: 1;
+    color: var(--ink);
+    text-indent: 0.32em;
+    white-space: nowrap;
+  }
+
+  .head-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: right;
+  }
+
+  .head-right .gold { color: var(--gold); }
+
+  /* ─── ISSUE BAR ─── */
+  .issue-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 0 1.6rem;
+    opacity: 0;
+    animation: fadeDown 1.2s ease 0.3s forwards;
+  }
+
+  .issue-bar .left {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .issue-bar .right {
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+  }
+
+  /* ─── MAIN COVER (image + cover lines) ─── */
+  .main {
+    display: grid;
+    grid-template-columns: 1fr minmax(280px, 360px);
+    gap: 3rem;
+    align-items: start;
+    padding: 1rem 0 2rem;
+  }
+
+  /* ─── IMAGE FRAME ─── */
+  .frame {
+    position: relative;
+    background: var(--bg-paper);
+    padding: 12px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 6px 20px rgba(0,0,0,0.4);
+    opacity: 0;
+    animation: imageRise 1.8s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+  }
+
+  .frame::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 0.5px solid rgba(201,168,76,0.15);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .credit {
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+  }
+
+  .credit-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .credit-title {
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── COVER LINES ─── */
+  .lines {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding-top: 1rem;
+  }
+
+  .lines-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--rule);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
+
+  .line-item {
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+  }
+
+  .line-item:nth-child(2) { animation-delay: 1.0s; }
+  .line-item:nth-child(3) { animation-delay: 1.2s; }
+  .line-item:nth-child(4) { animation-delay: 1.4s; }
+  .line-item:nth-child(5) { animation-delay: 1.6s; }
+  .line-item:nth-child(6) { animation-delay: 1.8s; }
+
+  .line-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    padding-top: 0.4rem;
+    min-width: 28px;
+  }
+
+  .line-body { flex: 1; }
+
+  .line-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.3rem;
+  }
+
+  .line-headline {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.25;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .line-headline a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 0.5px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .line-headline a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ─── COVER STORY HEADLINE (bottom) ─── */
+  .cover-story {
+    padding-top: 1.6rem;
+    margin-top: 0.8rem;
+    border-top: 0.5px solid var(--rule);
+    opacity: 0;
+    animation: fadeUp 1s ease 2s forwards;
+  }
+
+  .cover-story-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oxblood-bright);
+    margin-bottom: 0.6rem;
+  }
+
+  .cover-story-title {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.2;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .cover-story-title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 0.5px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .cover-story-title a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ─── FOOTER ─── */
+  .foot {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding-top: 1.4rem;
+    border-top: 0.5px solid var(--rule);
+    opacity: 0;
+    animation: fadeUp 1s ease 2.4s forwards;
+  }
+
+  .foot-left, .foot-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .foot-right { text-align: right; }
+
+  .foot-center {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    cursor: pointer;
+    border: 0.5px solid var(--rule);
+    padding: 0.6em 1em;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .foot-center:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.05);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes imageRise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .cover { padding: 1.4rem 1.4rem 1.2rem; }
+    .main { grid-template-columns: 1fr; gap: 1.8rem; }
+    .head { gap: 0.8rem; }
+    .head-left { font-size: 8px; }
+    .head-right { font-size: 8px; }
+    .wordmark { font-size: clamp(30px, 9vw, 44px); }
+    .issue-bar { padding: 0.8rem 0 1rem; }
+    .issue-bar .left { font-size: 8.5px; }
+    .lines { padding-top: 0; }
+    .line-headline { font-size: 16px; }
+    .cover-story-title { font-size: 19px; }
+    .foot { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+    .foot-left, .foot-right { text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .head { grid-template-columns: 1fr; text-align: center; }
+    .head-left, .head-right { text-align: center; }
+    .credit { flex-direction: column; gap: 0.4rem; align-items: flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<article class="cover">
+
+  <!-- HEAD -->
+  <header class="head">
+    <div class="head-left">Stanford Emporium</div>
+    <h1 class="wordmark">MODUS</h1>
+    <div class="head-right"><span class="gold">$</span> Complimentary &nbsp;/&nbsp; Members Only</div>
+  </header>
+
+  <!-- ISSUE BAR -->
+  <div class="issue-bar">
+    <span class="left">Issue&nbsp;&nbsp;N°&thinsp;1&nbsp;&nbsp;·&nbsp;&nbsp;MMXXVI</span>
+    <span class="right">The Taste Intelligence Issue</span>
+  </div>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- IMAGE FRAME -->
+    <figure class="frame">
+      <img
+        src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_1200,h_1200,q_auto:best,f_auto/v1780969688/Khalumia_Fortune_D80_6035_fxajcu.jpg"
+        alt="Khalumia — Fortune. Daniel Stanford, FASCINASIA series."
+        loading="eager"
+      />
+      <figcaption class="credit">
+        <span class="credit-left">Cover · FASCINASIA</span>
+        <span class="credit-title"><em>Khalumia, Fortune</em> — Daniel Stanford</span>
+      </figcaption>
+    </figure>
+
+    <!-- COVER LINES -->
+    <aside class="lines">
+
+      <div class="lines-label">In This Issue</div>
+
+      <div class="line-item">
+        <span class="line-num">01</span>
+        <div class="line-body">
+          <div class="line-kicker">Travel</div>
+          <div class="line-headline"><a href="/terrain">Sri Lanka's South Coast — Amanwella, Hikkaduwa &amp; the geography that earns the Index.</a></div>
+        </div>
+      </div>
+
+      <div class="line-item">
+        <span class="line-num">02</span>
+        <div class="line-body">
+          <div class="line-kicker">Objects</div>
+          <div class="line-headline"><a href="/objects">The Only Two That Matter — Porsche 911 S/T and the 2026 GT3 S/C.</a></div>
+        </div>
+      </div>
+
+      <div class="line-item">
+        <span class="line-num">03</span>
+        <div class="line-body">
+          <div class="line-kicker">Wellness</div>
+          <div class="line-headline"><a href="/corps">On Rolfing, Fascia &amp; Why Structural Integration Is Different.</a></div>
+        </div>
+      </div>
+
+      <div class="line-item">
+        <span class="line-num">04</span>
+        <div class="line-body">
+          <div class="line-kicker">Art &amp; Provenance</div>
+          <div class="line-headline"><a href="/decover">The FASCINASIA Portfolio — Theft as the Authentication of Value.</a></div>
+        </div>
+      </div>
+
+      <div class="line-item">
+        <span class="line-num">05</span>
+        <div class="line-body">
+          <div class="line-kicker">Verdicts</div>
+          <div class="line-headline"><a href="/last-word">The Last Word — A-List or Forgettable. No Middle Ground.</a></div>
+        </div>
+      </div>
+
+      <!-- COVER STORY -->
+      <div class="cover-story">
+        <div class="cover-story-kicker">Cover Story</div>
+        <div class="cover-story-title"><a href="/decover"><em>Khalumia</em> — The Figure as Fortune, the Body as Provenance. The FASCINASIA series enters the record.</a></div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- FOOT -->
+  <footer class="foot">
+    <span class="foot-left">Montréal · MMXXVI</span>
+    <a href="/contents" class="foot-center">Open Contents →</a>
+    <span class="foot-right">modus.gallery</span>
+  </footer>
+
+</article>
+
+</body>
+</html>

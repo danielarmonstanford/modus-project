@@ -120,10 +120,9 @@
     .hero{height:100vh;min-height:620px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) 5rem}
     .hero-bg{
       position:absolute;inset:0;z-index:0;
-      background:
-        radial-gradient(ellipse 55% 65% at 60% 35%, rgba(50,35,10,0.8) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 50% at 15% 70%, rgba(8,6,4,0.95) 0%, transparent 50%),
-        linear-gradient(148deg, #04030A 0%, #080610 20%, #18140A 50%, #0A0808 75%, #04030A 100%);
+      background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/Gov-Lov-is-Toxic_evcokn.jpg');
+      background-size:cover;
+      background-position:center center;
     }
     /* Gold leaf shimmer pattern */
     .hero-gold{position:absolute;inset:0;z-index:1;opacity:0.08;
@@ -338,6 +337,23 @@
 <body>
 
 <!-- NAV -->
+
+  <!-- Side menu overlay + panel -->
+  <div class="side-overlay" id="sideOverlay"></div>
+  <div class="side-menu" id="sideMenu" role="dialog" aria-label="MODUS navigation">
+    <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+    <p class="side-menu-label">MODUS &middot; Navigate</p>
+    <nav class="side-menu-nav">
+      <a href="/atelier">Atelier</a>
+      <a href="/last-word">Last Word</a>
+      <a href="/decover">D&eacute;cover</a>
+      <a href="/terrain">Terrain</a>
+      <a href="/corps">Corps</a>
+      <a href="/objects">Objects</a>
+    </nav>
+    <p class="side-menu-issue">modus.gallery &middot; 2026</p>
+  </div>
+
 <nav class="nav">
   <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   <a class="nav-logo" href="/" aria-label="MODUS home">
@@ -440,14 +456,14 @@
       </div>
 
       <!-- Image slot: reproductions of FASCINASIA works -->
-      <div class="img-slot" style="aspect-ratio:21/7">
-        <div class="img-slot-label">
-          FASCINASIA — JAPAN / THIRD EYE<br>
-          Upload: Khaliumaa-Third-Eye-Japan-Contrast.jpg (already processed)<br>
-          Position here as the series anchor image<br>
-          Caption: "FASCINASIA — Khaliumaa · Third Eye · Japan · Mixed media original · Daniel Stanford"
-        </div>
-      </div>
+      <figure style="margin:2.5rem 0">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/FASCINASIA-Art-tiles_web-page_e3vljy.jpg"
+             alt="FASCINASIA — Series Overview — Daniel Stanford"
+             style="width:100%;height:auto;display:block;">
+        <figcaption style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);padding:0.75rem 0">
+          FASCINASIA · Mixed Media Originals · Daniel Stanford · Series Overview
+        </figcaption>
+      </figure>
 
     </div>
 
@@ -561,14 +577,14 @@
       <p>MODUS proposes no comfort in this observation. The works should be returned. The copyright should be enforced. The legal processes should reach their conclusions. But in the meantime — and perhaps permanently — the theft is part of the provenance. And the provenance is part of the work. Golden Bull, Liberté, and I Am Not Broken now carry, in their documentation, a record of institutional attention that predates any future sale, exhibition, or public showing. When they return, they return already authenticated. Not by a gallery. By the FBI.</p>
 
       <!-- Image slot -->
-      <div class="img-slot" style="aspect-ratio:16/9">
-        <div class="img-slot-label">
-          IMAGE SLOT — STOLEN WORKS DOCUMENTATION<br>
-          Reproductions of Golden Bull / Liberté / I Am Not Broken from archive<br>
-          Or: FASCINASIA Japan / Third Eye as the series anchor image<br>
-          FBI database screenshot (redacted for names) as documentary element
-        </div>
-      </div>
+      <figure style="margin:2.5rem 0">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1200/The-Root-of-all-E_DanielStanford_40x60_yydi59.jpg"
+             alt="The Root of All E — FASCINASIA — Daniel Stanford"
+             style="width:100%;height:auto;display:block;">
+        <figcaption style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);padding:0.75rem 0">
+          The Root of All E · 40×60 in · Mixed media original · Daniel Stanford · FASCINASIA
+        </figcaption>
+      </figure>
 
     </div>
 

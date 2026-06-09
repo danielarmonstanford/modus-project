@@ -113,10 +113,9 @@
     .hero{height:100vh;min-height:600px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) 5rem}
     .hero-bg{
       position:absolute;inset:0;z-index:0;
-      background:
-        radial-gradient(ellipse 60% 70% at 70% 30%, rgba(42,53,32,0.85) 0%, transparent 60%),
-        radial-gradient(ellipse 80% 50% at 20% 80%, rgba(10,14,8,0.9) 0%, transparent 55%),
-        linear-gradient(155deg, #050708 0%, #0A0F08 20%, #1A2215 45%, #2A3520 65%, #1A2215 80%, #050708 100%);
+      background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/Gabriela_Warrior_D80_1857_ybwbj7.jpg');
+      background-size:cover;
+      background-position:center top;
     }
     /* Fascia-inspired line pattern */
     .hero-fascia{
@@ -315,6 +314,23 @@
 <body>
 
 <!-- NAV -->
+
+  <!-- Side menu overlay + panel -->
+  <div class="side-overlay" id="sideOverlay"></div>
+  <div class="side-menu" id="sideMenu" role="dialog" aria-label="MODUS navigation">
+    <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+    <p class="side-menu-label">MODUS &middot; Navigate</p>
+    <nav class="side-menu-nav">
+      <a href="/atelier">Atelier</a>
+      <a href="/last-word">Last Word</a>
+      <a href="/decover">D&eacute;cover</a>
+      <a href="/terrain">Terrain</a>
+      <a href="/corps">Corps</a>
+      <a href="/objects">Objects</a>
+    </nav>
+    <p class="side-menu-issue">modus.gallery &middot; 2026</p>
+  </div>
+
 <nav class="nav">
   <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   <a class="nav-logo" href="/" aria-label="MODUS home">
@@ -425,15 +441,14 @@
         </div>
       </div>
 
-      <!-- Image slot: editorial body/movement photography -->
-      <div class="img-slot" style="aspect-ratio:16/9">
-        <div class="img-slot-label">
-          IMAGE — CORPS EDITORIAL<br>
-          Movement photography / bodywork in practice / fascia visualization<br>
-          Suggest: figure in natural light, structural integrity visible in posture<br>
-          Or: your Nosara fine art series — the body in landscape is exactly the visual language of CORPS
-        </div>
-      </div>
+      <figure style="margin:2.5rem 0">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/Gabriela_Spirit_D80_1635_hgaqua.jpg"
+             alt="Gabriela Spirit — Nosara Series — Daniel Stanford"
+             style="width:100%;height:auto;display:block;">
+        <figcaption style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);padding:0.75rem 0">
+          Gabriela · Spirit · Nosara, Costa Rica · Fine Art Photography · Daniel Stanford
+        </figcaption>
+      </figure>
 
     </div>
 
@@ -502,14 +517,14 @@
   </div>
 
   <!-- Image slot for Oscar Patel feature -->
-  <div class="img-slot" style="aspect-ratio:21/9">
-    <div class="img-slot-label">
-      PRACTITIONER IMAGE SLOT — Oscar Patel<br>
-      Request official press image via oscarpatel.net<br>
-      Or: editorial portrait — strong natural light, structural integrity in posture visible<br>
-      This is the MODUS FIGURES crossover — Oscar Patel belongs in both CORPS and FIGURES
-    </div>
-  </div>
+  <figure style="margin:0">
+    <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/Gabriela_sunset_D80_1302_ycde9c.jpg"
+         alt="Gabriela Sunset — Nosara Series — Daniel Stanford"
+         style="width:100%;height:auto;display:block;">
+    <figcaption style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);padding:0.75rem clamp(1.25rem,5vw,4rem)">
+      Gabriela · Sunset · Nosara, Costa Rica · Fine Art Photography · Daniel Stanford
+    </figcaption>
+  </figure>
 
 </section>
 

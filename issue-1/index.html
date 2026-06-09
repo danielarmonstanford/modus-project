@@ -459,8 +459,16 @@
 
   <!-- HEAD -->
   <header class="head">
-    <div class="head-left">Stanford Emporium</div>
-    <h1 class="wordmark">MODUS</h1>
+    <div class="head-left" style="display:flex;align-items:center;gap:0.75rem;">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" style="color:#EFE6D2;flex-shrink:0;">
+        <span></span><span></span><span></span>
+      </button>
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(239,230,210,0.4)">Stanford Emporium</span>
+    </div>
+    <a href="/" style="display:flex;align-items:center;justify-content:center;line-height:0;">
+      <img src="/assets/images/modus-logo-beige.png" alt="MODUS"
+           style="height:clamp(28px,5vw,44px);width:auto;opacity:0.9;">
+    </a>
     <div class="head-right"><span class="gold">$</span> Complimentary &nbsp;/&nbsp; Members Only</div>
   </header>
 
@@ -549,6 +557,22 @@
   </footer>
 
 </article>
+
+<script>
+  (function(){
+    var menuBtn   = document.getElementById('menuBtn');
+    var menuClose = document.getElementById('menuClose');
+    var sideMenu  = document.getElementById('sideMenu');
+    var overlay   = document.getElementById('sideOverlay');
+    if (!menuBtn) return;
+    function openMenu()  { sideMenu.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeMenu() { sideMenu.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; }
+    menuBtn.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
+  })();
+</script>
 
 </body>
 </html>

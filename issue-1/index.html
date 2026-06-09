@@ -21,15 +21,32 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:        #0E0C0B;
-    --bg-paper:  #14110F;
-    --ink:       #EFE6D2;
-    --ink-soft:  #BFB39A;
-    --ink-faint: #6E6555;
-    --oxblood:   #8C2A2A;
+    --oxblood:        #8C2A2A;
     --oxblood-bright: #B23A3A;
-    --gold:      #C9A84C;
-    --rule:      rgba(201,168,76,0.20);
+    --gold:           #C9A84C;
+    --transition:     background 0.4s ease, color 0.4s ease;
+  }
+
+  /* Dark mode (default) */
+  html[data-theme="dark"], html:not([data-theme="light"]) {
+    --bg:       #0E0C0B;
+    --bg-paper: #14110F;
+    --ink:      #EFE6D2;
+    --ink-soft: #BFB39A;
+    --ink-faint:#6E6555;
+    --rule:     rgba(201,168,76,0.20);
+    --logo-src: url('/assets/images/modus-logo-beige.png');
+  }
+
+  /* Light mode — cream paper, dark ink */
+  html[data-theme="light"] {
+    --bg:       #F5EDE0;
+    --bg-paper: #FFFAF3;
+    --ink:      #1A1410;
+    --ink-soft: #4A3F32;
+    --ink-faint:#9A8B7A;
+    --rule:     rgba(138,107,60,0.22);
+    --logo-src: url('/assets/images/modus-logo-black.png');
   }
 
   html, body {
@@ -37,7 +54,33 @@
     color: var(--ink);
     font-family: 'Cormorant Garamond', Georgia, serif;
     min-height: 100%;
+    transition: var(--transition);
   }
+
+  /* Logo theme switching */
+  .logo-beige { display: block; }
+  .logo-black  { display: none;  }
+  html[data-theme="light"] .logo-beige { display: none;  }
+  html[data-theme="light"] .logo-black  { display: block; }
+
+  /* Theme toggle button */
+  .theme-btn {
+    background: transparent;
+    border: 0.5px solid var(--rule);
+    border-radius: 20px;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    transition: color 0.3s, border-color 0.3s;
+    display: flex; align-items: center; gap: 5px;
+    min-height: 36px;
+  }
+  .theme-btn:hover { color: var(--ink); border-color: var(--gold); }
+  .theme-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
   body { overflow-x: hidden; }
 
@@ -467,10 +510,18 @@
       <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(239,230,210,0.4)">Stanford Emporium</span>
     </div>
     <a href="/" style="display:flex;align-items:center;justify-content:center;line-height:0;">
-      <img src="/assets/images/modus-logo-beige.png" alt="MODUS"
+      <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS"
+           style="height:clamp(28px,5vw,44px);width:auto;opacity:0.9;">
+      <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS"
            style="height:clamp(28px,5vw,44px);width:auto;opacity:0.9;">
     </a>
-    <div class="head-right"><span class="gold">$</span> Complimentary &nbsp;/&nbsp; Members Only</div>
+    <div class="head-right" style="display:flex;align-items:center;justify-content:flex-end;gap:1rem;">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+        <div class="theme-dot"></div>
+        <span id="themeLabel">Light</span>
+      </button>
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-faint)"><span class="gold">$</span> Complimentary</span>
+    </div>
   </header>
 
   <!-- ISSUE BAR -->
@@ -560,6 +611,22 @@
 </article>
 
 <script>
+  // Theme toggle
+  (function(){
+    var h   = document.documentElement;
+    var btn = document.getElementById('themeBtn');
+    var lbl = document.getElementById('themeLabel');
+    var key = 'modus-theme-v2';
+    function set(v) {
+      h.dataset.theme = v;
+      localStorage.setItem(key, v);
+      if (lbl) lbl.textContent = v === 'dark' ? 'Light' : 'Dark';
+    }
+    set(localStorage.getItem(key) || 'dark');
+    if (btn) btn.addEventListener('click', function(){ set(h.dataset.theme === 'dark' ? 'light' : 'dark'); });
+  })();
+
+  // Side menu
   (function(){
     var menuBtn   = document.getElementById('menuBtn');
     var menuClose = document.getElementById('menuClose');

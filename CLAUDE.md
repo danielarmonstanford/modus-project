@@ -74,6 +74,10 @@ All tokens live in `modus.css`. Always use CSS custom properties:
 ```css
 /* Colors */
 --cream: #F0E8D5          /* primary background */
+/* Fonts — always use tokens, never hard-code family names */
+--font-display:   'Lovine', Georgia, serif   /* MODUS Index scores, classification labels */
+--font-editorial: 'Cormorant Garamond', Georgia, serif  /* all body copy, headlines */
+--font-ui:        system-ui, sans-serif      /* nav, labels, metadata */
 --navy: #1B2340           /* primary text, dark surfaces */
 --gold: #D4A84B           /* accent: separators, highlights, CTAs */
 --mid: #8B7B60            /* secondary text, labels */
@@ -249,39 +253,112 @@ All tokens live in `modus.css`. Always use CSS custom properties:
 
 ## The MODUS Index Component — Copy This Exactly
 
+### Score classification table
+| Total | Classification |
+|-------|---------------|
+| 50 | MODUS CANON |
+| 48–49 | MODUS ICON |
+| 45–47 | MODUS SIGNIFICANT |
+| 40–44 | MODUS SELECT |
+| 35–39 | MODUS EMERGING |
+| Below 35 | MODUS OBSERVED |
+
+### Full component template
 ```html
 <div class="modus-index">
   <div class="modus-index-label">MODUS Index</div>
-  <div class="modus-index-score">42 <span>/ 50</span></div>
+  <div class="modus-index-classification">MODUS SIGNIFICANT</div>
+  <div class="modus-index-score">46 <span>/ 50</span></div>
+  <div class="modus-index-verdict">
+    One of the purest modern expressions of the driver's car — materially precise,
+    culturally resonant, and likely to retain collector relevance.
+  </div>
   <div class="modus-index-axes">
     <div class="modus-axis">
       <span class="modus-axis-name">Timelessness</span>
       <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:90%"></div></div>
       <span class="modus-axis-val">9</span>
+      <span class="modus-axis-desc">Measures whether the object can remain desirable beyond trend cycles.</span>
     </div>
     <div class="modus-axis">
       <span class="modus-axis-name">Material Integrity</span>
-      <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:80%"></div></div>
-      <span class="modus-axis-val">8</span>
+      <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:100%"></div></div>
+      <span class="modus-axis-val">10</span>
+      <span class="modus-axis-desc">Evaluates craftsmanship, materials, construction, and sensory quality.</span>
     </div>
     <div class="modus-axis">
       <span class="modus-axis-name">Aesthetic Authority</span>
       <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:90%"></div></div>
       <span class="modus-axis-val">9</span>
+      <span class="modus-axis-desc">Measures visual confidence, originality, and design language.</span>
     </div>
     <div class="modus-axis">
       <span class="modus-axis-name">Spatial Versatility</span>
-      <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:80%"></div></div>
-      <span class="modus-axis-val">8</span>
+      <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:90%"></div></div>
+      <span class="modus-axis-val">9</span>
+      <span class="modus-axis-desc">Measures how well the object belongs across elite environments, collections, homes, or cultural contexts.</span>
     </div>
     <div class="modus-axis">
       <span class="modus-axis-name">Investment Value</span>
-      <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:80%"></div></div>
-      <span class="modus-axis-val">8</span>
+      <div class="modus-axis-bar"><div class="modus-axis-fill" style="width:90%"></div></div>
+      <span class="modus-axis-val">9</span>
+      <span class="modus-axis-desc">Measures long-term desirability, scarcity, market confidence, and collector demand.</span>
     </div>
+  </div>
+  <div class="modus-index-why">
+    <div class="modus-index-why-label">Why It Scores</div>
+    <ul>
+      <li>Exceptional material and mechanical clarity</li>
+      <li>Strong cultural relevance among collectors</li>
+      <li>Limited-production desirability</li>
+      <li>High emotional and aesthetic purity</li>
+    </ul>
+  </div>
+  <div class="modus-index-view">
+    <div class="modus-index-view-label">MODUS View</div>
+    <p>
+      Write 2–4 sentences in refined luxury editorial tone.
+      Specific, authoritative, without superlatives.
+    </p>
   </div>
 </div>
 ```
+
+### JSON-LD for enhanced review (include on every page with MODUS Index)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "[Object name]",
+    "brand": { "@type": "Brand", "name": "[Brand]" },
+    "additionalProperty": [
+      {"@type":"PropertyValue","name":"MODUS Timelessness","value": 9},
+      {"@type":"PropertyValue","name":"MODUS Material Integrity","value": 10},
+      {"@type":"PropertyValue","name":"MODUS Aesthetic Authority","value": 9},
+      {"@type":"PropertyValue","name":"MODUS Spatial Versatility","value": 9},
+      {"@type":"PropertyValue","name":"MODUS Investment Value","value": 9},
+      {"@type":"PropertyValue","name":"MODUS Classification","value": "MODUS SIGNIFICANT"}
+    ]
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": 46,
+    "bestRating": 50,
+    "ratingExplanation": "MODUS Index score out of 50 — MODUS SIGNIFICANT"
+  },
+  "reviewBody": "[Short editorial verdict]",
+  "author": { "@type": "Organization", "name": "MODUS" },
+  "datePublished": "YYYY-MM-DD"
+}
+```
+
+### Notes
+- `show-desc` class on `.modus-index` reveals per-axis explanation lines
+- Classification and verdict are required; Why It Scores and MODUS View are optional but preferred
+- Lovine renders the score number and classification; Cormorant Garamond handles all body/verdict text
+- Axis bars: width% = (score / 10) × 100
 
 ---
 

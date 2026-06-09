@@ -4,6 +4,15 @@
    Last updated: 2026
    ============================================================ */
 
+/* ── Lovine Display Typeface ── */
+@font-face {
+  font-family: 'Lovine';
+  src: url('/assets/fonts/lovine.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ── Google Fonts ── */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 
@@ -29,6 +38,7 @@
   --border-gold:    rgba(212,168,75,0.40);
 
   /* Typography */
+  --font-display:   'Lovine', 'Cormorant Garamond', Georgia, serif;
   --font-editorial: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
   --font-ui:        system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 
@@ -186,23 +196,185 @@ body.grain::before {
 
 /* ── The MODUS Index Component ── */
 .modus-index {
-  border: 0.5px solid var(--border-med); border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-4); background: var(--surface);
-  display: inline-block;
+  border: 0.5px solid var(--border-med);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  background: var(--surface);
+  display: block;
+  max-width: 480px;
 }
+
+/* Header row: "MODUS INDEX" label */
+.modus-index-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-micro);
+  letter-spacing: var(--track-wider);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-2);
+}
+
+/* Classification tier — MODUS SIGNIFICANT etc. */
+.modus-index-classification {
+  font-family: var(--font-display);
+  font-size: clamp(13px, 1.5vw, 15px);
+  letter-spacing: var(--track-widest);
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 6px;
+}
+
+/* Score — Lovine for the number, Cormorant for /50 */
 .modus-index-score {
-  font-family: var(--font-editorial); font-size: 42px; font-weight: 300;
-  letter-spacing: var(--track-tight); color: var(--navy);
-  display: flex; align-items: baseline; gap: 4px;
+  font-family: var(--font-display);
+  font-size: clamp(52px, 8vw, 72px);
+  font-weight: normal;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--navy);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: var(--space-2);
 }
-.modus-index-score span { font-size: 18px; color: var(--mid); font-weight: 300; }
-.modus-index-label { font-family: var(--font-ui); font-size: var(--text-micro); letter-spacing: var(--track-wider); text-transform: uppercase; color: var(--gold); margin-bottom: var(--space-2); }
-.modus-index-axes { display: flex; flex-direction: column; gap: 8px; margin-top: var(--space-2); }
-.modus-axis { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 12px; }
-.modus-axis-name { font-family: var(--font-ui); font-size: 11px; color: var(--mid); letter-spacing: 0.05em; }
-.modus-axis-bar { width: 80px; height: 2px; background: var(--border-med); border-radius: 1px; overflow: hidden; }
-.modus-axis-fill { height: 100%; background: var(--gold); border-radius: 1px; }
-.modus-axis-val { font-family: var(--font-editorial); font-size: 15px; color: var(--navy); font-weight: 400; width: 20px; text-align: right; }
+.modus-index-score span {
+  font-family: var(--font-editorial);
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--mid);
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+/* Short editorial verdict line */
+.modus-index-verdict {
+  font-family: var(--font-editorial);
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.55;
+  border-top: 0.5px solid var(--border);
+  padding-top: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+/* Five-axis scoring */
+.modus-index-axes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--space-3);
+}
+.modus-axis {
+  display: grid;
+  grid-template-columns: 1fr 90px auto;
+  align-items: center;
+  gap: 12px;
+}
+.modus-axis-name {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.modus-axis-bar {
+  height: 1.5px;
+  background: var(--border-med);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.modus-axis-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--gold-dim), var(--gold));
+  border-radius: 1px;
+}
+.modus-axis-val {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  width: 22px;
+  text-align: right;
+}
+
+/* Optional axis explanation text */
+.modus-axis-desc {
+  grid-column: 1 / -1;
+  font-family: var(--font-editorial);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--mid);
+  opacity: 0.8;
+  line-height: 1.45;
+  padding-left: 2px;
+  display: none;
+}
+.modus-index.show-desc .modus-axis-desc { display: block; }
+
+/* "Why It Scores" section */
+.modus-index-why {
+  border-top: 0.5px solid var(--border);
+  padding-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.modus-index-why-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-micro);
+  letter-spacing: var(--track-wider);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-1);
+}
+.modus-index-why ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.modus-index-why ul li {
+  font-family: var(--font-editorial);
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: var(--navy);
+  line-height: 1.4;
+  padding-left: 14px;
+  position: relative;
+}
+.modus-index-why ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 11px;
+  top: 3px;
+}
+
+/* "MODUS View" editorial paragraph */
+.modus-index-view {
+  border-top: 0.5px solid var(--border);
+  padding-top: var(--space-2);
+}
+.modus-index-view-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-micro);
+  letter-spacing: var(--track-wider);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-1);
+}
+.modus-index-view p {
+  font-family: var(--font-editorial);
+  font-size: clamp(15px, 1.8vw, 17px);
+  line-height: 1.7;
+  color: var(--navy);
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .modus-index { padding: var(--space-3); }
+  .modus-axis { grid-template-columns: 1fr 60px auto; }
+  .modus-axis-name { font-size: 10px; }
+}
 
 /* ── Article card ── */
 .card {

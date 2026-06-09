@@ -369,12 +369,7 @@ body.grain::before {
   font-style: italic;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .modus-index { padding: var(--space-3); }
-  .modus-axis { grid-template-columns: 1fr 60px auto; }
-  .modus-axis-name { font-size: 10px; }
-}
+/* Mobile — Index component handled in global mobile block below */
 
 /* ── Article card ── */
 .card {
@@ -494,3 +489,147 @@ body.dept-frontier  .dept-accent { color: #7A9EB8; }
 .dark-surface .rule { background: var(--border-cream); }
 .dark-surface .footer { border-color: var(--border-cream); }
 .dark-surface .footer-brand, .dark-surface .footer-copy { color: rgba(240,232,213,0.5); }
+
+/* ============================================================
+   MOBILE OPTIMISATION
+   Intentionally designed for mobile — not a scaled-down desktop.
+   Breakpoint: 768px and below.
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* ── Base: minimum body text never smaller than 20px ── */
+  body { font-size: 20px; }
+
+  /* ── Display / Hero headlines ── */
+  .display {
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  /* ── Section headlines ── */
+  .headline {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── Body copy ── */
+  .body-text {
+    font-size: 1.25rem;
+    line-height: 1.9;
+    max-width: 100%;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+    line-height: 1.65;
+  }
+
+  /* ── Navigation ── */
+  .nav-link {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .nav { height: auto; min-height: 56px; padding: 0 var(--gutter); flex-wrap: wrap; gap: 0; }
+  .nav-links { gap: var(--space-3); }
+
+  /* ── Touch targets: all interactive elements ── */
+  a, button { min-height: 44px; display: inline-flex; align-items: center; }
+  /* Inline text links shouldn't force block layout */
+  .body-text a, .article p a { display: inline; min-height: unset; }
+
+  /* ── MODUS Index Component ── */
+  .modus-index {
+    padding: var(--space-3);
+    max-width: 100%;
+  }
+
+  /* Classification label */
+  .modus-index-classification {
+    font-size: 0.95rem;
+    letter-spacing: var(--track-wider);
+  }
+
+  /* Score numeral */
+  .modus-index-score {
+    font-size: 4rem;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-2);
+  }
+  .modus-index-score span {
+    font-size: 1.1rem;
+  }
+
+  /* Verdict */
+  .modus-index-verdict {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Axis rows */
+  .modus-axis {
+    grid-template-columns: 1fr 60px auto;
+    gap: 10px;
+  }
+
+  /* Category names */
+  .modus-axis-name {
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Metric values */
+  .modus-axis-val {
+    font-size: 0.9rem;
+  }
+
+  /* Why It Scores list */
+  .modus-index-why ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* MODUS View paragraph */
+  .modus-index-view p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  /* ── Article layout ── */
+  .article {
+    padding: var(--space-6) var(--gutter);
+  }
+  .article-headline {
+    font-size: clamp(2.2rem, 7vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  /* ── Cards ── */
+  .card-title {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  .card-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ── Terrain / Collection cards ── */
+  .terrain-card-name { font-size: 1.4rem; }
+  .terrain-card-desc { font-size: 1rem; }
+  .collection-card-title { font-size: 1.2rem; }
+
+  /* ── Footer ── */
+  .footer { flex-direction: column; gap: var(--space-2); }
+  .footer-brand { font-size: 1.2rem; }
+  .footer-copy { font-size: 0.75rem; }
+
+  /* ── Email capture ── */
+  .email-row input { width: 100%; font-size: 1rem; }
+
+}

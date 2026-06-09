@@ -48,6 +48,29 @@ Every subject reviewed by MODUS receives a score on five axes (each /10), summed
 - 35–39 — MODUS EMERGING
 - Below 35 — MODUS OBSERVED
 
+
+## Department Taxonomy — What Each Section Covers
+
+| Department | Meaning | Subject type |
+|---|---|---|
+| Objects | Things | Manufactured objects, collector items, vehicles, furniture, tools |
+| Corps | People | Practitioners, bodies, wellness methodologies, physical craft |
+| Terrain | Places | Hotels, destinations, architecture in context, landscape |
+| Décover | Discovery | Fine art, cultural finds, overlooked works, artist portfolios |
+| Atelier | Creative Process | Editorial, fashion, art direction, craft, the making of things |
+| Last Word | Editorial Opinion | Daniel Stanford's personal verdicts — no score, no hedging |
+
+## Per-Department Index Axes
+
+Each MODUS department adapts the five-axis system to its subject type:
+
+**Objects (Things):** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
+**Corps (People):** Timelessness · Physical Craft · Aesthetic Authority · Cultural Impact · Investment Value
+**Terrain (Places):** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
+**Décover (Discovery):** Timelessness · Material Integrity · Aesthetic Authority · Cultural Significance · Investment Value
+**Atelier (Creative Process):** Timelessness · Visual Authority · Editorial Intelligence · Talent Assembly · Commercial Impact
+**Last Word:** No score — editorial opinion only
+
 ## Current Issue — Issue No. 1, 2026
 
 **Cover:** Khalumia Fortune — FASCINASIA series — Daniel Stanford

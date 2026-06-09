@@ -251,6 +251,27 @@ All tokens live in `modus.css`. Always use CSS custom properties:
 
 ---
 
+
+## Department Taxonomy
+
+| Department | Meaning | Subject type |
+|---|---|---|
+| Objects | Things | Manufactured objects, collector items, vehicles, furniture |
+| Corps | People | Practitioners, bodies, wellness methodologies, physical craft |
+| Terrain | Places | Hotels, destinations, architecture in context, landscape |
+| Décover | Discovery | Fine art, cultural finds, overlooked works, artist portfolios |
+| Atelier | Creative Process | Editorial, fashion, art direction, craft, the making of things |
+| Last Word | Editorial Opinion | No score — Daniel Stanford's personal verdicts only |
+
+### Per-Department Index Axes
+
+**Objects:** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
+**Corps:** Timelessness · Physical Craft · Aesthetic Authority · Cultural Impact · Investment Value
+**Terrain:** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
+**Décover:** Timelessness · Material Integrity · Aesthetic Authority · Cultural Significance · Investment Value
+**Atelier:** Timelessness · Visual Authority · Editorial Intelligence · Talent Assembly · Commercial Impact
+**Last Word:** No score — editorial opinion only
+
 ## The MODUS Index Component — Copy This Exactly
 
 ### Score classification table

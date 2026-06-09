@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MODUS — Issue N°1 — Cover</title>
 <meta name="description" content="MODUS Issue Nº1, 2026 — Cover by Daniel Stanford featuring Khalumia from the FASCINASIA series. A taste intelligence publication.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://modus.gallery/issue-1">
 
 <meta property="og:type" content="article">
@@ -378,9 +379,81 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.001ms !important; }
   }
+
+  /* ── Hamburger + side menu ── */
+  .menu-btn { background:none; border:none; cursor:pointer; padding:10px 8px;
+    display:flex; flex-direction:column; gap:5px; min-height:44px;
+    justify-content:center; }
+  .menu-btn span { display:block; width:22px; height:1.5px;
+    background:currentColor; transition:transform 0.3s, opacity 0.3s; }
+  .side-menu { position:fixed; top:0; left:0; bottom:0; width:300px;
+    background:#0E0C0B; z-index:300; display:flex; flex-direction:column;
+    padding:5rem 2.5rem 3rem; transform:translateX(-100%);
+    transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    border-right:0.5px solid rgba(201,168,76,0.18); }
+  .side-menu.open { transform:translateX(0); }
+  .side-menu-close { position:absolute; top:1.25rem; right:1.25rem;
+    background:none; border:none; cursor:pointer; font-size:1.5rem;
+    color:rgba(239,230,210,0.5); min-height:44px; min-width:44px;
+    display:flex; align-items:center; justify-content:center; }
+  .side-menu-close:hover { color:#EFE6D2; }
+  .side-menu-label { font-family:'DM Mono',monospace; font-size:9px;
+    letter-spacing:0.32em; text-transform:uppercase; color:#C9A84C; margin-bottom:2rem; }
+  .side-menu-nav { display:flex; flex-direction:column; }
+  .side-menu-nav a { font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:clamp(1.5rem,3.5vw,2rem); font-weight:300; font-style:italic;
+    color:rgba(239,230,210,0.5); line-height:1.1; padding:0.65rem 0;
+    border-bottom:0.5px solid rgba(201,168,76,0.18);
+    text-decoration:none; transition:color 0.2s, padding-left 0.2s; }
+  .side-menu-nav a:first-child { border-top:0.5px solid rgba(201,168,76,0.18); }
+  .side-menu-nav a:hover { color:#EFE6D2; padding-left:0.5rem; }
+  .side-menu-issue { margin-top:auto; font-family:'DM Mono',monospace;
+    font-size:9px; letter-spacing:0.2em; text-transform:uppercase;
+    color:rgba(239,230,210,0.35); }
+  .side-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5);
+    z-index:299; opacity:0; pointer-events:none; transition:opacity 0.4s ease; }
+  .side-overlay.open { opacity:1; pointer-events:auto; }
+
 </style>
+  <!-- AI agent discoverability -->
+  <meta name="llms" content="https://modus.gallery/llms.txt">
+  <!-- Translation: page content may be translated by AI agents -->
+  <meta name="translation-enabled" content="true">
+  <!-- Multilingual hreflang -->
+  <link rel="alternate" hreflang="x-default" href="https://modus.gallery/">
+  <link rel="alternate" hreflang="en" href="https://modus.gallery/">
+  <!-- Open Graph locale -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="ar_SA">
 </head>
 <body>
+
+
+<!-- Side menu -->
+<div class="side-overlay" id="sideOverlay"></div>
+<div class="side-menu" id="sideMenu" role="dialog" aria-label="MODUS navigation">
+  <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+  <p class="side-menu-label">MODUS &middot; Navigate</p>
+  <nav class="side-menu-nav">
+    <a href="/atelier">Atelier</a>
+    <a href="/last-word">Last Word</a>
+    <a href="/decover">D&eacute;cover</a>
+    <a href="/terrain">Terrain</a>
+    <a href="/corps">Corps</a>
+    <a href="/objects">Objects</a>
+    <a href="/join">Join</a>
+    <a href="/methodology">Methodology</a>
+    <a href="/contents">Contents</a>
+    <a href="/issue-1">Issue No. 1</a>
+  </nav>
+  <p class="side-menu-issue">modus.gallery &middot; 2026</p>
+</div>
 
 <article class="cover">
 

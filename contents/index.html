@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MODUS — Contents</title>
 <meta name="description" content="MODUS — A taste intelligence publication. Contents of Issue No. 1.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://modus.gallery/contents">
+<meta property="og:image" content="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1200/Khalumia_Fortune_D80_6035_fxajcu.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -364,11 +366,49 @@
     *, *::before, *::after { animation-duration: 0.001ms !important; transition: none !important; }
   }
 </style>
+  <!-- AI agent discoverability -->
+  <meta name="llms" content="https://modus.gallery/llms.txt">
+  <!-- Translation: page content may be translated by AI agents -->
+  <meta name="translation-enabled" content="true">
+  <!-- Multilingual hreflang -->
+  <link rel="alternate" hreflang="x-default" href="https://modus.gallery/">
+  <link rel="alternate" hreflang="en" href="https://modus.gallery/">
+  <!-- Open Graph locale -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="ar_SA">
 </head>
 <body>
 
 <!-- TOP BAR -->
+
+<!-- Side menu -->
+<div class="side-overlay" id="sideOverlay"></div>
+<div class="side-menu" id="sideMenu" role="dialog" aria-label="MODUS navigation">
+  <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+  <p class="side-menu-label">MODUS &middot; Navigate</p>
+  <nav class="side-menu-nav">
+    <a href="/atelier">Atelier</a>
+    <a href="/last-word">Last Word</a>
+    <a href="/decover">D&eacute;cover</a>
+    <a href="/terrain">Terrain</a>
+    <a href="/corps">Corps</a>
+    <a href="/objects">Objects</a>
+    <a href="/join">Join</a>
+    <a href="/methodology">Methodology</a>
+    <a href="/contents">Contents</a>
+    <a href="/issue-1">Issue No. 1</a>
+  </nav>
+  <p class="side-menu-issue">modus.gallery &middot; 2026</p>
+</div>
+
 <nav class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" style="color:var(--ink)"><span></span><span></span><span></span></button>
   <span class="topbar-meta">Est. Montréal · MMXXVI</span>
   <span class="topbar-center">Taste Intelligence</span>
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -532,6 +572,23 @@
       root.setAttribute('data-theme', t);
       label.textContent = t === 'light' ? 'Dark' : 'Light';
     }
+  })();
+</script>
+
+
+<script>
+  (function(){
+    var menuBtn   = document.getElementById('menuBtn');
+    var menuClose = document.getElementById('menuClose');
+    var sideMenu  = document.getElementById('sideMenu');
+    var overlay   = document.getElementById('sideOverlay');
+    if (!menuBtn) return;
+    function openMenu()  { sideMenu.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeMenu() { sideMenu.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; }
+    menuBtn.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
   })();
 </script>
 

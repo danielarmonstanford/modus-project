@@ -153,25 +153,30 @@ body.grain::before {
 
 /* ── Typography ── */
 .display {
-  font-family: var(--font-editorial); font-size: var(--text-display);
-  font-weight: 300; letter-spacing: var(--track-tight); line-height: 0.92;
+  font-family: var(--font-editorial);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 300; letter-spacing: var(--track-tight); line-height: 0.95;
 }
 .headline {
-  font-family: var(--font-editorial); font-size: clamp(32px, 5vw, var(--text-head));
+  font-family: var(--font-editorial);
+  font-size: clamp(2rem, 5vw, var(--text-head));
   font-weight: 400; letter-spacing: var(--track-tight); line-height: 1.05;
 }
 .subhead {
-  font-family: var(--font-editorial); font-size: clamp(22px, 3vw, var(--text-subhead));
+  font-family: var(--font-editorial);
+  font-size: clamp(1.25rem, 3vw, var(--text-subhead));
   font-weight: 300; line-height: 1.2;
 }
 .intro {
-  font-family: var(--font-editorial); font-size: var(--text-intro);
-  font-weight: 300; font-style: italic; line-height: 1.55;
+  font-family: var(--font-editorial);
+  font-size: clamp(1.1rem, 2.5vw, var(--text-intro));
+  font-weight: 300; font-style: italic; line-height: 1.65;
   color: var(--mid);
 }
 .body-text {
-  font-family: var(--font-editorial); font-size: var(--text-body);
-  font-weight: 400; line-height: 1.75; color: var(--navy);
+  font-family: var(--font-editorial);
+  font-size: clamp(1.1rem, 2vw, var(--text-body));
+  font-weight: 400; line-height: 1.9; color: var(--navy);
 }
 .body-text p + p { margin-top: 1.4em; }
 .label {
@@ -217,7 +222,7 @@ body.grain::before {
 /* Classification tier — MODUS SIGNIFICANT etc. */
 .modus-index-classification {
   font-family: var(--font-display);
-  font-size: clamp(13px, 1.5vw, 15px);
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
   letter-spacing: var(--track-widest);
   text-transform: uppercase;
   color: var(--mid);
@@ -227,7 +232,7 @@ body.grain::before {
 /* Score — Lovine for the number, Cormorant for /50 */
 .modus-index-score {
   font-family: var(--font-display);
-  font-size: clamp(52px, 8vw, 72px);
+  font-size: clamp(4rem, 10vw, 4.5rem);
   font-weight: normal;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -239,7 +244,7 @@ body.grain::before {
 }
 .modus-index-score span {
   font-family: var(--font-editorial);
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--mid);
   font-weight: 300;
   letter-spacing: 0;
@@ -248,10 +253,10 @@ body.grain::before {
 /* Short editorial verdict line */
 .modus-index-verdict {
   font-family: var(--font-editorial);
-  font-size: clamp(14px, 1.6vw, 16px);
+  font-size: clamp(1rem, 1.6vw, 1.05rem);
   font-style: italic;
   color: var(--mid);
-  line-height: 1.55;
+  line-height: 1.6;
   border-top: 0.5px solid var(--border);
   padding-top: var(--space-2);
   margin-bottom: var(--space-3);
@@ -272,7 +277,7 @@ body.grain::before {
 }
 .modus-axis-name {
   font-family: var(--font-ui);
-  font-size: 11px;
+  font-size: clamp(0.6rem, 1.2vw, 0.7rem);
   color: var(--mid);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -290,7 +295,7 @@ body.grain::before {
 }
 .modus-axis-val {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   color: var(--navy);
   letter-spacing: -0.02em;
   width: 22px;
@@ -333,7 +338,7 @@ body.grain::before {
 }
 .modus-index-why ul li {
   font-family: var(--font-editorial);
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: clamp(1rem, 1.5vw, 1.05rem);
   color: var(--navy);
   line-height: 1.4;
   padding-left: 14px;
@@ -363,7 +368,7 @@ body.grain::before {
 }
 .modus-index-view p {
   font-family: var(--font-editorial);
-  font-size: clamp(15px, 1.8vw, 17px);
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
   line-height: 1.7;
   color: var(--navy);
   font-style: italic;
@@ -492,41 +497,42 @@ body.dept-frontier  .dept-accent { color: #7A9EB8; }
 
 /* ============================================================
    MOBILE OPTIMISATION
-   Intentionally designed for mobile — not a scaled-down desktop.
+   clamp() handles continuous fluid scaling above.
+   This block overrides only what clamp cannot reach:
+   - grid column layouts that must restructure
+   - minimum floors for label/micro text below 11px clamp min
+   - navigation and touch target sizing
+   - layout reflow (padding, flex direction)
    Breakpoint: 768px and below.
    ============================================================ */
 @media (max-width: 768px) {
 
-  /* ── Base: minimum body text never smaller than 20px ── */
-  body { font-size: 20px; }
+  /* ── Base: 20px root ensures no rem-based value drops below 20px ── */
+  html { font-size: 20px; }
 
-  /* ── Display / Hero headlines ── */
+  /* ── Display — tighter line-height and tracking on narrow screens ── */
   .display {
-    font-size: clamp(3rem, 8vw, 5rem);
     line-height: 0.95;
     letter-spacing: -0.03em;
   }
 
-  /* ── Section headlines ── */
+  /* ── Headline ── */
   .headline {
-    font-size: clamp(2.5rem, 7vw, 4rem);
     line-height: 1;
     letter-spacing: -0.02em;
   }
 
-  /* ── Body copy ── */
-  .body-text {
-    font-size: 1.25rem;
-    line-height: 1.9;
-    max-width: 100%;
-  }
-
-  .intro {
-    font-size: 1.2rem;
-    line-height: 1.65;
-  }
+  /* ── Body copy: always full width on mobile ── */
+  .body-text { max-width: 100%; }
 
   /* ── Navigation ── */
+  .nav {
+    height: auto;
+    min-height: 56px;
+    padding: 0 var(--gutter);
+    flex-wrap: wrap;
+  }
+  .nav-links { gap: var(--space-3); }
   .nav-link {
     font-size: 1rem;
     letter-spacing: 0.12em;
@@ -534,100 +540,65 @@ body.dept-frontier  .dept-accent { color: #7A9EB8; }
     display: flex;
     align-items: center;
   }
-  .nav { height: auto; min-height: 56px; padding: 0 var(--gutter); flex-wrap: wrap; gap: 0; }
-  .nav-links { gap: var(--space-3); }
 
-  /* ── Touch targets: all interactive elements ── */
+  /* ── Touch targets (44px Apple/WCAG minimum) ── */
   a, button { min-height: 44px; display: inline-flex; align-items: center; }
-  /* Inline text links shouldn't force block layout */
   .body-text a, .article p a { display: inline; min-height: unset; }
 
-  /* ── MODUS Index Component ── */
+  /* ── MODUS Index: layout and grid ── */
   .modus-index {
     padding: var(--space-3);
     max-width: 100%;
   }
 
-  /* Classification label */
+  /* Classification — clamp min (0.75rem) × 20px root = 15px, bump to 0.95rem = 19px */
   .modus-index-classification {
     font-size: 0.95rem;
     letter-spacing: var(--track-wider);
   }
 
-  /* Score numeral */
+  /* Score — held at exactly 4rem regardless of vw */
   .modus-index-score {
     font-size: 4rem;
-    letter-spacing: -0.03em;
-    margin-bottom: var(--space-2);
+    letter-spacing: -0.04em;
   }
-  .modus-index-score span {
-    font-size: 1.1rem;
-  }
+  .modus-index-score span { font-size: 1.1rem; }
 
-  /* Verdict */
-  .modus-index-verdict {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  /* Axis rows */
+  /* Axis grid: narrow bar column on small screens */
   .modus-axis {
-    grid-template-columns: 1fr 60px auto;
-    gap: 10px;
+    grid-template-columns: 1fr 52px auto;
+    gap: 8px;
   }
 
-  /* Category names */
+  /* Category names: clamp min is ~12px; raise floor to 0.95rem = 19px */
   .modus-axis-name {
     font-size: 0.95rem;
     letter-spacing: 0.04em;
   }
 
-  /* Metric values */
-  .modus-axis-val {
-    font-size: 0.9rem;
-  }
-
-  /* Why It Scores list */
-  .modus-index-why ul li {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* MODUS View paragraph */
-  .modus-index-view p {
-    font-size: 1rem;
-    line-height: 1.75;
-  }
+  /* Metric values: 0.9rem = 18px with 20px root */
+  .modus-axis-val { font-size: 0.9rem; }
 
   /* ── Article layout ── */
-  .article {
-    padding: var(--space-6) var(--gutter);
-  }
+  .article { padding: var(--space-6) var(--gutter); }
   .article-headline {
-    font-size: clamp(2.2rem, 7vw, 3.5rem);
+    font-size: clamp(2rem, 7vw, 3rem);
     line-height: 1;
     letter-spacing: -0.02em;
   }
 
   /* ── Cards ── */
-  .card-title {
-    font-size: 1.4rem;
-    line-height: 1.2;
-  }
-  .card-intro {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+  .card-title { font-size: 1.3rem; line-height: 1.2; }
+  .card-intro  { font-size: 1rem; line-height: 1.6; }
 
   /* ── Terrain / Collection cards ── */
-  .terrain-card-name { font-size: 1.4rem; }
-  .terrain-card-desc { font-size: 1rem; }
-  .collection-card-title { font-size: 1.2rem; }
+  .terrain-card-name      { font-size: 1.3rem; }
+  .terrain-card-desc      { font-size: 1rem; }
+  .collection-card-title  { font-size: 1.1rem; }
 
   /* ── Footer ── */
   .footer { flex-direction: column; gap: var(--space-2); }
-  .footer-brand { font-size: 1.2rem; }
-  .footer-copy { font-size: 0.75rem; }
+  .footer-brand { font-size: 1.1rem; }
 
   /* ── Email capture ── */
   .email-row input { width: 100%; font-size: 1rem; }

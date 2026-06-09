@@ -148,16 +148,7 @@
       object-fit:cover; object-position:center top;
       filter:brightness(0.72);
     }
-    .hero-placeholder {
-      position:absolute; inset:0;
-      background:linear-gradient(155deg,#08080E 0%,#12100A 30%,#1A1510 55%,#0E0C0A 80%,#07080C 100%);
-      display:flex; align-items:center; justify-content:center;
-    }
-    .hero-placeholder span {
-      font-family:var(--font-mono); font-size:8px; letter-spacing:0.24em;
-      color:rgba(240,232,213,0.1); text-transform:uppercase; text-align:center; line-height:2.4;
-    }
-    .cover-hero::before {
+.cover-hero::before {
       content:''; position:absolute; top:0; left:0; bottom:0; width:40px;
       background:linear-gradient(to right,var(--frame-bg),transparent); z-index:3;
     }

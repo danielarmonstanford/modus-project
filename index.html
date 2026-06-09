@@ -73,7 +73,9 @@
            background:var(--nav-bg); border-bottom:0.5px solid var(--border);
            backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
            transition:background var(--ease); }
-    .nav-logo { font-family:var(--font-ed); font-size:18px; letter-spacing:-0.02em; color:var(--text); }
+    .nav-logo { display:flex; align-items:center; line-height:0; }
+    .nav-logo img { height:28px; width:auto; display:block; transition:filter var(--ease),opacity var(--ease); }
+    [data-theme="light"] .nav-logo img { filter:brightness(0) saturate(100%) invert(13%) sepia(18%) saturate(1723%) hue-rotate(190deg) brightness(92%) contrast(91%); }
     .nav-links { display:flex; gap:2rem; align-items:center; }
     .nav-link { font-family:var(--font-ui); font-size:10px; letter-spacing:0.22em;
                 text-transform:uppercase; color:var(--text-dim); transition:color var(--ease); }
@@ -248,7 +250,12 @@
 <body>
 
   <nav class="nav">
-    <span class="nav-logo">MODUS</span>
+    <a class="nav-logo" href="/" aria-label="MODUS home">
+      <img
+        src="https://res.cloudinary.com/dno3ruh4b/image/upload/w_240,q_auto,f_auto/v1780796147/modus/logos/logo-beige.png"
+        alt="MODUS"
+      >
+    </a>
     <div class="nav-links">
       <a class="nav-link" href="/objects">Objects</a>
       <a class="nav-link" href="/corps">Corps</a>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MODUS — Contents</title>
+<meta name="description" content="MODUS — A taste intelligence publication. Contents of Issue No. 1.">
+<link rel="canonical" href="https://modus.gallery/contents">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ───── LIGHT MODE (default) ───── */
+  :root {
+    --bg:          #F4ECD8;
+    --bg-card:     #FFFAF0;
+    --ink:         #1A1A1A;
+    --ink-soft:    #4A453E;
+    --ink-faint:   #8B8378;
+    --gold:        #B8924A;
+    --gold-deep:   #8A6B2C;
+    --warm-rule:   rgba(138, 107, 44, 0.18);
+    --warm-shadow: rgba(58, 38, 14, 0.07);
+    --warm-hover:  rgba(184, 146, 74, 0.05);
+    --logo-filter: invert(15%) sepia(40%) saturate(800%) hue-rotate(15deg);
+  }
+
+  /* ───── DARK MODE ───── */
+  html[data-theme="dark"] {
+    --bg:          #14110D;
+    --bg-card:     #1E1B16;
+    --ink:         #F0E8D5;
+    --ink-soft:    #C7BFA8;
+    --ink-faint:   #7A7261;
+    --gold:        #D4A84B;
+    --gold-deep:   #E8C078;
+    --warm-rule:   rgba(212, 168, 75, 0.22);
+    --warm-shadow: rgba(0, 0, 0, 0.4);
+    --warm-hover:  rgba(212, 168, 75, 0.06);
+    --logo-filter: none;
+  }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    min-height: 100%;
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* ─── TOP BAR ─── */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 3rem;
+    border-bottom: 0.5px solid var(--warm-rule);
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+    transition: background 0.5s ease, border-color 0.5s ease;
+  }
+
+  .topbar-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .topbar-center {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ─── THEME TOGGLE ─── */
+  .theme-toggle {
+    background: transparent;
+    border: 0.5px solid var(--warm-rule);
+    color: var(--ink-soft);
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.5em 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ─── HERO MASTHEAD ─── */
+  .masthead {
+    text-align: center;
+    padding: 5rem 3rem 3rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.2s forwards;
+  }
+
+  .logo {
+    width: clamp(220px, 32vw, 380px);
+    height: auto;
+    filter: var(--logo-filter);
+    transition: filter 0.5s ease;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .masthead .rule {
+    width: 0;
+    height: 0.5px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 2rem auto 1.4rem;
+    animation: drawLine 1.4s ease 1s forwards;
+  }
+
+  .masthead .tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .masthead .tagline .sep { color: var(--gold); margin: 0 0.5em; }
+
+  .masthead .issue {
+    margin-top: 0.6rem;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── CONTENTS HEADER ─── */
+  .contents-header {
+    text-align: center;
+    padding: 3rem 3rem 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.4s forwards;
+  }
+
+  .contents-header h2 {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  /* ─── GALLERY GRID ─── */
+  .gallery {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 3rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.6s forwards;
+  }
+
+  .card {
+    background: var(--bg-card);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s ease;
+    box-shadow: 0 1px 0 var(--warm-shadow);
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 48px var(--warm-shadow);
+  }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg);
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16,1,0.3,1), filter 0.5s ease;
+    filter: saturate(0.92);
+  }
+
+  .card:hover .card-image img {
+    transform: scale(1.04);
+    filter: saturate(1.05);
+  }
+
+  /* Typographic card for sections without an image */
+  .card-typographic .card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--warm-rule);
+  }
+
+  .card-typographic .card-image-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 140px;
+    font-weight: 300;
+    color: var(--gold);
+    opacity: 0.4;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    transition: opacity 0.5s ease, color 0.5s ease;
+  }
+
+  .card:hover .card-image-letter {
+    opacity: 0.7;
+  }
+
+  .card-body {
+    padding: 1.6rem 1.5rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .card-eyebrow-bar {
+    width: 14px;
+    height: 0.5px;
+    background: var(--gold);
+  }
+
+  .card-title {
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 0.7rem;
+  }
+
+  .card-desc {
+    font-style: italic;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 1.2rem;
+    flex: 1;
+  }
+
+  .card-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.3s ease;
+  }
+
+  .card:hover .card-link {
+    color: var(--gold);
+  }
+
+  .card-link-arrow {
+    font-size: 14px;
+    transform: translateX(-4px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    color: var(--gold);
+  }
+
+  .card:hover .card-link-arrow {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    padding: 2rem 3rem;
+    border-top: 0.5px solid var(--warm-rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.5s ease;
+  }
+
+  .footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .footer .gold-dot { color: var(--gold); margin: 0 0.4em; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes drawLine {
+    from { width: 0; opacity: 0; }
+    to   { width: min(280px, 50vw); opacity: 1; }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 980px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); padding: 0 1.5rem 4rem; }
+    .topbar { padding: 1.2rem 1.5rem; }
+    .masthead { padding: 3rem 1.5rem 2rem; }
+    .contents-header { padding: 2rem 1.5rem 1.5rem; }
+    .footer { padding: 1.6rem 1.5rem; }
+  }
+
+  @media (max-width: 580px) {
+    .gallery { grid-template-columns: 1fr; gap: 1rem; }
+    .topbar-center { display: none; }
+    .topbar { padding: 1rem 1.2rem; }
+    .footer { flex-direction: column; gap: 0.5rem; padding: 1.4rem 1.2rem; }
+    .card-typographic .card-image-letter { font-size: 100px; }
+    .card-title { font-size: 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<nav class="topbar">
+  <span class="topbar-meta">Est. Montréal · MMXXVI</span>
+  <span class="topbar-center">Taste Intelligence</span>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span id="themeLabel">Dark</span>
+  </button>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <img
+    class="logo"
+    src="https://res.cloudinary.com/dno3ruh4b/image/upload/w_760,q_auto,f_auto/v1780796147/modus/logos/logo-beige.png"
+    alt="MODUS — Taste Intelligence Publication"
+  />
+  <div class="rule"></div>
+  <p class="tagline">
+    Design<span class="sep">·</span>Architecture<span class="sep">·</span>Art<span class="sep">·</span>Wellness<span class="sep">·</span>Travel
+  </p>
+  <p class="issue">Issue No. 1 — 2026</p>
+</header>
+
+<!-- CONTENTS HEADER -->
+<section class="contents-header">
+  <h2>Contents</h2>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="gallery">
+
+  <!-- 00 WELCOME -->
+  <a href="/" class="card">
+    <div class="card-image">
+      <img
+        src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/v1780969883/Hikka_Jungle-sunshower_D80_9067-Edit_plnwg8.jpg"
+        alt="Sri Lanka jungle sunshower — MODUS welcome image"
+        loading="eager"
+      />
+    </div>
+    <div class="card-body">
+      <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>00 · Intro</div>
+      <h3 class="card-title">Welcome</h3>
+      <p class="card-desc">The MODUS landing experience. A taste intelligence publication structured for the age of AI agents.</p>
+      <div class="card-link">Read <span class="card-link-arrow">→</span></div>
+    </div>
+  </a>
+
+  <!-- 01 TERRAIN -->
+  <a href="/terrain" class="card">
+    <div class="card-image">
+      <img
+        src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/v1780969952/D80_9701_q4bnng.jpg"
+        alt="Terrain — Sri Lanka landscape"
+        loading="lazy"
+      />
+    </div>
+    <div class="card-body">
+      <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>01 · Travel</div>
+      <h3 class="card-title">Terrain</h3>
+      <p class="card-desc">Place as disposition. Sri Lanka's south coast, Lençóis Maranhenses, Amanwella — the geographies that earn the MODUS Index.</p>
+      <div class="card-link">Read <span class="card-link-arrow">→</span></div>
+    </div>
+  </a>
+
+  <!-- 02 OBJECTS -->
+  <a href="/objects" class="card card-typographic">
+    <div class="card-image">
+      <div class="card-image-letter">O</div>
+    </div>
+    <div class="card-body">
+      <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>02 · Design</div>
+      <h3 class="card-title">Objects</h3>
+      <p class="card-desc">Porsche 911 S/T and the 2026 GT3 S/C. The only two cars on the index. The case for analog purity.</p>
+      <div class="card-link">Read <span class="card-link-arrow">→</span></div>
+    </div>
+  </a>
+
+  <!-- 03 CORPS -->
+  <a href="/corps" class="card card-typographic">
+    <div class="card-image">
+      <div class="card-image-letter">C</div>
+    </div>
+    <div class="card-body">
+      <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>03 · Wellness</div>
+      <h3 class="card-title">Corps</h3>
+      <p class="card-desc">Health is the ultimate luxury. Structural integration, fascia, protocol — what we put before everything else.</p>
+      <div class="card-link">Read <span class="card-link-arrow">→</span></div>
+    </div>
+  </a>
+
+  <!-- 04 DÉCOVER -->
+  <a href="/decover" class="card">
+    <div class="card-image">
+      <img
+        src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/v1780971276/FASCINASIA-Art-tiles_web-page_e3vljy.jpg"
+        alt="Décover — FASCINASIA art collection"
+        loading="lazy"
+      />
+    </div>
+    <div class="card-body">
+      <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>04 · Art</div>
+      <h3 class="card-title">Décover</h3>
+      <p class="card-desc">FASCINASIA. The collected works. The paintings still in Palm Beach. Theft as authentication of value.</p>
+      <div class="card-link">Read <span class="card-link-arrow">→</span></div>
+    </div>
+  </a>
+
+  <!-- 05 LAST WORD -->
+  <a href="/last-word" class="card card-typographic">
+    <div class="card-image">
+      <div class="card-image-letter">L</div>
+    </div>
+    <div class="card-body">
+      <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>05 · Verdicts</div>
+      <h3 class="card-title">Last Word</h3>
+      <p class="card-desc">A-List or Forgettable. No middle ground, no apology. The verdicts that define the Index.</p>
+      <div class="card-link">Read <span class="card-link-arrow">→</span></div>
+    </div>
+  </a>
+
+  <!-- 06 JOIN -->
+  <a href="/join" class="card card-typographic">
+    <div class="card-image">
+      <div class="card-image-letter">J</div>
+    </div>
+    <div class="card-body">
+      <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>06 · Membership</div>
+      <h3 class="card-title">Join</h3>
+      <p class="card-desc">MODUS is read by people who understand why these things matter. Membership tiers, application access.</p>
+      <div class="card-link">Apply <span class="card-link-arrow">→</span></div>
+    </div>
+  </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span>© MODUS MMXXVI<span class="gold-dot">·</span>Stanford Emporium Inc.</span>
+  <span>modus.gallery</span>
+</footer>
+
+<script>
+  // Theme toggle with persistence
+  (function() {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const label = document.getElementById('themeLabel');
+
+    // Initialize from localStorage or system pref
+    const stored = localStorage.getItem('modus-theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = stored || (systemDark ? 'dark' : 'light');
+    setTheme(initial);
+
+    btn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      setTheme(next);
+      localStorage.setItem('modus-theme', next);
+    });
+
+    function setTheme(t) {
+      root.setAttribute('data-theme', t);
+      label.textContent = t === 'light' ? 'Dark' : 'Light';
+    }
+  })();
+</script>
+
+</body>
+</html>

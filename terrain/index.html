@@ -32,7 +32,8 @@
       --surface-dark:  #0D0F1A;
       --border-light:  rgba(27,35,64,0.12);
       --border-dark:   rgba(240,232,213,0.12);
-      --font-ed:'Lovine','Cormorant Garamond', Georgia, serif;
+      --font-ed:'Cormorant Garamond', Georgia, serif;
+      --font-display:'Lovine','Cormorant Garamond',Georgia,serif;
       --font-ui: system-ui,-apple-system,sans-serif;
       --gutter: clamp(1.25rem, 4vw, 3rem);
       --nav-h:  64px;
@@ -93,7 +94,10 @@
       -webkit-backdrop-filter:blur(12px);
       transition:background var(--ease),border-color var(--ease);
     }
-    .nav-logo{display:flex;align-items:center;min-height:44px;line-height:0} [data-theme="dark"] .logo-black{display:none} [data-theme="light"] .logo-beige{display:none}
+    .nav-logo{display:flex;align-items:center;min-height:44px;line-height:0;gap:0}
+    .nav-logo img{height:28px;width:auto;display:block}
+    [data-theme="dark"] .logo-black{display:none}
+    [data-theme="light"] .logo-beige{display:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
     .nav-link{
       font-family:var(--font-ui);font-size:10px;letter-spacing:0.22em;
@@ -152,7 +156,7 @@
       opacity:0;animation:fadeU 1s ease 0.4s forwards;
     }
     .hero-title{
-      font-family:var(--font-ed);font-size:clamp(97px,9.5vw,208px);
+      font-family:var(--font-display);font-size:clamp(97px,9.5vw,208px);
       font-weight:300;letter-spacing:-0.03em;line-height:0.88;color:var(--white);
       opacity:0;animation:fadeU 1.2s ease 0.55s forwards;
     }

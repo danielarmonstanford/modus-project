@@ -429,30 +429,50 @@
     justify-content:center; }
   .menu-btn span { display:block; width:22px; height:1.5px;
     background:currentColor; transition:transform 0.3s, opacity 0.3s; }
+  /* Fixed nav bar */
+  .top-nav {
+    position: fixed; top: 0; left: 0; right: 0; height: 56px; z-index: 200;
+    display: none; /* desktop: hidden, cover head handles it */
+    align-items: center; justify-content: space-between;
+    padding: 0 1.25rem;
+    background: rgba(14,12,11,0.94);
+    border-bottom: 0.5px solid var(--rule);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  }
+  html[data-theme="light"] .top-nav { background: rgba(245,237,224,0.94); }
+  .top-nav .nav-logo { display:flex; align-items:center; line-height:0; }
+  .top-nav .nav-logo img { height: 26px; width: auto; }
+
+  @media (max-width: 768px) {
+    .top-nav { display: flex; }
+    .cover { padding-top: 56px; } /* push cover below fixed nav */
+    .head { display: none; }      /* hide the in-cover head on mobile */
+  }
+
   .side-menu { position:fixed; top:0; left:0; bottom:0; width:300px;
-    background:#0E0C0B; z-index:300; display:flex; flex-direction:column;
+    background:var(--bg); z-index:300; display:flex; flex-direction:column;
     padding:5rem 2.5rem 3rem; transform:translateX(-100%);
     transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
-    border-right:0.5px solid rgba(201,168,76,0.18); }
+    border-right:0.5px solid var(--rule); }
   .side-menu.open { transform:translateX(0); }
   .side-menu-close { position:absolute; top:1.25rem; right:1.25rem;
     background:none; border:none; cursor:pointer; font-size:1.5rem;
-    color:rgba(239,230,210,0.5); min-height:44px; min-width:44px;
+    color:var(--ink-faint); min-height:44px; min-width:44px;
     display:flex; align-items:center; justify-content:center; }
-  .side-menu-close:hover { color:#EFE6D2; }
+  .side-menu-close:hover { color:var(--ink); }
   .side-menu-label { font-family:'DM Mono',monospace; font-size:9px;
-    letter-spacing:0.32em; text-transform:uppercase; color:#C9A84C; margin-bottom:2rem; }
+    letter-spacing:0.32em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem; }
   .side-menu-nav { display:flex; flex-direction:column; }
   .side-menu-nav a { font-family:'Cormorant Garamond',Georgia,serif;
     font-size:clamp(1.5rem,3.5vw,2rem); font-weight:300; font-style:italic;
-    color:rgba(239,230,210,0.5); line-height:1.1; padding:0.65rem 0;
-    border-bottom:0.5px solid rgba(201,168,76,0.18);
+    color:var(--ink-soft); line-height:1.1; padding:0.65rem 0;
+    border-bottom:0.5px solid var(--rule);
     text-decoration:none; transition:color 0.2s, padding-left 0.2s; }
-  .side-menu-nav a:first-child { border-top:0.5px solid rgba(201,168,76,0.18); }
-  .side-menu-nav a:hover { color:#EFE6D2; padding-left:0.5rem; }
+  .side-menu-nav a:first-child { border-top:0.5px solid var(--rule); }
+  .side-menu-nav a:hover { color:var(--ink); padding-left:0.5rem; }
   .side-menu-issue { margin-top:auto; font-family:'DM Mono',monospace;
     font-size:9px; letter-spacing:0.2em; text-transform:uppercase;
-    color:rgba(239,230,210,0.35); }
+    color:var(--ink-faint); }
   .side-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5);
     z-index:299; opacity:0; pointer-events:none; transition:opacity 0.4s ease; }
   .side-overlay.open { opacity:1; pointer-events:auto; }
@@ -498,6 +518,23 @@
   </nav>
   <p class="side-menu-issue">modus.gallery &middot; 2026</p>
 </div>
+
+<!-- Fixed top nav — visible on mobile only -->
+<nav class="top-nav" aria-label="MODUS navigation">
+  <div style="display:flex;align-items:center;gap:0.75rem;">
+    <button class="menu-btn" id="menuBtnMobile" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="/" class="nav-logo" aria-label="MODUS home">
+      <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
+      <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
+    </a>
+  </div>
+  <button class="theme-btn" id="themeBtnMobile" aria-label="Toggle theme">
+    <div class="theme-dot"></div>
+    <span id="themeLabelMobile">Light</span>
+  </button>
+</nav>
 
 <article class="cover">
 
@@ -611,33 +648,32 @@
 </article>
 
 <script>
-  // Theme toggle
+  // Theme toggle — wires both desktop and mobile buttons
   (function(){
-    var h   = document.documentElement;
-    var btn = document.getElementById('themeBtn');
-    var lbl = document.getElementById('themeLabel');
-    var key = 'modus-theme-v2';
+    var h    = document.documentElement;
+    var key  = 'modus-theme-v2';
+    var btns = [document.getElementById('themeBtn'), document.getElementById('themeBtnMobile')];
+    var lbls = [document.getElementById('themeLabel'), document.getElementById('themeLabelMobile')];
     function set(v) {
       h.dataset.theme = v;
       localStorage.setItem(key, v);
-      if (lbl) lbl.textContent = v === 'dark' ? 'Light' : 'Dark';
+      lbls.forEach(function(l){ if(l) l.textContent = v === 'dark' ? 'Light' : 'Dark'; });
     }
     set(localStorage.getItem(key) || 'dark');
-    if (btn) btn.addEventListener('click', function(){ set(h.dataset.theme === 'dark' ? 'light' : 'dark'); });
+    btns.forEach(function(btn){ if(btn) btn.addEventListener('click', function(){ set(h.dataset.theme === 'dark' ? 'light' : 'dark'); }); });
   })();
 
-  // Side menu
+  // Side menu — wires both desktop and mobile hamburger buttons
   (function(){
-    var menuBtn   = document.getElementById('menuBtn');
+    var menuBtns  = [document.getElementById('menuBtn'), document.getElementById('menuBtnMobile')];
     var menuClose = document.getElementById('menuClose');
     var sideMenu  = document.getElementById('sideMenu');
     var overlay   = document.getElementById('sideOverlay');
-    if (!menuBtn) return;
     function openMenu()  { sideMenu.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
     function closeMenu() { sideMenu.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; }
-    menuBtn.addEventListener('click', openMenu);
-    menuClose.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
+    menuBtns.forEach(function(btn){ if(btn) btn.addEventListener('click', openMenu); });
+    if(menuClose) menuClose.addEventListener('click', closeMenu);
+    if(overlay)   overlay.addEventListener('click', closeMenu);
     document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
   })();
 </script>

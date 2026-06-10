@@ -120,6 +120,23 @@
   }
   </script>
 
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "The MODUS Index — Issue No. 1 Scores",
+    "description": "MODUS Index scores out of 50. Classifications: CANON 50, ICON 48-49, SIGNIFICANT 45-47.",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "Review", "name": "Objects — Porsche 911 S/T", "url": "https://modus.gallery/objects", "reviewRating": { "@type": "Rating", "ratingValue": "48", "bestRating": "50" }, "author": { "@type": "Person", "name": "Daniel Stanford" } } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "Review", "name": "Figures — Gabriella Warrior", "url": "https://modus.gallery/figures", "reviewRating": { "@type": "Rating", "ratingValue": "47", "bestRating": "50" }, "author": { "@type": "Person", "name": "Daniel Stanford" } } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "Review", "name": "Terrain — Amanwella Tangalle", "url": "https://modus.gallery/terrain", "reviewRating": { "@type": "Rating", "ratingValue": "46", "bestRating": "50" }, "author": { "@type": "Person", "name": "Daniel Stanford" } } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "Review", "name": "Space — Brasília", "url": "https://modus.gallery/space", "reviewRating": { "@type": "Rating", "ratingValue": "48", "bestRating": "50" }, "author": { "@type": "Person", "name": "Daniel Stanford" } } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "Review", "name": "Décover — FASCINASIA", "url": "https://modus.gallery/decover", "reviewRating": { "@type": "Rating", "ratingValue": "50", "bestRating": "50" }, "author": { "@type": "Person", "name": "Daniel Stanford" } } }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -386,10 +403,26 @@
       letter-spacing:0.1em;
       color:var(--text-dim); text-transform:uppercase; line-height:1.9;
     }
+    .dept-index {
+      margin-top:1.8rem; display:flex; align-items:baseline; gap:0.8rem;
+    }
+    .dept-index-label {
+      font-family:var(--font-mono); font-size:11px; letter-spacing:0.26em;
+      text-transform:uppercase; color:var(--gold);
+    }
+    .dept-index-class {
+      font-family:var(--font-mono); font-size:11px; letter-spacing:0.2em;
+      text-transform:uppercase; color:var(--text-dim);
+    }
     .dept-score {
-      margin-top:1.5rem; font-family:var(--font-mono);
-      font-size:clamp(2.5rem,5vw,5rem);
-      letter-spacing:0.1em; color:var(--gold); line-height:1;
+      margin-top:0.5rem; font-family:var(--font-ed);
+      font-style:italic; font-weight:300;
+      font-size:clamp(3rem,5.5vw,5.2rem);
+      letter-spacing:-0.01em; color:var(--gold); line-height:1;
+    }
+    .dept-score .of {
+      font-size:0.42em; color:var(--text-dim); font-style:italic;
+      letter-spacing:0.02em;
     }
 
     footer {
@@ -559,37 +592,50 @@
         <p class="dept-num">01 —</p>
         <p class="dept-name">Objects</p>
         <p class="dept-desc">Porsche 911 S/T · GT3 S/C World Premiere<br>The only manual. The first open-air GT3.</p>
-        <p class="dept-score">48 / 50</p>
+        <p class="dept-index"><span class="dept-index-label">MODUS Index</span><span class="dept-index-class">Icon</span></p>
+        <p class="dept-score" aria-label="MODUS Index score 48 out of 50" data-modus-index="48" data-modus-max="50" data-modus-class="ICON">48<span class="of"> / 50</span></p>
       </a>
       <a href="/figures" class="dept-card">
         <p class="dept-num">02 —</p>
         <p class="dept-name">Figures</p>
         <p class="dept-desc">Gabriella Warrior · Fine Art Editorial<br>The body as the first object.</p>
-        <p class="dept-score">47 / 50</p>
+        <p class="dept-index"><span class="dept-index-label">MODUS Index</span><span class="dept-index-class">Significant</span></p>
+        <p class="dept-score" aria-label="MODUS Index score 47 out of 50" data-modus-index="47" data-modus-max="50" data-modus-class="SIGNIFICANT">47<span class="of"> / 50</span></p>
       </a>
       <a href="/terrain" class="dept-card">
         <p class="dept-num">03 —</p>
         <p class="dept-name">Terrain</p>
         <p class="dept-desc">Amanwella Tangalle · Nosara Series<br>Sri Lanka. Costa Rica. Light and water.</p>
-        <p class="dept-score">46 / 50</p>
+        <p class="dept-index"><span class="dept-index-label">MODUS Index</span><span class="dept-index-class">Significant</span></p>
+        <p class="dept-score" aria-label="MODUS Index score 46 out of 50" data-modus-index="46" data-modus-max="50" data-modus-class="SIGNIFICANT">46<span class="of"> / 50</span></p>
+      </a>
+      <a href="/space" class="dept-card">
+        <p class="dept-num">04 —</p>
+        <p class="dept-name">Space</p>
+        <p class="dept-desc">Brasília · Architecture of Intent<br>Niemeyer. Costa. Exchanging Glances.</p>
+        <p class="dept-index"><span class="dept-index-label">MODUS Index</span><span class="dept-index-class">Icon</span></p>
+        <p class="dept-score" aria-label="MODUS Index score 48 out of 50" data-modus-index="48" data-modus-max="50" data-modus-class="ICON">48<span class="of"> / 50</span></p>
       </a>
       <a href="/decover" class="dept-card">
-        <p class="dept-num">04 —</p>
+        <p class="dept-num">05 —</p>
         <p class="dept-name">Décover</p>
         <p class="dept-desc">FASCINASIA · Mixed Media Originals<br>The only 50 / 50 in this issue.</p>
-        <p class="dept-score">50 / 50</p>
+        <p class="dept-index"><span class="dept-index-label">MODUS Index</span><span class="dept-index-class">Canon</span></p>
+        <p class="dept-score" aria-label="MODUS Index score 50 out of 50, the only perfect score" data-modus-index="50" data-modus-max="50" data-modus-class="CANON">50<span class="of"> / 50</span></p>
       </a>
       <a href="/last-word" class="dept-card">
-        <p class="dept-num">05 —</p>
+        <p class="dept-num">06 —</p>
         <p class="dept-name">The Last Word</p>
         <p class="dept-desc">A-List or Forgettable. No middle ground.<br>Daniel Stanford's unfiltered verdicts.</p>
-        <p class="dept-score">— / —</p>
+        <p class="dept-index"><span class="dept-index-label">Editorial Opinion</span><span class="dept-index-class">Unscored</span></p>
+        <p class="dept-score" aria-label="Editorial opinion section, not scored">A-List<span class="of"> or not</span></p>
       </a>
       <a href="/join" class="dept-card">
-        <p class="dept-num">06 —</p>
+        <p class="dept-num">07 —</p>
         <p class="dept-name">Join</p>
         <p class="dept-desc">Reader · Private · Black<br>Three tiers. The Black tier is invitation only.</p>
-        <p class="dept-score">2026 →</p>
+        <p class="dept-index"><span class="dept-index-label">Membership</span><span class="dept-index-class">Now Open</span></p>
+        <p class="dept-score" aria-label="Membership opens 2026">2026<span class="of"> →</span></p>
       </a>
     </div>
   </section>

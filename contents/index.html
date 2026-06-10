@@ -365,6 +365,34 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.001ms !important; transition: none !important; }
   }
+
+/* ── Side menu ── */
+.side-menu{position:fixed;top:0;left:0;bottom:0;width:300px;
+  background:var(--bg,#08070B);z-index:300;display:flex;flex-direction:column;
+  padding:5rem 2.5rem 3rem;transform:translateX(-100%);
+  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  border-right:0.5px solid var(--border,rgba(234,224,204,0.08));}
+.side-menu.open{transform:translateX(0);}
+.side-menu-close{position:absolute;top:1.25rem;right:1.25rem;
+  background:none;border:none;cursor:pointer;font-size:1.5rem;
+  color:var(--text-dim,rgba(234,224,204,0.4));min-height:44px;min-width:44px;
+  display:flex;align-items:center;justify-content:center;}
+.side-menu-close:hover{color:var(--text,#EAE0CC);}
+.side-menu-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.32em;
+  text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:2rem;}
+.side-menu-nav{display:flex;flex-direction:column;}
+.side-menu-nav a{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.5rem,3.5vw,2rem);
+  font-weight:300;font-style:italic;color:var(--text-dim,rgba(234,224,204,0.4));line-height:1.1;
+  padding:0.65rem 0;border-bottom:0.5px solid var(--border,rgba(234,224,204,0.08));
+  transition:color 0.2s,padding-left 0.2s;text-decoration:none;}
+.side-menu-nav a:first-child{border-top:0.5px solid var(--border,rgba(234,224,204,0.08));}
+.side-menu-nav a:hover{color:var(--text,#EAE0CC);padding-left:0.5rem;}
+.side-menu-issue{margin-top:auto;font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim,rgba(234,224,204,0.4));}
+.side-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);
+  z-index:299;opacity:0;pointer-events:none;transition:opacity 0.4s ease;}
+.side-overlay.open{opacity:1;pointer-events:auto;}
+@media(max-width:768px){.side-menu{width:100%;border-right:none;}}
 </style>
   <!-- AI agent discoverability -->
   <meta name="llms" content="https://modus.gallery/llms.txt">

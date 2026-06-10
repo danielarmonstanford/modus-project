@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MODUS Knowledge Layer — Taste Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0D0C0A;
+  --vellum: #F2EDDF;
+  --ash: #2A2924;
+  --warm-mid: #6B6456;
+  --gold: #B89A5A;
+  --gold-dim: #7A6435;
+  --gold-faint: rgba(184,154,90,0.10);
+  --red-line: #8B1A1A;
+  --surface: #131209;
+  --panel: #1A1912;
+  --panel-b: #1E1D15;
+  --border: rgba(184,154,90,0.15);
+  --border-mid: rgba(184,154,90,0.30);
+  --border-bright: rgba(184,154,90,0.55);
+  --text-body: #BEB4A0;
+  --text-dim: #6B6456;
+  --text-mute: #3A3628;
+  --floor-green: #4A7A4A;
+  --alert-red: #8B1A1A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospace;font-size:12px;line-height:1.7;min-height:100vh;overflow-x:hidden;}
+
+/* HEADER */
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:20px 36px 18px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(13,12,10,0.97);backdrop-filter:blur(10px);z-index:200;}
+.hdr-left{display:flex;align-items:baseline;gap:14px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;letter-spacing:0.14em;color:var(--vellum);}
+.logo em{color:var(--gold);font-style:italic;}
+.kl-badge{font-size:8px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:3px 9px;}
+.hdr-right{font-size:8.5px;letter-spacing:0.14em;color:var(--text-dim);text-align:right;line-height:1.8;}
+
+/* SEARCH */
+.search-zone{padding:28px 36px 22px;border-bottom:1px solid var(--border);}
+.s-label{font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:12px;display:block;}
+.s-row{display:flex;gap:10px;}
+.s-input{flex:1;background:var(--panel);border:1px solid var(--border);color:var(--vellum);font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;padding:12px 18px;outline:none;letter-spacing:0.04em;transition:border-color 0.2s;}
+.s-input::placeholder{color:var(--text-dim);font-style:italic;}
+.s-input:focus{border-color:var(--border-bright);}
+.s-btn{background:var(--gold);color:var(--ink);border:none;padding:0 24px;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+.s-btn:hover{background:var(--vellum);}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;}
+.pill{font-size:7.5px;letter-spacing:0.16em;text-transform:uppercase;padding:4px 12px;border:1px solid var(--border);color:var(--text-dim);cursor:pointer;background:transparent;font-family:'DM Mono',monospace;transition:all 0.18s;}
+.pill:hover,.pill.on{border-color:var(--gold);color:var(--gold);background:var(--gold-faint);}
+
+/* SECTION ARCHITECTURE BANNER */
+.arc-banner{display:flex;align-items:center;gap:0;border-bottom:1px solid var(--border);overflow-x:auto;}
+.arc-item{font-size:7.5px;letter-spacing:0.22em;text-transform:uppercase;padding:10px 20px;border-right:1px solid var(--border);color:var(--text-dim);white-space:nowrap;cursor:pointer;transition:all 0.18s;}
+.arc-item:hover,.arc-item.on{color:var(--gold);background:var(--gold-faint);}
+.arc-item .dot{width:4px;height:4px;border-radius:50%;background:var(--text-mute);display:inline-block;margin-right:8px;vertical-align:middle;}
+.arc-item.on .dot{background:var(--gold);}
+
+/* LAYOUT */
+.main{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 220px);}
+
+/* SIDEBAR */
+.sidebar{border-right:1px solid var(--border);overflow-y:auto;max-height:calc(100vh - 220px);position:sticky;top:160px;}
+.sb-sec{padding:0 20px 20px;border-bottom:1px solid var(--border);}
+.sb-sec:last-child{border-bottom:none;}
+.sb-label{font-size:7.5px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold-dim);padding:18px 0 10px;display:block;}
+.ecard{padding:11px 13px;border:1px solid transparent;cursor:pointer;transition:all 0.16s;margin-bottom:3px;position:relative;}
+.ecard:hover{border-color:var(--border);background:var(--panel);}
+.ecard.sel{border-color:var(--gold);background:var(--gold-faint);}
+.ecard.sel::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);}
+.e-name{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:400;color:var(--vellum);letter-spacing:0.02em;line-height:1.3;}
+.e-type{font-size:7px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);margin-top:2px;}
+.score-mini{display:flex;align-items:center;gap:6px;margin-top:5px;}
+.bar-wrap{flex:1;height:1.5px;background:rgba(255,255,255,0.06);}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));}
+.score-n{font-size:8.5px;color:var(--gold);min-width:32px;text-align:right;}
+.floor-dot{width:5px;height:5px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:middle;}
+.pub{background:var(--floor-green);}
+.alert{background:var(--alert-red);}
+
+/* DETAIL PANE */
+.detail{padding:32px 40px 60px;overflow-y:auto;max-height:calc(100vh - 220px);}
+
+/* EMPTY STATE */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:55vh;gap:14px;text-align:center;}
+.empty-glyph{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:rgba(184,154,90,0.08);letter-spacing:0.1em;}
+.empty-title{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-dim);font-weight:300;letter-spacing:0.06em;}
+.empty-sub{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-mute);}
+
+/* DETAIL COMPONENTS */
+.d-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+.d-title h1{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--vellum);letter-spacing:0.02em;line-height:1.05;}
+.d-title .dsub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--text-dim);margin-top:5px;letter-spacing:0.04em;}
+.d-title .badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;}
+.badge{font-size:7px;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--border);padding:2px 9px;color:var(--text-body);}
+.badge.gold{border-color:var(--gold-dim);color:var(--gold);}
+.score-block{text-align:right;min-width:110px;}
+.score-big{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:300;color:var(--gold);line-height:1;}
+.score-ceil{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text-mute);line-height:1;}
+.score-lbl{font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);margin-top:4px;}
+.pub-status{font-size:7px;letter-spacing:0.16em;text-transform:uppercase;margin-top:6px;display:flex;align-items:center;justify-content:flex-end;gap:5px;}
+
+/* INDEX CARD */
+.index-card{background:var(--panel);border:1px solid var(--border);margin-bottom:28px;}
+.ic-header{padding:14px 18px 10px;border-bottom:1px solid var(--border);}
+.ic-name{font-size:7.5px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold-dim);display:block;margin-bottom:2px;}
+.ic-sub{font-size:8px;letter-spacing:0.12em;color:var(--text-dim);}
+.ic-axes{padding:16px 18px;}
+.ax-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.ax-row:last-child{margin-bottom:0;}
+.ax-label{font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);min-width:110px;}
+.ax-bar{flex:1;height:1.5px;background:rgba(255,255,255,0.05);}
+.ax-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));}
+.ax-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--text-dim);flex:2;padding-left:8px;}
+.ax-num{font-size:9px;color:var(--gold);min-width:30px;text-align:right;}
+.ic-scorers{padding:12px 18px;border-top:1px solid var(--border);}
+.scorer-lbl{font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-mute);margin-bottom:8px;display:block;}
+.scorer{margin-bottom:6px;}
+.scorer-name{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--text-body);line-height:1.2;}
+.scorer-role{font-size:7px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mute);margin-top:1px;}
+
+/* META GRID */
+.meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:28px;}
+.meta-cell{background:var(--panel-b);padding:14px 16px;}
+.meta-key{font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:4px;display:block;}
+.meta-val{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--vellum);letter-spacing:0.02em;line-height:1.4;}
+
+/* DESCRIPTION */
+.d-desc{font-family:'Cormorant Garamond',serif;font-size:15.5px;line-height:1.8;color:var(--text-body);margin-bottom:28px;letter-spacing:0.02em;max-width:700px;}
+.d-desc p{margin-bottom:12px;}
+.d-desc p:last-child{margin-bottom:0;}
+
+/* RELATIONSHIP MAP */
+.rel-map{background:var(--panel);border:1px solid var(--border);padding:22px;margin-bottom:28px;}
+.rm-title{font-size:7.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:18px;}
+.rm-center{text-align:center;margin-bottom:16px;}
+.rm-node{display:inline-block;background:rgba(184,154,90,0.10);border:1px solid var(--gold);padding:7px 18px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);letter-spacing:0.04em;}
+.rm-spokes{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;}
+.spoke{font-size:7.5px;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border:1px solid var(--border);color:var(--text-body);}
+.spoke::before{content:'— ';color:var(--gold-dim);}
+
+/* REL SECTIONS */
+.rel-sec{margin-bottom:26px;}
+.rel-hdr{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.rel-hdr-line{flex:1;height:1px;background:var(--border);}
+.rel-title{font-size:7.5px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-dim);white-space:nowrap;}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:7px;}
+.rel-item{background:var(--panel);border:1px solid var(--border);padding:11px 13px;cursor:pointer;transition:border-color 0.18s;}
+.rel-item:hover{border-color:var(--border-mid);}
+.ri-name{font-family:'Cormorant Garamond',serif;font-size:13.5px;color:var(--vellum);letter-spacing:0.02em;line-height:1.3;}
+.ri-sub{font-size:7px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);margin-top:3px;}
+
+/* IMAGE GRID */
+.img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:28px;}
+.img-cell{overflow:hidden;height:120px;position:relative;}
+.img-cell img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.82);transition:filter 0.3s,transform 0.4s;}
+.img-cell:hover img{filter:brightness(1);transform:scale(1.04);}
+
+/* CITATIONS */
+.cite-list{display:flex;flex-direction:column;gap:9px;margin-bottom:28px;}
+.cite{display:flex;gap:14px;padding:13px 15px;background:var(--panel);border-left:2px solid var(--gold-dim);}
+.cite-n{font-size:9px;color:var(--gold);min-width:18px;}
+.cite-body{}
+.cite-text{font-family:'Cormorant Garamond',serif;font-size:13.5px;font-style:italic;color:var(--text-body);letter-spacing:0.02em;line-height:1.65;}
+.cite-src{font-size:7px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-mute);margin-top:4px;}
+
+/* SCHEMA */
+.schema-block{background:#080807;border:1px solid var(--border);padding:18px 20px;overflow-x:auto;margin-bottom:28px;}
+.schema-block pre{font-family:'DM Mono',monospace;font-size:10px;line-height:1.85;color:var(--text-dim);}
+.sk{color:#B89A5A;}.sv{color:#8A9E6A;}.sn{color:#7A8FA8;}
+
+/* PROVENANCE */
+.prov{background:var(--panel);border:1px solid var(--border);padding:16px 18px;margin-bottom:28px;}
+.prov-label{font-size:7px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;display:block;}
+.prov-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.ptag{font-size:7px;letter-spacing:0.12em;text-transform:uppercase;border:1px solid var(--border);padding:3px 9px;color:var(--text-dim);}
+.ptag.g{border-color:var(--gold-dim);color:var(--gold);}
+
+/* STATUS BAR */
+.status{position:fixed;bottom:0;left:0;right:0;background:rgba(13,12,10,0.97);border-top:1px solid var(--border);padding:7px 36px;display:flex;justify-content:space-between;align-items:center;z-index:200;backdrop-filter:blur(8px);}
+.st-item{font-size:7.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);}
+.st-item span{color:var(--gold);}
+.st-left{display:flex;gap:22px;}
+
+/* ANIM */
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.anim{animation:fadeUp 0.25s ease forwards;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:3px;height:3px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border);}
+::-webkit-scrollbar-thumb:hover{background:var(--gold-dim);}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-left">
+    <div class="logo">M<em>odus</em></div>
+    <div class="kl-badge">Knowledge Layer v2</div>
+  </div>
+  <div class="hdr-right">
+    TASTE INTELLIGENCE · ISSUE NO. 1 · 2026<br>
+    modus.gallery · Entity Graph · The MODUS Index
+  </div>
+</header>
+
+<div class="search-zone">
+  <span class="s-label">Search · Discover · Connect — The MODUS Index</span>
+  <div class="s-row">
+    <input class="s-input" id="searchInput" type="text" placeholder="Search — Brasília, Porsche 911 S/T, FASCINASIA, Gabriella Warrior, Amanwella…" />
+    <button class="s-btn" onclick="handleSearch()">Retrieve</button>
+  </div>
+  <div class="pills">
+    <button class="pill on" onclick="filterPill('all',this)">All</button>
+    <button class="pill" onclick="filterPill('object',this)">Objects</button>
+    <button class="pill" onclick="filterPill('figure',this)">Figures</button>
+    <button class="pill" onclick="filterPill('terrain',this)">Terrain</button>
+    <button class="pill" onclick="filterPill('space',this)">Space</button>
+    <button class="pill" onclick="filterPill('art',this)">Décover</button>
+    <button class="pill" onclick="filterPill('article',this)">Articles</button>
+  </div>
+</div>
+
+<div class="arc-banner" id="arcBanner">
+  <div class="arc-item on" onclick="filterPill('all',this)"><span class="dot"></span>All Entities</div>
+  <div class="arc-item" onclick="filterPill('object',this)"><span class="dot"></span>Objects</div>
+  <div class="arc-item" onclick="filterPill('figure',this)"><span class="dot"></span>Figures</div>
+  <div class="arc-item" onclick="filterPill('terrain',this)"><span class="dot"></span>Terrain</div>
+  <div class="arc-item" onclick="filterPill('space',this)"><span class="dot"></span>Space</div>
+  <div class="arc-item" onclick="filterPill('art',this)"><span class="dot"></span>Décover</div>
+  <div class="arc-item" onclick="filterPill('article',this)"><span class="dot"></span>Atelier</div>
+  <div class="arc-item" onclick="filterPill('article',this)"><span class="dot"></span>Last Word</div>
+</div>
+
+<div class="main">
+  <div class="sidebar" id="sidebar">
+
+    <div class="sb-sec" id="sb-object">
+      <span class="sb-label">Objects</span>
+      <div class="ecard" onclick="show('porsche911st')">
+        <div class="e-name">Porsche 911 S/T</div>
+        <div class="e-type">Automotive · Collector</div>
+        <div class="score-mini">
+          <div class="bar-wrap"><div class="bar-fill" style="width:92%"></div></div>
+          <span class="score-n">46 <span style="color:var(--text-mute);font-size:7px">/ 50</span></span>
+        </div>
+      </div>
+      <div class="ecard" onclick="show('porsche911gt3')">
+        <div class="e-name">Porsche 911 GT3 S/C</div>
+        <div class="e-type">Automotive · 2026</div>
+        <div class="score-mini">
+          <div class="bar-wrap"><div class="bar-fill" style="width:86%"></div></div>
+          <span class="score-n">43 <span style="color:var(--text-mute);font-size:7px">/ 50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-sec" id="sb-figure">
+      <span class="sb-label">Figures</span>
+      <div class="ecard" onclick="show('gabriellawarrior')">
+        <div class="e-name">Gabriella Warrior</div>
+        <div class="e-type">Cover Subject · Model</div>
+        <div class="score-mini">
+          <div class="bar-wrap"><div class="bar-fill" style="width:82%"></div></div>
+          <span class="score-n">41 <span style="color:var(--text-mute);font-size:7px">/ 50</span></span>
+        </div>
+      </div>
+      <div class="ecard" onclick="show('danielstanford')">
+        <div class="e-name">Daniel Stanford</div>
+        <div class="e-type">Editor-in-Chief · Creative Director</div>
+        <div class="score-mini">
+          <div class="bar-wrap"><div class="bar-fill" style="width:94%"></div></div>
+          <span class="score-n">47 <span style="color:var(--text-mute);font-size:7px">/ 50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-sec" id="sb-terrain">
+      <span class="sb-label">Terrain</span>
+      <div class="ecard" onclick="show('amanwella')">
+        <div class="e-name">Amanwella Tangalle</div>
+        <div class="e-type">Hospitality · Resort · Sri Lanka</div>
+        <div class="score-mini">
+          <div class="bar-wrap"><div class="bar-fill" style="width:90%"></div></div>
+          <span class="score-n">45 <span style="color:var(--text-mute);font-size:7px">/ 50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-sec" id="sb-space">
+      <span class="sb-label">Space</span>
+      <div class="ecard" onclick="show('brasilia')">
+        <div class="e-name">Brasília</div>
+        <div class="e-type">Architecture · UNESCO · Brazil</div>
+        <div class="score-mini">
+          <div class="bar-wrap"><div class="bar-fill" style="width:96%"></div></div>
+          <span class="score-n">48 <span style="color:var(--text-mute);font-size:7px">/ 50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-sec" id="sb-art">
+      <span class="sb-label">Décover</span>
+      <div class="ecard" onclick="show('fascinasia')">
+        <div class="e-name">FASCINASIA</div>
+        <div class="e-type">Fine Art · 50/50 Edition</div>
+        <div class="score-mini">
+          <div class="bar-wrap"><div class="bar-fill" style="width:99%"></div></div>
+          <span class="score-n">49.5 <span style="color:var(--text-mute);font-size:7px">/ 50</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-sec" id="sb-article">
+      <span class="sb-label">Articles</span>
+      <div class="ecard" onclick="show('coverstory')">
+        <div class="e-name">The Body. The Machine. The Room.</div>
+        <div class="e-type">Cover Story · Issue No.1</div>
+        <div class="score-mini">
+          <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
+          <span class="score-n">50 <span style="color:var(--text-mute);font-size:7px">/ 50</span></span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sidebar -->
+
+  <div class="detail" id="detailPane">
+    <div class="empty" id="emptyState">
+      <div class="empty-glyph">ꝏ</div>
+      <div class="empty-title">Select an entity to explore its knowledge graph</div>
+      <div class="empty-sub">The MODUS Index · 50-point scale · Five axes</div>
+    </div>
+    <div id="entityDetail" style="display:none"></div>
+  </div>
+</div>
+
+<div class="status">
+  <div class="st-left">
+    <div class="st-item">Entities <span id="ecnt">8</span></div>
+    <div class="st-item">Relations <span>56</span></div>
+    <div class="st-item">Index <span>The MODUS Index v2</span></div>
+    <div class="st-item">Floor <span>35 / 50</span></div>
+  </div>
+  <div class="st-item">Schema.org · JSON-LD · <span>Live</span></div>
+</div>
+
+<script>
+const CL = 'https://res.cloudinary.com/dno3ruh4b/image/upload/';
+
+const DATA = {
+
+  porsche911st: {
+    name:'Porsche 911 S/T', sub:'Homologation Superlative · 2023', section:'Objects',
+    schemaType:'Product', published:true,
+    score:46, axes:[
+      {label:'Rarity', score:10, max:10, note:'1,963 units · never repeated'},
+      {label:'Craft', score:10, max:10, note:'hand-assembled · motorsport derived'},
+      {label:'Sensory Truth', score:9, max:10, note:'delivers exactly what it threatens'},
+      {label:'Investment Value', score:8, max:10, note:'€285K honest for what exists'},
+      {label:'Timelessness', score:9, max:10, note:'defines the analogue era\'s final chapter'},
+    ],
+    scorers:[
+      {name:'Ramak Radmard', role:'Index Authority · Objects & Space · Lucridream'},
+    ],
+    classification:['Collector','Homologation Special','Analogue Purity','1,963 Units'],
+    meta:{
+      'Schema Type':'schema:Product','Section':'OBJECTS','Issue':'MODUS No. 1 · 2026',
+      'Engine':'4.0L NA Flat-Six','Power':'525 PS · 9,000 rpm',
+      'Production':'1,963 units','Price':'€ 285,000+','Transmission':'6-Speed Manual'
+    },
+    desc:`<p>The 911 S/T is Porsche's most focused road-legal 911 — a tribute to the original 1973 Carrera RSR. Built on the GT3 RS chassis with lightweight glass and carbon-shell bucket seats, it is the rarest analogue expression of a model that increasingly flirts with digital mediation.</p><p>MODUS classifies it under Analogue Purity: the deliberate removal of convenience in favour of sensation. 1,963 units — a number chosen for symbolism, not scarcity. The year the 911 debuted at Frankfurt.</p>`,
+    relationships:[
+      {name:'Porsche 911 GT3 S/C',sub:'Brand Sibling'},
+      {name:'Andreas Preuninger',sub:'GT Division Lead'},
+      {name:'Nürburgring Nordschleife',sub:'Development Ground'},
+      {name:'The Body. The Machine. The Room.',sub:'Thematic Link'},
+    ],
+    relObjects:[{name:'Ferrari 296 GTB',sub:'Segment · Analogue'},{name:'Singer DLS',sub:'Air-Cooled Axis'},{name:'Porsche 911 GT3 S/C',sub:'Brand Sibling'}],
+    relPeople:[{name:'Andreas Preuninger',sub:'GT Division Lead'},{name:'Ferdinand Piëch',sub:'Engineering Legacy'}],
+    relPlaces:[{name:'Nürburgring Nordschleife',sub:'Testing Ground'},{name:'Le Mans Circuit',sub:'Homologation Heritage'}],
+    relArticles:[{name:'The Body. The Machine. The Room.',sub:'MODUS No.1 Cover'},{name:'Objects of Controlled Violence',sub:'MODUS No.2 Forthcoming'}],
+    citations:[
+      {text:'The 911 S/T is the last of the truly analogue GT cars — a philosophy Porsche itself may never revisit.',src:'MODUS Editorial · Objects, 2026'},
+      {text:'1,963 units: not a production limit but a timestamp — the year the 911 arrived and the world changed.',src:'Ramak Radmard · Index Authority'},
+    ],
+    schema:`{\n  "@context": "https://schema.org",\n  "@type": "Product",\n  "name": "Porsche 911 S/T",\n  "brand": { "@type": "Brand", "name": "Porsche" },\n  "description": "Homologation-special 911, 1,963 units",\n  "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": "285000" },\n  "modusMeasure": { "total": 46, "ceiling": 50, "published": true }\n}`,
+    prov:['Photography · MODUS','OBJECTS · Issue No. 1','Porsche AG Press Release 2023','Nürburgring Development'],
+  },
+
+  porsche911gt3: {
+    name:'Porsche 911 GT3 S/C', sub:'Track-Bred Road Machine · 2026', section:'Objects',
+    schemaType:'Product', published:true,
+    score:43, axes:[
+      {label:'Rarity', score:8, max:10, note:'production open · not limited'},
+      {label:'Craft', score:10, max:10, note:'motorsport suspension · hand-finished'},
+      {label:'Sensory Truth', score:9, max:10, note:'delivers on the GT promise completely'},
+      {label:'Investment Value', score:8, max:10, note:'benchmark pricing for category'},
+      {label:'Timelessness', score:8, max:10, note:'benchmark of the NA era'},
+    ],
+    scorers:[{name:'Ramak Radmard', role:'Index Authority · Objects & Space · Lucridream'}],
+    classification:['Performance','Track-to-Road','2026 Launch','Naturally Aspirated'],
+    meta:{
+      'Schema Type':'schema:Product','Section':'OBJECTS','Issue':'MODUS No. 1 · 2026',
+      'Engine':'4.0L NA Flat-Six','Transmission':'7-Speed PDK / 6MT',
+      'Weight':'1,435 kg','Release':'2026'
+    },
+    desc:`<p>The 2026 GT3 S/C is Porsche Motorsport's philosophy applied to a road-homologated machine — a synthesis of circuit discipline and daily viability that the GT division has refined over two decades.</p><p>MODUS documents it at launch as the benchmark of the naturally aspirated era: a counterpoint to turbocharged supremacy now dominating the performance segment.</p>`,
+    relationships:[
+      {name:'Porsche 911 S/T',sub:'Brand Sibling'},
+      {name:'Andreas Preuninger',sub:'GT Division Lead'},
+      {name:'The Body. The Machine. The Room.',sub:'Thematic Link'},
+    ],
+    relObjects:[{name:'Porsche 911 S/T',sub:'Brand Sibling'},{name:'BMW M4 CSL',sub:'Segment Peer'},{name:'Mercedes-AMG GT Black',sub:'Segment Peer'}],
+    relPeople:[{name:'Andreas Preuninger',sub:'GT Division Lead'}],
+    relPlaces:[{name:'Nürburgring Nordschleife',sub:'Development Circuit'}],
+    relArticles:[{name:'The Body. The Machine. The Room.',sub:'MODUS No.1 Cover'}],
+    citations:[
+      {text:'The GT3 S/C marks Porsche\'s commitment to naturally aspirated purity even as rivals abandoned it wholesale.',src:'MODUS Objects · Issue No.1'},
+    ],
+    schema:`{\n  "@context": "https://schema.org",\n  "@type": "Product",\n  "name": "Porsche 911 GT3 S/C",\n  "brand": { "@type": "Brand", "name": "Porsche" },\n  "releaseDate": "2026",\n  "modusMeasure": { "total": 43, "ceiling": 50, "published": true }\n}`,
+    prov:['OBJECTS · Issue No. 1','Porsche GT Division','2026 Launch'],
+  },
+
+  gabriellawarrior: {
+    name:'Gabriella Warrior', sub:'Cover · Figures · MODUS No.1', section:'Figures',
+    schemaType:'Person', published:true,
+    score:41, axes:[
+      {label:'Rarity', score:9, max:10, note:'presence is singular · not produced'},
+      {label:'Craft', score:8, max:10, note:'physical discipline · total commitment'},
+      {label:'Sensory Truth', score:9, max:10, note:'image delivers what the cover promises'},
+      {label:'Investment Value', score:7, max:10, note:'editorial value over commercial rate'},
+      {label:'Timelessness', score:8, max:10, note:'image will not date — it is already past time'},
+    ],
+    scorers:[{name:'Marie-Christine Gilbert, PhD', role:'Index Authority · Fine Art & Figures · National Gallery of Canada'}],
+    classification:['Cover Subject','Figures Feature','Issue No.1','Luxury Fashion'],
+    meta:{
+      'Schema Type':'schema:Person','Section':'FIGURES','Issue':'MODUS No. 1 · 2026',
+      'Cover Role':'Issue No.1 Cover Subject','Aesthetic':'Power · Fluid · Sensory',
+      'Scored By':'Marie-Christine Gilbert PhD'
+    },
+    desc:`<p>Gabriella Warrior appears on the inaugural MODUS cover as the embodiment of the issue's central thesis: The Body. The Machine. The Room. Her image — gilded, submerged, painterly — becomes the visual argument for MODUS's position at the intersection of fashion, fine art, and sensory intelligence.</p><p>In renaming CORPS to FIGURES, MODUS establishes the section not as a body showcase but as an intelligence category — the people who define the moment by how they occupy it.</p>`,
+    relationships:[
+      {name:'MODUS No. 1',sub:'Cover Feature'},
+      {name:'FIGURES Section',sub:'Section Subject'},
+      {name:'The Body. The Machine. The Room.',sub:'Cover Thesis'},
+      {name:'Daniel Stanford',sub:'Creative Direction'},
+    ],
+    relObjects:[{name:'Porsche 911 S/T',sub:'Issue Peer — Objects'},{name:'FASCINASIA',sub:'Issue Peer — Décover'}],
+    relPeople:[{name:'Daniel Stanford',sub:'Creative Direction'},{name:'Marie-Christine Gilbert PhD',sub:'Index Authority'}],
+    relPlaces:[{name:'FASCINASIA Studio',sub:'Shoot Context'}],
+    relArticles:[{name:'FIGURES — Issue No.1',sub:'Feature Section'},{name:'The Body. The Machine. The Room.',sub:'Cover Story'}],
+    citations:[
+      {text:'The cover resists the fashion-editorial reflex of product placement, offering instead a body in relation to material presence.',src:'MODUS Editorial Note · Issue No.1'},
+      {text:'A figure — not a model, not a muse. A figure in the architectural sense: something that gives a space its scale.',src:'Marie-Christine Gilbert PhD · Index Authority'},
+    ],
+    schema:`{\n  "@context": "https://schema.org",\n  "@type": "Person",\n  "name": "Gabriella Warrior",\n  "description": "Cover subject, MODUS Issue No.1 · FIGURES",\n  "modusMeasure": { "total": 41, "ceiling": 50, "published": true }\n}`,
+    prov:['FIGURES · Issue No.1','Cover Photography','MODUS No.1 2026'],
+  },
+
+  danielstanford: {
+    name:'Daniel Stanford', sub:'Editor-in-Chief · Creative Director · MODUS', section:'Figures',
+    schemaType:'Person', published:true,
+    score:47, axes:[
+      {label:'Rarity', score:10, max:10, note:'25+ years · methodology is singular'},
+      {label:'Craft', score:10, max:10, note:'LIAA-awarded · institutional career'},
+      {label:'Sensory Truth', score:9, max:10, note:'the work delivers what the position claims'},
+      {label:'Investment Value', score:9, max:10, note:'Signature Brand System™ is proprietary IP'},
+      {label:'Timelessness', score:9, max:10, note:'Guess Love Story 2001 still referenced'},
+    ],
+    scorers:[{name:'Marie-Christine Gilbert, PhD', role:'Index Authority · Fine Art & Figures · National Gallery of Canada'}],
+    classification:['Editor-in-Chief','Art Director','Luxury Branding','Fine Art','Film EP'],
+    meta:{
+      'Schema Type':'schema:Person','Role':'Editor-in-Chief · EIC',
+      'Publication':'MODUS — modus.gallery','Studio':'Stanford Emporium Inc.',
+      'Location':'Saint-Henri · Montréal','Method':'Signature Brand System™',
+      'Experience':'25+ Years'
+    },
+    desc:`<p>Daniel Stanford is the founding Editor-in-Chief of MODUS and principal of Stanford Emporium Inc. With 25+ years in luxury fashion branding — including landmark LIAA-awarded campaigns for Guess — he operates simultaneously as Creative Director, Art Director, film Consulting Executive Producer, and fine art photographer.</p><p>His FASCINASIA painting series constitutes the DÉCOVER section of Issue No.1. His Signature Brand System™ is the proprietary methodology behind SEERKA, the brand intelligence council co-founded with Noan Major.</p>`,
+    relationships:[
+      {name:'MODUS',sub:'Publication Founder'},
+      {name:'SEERKA',sub:'Co-Founder'},
+      {name:'FASCINASIA',sub:'Fine Art Series'},
+      {name:'Noan Major',sub:'SEERKA Co-Founder'},
+    ],
+    relObjects:[{name:'FASCINASIA Series',sub:'Fine Art'},{name:'Guess Love Story 2001',sub:'Campaign Credit'}],
+    relPeople:[{name:'Noan Major',sub:'SEERKA Co-Founder'},{name:'Vania Desorayo',sub:'Partner'},{name:'Ramak Radmard',sub:'Index Authority · Objects'}],
+    relPlaces:[{name:'Saint-Henri · Montréal',sub:'Studio Base'},{name:'Da Nang · Miami · LA · Rio',sub:'Creative Territories'}],
+    relArticles:[{name:'DÉCOVER — FASCINASIA 50/50',sub:'MODUS No.1'},{name:'MODUS Editorial Statement',sub:'Issue No.1'}],
+    citations:[
+      {text:'Stanford\'s methodology treats brand not as identity system but as epistemology — how a company knows what it is.',src:'MODUS Internal Documentation'},
+      {text:'The Signature Brand System™ is not a process. It is a lens. Everything else follows from it.',src:'Daniel Stanford · EIC Note'},
+    ],
+    schema:`{\n  "@context": "https://schema.org",\n  "@type": "Person",\n  "name": "Daniel Stanford",\n  "jobTitle": "Editor-in-Chief",\n  "worksFor": { "@type": "Organization", "name": "MODUS", "url": "https://modus.gallery" },\n  "sameAs": "https://daniel-stanford.com",\n  "modusMeasure": { "total": 47, "ceiling": 50, "published": true }\n}`,
+    prov:['FIGURES · Issue No.1','Stanford Emporium Inc.','MODUS Founder','daniel-stanford.com'],
+  },
+
+  amanwella: {
+    name:'Amanwella Tangalle', sub:'Terrain · Sri Lanka · MODUS No.1', section:'Terrain',
+    schemaType:'LodgingBusiness', published:true,
+    score:45, axes:[
+      {label:'Rarity', score:9, max:10, note:'30 suites · one beach · unrepeatable site'},
+      {label:'Craft', score:9, max:10, note:'architecture disappears into landscape'},
+      {label:'Sensory Truth', score:10, max:10, note:'silence · ocean · zero resort theatre'},
+      {label:'Investment Value', score:8, max:10, note:'Aman pricing steep but honest delivery'},
+      {label:'Timelessness', score:9, max:10, note:'Zecha\'s philosophy does not date'},
+    ],
+    scorers:[{name:'Daniel Stanford', role:'Editor-in-Chief · MODUS · Direct Witness'}],
+    classification:['Aman Group','Ultra-Luxury','Ocean Retreat','Sri Lanka','TERRAIN Feature'],
+    meta:{
+      'Schema Type':'schema:LodgingBusiness','Section':'TERRAIN','Issue':'MODUS No. 1 · 2026',
+      'Location':'Tangalle · Sri Lanka','Brand':'Aman Resorts',
+      'Rooms':'30 suites','Setting':'Indian Ocean cliff'
+    },
+    desc:`<p>Amanwella sits on a crescent beach in Tangalle, southern Sri Lanka. MODUS features it in TERRAIN as an exemplar of architecture as climate intelligence — a resort that disappears into the topography rather than imposing on it.</p><p>Its thatched-roof pavilions, infinity pool at ocean-level, and absence of visible resort signage make it one of the most photographically silent luxury properties on earth. The 10/10 on Sensory Truth reflects one fact: it delivers silence. That is rarer than any amenity.</p>`,
+    relationships:[
+      {name:'Aman Resorts',sub:'Brand Parent'},
+      {name:'TERRAIN · MODUS No.1',sub:'Section Feature'},
+      {name:'Adrian Zecha',sub:'Aman Founder'},
+      {name:'The Body. The Machine. The Room.',sub:'Place-Body Link'},
+    ],
+    relObjects:[{name:'Aman Tokyo',sub:'Brand Sibling'},{name:'COMO Uma Canggu',sub:'Peer Property'}],
+    relPeople:[{name:'Adrian Zecha',sub:'Aman Founder'},{name:'Daniel Stanford',sub:'Direct Witness'}],
+    relPlaces:[{name:'Tangalle Beach',sub:'Site'},{name:'Mirissa Sri Lanka',sub:'Regional Peer'},{name:'Brasília',sub:'MODUS Space Peer'}],
+    relArticles:[{name:'TERRAIN — Amanwella',sub:'MODUS No.1 Feature'},{name:'Architecture as Surrender',sub:'TERRAIN Editorial'}],
+    citations:[
+      {text:'Amanwella practices a form of architectural restraint so total it approaches the spiritual — each pavilion seems placed rather than built.',src:'MODUS TERRAIN · Issue No.1'},
+      {text:'The luxury here is the absence of everything you didn\'t know you wanted to escape.',src:'Daniel Stanford · EIC · Direct Witness'},
+    ],
+    schema:`{\n  "@context": "https://schema.org",\n  "@type": "LodgingBusiness",\n  "name": "Amanwella",\n  "address": { "@type": "PostalAddress", "addressLocality": "Tangalle", "addressCountry": "LK" },\n  "brand": { "@type": "Brand", "name": "Aman Resorts" },\n  "modusMeasure": { "total": 45, "ceiling": 50, "published": true }\n}`,
+    prov:['TERRAIN · Issue No.1','Aman Resorts','Tangalle Sri Lanka','UNESCO Region'],
+  },
+
+  brasilia: {
+    name:'Brasília', sub:'Space · Architecture of Intent · Brazil · 1960', section:'Space',
+    schemaType:'Place', published:true,
+    score:48,
+    images:[
+      CL+'v1777553333/Stanford-Brasilia-32_full-Space_neqp0o.jpg',
+      CL+'v1777553335/Stanford-Brasilia-35_SPACE_muse_syzs7h.jpg',
+      CL+'v1777553336/Stanford-Brasilia-460chapelblue_m8cjh5.jpg',
+      CL+'v1777553334/Stanford-Brasilia-175TopChurch_qpgnah.jpg',
+      CL+'v1777553332/Stanford-Brasilia-161bell-tower_nb1wji.jpg',
+      CL+'v1777553333/Stanford-Brasilia-266_nbdtea.jpg',
+      CL+'v1777553383/Stanford-Brasilia-715Artmuse_ulusgc.jpg',
+      CL+'v1777553383/Stanford-Brasilia-1518sit-space_zbd9dl.jpg',
+      CL+'v1777553332/Stanford-Brasilia-21_square_bld_sqfx6o.jpg',
+    ],
+    axes:[
+      {label:'Rarity', score:10, max:10, note:'one city · no comparable precedent'},
+      {label:'Craft', score:10, max:10, note:'Niemeyer + Costa · total design intent'},
+      {label:'Sensory Truth', score:9, max:10, note:'overwhelming on arrival · demands patience'},
+      {label:'Investment Value', score:9, max:10, note:'infrastructure gap vs architectural ambition'},
+      {label:'Timelessness', score:10, max:10, note:'UNESCO WHS · the 20th century\'s purest statement'},
+    ],
+    scorers:[
+      {name:'Ramak Radmard', role:'Index Authority · Objects & Space · Lucridream'},
+      {name:'Daniel Stanford', role:'Editor-in-Chief · MODUS · Direct Witness · Exchanging Glances Series'},
+    ],
+    classification:['UNESCO World Heritage','Modernist Capital','Niemeyer','Lúcio Costa','Exchanging Glances'],
+    meta:{
+      'Schema Type':'schema:Place','Section':'SPACE','Issue':'MODUS No. 1 · 2026',
+      'Location':'Federal District · Brazil','Architects':'Oscar Niemeyer · Lúcio Costa',
+      'UNESCO Status':'World Heritage Site','Founded':'1960',
+      'Photography':'Daniel Stanford · Exchanging Glances'
+    },
+    desc:`<p>Brasília is the only city in the world conceived as a total work of art — a UNESCO World Heritage site not for what it contains but for what it <em>is</em>. Niemeyer's forms are not buildings that occupy space; they are arguments about what space can mean when freed from precedent.</p><p>Daniel Stanford photographed the capital in collaboration with the Brazil-Canada Chamber of Commerce as part of <em>Exchanging Glances</em>, a cultural exchange that toured Brasília, Ottawa, Toronto, the São Paulo Metro, and concluded at the MIS — Museu da Imagem e do Som. The images carry the full weight of that institutional provenance.</p><p>For SPACE, Brasília is the inaugural entry — not because it is luxurious in the conventional sense, but because it represents the highest possible ambition for designed environment: a city willed into existence from nothing, on deadline, that still stands as the most coherent architectural statement of the twentieth century.</p>`,
+    relationships:[
+      {name:'Oscar Niemeyer',sub:'Primary Architect'},
+      {name:'Lúcio Costa',sub:'Urban Planner'},
+      {name:'Exchanging Glances Series',sub:'Photography Provenance'},
+      {name:'MIS São Paulo',sub:'Exhibition Endpoint'},
+      {name:'Brazil-Canada Chamber',sub:'Cultural Partner'},
+    ],
+    relObjects:[{name:'Palácio da Alvorada',sub:'Niemeyer · Presidential'},{name:'Catedral de Brasília',sub:'Niemeyer · Sacred Space'},{name:'Congresso Nacional',sub:'Niemeyer · Civic'}],
+    relPeople:[{name:'Oscar Niemeyer',sub:'Architect'},{name:'Lúcio Costa',sub:'Planner'},{name:'Daniel Stanford',sub:'Photographer · Direct Witness'}],
+    relPlaces:[{name:'São Paulo MIS',sub:'Exhibition Endpoint'},{name:'Ottawa',sub:'Tour Stop'},{name:'Toronto',sub:'Tour Stop'},{name:'Amanwella',sub:'MODUS Terrain Peer'}],
+    relArticles:[{name:'SPACE — Brasília',sub:'MODUS No.1 Inaugural'},{name:'Architecture as Manifesto',sub:'SPACE Editorial'}],
+    citations:[
+      {text:'Brasília is not a city that grew — it is a city that was decided. That distinction is everything.',src:'MODUS SPACE · Issue No.1'},
+      {text:'When you stand inside the Catedral de Brasília at midday and the light comes through the stained glass in sheets, you understand that Niemeyer was not building — he was arguing.',src:'Daniel Stanford · Exchanging Glances · Direct Witness'},
+      {text:'Rarity at the urban scale: there is no other city on earth where every major civic structure was designed by a single architectural imagination.',src:'Ramak Radmard · Index Authority · Objects & Space'},
+    ],
+    schema:`{\n  "@context": "https://schema.org",\n  "@type": "Place",\n  "name": "Brasília",\n  "description": "UNESCO World Heritage modernist capital, designed by Oscar Niemeyer and Lúcio Costa",\n  "containedIn": { "@type": "Country", "name": "Brazil" },\n  "hasMap": "https://maps.google.com/?q=Brasilia",\n  "modusMeasure": { "total": 48, "ceiling": 50, "published": true },\n  "photo": "https://res.cloudinary.com/dno3ruh4b/image/upload/v1777553333/Stanford-Brasilia-32_full-Space_neqp0o.jpg"\n}`,
+    prov:['Photography · Daniel Stanford','Exchanging Glances Series','Brazil-Canada Chamber of Commerce','MIS São Paulo · Exhibition Endpoint','Toured Ottawa · Toronto · Brasília · SP Metro','UNESCO World Heritage Site','Oscar Niemeyer · Lúcio Costa','SPACE · Issue No. 1 · Inaugural Entry'],
+  },
+
+  fascinasia: {
+    name:'FASCINASIA', sub:'Fine Art Series · 50/50 Edition · Daniel Stanford', section:'Décover',
+    schemaType:'VisualArtwork', published:true,
+    score:49.5, axes:[
+      {label:'Rarity', score:10, max:10, note:'50 works · series capped · no open edition'},
+      {label:'Craft', score:10, max:10, note:'mixed-media · photographic + painterly mastery'},
+      {label:'Sensory Truth', score:10, max:10, note:'delivers disorientation as promised — does not resolve'},
+      {label:'Investment Value', score:9.5, max:10, note:'entry price honest with institutional context'},
+      {label:'Timelessness', score:10, max:10, note:'outside fashion cycles · closer to the Orientalist sublime'},
+    ],
+    scorers:[{name:'Marie-Christine Gilbert, PhD', role:'Index Authority · Fine Art · The National Gallery of Canada'}],
+    classification:['Fine Art','Mixed Media','Limited 50/50','DÉCOVER Feature','Institutional Provenance'],
+    meta:{
+      'Schema Type':'schema:VisualArtwork','Section':'DÉCOVER','Issue':'MODUS No. 1 · 2026',
+      'Edition':'50 of 50','Medium':'Mixed-media painting',
+      'Artist':'Daniel Stanford','Scored By':'Marie-Christine Gilbert PhD',
+      'Market':'Saatchi Art · Tappan Collective'
+    },
+    desc:`<p>FASCINASIA is Daniel Stanford's primary fine art painting series — mixed-media works occupying the territory between haute photography and painterly gesture. Issue No.1 features the series in DÉCOVER as a 50/50 limited edition, positioning the work at the intersection of MODUS's three axes: body, sensory object, and cultural place.</p><p>The 49.5 is deliberate. Marie-Christine Gilbert, Index Authority at the National Gallery of Canada, holds the half-point on Investment Value — not because the price is wrong, but because the series is not yet fully absorbed by the institutional market. That absorption is a matter of time, not merit.</p>`,
+    relationships:[
+      {name:'Daniel Stanford',sub:'Artist · Creator'},
+      {name:'DÉCOVER · MODUS No.1',sub:'Featured Section'},
+      {name:'Marie-Christine Gilbert PhD',sub:'Index Authority'},
+      {name:'Saatchi Art',sub:'Primary Market'},
+    ],
+    relObjects:[{name:'Nosara Nude Series',sub:'Sister Series'},{name:'Lençóis Maranhenses',sub:'Photography Series'}],
+    relPeople:[{name:'Daniel Stanford',sub:'Artist'},{name:'Marie-Christine Gilbert PhD',sub:'Index Authority · NGoC'}],
+    relPlaces:[{name:'Saint-Henri · Montréal',sub:'Studio'},{name:'Nosara · Costa Rica',sub:'Photo Series Origin'}],
+    relArticles:[{name:'DÉCOVER — FASCINASIA 50/50',sub:'MODUS No.1'},{name:'Painting as Taste Architecture',sub:'MODUS Editorial'}],
+    citations:[
+      {text:'FASCINASIA operates at the register where painting stops trying to represent and starts trying to seduce.',src:'MODUS DÉCOVER · Issue No.1'},
+      {text:'The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding is not doubt — it is patience.',src:'Marie-Christine Gilbert PhD · Index Authority · National Gallery of Canada'},
+    ],
+    schema:`{\n  "@context": "https://schema.org",\n  "@type": "VisualArtwork",\n  "name": "FASCINASIA",\n  "creator": { "@type": "Person", "name": "Daniel Stanford" },\n  "artMedium": "Mixed media",\n  "numberOfItems": "50",\n  "modusMeasure": { "total": 49.5, "ceiling": 50, "published": true }\n}`,
+    prov:['Fine Art · Daniel Stanford','50/50 Limited Edition','Scored by Marie-Christine Gilbert PhD','National Gallery of Canada','Saatchi Art · Tappan Collective','DÉCOVER · Issue No.1'],
+  },
+
+  coverstory: {
+    name:'The Body. The Machine. The Room.', sub:'Cover Story · MODUS Issue No.1 · 2026', section:'Article',
+    schemaType:'Article', published:true,
+    score:50, axes:[
+      {label:'Rarity', score:10, max:10, note:'inaugural issue · founding thesis'},
+      {label:'Craft', score:10, max:10, note:'tripartite structure · total editorial coherence'},
+      {label:'Sensory Truth', score:10, max:10, note:'every entity in the issue serves the thesis'},
+      {label:'Investment Value', score:10, max:10, note:'defines the publication\'s intelligence market'},
+      {label:'Timelessness', score:10, max:10, note:'the three nouns will not date'},
+    ],
+    scorers:[
+      {name:'Daniel Stanford', role:'Editor-in-Chief · MODUS'},
+      {name:'Marie-Christine Gilbert, PhD', role:'Index Authority · Fine Art · National Gallery of Canada'},
+    ],
+    classification:['Cover Story','Issue No.1','Taste Intelligence','Cultural Thesis','Flagship · 50/50'],
+    meta:{
+      'Schema Type':'schema:Article','Publication':'MODUS','Issue':'No. 1 · 2026',
+      'Type':'Cover Story · Inaugural','URL':'modus.gallery',
+      'Themes':'Body · Machine · Room','Index':'50 / 50'
+    },
+    desc:`<p>The inaugural cover story for MODUS Issue No.1 frames the publication's central intelligence axis: the body as the original precision instrument; the machine as its cultural extension; the room as the architecture of taste.</p><p>The three elements — Gabriella Warrior (FIGURES), the Porsche 911 S/T (OBJECTS), and Amanwella (TERRAIN) — form the tripartite thesis of MODUS. The 50/50 is not generosity. It is the only score that makes sense for a founding thesis that every subsequent issue will be measured against.</p>`,
+    relationships:[
+      {name:'Gabriella Warrior',sub:'FIGURES'},
+      {name:'Porsche 911 S/T',sub:'OBJECTS'},
+      {name:'Amanwella Tangalle',sub:'TERRAIN'},
+      {name:'FASCINASIA',sub:'DÉCOVER'},
+      {name:'Brasília',sub:'SPACE'},
+    ],
+    relObjects:[{name:'Porsche 911 S/T',sub:'OBJECTS Feature'},{name:'Porsche 911 GT3 S/C',sub:'OBJECTS Feature'}],
+    relPeople:[{name:'Gabriella Warrior',sub:'Cover Subject'},{name:'Daniel Stanford',sub:'Editor / AD'}],
+    relPlaces:[{name:'Amanwella Tangalle',sub:'TERRAIN Feature'},{name:'Brasília',sub:'SPACE Feature'}],
+    relArticles:[{name:'FIGURES — Gabriella Warrior',sub:'Issue Peer'},{name:'OBJECTS — 911 S/T',sub:'Issue Peer'},{name:'SPACE — Brasília',sub:'Issue Peer'}],
+    citations:[
+      {text:'MODUS is not a magazine about things. It is a magazine about the relationship between things and the people with the intelligence to choose them.',src:'MODUS Editorial Statement · Issue No.1'},
+      {text:'The three nouns — Body, Machine, Room — are not metaphors. They are the three dimensions of taste as a lived practice.',src:'Daniel Stanford · EIC Note'},
+      {text:'A founding thesis that scores 50/50 is not self-congratulation. It is a standard. Everything published after this must answer to it.',src:'Marie-Christine Gilbert PhD · Index Authority'},
+    ],
+    schema:`{\n  "@context": "https://schema.org",\n  "@type": "Article",\n  "headline": "The Body. The Machine. The Room.",\n  "isPartOf": { "@type": "PublicationIssue", "issueNumber": "1", "datePublished": "2026" },\n  "publisher": { "@type": "Organization", "name": "MODUS", "url": "https://modus.gallery" },\n  "modusMeasure": { "total": 50, "ceiling": 50, "published": true }\n}`,
+    prov:['Cover Story · Issue No.1','MODUS Editorial','Scored by Daniel Stanford & Marie-Christine Gilbert PhD','modus.gallery'],
+  },
+
+};
+
+function relSection(title, items){
+  if(!items||!items.length) return '';
+  return `<div class="rel-sec">
+    <div class="rel-hdr"><div class="rel-title">${title}</div><div class="rel-hdr-line"></div></div>
+    <div class="rel-grid">${items.map(i=>`<div class="rel-item"><div class="ri-name">${i.name}</div><div class="ri-sub">${i.sub}</div></div>`).join('')}</div>
+  </div>`;
+}
+
+function show(key){
+  const e = DATA[key];
+  if(!e) return;
+  document.querySelectorAll('.ecard').forEach(c=>c.classList.remove('sel'));
+  document.querySelectorAll('.ecard').forEach(c=>{
+    if(c.getAttribute('onclick')===`show('${key}')`) c.classList.add('sel');
+  });
+  document.getElementById('emptyState').style.display='none';
+  const d = document.getElementById('entityDetail');
+  d.style.display='block';
+
+  const classBadges = e.classification.map(c=>`<span class="badge">${c}</span>`).join('');
+  const metaHTML = Object.entries(e.meta).map(([k,v])=>`<div class="meta-cell"><span class="meta-key">${k}</span><div class="meta-val">${v}</div></div>`).join('');
+  const axesHTML = e.axes.map(a=>`<div class="ax-row">
+    <span class="ax-label">${a.label}</span>
+    <div class="ax-bar"><div class="ax-fill" style="width:${(a.score/a.max)*100}%"></div></div>
+    <span class="ax-note">${a.note}</span>
+    <span class="ax-num">${a.score}</span>
+  </div>`).join('');
+  const scorersHTML = e.scorers.map(s=>`<div class="scorer"><div class="scorer-name">${s.name}</div><div class="scorer-role">${s.role}</div></div>`).join('<div style="height:6px"></div>');
+  const citesHTML = e.citations.map((c,i)=>`<div class="cite"><div class="cite-n">0${i+1}</div><div class="cite-body"><div class="cite-text">${c.text}</div><div class="cite-src">${c.src}</div></div></div>`).join('');
+  const spokesHTML = e.relationships.map(r=>`<div class="spoke">${r.name}</div>`).join('');
+  const provHTML = e.prov.map((p,i)=>`<span class="ptag${i<2?' g':''}">${p}</span>`).join('');
+  const pubColor = e.published ? 'var(--floor-green)' : 'var(--alert-red)';
+  const pubText = e.published ? 'Published · Meets MODUS Floor 35/50' : 'Withheld · Below MODUS Floor';
+  const schemaColored = e.schema
+    .replace(/"([^"]+)":/g,'<span class="sk">"$1"</span>:')
+    .replace(/: "([^"]+)"/g,': <span class="sv">"$1"</span>')
+    .replace(/: (\d+\.?\d*)/g,': <span class="sn">$1</span>');
+  const imgHTML = e.images ? `<div class="img-grid">${e.images.map(u=>`<div class="img-cell"><img src="${u}" loading="lazy" alt="MODUS image" /></div>`).join('')}</div>` : '';
+
+  d.innerHTML = `
+    <div class="d-header">
+      <div class="d-title">
+        <h1>${e.name}</h1>
+        <div class="dsub">${e.sub}</div>
+        <div class="badges">
+          <span class="badge gold">${e.section}</span>
+          <span class="badge">schema:${e.schemaType}</span>
+          ${classBadges}
+        </div>
+      </div>
+      <div class="score-block">
+        <div><span class="score-big">${e.score}</span><span class="score-ceil"> / 50</span></div>
+        <div class="score-lbl">The MODUS Index</div>
+        <div class="pub-status"><span class="floor-dot ${e.published?'pub':'alert'}"></span><span style="color:${pubColor};font-size:7px;letter-spacing:.14em;text-transform:uppercase;">${pubText}</span></div>
+      </div>
+    </div>
+
+    <div class="d-desc">${e.desc}</div>
+
+    <div class="index-card">
+      <div class="ic-header">
+        <span class="ic-name">The MODUS Index</span>
+        <span class="ic-sub">Five Axes · 10 points each · 50 ceiling · Editorial floor 35</span>
+      </div>
+      <div class="ic-axes">${axesHTML}</div>
+      <div class="ic-scorers">
+        <span class="scorer-lbl">Scored by</span>
+        ${scorersHTML}
+      </div>
+    </div>
+
+    <div class="meta-grid">${metaHTML}</div>
+
+    ${imgHTML}
+
+    <div class="rel-map">
+      <div class="rm-title">Relationship Map</div>
+      <div class="rm-center"><div class="rm-node">${e.name}</div></div>
+      <div class="rm-spokes">${spokesHTML}</div>
+    </div>
+
+    ${relSection('Related Objects', e.relObjects)}
+    ${relSection('Related People', e.relPeople)}
+    ${relSection('Related Places', e.relPlaces)}
+    ${relSection('Related Articles', e.relArticles)}
+
+    <div class="rel-sec">
+      <div class="rel-hdr"><div class="rel-title">Citations</div><div class="rel-hdr-line"></div></div>
+      <div class="cite-list">${citesHTML}</div>
+    </div>
+
+    <div class="prov">
+      <span class="prov-label">Provenance</span>
+      <div class="prov-tags">${provHTML}</div>
+    </div>
+
+    <div class="rel-sec">
+      <div class="rel-hdr"><div class="rel-title">Schema.org JSON-LD</div><div class="rel-hdr-line"></div></div>
+      <div class="schema-block"><pre>${schemaColored}</pre></div>
+    </div>
+  `;
+  void d.offsetWidth; d.className='anim';
+}
+
+function handleSearch(){
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  if(!q) return;
+  const match = Object.entries(DATA).find(([k,e])=>
+    e.name.toLowerCase().includes(q)||e.sub.toLowerCase().includes(q)||(e.desc&&e.desc.toLowerCase().includes(q))
+  );
+  if(match) show(match[0]);
+}
+
+document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter') handleSearch();});
+
+function filterPill(type, btn){
+  document.querySelectorAll('.pill,.arc-item').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll(`.pill,.arc-item`).forEach(p=>{
+    if(p.getAttribute('onclick')&&p.getAttribute('onclick').includes(`'${type}'`)) p.classList.add('on');
+  });
+}
+
+setTimeout(()=>show('coverstory'), 300);
+</script>
+</body>
+</html>

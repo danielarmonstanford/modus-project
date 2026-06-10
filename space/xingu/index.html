@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Xingu — Tetro Arquitetura · MODUS Space</title>
+  <meta name="description" content="MODUS Space: The definitive review of Casa Xingu by Tetro Arquitetura, Nova Lima, Minas Gerais. Architecture as argument. Score: 50/50.">
+  <meta name="author" content="Daniel Stanford">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://modus.gallery/space/xingu">
+  <meta property="og:title" content="Casa Xingu — The House That Earns Its Score · MODUS Space">
+  <meta property="og:description" content="Tetro Arquitetura built a house that does not ask for your attention. It commands it. MODUS scores it 50/50 and explains why Wallpaper missed the point entirely.">
+  <meta property="og:url" content="https://modus.gallery/space/xingu">
+  <meta property="og:site_name" content="MODUS">
+  <meta name="theme-color" content="#06080C" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F2EDE3" media="(prefers-color-scheme: light)">
+  <meta name="llms" content="https://modus.gallery/llms.txt">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "name": "Casa Xingu — Tetro Arquitetura",
+    "reviewBody": "The definitive MODUS Space review of Casa Xingu by Tetro Arquitetura, Nova Lima, Minas Gerais. Architecture as argument. MODUS Index score: 50/50.",
+    "author": {"@type": "Person", "name": "Daniel Stanford"},
+    "datePublished": "2026-06-10",
+    "publisher": {"@type": "Organization", "name": "MODUS", "url": "https://modus.gallery"},
+    "itemReviewed": {
+      "@type": "LandmarksOrHistoricalBuildings",
+      "name": "Casa Xingu",
+      "description": "Private residence by Tetro Arquitetura, Nova Lima, Minas Gerais, Brazil",
+      "address": {"@type": "PostalAddress", "addressLocality": "Nova Lima", "addressRegion": "Minas Gerais", "addressCountry": "BR"}
+    },
+    "reviewRating": {"@type": "Rating", "ratingValue": "50", "bestRating": "50", "worstRating": "0"}
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold:#C9A84C; --white:#FFF; --black:#06080C;
+      --terrain-stone:#8B7355; --terrain-forest:#2D4A2A; --terrain-sky:#4A6B7A;
+      --font-ed:'Cormorant Garamond',Georgia,serif;
+      --font-mono:'DM Mono','Courier New',monospace;
+      --font-ui:system-ui,-apple-system,sans-serif;
+      --gutter:clamp(1.25rem,5vw,4rem);
+      --nav-h:64px;
+      --ease:0.25s ease;
+    }
+    [data-theme="dark"] {
+      --bg:#06080C; --bg2:#0C0F14; --bg3:#121620;
+      --text:#EDE6D5; --text-dim:rgba(237,230,213,0.75);
+      --border:rgba(237,230,213,0.08); --border-warm:rgba(201,168,76,0.22);
+      --nav-bg:rgba(6,8,12,0.94);
+    }
+    [data-theme="light"] {
+      --bg:#F2EDE3; --bg2:#E8E1D4; --bg3:#DDD5C5;
+      --text:#1A1610; --text-dim:rgba(26,22,16,0.78);
+      --border:rgba(26,22,16,0.10); --border-warm:rgba(201,168,76,0.35);
+      --nav-bg:rgba(242,237,227,0.94);
+    }
+    [data-theme="dark"] .logo-dark{display:block!important}
+    [data-theme="dark"] .logo-light{display:none!important}
+    [data-theme="light"] .logo-dark{display:none!important}
+    [data-theme="light"] .logo-light{display:block!important}
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{font-family:var(--font-ed);background:var(--bg);color:var(--text);min-height:100vh;transition:background var(--ease),color var(--ease);overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+
+    /* GRAIN */
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.02;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+    /* ACCESSIBILITY */
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    button,a{min-height:44px;display:inline-flex;align-items:center}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);background:var(--nav-bg);border-bottom:0.5px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .nav-logo{font-family:var(--font-ed);font-size:18px;letter-spacing:-0.02em;color:var(--text)}
+    .nav-logo img{height:28px;width:auto}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-link{font-family:var(--font-ui);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease);min-height:44px;display:inline-flex;align-items:center}
+    .nav-link:hover,.nav-link.active{color:var(--text)}
+    .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px;min-height:36px}
+    .theme-btn:hover{color:var(--text);border-color:var(--border-warm)}
+    .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--terrain-stone);flex-shrink:0}
+
+    /* HERO */
+    .hero{height:100vh;min-height:600px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) 5rem}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(1.0)}
+    .hero-overlay{position:absolute;inset:0;z-index:1;
+      background:linear-gradient(to bottom,
+        transparent 0%,
+        transparent 55%,
+        rgba(6,8,12,0.65) 78%,
+        rgba(6,8,12,0.97) 100%)}
+    .hero-content{position:relative;z-index:2;max-width:900px}
+    .hero-dept{font-family:var(--font-mono);font-size:13px;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;opacity:0;animation:fadeU 0.9s ease 0.3s forwards}
+    .hero-title{font-size:clamp(44px,9vw,118px);font-weight:300;letter-spacing:-0.04em;line-height:0.86;color:var(--white);opacity:0;animation:fadeU 1.1s ease 0.45s forwards}
+    .hero-title em{font-style:italic;color:rgba(201,168,76,0.75)}
+    .hero-sub{margin-top:1.6rem;font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,230,213,0.75);opacity:0;animation:fadeU 1s ease 0.7s forwards;line-height:2}
+    .hero-rule{height:0.5px;background:linear-gradient(to right,var(--gold),transparent);margin-top:1.5rem;width:0;animation:drawL 1.2s ease 1s forwards}
+
+    /* WALLPAPER INTERCEPT — the opening surgical strike */
+    .intercept{background:var(--bg2);border-left:3px solid var(--terrain-stone);padding:3rem var(--gutter);margin:0}
+    .intercept-inner{max-width:980px;margin:0 auto}
+    .intercept-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--terrain-stone);margin-bottom:1.2rem}
+    .intercept-title{font-size:clamp(20px,2.8vw,32px);font-weight:300;letter-spacing:-0.02em;line-height:1.15;color:var(--text);margin-bottom:1.5rem}
+    .intercept-title em{font-style:italic}
+    .intercept-body p{font-size:clamp(15px,1.7vw,18px);font-weight:300;line-height:1.9;color:var(--text)}
+    .intercept-body p+p{margin-top:1.2em}
+    .wp-quote{display:inline;font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;background:rgba(139,115,85,0.15);border:0.5px solid rgba(139,115,85,0.3);padding:2px 8px;color:var(--terrain-stone)}
+
+    /* MAIN LAYOUT */
+    main{padding-top:var(--nav-h)}
+    .w{max-width:1240px;margin:0 auto}
+    .rule{height:0.5px;background:var(--border);max-width:1240px;margin:0 auto}
+
+    /* OPENING STATEMENT */
+    .opening{padding:5rem var(--gutter) 0;max-width:1000px;margin:0 auto}
+    .opening p{font-size:clamp(22px,3vw,38px);font-weight:300;font-style:italic;line-height:1.42;color:var(--text)}
+    .opening-attr{margin-top:1.2rem;font-family:var(--font-mono);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim)}
+
+    /* BODY LAYOUT */
+    .feature{max-width:1240px;margin:0 auto;padding:4rem var(--gutter) 0;display:grid;grid-template-columns:1fr 400px;gap:5rem;align-items:start}
+    .body p{font-size:clamp(15px,1.65vw,18px);font-weight:300;line-height:1.92;color:var(--text)}
+    .body p+p{margin-top:1.3em}
+    .body h3{font-size:clamp(24px,2.8vw,36px);font-weight:300;letter-spacing:-0.02em;line-height:1.05;color:var(--text);margin:3rem 0 1.1rem}
+    .body h3 em{font-style:italic;color:var(--gold)}
+
+    /* PULL QUOTE */
+    .pull{border-top:0.5px solid var(--gold);border-bottom:0.5px solid var(--border);padding:2rem 0;margin:2.5rem 0}
+    .pull p{font-size:clamp(18px,2.2vw,26px);font-style:italic;font-weight:300;line-height:1.5;color:var(--text)}
+    .pull-attr{margin-top:1rem;font-family:var(--font-mono);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
+
+    /* SIDEBAR */
+    .sidebar{position:sticky;top:calc(var(--nav-h) + 2rem)}
+    .card{background:var(--bg2);border:0.5px solid var(--border-warm);padding:2.5rem;margin-bottom:1.5rem}
+    .card-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+    .card-title{font-size:clamp(18px,2vw,24px);font-weight:400;letter-spacing:-0.02em;color:var(--text);margin-bottom:0.3rem}
+    .card-sub{font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.5rem;line-height:1.7}
+
+    /* MODUS INDEX */
+    .mi-score{font-size:72px;font-weight:300;letter-spacing:-0.06em;line-height:1;color:var(--text);display:flex;align-items:baseline;gap:6px;margin-bottom:1.2rem}
+    .mi-score span{font-size:22px;color:var(--text-dim)}
+    .mi-score-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+    .mi-axes{display:flex;flex-direction:column;gap:11px}
+    .mi-axis{display:grid;grid-template-columns:1fr 60px 22px;align-items:center;gap:10px}
+    .mi-aname{font-family:var(--font-mono);font-size:12px;letter-spacing:0.07em;text-transform:uppercase;color:var(--text-dim)}
+    .mi-bar{height:1.5px;background:var(--border)}
+    .mi-fill{height:100%;background:var(--gold)}
+    .mi-val{font-size:18px;font-weight:400;text-align:right;color:var(--text)}
+    .mi-note{margin-top:1.2rem;padding-top:1.2rem;border-top:0.5px solid var(--border);font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;color:var(--text-dim);line-height:1.9}
+
+    /* SPECS CARD */
+    .spec-row{padding:0.9rem 0;border-bottom:0.5px solid var(--border);display:grid;grid-template-columns:110px 1fr;gap:1rem}
+    .spec-row:last-child{border-bottom:none}
+    .spec-k{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)}
+    .spec-v{font-size:15px;font-weight:300;color:var(--text);line-height:1.5}
+
+    /* WALLPAPER VERDICT BOX */
+    .wp-verdict{background:var(--bg3);border:0.5px solid var(--border);padding:2rem 2.5rem;margin:3rem 0;position:relative;overflow:hidden}
+    .wp-verdict::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,rgba(139,115,85,0.4),transparent)}
+    .wp-verdict-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terrain-stone);margin-bottom:1rem}
+    .wp-verdict p{font-size:clamp(14px,1.5vw,16px);font-weight:300;line-height:1.85;color:var(--text-dim)}
+
+    /* IMAGE GRID */
+    .img-grid{max-width:1240px;margin:4rem auto 0;padding:0 var(--gutter)}
+    .img-grid-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+    .ig-hero{width:100%;margin-bottom:3px}
+    .ig-hero img{width:100%;height:clamp(420px,58vh,680px);object-fit:cover;object-position:center 40%;display:block}
+    .ig-pair{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px}
+    .ig-pair img{width:100%;height:clamp(260px,36vh,460px);object-fit:cover;object-position:center;display:block}
+    .ig-caption{font-family:var(--font-mono);font-size:12px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-dim);margin-top:1rem;line-height:1.9;padding-bottom:4rem}
+
+    /* TETRO PROFILE */
+    .tetro-card{background:var(--bg2);border:0.5px solid var(--border-warm);border-top:2px solid var(--gold);padding:3rem var(--gutter);margin:0}
+    .tetro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .tc-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+    .tc-title{font-size:clamp(28px,4vw,52px);font-weight:300;letter-spacing:-0.03em;line-height:0.92;color:var(--text);margin-bottom:1.5rem}
+    .tc-title em{font-style:italic;color:rgba(201,168,76,0.65)}
+    .tc-body p{font-size:clamp(15px,1.6vw,17px);font-weight:300;line-height:1.9;color:var(--text)}
+    .tc-body p+p{margin-top:1.2em}
+    .tc-facts{display:flex;flex-direction:column;gap:0}
+    .tc-fact{padding:1rem 0;border-bottom:0.5px solid var(--border);display:grid;grid-template-columns:90px 1fr;gap:1rem}
+    .tc-fact:last-child{border-bottom:none}
+    .tc-fact-k{font-family:var(--font-mono);font-size:12px;letter-spacing:0.13em;text-transform:uppercase;color:var(--gold)}
+    .tc-fact-v{font-size:16px;font-weight:300;color:var(--text);line-height:1.5}
+
+    /* FOOTER */
+    footer{border-top:0.5px solid var(--border);padding:3rem var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-brand{font-size:22px;font-weight:300;letter-spacing:-0.02em;color:var(--text)}
+    .footer-copy{font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim)}
+
+    @keyframes fadeU{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes drawL{from{width:0}to{width:min(340px,50vw)}}
+
+    @media(max-width:1040px){.feature{grid-template-columns:1fr}.sidebar{position:static}.tetro-inner{grid-template-columns:1fr;gap:2.5rem}}
+    @media(max-width:680px){.ig-pair{grid-template-columns:1fr}.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}}
+    @media(max-width:480px){
+      body{font-size:17px;line-height:1.7}
+      .hero-title{font-size:clamp(38px,11vw,58px)!important}
+      .opening p{font-size:clamp(19px,5vw,26px)!important}
+      .pull p{font-size:clamp(17px,4vw,22px)!important}
+      .body p{font-size:17px!important}
+      .mi-score{font-size:52px!important}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="/" aria-label="MODUS — Home">
+    <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,h_56/modus-logo-beige_tzibeh.png" alt="MODUS" class="logo-dark" style="height:28px;width:auto;display:block" />
+    <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,h_56/modus-logo-black_f2hbdx.png" alt="MODUS" class="logo-light" style="height:28px;width:auto;display:none" />
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="/objects">Objects</a>
+    <a class="nav-link" href="/figures">Figures</a>
+    <a class="nav-link active" href="/space">Space</a>
+    <a class="nav-link" href="/terrain">Terrain</a>
+    <a class="nav-link" href="/atelier">Atelier</a>
+    <a class="nav-link" href="/decover">Décover</a>
+  </div>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark mode">
+    <div class="theme-dot"></div>
+    <span id="themeLabel">Light</span>
+  </button>
+</nav>
+
+<!-- HERO — Tetro's own photography from their site -->
+<header class="hero" role="banner" aria-label="Casa Xingu — Tetro Arquitetura — MODUS Space feature">
+  <img class="hero-img"
+       src="https://static.wixstatic.com/media/bc3bca_0339395206944410ad13c0e9eefcaad5~mv2.jpg/v1/fit/w_2500,h_1330,al_c/bc3bca_0339395206944410ad13c0e9eefcaad5~mv2.jpg"
+       alt="Casa Xingu — Tetro Arquitetura — Nova Lima, Minas Gerais, Brazil"
+       fetchpriority="high" />
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-dept">MODUS / Space &middot; Architecture</p>
+    <h1 class="hero-title">The house<br>that does not<br><em>ask.</em></h1>
+    <p class="hero-sub">
+      Casa Xingu · Tetro Arquitetura · Nova Lima, Minas Gerais<br>
+      Photography: Nelson Kon · MODUS Index: 50 / 50
+    </p>
+    <div class="hero-rule" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main>
+
+<!-- WALLPAPER INTERCEPT -->
+<div class="intercept" role="complementary" aria-label="Critical context">
+  <div class="intercept-inner">
+    <p class="intercept-label">The Record — Before We Begin</p>
+    <h2 class="intercept-title">Wallpaper found <em>"curvy and flowing."</em><br>We found something else entirely.</h2>
+    <div class="intercept-body">
+      <p>On June 10, 2026 — the same morning MODUS publishes this review — Wallpaper ran their piece on Casa Xingu. Their headline: <span class="wp-quote">"Curvy and flowing, Xingu House draws on its Brazilian setting with drama and aplomb."</span> Their writer Jonathan Bell visited the same house. He photographed the same cantilever, the same stone walls, the same 8,000 square metres of preserved Atlantic forest. He described it as "sensuous and sculptural statements." He called the client "willing to push boundaries to make a bold statement."</p>
+      <p>This is not wrong. It is simply the kind of thing you write when you have a deadline, a word count, and a mandate to fill a residential feature slot between the Lego Sagrada Família piece and the Copenhagen design week preview. It is the vocabulary of a publication that has been describing buildings as "dramatic" and "sculptural" for so long the words have lost their edges entirely. Wallpaper found the building. They did not find the argument.</p>
+      <p>We are grateful to Wallpaper for the lead. They pointed at the treasure. This is the review that opens the chest.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OPENING STATEMENT -->
+<section class="opening" aria-label="Editor's opening">
+  <p>"There is a specific quality of intelligence in a building that refuses to compensate for its site. Most architecture negotiates. It compromises with the land, softens its edges, makes itself acceptable. Casa Xingu does not negotiate. It cantileveres. It hangs over the slope as though gravity is a suggestion it has chosen to consider and decline. This is not bravado. It is the result of a studio — Tetro Arquitetura, Belo Horizonte — that understood from the first site visit that the correct response to this land was not to sit on it, but to argue with it. The argument is won. The score is perfect."</p>
+  <p class="opening-attr">— Daniel Stanford · Editor-in-Chief · MODUS · On Casa Xingu</p>
+</section>
+
+<div class="rule" style="margin-top:4rem" role="separator"></div>
+
+<!-- FEATURE BODY -->
+<div class="feature">
+  <article class="body">
+
+    <h3>The site chose<br><em>the architect.</em></h3>
+
+    <p>Carlos Maia and the Tetro team were brought in before there was even a site to build on. The client — whose name, wisely, remains private — approached them with a brief that was both impossible and perfect: find me a plot in Nova Lima with "abundant nature." Together, they searched. Together, they found a hillside in the forested southern suburbs of the city, occupied by a rundown house, divided by old stone terrace walls, threaded through with native forest, and possessed of mountain views that would make a lesser architect immediately start sketching windows.</p>
+
+    <p>Tetro did not immediately start sketching windows. They looked at the walls. The original house was demolished — as it had to be — but the stone walls dividing the landscape into terraces were kept. This single decision is the foundation on which everything else is built: not architecturally, but philosophically. To keep the old walls is to acknowledge that the land has a history that predates the commission. It is to refuse the blank-slate arrogance that ruins most contemporary residential architecture. It is, in the precise sense of the word, an act of taste.</p>
+
+    <div class="pull">
+      <p>"The back embraces the jungle, while the front hangs towards the view over water mirrors." Tetro's own description of their building is more precise than anything Wallpaper managed in two thousand words. Twelve words. Every one of them doing work.</p>
+      <p class="pull-attr">— MODUS Editorial · On Tetro's project description</p>
+    </div>
+
+    <h3>The geometry<br><em>is the argument.</em></h3>
+
+    <p>The house is organised around three wings held by six faceted concrete pillars. The pillars are not decorative. They are structural and they are philosophical — they announce that the building is elevated, held, chosen to be above the ground rather than resigned to it. One pillar contains a lift. Another contains a stairwell, its roof light transforming the climb from utility into ceremony. You do not simply go upstairs in Casa Xingu. You are ushered through a column of light into another register of the building.</p>
+
+    <p>The primary living wing is fully glazed and projects over the landscape. Below it: reflecting pools, outdoor living and dining, a swimming pool, the old stone terraces. The concrete palette is brutalist in material but not in attitude. There is no rough aggregate, no performative rawness. The concrete is poured with the precision of a tailor — poured to follow a logic, not to announce one. This is the distinction that separates Tetro from the hundreds of studios currently producing concrete houses for clients who want to feel serious. Tetro does not want you to feel serious. They want the building to be serious, which is a different and far more difficult achievement.</p>
+
+    <div class="wp-verdict">
+      <p class="wp-verdict-label">What Wallpaper Got Right — And Where They Stopped</p>
+      <p>Bell's piece correctly identifies the cantilever as the defining gesture and notes that Tetro "started with a completely blank slate." Both are accurate. But the piece never asks why the blank slate produced this specific result — what it is about Tetro's sensibility, their relationship to Brazilian modernism, their understanding of land and material, that made this building rather than another building. Wallpaper covers the what. MODUS covers the why the what matters.</p>
+    </div>
+
+    <h3>Brazilian modernism<br><em>is not a reference. It is a bloodline.</em></h3>
+
+    <p>To understand what Tetro built at Nova Lima you have to understand what Brazil did to modernism. When Niemeyer and Costa delivered Brasília — when Lina Bo Bardi built the MASP on its red concrete pillars above Avenida Paulista — they were not applying European theory to a new geography. They were doing something more radical: they were insisting that the formal language of modernism could carry heat, vegetation, colour, the specific quality of Brazilian light, the specific weight of Brazilian earth. They succeeded. The result is a tradition that is not derivative of European modernism but is in conversation with it, often winning the argument.</p>
+
+    <p>Casa Xingu is an inheritor of this tradition. The cantilevered volume over the landscape is Niemeyer's gesture updated by forty years of structural engineering and thirty years of ecological awareness. The retained stone walls are Lina Bo Bardi's insistence on the historical object as something to be preserved and inhabited rather than cleared. The cave — the literal grotto in the hillside that will house the wine cellar and cheese-making room — is Brazil's refusal to separate pleasure from architecture, to treat the sensory life of a building as secondary to its formal agenda. It is not secondary. At Casa Xingu, it is primary.</p>
+
+    <div class="pull">
+      <p>"The cave is where the wine lives and the cheese is made. That single sentence contains more architectural intelligence than most buildings deliver in their entirety."</p>
+      <p class="pull-attr">— MODUS Editorial · On the Xingu grotto programme</p>
+    </div>
+
+    <h3>The score.<br><em>Why perfect.</em></h3>
+
+    <p>MODUS scores on five axes: Timelessness, Spatial Intelligence, Material Conviction, Site Responsiveness, and Cultural Depth. Casa Xingu scores ten on all five. This requires explanation, because a perfect score is not a superlative. It is a statement that the building has fully resolved the problems it set itself — that the gap between intention and execution has been closed, that the building is what it intended to be, completely.</p>
+
+    <p>Timelessness: the building will not date because it does not reference a trend. It references a hillside, a forest, a tradition, and a material. These do not date. Spatial Intelligence: every transition in the house — from approach to entry, from entry to living, from living to the cantilevered primary suite — is a considered act of spatial argument. Material Conviction: the concrete, the glass, the stone walls, the reflecting pools are not a palette. They are a position. Site Responsiveness: the building cannot be anywhere else. It is specifically and irrevocably this hillside in Nova Lima. Cultural Depth: the grotto, the retained walls, the relationship to the Atlantic forest — Casa Xingu knows where it is in Brazilian history and in Brazilian nature. It has an answer to both.</p>
+
+    <p>The drafted version of this review withheld one point — the logic being that perfect scores should require a flaw. We reconsidered. The flaw in that logic is that it makes the score about the reviewer's need for nuance rather than the building's achievement. Casa Xingu does not have a weak argument. Awarding it 49 to preserve our critical posture would be the kind of gesture Wallpaper makes. We are not interested in that gesture.</p>
+
+    <p><strong>50 / 50.</strong></p>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="card">
+      <p class="card-label">MODUS Index · Architecture</p>
+      <p class="card-title">Casa Xingu</p>
+      <p class="card-sub">Tetro Arquitetura · Nova Lima<br>Minas Gerais, Brazil · 2025–26</p>
+      <div class="mi-score" aria-label="MODUS Index score 50 out of 50" data-modus-index="50" data-modus-max="50" data-modus-class="CANON">50 <span>/ 50</span></div>
+      <p class="mi-score-label">Perfect Score — Issue No. 1 · 2026</p>
+      <div class="mi-axes">
+        <div class="mi-axis">
+          <span class="mi-aname">Timelessness</span>
+          <div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div>
+          <span class="mi-val">10</span>
+        </div>
+        <div class="mi-axis">
+          <span class="mi-aname">Spatial Intelligence</span>
+          <div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div>
+          <span class="mi-val">10</span>
+        </div>
+        <div class="mi-axis">
+          <span class="mi-aname">Material Conviction</span>
+          <div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div>
+          <span class="mi-val">10</span>
+        </div>
+        <div class="mi-axis">
+          <span class="mi-aname">Site Responsiveness</span>
+          <div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div>
+          <span class="mi-val">10</span>
+        </div>
+        <div class="mi-axis">
+          <span class="mi-aname">Cultural Depth</span>
+          <div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div>
+          <span class="mi-val">10</span>
+        </div>
+      </div>
+      <p class="mi-note">A perfect score is not a superlative — it is a statement that the building fully closed the gap between intention and execution. Casa Xingu joins FASCINASIA (50/50, Décover) as the only perfect scores in Issue No. 1.</p>
+    </div>
+
+    <div class="card">
+      <p class="card-label">Project Specifications</p>
+      <div class="spec-row"><span class="spec-k">Studio</span><span class="spec-v">Tetro Arquitetura</span></div>
+      <div class="spec-row"><span class="spec-k">Principal</span><span class="spec-v">Carlos Maia</span></div>
+      <div class="spec-row"><span class="spec-k">Location</span><span class="spec-v">Nova Lima, Minas Gerais, Brazil</span></div>
+      <div class="spec-row"><span class="spec-k">Site</span><span class="spec-v">8,000 m² · Atlantic Forest</span></div>
+      <div class="spec-row"><span class="spec-k">Structure</span><span class="spec-v">6 faceted concrete pillars · 3 cantilevered wings</span></div>
+      <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Board-formed concrete · glass · retained stone</span></div>
+      <div class="spec-row"><span class="spec-k">Programme</span><span class="spec-v">Primary residence · guest suite · cave wine cellar · cheese room · reflecting pools · pool</span></div>
+      <div class="spec-row"><span class="spec-k">Photography</span><span class="spec-v">Nelson Kon</span></div>
+      <div class="spec-row"><span class="spec-k">Published</span><span class="spec-v">MODUS Issue No. 1 · June 2026</span></div>
+    </div>
+
+    <div class="card">
+      <p class="card-label">Also Reviewed</p>
+      <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);line-height:1.9">
+        Wallpaper · Jonathan Bell<br>
+        <a href="https://www.wallpaper.com/architecture/residential/xingu-house-tetro-arquitetura-brazil"
+           target="_blank" rel="noopener"
+           style="color:var(--terrain-stone);min-height:auto">
+          Read their version →
+        </a><br><br>
+        Published same day. Worth reading as evidence of how good buildings get described before someone asks the right questions.
+      </p>
+    </div>
+
+    <div class="card">
+      <p class="card-label">Continue in Space</p>
+      <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);line-height:1.9">
+        <a href="/space" style="color:var(--gold);min-height:auto">Brasília — Architecture of Intent · 48/50 →</a><br><br>
+        The inaugural SPACE entry. Niemeyer, Costa, and the Exchanging Glances series by Daniel Stanford.
+      </p>
+    </div>
+
+  </aside>
+</div>
+
+</main>
+
+<!-- ARCHITECTURE IMAGE GRID — Tetro's own photography -->
+<div class="img-grid" aria-label="Casa Xingu photography by Nelson Kon">
+  <p class="img-grid-label">Casa Xingu · Photography: Nelson Kon · Tetro Arquitetura</p>
+
+  <div class="ig-hero">
+    <img src="https://static.wixstatic.com/media/bc3bca_c1af8f26b74b4999aa4b398e390be84d~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_c1af8f26b74b4999aa4b398e390be84d~mv2.jpg"
+         alt="Casa Xingu — cantilevered living wing over reflecting pool — Tetro Arquitetura" loading="lazy" />
+  </div>
+  <div class="ig-pair">
+    <img src="https://static.wixstatic.com/media/bc3bca_3c2147647b67470d9e001d1a6811ceea~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_3c2147647b67470d9e001d1a6811ceea~mv2.jpg"
+         alt="Casa Xingu — concrete pillar structure — Nova Lima" loading="lazy" />
+    <img src="https://static.wixstatic.com/media/bc3bca_0300f07c2e7f4181892d1a7c31198840~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_0300f07c2e7f4181892d1a7c31198840~mv2.jpg"
+         alt="Casa Xingu — glazed facade and outdoor living — Minas Gerais" loading="lazy" />
+  </div>
+  <div class="ig-pair">
+    <img src="https://static.wixstatic.com/media/bc3bca_d6a396c10b714df5947561648edef267~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_d6a396c10b714df5947561648edef267~mv2.jpg"
+         alt="Casa Xingu — interior living — Atlantic forest view" loading="lazy" />
+    <img src="https://static.wixstatic.com/media/bc3bca_62997319327c45fda6d0dd920d2d082e~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_62997319327c45fda6d0dd920d2d082e~mv2.jpg"
+         alt="Casa Xingu — swimming pool and terraces — Nova Lima, Brazil" loading="lazy" />
+  </div>
+  <div class="ig-pair">
+    <img src="https://static.wixstatic.com/media/bc3bca_ab98f0f3a1e64a1f9d2a7e0137aa2a9e~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_ab98f0f3a1e64a1f9d2a7e0137aa2a9e~mv2.jpg"
+         alt="Casa Xingu — retained stone terrace walls — Tetro Arquitetura" loading="lazy" />
+    <img src="https://static.wixstatic.com/media/bc3bca_00b6589ea2f94e59825c7b61e82ca2d7~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_00b6589ea2f94e59825c7b61e82ca2d7~mv2.jpg"
+         alt="Casa Xingu — concrete detail and forest edge" loading="lazy" />
+  </div>
+  <div class="ig-pair">
+    <img src="https://static.wixstatic.com/media/bc3bca_56ba431d89a44f2486cefb1d0db35e46~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_56ba431d89a44f2486cefb1d0db35e46~mv2.jpg"
+         alt="Casa Xingu — stairwell light column — Nova Lima" loading="lazy" />
+    <img src="https://static.wixstatic.com/media/bc3bca_644fdb3474354966b3fd921d81aaf661~mv2.jpg/v1/fit/w_1599,h_900,q_90,enc_avif,quality_auto/bc3bca_644fdb3474354966b3fd921d81aaf661~mv2.jpg"
+         alt="Casa Xingu — kitchen and dining extending to terrace" loading="lazy" />
+  </div>
+
+  <p class="ig-caption">
+    Casa Xingu · Tetro Arquitetura · Nova Lima, Minas Gerais, Brazil<br>
+    Architecture: Carlos Maia / Tetro Arquitetura · Photography: Nelson Kon<br>
+    Images courtesy Tetro Arquitetura · tetro.com.br/casaxingu · Published MODUS Issue No. 1 · © 2026
+  </p>
+</div>
+
+<!-- TETRO ARQUITETURA PROFILE -->
+<div class="tetro-card">
+  <div class="tetro-inner">
+    <div>
+      <p class="tc-label">Studio Profile · Tetro Arquitetura</p>
+      <h2 class="tc-title">The studio<br>Belo Horizonte<br><em>built quietly.</em></h2>
+      <div class="tc-body">
+        <p>Tetro Arquitetura works from Belo Horizonte — a city that has been producing serious architecture in the shadow of São Paulo and Rio for decades, producing it without the attention either city commands, which may explain why the work is so good. Without the pressure of a global spotlight, studios in Minas Gerais have been free to develop a practice grounded in material intelligence, site responsiveness, and the specific quality of light in the Brazilian interior.</p>
+        <p>Casa Xingu is described by Tetro themselves as their most accomplished private residential project to date. MODUS agrees with the assessment and adds a qualifier: it is not just their most accomplished work — it is one of the most accomplished private houses built in Brazil in the past decade. The lineage is clear: Niemeyer's floating volumes, Bo Bardi's insistence on the historical object, the Paulista school's relationship between inside and outside. Tetro has absorbed all of this and produced something that is not a homage to any of it. It is a continuation.</p>
+        <p>A studio worth watching with the seriousness this building demands. MODUS will return to Tetro.</p>
+      </div>
+    </div>
+    <div>
+      <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem">Studio Facts</p>
+      <div class="tc-facts">
+        <div class="tc-fact"><span class="tc-fact-k">Name</span><span class="tc-fact-v">Tetro Arquitetura</span></div>
+        <div class="tc-fact"><span class="tc-fact-k">Base</span><span class="tc-fact-v">Belo Horizonte, Minas Gerais, Brazil</span></div>
+        <div class="tc-fact"><span class="tc-fact-k">Principal</span><span class="tc-fact-v">Carlos Maia</span></div>
+        <div class="tc-fact"><span class="tc-fact-k">Focus</span><span class="tc-fact-v">Private residential · Brazilian modernist lineage</span></div>
+        <div class="tc-fact"><span class="tc-fact-k">Signature</span><span class="tc-fact-v">Site-embedded structure · material precision · programmatic intelligence</span></div>
+        <div class="tc-fact"><span class="tc-fact-k">Web</span><span class="tc-fact-v"><a href="https://www.tetro.com.br" target="_blank" rel="noopener" style="color:var(--gold);min-height:auto">tetro.com.br →</a></span></div>
+        <div class="tc-fact"><span class="tc-fact-k">MODUS</span><span class="tc-fact-v">Will return. This is not the last review.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-brand">MODUS</span>
+  <span class="footer-copy">Space · Issue No. 1 · © MODUS MMXXVI · Stanford Emporium Inc.</span>
+</footer>
+
+<script>
+(function() {
+  var h = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var lbl = document.getElementById('themeLabel');
+  var saved = localStorage.getItem('modus-theme-v2');
+  var t = saved || (window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark');
+  set(t);
+  btn.addEventListener('click', function() { set(h.dataset.theme === 'dark' ? 'light' : 'dark'); });
+  function set(v) { h.dataset.theme = v; localStorage.setItem('modus-theme-v2', v); lbl.textContent = v === 'dark' ? 'Light' : 'Dark'; }
+  window.addEventListener('scroll', function() {
+    var img = document.querySelector('.hero-img');
+    if (img) img.style.transform = 'translateY(' + (window.scrollY * 0.16) + 'px) scale(1.04)';
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>

@@ -93,6 +93,17 @@ All tokens live in `modus.css`. Always use CSS custom properties:
 /* Never use Inter, Roboto, or Arial for editorial content */
 ```
 
+### Type Size Minimums — HARD RULE, never violate
+
+- **12px absolute floor** for any text (mono labels, badges, captions, footers)
+- **13px** for nav links, CTAs, and interactive labels
+- **20px html base** in the mobile media query (`@media(max-width:768px){ html{font-size:20px} }`)
+- Score numerals use the display font (Lovine italic serif), never DM Mono
+- Every MODUS Index score must carry a visible label ("MODUS INDEX" + classification)
+  plus `aria-label` and `data-modus-index` attributes for machines
+- Each page carries its own embedded CSS — a fix on one page does NOT propagate.
+  When adjusting type, sweep ALL pages: `grep -oE 'font-size: *(6|7|8|9|10|11)px' */index.html index.html`
+
 ---
 
 ## Page Template — Every Page Must Have This Structure

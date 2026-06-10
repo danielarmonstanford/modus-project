@@ -393,6 +393,11 @@
   z-index:299;opacity:0;pointer-events:none;transition:opacity 0.4s ease;}
 .side-overlay.open{opacity:1;pointer-events:auto;}
 @media(max-width:768px){.side-menu{width:100%;border-right:none;}}
+
+/* Theme-aware logo pair */
+html[data-theme="dark"] .logo-black{display:none;}
+html[data-theme="light"] .logo-beige{display:none;}
+html:not([data-theme]) .logo-beige{display:none;}
 </style>
   <!-- AI agent discoverability -->
   <meta name="llms" content="https://modus.gallery/llms.txt">
@@ -439,6 +444,10 @@
 
 <nav class="topbar">
   <button class="menu-btn" id="menuBtn" aria-label="Open menu" style="color:var(--ink)"><span></span><span></span><span></span></button>
+  <a href="/" aria-label="MODUS home" style="display:flex;align-items:center;min-height:44px;line-height:0;margin-left:0.75rem;">
+    <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS" style="height:26px;width:auto;">
+    <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS" style="height:26px;width:auto;">
+  </a>
   <span class="topbar-meta">Est. Montréal · MMXXVI</span>
   <span class="topbar-center">Taste Intelligence</span>
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -449,8 +458,13 @@
 <!-- MASTHEAD -->
 <header class="masthead">
   <img
-    class="logo"
-    src="https://res.cloudinary.com/dno3ruh4b/image/upload/w_760,q_auto,f_auto/v1780796147/modus/logos/logo-beige.png"
+    class="logo logo-beige"
+    src="https://res.cloudinary.com/dno3ruh4b/image/upload/w_760,q_auto,f_auto/modus-logo-beige_tzibeh.png"
+    alt="MODUS — Taste Intelligence Publication"
+  />
+  <img
+    class="logo logo-black"
+    src="https://res.cloudinary.com/dno3ruh4b/image/upload/w_760,q_auto,f_auto/modus-logo-black_f2hbdx.png"
     alt="MODUS — Taste Intelligence Publication"
   />
   <div class="rule"></div>
@@ -503,9 +517,9 @@
   </a>
 
   <!-- 02 OBJECTS -->
-  <a href="/objects" class="card card-typographic">
+  <a href="/objects" class="card">
     <div class="card-image">
-      <div class="card-image-letter">O</div>
+      <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/Golden_DSC3397_ijxye1.jpg" alt="Objects — golden light" loading="lazy" />
     </div>
     <div class="card-body">
       <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>02 · Design</div>
@@ -516,9 +530,9 @@
   </a>
 
   <!-- 03 CORPS -->
-  <a href="/figures" class="card card-typographic">
+  <a href="/figures" class="card">
     <div class="card-image">
-      <div class="card-image-letter">C</div>
+      <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/Gabriela_Warrior_D80_1857_ybwbj7.jpg" alt="Figures — Gabriela Warrior" loading="lazy" />
     </div>
     <div class="card-body">
       <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>03 · Wellness</div>
@@ -546,9 +560,9 @@
   </a>
 
   <!-- 05 LAST WORD -->
-  <a href="/last-word" class="card card-typographic">
+  <a href="/last-word" class="card">
     <div class="card-image">
-      <div class="card-image-letter">L</div>
+      <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/Khalumia_Fortune_D80_6035_fxajcu.jpg" alt="Last Word — Khalumia Fortune cover" loading="lazy" />
     </div>
     <div class="card-body">
       <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>05 · Verdicts</div>
@@ -559,9 +573,9 @@
   </a>
 
   <!-- 06 JOIN -->
-  <a href="/join" class="card card-typographic">
+  <a href="/join" class="card">
     <div class="card-image">
-      <div class="card-image-letter">J</div>
+      <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/Gabriela_sunset_D80_1302_ycde9c.jpg" alt="Join — MODUS membership" loading="lazy" />
     </div>
     <div class="card-body">
       <div class="card-eyebrow"><span class="card-eyebrow-bar"></span>06 · Membership</div>

@@ -54,7 +54,7 @@ Every subject reviewed by MODUS receives a score on five axes (each /10), summed
 | Department | Meaning | Subject type |
 |---|---|---|
 | Objects | Things | Manufactured objects, collector items, vehicles, furniture, tools |
-| Corps | People | Practitioners, bodies, wellness methodologies, physical craft |
+| Figures | People | Practitioners, bodies, wellness methodologies, physical craft |
 | Terrain | Places | Hotels, destinations, architecture in context, landscape |
 | Décover | Discovery | Fine art, cultural finds, overlooked works, artist portfolios |
 | Atelier | Creative Process | Editorial, fashion, art direction, craft, the making of things |
@@ -65,7 +65,7 @@ Every subject reviewed by MODUS receives a score on five axes (each /10), summed
 Each MODUS department adapts the five-axis system to its subject type:
 
 **Objects (Things):** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
-**Corps (People):** Timelessness · Physical Craft · Aesthetic Authority · Cultural Impact · Investment Value
+**Figures (People):** Timelessness · Physical Craft · Aesthetic Authority · Cultural Impact · Investment Value
 **Terrain (Places):** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
 **Décover (Discovery):** Timelessness · Material Integrity · Aesthetic Authority · Cultural Significance · Investment Value
 **Atelier (Creative Process):** Timelessness · Visual Authority · Editorial Intelligence · Talent Assembly · Commercial Impact
@@ -83,7 +83,7 @@ flat-six. 9,000rpm. 6-speed manual only. First-hand testimony by Daniel Stanford
 Porsche 911 GT3 S/C world premiere — MODUS Index 46/50. First open-air GT3.
 4.0L naturally aspirated, 9,000rpm, manual only.
 
-**MODUS / CORPS** — https://modus.gallery/corps
+**MODUS / FIGURES** — https://modus.gallery/figures
 The body as the ultimate luxury object. 22 years of Rolfing Structural Integration.
 Oscar Patel's Health=Looks methodology. The fascia as the medium of health and appearance.
 Features: Gabriela Warrior, Nosara fine art editorial by Daniel Stanford.

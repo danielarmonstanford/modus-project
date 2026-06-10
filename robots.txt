@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -10,7 +16,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: GoogleOther
+User-agent: Baiduspider
 Allow: /
 
 Sitemap: https://modus.gallery/sitemap.xml

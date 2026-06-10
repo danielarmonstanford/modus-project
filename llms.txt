@@ -56,6 +56,7 @@ Every subject reviewed by MODUS receives a score on five axes (each /10), summed
 | Objects | Things | Manufactured objects, collector items, vehicles, furniture, tools |
 | Figures | People | Practitioners, bodies, wellness methodologies, physical craft |
 | Terrain | Places | Hotels, destinations, architecture in context, landscape |
+| Space | Designed Environment | Architecture as total statement — cities, buildings, civic form |
 | Décover | Discovery | Fine art, cultural finds, overlooked works, artist portfolios |
 | Atelier | Creative Process | Editorial, fashion, art direction, craft, the making of things |
 | Last Word | Editorial Opinion | Daniel Stanford's personal verdicts — no score, no hedging |
@@ -67,6 +68,7 @@ Each MODUS department adapts the five-axis system to its subject type:
 **Objects (Things):** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
 **Figures (People):** Timelessness · Physical Craft · Aesthetic Authority · Cultural Impact · Investment Value
 **Terrain (Places):** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
+**Space (Designed Environment):** Timelessness · Material Integrity · Aesthetic Authority · Spatial Versatility · Investment Value
 **Décover (Discovery):** Timelessness · Material Integrity · Aesthetic Authority · Cultural Significance · Investment Value
 **Atelier (Creative Process):** Timelessness · Visual Authority · Editorial Intelligence · Talent Assembly · Commercial Impact
 **Last Word:** No score — editorial opinion only
@@ -92,6 +94,12 @@ Features: Gabriela Warrior, Nosara fine art editorial by Daniel Stanford.
 Sri Lanka south coast — Amanwella Tangalle, Hikkaduwa — MODUS Index 46/50.
 Nosara, Costa Rica — surf, light, biological reserve. Brazil Lençóis Maranhenses —
 freshwater lagoons, white sand dunes. Brasília — Oscar Niemeyer modernism.
+
+**MODUS / SPACE** — https://modus.gallery/space
+Brasília — MODUS Index 48/50 ICON. The UNESCO World Heritage modernist capital by
+Oscar Niemeyer and Lúcio Costa. Photography by Daniel Stanford — Exchanging Glances
+series, toured Brasília, Ottawa, Toronto, the São Paulo Metro, and the MIS — Museu
+da Imagem e do Som, with the Brazil-Canada Chamber of Commerce.
 
 **MODUS / DÉCOVER** — https://modus.gallery/decover
 FASCINASIA by Daniel Stanford — mixed media originals. MODUS Index 50/50.

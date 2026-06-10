@@ -16,15 +16,107 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "MODUS",
-    "url": "https://modus.gallery",
-    "description": "MODUS is a luxury taste intelligence publication. Published by Stanford Emporium Inc., Montréal. Issue No. 1, 2026. Sections: Objects, Figures, Terrain, Space, Décover, Atelier. Editor-in-Chief: Daniel Stanford.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "MODUS",
-      "founder": { "@type": "Person", "name": "Daniel Stanford" }
-    }
+    "@graph": [
+      {
+        "@type": "Periodical",
+        "@id": "https://modus.gallery/#publication",
+        "name": "MODUS",
+        "alternateName": "MODUS Taste Intelligence",
+        "description": "MODUS is a luxury taste intelligence publication covering Objects, Figures, Terrain, Space, Décover, and Atelier. Published by Stanford Emporium Inc., Montréal, Canada.",
+        "url": "https://modus.gallery",
+        "sameAs": [
+          "https://modus.gallery",
+          "https://www.instagram.com/modus.gallery"
+        ],
+        "inLanguage": "en",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://modus.gallery/#publisher",
+          "name": "Stanford Emporium Inc.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Montréal",
+            "addressRegion": "QC",
+            "addressCountry": "CA"
+          }
+        },
+        "editor": {
+          "@type": "Person",
+          "@id": "https://daniel-stanford.com/#person",
+          "name": "Daniel Stanford",
+          "jobTitle": "Editor-in-Chief",
+          "sameAs": "https://daniel-stanford.com"
+        },
+        "about": [
+          "Luxury",
+          "Taste Intelligence",
+          "Architecture",
+          "Fashion",
+          "Fine Art",
+          "Automotive",
+          "Travel",
+          "Hospitality"
+        ],
+        "keywords": "luxury magazine, taste intelligence, luxury publication, objects, figures, terrain, space, fine art, automotive, hospitality, Montreal",
+        "genre": "Luxury Lifestyle Publication",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Affluent adults with interest in luxury goods, design, travel, fine art, and architecture"
+        },
+        "hasPart": [
+          {
+            "@type": "PublicationIssue",
+            "@id": "https://modus.gallery/issue/1",
+            "issueNumber": "1",
+            "datePublished": "2026",
+            "name": "MODUS Issue No. 1 — The Body. The Machine. The Room.",
+            "description": "Inaugural issue featuring Gabriella Warrior, Porsche 911 S/T, Amanwella Tangalle, Brasília, and FASCINASIA by Daniel Stanford.",
+            "image": "https://res.cloudinary.com/dno3ruh4b/image/upload/modus-logo-beige_tzibeh.png",
+            "isPartOf": { "@id": "https://modus.gallery/#publication" }
+          }
+        ],
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://res.cloudinary.com/dno3ruh4b/image/upload/modus-logo-black_f2hbdx.png",
+          "contentUrl": "https://res.cloudinary.com/dno3ruh4b/image/upload/modus-logo-black_f2hbdx.png"
+        },
+        "foundingDate": "2026",
+        "numberOfIssues": "1",
+        "dateModified": "2026-06-10"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://modus.gallery/#website",
+        "url": "https://modus.gallery",
+        "name": "MODUS — Taste Intelligence",
+        "description": "MODUS is a luxury taste intelligence publication. Sections: Objects, Figures, Terrain, Space, Décover, Atelier. Editor-in-Chief: Daniel Stanford. Published by Stanford Emporium Inc., Montréal.",
+        "publisher": { "@id": "https://modus.gallery/#publisher" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://modus.gallery/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://modus.gallery/#publisher",
+        "name": "Stanford Emporium Inc.",
+        "url": "https://modus.gallery",
+        "founder": {
+          "@id": "https://daniel-stanford.com/#person"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Montréal",
+          "addressRegion": "QC",
+          "addressCountry": "CA"
+        },
+        "publishingPrinciples": "https://modus.gallery/methodology"
+      }
+    ]
   }
   </script>
 

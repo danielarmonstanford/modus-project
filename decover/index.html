@@ -170,7 +170,7 @@
     @keyframes drawL{from{width:0}to{width:min(360px,52vw)}}
 
     @media(max-width:1040px){.feature{grid-template-columns:1fr}.sidebar{position:static}.sa{grid-template-columns:140px 1fr 44px 22px}}
-    @media(max-width:680px){.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}.sa{grid-template-columns:120px 1fr 40px 20px}}
+    @media(max-width:680px){.nav-links{gap:1rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}.nav-links::-webkit-scrollbar{display:none}.theme-btn span:not(.theme-dot){display:none}.sa{grid-template-columns:120px 1fr 40px 20px}}
     @media(max-width:480px){
       body{font-size:17px;line-height:1.7}
       .hero-title{font-size:clamp(44px,13vw,72px)!important}

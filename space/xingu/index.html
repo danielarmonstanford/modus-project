@@ -212,7 +212,7 @@
     @keyframes drawL{from{width:0}to{width:min(340px,50vw)}}
 
     @media(max-width:1040px){.feature{grid-template-columns:1fr}.sidebar{position:static}.tetro-inner{grid-template-columns:1fr;gap:2.5rem}}
-    @media(max-width:680px){.ig-pair{grid-template-columns:1fr}.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}}
+    @media(max-width:680px){.ig-pair{grid-template-columns:1fr}.nav-links{gap:1rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}.nav-links::-webkit-scrollbar{display:none}.theme-btn span:not(.theme-dot){display:none}}
     @media(max-width:480px){
       body{font-size:17px;line-height:1.7}
       .hero-title{font-family:var(--font-display);font-size:clamp(38px,11vw,58px)!important}

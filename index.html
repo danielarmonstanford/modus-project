@@ -441,7 +441,8 @@
       html { font-size:20px; }
 
       .nav { padding:0 1.25rem; }
-      .nav-links { display:none; } /* replaced by hamburger + side menu */
+      .nav-links { display:flex; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; flex-wrap:nowrap; gap:1.2rem; }
+      .nav-links::-webkit-scrollbar { display:none; }
 
       .cover {
         grid-template-columns:1fr;
@@ -496,17 +497,17 @@
     <button class="side-menu-close" id="menuClose" aria-label="Close menu">×</button>
     <p class="side-menu-label">MODUS · Issue No. 1</p>
     <nav class="side-menu-nav">
-      <a href="/atelier">Atelier</a>
-      <a href="/last-word">Last Word</a>
-      <a href="/scores" style="color:var(--gold,#D4A84B)">Index</a>
-      <a href="/decover">Décover</a>
-      <a href="/space">Space</a>
-      <a href="/terrain">Terrain</a>
-      <a href="/figures">Figures</a>
-      <a href="/objects">Objects</a>
-      <a href="/join">Join</a>
-      <a href="/methodology">Methodology</a>
       <a href="/contents">Contents</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/scores" style="color:var(--gold,#D4A84B)">Index</a>
+      <a href="/join">Join</a>
+      <a href="/atelier">Atelier</a>
+      <a href="/decover">Décover</a>
+      <a href="/terrain">Terrain</a>
+      <a href="/space">Space</a>
+      <a href="/objects">Objects</a>
+      <a href="/figures">Figures</a>
+      <a href="/last-word">Last Word</a>
       <a href="/issue-1">Issue No. 1</a>
       <a href="/acquire">Acquire</a>
     </nav>

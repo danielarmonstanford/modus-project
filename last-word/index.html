@@ -86,24 +86,43 @@
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
 
     /* HERO */
-    .hero{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--nav-h) + 4rem) var(--gutter) 4rem;position:relative;overflow:hidden}
-    .hero-bg{
-      position:absolute;inset:0;z-index:0;
-      background:
-        radial-gradient(ellipse 50% 70% at 80% 40%, rgba(212,168,75,0.06) 0%, transparent 60%),
-        linear-gradient(160deg, #04050A 0%, #070810 40%, #0A0908 70%, #05060A 100%);
-    }
-    /* The "hand" line — like a signature stroke */
-    .hero-stroke{
-      position:absolute;bottom:0;left:0;right:0;height:2px;z-index:1;
-      background:linear-gradient(to right, transparent, var(--gold), rgba(212,168,75,0.3), transparent);
-      opacity:0;animation:fadeIn 1s ease 1.5s forwards;
-    }
-    .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,transparent 60%,var(--bg) 100%)}
-    .hero-portrait{position:absolute;right:0;top:0;bottom:0;z-index:0;width:50%;max-width:640px;overflow:hidden}
-    .hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;animation:fadeIn 1.4s ease 0.6s forwards}
-    .hero-portrait::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,var(--bg) 0%,transparent 40%),linear-gradient(to bottom,rgba(5,5,10,0.4) 0%,transparent 30%)}
-    .hero-content{position:relative;z-index:2;max-width:560px}
+    .hero{min-height:80vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--nav-h) + 4rem) var(--gutter) 4rem;position:relative;overflow:hidden}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;opacity:0;animation:fadeIn 1.4s ease 0.2s forwards}
+    .hero-stroke{position:absolute;bottom:0;left:0;right:0;height:2px;z-index:1;background:linear-gradient(to right,transparent,var(--gold),rgba(212,168,75,0.3),transparent);opacity:0;animation:fadeIn 1s ease 1.5s forwards}
+    .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(4,5,10,0.45) 0%,transparent 42%,rgba(7,8,13,0.72) 72%,var(--bg) 100%)}
+    .hero-content{position:relative;z-index:2;max-width:600px}
+
+    /* PORTRAIT BOX */
+    .sig-portrait-wrap{margin-bottom:1.5rem}
+    .sig-portrait-img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center top;display:block;filter:grayscale(18%)}
+    .sig-portrait-cap{padding:0.8rem 0 0;font-family:var(--font-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
+
+    /* PHOTO GALLERY */
+    .photo-gal{background:var(--bg3);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:0 0 3.5rem}
+    .photo-gal-header{max-width:1200px;margin:0 auto;padding:2.5rem var(--gutter) 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .photo-gal-eye{font-family:var(--font-mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold)}
+    .photo-gal-ctrl{display:flex;align-items:center;gap:0.9rem}
+    .pg-btn{background:transparent;border:0.5px solid var(--border-gold);color:var(--text-dim);font-family:var(--font-mono);font-size:14px;width:40px;height:40px;min-height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--ease);padding:0}
+    .pg-btn:hover{color:var(--text);border-color:var(--gold)}
+    .pg-count{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;color:var(--text-dim);min-width:48px;text-align:center}
+    .pg-outer{overflow:hidden;padding:0 var(--gutter)}
+    .pg-track{display:flex;gap:6px;transition:transform 0.65s cubic-bezier(0.16,1,0.3,1);will-change:transform}
+    .pg-slide{flex:0 0 calc((100% - 12px) / 3);overflow:hidden;position:relative;cursor:pointer}
+    .pg-slide img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1),filter 0.4s ease}
+    .pg-slide.wide img{aspect-ratio:4/3}
+    .pg-slide:hover img{transform:scale(1.04);filter:brightness(1.08)}
+    .pg-cap{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem 0.9rem;background:linear-gradient(to top,rgba(7,8,13,0.88) 0%,transparent 100%);opacity:0;transition:opacity 0.3s ease}
+    .pg-slide:hover .pg-cap{opacity:1}
+    .pg-cap span{font-family:var(--font-mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(234,224,204,0.85)}
+    .pg-dots{display:flex;gap:5px;justify-content:center;padding-top:1.8rem}
+    .pg-dot{width:4px;height:4px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background 0.3s ease,width 0.3s ease,border-radius 0.3s ease;flex-shrink:0}
+    .pg-dot.active{background:var(--gold);width:18px;border-radius:2px}
+    .pg-lb{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.96);align-items:center;justify-content:center}
+    .pg-lb.open{display:flex}
+    .pg-lb-img{max-width:90vw;max-height:88vh;object-fit:contain;display:block}
+    .pg-lb-close{position:absolute;top:1.2rem;right:1.4rem;background:transparent;border:0.5px solid rgba(234,224,204,0.2);color:rgba(234,224,204,0.7);font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;padding:6px 14px;cursor:pointer;min-height:36px;transition:all var(--ease)}
+    .pg-lb-close:hover{color:#fff;border-color:var(--gold)}
+    .pg-lb-cap{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(234,224,204,0.5);white-space:nowrap}
 
     .hero-dept{font-family:var(--font-mono);font-size:13px;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;opacity:0;animation:fadeU 0.9s ease 0.3s forwards}
     .hero-title{font-family:var(--font-display);font-size:clamp(93px,9vw,216px);font-weight:300;letter-spacing:-0.04em;line-height:0.88;color:var(--text);opacity:0;animation:fadeU 1.2s ease 0.45s forwards}
@@ -246,8 +265,9 @@
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
     @media(max-width:900px){.entry.featured{grid-template-columns:1fr}.signature-section{grid-template-columns:1fr;gap:2.5rem}}
+    @media(max-width:768px){.pg-slide{flex:0 0 calc((100% - 6px) / 1.8)}}
     @media(max-width:600px){.entries{grid-template-columns:1fr}.verdict-key{gap:1rem}.filter-bar{overflow-x:auto}}
-    @media(max-width:480px){.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}}
+    @media(max-width:480px){.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}.pg-slide{flex:0 0 calc(100% - 8%)}}
   
     /* ── Lovine display font ── */
     @font-face {
@@ -392,10 +412,10 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-portrait">
-    <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_face,w_1280,h_1600,q_auto,f_auto/IMG_1447_ckzxp2.jpg" alt="Daniel A. Stanford — Editor-in-Chief, MODUS" />
-  </div>
+  <img class="hero-img"
+       src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_2400/Sunset-Dunes-Golden_DSC3401_iloovw.jpg"
+       alt="Brazil Sea of Dunes (Lençois Maranhenses) — Daniel Stanford — MODUS Last Word"
+       fetchpriority="high" />
   <div class="hero-stroke" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
@@ -571,6 +591,96 @@
 
 </main>
 
+<!-- PHOTOGRAPHY GALLERY -->
+<section class="photo-gal" aria-label="Daniel Stanford — Museum Quality Photography">
+  <div class="photo-gal-header">
+    <p class="photo-gal-eye">Daniel Stanford · Photography · Museum Quality Fine Art · Selected Works</p>
+    <div class="photo-gal-ctrl">
+      <button class="pg-btn" id="pgPrev" aria-label="Previous">&#8592;</button>
+      <span class="pg-count" id="pgCount">1 / 13</span>
+      <button class="pg-btn" id="pgNext" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <div class="pg-outer" id="pgOuter">
+    <div class="pg-track" id="pgTrack">
+
+      <div class="pg-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Khalumia_Fortune_D80_6035_fxajcu.jpg" data-cap="Khalumia Fortune · Miami · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Khalumia_Fortune_D80_6035_fxajcu.jpg" alt="Khalumia Fortune · Miami · Daniel Stanford Photography" loading="lazy" />
+        <div class="pg-cap"><span>Khalumia Fortune · Miami</span></div>
+      </div>
+
+      <div class="pg-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Arms-up-red-blk-bik-D80_6060_yjbxbp.jpg" data-cap="Miami · Khalumia Series · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Arms-up-red-blk-bik-D80_6060_yjbxbp.jpg" alt="Miami Khalumia · Daniel Stanford Photography" loading="lazy" />
+        <div class="pg-cap"><span>Miami · Khalumia Series</span></div>
+      </div>
+
+      <div class="pg-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Black_Gold-water-D80_5523_oejtzm.jpg" data-cap="Black Gold · Water · Miami · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Black_Gold-water-D80_5523_oejtzm.jpg" alt="Black Gold Water · Miami · Daniel Stanford Photography" loading="lazy" />
+        <div class="pg-cap"><span>Black Gold · Water · Miami</span></div>
+      </div>
+
+      <div class="pg-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/_B_W-side-Port-jean-lookD80_4791_unacbb.jpg" data-cap="B&W Side Portrait · Miami · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/_B_W-side-Port-jean-lookD80_4791_unacbb.jpg" alt="B&W Side Portrait · Miami · Daniel Stanford Photography" loading="lazy" />
+        <div class="pg-cap"><span>B&amp;W Portrait · Miami</span></div>
+      </div>
+
+      <div class="pg-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Bikini-Bum-D80_4938_gdokeo.jpg" data-cap="Miami · Khalumia Series · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Bikini-Bum-D80_4938_gdokeo.jpg" alt="Miami Khalumia Series · Daniel Stanford Photography" loading="lazy" />
+        <div class="pg-cap"><span>Khalumia · Miami</span></div>
+      </div>
+
+      <div class="pg-slide wide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/P07-T4056TwikSS07_p14b79.jpg" data-cap="La Maison Simons TWIK · Rio de Janeiro · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/P07-T4056TwikSS07_p14b79.jpg" alt="La Maison Simons TWIK · Rio · Daniel Stanford" loading="lazy" />
+        <div class="pg-cap"><span>La Maison Simons TWIK · Rio</span></div>
+      </div>
+
+      <div class="pg-slide wide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/P07-T4076Twik_SS07_qt1bbt.jpg" data-cap="La Maison Simons TWIK SS07 · Rio · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/P07-T4076Twik_SS07_qt1bbt.jpg" alt="La Maison Simons TWIK SS07 · Daniel Stanford" loading="lazy" />
+        <div class="pg-cap"><span>Simons TWIK SS07 · Rio</span></div>
+      </div>
+
+      <div class="pg-slide wide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/P07-T4063Twik_SS07_tf2chn.jpg" data-cap="La Maison Simons TWIK SS07 · Rio · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/P07-T4063Twik_SS07_tf2chn.jpg" alt="La Maison Simons TWIK · Rio · Daniel Stanford" loading="lazy" />
+        <div class="pg-cap"><span>Simons TWIK SS07 · Rio</span></div>
+      </div>
+
+      <div class="pg-slide wide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/P07-T4069Twik_SS07_samcwh.jpg" data-cap="La Maison Simons TWIK SS07 · Rio · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/P07-T4069Twik_SS07_samcwh.jpg" alt="La Maison Simons TWIK SS07 · Daniel Stanford" loading="lazy" />
+        <div class="pg-cap"><span>Simons TWIK SS07 · Rio</span></div>
+      </div>
+
+      <div class="pg-slide wide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/P07-T4052Twik_SS07_efrtdq.jpg" data-cap="La Maison Simons TWIK SS07 · Rio · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/P07-T4052Twik_SS07_efrtdq.jpg" alt="La Maison Simons TWIK SS07 · Daniel Stanford" loading="lazy" />
+        <div class="pg-cap"><span>Simons TWIK SS07 · Rio</span></div>
+      </div>
+
+      <div class="pg-slide wide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Sunset-Dunes-Golden_DSC3401_iloovw.jpg" data-cap="Brazil Sea of Dunes (Lençois) · Golden Sunset · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Sunset-Dunes-Golden_DSC3401_iloovw.jpg" alt="Brazil Sea of Dunes Golden Sunset · Daniel Stanford" loading="lazy" />
+        <div class="pg-cap"><span>Brazil · Lençois Dunes · Golden Sunset</span></div>
+      </div>
+
+      <div class="pg-slide wide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/PG_11880_PGPP_P_Lenc%CC%A7ois-Brazil-Sunset-_Sol___Final_eyigsx.jpg" data-cap="Lençois Brazil · Sunset Sol · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/PG_11880_PGPP_P_Lenc%CC%A7ois-Brazil-Sunset-_Sol___Final_eyigsx.jpg" alt="Lençois Brazil Sunset · Daniel Stanford" loading="lazy" />
+        <div class="pg-cap"><span>Lençois, Brazil · Sunset Sol</span></div>
+      </div>
+
+      <div class="pg-slide wide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Dunes-by-water_DSC1303_izihdv.jpg" data-cap="Brazil Sea of Dunes · By Water · Daniel Stanford">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Dunes-by-water_DSC1303_izihdv.jpg" alt="Brazil Dunes by Water · Daniel Stanford" loading="lazy" />
+        <div class="pg-cap"><span>Lençois · Dunes by Water</span></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="pg-dots" id="pgDots" aria-label="Gallery navigation dots"></div>
+</section>
+
+<!-- PHOTO LIGHTBOX -->
+<div class="pg-lb" id="pgLb" role="dialog" aria-modal="true" aria-label="Photography enlarged view">
+  <button class="pg-lb-close" id="pgLbClose">ESC</button>
+  <img class="pg-lb-img" id="pgLbImg" src="" alt="" />
+  <span class="pg-lb-cap" id="pgLbCap"></span>
+</div>
+
 <!-- SIGNATURE SECTION — who is making these calls -->
 <section class="signature-section" aria-labelledby="sig-title">
   <div class="sig-left">
@@ -578,6 +688,12 @@
     <p>The Last Word is not a panel decision. It is not an algorithm. It is one person's direct response after 25 years inside the industries being judged. You can disagree. You cannot argue that the voice is uninformed.</p>
   </div>
   <div class="sig-right" role="list" aria-label="Editor credentials">
+    <div class="sig-portrait-wrap">
+      <img class="sig-portrait-img"
+           src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Daniel-A-S-portrait-Aug-22-D80_small_a8a2z9.jpg"
+           alt="Daniel A. Stanford — Editor-in-Chief, MODUS — Portrait 2022" />
+      <p class="sig-portrait-cap">Daniel A. Stanford · Editor-in-Chief · MODUS<br>Montreal · August 2022</p>
+    </div>
     <div class="sig-credential" role="listitem">
       <div class="sc-label">Fashion</div>
       <div class="sc-value">Guess (Love Story, sole art direction credit), Vogue, Victoria's Secret, Revlon, Lancôme</div>
@@ -653,6 +769,64 @@
   set(t);
   btn.addEventListener('click', function() { set(h.dataset.theme === 'dark' ? 'light' : 'dark'); });
   function set(v) { h.dataset.theme = v; localStorage.setItem('modus-theme', v); lbl.textContent = v === 'dark' ? 'Light' : 'Dark'; }
+
+  // PHOTO GALLERY
+  (function() {
+    var track = document.getElementById('pgTrack');
+    var outer = document.getElementById('pgOuter');
+    if (!track || !outer) return;
+    var slides = Array.from(track.querySelectorAll('.pg-slide'));
+    var dotsEl = document.getElementById('pgDots');
+    var countEl = document.getElementById('pgCount');
+    var total = slides.length;
+    var curr = 0;
+    var autoT;
+
+    function slideW() {
+      var w = window.innerWidth;
+      var pv = w <= 480 ? 1.15 : w <= 768 ? 1.8 : 3;
+      return (outer.offsetWidth - 6 * (Math.floor(pv) - 1)) / pv;
+    }
+    function goTo(idx) {
+      var w = window.innerWidth;
+      var pv = w <= 480 ? 1.15 : w <= 768 ? 1.8 : 3;
+      var max = Math.max(0, total - Math.floor(pv));
+      curr = Math.max(0, Math.min(idx, max));
+      track.style.transform = 'translateX(-' + curr * (slideW() + 6) + 'px)';
+      countEl.textContent = (curr + 1) + ' / ' + total;
+      pgDots.forEach(function(d, i) { d.classList.toggle('active', i === curr); });
+    }
+    var pgDots = [];
+    for (var i = 0; i < total; i++) {
+      var d = document.createElement('button');
+      d.className = 'pg-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      (function(n) { d.addEventListener('click', function() { goTo(n); reset(); }); })(i);
+      dotsEl.appendChild(d); pgDots.push(d);
+    }
+    function reset() { clearInterval(autoT); autoT = setInterval(function() { goTo(curr + 1 < total ? curr + 1 : 0); }, 4500); }
+    document.getElementById('pgPrev').addEventListener('click', function() { goTo(curr > 0 ? curr - 1 : total - 1); reset(); });
+    document.getElementById('pgNext').addEventListener('click', function() { goTo(curr + 1 < total ? curr + 1 : 0); reset(); });
+    var tx0 = null;
+    outer.addEventListener('touchstart', function(e) { tx0 = e.touches[0].clientX; }, {passive:true});
+    outer.addEventListener('touchend', function(e) {
+      if (tx0 === null) return;
+      var dx = e.changedTouches[0].clientX - tx0;
+      if (Math.abs(dx) > 40) { goTo(dx < 0 ? curr + 1 : curr - 1); reset(); }
+      tx0 = null;
+    });
+    window.addEventListener('resize', function() { goTo(curr); });
+    var lb = document.getElementById('pgLb');
+    var lbImg = document.getElementById('pgLbImg');
+    var lbCap = document.getElementById('pgLbCap');
+    document.getElementById('pgLbClose').addEventListener('click', function() { lb.classList.remove('open'); lbImg.src=''; });
+    lb.addEventListener('click', function(e) { if (e.target === lb) { lb.classList.remove('open'); lbImg.src=''; } });
+    slides.forEach(function(s) {
+      s.addEventListener('click', function() { lbImg.src = s.dataset.src; lbImg.alt = s.querySelector('img').alt; lbCap.textContent = s.dataset.cap; lb.classList.add('open'); });
+    });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src=''; } });
+    reset(); goTo(0);
+  })();
 
   // FILTER
   var filterBtns = document.querySelectorAll('.filter-btn');

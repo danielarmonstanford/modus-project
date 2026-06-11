@@ -97,8 +97,9 @@
       -webkit-backdrop-filter:blur(12px);
       transition:background var(--ease),border-color var(--ease);
     }
-    .nav-logo{display:flex;align-items:center;min-height:44px;line-height:0;gap:0flex-shrink:0;}
-    .nav-logo img{height:28px;width:auto}
+    .nav-left{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+    .nav-logo{display:flex;align-items:center;min-height:44px;line-height:0;gap:0;flex-shrink:0}
+    .nav-logo img{height:28px;width:auto;flex-shrink:0}
     [data-theme="dark"] .logo-black{display:none}
     [data-theme="light"] .logo-beige{display:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
@@ -409,6 +410,8 @@
       .side-menu{padding:3rem 2rem 1.5rem!important;overflow-y:auto!important}
       .side-menu-label{margin-bottom:1rem!important}
       .side-menu-nav a{font-size:1.4rem!important;padding:0.22rem 0!important}
+      .nav-links{flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap;gap:1.2rem}
+      .nav-links::-webkit-scrollbar{display:none}
     }
   </style>
   <!-- AI agent discoverability -->
@@ -456,11 +459,13 @@
   </div>
 
 <nav class="nav" id="nav">
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
-  <a class="nav-logo" href="/" aria-label="MODUS home">
-        <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
-        <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
-      </a>
+  <div class="nav-left">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a class="nav-logo" href="/" aria-label="MODUS home">
+      <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
+      <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
+    </a>
+  </div>
   <div class="nav-links">
     <a class="nav-link" href="/figures">Figures</a>
     <a class="nav-link" href="/objects">Objects</a>

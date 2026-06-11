@@ -117,7 +117,7 @@ body.grain::before {
 .nav-links { display: flex; gap: var(--space-4); align-items: center; }
 .nav-link {
   font-family: var(--font-ui); font-size: var(--text-micro);
-  letter-spacing: var(--track-wider); text-transform: uppercase;
+  letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--mid); transition: color var(--ease-std);
 }
 .nav-link:hover, .nav-link.active { color: var(--navy); }

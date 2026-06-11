@@ -113,6 +113,7 @@ body.grain::before {
   transition: background var(--ease-std);
 }
 .nav.dark { background: transparent; border-color: var(--border-cream); }
+.nav-logo { flex-shrink: 0; }
 .nav-logo img { height: 28px; width: auto; }
 .nav-links { display: flex; gap: var(--space-4); align-items: center; }
 .nav-link {

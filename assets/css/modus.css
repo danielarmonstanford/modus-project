@@ -117,7 +117,7 @@ body.grain::before {
 .nav-logo img { height: 28px; width: auto; }
 .nav-links { display: flex; gap: var(--space-4); align-items: center; }
 .nav-link {
-  font-family: var(--font-ui); font-size: var(--text-micro);
+  font-family: var(--font-ui); font-size: 13px;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--mid); transition: color var(--ease-std);
 }

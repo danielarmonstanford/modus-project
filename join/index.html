@@ -569,7 +569,8 @@
 .side-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);
   z-index:299;opacity:0;pointer-events:none;transition:opacity 0.4s ease;}
 .side-overlay.open{opacity:1;pointer-events:auto;}
-@media(max-width:768px){.side-menu{width:100%;border-right:none;}
+@media(max-width:768px){
+      .nav-left{gap:0}.side-menu{width:100%;border-right:none;}
       .side-menu { padding:3rem 2rem 1.5rem; overflow-y:auto; }
       .side-menu-label { margin-bottom:1rem; }
       .side-menu-nav a { font-size:1.4rem; padding:0.22rem 0; }

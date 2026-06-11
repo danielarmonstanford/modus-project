@@ -169,7 +169,41 @@
     @keyframes fadeU{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     @keyframes drawL{from{width:0}to{width:min(360px,52vw)}}
 
+    /* INLINE BODY IMAGES */
+    .body-img{margin:2.8rem 0}
+    .body-img img{width:100%;height:auto;display:block;max-height:72vh;object-fit:contain;background:var(--bg3)}
+    .body-img figcaption{margin-top:0.9rem;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.9}
+
+    /* GALLERY SECTION */
+    .gal-section{background:var(--bg2);border-top:0.5px solid var(--border);padding:0 0 4rem}
+    .gal-header{max-width:1240px;margin:0 auto;padding:2.5rem var(--gutter) 1.8rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .gal-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold)}
+    .gal-controls{display:flex;align-items:center;gap:0.9rem}
+    .gal-btn{background:transparent;border:0.5px solid var(--border-warm);color:var(--text-dim);font-family:var(--font-mono);font-size:15px;width:40px;height:40px;min-height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--ease);border-radius:0;padding:0}
+    .gal-btn:hover{color:var(--text);border-color:var(--gold)}
+    .gal-counter{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;color:var(--text-dim);min-width:48px;text-align:center}
+    .gal-outer{overflow:hidden;padding:0 var(--gutter)}
+    .gal-track{display:flex;gap:6px;transition:transform 0.65s cubic-bezier(0.16,1,0.3,1);will-change:transform}
+    .gal-slide{flex:0 0 calc((100% - 12px) / 3);cursor:pointer;position:relative;overflow:hidden}
+    .gal-slide img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1),filter 0.4s ease}
+    .gal-slide:hover img{transform:scale(1.04);filter:brightness(1.1)}
+    .gal-slide-cap{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem 0.9rem;background:linear-gradient(to top,rgba(6,8,12,0.85) 0%,transparent 100%);opacity:0;transition:opacity 0.35s ease}
+    .gal-slide:hover .gal-slide-cap{opacity:1}
+    .gal-slide-cap span{font-family:var(--font-mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,230,213,0.85)}
+    .gal-dots{display:flex;gap:5px;justify-content:center;padding-top:1.8rem}
+    .gal-dot{width:4px;height:4px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background 0.3s ease,width 0.3s ease,border-radius 0.3s ease;flex-shrink:0}
+    .gal-dot.active{background:var(--gold);width:18px;border-radius:2px}
+
+    /* LIGHTBOX */
+    .gal-lb{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.96);align-items:center;justify-content:center}
+    .gal-lb.open{display:flex}
+    .gal-lb-img{max-width:90vw;max-height:88vh;object-fit:contain;display:block}
+    .gal-lb-close{position:absolute;top:1.2rem;right:1.4rem;background:transparent;border:0.5px solid rgba(237,230,213,0.2);color:rgba(237,230,213,0.7);font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;padding:6px 14px;cursor:pointer;min-height:36px;transition:all var(--ease)}
+    .gal-lb-close:hover{color:#fff;border-color:var(--gold)}
+    .gal-lb-cap{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,230,213,0.5);white-space:nowrap}
+
     @media(max-width:1040px){.feature{grid-template-columns:1fr}.sidebar{position:static}.sa{grid-template-columns:140px 1fr 44px 22px}}
+    @media(max-width:768px){.gal-slide{flex:0 0 calc((100% - 6px) / 1.8)}}
     @media(max-width:680px){.nav-links{gap:1rem;flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}.nav-links::-webkit-scrollbar{display:none}.theme-btn span:not(.theme-dot){display:none}.sa{grid-template-columns:120px 1fr 40px 20px}}
     @media(max-width:480px){
       body{font-size:17px;line-height:1.7}
@@ -179,6 +213,7 @@
       .st-score{font-size:52px!important}
       .sa{grid-template-columns:1fr;gap:6px}
       .sa-bar{display:none}
+      .gal-slide{flex:0 0 calc(100% - 10%)}
     }
   </style>
 </head>
@@ -242,6 +277,13 @@
     <p>FASCINASIA is Daniel Stanford's primary fine art painting practice — a series of mixed-media works that occupy the territory between haute photography and painterly gesture. The works are built on photographic foundations and extended through paint, texture, and material intervention until the photograph beneath is no longer visible as source. What remains is something that has the warmth of a painting and the precision of a lens — two registers that fine art usually keeps separate.</p>
 
     <p>The series title is a compound Stanford coined from fascination and Asia — a reference not to geography but to a certain quality of the Orientalist sublime: images that draw the eye into depth, that refuse resolution, that maintain their strangeness no matter how long you look. The works are not decorative in the sense that hospitality art is decorative. They are demanding. They ask something of the room they inhabit and something of the person standing in front of them.</p>
+
+    <figure class="body-img">
+      <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1200/Gov-Lov-is-Toxic_evcokn.jpg"
+           alt="Gov-Lov Is Toxic — Daniel Stanford — FASCINASIA Series — Mixed Media"
+           loading="lazy" />
+      <figcaption>Gov-Lov Is Toxic · Mixed media · FASCINASIA Series · Daniel Stanford · Saint-Henri, Montreal</figcaption>
+    </figure>
 
     <div class="pull">
       <p>"The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding is not doubt — it is patience."</p>
@@ -310,6 +352,13 @@
       </div>
     </div>
 
+    <figure class="body-img">
+      <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1400/04_LoveIsEternal_STANFORD_40X60_yskjad.jpg"
+           alt="Love Is Eternal — Daniel Stanford — FASCINASIA Paintings — 40×60 in"
+           loading="lazy" />
+      <figcaption>Love Is Eternal · 40×60 in · FASCINASIA Paintings · Daniel Stanford · © Stanford Emporium Inc.</figcaption>
+    </figure>
+
     <h3>The 10/10.<br><em>Why Sensory Truth is the axis that matters.</em></h3>
 
     <p>The MODUS Index scores on five axes. Four of them — Rarity, Craft, Investment Value, Timelessness — are assessable through documentation, market data, and comparative analysis. Sensory Truth is different. It is the axis that requires presence. It asks whether the work does what it claims to do when you stand in front of it — whether the experience it promises is delivered, whether it generates the specific quality of attention it was built to generate.</p>
@@ -354,19 +403,114 @@
 
 </main>
 
-<!-- FASCINASIA IMAGE -->
+<!-- FASCINASIA FEATURE IMAGE -->
 <div class="img-section" aria-label="FASCINASIA series — Daniel Stanford">
-  <p class="img-label">FASCINASIA · Mixed Media Series · Daniel Stanford · Saint-Henri, Montreal</p>
+  <p class="img-label">FASCINASIA · The Root of All Evil · Daniel Stanford · 40×60 in</p>
   <div class="img-hero">
-    <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/FASCINASIA-Art-tiles_web-page_e3vljy.jpg"
-         alt="FASCINASIA — Daniel Stanford — Mixed Media Painting Series — 50 works — Limited Edition"
+    <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/The-Root-of-all-E_DanielStanford_40x60_yydi59.jpg"
+         alt="The Root of All Evil — Daniel Stanford — FASCINASIA — 40×60 in — Mixed Media"
          loading="lazy" />
   </div>
   <p class="img-caption">
-    FASCINASIA · Daniel Stanford · Mixed media · 50 works · Limited edition — no prints, no open edition<br>
+    The Root of All Evil · 40×60 in · FASCINASIA · Daniel Stanford · Mixed media · Limited edition — no prints, no open edition<br>
     MODUS Index: 49.5/50 · Scored by Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada<br>
     Available via Saatchi Art · Tappan Collective · © Daniel Stanford / Stanford Emporium Inc. · MODUS Décover Issue No. 1 · 2026
   </p>
+</div>
+
+<!-- FASCINASIA SLIDING GALLERY -->
+<section class="gal-section" aria-label="FASCINASIA — Selected Works Gallery">
+  <div class="gal-header">
+    <p class="gal-eyebrow">FASCINASIA · Selected Works · Daniel Stanford · Mixed Media · Saint-Henri, Montreal</p>
+    <div class="gal-controls">
+      <button class="gal-btn" id="galPrev" aria-label="Previous">&#8592;</button>
+      <span class="gal-counter" id="galCounter">1 / 14</span>
+      <button class="gal-btn" id="galNext" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <div class="gal-outer" id="galOuter">
+    <div class="gal-track" id="galTrack">
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/AdrianaLima-32x42_n6e0cy.jpg" data-cap="Adriana Lima · 32×42 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/AdrianaLima-32x42_n6e0cy.jpg" alt="Adriana Lima · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Adriana Lima · 32×42 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Thai-Body_Lips_fykwco.jpg" data-cap="Thai Body · Lips Series">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Thai-Body_Lips_fykwco.jpg" alt="Thai Body Lips · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Thai Body · Lips Series</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/IsabeliFontana-48X36_vtnnip.jpg" data-cap="Isabeli Fontana · 48×36 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/IsabeliFontana-48X36_vtnnip.jpg" alt="Isabeli Fontana · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Isabeli Fontana · 48×36 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Sparkles-Asia-pose-48x35-Pola_xfsrje.jpg" data-cap="Sparkles Asia · 48×35 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Sparkles-Asia-pose-48x35-Pola_xfsrje.jpg" alt="Sparkles Asia Pose · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Sparkles Asia · 48×35 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/rihanna-gq-Thai-Final_ponjxd.jpg" data-cap="Rihanna GQ · Thai Series">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/rihanna-gq-Thai-Final_ponjxd.jpg" alt="Rihanna GQ Thai · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Rihanna GQ · Thai Series</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Back-side-Gold-48x36-5_nb9vpv.jpg" data-cap="Back Side Gold · 48×36 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Back-side-Gold-48x36-5_nb9vpv.jpg" alt="Back Side Gold · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Back Side Gold · 48×36 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Pirelli2005_04_ErinWasson-2_kaxbfh.jpg" data-cap="Erin Wasson · Pirelli Series">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Pirelli2005_04_ErinWasson-2_kaxbfh.jpg" alt="Erin Wasson Pirelli · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Erin Wasson · Pirelli Series</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Nude-Palace-window-noise_fvldsj.jpg" data-cap="Nude Palace Window">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Nude-Palace-window-noise_fvldsj.jpg" alt="Nude Palace Window · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Nude Palace Window</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Isabeli-Temple-sit-web-big_fqeilw.jpg" data-cap="Isabeli, Temple · 48×36 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Isabeli-Temple-sit-web-big_fqeilw.jpg" alt="Isabeli Temple · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Isabeli, Temple · 48×36 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Valentina-Paradise-48x36-small520px_yr24ya.jpg" data-cap="Valentina Paradise · 48×36 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Valentina-Paradise-48x36-small520px_yr24ya.jpg" alt="Valentina Paradise · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Valentina Paradise · 48×36 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Arabian-Dream_32_x48_-_m0jknv.jpg" data-cap="Arabian Dream · 32×48 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Arabian-Dream_32_x48_-_m0jknv.jpg" alt="Arabian Dream · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Arabian Dream · 32×48 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Third-Eye-54-x-72_mro6yi.jpg" data-cap="Third Eye · 54×72 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Third-Eye-54-x-72_mro6yi.jpg" alt="Third Eye · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Third Eye · 54×72 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/05_KhaliumaaThirdEyeJapan_40x60_yalb6z.jpg" data-cap="Khaliumaa, Third Eye Japan · 40×60 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/05_KhaliumaaThirdEyeJapan_40x60_yalb6z.jpg" alt="Khaliumaa Third Eye Japan · FASCINASIA Paintings · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Khaliumaa, Third Eye Japan · 40×60 in</span></div>
+      </div>
+
+      <div class="gal-slide" data-src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Red-Gold-Arabian-_36x48_c5wz4f.jpg" data-cap="Red Gold Arabian · 36×48 in">
+        <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_600/Red-Gold-Arabian-_36x48_c5wz4f.jpg" alt="Red Gold Arabian · FASCINASIA · Daniel Stanford" loading="lazy" />
+        <div class="gal-slide-cap"><span>Red Gold Arabian · 36×48 in</span></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="gal-dots" id="galDots" aria-label="Gallery navigation dots"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="gal-lb" id="galLb" role="dialog" aria-modal="true" aria-label="FASCINASIA work enlarged view">
+  <button class="gal-lb-close" id="galLbClose">ESC</button>
+  <img class="gal-lb-img" id="galLbImg" src="" alt="" />
+  <span class="gal-lb-cap" id="galLbCap"></span>
 </div>
 
 <footer>
@@ -375,6 +519,95 @@
 </footer>
 
 <script>
+(function() {
+  // GALLERY
+  var track = document.getElementById('galTrack');
+  var outer = document.getElementById('galOuter');
+  var slides = track ? Array.from(track.querySelectorAll('.gal-slide')) : [];
+  var dotsEl = document.getElementById('galDots');
+  var counter = document.getElementById('galCounter');
+  var prevBtn = document.getElementById('galPrev');
+  var nextBtn = document.getElementById('galNext');
+  var lb = document.getElementById('galLb');
+  var lbImg = document.getElementById('galLbImg');
+  var lbCap = document.getElementById('galLbCap');
+  var lbClose = document.getElementById('galLbClose');
+  var total = slides.length;
+  var curr = 0;
+  var perView = 3;
+  var autoTimer;
+
+  function getPerView() {
+    var w = window.innerWidth;
+    if (w <= 480) return 1.2;
+    if (w <= 768) return 1.8;
+    return 3;
+  }
+
+  function slideW() {
+    var pv = getPerView();
+    var gap = 6;
+    return (outer.offsetWidth - gap * (Math.floor(pv) - 1)) / pv;
+  }
+
+  function goTo(idx) {
+    var pv = getPerView();
+    var max = Math.max(0, total - Math.floor(pv));
+    curr = Math.max(0, Math.min(idx, max));
+    var sw = slideW();
+    var offset = curr * (sw + 6);
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    counter.textContent = (curr + 1) + ' / ' + total;
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === curr); });
+  }
+
+  // build dots
+  var dots = [];
+  for (var i = 0; i < total; i++) {
+    var d = document.createElement('button');
+    d.className = 'gal-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    (function(idx) { d.addEventListener('click', function() { goTo(idx); resetAuto(); }); })(i);
+    dotsEl.appendChild(d);
+    dots.push(d);
+  }
+
+  function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(function() { goTo(curr + 1 < total ? curr + 1 : 0); }, 4200); }
+
+  prevBtn.addEventListener('click', function() { goTo(curr - 1 < 0 ? total - 1 : curr - 1); resetAuto(); });
+  nextBtn.addEventListener('click', function() { goTo(curr + 1 < total ? curr + 1 : 0); resetAuto(); });
+
+  // touch swipe
+  var tx0 = null;
+  outer.addEventListener('touchstart', function(e) { tx0 = e.touches[0].clientX; }, {passive:true});
+  outer.addEventListener('touchend', function(e) {
+    if (tx0 === null) return;
+    var dx = e.changedTouches[0].clientX - tx0;
+    if (Math.abs(dx) > 40) { goTo(dx < 0 ? curr + 1 : curr - 1); resetAuto(); }
+    tx0 = null;
+  });
+
+  // resize
+  window.addEventListener('resize', function() { goTo(curr); });
+
+  // lightbox
+  slides.forEach(function(s) {
+    s.addEventListener('click', function() {
+      lbImg.src = s.dataset.src;
+      lbImg.alt = s.querySelector('img').alt;
+      lbCap.textContent = s.dataset.cap;
+      lb.classList.add('open');
+    });
+  });
+  function closeLb() { lb.classList.remove('open'); lbImg.src = ''; }
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', function(e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLb(); });
+
+  resetAuto();
+  goTo(0);
+})();
+
 (function() {
   var h = document.documentElement;
   var btn = document.getElementById('themeBtn');

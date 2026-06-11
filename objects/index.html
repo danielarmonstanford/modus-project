@@ -57,8 +57,9 @@
 
     /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);background:var(--nav-bg);border-bottom:0.5px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:background var(--ease)}
-    .nav-logo{display:flex;align-items:center;min-height:44px;line-height:0;gap:0flex-shrink:0;}
-    .nav-logo img{height:28px;width:auto}
+    .nav-left{display:flex;align-items:center;gap:0.5rem;flex-shrink:0}
+    .nav-logo{display:flex;align-items:center;min-height:44px;line-height:0;flex-shrink:0}
+    .nav-logo img{height:28px;width:auto;flex-shrink:0}
     [data-theme="dark"] .logo-black{display:none}
     [data-theme="light"] .logo-beige{display:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
@@ -319,11 +320,13 @@
   </div>
 
 <nav class="nav">
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
-  <a class="nav-logo" href="/" aria-label="MODUS home">
+  <div class="nav-left">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a class="nav-logo" href="/" aria-label="MODUS home">
         <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
         <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
       </a>
+  </div>
   <div class="nav-links">
     <a class="nav-link" href="/figures">Figures</a>
     <a class="nav-link active" href="/objects">Objects</a>

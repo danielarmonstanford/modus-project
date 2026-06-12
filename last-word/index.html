@@ -252,6 +252,15 @@
     @media(max-width:900px){.entry.featured{grid-template-columns:1fr}.signature-section{grid-template-columns:1fr;gap:2.5rem}}
     @media(max-width:768px){.pg-slide{flex:0 0 calc((100% - 6px) / 1.8)}}
     @media(max-width:600px){.entries{grid-template-columns:1fr}.verdict-key{gap:1rem}.filter-bar{overflow-x:auto}}
+        @media(max-width:768px){
+      .nav{padding:0 0.5rem 0 0}
+      .menu-btn{padding:8px 2px 8px 0}
+      .nav-logo img{margin-left:2px}
+      .nav-links{flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap;gap:1.2rem}
+      .nav-links::-webkit-scrollbar{display:none}
+      #themeBtn span{display:none}
+      #langLabel{display:inline!important}
+    }
     @media(max-width:480px){.nav-links{gap:1rem}#themeBtn span{display:none}
       #langLabel{display:inline!important}.pg-slide{flex:0 0 calc(100% - 8%)}}
   
@@ -612,11 +621,13 @@
   </div>
 
 <nav class="nav">
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
-  <a class="nav-logo" href="/" aria-label="MODUS home">
-        <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
-        <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
-      </a>
+  <div class="nav-left">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a class="nav-logo" href="/" aria-label="MODUS home">
+      <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
+      <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
+    </a>
+  </div>
   <div class="nav-links">
     <a class="nav-link" href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
     <a class="nav-link" href="/objects" data-en="Objects" data-fr="Objets">Objects</a>

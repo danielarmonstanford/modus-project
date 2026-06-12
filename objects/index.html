@@ -64,7 +64,9 @@
     .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
-
+        [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
+    [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+    #langBtn{font-weight:600;letter-spacing:0.08em}
     /* HERO — S/T blue 63 */
     .hero{height:100vh;min-height:600px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) 5rem}
     .hero-photo{position:absolute;inset:0;z-index:0;background:url("https://content-hub.imgix.net/3pjtQyl3hdSuJot80mwVmo/ff30ddd6ad80535ba6dae278cded0420/what-20is-20the-20911-20st.jpg?w=2400&auto=format") center 50%/cover no-repeat;transform-origin:center}
@@ -194,7 +196,8 @@
 
     @media(max-width:1040px){.article-grid{grid-template-columns:1fr}.sidebar{position:static}}
     @media(max-width:700px){.gallery{grid-template-columns:1fr}.gallery figure.full{grid-column:auto}}
-    @media(max-width:520px){.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}}
+    @media(max-width:520px){.nav-links{gap:1rem}#themeBtn span{display:none}
+      #langLabel{display:inline!important}}
   
     /* ── Lovine display font ── */
     @font-face {
@@ -517,28 +520,28 @@
 
 <!-- OPENING DECK -->
 <div class="deck w" style="margin-bottom:4rem;">
-  <p>"Launch control engages. The flat-six climbs past seven thousand. At nine thousand you are no longer thinking about the car — you are the car. I drove the 911 twice. I remember both. This is about what the 911 S/T is, what it means, and what the new 2026 GT3 S/C adds to the argument."</p>
-  <p class="deck-attr">— Daniel Stanford · Editor-in-Chief · MODUS · First-hand testimony</p>
+  <p data-en="&quot;Launch control engages. The flat-six climbs past seven thousand. At nine thousand you are no longer thinking about the car — you are the car. I drove the 911 twice. I remember both. This is about what the 911 S/T is, what it means, and what the new 2026 GT3 S/C adds to the argument.&quot;" data-fr="« Le launch control s'enclenche. Le flat-six dépasse sept mille tours. À neuf mille, vous ne pensez plus à la voiture — vous êtes la voiture. J'ai conduit la 911 deux fois. Je me souviens des deux. Il s'agit de ce qu'est la 911 S/T, de ce qu'elle signifie, et de ce que la nouvelle GT3 S/C 2026 ajoute à l'argument. »">"Launch control engages. The flat-six climbs past seven thousand. At nine thousand you are no longer thinking about the car — you are the car. I drove the 911 twice. I remember both. This is about what the 911 S/T is, what it means, and what the new 2026 GT3 S/C adds to the argument."</p>
+  <p class="deck-attr" data-en="— Daniel Stanford · Editor-in-Chief · MODUS · First-hand testimony" data-fr="— Daniel Stanford · Rédacteur en chef · MODUS · Témoignage direct">— Daniel Stanford · Editor-in-Chief · MODUS · First-hand testimony</p>
 </div>
 
 <!-- ═══════════════════════════════════ -->
 <!-- PART I — THE S/T                   -->
 <!-- ═══════════════════════════════════ -->
-<div class="part-div"><span class="part-no">Part I</span><div class="part-line"></div></div>
+<div class="part-div"><span class="part-no" data-en="Part I" data-fr="Partie I">Part I</span><div class="part-line"></div></div>
 <h2 class="part-title">Porsche 911 S/T.<br><em data-en="The reference." data-fr="La référence.">The reference.</em></h2>
-<p class="part-sub">992 Generation · 2024 · 1,963 units · Manual only · MODUS Index 48 / 50</p>
+<p class="part-sub" data-en="992 Generation · 2024 · 1,963 units · Manual only · MODUS Index 48 / 50" data-fr="Génération 992 · 2024 · 1 963 exemplaires · Manuelle uniquement · Index MODUS 48 / 50">992 Generation · 2024 · 1,963 units · Manual only · MODUS Index 48 / 50</p>
 
 <section class="section w" style="padding-top:2.5rem">
   <div class="article-grid">
     <div class="body">
 
-      <p>In 1963 Porsche built the first 911. In 2024, to mark sixty years, they built the last best version of it: the 911 S/T. 1,963 units. That number is not coincidence. It is a sentence — and the full stop is a six-speed manual gearbox offered without alternative. You want a PDK? Buy something else. Porsche is not interested in your preference for comfort here.</p>
+      <p data-en="In 1963 Porsche built the first 911. In 2024, to mark sixty years, they built the last best version of it: the 911 S/T. 1,963 units. That number is not coincidence. It is a sentence — and the full stop is a six-speed manual gearbox offered without alternative. You want a PDK? Buy something else. Porsche is not interested in your preference for comfort here." data-fr="En 1963, Porsche a construit la première 911. En 2024, pour marquer soixante ans, ils ont construit sa meilleure version finale : la 911 S/T. 1 963 exemplaires. Ce nombre n'est pas une coïncidence. C'est une phrase — et le point final est une boîte manuelle à six vitesses proposée sans alternative. Vous voulez une PDK ? Achetez autre chose. Porsche ne s'intéresse pas à votre préférence pour le confort ici.">In 1963 Porsche built the first 911. In 2024, to mark sixty years, they built the last best version of it: the 911 S/T. 1,963 units. That number is not coincidence. It is a sentence — and the full stop is a six-speed manual gearbox offered without alternative. You want a PDK? Buy something else. Porsche is not interested in your preference for comfort here.</p>
 
-      <p>The car combines the GT3 RS's 518-horsepower naturally aspirated flat-six with the Touring's visual restraint: no fixed rear wing, carbon roof, fenders, doors, bonnet. At 3,056 pounds it is the lightest 992-generation 911 Porsche has made. The Heritage Design Package — with its racing number circles, period PORSCHE script, and chalk blue or black paint — makes explicit the conversation the car is having with its own history. The number 63 on the door is not decoration. It is a date.</p>
+      <p data-en="The car combines the GT3 RS's 518-horsepower naturally aspirated flat-six with the Touring's visual restraint: no fixed rear wing, carbon roof, fenders, doors, bonnet. At 3,056 pounds it is the lightest 992-generation 911 Porsche has made. The Heritage Design Package — with its racing number circles, period PORSCHE script, and chalk blue or black paint — makes explicit the conversation the car is having with its own history. The number 63 on the door is not decoration. It is a date." data-fr="La voiture combine le flat-six à aspiration naturelle de 518 chevaux du GT3 RS avec la sobriété visuelle du Touring : pas d'aileron arrière fixe, toit, ailes, portes et capot en carbone. À 1 387 kg, c'est la 911 de génération 992 la plus légère que Porsche ait construite. Le Heritage Design Package — avec ses cercles de numéro de course, le lettrage PORSCHE d'époque et la peinture bleu craie ou noire — rend explicite la conversation que la voiture entretient avec sa propre histoire. Le numéro 63 sur la portière n'est pas une décoration. C'est une date.">The car combines the GT3 RS's 518-horsepower naturally aspirated flat-six with the Touring's visual restraint: no fixed rear wing, carbon roof, fenders, doors, bonnet. At 3,056 pounds it is the lightest 992-generation 911 Porsche has made. The Heritage Design Package — with its racing number circles, period PORSCHE script, and chalk blue or black paint — makes explicit the conversation the car is having with its own history. The number 63 on the door is not decoration. It is a date.</p>
 
       <div class="testimony">
-        <p>"Launch mode is extremely memorable. And the standard shift is so fun to drive. A real driver's car. That is what I remember — not just the speed. The engagement. The fact that the car requires something from you and gives something back that is not available any other way."</p>
-        <p class="testimony-attr">Daniel Stanford — Direct testimony · Porsche 911 GT3 driven</p>
+        <p data-en="&quot;Launch mode is extremely memorable. And the standard shift is so fun to drive. A real driver's car. That is what I remember — not just the speed. The engagement. The fact that the car requires something from you and gives something back that is not available any other way.&quot;" data-fr="« Le mode launch est extrêmement mémorable. Et la boîte standard est tellement agréable à conduire. Une vraie voiture de pilote. C'est ce dont je me souviens — pas seulement la vitesse. L'engagement. Le fait que la voiture exige quelque chose de vous et vous rend quelque chose qui n'est pas disponible autrement. »">"Launch mode is extremely memorable. And the standard shift is so fun to drive. A real driver's car. That is what I remember — not just the speed. The engagement. The fact that the car requires something from you and gives something back that is not available any other way."</p>
+        <p class="testimony-attr" data-en="Daniel Stanford — Direct testimony · Porsche 911 GT3 driven" data-fr="Daniel Stanford — Témoignage direct · Porsche 911 GT3 conduite">Daniel Stanford — Direct testimony · Porsche 911 GT3 driven</p>
       </div>
 
       <!-- S/T duo shot — black and blue -->

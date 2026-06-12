@@ -67,7 +67,9 @@
     .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
-
+        [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
+    [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+    #langBtn{font-weight:600;letter-spacing:0.08em}
     /* HERO */
     .hero{min-height:80vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--nav-h) + 4rem) var(--gutter) 4rem;position:relative;overflow:hidden}
     .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;opacity:0;animation:fadeIn 1.4s ease 0.2s forwards}
@@ -250,7 +252,8 @@
     @media(max-width:900px){.entry.featured{grid-template-columns:1fr}.signature-section{grid-template-columns:1fr;gap:2.5rem}}
     @media(max-width:768px){.pg-slide{flex:0 0 calc((100% - 6px) / 1.8)}}
     @media(max-width:600px){.entries{grid-template-columns:1fr}.verdict-key{gap:1rem}.filter-bar{overflow-x:auto}}
-    @media(max-width:480px){.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}.pg-slide{flex:0 0 calc(100% - 8%)}}
+    @media(max-width:480px){.nav-links{gap:1rem}#themeBtn span{display:none}
+      #langLabel{display:inline!important}.pg-slide{flex:0 0 calc(100% - 8%)}}
   
     /* ── Lovine display font ── */
     @font-face {
@@ -644,7 +647,7 @@
       The Last<br><em>Word.</em>
     </h1>
     <div class="hero-byline">
-      <p>Unfiltered. Unjustified. Not up for discussion. Daniel Stanford on what impresses and what doesn't — the most direct luxury verdict in publishing. If he says impressed, it's A-list. If not, it's not worth your time.</p>
+      <p data-en="Unfiltered. Unjustified. Not up for discussion. Daniel Stanford on what impresses and what doesn't — the most direct luxury verdict in publishing. If he says impressed, it's A-list. If not, it's not worth your time." data-fr="Sans filtre. Sans justification. Pas de discussion. Daniel Stanford sur ce qui impressionne et ce qui n'impressionne pas — le verdict de luxe le plus direct dans la presse. S'il dit impressionné, c'est A-list. Sinon, ça ne vaut pas votre temps.">Unfiltered. Unjustified. Not up for discussion. Daniel Stanford on what impresses and what doesn't — the most direct luxury verdict in publishing. If he says impressed, it's A-list. If not, it's not worth your time.</p>
     </div>
     <div class="hero-rule" aria-hidden="true"></div>
   </div>
@@ -652,27 +655,27 @@
 
 <!-- VERDICT KEY -->
 <div class="verdict-key" aria-label="Verdict system explained">
-  <span class="vk-label">The system:</span>
+  <span class="vk-label" data-en="The system:" data-fr="Le système :">The system:</span>
   <div class="vk-item">
     <span class="vk-badge a" aria-label="A-list rating">A-List</span>
-    <span class="vk-text">— Impressed. Worth your time and money.</span>
+    <span class="vk-text" data-en="— Impressed. Worth your time and money." data-fr="— Impressionné. Ça vaut votre temps et votre argent.">— Impressed. Worth your time and money.</span>
   </div>
   <div class="vk-item">
     <span class="vk-badge f" aria-label="Forgettable rating">Forgettable</span>
-    <span class="vk-text">— Not impressed. Move on.</span>
+    <span class="vk-text" data-en="— Not impressed. Move on." data-fr="— Pas impressionné. Passez à autre chose.">— Not impressed. Move on.</span>
   </div>
-  <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-left:auto">No middle ground.</span>
+  <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-left:auto" data-en="No middle ground." data-fr="Pas de juste milieu.">No middle ground.</span>
 </div>
 
 <!-- FILTER BAR -->
 <div class="filter-bar" role="tablist" aria-label="Filter by category">
-  <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-  <button class="filter-btn" data-filter="hotel" role="tab" aria-selected="false">Hotels</button>
-  <button class="filter-btn" data-filter="restaurant" role="tab" aria-selected="false">Food</button>
-  <button class="filter-btn" data-filter="object" role="tab" aria-selected="false">Objects</button>
-  <button class="filter-btn" data-filter="experience" role="tab" aria-selected="false">Experiences</button>
-  <button class="filter-btn" data-filter="health" role="tab" aria-selected="false">Health</button>
-  <button class="filter-btn" data-filter="fashion" role="tab" aria-selected="false">Fashion</button>
+  <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" data-en="All" data-fr="Tout">All</button>
+  <button class="filter-btn" data-filter="hotel" role="tab" aria-selected="false" data-en="Hotels" data-fr="Hôtels">Hotels</button>
+  <button class="filter-btn" data-filter="restaurant" role="tab" aria-selected="false" data-en="Food" data-fr="Gastronomie">Food</button>
+  <button class="filter-btn" data-filter="object" role="tab" aria-selected="false" data-en="Objects" data-fr="Objets">Objects</button>
+  <button class="filter-btn" data-filter="experience" role="tab" aria-selected="false" data-en="Experiences" data-fr="Expériences">Experiences</button>
+  <button class="filter-btn" data-filter="health" role="tab" aria-selected="false" data-en="Health" data-fr="Santé">Health</button>
+  <button class="filter-btn" data-filter="fashion" role="tab" aria-selected="false" data-en="Fashion" data-fr="Mode">Fashion</button>
 </div>
 
 <!-- ENTRIES -->
@@ -682,18 +685,18 @@
   <article class="entry featured verdict-a" data-category="health" aria-label="Oscar Patel Protocol — A-List">
     <div>
       <div class="entry-meta">
-        <span class="entry-cat">Health · Protocol</span>
+        <span class="entry-cat" data-en="Health · Protocol" data-fr="Santé · Protocole">Health · Protocol</span>
         <span class="entry-date">June 2026</span>
       </div>
       <h2 class="entry-name">Oscar Patel<br>Health=Looks Protocol</h2>
-      <div class="entry-type">Structural correction · Fascia · Myofunctional therapy</div>
+      <div class="entry-type" data-en="Structural correction · Fascia · Myofunctional therapy" data-fr="Correction structurelle · Fascia · Thérapie myofonctionnelle">Structural correction · Fascia · Myofunctional therapy</div>
       <div class="entry-verdict">
         <span class="verdict-badge a" aria-label="A-List verdict">A-List</span>
-        <span class="verdict-statement a">Impressed.</span>
+        <span class="verdict-statement a" data-en="Impressed." data-fr="Impressionné.">Impressed.</span>
       </div>
     </div>
     <div>
-      <p class="entry-note">"I am on the protocol now. After twenty-two years of Rolfing Structural Integration and Adaptive Bodywork with John Sutherland, I know when something is working at the root level and when it is performing wellness. Patel's methodology is working at the root. The maxilla-as-architectural-keystone thesis is scientifically sound and practically effective. The connection between skull structure, fascial chain, posture, hormonal environment, and appearance is not theoretical — it is observable. I am observing it. This is the most significant health protocol I have encountered since my first Rolfing series in 2004."</p>
+      <p class="entry-note" data-en="&quot;I am on the protocol now. After twenty-two years of Rolfing Structural Integration and Adaptive Bodywork with John Sutherland, I know when something is working at the root level and when it is performing wellness. Patel's methodology is working at the root. The maxilla-as-architectural-keystone thesis is scientifically sound and practically effective. The connection between skull structure, fascial chain, posture, hormonal environment, and appearance is not theoretical — it is observable. I am observing it. This is the most significant health protocol I have encountered since my first Rolfing series in 2004.&quot;" data-fr="« Je suis actuellement sur ce protocole. Après vingt-deux ans d'Intégration Structurelle Rolfing et de Travail Corporel Adaptatif avec John Sutherland, je sais quand quelque chose fonctionne au niveau de la racine et quand il performe simplement le bien-être. La méthodologie de Patel fonctionne à la racine. La thèse de la mâchoire supérieure comme clé de voûte architecturale est scientifiquement solide et pratiquement efficace. Le lien entre la structure crânienne, la chaîne fasciale, la posture, l'environnement hormonal et l'apparence n'est pas théorique — il est observable. Je l'observe. C'est le protocole de santé le plus significatif que j'ai rencontré depuis ma première série Rolfing en 2004. »">"I am on the protocol now. After twenty-two years of Rolfing Structural Integration and Adaptive Bodywork with John Sutherland, I know when something is working at the root level and when it is performing wellness. Patel's methodology is working at the root. The maxilla-as-architectural-keystone thesis is scientifically sound and practically effective. The connection between skull structure, fascial chain, posture, hormonal environment, and appearance is not theoretical — it is observable. I am observing it. This is the most significant health protocol I have encountered since my first Rolfing series in 2004."</p>
       <div class="entry-sig">
         <span>— Daniel Stanford</span>
         <span>oscarpatel.net</span>
@@ -704,16 +707,16 @@
   <!-- ENTRY: Porsche 911 GT3 S/C -->
   <article class="entry verdict-a" data-category="object" aria-label="Porsche 911 GT3 S/C — A-List">
     <div class="entry-meta">
-      <span class="entry-cat">Objects · Automotive</span>
+      <span class="entry-cat" data-en="Objects · Automotive" data-fr="Objets · Automobile">Objects · Automotive</span>
       <span class="entry-date">April 2026</span>
     </div>
     <h2 class="entry-name">Porsche 911 GT3 S/C</h2>
-    <div class="entry-type">World premiere · Open-air GT3 · 9,000 rpm · Manual</div>
+    <div class="entry-type" data-en="World premiere · Open-air GT3 · 9,000 rpm · Manual" data-fr="Première mondiale · GT3 à ciel ouvert · 9 000 tr/min · Manuelle">World premiere · Open-air GT3 · 9,000 rpm · Manual</div>
     <div class="entry-verdict">
       <span class="verdict-badge a">A-List</span>
-      <span class="verdict-statement a">Impressed.</span>
+      <span class="verdict-statement a" data-en="Impressed." data-fr="Impressionné.">Impressed.</span>
     </div>
-    <p class="entry-note">"The question nobody thought to ask — what if you removed the roof from the GT3 — answered exactly right. 9,000 rpm naturally aspirated. Six-speed manual only. Carbon throughout. The engine note is no longer inside a car. It is part of the landscape you are moving through. I drove two 911s. Launch mode lives in the body after. This car will produce the most memorable hour available in a production vehicle in 2026."</p>
+    <p class="entry-note" data-en="&quot;The question nobody thought to ask — what if you removed the roof from the GT3 — answered exactly right. 9,000 rpm naturally aspirated. Six-speed manual only. Carbon throughout. The engine note is no longer inside a car. It is part of the landscape you are moving through. I drove two 911s. Launch mode lives in the body after. This car will produce the most memorable hour available in a production vehicle in 2026.&quot;" data-fr="« La question que personne n'avait pensé à poser — et si l'on retirait le toit du GT3 — a trouvé exactement la bonne réponse. 9 000 tr/min en aspiration naturelle. Boîte manuelle six vitesses uniquement. Carbone partout. La note du moteur n'est plus à l'intérieur d'une voiture. Elle fait partie du paysage dans lequel vous vous déplacez. J'ai conduit deux 911. Le mode launch reste dans le corps après. Cette voiture produira l'heure la plus mémorable disponible dans un véhicule de production en 2026. »">"The question nobody thought to ask — what if you removed the roof from the GT3 — answered exactly right. 9,000 rpm naturally aspirated. Six-speed manual only. Carbon throughout. The engine note is no longer inside a car. It is part of the landscape you are moving through. I drove two 911s. Launch mode lives in the body after. This car will produce the most memorable hour available in a production vehicle in 2026."</p>
     <div class="entry-sig">
       <span>— D.S.</span>
       <a href="/objects" style="color:var(--gold);font-size:12px;letter-spacing:0.14em;text-transform:uppercase">Full feature →</a>
@@ -723,16 +726,16 @@
   <!-- ENTRY: Amanwella -->
   <article class="entry verdict-a" data-category="hotel" aria-label="Amanwella — A-List">
     <div class="entry-meta">
-      <span class="entry-cat">Hotels · Indian Ocean</span>
+      <span class="entry-cat" data-en="Hotels · Indian Ocean" data-fr="Hôtels · Océan Indien">Hotels · Indian Ocean</span>
       <span class="entry-date">2026</span>
     </div>
     <h2 class="entry-name">Amanwella<br>Tangalle, Sri Lanka</h2>
-    <div class="entry-type">30 suites · Indian Ocean · South Coast</div>
+    <div class="entry-type" data-en="30 suites · Indian Ocean · South Coast" data-fr="30 suites · Océan Indien · Côte Sud">30 suites · Indian Ocean · South Coast</div>
     <div class="entry-verdict">
       <span class="verdict-badge a">A-List</span>
-      <span class="verdict-statement a">Impressed.</span>
+      <span class="verdict-statement a" data-en="Impressed." data-fr="Impressionné.">Impressed.</span>
     </div>
-    <p class="entry-note">"No children under twelve. No itinerary unless you ask. The pool continues into the sea below. The fish was caught that morning. The silence is the treatment. There is a category of hotel that stops you performing the act of being on holiday and simply places you somewhere. Amanwella is that category."</p>
+    <p class="entry-note" data-en="&quot;No children under twelve. No itinerary unless you ask. The pool continues into the sea below. The fish was caught that morning. The silence is the treatment. There is a category of hotel that stops you performing the act of being on holiday and simply places you somewhere. Amanwella is that category.&quot;" data-fr="« Pas d'enfants de moins de douze ans. Pas d'itinéraire sauf si vous en demandez un. La piscine se prolonge dans la mer en contrebas. Le poisson a été pêché le matin même. Le silence est le traitement. Il existe une catégorie d'hôtels qui cesse de vous faire jouer le rôle de quelqu'un en vacances et vous place simplement quelque part. Amanwella est cette catégorie. »">"No children under twelve. No itinerary unless you ask. The pool continues into the sea below. The fish was caught that morning. The silence is the treatment. There is a category of hotel that stops you performing the act of being on holiday and simply places you somewhere. Amanwella is that category."</p>
     <div class="entry-sig">
       <span>— D.S.</span>
       <a href="/terrain" style="color:var(--gold);font-size:12px;letter-spacing:0.14em;text-transform:uppercase">Full feature →</a>
@@ -742,35 +745,35 @@
   <!-- ENTRY: Tom Ford Oud Wood (placeholder for Atelier feature) -->
   <article class="entry verdict-a" data-category="object" aria-label="Tom Ford Oud Wood — A-List">
     <div class="entry-meta">
-      <span class="entry-cat">Objects · Fragrance</span>
+      <span class="entry-cat" data-en="Objects · Fragrance" data-fr="Objets · Parfumerie">Objects · Fragrance</span>
       <span class="entry-date">2026</span>
     </div>
     <h2 class="entry-name">Tom Ford<br>Oud Wood</h2>
-    <div class="entry-type">Atelier fragrance · Private blend · Eastern woods</div>
+    <div class="entry-type" data-en="Atelier fragrance · Private blend · Eastern woods" data-fr="Fragrance Atelier · Mélange privé · Bois orientaux">Atelier fragrance · Private blend · Eastern woods</div>
     <div class="entry-verdict">
       <span class="verdict-badge a">A-List</span>
-      <span class="verdict-statement a">Impressed.</span>
+      <span class="verdict-statement a" data-en="Impressed." data-fr="Impressionné.">Impressed.</span>
     </div>
-    <p class="entry-note">"The bottle is the argument made before you open it. What is inside confirms it. Oud wood, sandalwood, cardamom — a fragrance that does not announce itself to the room but is found by those who come close enough to be worth finding. Tom Ford understood that the highest expression of taste is restraint in a medium that rewards projection."</p>
+    <p class="entry-note" data-en="&quot;The bottle is the argument made before you open it. What is inside confirms it. Oud wood, sandalwood, cardamom — a fragrance that does not announce itself to the room but is found by those who come close enough to be worth finding. Tom Ford understood that the highest expression of taste is restraint in a medium that rewards projection.&quot;" data-fr="« Le flacon est l'argument formulé avant même que vous l'ouvriez. Ce qu'il contient le confirme. Oud, santal, cardamome — un parfum qui ne s'annonce pas à la pièce mais qui est trouvé par ceux qui s'approchent suffisamment pour en valoir la peine. Tom Ford a compris que l'expression la plus haute du goût est la retenue dans un médium qui récompense la projection. »">"The bottle is the argument made before you open it. What is inside confirms it. Oud wood, sandalwood, cardamom — a fragrance that does not announce itself to the room but is found by those who come close enough to be worth finding. Tom Ford understood that the highest expression of taste is restraint in a medium that rewards projection."</p>
     <div class="entry-sig">
       <span>— D.S.</span>
-      <span style="color:var(--text-dim)">ATELIER feature coming</span>
+      <span style="color:var(--text-dim)" data-en="ATELIER feature coming" data-fr="Article ATELIER à venir">ATELIER feature coming</span>
     </div>
   </article>
 
   <!-- ENTRY: Generic wellness tourism (forgettable) -->
   <article class="entry verdict-f" data-category="experience" aria-label="Generic Wellness Retreat — Forgettable">
     <div class="entry-meta">
-      <span class="entry-cat">Experience · Wellness</span>
+      <span class="entry-cat" data-en="Experience · Wellness" data-fr="Expérience · Bien-être">Experience · Wellness</span>
       <span class="entry-date">2026</span>
     </div>
     <h2 class="entry-name">The Wellness<br>Retreat Category</h2>
-    <div class="entry-type">Generic · Programme-led · Instagram-optimized</div>
+    <div class="entry-type" data-en="Generic · Programme-led · Instagram-optimized" data-fr="Générique · Guidé par programme · Optimisé Instagram">Generic · Programme-led · Instagram-optimized</div>
     <div class="entry-verdict">
       <span class="verdict-badge f">Forgettable</span>
-      <span class="verdict-statement f">Not impressed.</span>
+      <span class="verdict-statement f" data-en="Not impressed." data-fr="Pas impressionné.">Not impressed.</span>
     </div>
-    <p class="entry-note">"Three days of cold plunges, sound baths, and breathwork scheduled into a PDF itinerary handed to you at check-in. The spa is beautiful. The practitioners are well-meaning. The results last as long as the tan. A wellness retreat that gives you a programme is performing the idea of healing rather than delivering it. The body knows the difference. CORPS covers the work that addresses the root. This is not that."</p>
+    <p class="entry-note" data-en="&quot;Three days of cold plunges, sound baths, and breathwork scheduled into a PDF itinerary handed to you at check-in. The spa is beautiful. The practitioners are well-meaning. The results last as long as the tan. A wellness retreat that gives you a programme is performing the idea of healing rather than delivering it. The body knows the difference. CORPS covers the work that addresses the root. This is not that.&quot;" data-fr="« Trois jours de bains froids, de bains sonores et de travail respiratoire programmés dans un itinéraire PDF remis à l'arrivée. Le spa est beau. Les praticiens ont de bonnes intentions. Les résultats durent aussi longtemps que le bronzage. Un séjour de bien-être qui vous donne un programme performe l'idée de la guérison plutôt que de la délivrer. Le corps sait la différence. CORPS couvre le travail qui s'attaque à la racine. Ceci n'en est pas. »">"Three days of cold plunges, sound baths, and breathwork scheduled into a PDF itinerary handed to you at check-in. The spa is beautiful. The practitioners are well-meaning. The results last as long as the tan. A wellness retreat that gives you a programme is performing the idea of healing rather than delivering it. The body knows the difference. CORPS covers the work that addresses the root. This is not that."</p>
     <div class="entry-sig">
       <span>— D.S.</span>
       <a href="/figures" style="color:var(--text-dim);font-size:12px;letter-spacing:0.14em;text-transform:uppercase">What works instead →</a>
@@ -780,16 +783,16 @@
   <!-- ENTRY: Ibi.wear Vietnam (placeholder — A-list signal) -->
   <article class="entry verdict-a" data-category="fashion" aria-label="Ibi.wear — A-List signal">
     <div class="entry-meta">
-      <span class="entry-cat">Fashion · Vietnam</span>
+      <span class="entry-cat" data-en="Fashion · Vietnam" data-fr="Mode · Vietnam">Fashion · Vietnam</span>
       <span class="entry-date">2026</span>
     </div>
     <h2 class="entry-name">Ibi.wear<br>Vietnam</h2>
-    <div class="entry-type">Emerging luxury · Ho Chi Minh City · ORIENT signal</div>
+    <div class="entry-type" data-en="Emerging luxury · Ho Chi Minh City · ORIENT signal" data-fr="Luxe émergent · Hô Chi Minh-Ville · Signal ORIENT">Emerging luxury · Ho Chi Minh City · ORIENT signal</div>
     <div class="entry-verdict">
       <span class="verdict-badge a">A-List</span>
-      <span class="verdict-statement a">Watching closely.</span>
+      <span class="verdict-statement a" data-en="Watching closely." data-fr="À surveiller de près.">Watching closely.</span>
     </div>
-    <p class="entry-note">"A Vietnamese fashion brand with genuine aesthetic authority before Western fashion media has arrived. The visual language is its own — not derivative of Paris, not performing Seoul. Vietnam is producing its own luxury vocabulary from the inside out, and Ibi.wear is the clearest current signal of it. MODUS ORIENT will cover this properly. For now: know the name."</p>
+    <p class="entry-note" data-en="&quot;A Vietnamese fashion brand with genuine aesthetic authority before Western fashion media has arrived. The visual language is its own — not derivative of Paris, not performing Seoul. Vietnam is producing its own luxury vocabulary from the inside out, and Ibi.wear is the clearest current signal of it. MODUS ORIENT will cover this properly. For now: know the name.&quot;" data-fr="« Une marque de mode vietnamienne avec une véritable autorité esthétique avant que les médias de mode occidentaux ne soient arrivés. Le langage visuel lui est propre — non dérivé de Paris, ne cherchant pas à imiter Séoul. Le Vietnam produit son propre vocabulaire de luxe de l'intérieur, et Ibi.wear est le signal actuel le plus clair en ce sens. MODUS ORIENT couvrira cela correctement. Pour l'instant : retenez le nom. »">"A Vietnamese fashion brand with genuine aesthetic authority before Western fashion media has arrived. The visual language is its own — not derivative of Paris, not performing Seoul. Vietnam is producing its own luxury vocabulary from the inside out, and Ibi.wear is the clearest current signal of it. MODUS ORIENT will cover this properly. For now: know the name."</p>
     <div class="entry-sig">
       <span>— D.S.</span>
       <a href="https://www.instagram.com/ibi.wear" target="_blank" rel="noopener" style="color:var(--gold);font-size:12px;letter-spacing:0.14em;text-transform:uppercase">@ibi.wear →</a>
@@ -814,7 +817,7 @@
 <!-- PHOTOGRAPHY GALLERY -->
 <section class="photo-gal" aria-label="Daniel Stanford — Museum Quality Photography">
   <div class="photo-gal-header">
-    <p class="photo-gal-eye">Daniel Stanford · Photography · Museum Quality Fine Art · Selected Works</p>
+    <p class="photo-gal-eye" data-en="Daniel Stanford · Photography · Museum Quality Fine Art · Selected Works" data-fr="Daniel Stanford · Photographie · Beaux-Arts de qualité muséale · Œuvres choisies">Daniel Stanford · Photography · Museum Quality Fine Art · Selected Works</p>
     <div class="photo-gal-ctrl">
       <button class="pg-btn" id="pgPrev" aria-label="Previous">&#8592;</button>
       <span class="pg-count" id="pgCount">1 / 13</span>

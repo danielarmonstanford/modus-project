@@ -71,7 +71,9 @@
     .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-accent)}
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--corps-accent)}
-
+        [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
+    [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+    #langBtn{font-weight:600;letter-spacing:0.08em}
     /* HERO — body/nature gradient */
     .hero{height:100vh;min-height:600px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) 5rem}
     .hero-bg{
@@ -202,7 +204,8 @@
 
     @media(max-width:1040px){.article-grid{grid-template-columns:1fr}.sidebar{position:static}}
     @media(max-width:700px){.corps-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:480px){.corps-grid{grid-template-columns:1fr}.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}}
+    @media(max-width:480px){.corps-grid{grid-template-columns:1fr}.nav-links{gap:1rem}#themeBtn span{display:none}
+      #langLabel{display:inline!important}}
   
     /* ── Lovine display font ── */
     @font-face {

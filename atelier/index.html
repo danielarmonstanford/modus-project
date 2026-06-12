@@ -199,7 +199,9 @@
     .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-warm)}
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--atelier-blush)}
-
+        [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
+    [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+    #langBtn{font-weight:600;letter-spacing:0.08em}
     /* HERO — full bleed single image */
     .hero{height:100vh;min-height:640px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) 5rem}
     .hero-img-wrap{position:absolute;inset:0;z-index:0}
@@ -353,7 +355,8 @@
 
     @media(max-width:1040px){.context{grid-template-columns:1fr}.credits-card{position:static}.model-card{grid-template-columns:1fr}.teaser-inner{grid-template-columns:1fr;gap:2.5rem}}
     @media(max-width:680px){.eg-trio{grid-template-columns:1fr 1fr}.vs-stats{grid-template-columns:1fr 1fr}}
-    @media(max-width:480px){.eg-pair,.eg-trio{grid-template-columns:1fr}.nav-links{gap:1rem}.theme-btn span:not(.theme-dot){display:none}}
+    @media(max-width:480px){.eg-pair,.eg-trio{grid-template-columns:1fr}.nav-links{gap:1rem}#themeBtn span{display:none}
+      #langLabel{display:inline!important}}
   
     /* ── Lovine display font ── */
     @font-face {
@@ -524,8 +527,8 @@
 
 <!-- OPENING STATEMENT -->
 <section class="opening" aria-label="Editor opening statement" style="margin-bottom:4rem;">
-  <p>"Some campaigns are produced. Some are arrived at. This one was arrived at — in a New York mansion, on solid marble stairs, with a Brazilian model who understood exactly what the camera needed, a photographer who knew how to find the light without chasing it, and a stylist who had spent years learning restraint. The images were of a quality that belonged in Paris Photo. They remain."</p>
-  <p class="opening-attr">— Daniel Stanford · Editor-in-Chief · MODUS · On the Simons Lingerie Editorial</p>
+  <p data-en="&quot;Some campaigns are produced. Some are arrived at. This one was arrived at — in a New York mansion, on solid marble stairs, with a Brazilian model who understood exactly what the camera needed, a photographer who knew how to find the light without chasing it, and a stylist who had spent years learning restraint. The images were of a quality that belonged in Paris Photo. They remain.&quot;" data-fr="« Certaines campagnes se produisent. Certaines s'imposent d'elles-mêmes. Celle-ci s'est imposée — dans un manoir de New York, sur un escalier de marbre massif, avec un modèle brésilien qui comprenait exactement ce dont l'objectif avait besoin, un photographe qui savait trouver la lumière sans la pourchasser, et un styliste qui avait passé des années à apprendre la retenue. La qualité des images appartenait à Paris Photo. Elles demeurent. »">"Some campaigns are produced. Some are arrived at. This one was arrived at — in a New York mansion, on solid marble stairs, with a Brazilian model who understood exactly what the camera needed, a photographer who knew how to find the light without chasing it, and a stylist who had spent years learning restraint. The images were of a quality that belonged in Paris Photo. They remain."</p>
+  <p class="opening-attr" data-en="— Daniel Stanford · Editor-in-Chief · MODUS · On the Simons Lingerie Editorial" data-fr="— Daniel Stanford · Rédacteur en chef · MODUS · Sur l'éditorial Lingerie Simons">— Daniel Stanford · Editor-in-Chief · MODUS · On the Simons Lingerie Editorial</p>
 </section>
 
 <div class="rule" role="separator"></div>
@@ -534,54 +537,54 @@
 <div class="context">
   <div class="body">
 
-    <h3>The brief that became<br><em>a career-defining moment.</em></h3>
+    <h3><span data-en="The brief that became" data-fr="Le brief qui est devenu">The brief that became</span><br><em data-en="a career-defining moment." data-fr="un moment fondateur de carrière.">a career-defining moment.</em></h3>
 
-    <p>When La Maison Simons brought Daniel Stanford in-house as Photo Art Director, they were making a deliberate statement about where the brand intended to go. Stanford was, at that moment, the most sought-after creative director in Canadian fashion — he had been flown to Columbus, Ohio twice in two years by Victoria's Secret, who were actively considering him for Creative Director of VS Stores. Over ten separate interviews, he had been evaluated for positions including Photo Art Director of their catalog division. That Victoria's Secret was circling him this closely was not incidental. It was a signal.</p>
+    <p data-en="When La Maison Simons brought Daniel Stanford in-house as Photo Art Director, they were making a deliberate statement about where the brand intended to go. Stanford was, at that moment, the most sought-after creative director in Canadian fashion — he had been flown to Columbus, Ohio twice in two years by Victoria's Secret, who were actively considering him for Creative Director of VS Stores. Over ten separate interviews, he had been evaluated for positions including Photo Art Director of their catalog division. That Victoria's Secret was circling him this closely was not incidental. It was a signal." data-fr="Lorsque La Maison Simons a intégré Daniel Stanford comme Directeur artistique photo, elle faisait une déclaration délibérée sur la direction que voulait prendre la marque. Stanford était, à ce moment-là, le directeur créatif le plus recherché de la mode canadienne — Victoria's Secret l'avait fait venir à Columbus, Ohio, deux fois en deux ans, envisageant sérieusement de le nommer Directeur créatif des magasins VS. Au cours de plus de dix entretiens distincts, il avait été évalué pour des postes allant jusqu'à Directeur artistique photo de leur division catalogue. Que Victoria's Secret le courtise d'aussi près n'était pas anodin. C'était un signal.">When La Maison Simons brought Daniel Stanford in-house as Photo Art Director, they were making a deliberate statement about where the brand intended to go. Stanford was, at that moment, the most sought-after creative director in Canadian fashion — he had been flown to Columbus, Ohio twice in two years by Victoria's Secret, who were actively considering him for Creative Director of VS Stores. Over ten separate interviews, he had been evaluated for positions including Photo Art Director of their catalog division. That Victoria's Secret was circling him this closely was not incidental. It was a signal.</p>
 
-    <p>Simons moved first — and moved well. The offer came with a condition Stanford valued as much as the compensation: the ability to work primarily from his Montreal studio, flying to the Quebec City head office for weekly creative reviews with the senior buyers across every department, from the youth sub-brand Twik to DJAB menswear to the men's underwear division. He was embedded in every category, embedded in every conversation. In those days, that level of creative access and working autonomy was rare. He accepted.</p>
-
-    <div class="pull">
-      <p>"I was the only Creative Director in Canada being interviewed by Victoria's Secret. They flew me to Columbus twice. Simons moved first, and they moved with intelligence — they gave me the offer, the access, and the autonomy. I said yes. The Lingerie and Hosiery series was one of the first things we produced together."</p>
-      <p class="pull-attr">— Daniel Stanford · On joining La Maison Simons</p>
-    </div>
-
-    <h3>New York. Malina Corpadean.<br><em>Randy Smith. Sabrina Jales.</em></h3>
-
-    <p>The shoot was built around a collaboration of genuine talent. Malina Corpadean, the Montreal-based photographer, brought an eye trained to find the formal geometry in intimate spaces — the way light organizes a room, the way a body understands its own architecture. Randy Smith, the stylist, had built his career at the intersection of editorial precision and commercial wearability; his work understood that lingerie photography lives or dies on the relationship between fabric and skin, between what is shown and what is implied. Stanford had worked with both before. He trusted both completely.</p>
-
-    <p>Sabrina Jales was the third element — and perhaps the decisive one. Brazilian-born, with a physical presence that carried both warmth and precision, she understood intuitively what the editorial required. Face-driven in its framing, formally composed against the marble architecture of the mansion, the series was built on the intelligence Jales brought to each image. She was not performing for the camera. She was in full possession of it.</p>
-
-    <p>The series was conceived as editorial packaging for the Simons lingerie and hosiery category — face-driven imagery that could anchor the brand's positioning at the intersection of accessible luxury and genuine aesthetic authority. It succeeded on every level. Peter Simons recognized immediately what the team had produced. The images carried the quality of work that belongs in Paris Photo — a level Stanford had every intention of proposing. They remain among the finest editorial images produced under his art direction.</p>
+    <p data-en="Simons moved first — and moved well. The offer came with a condition Stanford valued as much as the compensation: the ability to work primarily from his Montreal studio, flying to the Quebec City head office for weekly creative reviews with the senior buyers across every department, from the youth sub-brand Twik to DJAB menswear to the men's underwear division. He was embedded in every category, embedded in every conversation. In those days, that level of creative access and working autonomy was rare. He accepted." data-fr="Simons a bougé en premier — et bien bougé. L'offre comportait une condition que Stanford valorisait autant que la rémunération : la possibilité de travailler principalement depuis son studio de Montréal, en se rendant au siège de Québec pour des revues créatives hebdomadaires avec les acheteurs seniors de chaque département, de la sous-marque jeune Twik à la mode masculine DJAB en passant par la division sous-vêtements hommes. Il était impliqué dans chaque catégorie, dans chaque conversation. À cette époque, un tel niveau d'accès créatif et d'autonomie de travail était rare. Il a accepté.">Simons moved first — and moved well. The offer came with a condition Stanford valued as much as the compensation: the ability to work primarily from his Montreal studio, flying to the Quebec City head office for weekly creative reviews with the senior buyers across every department, from the youth sub-brand Twik to DJAB menswear to the men's underwear division. He was embedded in every category, embedded in every conversation. In those days, that level of creative access and working autonomy was rare. He accepted.</p>
 
     <div class="pull">
-      <p>"Face-driven. That was the editorial direction from the start. The body is the subject, but the face is where the intelligence lives. Sabrina understood this without being told. Malina found it in the light. Randy built the frame around it. The result was a series that did not need a trend to validate it."</p>
-      <p class="pull-attr">— Daniel Stanford · Art Director · On the editorial approach</p>
+      <p data-en="&quot;I was the only Creative Director in Canada being interviewed by Victoria's Secret. They flew me to Columbus twice. Simons moved first, and they moved with intelligence — they gave me the offer, the access, and the autonomy. I said yes. The Lingerie and Hosiery series was one of the first things we produced together.&quot;" data-fr="« J'étais le seul Directeur créatif au Canada à être interviewé par Victoria's Secret. Ils m'ont fait venir à Columbus deux fois. Simons a bougé en premier, et ils ont bougé avec intelligence — ils m'ont fait l'offre, l'accès et l'autonomie. J'ai dit oui. La série Lingerie et Bonneterie a été l'une des premières choses que nous avons produites ensemble. »">"I was the only Creative Director in Canada being interviewed by Victoria's Secret. They flew me to Columbus twice. Simons moved first, and they moved with intelligence — they gave me the offer, the access, and the autonomy. I said yes. The Lingerie and Hosiery series was one of the first things we produced together."</p>
+      <p class="pull-attr" data-en="— Daniel Stanford · On joining La Maison Simons" data-fr="— Daniel Stanford · Sur son arrivée à La Maison Simons">— Daniel Stanford · On joining La Maison Simons</p>
     </div>
 
-    <h3>After Simons.<br><em>Sabrina, Sports Illustrated, Mazzucco.</em></h3>
+    <h3><span data-en="New York. Malina Corpadean." data-fr="New York. Malina Corpadean.">New York. Malina Corpadean.</span><br><em data-en="Randy Smith. Sabrina Jales." data-fr="Randy Smith. Sabrina Jales.">Randy Smith. Sabrina Jales.</em></h3>
 
-    <p>The relationship with Sabrina Jales did not end with the Simons campaign. When Stanford subsequently launched his model representation practice, she was among the talent he brought forward. He introduced her to Raphael Mazzucco — the photographer who had been Stanford's collaborator on the LIAA award-winning Guess campaign — and facilitated a Sports Illustrated shoot that placed her in one of the most prominent editorial contexts in American publishing. The arc from the Simons studio in New York to the pages of Sports Illustrated is a direct line — one that began with the precision and intelligence of this series.</p>
+    <p data-en="The shoot was built around a collaboration of genuine talent. Malina Corpadean, the Montreal-based photographer, brought an eye trained to find the formal geometry in intimate spaces — the way light organizes a room, the way a body understands its own architecture. Randy Smith, the stylist, had built his career at the intersection of editorial precision and commercial wearability; his work understood that lingerie photography lives or dies on the relationship between fabric and skin, between what is shown and what is implied. Stanford had worked with both before. He trusted both completely." data-fr="Le shooting s'est construit autour d'une collaboration de talents authentiques. Malina Corpadean, photographe basée à Montréal, apportait un œil formé à trouver la géométrie formelle dans les espaces intimes — la façon dont la lumière organise une pièce, la façon dont un corps comprend sa propre architecture. Randy Smith, le styliste, avait construit sa carrière à l'intersection de la précision éditoriale et de la portabilité commerciale ; son travail comprenait que la photographie de lingerie repose sur la relation entre le tissu et la peau, entre ce qui est montré et ce qui est suggéré. Stanford avait travaillé avec les deux auparavant. Il leur faisait entièrement confiance.">The shoot was built around a collaboration of genuine talent. Malina Corpadean, the Montreal-based photographer, brought an eye trained to find the formal geometry in intimate spaces — the way light organizes a room, the way a body understands its own architecture. Randy Smith, the stylist, had built his career at the intersection of editorial precision and commercial wearability; his work understood that lingerie photography lives or dies on the relationship between fabric and skin, between what is shown and what is implied. Stanford had worked with both before. He trusted both completely.</p>
+
+    <p data-en="Sabrina Jales was the third element — and perhaps the decisive one. Brazilian-born, with a physical presence that carried both warmth and precision, she understood intuitively what the editorial required. Face-driven in its framing, formally composed against the marble architecture of the mansion, the series was built on the intelligence Jales brought to each image. She was not performing for the camera. She was in full possession of it." data-fr="Sabrina Jales était le troisième élément — et peut-être le décisif. Née au Brésil, avec une présence physique portant à la fois chaleur et précision, elle comprenait intuitivement ce que l'éditorial exigeait. Axée sur le visage dans son cadrage, formellement composée face à l'architecture de marbre du manoir, la série reposait sur l'intelligence que Jales apportait à chaque image. Elle ne jouait pas pour l'objectif. Elle en était pleinement maître.">Sabrina Jales was the third element — and perhaps the decisive one. Brazilian-born, with a physical presence that carried both warmth and precision, she understood intuitively what the editorial required. Face-driven in its framing, formally composed against the marble architecture of the mansion, the series was built on the intelligence Jales brought to each image. She was not performing for the camera. She was in full possession of it.</p>
+
+    <p data-en="The series was conceived as editorial packaging for the Simons lingerie and hosiery category — face-driven imagery that could anchor the brand's positioning at the intersection of accessible luxury and genuine aesthetic authority. It succeeded on every level. Peter Simons recognized immediately what the team had produced. The images carried the quality of work that belongs in Paris Photo — a level Stanford had every intention of proposing. They remain among the finest editorial images produced under his art direction." data-fr="La série a été conçue comme un habillage éditorial pour la catégorie lingerie et bonneterie de Simons — une imagerie axée sur le visage pouvant ancrer le positionnement de la marque à l'intersection du luxe accessible et d'une véritable autorité esthétique. Elle a réussi à tous les niveaux. Peter Simons a immédiatement reconnu ce que l'équipe avait produit. Les images portaient la qualité d'un travail qui appartient à Paris Photo — un niveau que Stanford avait pleinement l'intention de proposer. Elles demeurent parmi les plus belles images éditoriales produites sous sa direction artistique.">The series was conceived as editorial packaging for the Simons lingerie and hosiery category — face-driven imagery that could anchor the brand's positioning at the intersection of accessible luxury and genuine aesthetic authority. It succeeded on every level. Peter Simons recognized immediately what the team had produced. The images carried the quality of work that belongs in Paris Photo — a level Stanford had every intention of proposing. They remain among the finest editorial images produced under his art direction.</p>
+
+    <div class="pull">
+      <p data-en="&quot;Face-driven. That was the editorial direction from the start. The body is the subject, but the face is where the intelligence lives. Sabrina understood this without being told. Malina found it in the light. Randy built the frame around it. The result was a series that did not need a trend to validate it.&quot;" data-fr="« Axé sur le visage. C'était la direction éditoriale depuis le début. Le corps est le sujet, mais le visage est là où réside l'intelligence. Sabrina l'a compris sans qu'on le lui dise. Malina l'a trouvé dans la lumière. Randy a construit le cadre autour. Le résultat était une série qui n'avait pas besoin d'une tendance pour se valider. »">"Face-driven. That was the editorial direction from the start. The body is the subject, but the face is where the intelligence lives. Sabrina understood this without being told. Malina found it in the light. Randy built the frame around it. The result was a series that did not need a trend to validate it."</p>
+      <p class="pull-attr" data-en="— Daniel Stanford · Art Director · On the editorial approach" data-fr="— Daniel Stanford · Directeur artistique · Sur l'approche éditoriale">— Daniel Stanford · Art Director · On the editorial approach</p>
+    </div>
+
+    <h3><span data-en="After Simons." data-fr="Après Simons.">After Simons.</span><br><em data-en="Sabrina, Sports Illustrated, Mazzucco." data-fr="Sabrina, Sports Illustrated, Mazzucco.">Sabrina, Sports Illustrated, Mazzucco.</em></h3>
+
+    <p data-en="The relationship with Sabrina Jales did not end with the Simons campaign. When Stanford subsequently launched his model representation practice, she was among the talent he brought forward. He introduced her to Raphael Mazzucco — the photographer who had been Stanford's collaborator on the LIAA award-winning Guess campaign — and facilitated a Sports Illustrated shoot that placed her in one of the most prominent editorial contexts in American publishing. The arc from the Simons studio in New York to the pages of Sports Illustrated is a direct line — one that began with the precision and intelligence of this series." data-fr="La relation avec Sabrina Jales ne s'est pas terminée avec la campagne Simons. Lorsque Stanford a ensuite lancé sa pratique de représentation de mannequins, elle faisait partie des talents qu'il a mis en avant. Il l'a présentée à Raphael Mazzucco — le photographe qui avait été le collaborateur de Stanford sur la campagne Guess primée au LIAA — et a facilité un shooting pour Sports Illustrated qui l'a placée dans l'un des contextes éditoriaux les plus importants de la presse américaine. L'arc allant du studio Simons à New York aux pages de Sports Illustrated est une ligne directe — une ligne qui a commencé avec la précision et l'intelligence de cette série.">The relationship with Sabrina Jales did not end with the Simons campaign. When Stanford subsequently launched his model representation practice, she was among the talent he brought forward. He introduced her to Raphael Mazzucco — the photographer who had been Stanford's collaborator on the LIAA award-winning Guess campaign — and facilitated a Sports Illustrated shoot that placed her in one of the most prominent editorial contexts in American publishing. The arc from the Simons studio in New York to the pages of Sports Illustrated is a direct line — one that began with the precision and intelligence of this series.</p>
 
     <!-- VS context box -->
     <div class="vs-box">
-      <div class="vs-label">Context · The Victoria's Secret Years</div>
-      <h3 class="vs-title" style="font-size:clamp(20px,2.5vw,32px);margin-bottom:1.5rem">The most recruited<br><em>creative director in Canada.</em></h3>
+      <div class="vs-label" data-en="Context · The Victoria's Secret Years" data-fr="Contexte · Les années Victoria's Secret">Context · The Victoria's Secret Years</div>
+      <h3 class="vs-title" style="font-size:clamp(20px,2.5vw,32px);margin-bottom:1.5rem"><span data-en="The most recruited" data-fr="Le directeur créatif">The most recruited</span><br><em data-en="creative director in Canada." data-fr="le plus recruté au Canada.">creative director in Canada.</em></h3>
       <div class="vs-body">
-        <p>During the period when the Simons Lingerie editorial was produced, Daniel Stanford occupied a singular position in Canadian fashion. Victoria's Secret — then at the apex of their global cultural dominance — had been interviewing him across more than ten separate conversations over two consecutive years. The positions under consideration ranged from Creative Director of VS Stores to Photo Art Director of their catalog division. He was flown to their Columbus, Ohio headquarters twice.</p>
-        <p>The significance of this is not self-promotional. It is contextual. The taste and editorial intelligence that produced the Simons campaign was the same intelligence Victoria's Secret was evaluating. That Simons recognized it and moved decisively — offering the in-house position before VS could conclude their process — speaks to what was at stake and what the work was worth.</p>
+        <p data-en="During the period when the Simons Lingerie editorial was produced, Daniel Stanford occupied a singular position in Canadian fashion. Victoria's Secret — then at the apex of their global cultural dominance — had been interviewing him across more than ten separate conversations over two consecutive years. The positions under consideration ranged from Creative Director of VS Stores to Photo Art Director of their catalog division. He was flown to their Columbus, Ohio headquarters twice." data-fr="Pendant la période où l'éditorial Lingerie Simons a été produit, Daniel Stanford occupait une position singulière dans la mode canadienne. Victoria's Secret — alors au sommet de sa domination culturelle mondiale — le sollicitait lors de plus de dix conversations distinctes sur deux années consécutives. Les postes envisagés allaient de Directeur créatif des magasins VS à Directeur artistique photo de leur division catalogue. Il a été convoqué à leur siège de Columbus, Ohio, à deux reprises.">During the period when the Simons Lingerie editorial was produced, Daniel Stanford occupied a singular position in Canadian fashion. Victoria's Secret — then at the apex of their global cultural dominance — had been interviewing him across more than ten separate conversations over two consecutive years. The positions under consideration ranged from Creative Director of VS Stores to Photo Art Director of their catalog division. He was flown to their Columbus, Ohio headquarters twice.</p>
+        <p data-en="The significance of this is not self-promotional. It is contextual. The taste and editorial intelligence that produced the Simons campaign was the same intelligence Victoria's Secret was evaluating. That Simons recognized it and moved decisively — offering the in-house position before VS could conclude their process — speaks to what was at stake and what the work was worth." data-fr="L'importance de cela n'est pas autopromotion. Elle est contextuelle. Le goût et l'intelligence éditoriale qui ont produit la campagne Simons étaient la même intelligence que Victoria's Secret évaluait. Que Simons l'ait reconnu et ait agi de manière décisive — en proposant le poste interne avant que VS ne puisse conclure son processus — dit ce qui était en jeu et ce que valait ce travail.">The significance of this is not self-promotional. It is contextual. The taste and editorial intelligence that produced the Simons campaign was the same intelligence Victoria's Secret was evaluating. That Simons recognized it and moved decisively — offering the in-house position before VS could conclude their process — speaks to what was at stake and what the work was worth.</p>
       </div>
       <div class="vs-stats">
         <div class="vs-stat">
           <div class="vs-stat-n">10+</div>
-          <div class="vs-stat-l">VS interviews across 2 years</div>
+          <div class="vs-stat-l" data-en="VS interviews across 2 years" data-fr="Entretiens VS sur 2 ans">VS interviews across 2 years</div>
         </div>
         <div class="vs-stat">
           <div class="vs-stat-n">2×</div>
-          <div class="vs-stat-l">Flown to Columbus OH HQ</div>
+          <div class="vs-stat-l" data-en="Flown to Columbus OH HQ" data-fr="Convoqué au siège de Columbus OH">Flown to Columbus OH HQ</div>
         </div>
         <div class="vs-stat">
           <div class="vs-stat-n">2yr</div>
-          <div class="vs-stat-l">In-house at La Maison Simons</div>
+          <div class="vs-stat-l" data-en="In-house at La Maison Simons" data-fr="En interne à La Maison Simons">In-house at La Maison Simons</div>
         </div>
       </div>
     </div>
@@ -589,20 +592,20 @@
     <!-- SABRINA card -->
     <div class="model-card">
       <div>
-        <div class="mc-label">The Model · Feature</div>
+        <div class="mc-label" data-en="The Model · Feature" data-fr="Le Modèle · Portrait">The Model · Feature</div>
         <div class="mc-name">Sabrina Jales</div>
         <div class="mc-origin">Brazil · New York · Montreal</div>
         <div class="mc-body">
-          <p>Sabrina Jales arrived at the Simons shoot as a working model with a strong commercial book and a face that the camera found immediately. What the shoot revealed — and what the subsequent editorial record confirmed — was a level of editorial intelligence that exceeded the standard commercial brief. She was not a subject being photographed. She was a collaborator who understood the visual language being built and contributed to it actively.</p>
-          <p>The face-driven framing Stanford established for the series demanded presence over pose, specificity over formula. Jales delivered both. The images that resulted occupy a different register than conventional lingerie photography — quieter, more certain, more enduring.</p>
+          <p data-en="Sabrina Jales arrived at the Simons shoot as a working model with a strong commercial book and a face that the camera found immediately. What the shoot revealed — and what the subsequent editorial record confirmed — was a level of editorial intelligence that exceeded the standard commercial brief. She was not a subject being photographed. She was a collaborator who understood the visual language being built and contributed to it actively." data-fr="Sabrina Jales est arrivée au shooting Simons en tant que mannequin professionnel avec un book commercial solide et un visage que l'objectif a trouvé immédiatement. Ce que le shooting a révélé — et ce que la suite de sa carrière éditoriale a confirmé — était un niveau d'intelligence éditoriale dépassant le brief commercial standard. Elle n'était pas un sujet photographié. Elle était une collaboratrice qui comprenait le langage visuel en construction et y contribuait activement.">Sabrina Jales arrived at the Simons shoot as a working model with a strong commercial book and a face that the camera found immediately. What the shoot revealed — and what the subsequent editorial record confirmed — was a level of editorial intelligence that exceeded the standard commercial brief. She was not a subject being photographed. She was a collaborator who understood the visual language being built and contributed to it actively.</p>
+          <p data-en="The face-driven framing Stanford established for the series demanded presence over pose, specificity over formula. Jales delivered both. The images that resulted occupy a different register than conventional lingerie photography — quieter, more certain, more enduring." data-fr="Le cadrage axé sur le visage qu'a établi Stanford pour la série exigeait la présence plutôt que la pose, la spécificité plutôt que la formule. Jales a livré les deux. Les images qui en résultent occupent un registre différent de la photographie de lingerie conventionnelle — plus silencieuses, plus assurées, plus durables.">The face-driven framing Stanford established for the series demanded presence over pose, specificity over formula. Jales delivered both. The images that resulted occupy a different register than conventional lingerie photography — quieter, more certain, more enduring.</p>
         </div>
       </div>
       <div>
-        <div style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--atelier-blush);margin-bottom:1rem">Career Arc</div>
+        <div style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--atelier-blush);margin-bottom:1rem" data-en="Career Arc" data-fr="Parcours de carrière">Career Arc</div>
         <div class="mc-milestones">
-          <div class="mc-m"><span class="mc-year">Simons</span><span class="mc-event">Lingerie & Hosiery editorial — New York. Art Direction: Daniel Stanford. Photography: Malina Corpadean. Styled: Randy Smith.</span></div>
-          <div class="mc-m"><span class="mc-year">Stanford</span><span class="mc-event">Represented by Daniel Stanford following the Simons campaign. One of the founding talents in his model representation practice.</span></div>
-          <div class="mc-m"><span class="mc-year">SI</span><span class="mc-event">Sports Illustrated shoot facilitated by Stanford. Photography by Raphael Mazzucco — Stanford's collaborator on the LIAA award-winning Guess campaign.</span></div>
+          <div class="mc-m"><span class="mc-year">Simons</span><span class="mc-event" data-en="Lingerie & Hosiery editorial — New York. Art Direction: Daniel Stanford. Photography: Malina Corpadean. Styled: Randy Smith." data-fr="Éditorial Lingerie & Bonneterie — New York. Direction artistique : Daniel Stanford. Photographie : Malina Corpadean. Stylisme : Randy Smith.">Lingerie & Hosiery editorial — New York. Art Direction: Daniel Stanford. Photography: Malina Corpadean. Styled: Randy Smith.</span></div>
+          <div class="mc-m"><span class="mc-year">Stanford</span><span class="mc-event" data-en="Represented by Daniel Stanford following the Simons campaign. One of the founding talents in his model representation practice." data-fr="Représentée par Daniel Stanford à la suite de la campagne Simons. L'un des premiers talents de sa pratique de représentation de mannequins.">Represented by Daniel Stanford following the Simons campaign. One of the founding talents in his model representation practice.</span></div>
+          <div class="mc-m"><span class="mc-year">SI</span><span class="mc-event" data-en="Sports Illustrated shoot facilitated by Stanford. Photography by Raphael Mazzucco — Stanford's collaborator on the LIAA award-winning Guess campaign." data-fr="Shooting Sports Illustrated facilité par Stanford. Photographie par Raphael Mazzucco — collaborateur de Stanford sur la campagne Guess primée au LIAA.">Sports Illustrated shoot facilitated by Stanford. Photography by Raphael Mazzucco — Stanford's collaborator on the LIAA award-winning Guess campaign.</span></div>
         </div>
       </div>
     </div>
@@ -612,59 +615,59 @@
   <!-- SIDEBAR -->
   <aside>
     <div class="credits-card">
-      <div class="credits-label">Editorial Credits</div>
+      <div class="credits-label" data-en="Editorial Credits" data-fr="Crédits éditoriaux">Editorial Credits</div>
 
       <div class="credit-row">
-        <div class="cr-role">Art Direction</div>
+        <div class="cr-role" data-en="Art Direction" data-fr="Direction artistique">Art Direction</div>
         <div class="cr-name">Daniel Stanford</div>
-        <div class="cr-sub">Photo Art Director, La Maison Simons. Creative Director. Editor-in-Chief, MODUS.</div>
+        <div class="cr-sub" data-en="Photo Art Director, La Maison Simons. Creative Director. Editor-in-Chief, MODUS." data-fr="Directeur artistique photo, La Maison Simons. Directeur créatif. Rédacteur en chef, MODUS.">Photo Art Director, La Maison Simons. Creative Director. Editor-in-Chief, MODUS.</div>
       </div>
 
       <div class="credit-row">
-        <div class="cr-role">Photography</div>
+        <div class="cr-role" data-en="Photography" data-fr="Photographie">Photography</div>
         <div class="cr-name">Malina Corpadean</div>
-        <div class="cr-sub">Montreal-based photographer. Known for formal precision in intimate editorial contexts.</div>
+        <div class="cr-sub" data-en="Montreal-based photographer. Known for formal precision in intimate editorial contexts." data-fr="Photographe basée à Montréal. Connue pour sa précision formelle dans les contextes éditoriaux intimes.">Montreal-based photographer. Known for formal precision in intimate editorial contexts.</div>
       </div>
 
       <div class="credit-row">
-        <div class="cr-role">Model</div>
+        <div class="cr-role" data-en="Model" data-fr="Modèle">Model</div>
         <div class="cr-name">Sabrina Jales</div>
-        <div class="cr-sub">Brazil. Subsequently represented by Stanford. Sports Illustrated, Raphael Mazzucco.</div>
+        <div class="cr-sub" data-en="Brazil. Subsequently represented by Stanford. Sports Illustrated, Raphael Mazzucco." data-fr="Brésil. Représentée par Stanford par la suite. Sports Illustrated, Raphael Mazzucco.">Brazil. Subsequently represented by Stanford. Sports Illustrated, Raphael Mazzucco.</div>
       </div>
 
       <div class="credit-row">
-        <div class="cr-role">Styling</div>
+        <div class="cr-role" data-en="Styling" data-fr="Stylisme">Styling</div>
         <div class="cr-name">Randy Smith</div>
-        <div class="cr-sub">New York-based stylist. Editorial and commercial fashion.</div>
+        <div class="cr-sub" data-en="New York-based stylist. Editorial and commercial fashion." data-fr="Styliste basé à New York. Mode éditoriale et commerciale.">New York-based stylist. Editorial and commercial fashion.</div>
         <div class="cr-link"><a href="https://www.randysmithstyle.com/about-me-1" target="_blank" rel="noopener">randysmithstyle.com →</a></div>
       </div>
 
       <div class="credit-row">
-        <div class="cr-role">Client</div>
+        <div class="cr-role" data-en="Client" data-fr="Client">Client</div>
         <div class="cr-name">La Maison Simons</div>
-        <div class="cr-sub">Quebec City. Lingerie & Hosiery campaign. Approved by Peter Simons. Images of Paris Photo calibre.</div>
+        <div class="cr-sub" data-en="Quebec City. Lingerie & Hosiery campaign. Approved by Peter Simons. Images of Paris Photo calibre." data-fr="Québec. Campagne Lingerie & Bonneterie. Approuvée par Peter Simons. Images de calibre Paris Photo.">Quebec City. Lingerie & Hosiery campaign. Approved by Peter Simons. Images of Paris Photo calibre.</div>
       </div>
 
       <div class="credit-row">
-        <div class="cr-role">Location</div>
+        <div class="cr-role" data-en="Location" data-fr="Lieu">Location</div>
         <div class="cr-name">New York City</div>
-        <div class="cr-sub">Beauty mansion — solid marble stairs. Location sourced with the assistance of Kelly Ann. An architectural setting that gave the images permanence beyond the campaign brief.</div>
+        <div class="cr-sub" data-en="Beauty mansion — solid marble stairs. Location sourced with the assistance of Kelly Ann. An architectural setting that gave the images permanence beyond the campaign brief." data-fr="Manoir — escalier de marbre massif. Lieu trouvé avec l'aide de Kelly Ann. Un décor architectural qui a donné aux images une permanence dépassant le brief de campagne.">Beauty mansion — solid marble stairs. Location sourced with the assistance of Kelly Ann. An architectural setting that gave the images permanence beyond the campaign brief.</div>
       </div>
     </div>
 
     <div class="mi-card">
-      <div class="mi-label">MODUS Index · Editorial</div>
-      <div class="mi-name">Simons Lingerie Series</div>
+      <div class="mi-label" data-en="MODUS Index · Editorial" data-fr="Index MODUS · Éditorial">MODUS Index · Editorial</div>
+      <div class="mi-name" data-en="Simons Lingerie Series" data-fr="Série Lingerie Simons">Simons Lingerie Series</div>
       <div class="mi-sub">La Maison Simons · New York · Stanford / Corpadean / Jales</div>
       <div class="mi-score">49 <span>/ 50</span></div>
       <div class="mi-axes">
-        <div class="mi-axis"><span class="mi-aname">Timelessness</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
-        <div class="mi-axis"><span class="mi-aname">Visual Authority</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
-        <div class="mi-axis"><span class="mi-aname">Editorial Intelligence</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
-        <div class="mi-axis"><span class="mi-aname">Talent Assembly</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
-        <div class="mi-axis"><span class="mi-aname">Commercial Impact</span><div class="mi-bar"><div class="mi-fill" style="width:90%"></div></div><span class="mi-val">9</span></div>
+        <div class="mi-axis"><span class="mi-aname" data-en="Timelessness" data-fr="Intemporalité">Timelessness</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+        <div class="mi-axis"><span class="mi-aname" data-en="Visual Authority" data-fr="Autorité visuelle">Visual Authority</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+        <div class="mi-axis"><span class="mi-aname" data-en="Editorial Intelligence" data-fr="Intelligence éditoriale">Editorial Intelligence</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+        <div class="mi-axis"><span class="mi-aname" data-en="Talent Assembly" data-fr="Assemblage des talents">Talent Assembly</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
+        <div class="mi-axis"><span class="mi-aname" data-en="Commercial Impact" data-fr="Impact commercial">Commercial Impact</span><div class="mi-bar"><div class="mi-fill" style="width:90%"></div></div><span class="mi-val">9</span></div>
       </div>
-      <div class="mi-note">One point held: commercial photography by its nature serves a brief. That the brief was served this well — to the level of Paris Photo recognition — is the distinction. The images outgrew the campaign.</div>
+      <div class="mi-note" data-en="One point held: commercial photography by its nature serves a brief. That the brief was served this well — to the level of Paris Photo recognition — is the distinction. The images outgrew the campaign." data-fr="Un point retenu : la photographie commerciale sert par nature un brief. Que le brief ait été servi aussi bien — au niveau de la reconnaissance de Paris Photo — est la distinction. Les images ont dépassé la campagne.">One point held: commercial photography by its nature serves a brief. That the brief was served this well — to the level of Paris Photo recognition — is the distinction. The images outgrew the campaign.</div>
     </div>
   </aside>
 </div><!-- /context -->
@@ -673,7 +676,7 @@
 
 <!-- EDITORIAL GRID — all 6 images -->
 <div class="ed-grid-full" style="padding-bottom:0">
-  <p class="ed-grid-title">La Maison Simons — Lingerie & Hosiery · New York · Full Editorial</p>
+  <p class="ed-grid-title" data-en="La Maison Simons — Lingerie & Hosiery · New York · Full Editorial" data-fr="La Maison Simons — Lingerie & Bonneterie · New York · Éditorial complet">La Maison Simons — Lingerie & Hosiery · New York · Full Editorial</p>
 
   <!-- All 6 Simons images — 2 per row, full image visible, no cropping -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px">
@@ -712,22 +715,22 @@
 <div class="teaser">
   <div class="teaser-inner">
     <div>
-      <p class="teaser-coming" style="font-size:12px;letter-spacing:0.2em;color:var(--text);opacity:0.7">Next in MODUS Atelier — Issue No. 2</p>
-      <p class="teaser-label">The Icon Essay</p>
-      <h2 class="teaser-title">Tom Ford.<br>From Gucci<br>to the<br><em>limit of everything.</em></h2>
+      <p class="teaser-coming" style="font-size:12px;letter-spacing:0.2em;color:var(--text);opacity:0.7" data-en="Next in MODUS Atelier — Issue No. 2" data-fr="Prochainement dans MODUS Atelier — Numéro 2">Next in MODUS Atelier — Issue No. 2</p>
+      <p class="teaser-label" data-en="The Icon Essay" data-fr="L'essai icône">The Icon Essay</p>
+      <h2 class="teaser-title"><span data-en="Tom Ford." data-fr="Tom Ford.">Tom Ford.</span><br><span data-en="From Gucci" data-fr="De Gucci">From Gucci</span><br><span data-en="to the" data-fr="à la">to the</span><br><em data-en="limit of everything." data-fr="limite de tout.">limit of everything.</em></h2>
       <div class="teaser-rule"></div>
-      <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);line-height:2;margin-top:1rem">
+      <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);line-height:2;margin-top:1rem" data-en="Gucci 1994–2004 · Black Orchid · The campaigns that rewrote fashion advertising · Why no one has replaced him" data-fr="Gucci 1994–2004 · Black Orchid · Les campagnes qui ont réécrit la publicité de mode · Pourquoi personne ne l'a remplacé">
         Gucci 1994–2004 · Black Orchid · The campaigns that rewrote fashion advertising · Why no one has replaced him
       </p>
     </div>
     <div class="teaser-right">
-      <p>There is a version of the luxury fashion conversation that pretends the answer is not obvious. Tom Ford is the answer — not the brand after the sale, not the corporate entity, but the singular creative intelligence that looked at Gucci in 1994, a house in free fall, and decided the only way out was total conviction. Hyper-saturated skin. The confrontational gaze that does not ask for your approval. Bodies presented not as vessels for clothing but as the argument clothing was built around.</p>
-      <p>The Gucci years were not a formula. They were a philosophy executed at fashion-house scale. When Ford left for his own line, he did not soften it — he pushed further. Black Orchid. A woman in dark water, holding the bottle the way you hold something that belongs to you. The image did not need a headline. It was already complete. That is the standard. Everything else in luxury fragrance advertising is measured against it and falls short.</p>
+      <p data-en="There is a version of the luxury fashion conversation that pretends the answer is not obvious. Tom Ford is the answer — not the brand after the sale, not the corporate entity, but the singular creative intelligence that looked at Gucci in 1994, a house in free fall, and decided the only way out was total conviction. Hyper-saturated skin. The confrontational gaze that does not ask for your approval. Bodies presented not as vessels for clothing but as the argument clothing was built around." data-fr="Il existe une version de la conversation sur la mode de luxe qui prétend que la réponse n'est pas évidente. Tom Ford est la réponse — non pas la marque après la vente, non pas l'entité corporative, mais l'intelligence créative singulière qui a regardé Gucci en 1994, une maison en chute libre, et décidé que la seule sortie était la conviction totale. Une peau hypersaturée. Le regard frontal qui ne demande pas votre approbation. Des corps présentés non pas comme des réceptacles pour les vêtements mais comme l'argument autour duquel les vêtements ont été construits.">There is a version of the luxury fashion conversation that pretends the answer is not obvious. Tom Ford is the answer — not the brand after the sale, not the corporate entity, but the singular creative intelligence that looked at Gucci in 1994, a house in free fall, and decided the only way out was total conviction. Hyper-saturated skin. The confrontational gaze that does not ask for your approval. Bodies presented not as vessels for clothing but as the argument clothing was built around.</p>
+      <p data-en="The Gucci years were not a formula. They were a philosophy executed at fashion-house scale. When Ford left for his own line, he did not soften it — he pushed further. Black Orchid. A woman in dark water, holding the bottle the way you hold something that belongs to you. The image did not need a headline. It was already complete. That is the standard. Everything else in luxury fragrance advertising is measured against it and falls short." data-fr="Les années Gucci n'étaient pas une formule. C'était une philosophie exécutée à l'échelle d'une maison de couture. Lorsque Ford est parti pour sa propre ligne, il ne l'a pas adoucie — il a poussé plus loin. Black Orchid. Une femme dans une eau sombre, tenant le flacon comme on tient quelque chose qui nous appartient. L'image n'avait pas besoin d'un titre. Elle était déjà complète. C'est la norme. Tout le reste dans la publicité de parfum de luxe se mesure à cela et n'y parvient pas.">The Gucci years were not a formula. They were a philosophy executed at fashion-house scale. When Ford left for his own line, he did not soften it — he pushed further. Black Orchid. A woman in dark water, holding the bottle the way you hold something that belongs to you. The image did not need a headline. It was already complete. That is the standard. Everything else in luxury fragrance advertising is measured against it and falls short.</p>
       <div class="teaser-issues">
-        <div class="ti"><span class="ti-n">01</span><span class="ti-t">Gucci 1994–2004 — The decade that changed fashion advertising permanently</span></div>
-        <div class="ti"><span class="ti-n">02</span><span class="ti-t">The campaign grammar — skin, power, and desire as structural design elements</span></div>
-        <div class="ti"><span class="ti-n">03</span><span class="ti-t">Black Orchid and the perfume campaign as complete visual statement</span></div>
-        <div class="ti"><span class="ti-n">04</span><span class="ti-t">After the sale — what survived, what didn't, and what the absence reveals</span></div>
+        <div class="ti"><span class="ti-n">01</span><span class="ti-t" data-en="Gucci 1994–2004 — The decade that changed fashion advertising permanently" data-fr="Gucci 1994–2004 — La décennie qui a changé définitivement la publicité de mode">Gucci 1994–2004 — The decade that changed fashion advertising permanently</span></div>
+        <div class="ti"><span class="ti-n">02</span><span class="ti-t" data-en="The campaign grammar — skin, power, and desire as structural design elements" data-fr="La grammaire de campagne — la peau, le pouvoir et le désir comme éléments de design structurel">The campaign grammar — skin, power, and desire as structural design elements</span></div>
+        <div class="ti"><span class="ti-n">03</span><span class="ti-t" data-en="Black Orchid and the perfume campaign as complete visual statement" data-fr="Black Orchid et la campagne de parfum comme déclaration visuelle complète">Black Orchid and the perfume campaign as complete visual statement</span></div>
+        <div class="ti"><span class="ti-n">04</span><span class="ti-t" data-en="After the sale — what survived, what didn't, and what the absence reveals" data-fr="Après la vente — ce qui a survécu, ce qui n'a pas survécu, et ce que l'absence révèle">After the sale — what survived, what didn't, and what the absence reveals</span></div>
       </div>
     </div>
   </div>

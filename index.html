@@ -310,7 +310,9 @@
                  transition:all var(--ease); display:flex; align-items:center; gap:6px; min-height:44px; }
     .theme-btn:hover { color:var(--text); border-color:var(--border-gold); }
     .theme-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
-
+        [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
+    [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+    #langBtn{font-weight:600;letter-spacing:0.08em}
     /* ── Side menu ── */
     .side-menu {
       position:fixed; top:0; left:0; bottom:0; width:280px;
@@ -563,7 +565,8 @@
       .dept-desc { font-size:0.9rem; line-height:1.85; letter-spacing:0.06em; }
       .dept-score { font-size:2.8rem; margin-top:1.2rem; }
 
-      .theme-btn span:not(.theme-dot) { display:none; }
+      #themeBtn span{ display:none; }
+      #langLabel{ display:inline!important; }
       .side-menu { width:100%; border-right:none; }
       .side-menu { padding:3rem 2rem 1.5rem; overflow-y:auto; }
       .side-menu-label { margin-bottom:1rem; }

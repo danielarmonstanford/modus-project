@@ -154,10 +154,10 @@ body.grain::before {
 
 /* ── Typography ── */
 .display {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Lovine', 'Cormorant Garamond', Georgia, serif;
   font-size: clamp(56px, 9vw, 160px);
   font-weight: 300;
-  font-style: normal;
+  font-style: italic;
   letter-spacing: -0.04em;
   line-height: 0.88;
 }

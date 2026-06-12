@@ -459,14 +459,14 @@
       font-family:var(--font-ed);
       font-size:clamp(4rem,10vw,9rem);
       font-weight:300; font-style:italic;
-      color:var(--white); line-height:0.95; letter-spacing:-0.03em;
+      color:var(--white); line-height:1.0; letter-spacing:-0.03em;
       text-shadow:0 2px 60px rgba(0,0,0,0.5); margin-bottom:1.4rem;
     }
     .cover-deck {
       font-family:var(--font-mono); font-size:clamp(1rem,1.6vw,1.3rem);
       letter-spacing:0.16em;
       color:rgba(240,232,213,0.7); text-transform:uppercase;
-      max-width:100%; line-height:2.2;
+      max-width:100%; line-height:1.55;
     }
 
     /* ── Departments grid ── */
@@ -556,7 +556,7 @@
         font-size:clamp(3.2rem,14vw,6rem);
         line-height:0.97; letter-spacing:-0.02em; margin-bottom:1.4rem;
       }
-      .cover-deck { font-size:1rem; line-height:2.2; letter-spacing:0.1em; }
+      .cover-deck { font-size:1rem; line-height:1.55; letter-spacing:0.1em; }
 
       .depts { padding:3rem 1.25rem; }
       .depts-label { font-size:13px; letter-spacing:0.2em; margin-bottom:1.5rem; }
@@ -663,12 +663,12 @@
       <div class="gold-rule"></div>
       <div class="cover-hed">
         <p class="cover-eyebrow" data-en="Taste Intelligence · Issue No. 1 · 2026" data-fr="Intelligence du goût · Numéro 1 · 2026">Taste Intelligence · Issue No. 1 · 2026</p>
-        <h1 class="cover-title" data-en="The Body. The Machine. The Room." data-fr="Le Corps. La Machine. La Chambre.">The Body.<br>The Machine.<br>The Room.</h1>
+        <h1 class="cover-title" data-en="The Body. The Machine. The Room." data-fr="Le Corps. La Machine. La Chambre."><span style="display:block">The Body.</span><span style="display:block">The Machine.</span><span style="display:block">The Room.</span></h1>
         <p class="cover-deck">
-          CORPS · Gabriella Warrior<br>
-          OBJECTS · Porsche 911 S/T<br>
-          TERRAIN · Amanwella Tangalle<br>
-          DÉCOVER · FASCINASIA — 50 / 50
+          <span style="display:block">CORPS · Gabriella Warrior</span>
+          <span style="display:block">OBJECTS · Porsche 911 S/T</span>
+          <span style="display:block">TERRAIN · Amanwella Tangalle</span>
+          <span style="display:block">DÉCOVER · FASCINASIA — 50 / 50</span>
         </p>
       </div>
     </div>

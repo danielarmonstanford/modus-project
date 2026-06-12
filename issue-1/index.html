@@ -79,6 +79,9 @@
     display: flex; align-items: center; gap: 5px;
     min-height: 36px;
   }
+  [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
+  [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+  #langBtn{font-weight:600;letter-spacing:0.06em!important;font-size:13px}
   .theme-btn:hover { color: var(--ink); border-color: var(--gold); }
   .theme-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
@@ -434,7 +437,7 @@
     position: fixed; top: 0; left: 0; right: 0; height: 56px; z-index: 200;
     display: none; /* desktop: hidden, cover head handles it */
     align-items: center; justify-content: space-between;
-    padding: 0 1.25rem;
+    padding: 0 0.5rem 0 0;
     background: rgba(14,12,11,0.94);
     border-bottom: 0.5px solid var(--rule);
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
@@ -561,7 +564,7 @@
 
 <!-- Fixed top nav — visible on mobile only -->
 <nav class="top-nav" aria-label="MODUS navigation">
-  <div style="display:flex;align-items:center;gap:0.75rem;">
+  <div style="display:flex;align-items:center;gap:0;">
     <button class="menu-btn" id="menuBtnMobile" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -570,6 +573,7 @@
       <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
     </a>
   </div>
+  <button class="theme-btn" id="langBtn" aria-label="Toggle language"><span id="langLabel">FR</span></button>
   <button class="theme-btn" id="themeBtnMobile" aria-label="Toggle theme">
     <div class="theme-dot"></div>
     <span id="themeLabelMobile">Light</span>

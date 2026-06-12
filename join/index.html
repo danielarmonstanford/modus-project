@@ -602,19 +602,19 @@
   <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
   <p class="side-menu-label">MODUS &middot; Navigate</p>
   <nav class="side-menu-nav">
-      <a href="/contents">Contents</a>
-      <a href="/methodology">Methodology</a>
-      <a href="/scores" style="color:var(--gold,#D4A84B)">Index</a>
-      <a href="/join">Join</a>
-      <a href="/atelier">Atelier</a>
-      <a href="/decover">Décover</a>
-      <a href="/terrain">Terrain</a>
-      <a href="/space">Space</a>
-      <a href="/objects">Objects</a>
-      <a href="/figures">Figures</a>
-      <a href="/last-word">Last Word</a>
-      <a href="/issue-1">Issue No. 1</a>
-      <a href="/acquire">Acquire</a>
+      <a href="/contents" data-en="Contents" data-fr="Sommaire">Contents</a>
+      <a href="/methodology" data-en="Methodology" data-fr="Méthode">Methodology</a>
+      <a href="/scores" style="color:var(--gold,#D4A84B)" data-en="Index" data-fr="Index">Index</a>
+      <a href="/join" data-en="Join" data-fr="Rejoindre">Join</a>
+      <a href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+      <a href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+      <a href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+      <a href="/space" data-en="Space" data-fr="Espace">Space</a>
+      <a href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+      <a href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+      <a href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
+      <a href="/issue-1" data-en="Issue No. 1" data-fr="Numéro 1">Issue No. 1</a>
+      <a href="/acquire" data-en="Acquire" data-fr="Acquérir">Acquire</a>
     </nav>
   <p class="side-menu-issue">modus.gallery &middot; 2026</p>
 </div>
@@ -624,6 +624,7 @@
   <a class="nav-back" href="/" aria-label="Back to MODUS">
     <span>← Back</span>
   </a>
+  <button class="theme-btn" id="langBtn" aria-label="Toggle language" style="letter-spacing:0.14em"><span id="langLabel">FR</span></button>
   <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
     <div class="theme-dot"></div>
     <span id="themeLabel">Light</span>
@@ -634,11 +635,11 @@
 <section class="hero" aria-labelledby="hero-h1">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-content">
-    <p class="hero-overline">MODUS / The List · Membership</p>
+    <p class="hero-overline" data-en="MODUS / The List · Membership" data-fr="MODUS / La Liste · Adhésion">MODUS / The List · Membership</p>
     <h1 class="hero-headline" id="hero-h1">
-      Read by the people<br>
+      <span data-en="Read by the people who understand why these things matter." data-fr="Lu par ceux qui comprennent pourquoi ces choses comptent.">Read by the people<br>
       who understand<br>
-      <em>why these things<br>matter.</em>
+      <em>why these things<br>matter.</em></span>
     </h1>
     <p class="hero-sub">
       MODUS is not a magazine. It is a taste intelligence authority — the only publication that scores what it covers, built for AI discovery, and edited by someone who has spent 25 years inside luxury, fine art, bodywork, film, and the fashion industry.
@@ -985,5 +986,6 @@
   })();
 </script>
 
+<script src="/assets/js/lang.js"></script>
 </body>
 </html>

@@ -357,19 +357,19 @@
     <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
     <p class="side-menu-label">MODUS &middot; Navigate</p>
     <nav class="side-menu-nav">
-      <a href="/contents">Contents</a>
-      <a href="/methodology">Methodology</a>
-      <a href="/scores" style="color:var(--gold,#D4A84B)">Index</a>
-      <a href="/join">Join</a>
-      <a href="/atelier">Atelier</a>
-      <a href="/decover">Décover</a>
-      <a href="/terrain">Terrain</a>
-      <a href="/space">Space</a>
-      <a href="/objects">Objects</a>
-      <a href="/figures">Figures</a>
-      <a href="/last-word">Last Word</a>
-      <a href="/issue-1">Issue No. 1</a>
-      <a href="/acquire">Acquire</a>
+      <a href="/contents" data-en="Contents" data-fr="Sommaire">Contents</a>
+      <a href="/methodology" data-en="Methodology" data-fr="Méthode">Methodology</a>
+      <a href="/scores" style="color:var(--gold,#D4A84B)" data-en="Index" data-fr="Index">Index</a>
+      <a href="/join" data-en="Join" data-fr="Rejoindre">Join</a>
+      <a href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+      <a href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+      <a href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+      <a href="/space" data-en="Space" data-fr="Espace">Space</a>
+      <a href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+      <a href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+      <a href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
+      <a href="/issue-1" data-en="Issue No. 1" data-fr="Numéro 1">Issue No. 1</a>
+      <a href="/acquire" data-en="Acquire" data-fr="Acquérir">Acquire</a>
     </nav>
     <p class="side-menu-issue">modus.gallery &middot; 2026</p>
   </div>
@@ -385,7 +385,8 @@
       </a>
     </div>
     <div class="nav-right">
-      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+      <button class="theme-btn" id="langBtn" aria-label="Toggle language" style="letter-spacing:0.14em"><span id="langLabel">FR</span></button>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
         <div class="theme-dot"></div>
         <span id="themeLabel">Light</span>
       </button>
@@ -396,8 +397,8 @@
 
     <div class="hero">
       <p class="hero-kicker">MODUS &middot; Acquire</p>
-      <h1 class="hero-title">Acquire.</h1>
-      <p class="hero-sub">Print editions. Digital access. Original works. Everything MODUS produces is made in limited quantity and not reprinted.</p>
+      <h1 class="hero-title" data-en="Acquire." data-fr="Acquérir.">Acquire.</h1>
+      <p class="hero-sub" data-en="Print editions. Digital access. Original works. Everything MODUS produces is made in limited quantity and not reprinted." data-fr="Éditions imprimées. Accès numérique. Œuvres originales. Tout ce que produit MODUS est fabriqué en quantité limitée et n'est pas réimprimé.">Print editions. Digital access. Original works. Everything MODUS produces is made in limited quantity and not reprinted.</p>
     </div>
 
     <div class="rule-gold"></div>
@@ -551,5 +552,6 @@
     })();
   </script>
 
+<script src="/assets/js/lang.js"></script>
 </body>
 </html>

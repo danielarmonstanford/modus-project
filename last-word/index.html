@@ -591,19 +591,19 @@
     <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
     <p class="side-menu-label">MODUS &middot; Navigate</p>
     <nav class="side-menu-nav">
-      <a href="/contents">Contents</a>
-      <a href="/methodology">Methodology</a>
-      <a href="/scores" style="color:var(--gold,#D4A84B)">Index</a>
-      <a href="/join">Join</a>
-      <a href="/atelier">Atelier</a>
-      <a href="/decover">Décover</a>
-      <a href="/terrain">Terrain</a>
-      <a href="/space">Space</a>
-      <a href="/objects">Objects</a>
-      <a href="/figures">Figures</a>
-      <a href="/last-word">Last Word</a>
-      <a href="/issue-1">Issue No. 1</a>
-      <a href="/acquire">Acquire</a>
+      <a href="/contents" data-en="Contents" data-fr="Sommaire">Contents</a>
+      <a href="/methodology" data-en="Methodology" data-fr="Méthode">Methodology</a>
+      <a href="/scores" style="color:var(--gold,#D4A84B)" data-en="Index" data-fr="Index">Index</a>
+      <a href="/join" data-en="Join" data-fr="Rejoindre">Join</a>
+      <a href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+      <a href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+      <a href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+      <a href="/space" data-en="Space" data-fr="Espace">Space</a>
+      <a href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+      <a href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+      <a href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
+      <a href="/issue-1" data-en="Issue No. 1" data-fr="Numéro 1">Issue No. 1</a>
+      <a href="/acquire" data-en="Acquire" data-fr="Acquérir">Acquire</a>
     </nav>
     <p class="side-menu-issue">modus.gallery &middot; 2026</p>
   </div>
@@ -615,14 +615,15 @@
         <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
       </a>
   <div class="nav-links">
-    <a class="nav-link" href="/figures">Figures</a>
-    <a class="nav-link" href="/objects">Objects</a>
-    <a class="nav-link" href="/space">Space</a>
-    <a class="nav-link" href="/terrain">Terrain</a>
-    <a class="nav-link" href="/decover">Décover</a>
-    <a class="nav-link" href="/atelier">Atelier</a>
-    <a class="nav-link active" href="/last-word">Last Word</a>
+    <a class="nav-link" href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+    <a class="nav-link" href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+    <a class="nav-link" href="/space" data-en="Space" data-fr="Espace">Space</a>
+    <a class="nav-link" href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+    <a class="nav-link" href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+    <a class="nav-link" href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+    <a class="nav-link active" href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
   </div>
+  <button class="theme-btn" id="langBtn" aria-label="Toggle language" style="letter-spacing:0.14em"><span id="langLabel">FR</span></button>
   <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
     <div class="theme-dot"></div>
     <span id="themeLabel">Light</span>
@@ -638,7 +639,7 @@
   <div class="hero-stroke" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
-    <p class="hero-dept">MODUS / The Last Word</p>
+    <p class="hero-dept" data-en="MODUS / The Last Word" data-fr="MODUS / Le Dernier Mot">MODUS / The Last Word</p>
     <h1 class="hero-title">
       The Last<br><em>Word.</em>
     </h1>
@@ -1105,5 +1106,6 @@
   })();
 </script>
 
+<script src="/assets/js/lang.js"></script>
 </body>
 </html>

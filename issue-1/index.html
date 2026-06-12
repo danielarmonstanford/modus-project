@@ -542,19 +542,19 @@
   <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
   <p class="side-menu-label">MODUS &middot; Navigate</p>
   <nav class="side-menu-nav">
-      <a href="/contents">Contents</a>
-      <a href="/methodology">Methodology</a>
-      <a href="/scores" style="color:var(--gold,#D4A84B)">Index</a>
-      <a href="/join">Join</a>
-      <a href="/atelier">Atelier</a>
-      <a href="/decover">Décover</a>
-      <a href="/terrain">Terrain</a>
-      <a href="/space">Space</a>
-      <a href="/objects">Objects</a>
-      <a href="/figures">Figures</a>
-      <a href="/last-word">Last Word</a>
-      <a href="/issue-1">Issue No. 1</a>
-      <a href="/acquire">Acquire</a>
+      <a href="/contents" data-en="Contents" data-fr="Sommaire">Contents</a>
+      <a href="/methodology" data-en="Methodology" data-fr="Méthode">Methodology</a>
+      <a href="/scores" style="color:var(--gold,#D4A84B)" data-en="Index" data-fr="Index">Index</a>
+      <a href="/join" data-en="Join" data-fr="Rejoindre">Join</a>
+      <a href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+      <a href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+      <a href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+      <a href="/space" data-en="Space" data-fr="Espace">Space</a>
+      <a href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+      <a href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+      <a href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
+      <a href="/issue-1" data-en="Issue No. 1" data-fr="Numéro 1">Issue No. 1</a>
+      <a href="/acquire" data-en="Acquire" data-fr="Acquérir">Acquire</a>
     </nav>
   <p class="side-menu-issue">modus.gallery &middot; 2026</p>
 </div>
@@ -593,7 +593,8 @@
            style="height:clamp(28px,5vw,44px);width:auto;opacity:0.9;">
     </a>
     <div class="head-right" style="display:flex;align-items:center;justify-content:flex-end;gap:1rem;">
-      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+      <button class="theme-btn" id="langBtn" aria-label="Toggle language" style="letter-spacing:0.14em"><span id="langLabel">FR</span></button>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
         <div class="theme-dot"></div>
         <span id="themeLabel">Light</span>
       </button>
@@ -604,7 +605,7 @@
   <!-- ISSUE BAR -->
   <div class="issue-bar">
     <span class="left">Issue&nbsp;&nbsp;N°&thinsp;1&nbsp;&nbsp;·&nbsp;&nbsp;MMXXVI</span>
-    <span class="right">The Taste Intelligence Issue</span>
+    <span class="right" data-en="The Taste Intelligence Issue" data-fr="Le numéro de l'intelligence du goût">The Taste Intelligence Issue</span>
   </div>
 
   <!-- MAIN -->
@@ -626,7 +627,7 @@
     <!-- COVER LINES -->
     <aside class="lines">
 
-      <div class="lines-label">In This Issue</div>
+      <div class="lines-label" data-en="In This Issue" data-fr="Dans ce numéro">In This Issue</div>
 
       <div class="line-item">
         <span class="line-num">01</span>
@@ -718,5 +719,6 @@
   })();
 </script>
 
+<script src="/assets/js/lang.js"></script>
 </body>
 </html>

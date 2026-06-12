@@ -186,7 +186,16 @@
 
     @media(max-width:1040px){.feature{grid-template-columns:1fr}.sidebar{position:static}.sa{grid-template-columns:140px 1fr 44px 22px}}
     @media(max-width:768px){.gal-slide{flex:0 0 calc((100% - 6px) / 1.8)}}
-    @media(max-width:680px){.nav-links{gap:1rem;flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}.nav-links::-webkit-scrollbar{display:none}.theme-btn span:not(.theme-dot){display:none}.sa{grid-template-columns:120px 1fr 40px 20px}}
+    @media(max-width:680px){
+      .nav{padding:0 0.5rem;gap:0.35rem}
+      .nav-logo img{height:24px}
+      .nav-links{gap:1rem;flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}
+      .nav-links::-webkit-scrollbar{display:none}
+      .theme-btn span:not(.theme-dot){display:none}
+      .theme-btn{padding:5px 10px;min-width:36px}
+      #langBtn{padding:5px 10px;min-width:36px}
+      .sa{grid-template-columns:120px 1fr 40px 20px}
+    }
     @media(max-width:480px){
       body{font-size:17px;line-height:1.7}
       .hero-title{font-size:clamp(44px,13vw,72px)!important}
@@ -196,6 +205,8 @@
       .sa{grid-template-columns:1fr;gap:6px}
       .sa-bar{display:none}
       .gal-slide{flex:0 0 calc(100% - 10%)}
+      #langBtn{padding:5px 8px;min-width:30px}
+      #langLabel{font-size:10px;letter-spacing:0.08em}
     }
   </style>
 
@@ -387,8 +398,8 @@
     <p class="hero-dept" data-en="MODUS / Décover · Fine Art" data-fr="MODUS / Décover · Beaux-Arts">MODUS / Décover · Fine Art</p>
     <h1 class="hero-title">FASCINASIA.</h1>
     <p class="hero-sub">
-      Daniel Stanford · Mixed Media · 50 Works · Limited Edition<br>
-      Scored by Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada
+      <span data-en="Daniel Stanford · Mixed Media · 50 Works · Limited Edition" data-fr="Daniel Stanford · Techniques mixtes · 50 œuvres · Édition limitée">Daniel Stanford · Mixed Media · 50 Works · Limited Edition</span><br>
+      <span data-en="Scored by Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada" data-fr="Évalué par Marie-Christine Gilbert, docteure · Contributrice à l'Index · Musée des beaux-arts du Canada">Scored by Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada</span>
     </p>
     <div class="hero-rule" aria-hidden="true"></div>
   </div>
@@ -398,8 +409,8 @@
 
 <!-- OPENING -->
 <section class="opening" aria-label="Editorial opening">
-  <p>"FASCINASIA operates at the register where painting stops trying to represent and starts trying to seduce. These are not pictures of things. They are things — objects that require physical proximity, that reward sustained looking, that resist being fully described. The series is capped at 50 works. There are no prints. There is no open edition. It is a body of work that understands its own scarcity, and does not apologise for it."</p>
-  <p class="opening-attr">— Daniel Stanford · Editor-in-Chief · MODUS · On FASCINASIA</p>
+  <p data-en='"FASCINASIA operates at the register where painting stops trying to represent and starts trying to seduce. These are not pictures of things. They are things — objects that require physical proximity, that reward sustained looking, that resist being fully described. The series is capped at 50 works. There are no prints. There is no open edition. It is a body of work that understands its own scarcity, and does not apologise for it."' data-fr='"FASCINASIA opère au registre où la peinture cesse de chercher à représenter pour commencer à séduire. Ce ne sont pas des images de choses. Ce sont des choses — des objets qui exigent la proximité physique, qui récompensent un regard soutenu, qui résistent à toute description exhaustive. La série est plafonnée à 50 œuvres. Il n'existe aucune reproduction. Il n'existe aucune édition ouverte. C'est un corpus qui comprend sa propre rareté, et ne s'en excuse pas."'>"FASCINASIA operates at the register where painting stops trying to represent and starts trying to seduce. These are not pictures of things. They are things — objects that require physical proximity, that reward sustained looking, that resist being fully described. The series is capped at 50 works. There are no prints. There is no open edition. It is a body of work that understands its own scarcity, and does not apologise for it."</p>
+  <p class="opening-attr" data-en="— Daniel Stanford · Editor-in-Chief · MODUS · On FASCINASIA" data-fr="— Daniel Stanford · Rédacteur en chef · MODUS · Sur FASCINASIA">— Daniel Stanford · Editor-in-Chief · MODUS · On FASCINASIA</p>
 </section>
 
 <div class="rule" style="margin-top:4rem" role="separator"></div>
@@ -408,83 +419,83 @@
 <div class="feature">
   <article class="body">
 
-    <h3>The series.<br><em>What it is and what it refuses to be.</em></h3>
+    <h3><span data-en="The series." data-fr="La série.">The series.</span><br><em><span data-en="What it is and what it refuses to be." data-fr="Ce qu'elle est et ce qu'elle refuse d'être.">What it is and what it refuses to be.</span></em></h3>
 
-    <p>FASCINASIA is Daniel Stanford's primary fine art painting practice — a series of mixed-media works that occupy the territory between haute photography and painterly gesture. The works are built on photographic foundations and extended through paint, texture, and material intervention until the photograph beneath is no longer visible as source. What remains is something that has the warmth of a painting and the precision of a lens — two registers that fine art usually keeps separate.</p>
+    <p data-en="FASCINASIA is Daniel Stanford's primary fine art painting practice — a series of mixed-media works that occupy the territory between haute photography and painterly gesture. The works are built on photographic foundations and extended through paint, texture, and material intervention until the photograph beneath is no longer visible as source. What remains is something that has the warmth of a painting and the precision of a lens — two registers that fine art usually keeps separate." data-fr="FASCINASIA est la pratique picturale principale de Daniel Stanford dans le domaine des beaux-arts — une série d'œuvres en techniques mixtes qui occupent le territoire situé entre la haute photographie et le geste pictural. Les œuvres sont construites sur des fondements photographiques, puis prolongées par la peinture, la texture et l'intervention matérielle jusqu'à ce que la photographie sous-jacente ne soit plus perceptible comme source. Ce qui demeure possède la chaleur d'une peinture et la précision d'un objectif — deux registres que les beaux-arts maintiennent ordinairement séparés.">FASCINASIA is Daniel Stanford's primary fine art painting practice — a series of mixed-media works that occupy the territory between haute photography and painterly gesture. The works are built on photographic foundations and extended through paint, texture, and material intervention until the photograph beneath is no longer visible as source. What remains is something that has the warmth of a painting and the precision of a lens — two registers that fine art usually keeps separate.</p>
 
-    <p>The series title is a compound Stanford coined from fascination and Asia — a reference not to geography but to a certain quality of the Orientalist sublime: images that draw the eye into depth, that refuse resolution, that maintain their strangeness no matter how long you look. The works are not decorative in the sense that hospitality art is decorative. They are demanding. They ask something of the room they inhabit and something of the person standing in front of them.</p>
+    <p data-en="The series title is a compound Stanford coined from fascination and Asia — a reference not to geography but to a certain quality of the Orientalist sublime: images that draw the eye into depth, that refuse resolution, that maintain their strangeness no matter how long you look. The works are not decorative in the sense that hospitality art is decorative. They are demanding. They ask something of the room they inhabit and something of the person standing in front of them." data-fr="Le titre de la série est un mot-valise forgé par Stanford à partir de fascination et d'Asie — une référence non à la géographie, mais à une certaine qualité du sublime orientaliste : des images qui attirent le regard vers la profondeur, qui refusent la résolution, qui conservent leur étrangeté quel que soit le temps qu'on leur consacre. Les œuvres ne sont pas décoratives au sens où l'art hôtelier est décoratif. Elles sont exigeantes. Elles demandent quelque chose à l'espace qu'elles habitent et quelque chose à la personne qui se tient devant elles.">The series title is a compound Stanford coined from fascination and Asia — a reference not to geography but to a certain quality of the Orientalist sublime: images that draw the eye into depth, that refuse resolution, that maintain their strangeness no matter how long you look. The works are not decorative in the sense that hospitality art is decorative. They are demanding. They ask something of the room they inhabit and something of the person standing in front of them.</p>
 
     <figure class="body-img">
       <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1200/Gov-Lov-is-Toxic_evcokn.jpg"
            alt="Gov-Lov Is Toxic — Daniel Stanford — FASCINASIA Series — Mixed Media"
            loading="lazy" />
-      <figcaption>Gov-Lov Is Toxic · Mixed media · FASCINASIA Series · Daniel Stanford · Saint-Henri, Montreal</figcaption>
+      <figcaption data-en="Gov-Lov Is Toxic · Mixed media · FASCINASIA Series · Daniel Stanford · Saint-Henri, Montreal" data-fr="Gov-Lov Is Toxic · Techniques mixtes · Série FASCINASIA · Daniel Stanford · Saint-Henri, Montréal">Gov-Lov Is Toxic · Mixed media · FASCINASIA Series · Daniel Stanford · Saint-Henri, Montreal</figcaption>
     </figure>
 
     <div class="pull">
-      <p>"The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding is not doubt — it is patience."</p>
-      <p class="pull-attr">— Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada</p>
+      <p data-en='"The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding is not doubt — it is patience."' data-fr='"La thèse d'investissement est simple : 50 œuvres, un évaluateur institutionnel, un artiste fort d'un corpus de vingt-cinq ans. Le demi-point que je retiens n'est pas un doute — c'est de la patience."'>"The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding is not doubt — it is patience."</p>
+      <p class="pull-attr" data-en="— Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada" data-fr="— Marie-Christine Gilbert, docteure · Contributrice à l'Index · Musée des beaux-arts du Canada">— Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada</p>
     </div>
 
-    <h3>Why an outside scorer.<br><em>And why this one.</em></h3>
+    <h3><span data-en="Why an outside scorer." data-fr="Pourquoi un évaluateur indépendant.">Why an outside scorer.</span><br><em><span data-en="And why this one." data-fr="Et pourquoi celui-ci.">And why this one.</span></em></h3>
 
-    <p>MODUS introduced an independent scoring system — the MODUS Index — precisely to remove the conflict of interest that compromises most art publication coverage. When a magazine publishes art, it is either advertising, or it is the editor reviewing their own taste. Neither is useful to a serious collector or a cultural institution making acquisition decisions. The MODUS Index assigns domain authorities — specialists with institutional standing — to score work in their field. The artist does not score their own work. The editor does not score the artist he publishes.</p>
+    <p data-en="MODUS introduced an independent scoring system — the MODUS Index — precisely to remove the conflict of interest that compromises most art publication coverage. When a magazine publishes art, it is either advertising, or it is the editor reviewing their own taste. Neither is useful to a serious collector or a cultural institution making acquisition decisions. The MODUS Index assigns domain authorities — specialists with institutional standing — to score work in their field. The artist does not score their own work. The editor does not score the artist he publishes." data-fr="MODUS a introduit un système de notation indépendant — le MODUS Index — précisément pour supprimer le conflit d'intérêts qui compromet la plupart des publications d'art. Lorsqu'un magazine publie de l'art, il s'agit soit de publicité, soit du rédacteur qui évalue son propre goût. Ni l'un ni l'autre n'est utile à un collectionneur sérieux ou à une institution culturelle qui prend des décisions d'acquisition. Le MODUS Index confie à des autorités de domaine — des spécialistes dotés d'une légitimité institutionnelle — le soin d'évaluer les œuvres dans leur champ d'expertise. L'artiste n'évalue pas son propre travail. Le rédacteur n'évalue pas l'artiste qu'il publie.">MODUS introduced an independent scoring system — the MODUS Index — precisely to remove the conflict of interest that compromises most art publication coverage. When a magazine publishes art, it is either advertising, or it is the editor reviewing their own taste. Neither is useful to a serious collector or a cultural institution making acquisition decisions. The MODUS Index assigns domain authorities — specialists with institutional standing — to score work in their field. The artist does not score their own work. The editor does not score the artist he publishes.</p>
 
-    <p>For FASCINASIA, MODUS appointed Marie-Christine Gilbert, PhD, as Index Contributor for fine art. Her affiliation is The National Gallery of Canada — an institution that has assessed thousands of works for acquisition, permanent collection, and cultural significance. Her score carries weight that no editor's endorsement can manufacture. It is an assessment, not a promotion.</p>
+    <p data-en="For FASCINASIA, MODUS appointed Marie-Christine Gilbert, PhD, as Index Contributor for fine art. Her affiliation is The National Gallery of Canada — an institution that has assessed thousands of works for acquisition, permanent collection, and cultural significance. Her score carries weight that no editor's endorsement can manufacture. It is an assessment, not a promotion." data-fr="Pour FASCINASIA, MODUS a nommé Marie-Christine Gilbert, docteure, Contributrice à l'Index pour les beaux-arts. Son institution d'appartenance est le Musée des beaux-arts du Canada — une institution qui a évalué des milliers d'œuvres en vue d'acquisitions, de collections permanentes et de leur signification culturelle. Son score porte un poids qu'aucune recommandation éditoriale ne peut fabriquer. C'est une évaluation, non une promotion.">For FASCINASIA, MODUS appointed Marie-Christine Gilbert, PhD, as Index Contributor for fine art. Her affiliation is The National Gallery of Canada — an institution that has assessed thousands of works for acquisition, permanent collection, and cultural significance. Her score carries weight that no editor's endorsement can manufacture. It is an assessment, not a promotion.</p>
 
     <!-- GILBERT SCORER CARD -->
     <div class="scorer" role="region" aria-label="MODUS Index score by Marie-Christine Gilbert PhD">
-      <p class="scorer-label">MODUS Index · Scored by</p>
+      <p class="scorer-label" data-en="MODUS Index · Scored by" data-fr="MODUS Index · Évalué par">MODUS Index · Scored by</p>
       <p class="scorer-name">Marie-Christine Gilbert, PhD</p>
-      <p class="scorer-title">Index Contributor — Fine Art · The National Gallery of Canada</p>
+      <p class="scorer-title" data-en="Index Contributor — Fine Art · The National Gallery of Canada" data-fr="Contributrice à l'Index — Beaux-Arts · Musée des beaux-arts du Canada">Index Contributor — Fine Art · The National Gallery of Canada</p>
 
       <div class="score-axes">
         <div class="sa">
-          <span class="sa-name">Rarity</span>
+          <span class="sa-name" data-en="Rarity" data-fr="Rareté">Rarity</span>
           <div class="sa-bar"><div class="sa-fill" style="width:90%"></div></div>
           <span class="sa-val">10</span>
           <span class="sa-max">/10</span>
-          <span class="sa-note">Each work is singular. Series capped at 50, no open edition, no prints. Scarcity is structural, not manufactured.</span>
+          <span class="sa-note" data-en="Each work is singular. Series capped at 50, no open edition, no prints. Scarcity is structural, not manufactured." data-fr="Chaque œuvre est singulière. La série est plafonnée à 50, sans édition ouverte ni reproduction. La rareté est structurelle, non fabriquée.">Each work is singular. Series capped at 50, no open edition, no prints. Scarcity is structural, not manufactured.</span>
         </div>
         <div class="sa">
-          <span class="sa-name">Craft</span>
+          <span class="sa-name" data-en="Craft" data-fr="Maîtrise">Craft</span>
           <div class="sa-bar"><div class="sa-fill" style="width:90%"></div></div>
           <span class="sa-val">10</span>
           <span class="sa-max">/10</span>
-          <span class="sa-note">Mixed-media discipline requiring both photographic and painterly mastery simultaneously. The technical threshold is high. Most practitioners choose one or the other.</span>
+          <span class="sa-note" data-en="Mixed-media discipline requiring both photographic and painterly mastery simultaneously. The technical threshold is high. Most practitioners choose one or the other." data-fr="Discipline en techniques mixtes exigeant simultanément la maîtrise photographique et picturale. Le seuil technique est élevé. La plupart des praticiens choisissent l'un ou l'autre.">Mixed-media discipline requiring both photographic and painterly mastery simultaneously. The technical threshold is high. Most practitioners choose one or the other.</span>
         </div>
         <div class="sa">
-          <span class="sa-name">Sensory Truth</span>
+          <span class="sa-name" data-en="Sensory Truth" data-fr="Vérité sensorielle">Sensory Truth</span>
           <div class="sa-bar"><div class="sa-fill" style="width:100%"></div></div>
           <span class="sa-val">10</span>
           <span class="sa-max">/10</span>
-          <span class="sa-note">The work delivers disorientation as promised — it does not resolve. Works that score 10/10 on Sensory Truth are rare. These do.</span>
+          <span class="sa-note" data-en="The work delivers disorientation as promised — it does not resolve. Works that score 10/10 on Sensory Truth are rare. These do." data-fr="L'œuvre tient sa promesse de désorientation — elle ne se résout pas. Les œuvres obtenant 10/10 en Vérité sensorielle sont rares. Celles-ci y parviennent.">The work delivers disorientation as promised — it does not resolve. Works that score 10/10 on Sensory Truth are rare. These do.</span>
         </div>
         <div class="sa">
-          <span class="sa-name">Investment Value</span>
+          <span class="sa-name" data-en="Investment Value" data-fr="Valeur d'investissement">Investment Value</span>
           <div class="sa-bar"><div class="sa-fill" style="width:95%"></div></div>
           <span class="sa-val">9.5</span>
           <span class="sa-max">/10</span>
-          <span class="sa-note">Entry price honest for a named artist with institutional context. The 8 is not a discount — it is a statement that the price reflects the market's current absorption rate, which is a matter of time, not merit.</span>
+          <span class="sa-note" data-en="Entry price honest for a named artist with institutional context. The 8 is not a discount — it is a statement that the price reflects the market's current absorption rate, which is a matter of time, not merit." data-fr="Prix d'entrée honnête pour un artiste reconnu disposant d'un contexte institutionnel. Le 8 n'est pas une décote — c'est un constat que le prix reflète le taux d'absorption actuel du marché, qui est une question de temps, non de mérite.">Entry price honest for a named artist with institutional context. The 8 is not a discount — it is a statement that the price reflects the market's current absorption rate, which is a matter of time, not merit.</span>
         </div>
         <div class="sa">
-          <span class="sa-name">Timelessness</span>
+          <span class="sa-name" data-en="Timelessness" data-fr="Intemporalité">Timelessness</span>
           <div class="sa-bar"><div class="sa-fill" style="width:90%"></div></div>
           <span class="sa-val">10</span>
           <span class="sa-max">/10</span>
-          <span class="sa-note">Operates outside fashion cycles — closer to the Orientalist sublime than to contemporary market trends. The work will not date because it does not reference the present.</span>
+          <span class="sa-note" data-en="Operates outside fashion cycles — closer to the Orientalist sublime than to contemporary market trends. The work will not date because it does not reference the present." data-fr="Opère en dehors des cycles de la mode — plus proche du sublime orientaliste que des tendances contemporaines du marché. L'œuvre ne vieillira pas parce qu'elle ne fait pas référence au présent.">Operates outside fashion cycles — closer to the Orientalist sublime than to contemporary market trends. The work will not date because it does not reference the present.</span>
         </div>
       </div>
 
       <div class="scorer-total">
         <span class="st-score">49.5</span>
         <span class="st-denom">/ 50</span>
-        <span class="st-label">MODUS Index · Issue No. 1</span>
+        <span class="st-label" data-en="MODUS Index · Issue No. 1" data-fr="MODUS Index · Numéro 1">MODUS Index · Issue No. 1</span>
       </div>
 
       <div class="scorer-citation">
-        <p class="sc-text">"FASCINASIA operates at the register where painting stops trying to represent and starts trying to seduce. The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding on Investment Value is not doubt — it is patience. The series is not yet fully absorbed by the institutional market. That absorption is a matter of time, not merit."</p>
-        <p class="sc-attr">— Marie-Christine Gilbert, PhD · Index Contributor — Fine Art · The National Gallery of Canada · MODUS Issue No. 1</p>
+        <p class="sc-text" data-en='"FASCINASIA operates at the register where painting stops trying to represent and starts trying to seduce. The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding on Investment Value is not doubt — it is patience. The series is not yet fully absorbed by the institutional market. That absorption is a matter of time, not merit."' data-fr='"FASCINASIA opère au registre où la peinture cesse de chercher à représenter pour commencer à séduire. La thèse d'investissement est simple : 50 œuvres, un évaluateur institutionnel, un artiste fort d'un corpus de vingt-cinq ans. Le demi-point que je retiens sur la Valeur d'investissement n'est pas un doute — c'est de la patience. La série n'est pas encore pleinement absorbée par le marché institutionnel. Cette absorption est une question de temps, non de mérite."'>"FASCINASIA operates at the register where painting stops trying to represent and starts trying to seduce. The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding on Investment Value is not doubt — it is patience. The series is not yet fully absorbed by the institutional market. That absorption is a matter of time, not merit."</p>
+        <p class="sc-attr" data-en="— Marie-Christine Gilbert, PhD · Index Contributor — Fine Art · The National Gallery of Canada · MODUS Issue No. 1" data-fr="— Marie-Christine Gilbert, docteure · Contributrice à l'Index — Beaux-Arts · Musée des beaux-arts du Canada · MODUS Numéro 1">— Marie-Christine Gilbert, PhD · Index Contributor — Fine Art · The National Gallery of Canada · MODUS Issue No. 1</p>
       </div>
     </div>
 
@@ -492,14 +503,14 @@
       <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1400/04_LoveIsEternal_STANFORD_40X60_yskjad.jpg"
            alt="Love Is Eternal — Daniel Stanford — FASCINASIA Paintings — 40×60 in"
            loading="lazy" />
-      <figcaption>Love Is Eternal · 40×60 in · FASCINASIA Paintings · Daniel Stanford · Available at Galerie 203 · Green Avenue, Westmount, Montreal · © Stanford Emporium Inc.</figcaption>
+      <figcaption data-en="Love Is Eternal · 40×60 in · FASCINASIA Paintings · Daniel Stanford · Available at Galerie 203 · Green Avenue, Westmount, Montreal · © Stanford Emporium Inc." data-fr="Love Is Eternal · 40×60 po · Peintures FASCINASIA · Daniel Stanford · Disponible à la Galerie 203 · avenue Green, Westmount, Montréal · © Stanford Emporium Inc.">Love Is Eternal · 40×60 in · FASCINASIA Paintings · Daniel Stanford · Available at Galerie 203 · Green Avenue, Westmount, Montreal · © Stanford Emporium Inc.</figcaption>
     </figure>
 
-    <h3>The 10/10.<br><em>Why Sensory Truth is the axis that matters.</em></h3>
+    <h3><span data-en="The 10/10." data-fr="Le 10/10.">The 10/10.</span><br><em><span data-en="Why Sensory Truth is the axis that matters." data-fr="Pourquoi la Vérité sensorielle est l'axe qui compte.">Why Sensory Truth is the axis that matters.</span></em></h3>
 
-    <p>The MODUS Index scores on five axes. Four of them — Rarity, Craft, Investment Value, Timelessness — are assessable through documentation, market data, and comparative analysis. Sensory Truth is different. It is the axis that requires presence. It asks whether the work does what it claims to do when you stand in front of it — whether the experience it promises is delivered, whether it generates the specific quality of attention it was built to generate.</p>
+    <p data-en="The MODUS Index scores on five axes. Four of them — Rarity, Craft, Investment Value, Timelessness — are assessable through documentation, market data, and comparative analysis. Sensory Truth is different. It is the axis that requires presence. It asks whether the work does what it claims to do when you stand in front of it — whether the experience it promises is delivered, whether it generates the specific quality of attention it was built to generate." data-fr="Le MODUS Index évalue selon cinq axes. Quatre d'entre eux — Rareté, Maîtrise, Valeur d'investissement, Intemporalité — sont évaluables par la documentation, les données de marché et l'analyse comparative. La Vérité sensorielle est différente. C'est l'axe qui exige la présence physique. Il demande si l'œuvre fait ce qu'elle prétend faire lorsqu'on se tient devant elle — si l'expérience qu'elle promet est effectivement délivrée, si elle génère la qualité d'attention particulière pour laquelle elle a été conçue.">The MODUS Index scores on five axes. Four of them — Rarity, Craft, Investment Value, Timelessness — are assessable through documentation, market data, and comparative analysis. Sensory Truth is different. It is the axis that requires presence. It asks whether the work does what it claims to do when you stand in front of it — the experience it promises is delivered, whether it generates the specific quality of attention it was built to generate.</p>
 
-    <p>Gilbert scores FASCINASIA 10/10 on Sensory Truth. That is the highest score in this axis across every work reviewed in Issue No. 1. It is not a common score — Gilbert has seen thousands of works through the National Gallery's assessment process, and a 10/10 on Sensory Truth is reserved for work that does something irreducible in person. FASCINASIA delivers disorientation as its core promise. According to the Index Contributor who scored it, that promise is kept completely.</p>
+    <p data-en="Gilbert scores FASCINASIA 10/10 on Sensory Truth. That is the highest score in this axis across every work reviewed in Issue No. 1. It is not a common score — Gilbert has seen thousands of works through the National Gallery's assessment process, and a 10/10 on Sensory Truth is reserved for work that does something irreducible in person. FASCINASIA delivers disorientation as its core promise. According to the Index Contributor who scored it, that promise is kept completely." data-fr="Gilbert attribue à FASCINASIA un 10/10 en Vérité sensorielle. C'est le score le plus élevé sur cet axe parmi toutes les œuvres examinées dans le Numéro 1. Ce n'est pas un score courant — Gilbert a vu des milliers d'œuvres dans le cadre du processus d'évaluation du Musée des beaux-arts du Canada, et un 10/10 en Vérité sensorielle est réservé aux œuvres qui accomplissent quelque chose d'irréductible en présence physique. FASCINASIA tient sa promesse fondamentale de désorientation. Selon la Contributrice à l'Index qui l'a évaluée, cette promesse est tenue intégralement.">Gilbert scores FASCINASIA 10/10 on Sensory Truth. That is the highest score in this axis across every work reviewed in Issue No. 1. It is not a common score — Gilbert has seen thousands of works through the National Gallery's assessment process, and a 10/10 on Sensory Truth is reserved for work that does something irreducible in person. FASCINASIA delivers disorientation as its core promise. According to the Index Contributor who scored it, that promise is kept completely.</p>
 
   </article>
 
@@ -507,31 +518,31 @@
   <aside class="sidebar">
 
     <div class="card">
-      <p class="card-label">Work Details · FASCINASIA</p>
-      <div class="spec-row"><span class="spec-k">Artist</span><span class="spec-v">Daniel Stanford</span></div>
-      <div class="spec-row"><span class="spec-k">Series</span><span class="spec-v">FASCINASIA</span></div>
-      <div class="spec-row"><span class="spec-k">Medium</span><span class="spec-v">Mixed media — photography and painting</span></div>
-      <div class="spec-row"><span class="spec-k">Edition</span><span class="spec-v">50 works · No open edition · No prints</span></div>
-      <div class="spec-row"><span class="spec-k">Studio</span><span class="spec-v">Saint-Henri, Montreal</span></div>
-      <div class="spec-row"><span class="spec-k">Market</span><span class="spec-v">Saatchi Art · Tappan Collective</span></div>
-      <div class="spec-row"><span class="spec-k">Published</span><span class="spec-v">MODUS Décover · Issue No. 1 · 2026</span></div>
+      <p class="card-label" data-en="Work Details · FASCINASIA" data-fr="Détails de l'œuvre · FASCINASIA">Work Details · FASCINASIA</p>
+      <div class="spec-row"><span class="spec-k" data-en="Artist" data-fr="Artiste">Artist</span><span class="spec-v">Daniel Stanford</span></div>
+      <div class="spec-row"><span class="spec-k" data-en="Series" data-fr="Série">Series</span><span class="spec-v">FASCINASIA</span></div>
+      <div class="spec-row"><span class="spec-k" data-en="Medium" data-fr="Technique">Medium</span><span class="spec-v" data-en="Mixed media — photography and painting" data-fr="Techniques mixtes — photographie et peinture">Mixed media — photography and painting</span></div>
+      <div class="spec-row"><span class="spec-k" data-en="Edition" data-fr="Édition">Edition</span><span class="spec-v" data-en="50 works · No open edition · No prints" data-fr="50 œuvres · Sans édition ouverte · Sans reproduction">50 works · No open edition · No prints</span></div>
+      <div class="spec-row"><span class="spec-k" data-en="Studio" data-fr="Atelier">Studio</span><span class="spec-v" data-en="Saint-Henri, Montreal" data-fr="Saint-Henri, Montréal">Saint-Henri, Montreal</span></div>
+      <div class="spec-row"><span class="spec-k" data-en="Market" data-fr="Marché">Market</span><span class="spec-v">Saatchi Art · Tappan Collective</span></div>
+      <div class="spec-row"><span class="spec-k" data-en="Published" data-fr="Publié">Published</span><span class="spec-v" data-en="MODUS Décover · Issue No. 1 · 2026" data-fr="MODUS Décover · Numéro 1 · 2026">MODUS Décover · Issue No. 1 · 2026</span></div>
     </div>
 
     <div class="card">
-      <p class="card-label">Index Contributor · Fine Art</p>
+      <p class="card-label" data-en="Index Contributor · Fine Art" data-fr="Contributrice à l'Index · Beaux-Arts">Index Contributor · Fine Art</p>
       <p style="font-size:clamp(18px,2vw,22px);font-weight:300;letter-spacing:-0.02em;color:var(--text);margin-bottom:0.3rem;line-height:1.2">Marie-Christine<br>Gilbert, PhD</p>
-      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.5rem;line-height:1.8">Index Contributor — Fine Art<br>The National Gallery of Canada</p>
-      <p style="font-size:15px;font-weight:300;line-height:1.8;color:var(--text)">Marie-Christine Gilbert, PhD, is the MODUS Index Contributor for fine art. Her role is to score works in the Fine Art domain independently of editorial direction. The artist does not influence the score. The editor does not override it. The score is Gilbert's.</p>
+      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.5rem;line-height:1.8"><span data-en="Index Contributor — Fine Art" data-fr="Contributrice à l'Index — Beaux-Arts">Index Contributor — Fine Art</span><br><span data-en="The National Gallery of Canada" data-fr="Musée des beaux-arts du Canada">The National Gallery of Canada</span></p>
+      <p style="font-size:15px;font-weight:300;line-height:1.8;color:var(--text)" data-en="Marie-Christine Gilbert, PhD, is the MODUS Index Contributor for fine art. Her role is to score works in the Fine Art domain independently of editorial direction. The artist does not influence the score. The editor does not override it. The score is Gilbert's." data-fr="Marie-Christine Gilbert, docteure, est la Contributrice à l'Index MODUS pour les beaux-arts. Son rôle est d'évaluer les œuvres dans le domaine des Beaux-Arts indépendamment de toute orientation éditoriale. L'artiste n'influence pas le score. Le rédacteur ne le modifie pas. Le score appartient à Gilbert.">Marie-Christine Gilbert, PhD, is the MODUS Index Contributor for fine art. Her role is to score works in the Fine Art domain independently of editorial direction. The artist does not influence the score. The editor does not override it. The score is Gilbert's.</p>
     </div>
 
     <div class="card">
-      <p class="card-label">MODUS Index · Summary</p>
+      <p class="card-label" data-en="MODUS Index · Summary" data-fr="MODUS Index · Synthèse">MODUS Index · Summary</p>
       <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:0.8rem">
         <span style="font-size:64px;font-weight:300;letter-spacing:-0.06em;line-height:1;color:var(--text)">49.5</span>
         <span style="font-size:20px;color:var(--text-dim)">/50</span>
       </div>
-      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem">Highest Fine Art Score · Issue No. 1 · 2026</p>
-      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.09em;color:var(--text-dim);line-height:1.9">Rarity 10 · Craft 10 · Sensory Truth 10 · Investment Value 9.5 · Timelessness 10. The 10/10 on Sensory Truth is the outlier and the argument. It cannot be self-assigned. Gilbert assigned it.</p>
+      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem" data-en="Highest Fine Art Score · Issue No. 1 · 2026" data-fr="Score Beaux-Arts le plus élevé · Numéro 1 · 2026">Highest Fine Art Score · Issue No. 1 · 2026</p>
+      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.09em;color:var(--text-dim);line-height:1.9" data-en="Rarity 10 · Craft 10 · Sensory Truth 10 · Investment Value 9.5 · Timelessness 10. The 10/10 on Sensory Truth is the outlier and the argument. It cannot be self-assigned. Gilbert assigned it." data-fr="Rareté 10 · Maîtrise 10 · Vérité sensorielle 10 · Valeur d'investissement 9,5 · Intemporalité 10. Le 10/10 en Vérité sensorielle est l'exception et l'argument. Il ne peut être auto-attribué. Gilbert l'a attribué.">Rarity 10 · Craft 10 · Sensory Truth 10 · Investment Value 9.5 · Timelessness 10. The 10/10 on Sensory Truth is the outlier and the argument. It cannot be self-assigned. Gilbert assigned it.</p>
     </div>
 
   </aside>
@@ -541,23 +552,23 @@
 
 <!-- FASCINASIA FEATURE IMAGE -->
 <div class="img-section" aria-label="FASCINASIA series — Daniel Stanford">
-  <p class="img-label">FASCINASIA · The Root of All Evil · Daniel Stanford · 40×60 in</p>
+  <p class="img-label" data-en="FASCINASIA · The Root of All Evil · Daniel Stanford · 40×60 in" data-fr="FASCINASIA · The Root of All Evil · Daniel Stanford · 40×60 po">FASCINASIA · The Root of All Evil · Daniel Stanford · 40×60 in</p>
   <div class="img-hero">
     <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/The-Root-of-all-E_DanielStanford_40x60_yydi59.jpg"
          alt="The Root of All Evil — Daniel Stanford — FASCINASIA — 40×60 in — Mixed Media"
          loading="lazy" />
   </div>
   <p class="img-caption">
-    The Root of All Evil · 40×60 in · FASCINASIA · Daniel Stanford · Mixed media · Limited edition — no prints, no open edition<br>
-    MODUS Index: 49.5/50 · Scored by Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada<br>
-    Available via Saatchi Art · Tappan Collective · © Daniel Stanford / Stanford Emporium Inc. · MODUS Décover Issue No. 1 · 2026
+    <span data-en="The Root of All Evil · 40×60 in · FASCINASIA · Daniel Stanford · Mixed media · Limited edition — no prints, no open edition" data-fr="The Root of All Evil · 40×60 po · FASCINASIA · Daniel Stanford · Techniques mixtes · Édition limitée — sans reproduction, sans édition ouverte">The Root of All Evil · 40×60 in · FASCINASIA · Daniel Stanford · Mixed media · Limited edition — no prints, no open edition</span><br>
+    <span data-en="MODUS Index: 49.5/50 · Scored by Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada" data-fr="MODUS Index : 49,5/50 · Évalué par Marie-Christine Gilbert, docteure · Contributrice à l'Index · Musée des beaux-arts du Canada">MODUS Index: 49.5/50 · Scored by Marie-Christine Gilbert PhD · Index Contributor · National Gallery of Canada</span><br>
+    <span data-en="Available via Saatchi Art · Tappan Collective · © Daniel Stanford / Stanford Emporium Inc. · MODUS Décover Issue No. 1 · 2026" data-fr="Disponible via Saatchi Art · Tappan Collective · © Daniel Stanford / Stanford Emporium Inc. · MODUS Décover Numéro 1 · 2026">Available via Saatchi Art · Tappan Collective · © Daniel Stanford / Stanford Emporium Inc. · MODUS Décover Issue No. 1 · 2026</span>
   </p>
 </div>
 
 <!-- FASCINASIA SLIDING GALLERY -->
 <section class="gal-section" aria-label="FASCINASIA — Selected Works Gallery">
   <div class="gal-header">
-    <p class="gal-eyebrow">FASCINASIA · Selected Works · Daniel Stanford · Mixed Media · Saint-Henri, Montreal</p>
+    <p class="gal-eyebrow" data-en="FASCINASIA · Selected Works · Daniel Stanford · Mixed Media · Saint-Henri, Montreal" data-fr="FASCINASIA · Œuvres choisies · Daniel Stanford · Techniques mixtes · Saint-Henri, Montréal">FASCINASIA · Selected Works · Daniel Stanford · Mixed Media · Saint-Henri, Montreal</p>
     <div class="gal-controls">
       <button class="gal-btn" id="galPrev" aria-label="Previous">&#8592;</button>
       <span class="gal-counter" id="galCounter">1 / 14</span>
@@ -651,7 +662,7 @@
 
 <footer>
   <span class="footer-brand">MODUS</span>
-  <span class="footer-copy">Décover · Issue No. 1 · © MODUS MMXXVI · Stanford Emporium Inc.</span>
+  <span class="footer-copy" data-en="Décover · Issue No. 1 · © MODUS MMXXVI · Stanford Emporium Inc." data-fr="Décover · Numéro 1 · © MODUS MMXXVI · Stanford Emporium Inc.">Décover · Issue No. 1 · © MODUS MMXXVI · Stanford Emporium Inc.</span>
 </footer>
 
 <script>

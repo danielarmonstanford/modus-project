@@ -311,51 +311,51 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
 <header class="hdr">
   <div class="hdr-left">
     <div class="logo">M<em>odus</em></div>
-    <div class="kl-badge">Knowledge Layer v2</div>
+    <div class="kl-badge" data-en="Knowledge Layer v2" data-fr="Couche de connaissance v2">Knowledge Layer v2</div>
   </div>
   <div class="hdr-right">
-    TASTE INTELLIGENCE · ISSUE NO. 1 · 2026<br>
-    modus.gallery · Entity Graph · The MODUS Index
+    <span data-en="TASTE INTELLIGENCE · ISSUE NO. 1 · 2026" data-fr="INTELLIGENCE DU GOÛT · NUMÉRO 1 · 2026">TASTE INTELLIGENCE · ISSUE NO. 1 · 2026</span><br>
+    <span data-en="modus.gallery · Entity Graph · The MODUS Index" data-fr="modus.gallery · Graphe d'entités · L'Index MODUS">modus.gallery · Entity Graph · The MODUS Index</span>
   </div>
   <button id="langBtn" aria-label="Toggle language" style="background:transparent;border:0.5px solid rgba(184,154,90,0.4);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:'DM Mono','Courier New',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold,#B89A5A)"><span id="langLabel">FR</span></button>
 </header>
 
 <div class="search-zone">
-  <span class="s-label">Search · Discover · Connect — The MODUS Index</span>
+  <span class="s-label" data-en="Search · Discover · Connect — The MODUS Index" data-fr="Rechercher · Découvrir · Connecter — L'Index MODUS">Search · Discover · Connect — The MODUS Index</span>
   <div class="s-row">
     <input class="s-input" id="searchInput" type="text" placeholder="Search — Brasília, Porsche 911 S/T, FASCINASIA, Gabriella Warrior, Amanwella…" />
-    <button class="s-btn" onclick="handleSearch()">Retrieve</button>
+    <button class="s-btn" onclick="handleSearch()" data-en="Retrieve" data-fr="Récupérer">Retrieve</button>
   </div>
   <div class="pills">
-    <button class="pill on" onclick="filterPill('all',this)">All</button>
-    <button class="pill" onclick="filterPill('object',this)">Objects</button>
-    <button class="pill" onclick="filterPill('figure',this)">Figures</button>
-    <button class="pill" onclick="filterPill('terrain',this)">Terrain</button>
-    <button class="pill" onclick="filterPill('space',this)">Space</button>
-    <button class="pill" onclick="filterPill('art',this)">Décover</button>
-    <button class="pill" onclick="filterPill('article',this)">Articles</button>
+    <button class="pill on" onclick="filterPill('all',this)" data-en="All" data-fr="Tous">All</button>
+    <button class="pill" onclick="filterPill('object',this)" data-en="Objects" data-fr="Objets">Objects</button>
+    <button class="pill" onclick="filterPill('figure',this)" data-en="Figures" data-fr="Figures">Figures</button>
+    <button class="pill" onclick="filterPill('terrain',this)" data-en="Terrain" data-fr="Terrain">Terrain</button>
+    <button class="pill" onclick="filterPill('space',this)" data-en="Space" data-fr="Espace">Space</button>
+    <button class="pill" onclick="filterPill('art',this)" data-en="Décover" data-fr="Décover">Décover</button>
+    <button class="pill" onclick="filterPill('article',this)" data-en="Articles" data-fr="Articles">Articles</button>
   </div>
 </div>
 
 <div class="arc-banner" id="arcBanner">
-  <div class="arc-item on" onclick="filterPill('all',this)"><span class="dot"></span>All Entities</div>
-  <div class="arc-item" onclick="filterPill('object',this)"><span class="dot"></span>Objects</div>
-  <div class="arc-item" onclick="filterPill('figure',this)"><span class="dot"></span>Figures</div>
-  <div class="arc-item" onclick="filterPill('terrain',this)"><span class="dot"></span>Terrain</div>
-  <div class="arc-item" onclick="filterPill('space',this)"><span class="dot"></span>Space</div>
-  <div class="arc-item" onclick="filterPill('art',this)"><span class="dot"></span>Décover</div>
-  <div class="arc-item" onclick="filterPill('article',this)"><span class="dot"></span>Atelier</div>
-  <div class="arc-item" onclick="filterPill('article',this)"><span class="dot"></span>Last Word</div>
+  <div class="arc-item on" onclick="filterPill('all',this)"><span class="dot"></span><span data-en="All Entities" data-fr="Toutes les entités">All Entities</span></div>
+  <div class="arc-item" onclick="filterPill('object',this)"><span class="dot"></span><span data-en="Objects" data-fr="Objets">Objects</span></div>
+  <div class="arc-item" onclick="filterPill('figure',this)"><span class="dot"></span><span data-en="Figures" data-fr="Figures">Figures</span></div>
+  <div class="arc-item" onclick="filterPill('terrain',this)"><span class="dot"></span><span data-en="Terrain" data-fr="Terrain">Terrain</span></div>
+  <div class="arc-item" onclick="filterPill('space',this)"><span class="dot"></span><span data-en="Space" data-fr="Espace">Space</span></div>
+  <div class="arc-item" onclick="filterPill('art',this)"><span class="dot"></span><span data-en="Décover" data-fr="Décover">Décover</span></div>
+  <div class="arc-item" onclick="filterPill('article',this)"><span class="dot"></span><span data-en="Atelier" data-fr="Atelier">Atelier</span></div>
+  <div class="arc-item" onclick="filterPill('article',this)"><span class="dot"></span><span data-en="Last Word" data-fr="Dernier Mot">Last Word</span></div>
 </div>
 
 <div class="main">
   <div class="sidebar" id="sidebar">
 
     <div class="sb-sec" id="sb-object">
-      <span class="sb-label">Objects</span>
+      <span class="sb-label" data-en="Objects" data-fr="Objets">Objects</span>
       <div class="ecard" onclick="show('porsche911st')">
         <div class="e-name">Porsche 911 S/T</div>
-        <div class="e-type">Automotive · Collector</div>
+        <div class="e-type" data-en="Automotive · Collector" data-fr="Automobile · Collection">Automotive · Collector</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:92%"></div></div>
           <span class="score-n">46 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -363,7 +363,7 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
       </div>
       <div class="ecard" onclick="show('porsche911gt3')">
         <div class="e-name">Porsche 911 GT3 S/C</div>
-        <div class="e-type">Automotive · 2026</div>
+        <div class="e-type" data-en="Automotive · 2026" data-fr="Automobile · 2026">Automotive · 2026</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:86%"></div></div>
           <span class="score-n">43 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -372,10 +372,10 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
     </div>
 
     <div class="sb-sec" id="sb-figure">
-      <span class="sb-label">Figures</span>
+      <span class="sb-label" data-en="Figures" data-fr="Figures">Figures</span>
       <div class="ecard" onclick="show('gabriellawarrior')">
         <div class="e-name">Gabriella Warrior</div>
-        <div class="e-type">Cover Subject · Model</div>
+        <div class="e-type" data-en="Cover Subject · Model" data-fr="Sujet de couverture · Modèle">Cover Subject · Model</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:82%"></div></div>
           <span class="score-n">41 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -383,7 +383,7 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
       </div>
       <div class="ecard" onclick="show('danielstanford')">
         <div class="e-name">Daniel Stanford</div>
-        <div class="e-type">Editor-in-Chief · Creative Director</div>
+        <div class="e-type" data-en="Editor-in-Chief · Creative Director" data-fr="Rédacteur en chef · Directeur créatif">Editor-in-Chief · Creative Director</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:94%"></div></div>
           <span class="score-n">47 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -392,10 +392,10 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
     </div>
 
     <div class="sb-sec" id="sb-terrain">
-      <span class="sb-label">Terrain</span>
+      <span class="sb-label" data-en="Terrain" data-fr="Terrain">Terrain</span>
       <div class="ecard" onclick="show('amanwella')">
         <div class="e-name">Amanwella Tangalle</div>
-        <div class="e-type">Hospitality · Resort · Sri Lanka</div>
+        <div class="e-type" data-en="Hospitality · Resort · Sri Lanka" data-fr="Hôtellerie · Resort · Sri Lanka">Hospitality · Resort · Sri Lanka</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:90%"></div></div>
           <span class="score-n">45 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -404,10 +404,10 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
     </div>
 
     <div class="sb-sec" id="sb-space">
-      <span class="sb-label">Space</span>
+      <span class="sb-label" data-en="Space" data-fr="Espace">Space</span>
       <div class="ecard" onclick="show('brasilia')">
         <div class="e-name">Brasília</div>
-        <div class="e-type">Architecture · UNESCO · Brazil</div>
+        <div class="e-type" data-en="Architecture · UNESCO · Brazil" data-fr="Architecture · UNESCO · Brésil">Architecture · UNESCO · Brazil</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:96%"></div></div>
           <span class="score-n">48 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -416,10 +416,10 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
     </div>
 
     <div class="sb-sec" id="sb-art">
-      <span class="sb-label">Décover</span>
+      <span class="sb-label" data-en="Décover" data-fr="Décover">Décover</span>
       <div class="ecard" onclick="show('fascinasia')">
         <div class="e-name">FASCINASIA</div>
-        <div class="e-type">Fine Art · 50/50 Edition</div>
+        <div class="e-type" data-en="Fine Art · 50/50 Edition" data-fr="Beaux-Arts · Édition 50/50">Fine Art · 50/50 Edition</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:99%"></div></div>
           <span class="score-n">49.5 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -428,10 +428,10 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
     </div>
 
     <div class="sb-sec" id="sb-article">
-      <span class="sb-label">Articles</span>
+      <span class="sb-label" data-en="Articles" data-fr="Articles">Articles</span>
       <div class="ecard" onclick="show('coverstory')">
         <div class="e-name">The Body. The Machine. The Room.</div>
-        <div class="e-type">Cover Story · Issue No.1</div>
+        <div class="e-type" data-en="Cover Story · Issue No.1" data-fr="Article de couverture · Numéro 1">Cover Story · Issue No.1</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
           <span class="score-n">50 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -444,8 +444,8 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
   <div class="detail" id="detailPane">
     <div class="empty" id="emptyState">
       <div class="empty-glyph">ꝏ</div>
-      <div class="empty-title">Select an entity to explore its knowledge graph</div>
-      <div class="empty-sub">The MODUS Index · 50-point scale · Five axes</div>
+      <div class="empty-title" data-en="Select an entity to explore its knowledge graph" data-fr="Sélectionnez une entité pour explorer son graphe de connaissances">Select an entity to explore its knowledge graph</div>
+      <div class="empty-sub" data-en="The MODUS Index · 50-point scale · Five axes" data-fr="L'Index MODUS · Échelle de 50 points · Cinq axes">The MODUS Index · 50-point scale · Five axes</div>
     </div>
     <div id="entityDetail" style="display:none"></div>
   </div>
@@ -453,12 +453,12 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
 
 <div class="status">
   <div class="st-left">
-    <div class="st-item">Entities <span id="ecnt">8</span></div>
-    <div class="st-item">Relations <span>56</span></div>
-    <div class="st-item">Index <span>The MODUS Index v2</span></div>
-    <div class="st-item">Floor <span>35 / 50</span></div>
+    <div class="st-item"><span data-en="Entities" data-fr="Entités">Entities</span> <span id="ecnt">8</span></div>
+    <div class="st-item"><span data-en="Relations" data-fr="Relations">Relations</span> <span>56</span></div>
+    <div class="st-item"><span data-en="Index" data-fr="Index">Index</span> <span data-en="The MODUS Index v2" data-fr="L'Index MODUS v2">The MODUS Index v2</span></div>
+    <div class="st-item"><span data-en="Floor" data-fr="Plancher">Floor</span> <span>35 / 50</span></div>
   </div>
-  <div class="st-item">Schema.org · JSON-LD · <span>Live</span></div>
+  <div class="st-item">Schema.org · JSON-LD · <span data-en="Live" data-fr="En direct">Live</span></div>
 </div>
 
 <script>

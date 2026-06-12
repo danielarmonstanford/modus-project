@@ -88,7 +88,7 @@
       --bg2: #0E0C10;
       --bg3: #141218;
       --text: #EAE0CC;
-      --text-dim: rgba(234,224,204,0.42);
+      --text-dim: rgba(234,224,204,0.82);
       --border: rgba(234,224,204,0.08);
       --border-gold: rgba(212,168,75,0.25);
       --nav-bg: rgba(8,7,10,0.94);
@@ -232,7 +232,7 @@
       letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem;
     }
     .card-desc {
-      font-family: var(--font-mono); font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+      font-family: var(--font-mono); font-size: clamp(13px, 1.4vw, 15px);
       letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--text-dim); line-height: 1.9; flex: 1;
     }
@@ -336,7 +336,7 @@
 
     /* ── Mobile ── */
     @media (max-width: 768px) {
-      html { font-size: 18px; }
+      html { font-size: 19px; }
       .collections-note { grid-template-columns: 1fr; }
       .acquire-grid { grid-template-columns: 1fr; gap: 1px; }
       footer { flex-direction: column; gap: 0.5rem; }
@@ -346,6 +346,16 @@
       .side-menu{padding:3rem 2rem 1.5rem!important;overflow-y:auto!important}
       .side-menu-label{margin-bottom:1rem!important}
       .side-menu-nav a{font-size:1.4rem!important;padding:0.22rem 0!important}
+    }
+
+    @media (max-width: 640px) {
+      html { font-size: 19px; }
+      .hero-sub { font-size: 1.05rem; color: var(--text); }
+      .card-desc { font-size: 13px; letter-spacing: 0.06em; }
+      .card-detail { font-size: 1rem; }
+      .proof-body { font-size: 1rem; }
+      .cta-body { font-size: 1rem; }
+      .card-title { font-size: clamp(1.5rem, 6vw, 2rem); }
     }
   </style>
 </head>

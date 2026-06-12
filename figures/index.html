@@ -76,7 +76,7 @@
     .hero{height:100vh;min-height:600px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) 5rem}
     .hero-bg{
       position:absolute;inset:0;z-index:0;
-      background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/Gabriela_Warrior_D80_1857_ybwbj7.jpg');
+      background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1600/Julia_Another_Planet_D80_2515__uy9qpe');
       background-size:cover;
       background-position:center top;
     }
@@ -186,7 +186,7 @@
     .cg-item{background:var(--bg2);border:0.5px solid var(--border);padding:1.8rem;display:flex;flex-direction:column;gap:0.6rem}
     .cg-no{font-family:var(--font-mono);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--corps-accent)}
     .cg-title{font-family:var(--font-ed);font-size:22px;font-weight:400;letter-spacing:-0.02em;color:var(--text)}
-    .cg-sub{font-family:var(--font-ed);font-size:13px;font-style:italic;color:var(--text-dim);line-height:1.55}
+    .cg-sub{font-family:var(--font-ed);font-size:15px;font-style:italic;color:var(--text);opacity:0.72;line-height:1.62}
     .cg-status{font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;margin-top:auto;padding-top:1rem}
     .status-live{color:var(--corps-accent)}
     .status-coming{color:var(--text-dim)}
@@ -550,10 +550,15 @@
     <a class="nav-link" href="/atelier">Atelier</a>
     <a class="nav-link" href="/last-word">Last Word</a>
   </div>
-  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-    <div class="theme-dot"></div>
-    <span id="themeLabel">Light</span>
-  </button>
+  <div style="display:flex;align-items:center;gap:8px">
+    <button class="theme-btn" id="langBtn" aria-label="Toggle language" style="letter-spacing:0.14em">
+      <span id="langLabel">FR</span>
+    </button>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+      <div class="theme-dot"></div>
+      <span id="themeLabel">Light</span>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -584,7 +589,7 @@
 <div class="thesis w">
   <p class="thesis-number">MODUS Figures / The Core Argument</p>
   <h2>The fascia is<br><em>the medium.</em><br>The body is the object.</h2>
-  <p>Luxury is traditionally defined by what surrounds the body. CORPS redefines it by what constitutes the body. The connective tissue — the fascia — is not a passive wrapper around muscles and bone. It is an active, intelligent system that transmits force, stores pattern, holds memory, and determines how a person moves through a room. When it is right, the face is right, the posture is right, the presence is right. When it is compressed, restricted, or compensating — no amount of skincare, surgery, or couture addresses the root. CORPS covers the practitioners, protocols, and philosophy that work at the root.</p>
+  <p data-en="The body is the only object that cannot be replaced. CORPS covers the practitioners, protocols, and disciplines that treat structural maintenance for what it is — not a luxury, but a prerequisite. Most of the world markets body treatments as an indulgence. CORPS argues the opposite: that fascia work, structural integration, and movement practice are as foundational as nutrition, and far more neglected. The people who understand this are rare. When you find one, the results are irreversible." data-fr="Le corps est le seul objet qu'on ne peut pas remplacer. CORPS couvre les praticiens, protocoles et disciplines qui traitent l'entretien structurel pour ce qu'il est — non pas un luxe, mais une condition préalable. La plupart du monde commercialise les soins corporels comme un plaisir. CORPS soutient le contraire : que le travail fascial, l'intégration structurelle et la pratique du mouvement sont aussi fondamentaux que la nutrition, et beaucoup plus négligés. Les personnes qui comprennent cela sont rares. Quand vous en trouvez une, les résultats sont irréversibles.">The body is the only object that cannot be replaced. CORPS covers the practitioners, protocols, and disciplines that treat structural maintenance for what it is — not a luxury, but a prerequisite. Most of the world markets body treatments as an indulgence. CORPS argues the opposite: that fascia work, structural integration, and movement practice are as foundational as nutrition, and far more neglected. The people who understand this are rare. When you find one, the results are irreversible.</p>
 </div>
 
 <!-- RULE -->
@@ -926,6 +931,24 @@
     var bg = document.querySelector('.hero-bg');
     if (bg) bg.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px)';
   }, { passive: true });
+
+  // FR/EN language toggle
+  var langBtn = document.getElementById('langBtn');
+  var langLbl = document.getElementById('langLabel');
+  var currentLang = localStorage.getItem('modus-lang') || 'en';
+  applyLang(currentLang);
+  langBtn.addEventListener('click', function() {
+    currentLang = currentLang === 'en' ? 'fr' : 'en';
+    localStorage.setItem('modus-lang', currentLang);
+    applyLang(currentLang);
+  });
+  function applyLang(lang) {
+    langLbl.textContent = lang === 'en' ? 'FR' : 'EN';
+    document.querySelectorAll('[data-en]').forEach(function(el) {
+      el.textContent = lang === 'en' ? el.dataset.en : el.dataset.fr;
+    });
+    document.documentElement.lang = lang;
+  }
 })();
 </script>
 

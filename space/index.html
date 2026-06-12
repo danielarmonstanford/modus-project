@@ -136,6 +136,10 @@
       transition:all var(--ease);display:flex;align-items:center;gap:6px;min-height:44px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+    /* Lang button — high contrast in both modes */
+    [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
+    [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+    #langBtn{font-weight:600;letter-spacing:0.08em}
 
     /* ── Side menu ── */
     .side-menu{position:fixed;top:0;left:0;bottom:0;width:300px;
@@ -258,6 +262,8 @@
     }
     @media(max-width:768px){
       .nav{padding:0 0.25rem 0 0}
+      .menu-btn{padding:8px 2px 8px 0}
+      .nav-logo img{margin-left:2px}
     }
   </style>
 </head>

@@ -302,7 +302,7 @@
                      transition:transform 0.3s var(--ease), opacity 0.3s; }
 
     .nav-links { display:flex; gap:2rem; align-items:center; }
-    .nav-link {font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link {font-family:var(--font-mono);font-size: 11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
     .nav-link:hover { color:var(--text); }
     .theme-btn { background:transparent; border:0.5px solid var(--border); border-radius:20px;
                  padding:5px 14px; cursor:pointer; font-family:var(--font-mono); font-size:12px;
@@ -452,7 +452,7 @@
       z-index:5;
     }
     .cover-eyebrow {
-      font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
+      font-family:var(--font-mono); font-size: 10px; letter-spacing:0.28em;
       color:var(--gold); text-transform:uppercase; margin-bottom:1rem;
     }
     .cover-title {
@@ -472,7 +472,7 @@
     /* ── Departments grid ── */
     .depts { padding:6rem clamp(1.25rem,5vw,4rem); }
     .depts-label {
-      font-family:var(--font-mono); font-size:13px; letter-spacing:0.32em;
+      font-family:var(--font-mono); font-size: 10px; letter-spacing:0.32em;
       text-transform:uppercase; color:var(--gold); margin-bottom:3rem;
     }
     .depts-grid {
@@ -485,7 +485,7 @@
     }
     .dept-card:hover { background:var(--bg2); }
     .dept-num {
-      font-family:var(--font-mono); font-size:13px; letter-spacing:0.2em;
+      font-family:var(--font-mono); font-size: 10px; letter-spacing:0.2em;
       color:var(--text-dim); margin-bottom:1rem;
     }
     .dept-name {
@@ -504,11 +504,11 @@
       margin-top:1.8rem; display:flex; align-items:baseline; gap:0.8rem;
     }
     .dept-index-label {
-      font-family:var(--font-mono); font-size:13px; letter-spacing:0.26em;
+      font-family:var(--font-mono); font-size: 10px; letter-spacing:0.26em;
       text-transform:uppercase; color:var(--gold);
     }
     .dept-index-class {
-      font-family:var(--font-mono); font-size:13px; letter-spacing:0.2em;
+      font-family:var(--font-mono); font-size: 10px; letter-spacing:0.2em;
       text-transform:uppercase; color:var(--text-dim);
     }
     .dept-score {
@@ -529,13 +529,18 @@
       flex-wrap:wrap; gap:1rem;
     }
     .footer-copy {
-      font-family:var(--font-mono); font-size:12px; letter-spacing:0.18em;
+      font-family:var(--font-mono); font-size: 9px; letter-spacing:0.18em;
       text-transform:uppercase; color:var(--text-dim);
     }
 
     /* ── Mobile ── */
     @media(max-width:768px) {
       html { font-size:20px; }
+      /* Cover mobile */
+      .cover-title { font-size: clamp(2.6rem, 11vw, 4.5rem); line-height: 1.05; }
+      .cover-deck { font-size: 10px; letter-spacing: 0.18em; line-height: 1.6; }
+      .cover-eyebrow { font-size: 10px; letter-spacing: 0.22em; }
+      .dept-index-label, .dept-index-class { font-size: 10px; }
 
       .nav { padding:0 0.5rem 0 0; }
       .menu-btn { padding:8px 2px 8px 0; }
@@ -559,12 +564,12 @@
       .cover-deck { font-size:1rem; line-height:1.55; letter-spacing:0.1em; }
 
       .depts { padding:3rem 1.25rem; }
-      .depts-label { font-size:13px; letter-spacing:0.2em; margin-bottom:1.5rem; }
+      .depts-label { font-size: 10px; letter-spacing:0.2em; margin-bottom:1.5rem; }
       .depts-grid { grid-template-columns:1fr; gap:1px; background:var(--border); }
       .dept-card { padding:1.8rem 1.25rem; }
-      .dept-num { font-size:13px; margin-bottom:0.7rem; }
+      .dept-num { font-size: 10px; margin-bottom:0.7rem; }
       .dept-name { font-size:1.8rem; line-height:1.05; margin-bottom:0.8rem; }
-      .dept-desc { font-size:0.9rem; line-height:1.85; letter-spacing:0.06em; }
+      .dept-desc { font-size:12px; line-height:1.85; letter-spacing:0.08em; }
       .dept-score { font-size:2.8rem; margin-top:1.2rem; }
 
       #themeBtn span{ display:none; }

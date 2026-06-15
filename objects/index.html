@@ -75,12 +75,12 @@
     .hero-flag{display:inline-flex;align-items:center;gap:8px;background:var(--gold);padding:4px 14px;margin-bottom:1.4rem;opacity:0;animation:fadeU 0.8s ease 0.3s forwards}
     .hero-flag span{font-family:var(--font-mono);font-size:12px;letter-spacing:0.26em;text-transform:uppercase;color:#000}
     .hero-title{font-family:var(--font-display);font-size:clamp(75px,8vw,190px);font-weight:300;letter-spacing:-0.03em;line-height:0.88;color:#fff;opacity:0;animation:fadeU 1.2s ease 0.48s forwards}
-    .hero-title em{font-style:italic;color:rgba(240,232,213,0.42)}
+    .hero-title em{font-style:italic;color:rgba(240,232,213,0.72)}
     .hero-byline{margin-top:1.6rem;display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap;opacity:0;animation:fadeU 1s ease 0.8s forwards}
     .hero-byline-name{font-family:var(--font-mono);font-size: 10px;letter-spacing: 0.22em;text-transform:uppercase;color:var(--gold)}
-    .hero-byline-sub{font-family:var(--font-ed);font-size:16px;font-style:italic;color:rgba(240,232,216,0.48)}
+    .hero-byline-sub{font-family:var(--font-ed);font-size:16px;font-style:italic;color:rgba(240,232,216,0.82)}
     .hero-rule{width:0;height:0.5px;background:linear-gradient(to right,var(--gold),transparent);margin-top:1.5rem;animation:drawL 1.2s ease 1s forwards}
-    .hero-credit{position:absolute;bottom:1.4rem;right:var(--gutter);z-index:2;font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.22);opacity:0;animation:fadeU 0.8s ease 2.2s forwards}
+    .hero-credit{position:absolute;bottom:1.4rem;right:var(--gutter);z-index:2;font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);opacity:0;animation:fadeU 0.8s ease 2.2s forwards}
 
     /* LAYOUT */
     main{padding-top:var(--nav-h)}
@@ -91,9 +91,7 @@
     /* OPENING DECK */
     .deck{padding:4.5rem var(--gutter) 0;border-left:2.5px solid var(--gold);padding-left:calc(var(--gutter) + 1.5rem)}
     .deck p{font-family:var(--font-ed);font-size:clamp(19px,2.6vw,28px);font-style:italic;font-weight:300;line-height:1.55;color:var(--text)}
-    .deck-attr{margin-top:1rem;font-family:var(--font-mono);font-size: 10px;letter-spacing: 0.24em;text-transform:uppercase;color:var(--text-dim)
-      opacity: 0.7;
-    }
+    .deck-attr{margin-top:1rem;font-family:var(--font-mono);font-size: 10px;letter-spacing: 0.24em;text-transform:uppercase;color:var(--text-dim);}
 
     /* PART DIVIDER */
     .part-div{display:flex;align-items:center;gap:1.5rem;padding:4rem var(--gutter) 0;max-width:1240px;margin:0 auto}
@@ -101,9 +99,7 @@
     .part-line{flex:1;height:0.5px;background:var(--border-gold)}
     .part-title{font-family:var(--font-ed);font-size:clamp(32px,5vw,64px);font-weight:300;letter-spacing:-0.03em;line-height:1;color:var(--text);padding:1rem var(--gutter) 0;max-width:1240px;margin:0 auto}
     .part-title em{font-style:italic;color:var(--text-dim)}
-    .part-sub{font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.26em;text-transform:uppercase;color:var(--text-dim);padding:0.6rem var(--gutter) 0;max-width:1240px;margin:0 auto
-      opacity: 0.65;
-    }
+    .part-sub{font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.26em;text-transform:uppercase;color:var(--text-dim);padding:0.6rem var(--gutter) 0;max-width:1240px;margin:0 auto;}
 
     /* ARTICLE GRID */
     .article-grid{display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:start}
@@ -119,14 +115,12 @@
     /* FIGURES */
     .fig{margin:2.5rem 0}
     .fig img{width:100%;display:block}
-    .fig figcaption{margin-top:0.55rem;font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.18em;text-transform:uppercase;color:var(--text-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.4rem
-      opacity: 0.7;
-    }
+    .fig figcaption{margin-top:0.55rem;font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.18em;text-transform:uppercase;color:var(--text-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.4rem;}
 
     /* FULL-BLEED IMAGE (between sections) */
     .full-bleed{width:100%;position:relative;overflow:hidden;margin:3rem 0}
     .full-bleed img{width:100%;display:block;max-height:620px;object-fit:cover;object-position:center 45%}
-    .full-bleed figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,6,12,0.72));padding:3rem var(--gutter) 1rem;font-family:var(--font-mono);font-size: 9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,232,213,0.55);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+    .full-bleed figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,6,12,0.72));padding:3rem var(--gutter) 1rem;font-family:var(--font-mono);font-size: 9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,232,213,0.82);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
 
     /* SIDEBAR */
     .sidebar{display:flex;flex-direction:column;gap:2rem;position:sticky;top:calc(var(--nav-h)+2rem)}
@@ -187,7 +181,7 @@
 
     /* CREATIVE SLOT */
     .img-slot{width:100%;background:var(--bg3);border:0.5px dashed var(--border-gold);display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;margin:2.5rem 0}
-    .img-slot-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.35;text-align:center;line-height:2.2;padding:2rem}
+    .img-slot-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.65;text-align:center;line-height:2.2;padding:2rem}
 
     /* FOOTER */
     .footer{border-top:0.5px solid var(--border);padding:3rem var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
@@ -195,9 +189,7 @@
     .footer-copy{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
 
     /* CREDIT LINE */
-    .credit-line{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);padding:0.8rem var(--gutter);max-width:1240px;margin:0 auto
-      opacity: 0.55;
-    }
+    .credit-line{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);padding:0.8rem var(--gutter);max-width:1240px;margin:0 auto;}
 
     @keyframes fadeU{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     @keyframes drawL{from{width:0}to{width:min(280px,45vw)}}

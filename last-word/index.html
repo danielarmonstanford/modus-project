@@ -111,7 +111,7 @@
 
     .hero-dept{font-family:var(--font-mono);font-size:13px;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;opacity:0;animation:fadeU 0.9s ease 0.3s forwards}
     .hero-title{font-family:var(--font-display);font-size:clamp(93px,9vw,216px);font-weight:300;letter-spacing:-0.04em;line-height:0.88;color:var(--text);opacity:0;animation:fadeU 1.2s ease 0.45s forwards}
-    .hero-title em{font-style:italic;color:rgba(212,168,75,0.55)}
+    .hero-title em{font-style:italic;color:rgba(212,168,75,0.82)}
     .hero-byline{margin-top:1.8rem;max-width:560px;opacity:0;animation:fadeU 1s ease 0.8s forwards}
     .hero-byline p{font-family:var(--font-ed);font-size:clamp(15px,1.8vw,20px);font-weight:300;font-style:italic;line-height:1.6;color:var(--text-dim)}
     .hero-rule{width:0;height:0.5px;background:linear-gradient(to right,var(--gold),transparent);margin-top:1.8rem;animation:drawL 1.4s ease 1s forwards}
@@ -177,10 +177,10 @@
 
     .entry-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.8rem;gap:1rem;flex-wrap:wrap}
     .entry-cat{font-family:var(--font-mono);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim)}
-    .entry-date{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);opacity:0.6}
+    .entry-date{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim)}
 
     .entry-name{font-family:var(--font-ed);font-size:clamp(20px,2.2vw,26px);font-weight:400;letter-spacing:-0.02em;line-height:1.1;color:var(--text);margin-bottom:0.4rem}
-    .entry-type{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
+    .entry-type{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text);margin-bottom:1.2rem}
 
     .entry-verdict{
       display:inline-flex;align-items:center;gap:0.5rem;
@@ -198,7 +198,7 @@
       background:rgba(107,107,107,0.08);color:var(--f-dim);
       border:0.5px solid rgba(107,107,107,0.18);
     }
-    .verdict-statement{font-family:var(--font-ed);font-size:14px;font-style:italic;color:var(--text-dim)}
+    .verdict-statement{font-family:var(--font-ed);font-size:14px;font-style:italic;color:var(--text)}
     .verdict-statement.a{color:rgba(107,158,107,0.8)}
     .verdict-statement.f{color:var(--f-dim)}
 
@@ -632,7 +632,7 @@
   <div class="side-overlay" id="sideOverlay"></div>
   <div class="side-menu" id="sideMenu" role="dialog" aria-label="MODUS navigation">
     <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
-    <p class="side-menu-label">MODUS &middot; Navigate</p>
+    <p class="side-menu-label" data-en="MODUS · Navigate" data-fr="MODUS · Navigation">MODUS &middot; Navigate</p>
     <nav class="side-menu-nav">
       <a href="/contents" data-en="Contents" data-fr="Sommaire">Contents</a>
       <a href="/methodology" data-en="Methodology" data-fr="Méthode">Methodology</a>
@@ -694,7 +694,7 @@
   <div class="hero-content">
     <p class="hero-dept" data-en="MODUS / The Last Word" data-fr="MODUS / Le Dernier Mot">MODUS / The Last Word</p>
     <h1 class="hero-title">
-      The Last<br><em>Word.</em>
+      <span data-en="The Last" data-fr="Le Dernier">The Last</span><br><em data-en="Word." data-fr="Mot.">Word.</em>
     </h1>
     <div class="hero-byline">
       <p data-en="Unfiltered. Unjustified. Not up for discussion. Daniel Stanford on what impresses and what doesn't — the most direct luxury verdict in publishing. If he says impressed, it's A-list. If not, it's not worth your time." data-fr="Sans filtre. Sans justification. Pas de discussion. Daniel Stanford sur ce qui impressionne et ce qui n'impressionne pas — le verdict de luxe le plus direct dans la presse. S'il dit impressionné, c'est A-list. Sinon, ça ne vaut pas votre temps.">Unfiltered. Unjustified. Not up for discussion. Daniel Stanford on what impresses and what doesn't — the most direct luxury verdict in publishing. If he says impressed, it's A-list. If not, it's not worth your time.</p>

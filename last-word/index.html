@@ -62,7 +62,7 @@
     [data-theme="dark"] .logo-black{display:none}
     [data-theme="light"] .logo-beige{display:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
-    .nav-link{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link{font-family:var(--font-mono);font-size: 11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
     .nav-link:hover,.nav-link.active{color:var(--text)}
     .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
@@ -243,7 +243,7 @@
     /* FOOTER */
     .footer{border-top:0.5px solid var(--border);padding:3rem var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
     .footer-brand{font-family:var(--font-ed);font-size:22px;letter-spacing:-0.02em;color:var(--text)}
-    .footer-copy{font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
+    .footer-copy{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
 
     @keyframes fadeU{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     @keyframes drawL{from{width:0}to{width:min(300px,48vw)}}
@@ -338,6 +338,35 @@
       .side-menu{padding:3rem 2rem 1.5rem!important;overflow-y:auto!important}
       .side-menu-label{margin-bottom:1rem!important}
       .side-menu-nav a{font-size:1.4rem!important;padding:0.22rem 0!important}
+    }
+
+    /* ── Department identifier strip ── */
+    .dept-identifier {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem var(--gutter);
+      border-bottom: 0.5px solid var(--border-gold, rgba(212,168,75,0.25));
+      background: var(--bg);
+    }
+    .dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+    }
+    .dept-id-label { color: var(--text-dim); }
+    .dept-id-sep   { color: var(--gold); opacity: 0.5; }
+    .dept-id-name  { color: var(--gold); font-weight: 400; }
+    .dept-id-issue { color: var(--text-dim); opacity: 0.6; letter-spacing: 0.2em; }
+
+    @media(max-width: 700px) {
+      /* Body text minimum */
+      .body p { font-size: 17px; line-height: 1.75; }
+      /* Deck pull quote */
+      .deck p { font-size: 19px; line-height: 1.5; }
+      /* Testimony quote */
+      .testimony p { font-size: 17px; }
+      /* MODUS Index score */
+      .mi-score-big { font-size: 48px; }
+      /* Part/section titles */
+      .part-title { font-size: clamp(28px, 7vw, 48px); }
     }
   </style>
   <!-- AI agent discoverability -->
@@ -645,6 +674,14 @@
 </nav>
 
 <!-- HERO -->
+
+<div class="dept-identifier">
+  <span class="dept-id-label">MODUS</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-name">LAST WORD</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-issue">NO. 1 · JUNE 2026</span>
+</div>
 <header class="hero">
   <img class="hero-img"
        src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_2400/Sunset-Dunes-Golden_DSC3401_iloovw.jpg"

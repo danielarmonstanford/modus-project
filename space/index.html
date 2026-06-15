@@ -128,7 +128,7 @@
       display:flex;flex-direction:column;gap:5px;min-height:44px;justify-content:center}
     .menu-btn span{display:block;width:22px;height:1px;background:var(--text)}
     .nav-links{display:flex;gap:1.6rem;align-items:center}
-    .nav-link{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link{font-family:var(--font-mono);font-size: 11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
     .nav-link:hover,.nav-link.active{color:var(--text)}
     .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;
       padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:13px;
@@ -265,6 +265,35 @@
       .menu-btn{padding:8px 2px 8px 0}
       .nav-logo img{margin-left:2px}
     }
+
+    /* ── Department identifier strip ── */
+    .dept-identifier {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem var(--gutter);
+      border-bottom: 0.5px solid var(--border-gold, rgba(212,168,75,0.25));
+      background: var(--bg);
+    }
+    .dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+    }
+    .dept-id-label { color: var(--text-dim); }
+    .dept-id-sep   { color: var(--gold); opacity: 0.5; }
+    .dept-id-name  { color: var(--gold); font-weight: 400; }
+    .dept-id-issue { color: var(--text-dim); opacity: 0.6; letter-spacing: 0.2em; }
+
+    @media(max-width: 700px) {
+      /* Body text minimum */
+      .body p { font-size: 17px; line-height: 1.75; }
+      /* Deck pull quote */
+      .deck p { font-size: 19px; line-height: 1.5; }
+      /* Testimony quote */
+      .testimony p { font-size: 17px; }
+      /* MODUS Index score */
+      .mi-score-big { font-size: 48px; }
+      /* Part/section titles */
+      .part-title { font-size: clamp(28px, 7vw, 48px); }
+    }
   </style>
 </head>
 <body>
@@ -319,7 +348,15 @@
   </nav>
 
   <!-- Hero -->
-  <header class="hero">
+  
+<div class="dept-identifier">
+  <span class="dept-id-label">MODUS</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-name">SPACE</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-issue">NO. 1 · JUNE 2026</span>
+</div>
+<header class="hero">
     <div class="hero-inner">
       <p class="hero-dept" data-en="MODUS / Space · Designed Environment · Issue No. 1" data-fr="MODUS / Espace · Environnement conçu · Numéro 1">MODUS / Space &middot; Designed Environment &middot; Issue No. 1</p>
       <h1><span data-en="Brasília. Architecture of Intent." data-fr="Brasília. Architecture de l'intention.">Brasília.<br>Architecture<br>of Intent.</span></h1>

@@ -66,7 +66,7 @@
     [data-theme="dark"] .logo-black{display:none}
     [data-theme="light"] .logo-beige{display:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
-    .nav-link{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link{font-family:var(--font-mono);font-size: 11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
     .nav-link:hover,.nav-link.active{color:var(--text)}
     .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-accent)}
@@ -95,7 +95,7 @@
     .hero-title{font-family:var(--font-display);font-size:clamp(79px,8.5vw,201px);font-weight:300;letter-spacing:-0.03em;line-height:0.88;color:var(--white);opacity:0;animation:fadeU 1.2s ease 0.48s forwards}
     .hero-title em{font-style:italic;color:rgba(139,158,122,0.65)}
     .hero-byline{margin-top:1.6rem;display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap;opacity:0;animation:fadeU 1s ease 0.8s forwards}
-    .hero-byline-name{font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--corps-accent)}
+    .hero-byline-name{font-family:var(--font-mono);font-size: 10px;letter-spacing: 0.22em;text-transform:uppercase;color:var(--corps-accent)}
     .hero-byline-sub{font-family:var(--font-ed);font-size:16px;font-style:italic;color:rgba(232,226,212,0.45)}
     .hero-rule{width:0;height:0.5px;background:linear-gradient(to right,var(--corps-accent),transparent);margin-top:1.5rem;animation:drawL 1.2s ease 1s forwards}
 
@@ -137,7 +137,7 @@
     /* TESTIMONY */
     .testimony{background:var(--bg2);border:0.5px solid var(--border-accent);border-left:3px solid var(--corps-accent);padding:2rem 2.5rem;margin:2.5rem 0}
     .testimony p{font-family:var(--font-ed);font-size:clamp(16px,1.8vw,20px);font-style:italic;font-weight:300;line-height:1.65;color:var(--text)}
-    .testimony-attr{margin-top:1rem;font-family:var(--font-mono);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--corps-accent)}
+    .testimony-attr{margin-top:1rem;font-family:var(--font-mono);font-size: 10px;letter-spacing: 0.24em;text-transform:uppercase;color:var(--corps-accent)}
 
     /* PRACTITIONER CARD */
     .practitioner-card{background:var(--bg2);border:0.5px solid var(--border-accent);padding:2rem;margin:3rem 0}
@@ -155,18 +155,18 @@
 
     /* MODUS INDEX */
     .mi-card{background:var(--bg2);border:0.5px solid var(--border-accent);padding:1.8rem}
-    .mi-card-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--corps-accent);margin-bottom:0.5rem}
+    .mi-card-label{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--corps-accent);margin-bottom:0.5rem}
     .mi-car-name{font-family:var(--font-ed);font-size:20px;font-weight:400;letter-spacing:-0.02em;margin-bottom:0.25rem;color:var(--text)}
-    .mi-car-sub{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
+    .mi-car-sub{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
     .mi-score-big{font-family:var(--font-ed);font-size:56px;font-weight:300;letter-spacing:-0.05em;line-height:1;color:var(--text);display:flex;align-items:baseline;gap:4px;margin-bottom:1.1rem}
     .mi-score-big span{font-size:20px;color:var(--text-dim)}
     .mi-axes{display:flex;flex-direction:column;gap:10px}
     .mi-axis{display:grid;grid-template-columns:1fr 60px 20px;align-items:center;gap:8px}
-    .mi-aname{font-family:var(--font-mono);font-size:12px;letter-spacing:0.07em;text-transform:uppercase;color:var(--text-dim)}
+    .mi-aname{font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.14em;text-transform:uppercase;color:var(--text-dim)}
     .mi-bar{height:1.5px;background:var(--border);overflow:hidden}
     .mi-fill{height:100%;background:var(--corps-accent)}
     .mi-val{font-family:var(--font-ed);font-size:16px;font-weight:400;text-align:right;color:var(--text)}
-    .mi-note{margin-top:1.2rem;padding-top:1.2rem;border-top:0.5px solid var(--border);font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
+    .mi-note{margin-top:1.2rem;padding-top:1.2rem;border-top:0.5px solid var(--border);font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
 
     /* SIDEBAR */
     .sidebar{display:flex;flex-direction:column;gap:2rem;position:sticky;top:calc(var(--nav-h)+2rem)}
@@ -196,14 +196,25 @@
     /* FOOTER */
     .footer{border-top:0.5px solid var(--border);padding:3rem var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
     .footer-brand{font-family:var(--font-ed);font-size:22px;letter-spacing:-0.02em;color:var(--text)}
-    .footer-copy{font-family:var(--font-mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
+    .footer-copy{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
 
     @keyframes fadeU{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     @keyframes drawL{from{width:0}to{width:min(240px,42vw)}}
     @keyframes growW{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
 
     @media(max-width:1040px){.article-grid{grid-template-columns:1fr}.sidebar{position:static}}
-    @media(max-width:700px){.corps-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:700px){
+      /* Body text minimum */
+      .body p { font-size: 17px; line-height: 1.75; }
+      /* Deck pull quote */
+      .deck p { font-size: 19px; line-height: 1.5; }
+      /* Testimony quote */
+      .testimony p { font-size: 17px; }
+      /* MODUS Index score */
+      .mi-score-big { font-size: 48px; }
+      /* Part/section titles */
+      .part-title { font-size: clamp(28px, 7vw, 48px); }
+.corps-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:480px){.corps-grid{grid-template-columns:1fr}.nav-links{gap:1rem}#themeBtn span{display:none}
       #langLabel{display:inline!important}}
   
@@ -283,6 +294,22 @@
       .nav-links{flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap;gap:1.2rem}
       .nav-links::-webkit-scrollbar{display:none}
     }
+
+    /* ── Department identifier strip ── */
+    .dept-identifier {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem var(--gutter);
+      border-bottom: 0.5px solid var(--border-gold, rgba(212,168,75,0.25));
+      background: var(--bg);
+    }
+    .dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+    }
+    .dept-id-label { color: var(--text-dim); }
+    .dept-id-sep   { color: var(--gold); opacity: 0.5; }
+    .dept-id-name  { color: var(--gold); font-weight: 400; }
+    .dept-id-issue { color: var(--text-dim); opacity: 0.6; letter-spacing: 0.2em; }
   </style>
   <!-- AI agent discoverability -->
   <meta name="llms" content="https://modus.gallery/llms.txt">
@@ -565,6 +592,14 @@
 </nav>
 
 <!-- HERO -->
+
+<div class="dept-identifier">
+  <span class="dept-id-label">MODUS</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-name">FIGURES</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-issue">NO. 1 · JUNE 2026</span>
+</div>
 <header class="hero">
   <div class="hero-bg"></div>
   <div class="hero-fascia"></div>

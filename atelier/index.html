@@ -195,7 +195,7 @@
     [data-theme="dark"] .logo-black{display:none}
     [data-theme="light"] .logo-beige{display:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
-    .nav-link{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link{font-family:var(--font-mono);font-size: 11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
     .nav-link:hover,.nav-link.active{color:var(--text)}
     .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-warm)}
@@ -266,11 +266,11 @@
     .mi-score span{font-size:20px;color:var(--text-dim)}
     .mi-axes{display:flex;flex-direction:column;gap:9px}
     .mi-axis{display:grid;grid-template-columns:1fr 54px 18px;align-items:center;gap:8px}
-    .mi-aname{font-family:var(--font-mono);font-size:13px;letter-spacing:0.07em;text-transform:uppercase;color:var(--text-dim)}
+    .mi-aname{font-family:var(--font-mono);font-size:13px;letter-spacing: 0.14em;text-transform:uppercase;color:var(--text-dim)}
     .mi-bar{height:1.5px;background:var(--border);overflow:hidden}
     .mi-fill{height:100%;background:var(--atelier-blush)}
     .mi-val{font-family:var(--font-ed);font-size:16px;font-weight:400;text-align:right;color:var(--text)}
-    .mi-note{margin-top:1.1rem;padding-top:1.1rem;border-top:0.5px solid var(--border);font-family:var(--font-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
+    .mi-note{margin-top:1.1rem;padding-top:1.1rem;border-top:0.5px solid var(--border);font-family:var(--font-mono);font-size:13px;letter-spacing: 0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
 
     /* EDITORIAL GRID — the photographs */
     .ed-grid-full{max-width:1240px;margin:4rem auto 0;padding:0 var(--gutter)}
@@ -443,6 +443,35 @@
       .side-menu-label{margin-bottom:1rem!important}
       .side-menu-nav a{font-size:1.4rem!important;padding:0.22rem 0!important}
     }
+
+    /* ── Department identifier strip ── */
+    .dept-identifier {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem var(--gutter);
+      border-bottom: 0.5px solid var(--border-gold, rgba(212,168,75,0.25));
+      background: var(--bg);
+    }
+    .dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+    }
+    .dept-id-label { color: var(--text-dim); }
+    .dept-id-sep   { color: var(--gold); opacity: 0.5; }
+    .dept-id-name  { color: var(--gold); font-weight: 400; }
+    .dept-id-issue { color: var(--text-dim); opacity: 0.6; letter-spacing: 0.2em; }
+
+    @media(max-width: 700px) {
+      /* Body text minimum */
+      .body p { font-size: 17px; line-height: 1.75; }
+      /* Deck pull quote */
+      .deck p { font-size: 19px; line-height: 1.5; }
+      /* Testimony quote */
+      .testimony p { font-size: 17px; }
+      /* MODUS Index score */
+      .mi-score-big { font-size: 48px; }
+      /* Part/section titles */
+      .part-title { font-size: clamp(28px, 7vw, 48px); }
+    }
   </style>
   <!-- AI agent discoverability -->
   <meta name="llms" content="https://modus.gallery/llms.txt">
@@ -513,6 +542,14 @@
 </nav>
 
 <!-- HERO -->
+
+<div class="dept-identifier">
+  <span class="dept-id-label">MODUS</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-name">ATELIER</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-issue">NO. 1 · JUNE 2026</span>
+</div>
 <header class="hero" role="banner" aria-label="Atelier feature hero — La Maison Simons Lingerie">
   <div class="hero-img-wrap">
     <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Screen_Shot_2026-06-09_at_6.41.10_AM_b7vt7q.png"

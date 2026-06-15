@@ -359,7 +359,7 @@
     .gallery { grid-template-columns: 1fr; gap: 1rem; }
     .topbar-center { display: none; }
     .topbar-meta { display: none; }
-    .topbar { padding: 1rem 1.2rem; }
+    .topbar { padding: 1rem 0.5rem 1rem 0; }
     .footer { flex-direction: column; gap: 0.5rem; padding: 1.4rem 1.2rem; }
     .card-typographic .card-image-letter { font-size: 100px; }
     .card-title { font-size: 24px; }
@@ -404,7 +404,18 @@ html[data-theme="light"] .logo-beige{display:none;}
 html:not([data-theme]) .logo-beige{display:none;}
 
     @media(max-width:768px){
-      .side-menu{padding:3rem 2rem 1.5rem!important;overflow-y:auto!important}
+      .menu-btn {
+    background: none; border: none; cursor: pointer;
+    padding: 8px 2px 8px 0;
+    display: flex; flex-direction: column; gap: 5px;
+    min-height: 44px; justify-content: center; flex-shrink: 0;
+  }
+  .menu-btn span {
+    display: block; width: 22px; height: 1px;
+    background: var(--ink);
+    transition: transform 0.3s ease, opacity 0.3s;
+  }
+  .side-menu{padding:3rem 2rem 1.5rem!important;overflow-y:auto!important}
       .side-menu-label{margin-bottom:1rem!important}
       .side-menu-nav a{font-size:1.4rem!important;padding:0.22rem 0!important}
     }

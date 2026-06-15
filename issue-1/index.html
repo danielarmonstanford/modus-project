@@ -79,9 +79,9 @@
     display: flex; align-items: center; gap: 5px;
     min-height: 36px;
   }
-  [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
-  [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
-  #langBtn{font-weight:600;letter-spacing:0.06em!important;font-size:13px}
+  [data-theme="dark"] .lang-btn{background:#EDE6D5;color:#06080C;border-color:transparent}
+  [data-theme="light"] .lang-btn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+  .lang-btn{font-weight:600;letter-spacing:0.08em;font-size:12px}
   .theme-btn:hover { color: var(--ink); border-color: var(--gold); }
   .theme-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
@@ -574,7 +574,7 @@
       <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
     </a>
   </div>
-  <button class="theme-btn" id="langBtn" aria-label="Toggle language"><span id="langLabel">FR</span></button>
+  <button class="theme-btn lang-btn" id="langBtnMobile" aria-label="Toggle language"><span class="lang-label" id="langLabelMobile">FR</span></button>
   <button class="theme-btn" id="themeBtnMobile" aria-label="Toggle theme">
     <div class="theme-dot"></div>
     <span id="themeLabelMobile">Light</span>
@@ -598,7 +598,7 @@
            style="height:clamp(28px,5vw,44px);width:auto;opacity:0.9;">
     </a>
     <div class="head-right" style="display:flex;align-items:center;justify-content:flex-end;gap:1rem;">
-      <button class="theme-btn" id="langBtn" aria-label="Toggle language" style="letter-spacing:0.14em"><span id="langLabel">FR</span></button>
+      <button class="theme-btn lang-btn" id="langBtn" aria-label="Toggle language"><span class="lang-label" id="langLabel">FR</span></button>
   <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
         <div class="theme-dot"></div>
         <span id="themeLabel">Light</span>
@@ -724,6 +724,25 @@
   })();
 </script>
 
-<script src="/assets/js/lang.js"></script>
+<script>
+  // Language toggle — wires BOTH desktop (.head) and mobile (.top-nav) buttons
+  (function(){
+    var lang = localStorage.getItem('modus-lang') || 'en';
+    var btns = document.querySelectorAll('.lang-btn');
+    var lbls = document.querySelectorAll('.lang-label');
+    function apply(l){
+      document.querySelectorAll('[data-en]').forEach(function(el){
+        var v = el.getAttribute('data-' + l);
+        if (v != null) el.textContent = v;
+      });
+      lbls.forEach(function(s){ s.textContent = (l === 'en' ? 'FR' : 'EN'); });
+      document.documentElement.lang = l;
+      localStorage.setItem('modus-lang', l);
+      lang = l;
+    }
+    btns.forEach(function(b){ b.addEventListener('click', function(){ apply(lang === 'en' ? 'fr' : 'en'); }); });
+    apply(lang);
+  })();
+</script>
 </body>
 </html>

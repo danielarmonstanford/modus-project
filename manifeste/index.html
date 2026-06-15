@@ -250,19 +250,21 @@
       position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(
         to bottom,
-        rgba(4,5,10,0.55) 0%,
-        transparent 38%,
-        rgba(7,8,13,0.75) 68%,
+        rgba(4,5,10,0.30) 0%,
+        transparent 32%,
+        rgba(6,8,12,0.45) 58%,
+        rgba(6,8,12,0.82) 82%,
         var(--bg) 100%
       );
     }
-    /* Textured dark bg — no image needed, relies on dark field */
+    /* Hero action shot — Athena */
     .hero-bg {
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 60%, rgba(212,168,75,0.04) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(27,35,64,0.6) 0%, transparent 70%),
-        #06080C;
+      background-image: url('https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_2400/v1781150319/Athena-7757---alpha-_b2k1fa.jpg');
+      background-size: cover;
+      background-position: center 35%;
+      opacity: 0;
+      animation: fadeIn 1.4s ease 0.2s forwards;
     }
     .hero-content {
       position: relative; z-index: 2;
@@ -554,6 +556,10 @@
       from { width: 0; }
       to   { width: 100%; }
     }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
 
     /* ── Mobile ── */
     @media(max-width: 700px) {
@@ -586,6 +592,7 @@
   <p class="side-menu-label">MODUS · Issue No. 1</p>
   <nav class="side-menu-nav">
     <a href="/manifeste" class="active" data-en="Manifeste" data-fr="Manifeste">Manifeste</a>
+    <a href="/contents" data-en="Contents" data-fr="Sommaire">Contents</a>
     <a href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
     <a href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
     <a href="/space" data-en="Space" data-fr="Espace">Space</a>

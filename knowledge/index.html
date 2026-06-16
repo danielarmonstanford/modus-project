@@ -419,7 +419,7 @@ body{background:var(--ink);color:var(--text-body);font-family:'DM Mono',monospac
       <span class="sb-label" data-en="Décover" data-fr="Décover">Décover</span>
       <div class="ecard" onclick="show('fascinasia')">
         <div class="e-name">FASCINASIA</div>
-        <div class="e-type" data-en="Fine Art · 50/50 Edition" data-fr="Beaux-Arts · Édition 50/50">Fine Art · 50/50 Edition</div>
+        <div class="e-type" data-en="Fine Art · 49.5/50" data-fr="Beaux-Arts · 49,5/50">Fine Art · 49.5/50</div>
         <div class="score-mini">
           <div class="bar-wrap"><div class="bar-fill" style="width:99%"></div></div>
           <span class="score-n">49.5 <span style="color:var(--text-mute);font-size:12px">/ 50</span></span>
@@ -602,7 +602,7 @@ const DATA = {
     relObjects:[{name:'FASCINASIA Series',sub:'Fine Art'},{name:'Guess Love Story 2001',sub:'Campaign Credit'}],
     relPeople:[{name:'Noan Major',sub:'SEERKA Co-Founder'},{name:'Vania Desorayo',sub:'Partner'},{name:'Ramak Radmard',sub:'Index Authority · Objects'}],
     relPlaces:[{name:'Saint-Henri · Montréal',sub:'Studio Base'},{name:'Da Nang · Miami · LA · Rio',sub:'Creative Territories'}],
-    relArticles:[{name:'DÉCOVER — FASCINASIA 50/50',sub:'MODUS No.1'},{name:'MODUS Editorial Statement',sub:'Issue No.1'}],
+    relArticles:[{name:'DÉCOVER — FASCINASIA 49.5/50',sub:'MODUS No.1'},{name:'MODUS Editorial Statement',sub:'Issue No.1'}],
     citations:[
       {text:'Stanford\'s methodology treats brand not as identity system but as epistemology — how a company knows what it is.',src:'MODUS Internal Documentation'},
       {text:'The Signature Brand System™ is not a process. It is a lens. Everything else follows from it.',src:'Daniel Stanford · EIC Note'},
@@ -702,7 +702,7 @@ const DATA = {
   },
 
   fascinasia: {
-    name:'FASCINASIA', sub:'Fine Art Series · 50/50 Edition · Daniel Stanford', section:'Décover',
+    name:'FASCINASIA', sub:'Fine Art Series · 49.5/50 · Daniel Stanford', section:'Décover',
     schemaType:'VisualArtwork', published:true,
     score:49.5, axes:[
       {label:'Rarity', score:10, max:10, note:'50 works · series capped · no open edition'},
@@ -712,14 +712,14 @@ const DATA = {
       {label:'Timelessness', score:10, max:10, note:'outside fashion cycles · closer to the Orientalist sublime'},
     ],
     scorers:[{name:'Marie-Christine Gilbert, PhD', role:'Index Authority · Fine Art · The National Gallery of Canada'}],
-    classification:['Fine Art','Mixed Media','Limited 50/50','DÉCOVER Feature','Institutional Provenance'],
+    classification:['Fine Art','Mixed Media','49.5/50','DÉCOVER Feature','Institutional Provenance'],
     meta:{
       'Schema Type':'schema:VisualArtwork','Section':'DÉCOVER','Issue':'MODUS No. 1 · 2026',
       'Edition':'50 of 50','Medium':'Mixed-media painting',
       'Artist':'Daniel Stanford','Scored By':'Marie-Christine Gilbert PhD',
       'Market':'Saatchi Art · Tappan Collective'
     },
-    desc:`<p>FASCINASIA is Daniel Stanford's primary fine art painting series — mixed-media works occupying the territory between haute photography and painterly gesture. Issue No.1 features the series in DÉCOVER as a 50/50 limited edition, positioning the work at the intersection of MODUS's three axes: body, sensory object, and cultural place.</p><p>The 49.5 is deliberate. Marie-Christine Gilbert, Index Authority at the National Gallery of Canada, holds the half-point on Investment Value — not because the price is wrong, but because the series is not yet fully absorbed by the institutional market. That absorption is a matter of time, not merit.</p>`,
+    desc:`<p>FASCINASIA is Daniel Stanford's primary fine art painting series — mixed-media works occupying the territory between haute photography and painterly gesture. Issue No.1 features the series in DÉCOVER at 49.5/50, positioning the work at the intersection of MODUS's three axes: body, sensory object, and cultural place.</p><p>The 49.5 is deliberate. Marie-Christine Gilbert, Index Authority at the National Gallery of Canada, holds the half-point on Investment Value — not because the price is wrong, but because the series is not yet fully absorbed by the institutional market. That absorption is a matter of time, not merit.</p>`,
     relationships:[
       {name:'Daniel Stanford',sub:'Artist · Creator'},
       {name:'DÉCOVER · MODUS No.1',sub:'Featured Section'},
@@ -729,13 +729,13 @@ const DATA = {
     relObjects:[{name:'Nosara Nude Series',sub:'Sister Series'},{name:'Lençóis Maranhenses',sub:'Photography Series'}],
     relPeople:[{name:'Daniel Stanford',sub:'Artist'},{name:'Marie-Christine Gilbert PhD',sub:'Index Authority · NGoC'}],
     relPlaces:[{name:'Saint-Henri · Montréal',sub:'Studio'},{name:'Nosara · Costa Rica',sub:'Photo Series Origin'}],
-    relArticles:[{name:'DÉCOVER — FASCINASIA 50/50',sub:'MODUS No.1'},{name:'Painting as Taste Architecture',sub:'MODUS Editorial'}],
+    relArticles:[{name:'DÉCOVER — FASCINASIA 49.5/50',sub:'MODUS No.1'},{name:'Painting as Taste Architecture',sub:'MODUS Editorial'}],
     citations:[
       {text:'FASCINASIA operates at the register where painting stops trying to represent and starts trying to seduce.',src:'MODUS DÉCOVER · Issue No.1'},
       {text:'The investment thesis is simple: 50 works, institutional scorer, artist with a 25-year body of work behind it. The half-point I am withholding is not doubt — it is patience.',src:'Marie-Christine Gilbert PhD · Index Authority · National Gallery of Canada'},
     ],
     schema:`{\n  "@context": "https://schema.org",\n  "@type": "VisualArtwork",\n  "name": "FASCINASIA",\n  "creator": { "@type": "Person", "name": "Daniel Stanford" },\n  "artMedium": "Mixed media",\n  "numberOfItems": "50",\n  "modusMeasure": { "total": 49.5, "ceiling": 50, "published": true }\n}`,
-    prov:['Fine Art · Daniel Stanford','50/50 Limited Edition','Scored by Marie-Christine Gilbert PhD','National Gallery of Canada','Saatchi Art · Tappan Collective','DÉCOVER · Issue No.1'],
+    prov:['Fine Art · Daniel Stanford','49.5/50 · Limited Edition','Scored by Marie-Christine Gilbert PhD','National Gallery of Canada','Saatchi Art · Tappan Collective','DÉCOVER · Issue No.1'],
   },
 
   coverstory: {

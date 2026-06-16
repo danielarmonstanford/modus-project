@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Séance — MODUS · Issue No. 1</title>
+  <meta name="description" content="MODUS Séance — Issue No. 1. A new MODUS department. Full feature forthcoming.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Daniel Stanford">
+  <link rel="canonical" href="https://modus.gallery/seance">
+  <meta property="og:title" content="Séance — MODUS · Issue No. 1">
+  <meta property="og:description" content="A new MODUS department. Full feature forthcoming.">
+  <meta property="og:url" content="https://modus.gallery/seance">
+  <meta property="og:site_name" content="MODUS">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta name="theme-color" content="#06080C">
+  <meta name="llms" content="https://modus.gallery/llms.txt">
+  <meta name="translation-enabled" content="true">
+  <link rel="alternate" hreflang="x-default" href="https://modus.gallery/seance">
+  <link rel="alternate" hreflang="en" href="https://modus.gallery/seance">
+  <link rel="alternate" hreflang="fr" href="https://modus.gallery/seance">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.otf') format('opentype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+    :root {
+      --gold:#D4A84B;
+      --nav-h:64px;
+      --gutter:clamp(1.2rem,5vw,5rem);
+      --ease:0.3s ease;
+      --font-display:'Lovine','Cormorant Garamond',Georgia,serif;
+      --font-ed:'Cormorant Garamond',Georgia,serif;
+      --font-mono:'DM Mono','Courier New',monospace;
+    }
+    [data-theme="dark"] {
+      --bg:#06080C; --text:#F0E8D5; --text-dim:rgba(240,232,213,0.85);
+      --border:rgba(240,232,213,0.1); --border-gold:rgba(212,168,75,0.3);
+      --nav-bg:rgba(6,8,12,0.92);
+    }
+    [data-theme="light"] {
+      --bg:#F4EEE2; --text:#06080C; --text-dim:rgba(6,8,12,0.80);
+      --border:rgba(6,8,12,0.1); --border-gold:rgba(212,168,75,0.4);
+      --nav-bg:rgba(244,238,226,0.92);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{font-family:var(--font-ed);background:var(--bg);color:var(--text);min-height:100vh;transition:background var(--ease),color var(--ease);overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+
+    .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:200;background:var(--nav-bg);border-bottom:0.5px solid var(--border);backdrop-filter:blur(12px);display:flex;align-items:center;padding:0 var(--gutter);gap:1.5rem}
+    .nav-left{display:flex;align-items:center;gap:0;flex-shrink:0}
+    .nav-logo{display:flex;align-items:center;min-height:44px;line-height:0;flex-shrink:0}
+    .nav-logo img{height:28px;width:auto;display:block}
+    [data-theme="dark"] .logo-black{display:none}
+    [data-theme="light"] .logo-beige{display:none}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-link{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link:hover,.nav-link.active{color:var(--text)}
+    .nav-link.active{color:var(--gold)}
+    .nav-right{margin-left:auto;display:flex;align-items:center;gap:0.75rem}
+    .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
+    .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
+    .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+    [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
+    [data-theme="light"] #langBtn{background:#1A1208;color:#F2EDE3;border-color:transparent}
+    #langBtn{font-weight:600;letter-spacing:0.08em}
+
+    .menu-btn{background:none;border:none;cursor:pointer;padding:10px 8px;display:flex;flex-direction:column;gap:5px;min-height:44px;justify-content:center;margin-right:1rem;color:var(--text)}
+    .menu-btn span{display:block;width:22px;height:1px;background:currentColor;transition:transform 0.3s,opacity 0.3s}
+
+    .side-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:299;opacity:0;pointer-events:none;transition:opacity 0.4s ease}
+    .side-overlay.open{opacity:1;pointer-events:auto}
+    .side-menu{position:fixed;top:0;left:0;bottom:0;width:300px;background:var(--bg);border-right:0.5px solid var(--border);z-index:300;transform:translateX(-100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;padding:3rem 2rem 2rem;overflow-y:auto}
+    .side-menu.open{transform:translateX(0)}
+    .side-menu-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--text-dim);margin-bottom:2rem;transition:color var(--ease)}
+    .side-menu-close:hover{color:var(--text)}
+    .side-menu-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+    .side-menu-nav{display:flex;flex-direction:column;overflow-y:auto;flex:1 1 0;min-height:0}
+    .side-menu-nav a{font-family:var(--font-ed);font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:300;font-style:italic;color:var(--text-dim);line-height:1.1;padding:0.16rem 0;border-bottom:0.5px solid var(--border);transition:color 0.2s,padding-left 0.2s}
+    .side-menu-nav a:first-child{border-top:0.5px solid var(--border)}
+    .side-menu-nav a:hover{color:var(--text);padding-left:0.5rem}
+    .side-menu-nav a.active{color:var(--gold)}
+    .side-menu-issue{margin-top:auto;padding-top:1.5rem;font-family:var(--font-mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim)}
+
+    .dept-identifier{display:flex;align-items:center;gap:0.6rem;padding:0.75rem var(--gutter);border-bottom:0.5px solid var(--border-gold);background:var(--bg);margin-top:var(--nav-h)}
+    .dept-id-label,.dept-id-sep,.dept-id-name,.dept-id-issue{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase}
+    .dept-id-label{color:var(--text-dim)}
+    .dept-id-sep{color:var(--gold);opacity:0.5}
+    .dept-id-name{color:var(--gold);font-weight:400}
+    .dept-id-issue{color:var(--text-dim);opacity:0.6;letter-spacing:0.2em}
+
+    .hero{min-height:72vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5rem var(--gutter)}
+    .hero-eyebrow{font-family:var(--font-mono);font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem}
+    .hero-title{font-family:var(--font-display);font-size:clamp(80px,16vw,220px);font-weight:300;font-style:italic;letter-spacing:-0.04em;line-height:0.9;color:var(--text)}
+    .hero-byline{margin-top:2rem;max-width:560px}
+    .hero-byline p{font-family:var(--font-ed);font-size:clamp(17px,1.8vw,20px);font-weight:300;font-style:italic;line-height:1.6;color:var(--text-dim)}
+    .hero-rule{width:120px;height:0.5px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:2.5rem auto 0}
+
+    .footer{border-top:0.5px solid var(--border);padding:3rem var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-brand{font-family:var(--font-ed);font-size:22px;letter-spacing:-0.02em;color:var(--text)}
+    .footer-copy{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-align:center;flex:1}
+
+    @media(max-width:700px){
+      .side-menu{width:100%;border-right:none}
+      .nav-links{flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap;gap:1.2rem}
+      .nav-links::-webkit-scrollbar{display:none}
+      .hero-byline p{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Side overlay -->
+<div class="side-overlay" id="sideOverlay"></div>
+
+<!-- Side / hamburger menu -->
+<div class="side-menu" id="sideMenu" role="dialog" aria-label="MODUS navigation">
+  <button class="side-menu-close" id="menuClose" aria-label="Close menu">×</button>
+  <p class="side-menu-label">MODUS · Issue No. 1</p>
+  <nav class="side-menu-nav">
+    <a href="/manifeste" data-en="Manifeste" data-fr="Manifeste">Manifeste</a>
+    <a href="/contents" data-en="Contents" data-fr="Sommaire">Contents</a>
+    <a href="/methodology" data-en="Methodology" data-fr="Méthode">Methodology</a>
+    <a href="/scores" style="color:var(--gold,#D4A84B)" data-en="Index" data-fr="Index">Index</a>
+    <a href="/join" data-en="Join" data-fr="Rejoindre">Join</a>
+    <a href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+    <a href="/seance" class="active" data-en="Séance" data-fr="Séance">Séance</a>
+    <a href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+    <a href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+    <a href="/space" data-en="Space" data-fr="Espace">Space</a>
+    <a href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+    <a href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+    <a href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
+    <a href="/issue-1" data-en="Issue No. 1" data-fr="Numéro 1">Issue No. 1</a>
+    <a href="/acquire" data-en="Acquire" data-fr="Acquérir">Acquire</a>
+  </nav>
+  <p class="side-menu-issue">modus.gallery · 2026</p>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="nav-logo" href="https://modus.gallery/" aria-label="MODUS home">
+      <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS" style="height:28px;">
+      <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS" style="height:28px;display:none;">
+    </a>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="/manifeste" data-en="Manifeste" data-fr="Manifeste">Manifeste</a>
+    <a class="nav-link" href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+    <a class="nav-link" href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+    <a class="nav-link" href="/space" data-en="Space" data-fr="Espace">Space</a>
+    <a class="nav-link" href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+    <a class="nav-link" href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+    <a class="nav-link active" href="/seance" data-en="Séance" data-fr="Séance">Séance</a>
+    <a class="nav-link" href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+    <a class="nav-link" href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+      <span class="theme-dot"></span>
+      <span id="themeLabel">Light</span>
+    </button>
+    <button class="theme-btn" id="langBtn" style="font-weight:600;letter-spacing:0.08em;">EN</button>
+  </div>
+</nav>
+
+<!-- DEPT IDENTIFIER -->
+<div class="dept-identifier">
+  <span class="dept-id-label">MODUS</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-name">SÉANCE</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-issue">NO. 1 · 2026</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow" data-en="A new MODUS department" data-fr="Un nouveau département MODUS">A new MODUS department</p>
+  <h1 class="hero-title">Séance</h1>
+  <div class="hero-byline">
+    <p data-en="The full feature is being prepared. Return soon." data-fr="Le dossier complet est en préparation. Revenez bientôt.">The full feature is being prepared. Return soon.</p>
+  </div>
+  <div class="hero-rule" aria-hidden="true"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-brand">MODUS</span>
+  <span class="footer-copy" data-en="MODUS · Séance · Issue No. 1 · 2026 · Stanford Emporium Inc., Montréal." data-fr="MODUS · Séance · Numéro 1 · 2026 · Stanford Emporium Inc., Montréal.">MODUS · Séance · Issue No. 1 · 2026 · Stanford Emporium Inc., Montréal.</span>
+</footer>
+
+<script>
+  // Theme toggle
+  const themeBtn = document.getElementById('themeBtn');
+  const themeLabel = document.getElementById('themeLabel');
+  const root = document.documentElement;
+  function applyTheme(t) {
+    root.setAttribute('data-theme', t);
+    themeLabel.textContent = t === 'dark' ? 'Light' : 'Dark';
+    localStorage.setItem('modus-theme', t);
+  }
+  applyTheme(localStorage.getItem('modus-theme') || 'dark');
+  themeBtn.addEventListener('click', () => {
+    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+
+  // Language toggle
+  let lang = 'en';
+  const langBtn = document.getElementById('langBtn');
+  langBtn.addEventListener('click', () => {
+    lang = lang === 'en' ? 'fr' : 'en';
+    langBtn.textContent = lang.toUpperCase();
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang) || el.textContent;
+    });
+  });
+
+  // Hamburger / side menu
+  const menuBtn = document.getElementById('menuBtn');
+  const sideMenu = document.getElementById('sideMenu');
+  const sideOverlay = document.getElementById('sideOverlay');
+  const menuClose = document.getElementById('menuClose');
+  function openMenu() { sideMenu.classList.add('open'); sideOverlay.classList.add('open'); menuBtn.setAttribute('aria-expanded','true'); }
+  function closeMenu() { sideMenu.classList.remove('open'); sideOverlay.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
+  menuBtn.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  sideOverlay.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+</script>
+
+</body>
+</html>

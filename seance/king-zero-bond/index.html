@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King Zero and the World That Still Waits for Bond — MODUS · Séance</title>
+  <meta name="description" content="On a new novel, an uncast 007, and why sixty years of a single character says something true about what we need from fiction. Daniel Stanford, Editor-in-Chief, MODUS.">
+  <meta name="author" content="Daniel Stanford">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://modus.gallery/seance/king-zero-bond">
+  <meta property="og:title" content="King Zero and the World That Still Waits for Bond — MODUS">
+  <meta property="og:description" content="On a new novel, an uncast 007, and sixty years of a single character. Daniel Stanford, Editor-in-Chief, MODUS.">
+  <meta property="og:site_name" content="MODUS">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://modus.gallery/seance/king-zero-bond">
+  <meta property="article:author" content="Daniel Stanford">
+  <meta property="article:published_time" content="2026-06-16T00:00:00+00:00">
+  <meta property="article:section" content="Séance">
+  <meta name="theme-color" content="#06080C">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "King Zero and the World That Still Waits for Bond",
+    "description": "On a new novel, an uncast 007, and why sixty years of a single character says something true about what we need from fiction.",
+    "author": {
+      "@type": "Person",
+      "name": "Daniel Stanford",
+      "jobTitle": "Editor-in-Chief",
+      "worksFor": { "@type": "Organization", "name": "MODUS" }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MODUS",
+      "url": "https://modus.gallery"
+    },
+    "datePublished": "2026-06-16",
+    "articleSection": "Séance",
+    "keywords": "James Bond, King Zero, Charlie Higson, Bond 26, Denis Villeneuve, No Time to Die, We Have All the Time in the World, Louis Armstrong"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Lovine display font ── */
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ── Design tokens — exact site values ── */
+    :root {
+      --gold: #D4A84B;
+      --cream: #F0E8D5;
+      --navy: #1B2340;
+      --nav-h: 64px;
+      --gutter: clamp(1.2rem, 5vw, 5rem);
+      --body-max: 720px;
+      --ease: 0.3s ease;
+      --font-display: 'Lovine', 'Cormorant Garamond', Georgia, serif;
+      --font-ed: 'Cormorant Garamond', Georgia, serif;
+      --font-mono: 'DM Mono', 'Courier New', monospace;
+    }
+    [data-theme="dark"] {
+      --bg: #06080C;
+      --text: #F0E8D5;
+      --text-dim: rgba(240,232,213,0.85);
+      --border: rgba(240,232,213,0.1);
+      --border-gold: rgba(212,168,75,0.3);
+      --nav-bg: rgba(6,8,12,0.92);
+    }
+    [data-theme="light"] {
+      --bg: #F4EEE2;
+      --text: #06080C;
+      --text-dim: rgba(6,8,12,0.80);
+      --border: rgba(6,8,12,0.1);
+      --border-gold: rgba(212,168,75,0.4);
+      --nav-bg: rgba(244,238,226,0.92);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-ed);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background var(--ease), color var(--ease);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Film grain */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── NAV — exact site pattern ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h); z-index: 200;
+      background: var(--nav-bg);
+      border-bottom: 0.5px solid var(--border);
+      backdrop-filter: blur(12px);
+      display: flex; align-items: center;
+      padding: 0 var(--gutter); gap: 1.5rem;
+    }
+    .nav-left { display: flex; align-items: center; flex-shrink: 0; }
+    .nav-logo { display: flex; align-items: center; min-height: 44px; line-height: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links {
+      display: flex; gap: 2rem; align-items: center;
+    }
+    .nav-link {
+      font-family: var(--font-mono);
+      font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim);
+      transition: color var(--ease); white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--text); }
+    .nav-link.active { color: var(--gold); }
+    .nav-right { margin-left: auto; display: flex; align-items: center; gap: 0.75rem; }
+    .theme-btn {
+      background: transparent;
+      border: 0.5px solid var(--border); border-radius: 20px;
+      padding: 5px 14px; cursor: pointer;
+      font-family: var(--font-mono); font-size: 11px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-dim); transition: all var(--ease);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .theme-btn:hover { color: var(--text); border-color: var(--border-gold); }
+    .theme-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .menu-btn {
+      background: none; border: none; cursor: pointer;
+      padding: 10px 8px; display: flex; flex-direction: column;
+      gap: 5px; min-height: 44px; justify-content: center;
+      margin-right: 1rem; color: var(--text);
+    }
+    .menu-btn span {
+      display: block; width: 22px; height: 1px;
+      background: currentColor; transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* ── Side menu — exact site pattern ── */
+    .side-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+      z-index: 299; opacity: 0; pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .side-overlay.open { opacity: 1; pointer-events: auto; }
+    .side-menu {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 300px;
+      background: var(--bg); border-right: 0.5px solid var(--border);
+      z-index: 300; transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column;
+      padding: 3rem 2rem 2rem;
+    }
+    .side-menu.open { transform: translateX(0); }
+    .side-menu-close {
+      align-self: flex-end; background: none; border: none;
+      cursor: pointer; font-size: 1.5rem; color: var(--text-dim);
+      margin-bottom: 2rem; transition: color var(--ease);
+    }
+    .side-menu-close:hover { color: var(--text); }
+    .side-menu-label {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem;
+    }
+    .side-menu-nav {
+      display: flex; flex-direction: column;
+      overflow-y: auto; flex: 1 1 0; min-height: 0;
+    }
+    .side-menu-nav a {
+      font-family: var(--font-ed);
+      font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+      font-weight: 300; font-style: italic;
+      color: var(--text-dim); line-height: 1.1;
+      padding: 0.16rem 0; letter-spacing: -0.01em;
+      border-bottom: 0.5px solid var(--border);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .side-menu-nav a:first-child { border-top: 0.5px solid var(--border); }
+    .side-menu-nav a:hover { color: var(--text); padding-left: 0.5rem; }
+    .side-menu-nav a.active { color: var(--gold); }
+    .side-menu-issue {
+      margin-top: auto; padding-top: 1.5rem;
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim);
+    }
+
+    /* ── Dept identifier strip ── */
+    .dept-identifier {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem var(--gutter);
+      border-bottom: 0.5px solid var(--border-gold);
+      margin-top: var(--nav-h);
+    }
+    .dept-id-label {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-dim);
+    }
+    .dept-id-sep { font-family: var(--font-mono); font-size: 9px; color: var(--gold); opacity: 0.5; }
+    .dept-id-name {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);
+    }
+    .dept-id-issue {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-dim); opacity: 0.6;
+    }
+
+    /* ── HERO — YouTube embed ── */
+    .hero-video-section {
+      position: relative;
+      background: #000;
+    }
+
+    /* Responsive 16:9 YouTube embed */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* Gold stroke beneath video */
+    .video-stroke {
+      height: 0.5px;
+      background: linear-gradient(to right, transparent, var(--gold), rgba(212,168,75,0.3), transparent);
+    }
+
+    /* Video caption */
+    .video-caption {
+      padding: 1rem var(--gutter);
+      border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .video-caption-text {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);
+    }
+    .video-caption-text span { color: var(--gold); }
+
+    /* ── Article header ── */
+    .article-header {
+      max-width: var(--body-max);
+      margin: 0 auto;
+      padding: 4rem var(--gutter) 0;
+      opacity: 0;
+      animation: fadeU 1s ease 0.3s forwards;
+    }
+    .article-dept {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.6rem;
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 300; letter-spacing: -0.03em;
+      line-height: 0.92; color: var(--text);
+      margin-bottom: 1.8rem;
+    }
+    .article-title em {
+      font-style: italic;
+      color: rgba(212,168,75,0.65);
+    }
+    .article-deck {
+      font-family: var(--font-ed);
+      font-size: clamp(18px, 2.2vw, 22px);
+      font-weight: 300; font-style: italic;
+      line-height: 1.5; color: var(--text-dim);
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .article-byline {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .byline-name {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim);
+    }
+    .byline-name span { color: var(--gold); }
+    .byline-meta {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);
+      opacity: 0.6;
+    }
+
+    /* ── Article body ── */
+    .article-body {
+      max-width: var(--body-max);
+      margin: 0 auto;
+      padding: 0 var(--gutter) 5rem;
+    }
+
+    .article-body p {
+      font-family: var(--font-ed);
+      font-size: clamp(17px, 1.6vw, 18px);
+      font-weight: 300; line-height: 1.88;
+      color: var(--text); margin-bottom: 1.6rem;
+    }
+
+    .article-body em { font-style: italic; }
+
+    /* Section heads — Lovine split italic */
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 400; letter-spacing: -0.02em;
+      line-height: 1.05; color: var(--text);
+      margin: 3.5rem 0 1.4rem;
+    }
+    .article-body h2 em {
+      font-style: italic;
+      color: rgba(212,168,75,0.65);
+    }
+
+    /* Spoiler warning */
+    .spoiler-flag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--bg); background: var(--gold);
+      padding: 3px 10px; margin-bottom: 1.6rem;
+    }
+
+    /* Pull quote */
+    .pull {
+      margin: 3rem 0;
+      padding: 2rem var(--gutter);
+      border-left: 0.5px solid var(--gold);
+      background: rgba(212,168,75,0.04);
+    }
+    .pull p {
+      font-family: var(--font-ed) !important;
+      font-size: clamp(19px, 2.4vw, 26px) !important;
+      font-style: italic !important;
+      font-weight: 300 !important;
+      line-height: 1.5 !important;
+      color: var(--text) !important;
+      margin: 0 !important;
+    }
+
+    /* Gold rule */
+    .gold-rule {
+      border: none; height: 0.5px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 3.5rem 0; opacity: 0.4;
+    }
+
+    /* MODUS Index verdict block */
+    .index-verdict {
+      border: 0.5px solid var(--border-gold);
+      margin: 3.5rem 0;
+    }
+    .index-verdict-header {
+      background: rgba(212,168,75,0.06);
+      padding: 1rem 1.5rem;
+      border-bottom: 0.5px solid var(--border-gold);
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .index-verdict-label {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);
+    }
+    .index-verdict-row {
+      padding: 1rem 1.5rem;
+      border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: baseline;
+      justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .index-verdict-row:last-child { border-bottom: none; }
+    .verdict-title {
+      font-family: var(--font-ed); font-size: 15px;
+      font-style: italic; font-weight: 300; color: var(--text);
+    }
+    .verdict-score {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold); white-space: nowrap;
+    }
+    .verdict-score.pending { color: var(--text-dim); }
+
+    /* Article footer */
+    .article-footer {
+      max-width: var(--body-max); margin: 0 auto;
+      padding: 0 var(--gutter) 2rem;
+      border-top: 0.5px solid var(--border);
+      padding-top: 2.5rem;
+    }
+    .article-footer-sig {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 22px);
+      font-style: italic; font-weight: 300;
+      color: var(--text); margin-bottom: 0.4rem;
+    }
+    .article-footer-title {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim);
+      line-height: 1.8;
+    }
+    .article-footer-title span { color: var(--gold); }
+
+    /* Back to section */
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 2rem;
+      transition: color var(--ease);
+    }
+    .back-link:hover { color: var(--gold); }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 0.5px solid var(--border);
+      padding: 3rem var(--gutter);
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand {
+      font-family: var(--font-ed); font-size: 22px;
+      letter-spacing: -0.02em; color: var(--text);
+    }
+    .footer-copy {
+      font-family: var(--font-mono); font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-dim); text-align: center; flex: 1;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeU {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes drawL {
+      from { width: 0; }
+      to   { width: 100%; }
+    }
+
+    /* ── Mobile ── */
+    @media(max-width: 700px) {
+      .nav-links {
+        flex: 1 1 0; min-width: 0;
+        overflow-x: auto; -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; flex-wrap: nowrap; gap: 1.2rem;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .side-menu { width: 100%; border-right: none; }
+      .article-body p { font-size: 18px; line-height: 1.78; }
+      .pull p { font-size: 18px !important; }
+    }
+    @media(max-width: 480px) {
+      .nav-links { gap: 1rem; }
+      .article-byline { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Side overlay -->
+<div class="side-overlay" id="sideOverlay"></div>
+
+<!-- Side menu — EXACT SITE HAMBURGER, Séance added between Atelier and Décover -->
+<div class="side-menu" id="sideMenu" role="dialog" aria-label="MODUS navigation">
+  <button class="side-menu-close" id="menuClose" aria-label="Close menu">×</button>
+  <p class="side-menu-label">MODUS · Issue No. 1</p>
+  <nav class="side-menu-nav">
+    <a href="/manifeste" data-en="Manifeste" data-fr="Manifeste">Manifeste</a>
+    <a href="/contents" data-en="Contents" data-fr="Sommaire">Contents</a>
+    <a href="/methodology" data-en="Methodology" data-fr="Méthode">Methodology</a>
+    <a href="/scores" style="color:var(--gold,#D4A84B)" data-en="Index" data-fr="Index">Index</a>
+    <a href="/join" data-en="Join" data-fr="Rejoindre">Join</a>
+    <a href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+    <a href="/seance" class="active" data-en="Séance" data-fr="Séance">Séance</a>
+    <a href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+    <a href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+    <a href="/space" data-en="Space" data-fr="Espace">Space</a>
+    <a href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+    <a href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+    <a href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
+    <a href="/issue-1" data-en="Issue No. 1" data-fr="Numéro 1">Issue No. 1</a>
+    <a href="/acquire" data-en="Acquire" data-fr="Acquérir">Acquire</a>
+  </nav>
+  <p class="side-menu-issue">modus.gallery · 2026</p>
+</div>
+
+<!-- NAV — exact site pattern -->
+<nav class="nav">
+  <div class="nav-left">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="nav-logo" href="https://modus.gallery/" aria-label="MODUS home">
+      <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS" style="height:28px;">
+      <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS" style="height:28px;display:none;">
+    </a>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="/manifeste" data-en="Manifeste" data-fr="Manifeste">Manifeste</a>
+    <a class="nav-link" href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+    <a class="nav-link" href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+    <a class="nav-link" href="/space" data-en="Space" data-fr="Espace">Space</a>
+    <a class="nav-link" href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+    <a class="nav-link" href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+    <a class="nav-link active" href="/seance" data-en="Séance" data-fr="Séance">Séance</a>
+    <a class="nav-link" href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+    <a class="nav-link" href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" id="langBtn" aria-label="Toggle language">
+      <span id="langLabel">FR</span>
+    </button>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+      <div class="theme-dot"></div>
+      <span id="themeLabel">Light</span>
+    </button>
+  </div>
+</nav>
+
+<!-- DEPT IDENTIFIER -->
+<div class="dept-identifier">
+  <span class="dept-id-label">MODUS</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-name">SÉANCE</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-issue">Film & The Live Arts · No. 1 · 2026</span>
+</div>
+
+<!-- HERO — YouTube embed -->
+<section class="hero-video-section">
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/q_3pcBAiIZo?si=rZ76IO7VJZy2u776&rel=0&modestbranding=1&color=white"
+      title="Louis Armstrong — We Have All the Time in the World (On Her Majesty's Secret Service)"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+  <div class="video-stroke"></div>
+  <div class="video-caption">
+    <span class="video-caption-text">
+      <span>Louis Armstrong</span> · We Have All the Time in the World · On Her Majesty's Secret Service · 1969
+    </span>
+    <span class="video-caption-text">
+      Written by John Barry & Hal David · United Artists Records
+    </span>
+  </div>
+</section>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <p class="article-dept">Séance · Film & Cultural Intelligence · Editorial</p>
+  <h1 class="article-title">
+    King Zero and the World<br>That Still <em>Waits for Bond.</em>
+  </h1>
+  <p class="article-deck">
+    On a new novel, an uncast 007, and why sixty years of a single character says something true about what we need from fiction.
+  </p>
+  <div class="article-byline">
+    <span class="byline-name">By <span>Daniel Stanford</span> · Editor-in-Chief, MODUS</span>
+    <span class="byline-meta">Issue No. 1 · June 2026</span>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body">
+
+  <div class="spoiler-flag">⚠ Spoiler — No Time to Die</div>
+
+  <p>There is a moment near the end of <em>No Time to Die</em> — and if you have not seen it, stop here, because what follows cannot be unsaid — where James Bond, standing on a missile platform on a Scottish island, makes a choice that no Bond has ever made before. Daniel Craig's 007 closes not with a martini and a woman and the horizon, but with stillness. With sacrifice.</p>
+
+  <p>With something that feels, against all the genre's instincts, like earned finality.</p>
+
+  <p>And then the song arrives.</p>
+
+  <div class="pull">
+    <p><em>We Have All the Time in the World</em> — first heard in <em>On Her Majesty's Secret Service</em>, Louis Armstrong's voice carrying the most bittersweet promise the franchise ever made — returns here not as nostalgia but as irony. Because we don't. Bond doesn't. The title is the lie, and Fleming knew it when he wrote it, and Barbara Broccoli knew it when she brought it back.</p>
+  </div>
+
+  <p>In a film full of calculated emotional decisions, this is the one that lands without warning. The familiar melody over an unfamiliar grief. What follows is almost unbearable in its quietness. No explosion. No escape. Just Madeleine and the daughter Bond never got to know, driving along a coastline, a child asking about her father. The most domestically devastating final scene the franchise has ever produced — and the only one that earns the word goodbye.</p>
+
+  <p>It is the most human ending the franchise has ever produced. And it made everything that comes next considerably harder.</p>
+
+  <hr class="gold-rule">
+
+  <h2>Enter <em>King Zero.</em></h2>
+
+  <p>Charlie Higson — author of the original Young Bond series — has now written his first full-length adult James Bond continuation novel for Ian Fleming Publications. It is titled <em>King Zero</em>, published by Penguin, and arrives September 24, 2026. Pre-orders are live now.</p>
+
+  <p>The premise is exactly what the literary Bond should be: a murdered agent in the Saudi desert, a secret worth killing to keep, a trail that takes Bond across the globe toward a villain described as unlike any before. Hard. Clean. Geopolitically alive. Higson has spent two decades inside the Bond universe — he understands the grammar of it — and his instinct here is correct: the novel draws from Ian Fleming's original material, not the Craig continuity. This is not a sequel to <em>No Time to Die</em>. It is a reset to the source.</p>
+
+  <p>Speaking at the book's London launch event — his name projected onto Marble Arch — Higson said: <em>"There I finally am after over 20 years of toiling in the world of writing James Bond. My first big, full-length Bond novel is coming out, and it's really exciting to be part of the world of James Bond. It's something special."</em></p>
+
+  <p>It is something special. But it is also, importantly, separate from what Amazon MGM Studios is building with Bond 26. The novel will not be the film. Two versions of the same man, running in parallel. The literary Bond and the cinematic Bond have always occupied different rooms — Fleming's page and the screen were never quite the same character — and that distance, for once, feels like creative freedom rather than contradiction.</p>
+
+  <hr class="gold-rule">
+
+  <h2>The Film — What We <em>Know.</em></h2>
+
+  <p>Denis Villeneuve is directing. Steven Knight — <em>Peaky Blinders</em> — is writing the script. Nina Gold, who cast <em>Game of Thrones</em>, is running screen tests. The studio is searching for a man in his thirties, capable of carrying the role across a decade-long multi-film commitment.</p>
+
+  <p>The frontrunners as of this writing: Callum Turner, 36, the <em>Masters of the Air</em> star with George Clooney's public endorsement. Jacob Elordi — <em>Saltburn</em> — reported to have met with Villeneuve directly and sitting, according to insiders, in pole position. Aaron Taylor-Johnson, long rumoured, still in the conversation. Patrick Gibson, the dark horse, who played a young Bond in the video game <em>007 First Light</em> and generated immediate and serious attention in doing so.</p>
+
+  <p>None of them have been confirmed. The world is still waiting.</p>
+
+  <hr class="gold-rule">
+
+  <h2>The Editor's <em>Position.</em></h2>
+
+  <p>I have seen every Bond film. Several times each. That is not a boast — it is a vantage point. From Connery's first raised eyebrow in <em>Dr. No</em> to Craig's last act of grace in <em>No Time to Die</em>, this franchise has been the longest-running argument in popular cinema for a specific and unfashionable proposition: that elegance is not decoration. That a man who knows which suit to wear, how to move through a room, and what to order without consulting a menu is not an anachronism. He is a standard. Style, in the Bond universe, has always been moral clarity made visible.</p>
+
+  <p>Sean Connery established the template with a physicality that nobody has fully matched — those early films remain among the most rewatchable in the entire canon precisely because Connery never seemed to be performing Bond. He simply was him. Every actor who followed was measured against that, fairly or not. Some had their era, their one great film. Roger Moore had wit where he should have had danger. Brosnan had the surface without the depth. Dalton understood the darkness but the films didn't trust him with it.</p>
+
+  <p>And then Craig walked into frame in <em>Layer Cake</em> — years before anyone was publicly discussing him for the role — wearing a suit, holding a handgun, and something clicked. He looked like Bond. Not the tuxedo-and-quip Bond. The other one. Fleming's Bond. The one that carries something uncomfortable beneath the polish. I remember watching that film and saying it to myself quietly: <em>he looks like James Bond.</em> That was a decade before the world agreed.</p>
+
+  <p>When <em>Casino Royale</em> confirmed it, the franchise did something it had never quite managed before — it made Bond matter again. Not as spectacle. As character. The Craig era at its best — <em>Casino Royale</em>, <em>Skyfall</em>, <em>No Time to Die</em> — is the most emotionally coherent run the series has produced. The suit still fits. The Aston Martin still arrives. But underneath, something is actually at stake.</p>
+
+  <div class="index-verdict">
+    <div class="index-verdict-header">
+      <span class="index-verdict-label">MODUS Index · Séance Evaluation</span>
+      <span class="index-verdict-label">Editor: Daniel Stanford</span>
+    </div>
+    <div class="index-verdict-row">
+      <span class="verdict-title">No Time to Die — Daniel Craig, dir. Cary Joji Fukunaga</span>
+      <span class="verdict-score">47 / 50 · ICON</span>
+    </div>
+    <div class="index-verdict-row">
+      <span class="verdict-title">King Zero — Charlie Higson · Ian Fleming Publications · Penguin</span>
+      <span class="verdict-score pending">Pending · September 2026</span>
+    </div>
+    <div class="index-verdict-row">
+      <span class="verdict-title">Bond 26 — Denis Villeneuve · Amazon MGM Studios</span>
+      <span class="verdict-score pending">Pending · Release TBD</span>
+    </div>
+  </div>
+
+  <p><em>No Time to Die</em> scores 47 out of 50 on the MODUS Index. It loses three points for pacing in the second act, which occasionally mistakes weight for slowness. But on Craft, Sensory Truth, and Timelessness it is close to irreproachable. Hans Zimmer's score. The Matera sequence. The ending. A film that understood the gravity of closing a chapter and did not flinch from it.</p>
+
+  <hr class="gold-rule">
+
+  <h2>The Question Nobody Is <em>Answering.</em></h2>
+
+  <p>Here is what the casting conversation is not saying clearly enough.</p>
+
+  <p>Fleming's Bond — the one <em>King Zero</em> returns to, the one Villeneuve will presumably build from — was inspired by several real figures. Intelligence operatives, wartime agents, men Fleming knew personally or observed at close distance. One of those figures, documented in Fleming scholarship, was not a white Englishman. He was a man of colour, well-educated, well-travelled, operating in environments that required both authority and invisibility. The elegant outsider who passes through every room without appearing to belong to any of them.</p>
+
+  <p>The world may not yet feel ready for an ethnic Bond. But that may be precisely the point. The character, returned to his source, is more complex and less fixed than sixty years of casting has suggested. Villeneuve — a director who builds worlds from first principles, who does not default to the familiar — may be the director who finally asks that question out loud.</p>
+
+  <p>None of the current frontrunners are that choice. Callum Turner is compelling. Jacob Elordi has the height and something mercurial in his stillness. Henry Cavill — and his <em>Man from U.N.C.L.E.</em> performance has always been hiding in plain sight as an audition — could step into a tuxedo tomorrow and the argument would be over before it started. But these things never arrive as expected. The right answer is usually the one the room wasn't quite ready to say.</p>
+
+  <div class="pull">
+    <p>We said Craig looked like Bond in <em>Layer Cake</em> long before anyone agreed. We are paying attention again. When the name lands — we will be the first to score it.</p>
+  </div>
+
+</main>
+
+<!-- ARTICLE FOOTER -->
+<div class="article-footer">
+  <a href="/seance" class="back-link">← Back to Séance</a>
+  <p class="article-footer-sig">Daniel Stanford</p>
+  <p class="article-footer-title">
+    Editor-in-Chief · MODUS<br>
+    <span>Issue No. 1 · Montréal · June 2026</span>
+  </p>
+</div>
+
+<!-- SITE FOOTER -->
+<footer class="footer">
+  <span class="footer-brand">MODUS</span>
+  <span class="footer-copy">
+    MODUS is a luxury taste intelligence publication. Published by Stanford Emporium Inc., Montréal. Issue No. 1, 2026. Editor-in-Chief: Daniel Stanford.
+  </span>
+</footer>
+
+<!-- JS — exact site pattern -->
+<script>
+  // Theme
+  const themeBtn = document.getElementById('themeBtn');
+  const themeLabel = document.getElementById('themeLabel');
+  const root = document.documentElement;
+  const logoBeige = document.querySelector('.logo-beige');
+  const logoBlack = document.querySelector('.logo-black');
+
+  function applyTheme(t) {
+    root.setAttribute('data-theme', t);
+    themeLabel.textContent = t === 'dark' ? 'Light' : 'Dark';
+    if (logoBeige) logoBeige.style.display = t === 'dark' ? 'block' : 'none';
+    if (logoBlack) logoBlack.style.display = t === 'light' ? 'block' : 'none';
+    localStorage.setItem('modus-theme', t);
+  }
+  applyTheme(localStorage.getItem('modus-theme') || 'dark');
+  themeBtn.addEventListener('click', () => {
+    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+
+  // Language
+  let lang = 'en';
+  const langBtn = document.getElementById('langBtn');
+  const langLabel = document.getElementById('langLabel');
+  langBtn.addEventListener('click', () => {
+    lang = lang === 'en' ? 'fr' : 'en';
+    langLabel.textContent = lang === 'en' ? 'FR' : 'EN';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang) || el.textContent;
+    });
+  });
+
+  // Hamburger
+  const menuBtn = document.getElementById('menuBtn');
+  const sideMenu = document.getElementById('sideMenu');
+  const sideOverlay = document.getElementById('sideOverlay');
+  const menuClose = document.getElementById('menuClose');
+
+  function openMenu() {
+    sideMenu.classList.add('open');
+    sideOverlay.classList.add('open');
+    menuBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    sideMenu.classList.remove('open');
+    sideOverlay.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+  menuBtn.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  sideOverlay.addEventListener('click', closeMenu);
+</script>
+
+</body>
+</html>

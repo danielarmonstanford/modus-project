@@ -3,24 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Séance — MODUS · Issue No. 1</title>
-  <meta name="description" content="MODUS Séance — Issue No. 1. A new MODUS department. Full feature forthcoming.">
-  <meta name="robots" content="index, follow">
+  <title>Séance — Film &amp; Cultural Intelligence · MODUS</title>
+  <meta name="description" content="MODUS Séance: film and cultural intelligence — reviews and editorial on the work that holds the screen, the stage, and the page. James Bond, In the Grey, and the cinema that matters, scored by the MODUS Index.">
+  <meta name="keywords" content="MODUS Séance, film criticism, cultural intelligence, James Bond, King Zero, In the Grey, Guy Ritchie, film review, Daniel Stanford, MODUS Index, cinema, live arts">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="Daniel Stanford">
   <link rel="canonical" href="https://modus.gallery/seance">
-  <meta property="og:title" content="Séance — MODUS · Issue No. 1">
-  <meta property="og:description" content="A new MODUS department. Full feature forthcoming.">
+  <meta property="og:title" content="Séance — Film & Cultural Intelligence · MODUS">
+  <meta property="og:description" content="Film and cultural intelligence — the work that holds the screen, the stage, and the page. Scored by the MODUS Index.">
   <meta property="og:url" content="https://modus.gallery/seance">
   <meta property="og:site_name" content="MODUS">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1200/v1781612205/gemini-2.5-flash-image_Combine_these_2_images_and_make_into_a_horizontal_Movie_Poster-2_khlgwm.jpg">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Séance — Film & Cultural Intelligence · MODUS">
+  <meta name="twitter:description" content="Film and cultural intelligence — the work that holds the screen, the stage, and the page.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1200/v1781612205/gemini-2.5-flash-image_Combine_these_2_images_and_make_into_a_horizontal_Movie_Poster-2_khlgwm.jpg">
   <meta name="theme-color" content="#06080C">
   <meta name="llms" content="https://modus.gallery/llms.txt">
   <meta name="translation-enabled" content="true">
   <link rel="alternate" hreflang="x-default" href="https://modus.gallery/seance">
   <link rel="alternate" hreflang="en" href="https://modus.gallery/seance">
   <link rel="alternate" hreflang="fr" href="https://modus.gallery/seance">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Séance — Film & Cultural Intelligence",
+    "headline": "MODUS Séance — Film & The Live Arts",
+    "description": "Film and cultural intelligence from MODUS: reviews and editorial on the work that holds the screen, the stage, and the page.",
+    "url": "https://modus.gallery/seance",
+    "inLanguage": ["en", "fr"],
+    "isPartOf": { "@type": "WebSite", "name": "MODUS", "url": "https://modus.gallery" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MODUS",
+      "url": "https://modus.gallery",
+      "founder": { "@type": "Person", "name": "Daniel Stanford", "sameAs": ["https://www.wikidata.org/wiki/Q140172278"] }
+    },
+    "about": [
+      { "@type": "Thing", "name": "Film criticism" },
+      { "@type": "Thing", "name": "Cinema" },
+      { "@type": "Thing", "name": "Cultural intelligence" },
+      { "@type": "Thing", "name": "The live arts" }
+    ],
+    "hasPart": [
+      {
+        "@type": "Article",
+        "headline": "King Zero and the World That Still Waits for Bond",
+        "url": "https://modus.gallery/seance/king-zero-bond",
+        "author": { "@type": "Person", "name": "Daniel Stanford" },
+        "datePublished": "2026-06-16"
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,6 +156,77 @@
       .nav-links::-webkit-scrollbar{display:none}
       .hero-byline p{font-size:18px}
     }
+
+    /* ── Coming Soon Strip ── */
+    .coming-soon-strip {
+      border-top: 0.5px solid var(--border-gold);
+      border-bottom: 0.5px solid var(--border-gold);
+      background: rgba(212,168,75,0.03);
+      padding: 3rem var(--gutter);
+      margin: 0;
+    }
+    .coming-soon-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .coming-soon-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .coming-soon-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 0.9;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .coming-soon-title em {
+      font-style: italic;
+      color: rgba(212,168,75,0.6);
+    }
+    .coming-soon-sub {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 1.9;
+    }
+    .coming-soon-body {
+      font-family: var(--font-ed);
+      font-size: clamp(16px, 1.6vw, 18px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--text-dim);
+      margin-bottom: 1.4rem;
+    }
+    .coming-soon-body em {
+      font-style: normal;
+      color: var(--text);
+    }
+    .coming-soon-status {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+    @media(max-width: 700px) {
+      .coming-soon-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .coming-soon-title { font-size: clamp(40px, 12vw, 56px); }
+    }
   </style>
 </head>
 <body>
@@ -203,6 +314,29 @@
     </span>
   </a>
 </section>
+
+<!-- COMING SOON — In the Grey -->
+<div class="coming-soon-strip">
+  <div class="coming-soon-inner">
+    <div class="coming-soon-left">
+      <p class="coming-soon-eyebrow">Coming to Séance</p>
+      <h2 class="coming-soon-title">In the <em>Grey.</em></h2>
+      <p class="coming-soon-sub">
+        Guy Ritchie · Henry Cavill · Jake Gyllenhaal<br>
+        Lionsgate US / Black Bear International
+      </p>
+    </div>
+    <div class="coming-soon-right">
+      <p class="coming-soon-body">
+        A review unlike any other in film publishing — written from inside the production.
+        MODUS evaluates <em>In the Grey</em> not only as a cinematic object
+        but as a study in what exceptional filmmaking requires before a frame is shot.
+        The craft. The commitment. The standard Ritchie holds and why it matters.
+      </p>
+      <p class="coming-soon-status">Review · Issue No. 1 · Publishing Soon</p>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="footer">

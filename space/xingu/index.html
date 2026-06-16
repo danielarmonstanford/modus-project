@@ -108,8 +108,16 @@
     .intercept-body p+p{margin-top:1.2em}
     .wp-quote{display:inline;font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;background:rgba(139,115,85,0.15);border:0.5px solid rgba(139,115,85,0.3);padding:2px 8px;color:var(--terrain-stone)}
 
+    /* DEPT IDENTIFIER */
+    .dept-identifier{display:flex;align-items:center;gap:0.6rem;padding:0.75rem var(--gutter);border-bottom:0.5px solid var(--border-gold,rgba(212,168,75,0.25));background:var(--bg);margin-top:var(--nav-h)}
+    .dept-id-label,.dept-id-sep,.dept-id-name,.dept-id-issue{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase}
+    .dept-id-label{color:var(--text-dim)}
+    .dept-id-sep{color:var(--gold);opacity:0.5}
+    .dept-id-name{color:var(--gold);font-weight:400}
+    .dept-id-issue{color:var(--text-dim);opacity:0.6;letter-spacing:0.2em}
+
     /* MAIN LAYOUT */
-    main{padding-top:var(--nav-h)}
+    main{padding-top:0}
     .w{max-width:1240px;margin:0 auto}
     .rule{height:0.5px;background:var(--border);max-width:1240px;margin:0 auto}
 
@@ -357,6 +365,14 @@
     <span id="themeLabel">Light</span>
   </button>
 </nav>
+
+<div class="dept-identifier">
+  <span class="dept-id-label">MODUS</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-name">SPACE</span>
+  <span class="dept-id-sep">·</span>
+  <span class="dept-id-issue">NO. 1 · 2026</span>
+</div>
 
 <!-- HERO — Tetro's own photography from their site -->
 <header class="hero" role="banner" aria-label="Casa Xingu — Tetro Arquitetura — MODUS Space feature">

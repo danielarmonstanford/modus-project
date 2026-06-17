@@ -77,7 +77,7 @@
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--stone);flex-shrink:0}
 
     /* BREAKING BAND */
-    .breaking{background:var(--gold);padding:0.6rem var(--gutter);display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:var(--nav-h)}
+    .breaking{background:var(--gold);padding:0.6rem var(--gutter);display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:0}
     .breaking-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--black);font-weight:400}
     .breaking-text{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(6,8,12,0.8)}
 
@@ -186,7 +186,13 @@
       .body p{font-size:18px!important;line-height:1.78;color:var(--text)}
       .i2-title{font-size:clamp(30px,9vw,52px)!important}
     }
-  </style>
+      .dept-identifier{display:flex;align-items:center;gap:0.6rem;padding:0.75rem var(--gutter,clamp(1.25rem,5vw,4rem));border-bottom:0.5px solid var(--border-gold,rgba(212,168,75,0.25));background:var(--bg);margin-top:var(--nav-h,64px)}
+    .dept-id-label,.dept-id-sep,.dept-id-name,.dept-id-issue{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.28em;text-transform:uppercase}
+    .dept-id-label{color:var(--text-dim,rgba(234,224,204,0.55))}
+    .dept-id-sep{color:var(--gold,#D4A84B);opacity:0.5}
+    .dept-id-name{color:var(--gold,#D4A84B);font-weight:400}
+    .dept-id-issue{color:var(--text-dim,rgba(234,224,204,0.55));opacity:0.6;letter-spacing:0.2em}
+</style>
 
 <script type="application/ld+json">
 {
@@ -340,6 +346,14 @@
     <span id="themeLabel">Light</span>
   </button>
 </nav>
+
+<div class="dept-identifier">
+  <span class="dept-id-label">MODUS</span>
+  <span class="dept-id-sep">&middot;</span>
+  <span class="dept-id-name">SPACE</span>
+  <span class="dept-id-sep">&middot;</span>
+  <span class="dept-id-issue">NO. 1 &middot; 2026</span>
+</div>
 
 <!-- BREAKING BAND -->
 <div class="breaking" role="alert" aria-live="polite">

@@ -57,6 +57,7 @@
 
     /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);background:var(--nav-bg);border-bottom:0.5px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:background var(--ease)}
+    .nav-left{display:flex;align-items:center;gap:0;flex-shrink:0}
     .nav-logo{display:flex;align-items:center;min-height:44px;line-height:0;gap:0;flex-shrink:0;}
     .nav-logo img{height:28px;width:auto}
     [data-theme="dark"] .logo-black{display:none}
@@ -253,11 +254,10 @@
     @media(max-width:768px){.pg-slide{flex:0 0 calc((100% - 6px) / 1.8)}}
     @media(max-width:600px){.entries{grid-template-columns:1fr}.verdict-key{gap:1rem}.filter-bar{overflow-x:auto}}
         @media(max-width:768px){
-      .nav{padding:0 0.5rem 0 0}
+      .nav{padding:0 0.25rem 0 0}
       .menu-btn{padding:8px 2px 8px 0}
       .nav-logo img{margin-left:2px}
-      .nav-links{flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap;gap:1.2rem}
-      .nav-links::-webkit-scrollbar{display:none}
+      .nav-links{display:none}
       #themeBtn span{display:none}
       #langLabel{display:inline!important}
     }
@@ -325,11 +325,10 @@
       background:none; border:none; cursor:pointer;
       padding:10px 8px; display:flex; flex-direction:column;
       gap:5px; min-height:44px; justify-content:center;
-      margin-right:1rem;
     }
     .menu-btn span {
       display:block; width:22px; height:1px;
-      background:currentColor; transition:transform 0.3s, opacity 0.3s;
+      background:var(--text); transition:transform 0.3s, opacity 0.3s;
     }
 
   
@@ -661,6 +660,17 @@
       <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
       <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
     </a>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="/manifeste" data-en="Manifeste" data-fr="Manifeste">Manifeste</a>
+    <a class="nav-link" href="/figures" data-en="Figures" data-fr="Figures">Figures</a>
+    <a class="nav-link" href="/objects" data-en="Objects" data-fr="Objets">Objects</a>
+    <a class="nav-link" href="/space" data-en="Space" data-fr="Espace">Space</a>
+    <a class="nav-link" href="/terrain" data-en="Terrain" data-fr="Terrain">Terrain</a>
+    <a class="nav-link" href="/decover" data-en="Décover" data-fr="Décover">Décover</a>
+    <a class="nav-link" href="/seance" data-en="Séance" data-fr="Séance">Séance</a>
+    <a class="nav-link" href="/atelier" data-en="Atelier" data-fr="Atelier">Atelier</a>
+    <a class="nav-link active" href="/last-word" data-en="Last Word" data-fr="Dernier Mot">Last Word</a>
   </div>
   <button class="theme-btn" id="langBtn" aria-label="Toggle language"><span id="langLabel">FR</span></button>
   <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">

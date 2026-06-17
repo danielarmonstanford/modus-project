@@ -228,7 +228,7 @@
     .mi-score span{font-size:20px;color:var(--text-dim);font-weight:300}
     .mi-axes{display:flex;flex-direction:column;gap:9px}
     .mi-axis{display:grid;grid-template-columns:1fr 90px 24px;align-items:center;gap:10px}
-    .mi-aname{font-family:var(--font-ui);font-size:13px;color:var(--text-dim);letter-spacing:0.04em}
+    .mi-aname{font-family:var(--font-ui);font-size:10px;color:var(--text-dim);letter-spacing:0.14em}
     .mi-bar{height:2px;background:var(--border);border-radius:1px;overflow:hidden}
     .mi-fill{height:100%;background:var(--gold);border-radius:1px;transition:width 1.2s var(--ease-spring)}
     .mi-val{font-family:var(--font-ed);font-size:15px;font-weight:400;text-align:right;color:var(--text)}
@@ -237,15 +237,21 @@
     .lead-img-col{display:flex;flex-direction:column;gap:0.8rem}
     .lead-photo{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center}
     .lead-photo-2{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 35%;margin-top:0.8rem}
-    .photo-cap{font-family:var(--font-ed);font-size:12px;font-style:italic;color:var(--text-dim);line-height:1.5}
-    .photo-credit{font-family:var(--font-ui);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);opacity:0.6}
+    .photo-cap {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
 
     /* ===== SECTION HEADER ===== */
     .section-hd{
       padding:4rem var(--gutter) 2rem;max-width:1200px;margin:0 auto;
       display:flex;align-items:baseline;justify-content:space-between;
     }
-    .section-label{font-family:var(--font-ui);font-size:13px;letter-spacing:0.34em;text-transform:uppercase;color:var(--text-dim)}
+    .section-label{font-family:var(--font-ui);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim)}
     .section-title{font-family:var(--font-ed);font-size:clamp(24px,3vw,36px);font-weight:400;letter-spacing:-0.02em;color:var(--text)}
 
     /* ===== CARD GRID ===== */
@@ -259,10 +265,10 @@
     .tc-img{width:100%;aspect-ratio:4/3;overflow:hidden}
     .tc-photo{width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--ease-spring)}
     .tc:hover .tc-photo{transform:scale(1.04)}
-    .tc-loc{font-family:var(--font-ui);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-top:0.2rem}
+    .tc-loc{font-family:var(--font-ui);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-top:0.2rem}
     .tc-name{font-family:var(--font-ed);font-size:clamp(18px,2vw,24px);font-weight:400;letter-spacing:-0.02em;line-height:1.1;color:var(--text)}
     .tc-desc{font-family:var(--font-ed);font-size:15px;font-style:italic;color:var(--text);line-height:1.6}
-    .tc-meta{font-family:var(--font-ui);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);display:flex;gap:1rem}
+    .tc-meta{font-family:var(--font-ui);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);display:flex;gap:1rem}
     .tc-score{color:var(--gold)}
 
     /* Placeholder cards for Amangiri / La Réserve / Six Senses */
@@ -319,7 +325,7 @@
       transition:border-color var(--ease);
     }
     .footer-brand{font-family:var(--font-ed);font-size:22px;letter-spacing:-0.02em;color:var(--text)}
-    .footer-copy{font-family:var(--font-ui);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
+    .footer-copy{font-family:var(--font-ui);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
 
     /* ===== ANIMATIONS ===== */
     @keyframes fadeU{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}

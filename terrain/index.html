@@ -267,7 +267,7 @@
     .tc:hover .tc-photo{transform:scale(1.04)}
     .tc-loc{font-family:var(--font-ui);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-top:0.2rem}
     .tc-name{font-family:var(--font-ed);font-size:clamp(18px,2vw,24px);font-weight:400;letter-spacing:-0.02em;line-height:1.1;color:var(--text)}
-    .tc-desc{font-family:var(--font-ed);font-size:15px;font-style:italic;color:var(--text);line-height:1.6}
+    .tc-desc{font-family:var(--font-ed);font-size:16.5px;font-style:italic;color:var(--text);line-height:1.7}
     .tc-meta{font-family:var(--font-ui);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);display:flex;gap:1rem}
     .tc-score{color:var(--gold)}
 
@@ -446,7 +446,7 @@
 
     @media(max-width: 700px) {
       /* Body text minimum */
-      .body p { font-size: 18px; line-height: 1.75;
+      .body p { font-size:clamp(1.15rem,1.6vw,1.35rem); line-height:1.85;
       color: var(--text);
     }
       /* Deck pull quote */
@@ -457,6 +457,17 @@
       .mi-score-big { font-size: 48px; }
       /* Part/section titles */
       .part-title { font-size: clamp(28px, 7vw, 48px); }
+    }
+  
+    /* MODUS-MOBILE-FLOOR */
+    @media(max-width:768px){
+      html{font-size:20px}
+      .footer-copy,.photo-credit,.photo-cap,.dept-identifier,
+      .mi-label,.mi-axis-label,.section-label,.tc-meta,.tc-loc,.mi-aname,
+      .card-meta,.card-byline,.coming-sub,.sa-attr,.mi-note,.ed-pos-label,
+      .video-label,.spec-title,.spec-key,.deck-attr,.testimony-attr,
+      .vtext p,.compare-table th,.axis-bar-label,.mi-car-sub,
+      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:12px!important}
     }
   </style>
   <!-- AI agent discoverability -->

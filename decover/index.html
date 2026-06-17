@@ -107,7 +107,7 @@
 
     /* FEATURE LAYOUT */
     .feature{max-width:1240px;margin:0 auto;padding:4rem var(--gutter) 0;display:grid;grid-template-columns:1fr 400px;gap:5rem;align-items:start}
-    .body p{font-size: clamp(17px,1.65vw,18px);font-weight:300;line-height:1.92;color:var(--text)}
+    .body p{font-size:clamp(1.15rem,1.6vw,1.35rem);font-weight:300;line-height:1.85;color:var(--text)}
     .body p+p{margin-top:1.3em}
     .body h3{font-size:clamp(22px,2.6vw,34px);font-weight:300;letter-spacing:-0.02em;line-height:1.05;color:var(--text);margin:3rem 0 1.1rem}
     .body h3 em{font-style:italic;color:var(--gold)}
@@ -213,7 +213,7 @@
       body{font-size:17px;line-height:1.7}
       .hero-title{font-size:clamp(44px,13vw,72px)!important}
       .opening p{font-size:clamp(19px,5vw,26px)!important}
-      .body p{font-size:18px!important;line-height:1.78;color:var(--text)}
+      .body p{font-size:clamp(1.15rem,1.6vw,1.35rem)!important;line-height:1.85;color:var(--text)}
       .st-score{font-size:52px!important}
       .sa{grid-template-columns:1fr;gap:6px}
       .sa-bar{display:none}
@@ -241,7 +241,7 @@
 
     @media(max-width: 700px) {
       /* Body text minimum */
-      .body p { font-size: 18px; line-height: 1.75;
+      .body p { font-size:clamp(1.15rem,1.6vw,1.35rem); line-height:1.85;
       color: var(--text);
     }
       /* Deck pull quote */
@@ -283,6 +283,17 @@
       .nav-links{gap:1rem;flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}
       .nav-links::-webkit-scrollbar{display:none}
       .side-menu{width:100%;border-right:none}
+    }
+  
+    /* MODUS-MOBILE-FLOOR */
+    @media(max-width:768px){
+      html{font-size:20px}
+      .footer-copy,.photo-credit,.photo-cap,.dept-identifier,
+      .mi-label,.mi-axis-label,.section-label,.tc-meta,.tc-loc,.mi-aname,
+      .card-meta,.card-byline,.coming-sub,.sa-attr,.mi-note,.ed-pos-label,
+      .video-label,.spec-title,.spec-key,.deck-attr,.testimony-attr,
+      .vtext p,.compare-table th,.axis-bar-label,.mi-car-sub,
+      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:12px!important}
     }
   </style>
 

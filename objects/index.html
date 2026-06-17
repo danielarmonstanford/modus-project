@@ -103,7 +103,7 @@
 
     /* ARTICLE GRID */
     .article-grid{display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:start}
-    .body p{font-family:var(--font-ed);font-size:clamp(17px, 1.6vw, 18px);font-weight:300;line-height:1.88;color:var(--text)}
+    .body p{font-family:var(--font-ed);font-size:clamp(1.15rem,1.6vw,1.35rem);font-weight:300;line-height:1.85;color:var(--text)}
     .body p+p{margin-top:1.3em}
     .body h3{font-family:var(--font-display);font-size:clamp(20px,2.2vw,27px);font-weight:400;letter-spacing:-0.02em;margin:2.5rem 0 1rem;color:var(--text)}
 
@@ -197,7 +197,7 @@
     @media(max-width:1040px){.article-grid{grid-template-columns:1fr}.sidebar{position:static}}
     @media(max-width:700px){
       /* Body text minimum */
-      .body p { font-size: 18px; line-height: 1.75;
+      .body p { font-size:clamp(1.15rem,1.6vw,1.35rem); line-height:1.85;
       color: var(--text);
     }
       /* Deck pull quote */
@@ -304,6 +304,17 @@
     .dept-id-sep   { color: var(--gold); opacity: 0.5; }
     .dept-id-name  { color: var(--gold); font-weight: 400; }
     .dept-id-issue { color: var(--text-dim); opacity: 0.6; letter-spacing: 0.2em; }
+  
+    /* MODUS-MOBILE-FLOOR */
+    @media(max-width:768px){
+      html{font-size:20px}
+      .footer-copy,.photo-credit,.photo-cap,.dept-identifier,
+      .mi-label,.mi-axis-label,.section-label,.tc-meta,.tc-loc,.mi-aname,
+      .card-meta,.card-byline,.coming-sub,.sa-attr,.mi-note,.ed-pos-label,
+      .video-label,.spec-title,.spec-key,.deck-attr,.testimony-attr,
+      .vtext p,.compare-table th,.axis-bar-label,.mi-car-sub,
+      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:12px!important}
+    }
   </style>
   <!-- AI agent discoverability -->
   <meta name="llms" content="https://modus.gallery/llms.txt">

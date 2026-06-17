@@ -246,7 +246,6 @@
 
     /* ── Mobile ── */
     @media(max-width:768px){
-      html{font-size:20px}
       .nav-links{display:flex;flex:1 1 0;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap;gap:1.2rem}
       .nav-links::-webkit-scrollbar{display:none}
       .hero{min-height:80vh;padding-bottom:3rem}
@@ -296,6 +295,17 @@
       .mi-score-big { font-size: 48px; }
       /* Part/section titles */
       .part-title { font-size: clamp(28px, 7vw, 48px); }
+    }
+  
+    /* MODUS-MOBILE-FLOOR */
+    @media(max-width:768px){
+      html{font-size:20px}
+      .footer-copy,.photo-credit,.photo-cap,.dept-identifier,
+      .mi-label,.mi-axis-label,.section-label,.tc-meta,.tc-loc,.mi-aname,
+      .card-meta,.card-byline,.coming-sub,.sa-attr,.mi-note,.ed-pos-label,
+      .video-label,.spec-title,.spec-key,.deck-attr,.testimony-attr,
+      .vtext p,.compare-table th,.axis-bar-label,.mi-car-sub,
+      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:12px!important}
     }
   </style>
 </head>

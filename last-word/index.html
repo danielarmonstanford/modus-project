@@ -358,7 +358,7 @@
 
     @media(max-width: 700px) {
       /* Body text minimum */
-      .body p { font-size: 18px; line-height: 1.75;
+      .body p { font-size:clamp(1.15rem,1.6vw,1.35rem); line-height:1.85;
       color: var(--text);
     }
       /* Deck pull quote */
@@ -369,6 +369,17 @@
       .mi-score-big { font-size: 48px; }
       /* Part/section titles */
       .part-title { font-size: clamp(28px, 7vw, 48px); }
+    }
+  
+    /* MODUS-MOBILE-FLOOR */
+    @media(max-width:768px){
+      html{font-size:20px}
+      .footer-copy,.photo-credit,.photo-cap,.dept-identifier,
+      .mi-label,.mi-axis-label,.section-label,.tc-meta,.tc-loc,.mi-aname,
+      .card-meta,.card-byline,.coming-sub,.sa-attr,.mi-note,.ed-pos-label,
+      .video-label,.spec-title,.spec-key,.deck-attr,.testimony-attr,
+      .vtext p,.compare-table th,.axis-bar-label,.mi-car-sub,
+      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:12px!important}
     }
   </style>
   <!-- AI agent discoverability -->

@@ -169,9 +169,9 @@
   }
 
   .contents-header h2 {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-display);
     font-size:12px;
-    letter-spacing: 0.4em;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 400;
@@ -277,6 +277,7 @@
   }
 
   .card-title {
+    font-family: var(--font-display);
     font-size: 28px;
     font-weight: 400;
     letter-spacing: 0.02em;
@@ -369,7 +370,8 @@
     .topbar { padding: 1rem 0.5rem 1rem 0; }
     .footer { flex-direction: column; gap: 0.5rem; padding: 1.4rem 1.2rem; }
     .card-typographic .card-image-letter { font-size: 100px; }
-    .card-title { font-size: 24px; }
+    .card-title { font-family: var(--font-display);
+    font-size: 24px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -385,20 +387,20 @@
 .side-menu.open{transform:translateX(0);}
 .side-menu-close{position:absolute;top:1.25rem;right:1.25rem;
   background:none;border:none;cursor:pointer;font-size:1.5rem;
-  color:var(--text-dim,rgba(234,224,204,0.4));min-height:44px;min-width:44px;
+  color:var(--text-dim,rgba(234,224,204,0.88));min-height:44px;min-width:44px;
   display:flex;align-items:center;justify-content:center;}
 .side-menu-close:hover{color:var(--text,#EAE0CC);}
 .side-menu-label{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.32em;
   text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:2rem;}
 .side-menu-nav{display:flex;flex-direction:column;;overflow-y:auto;flex:1 1 0;min-height:0}
 .side-menu-nav a{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(0.9rem,2vw,1.15rem);
-  font-weight:300;font-style:italic;color:var(--text-dim,rgba(234,224,204,0.4));line-height:1.1;
+  font-weight:300;font-style:italic;color:var(--text-dim,rgba(234,224,204,0.88));line-height:1.1;
   padding:0.09rem 0;border-bottom:0.5px solid var(--border,rgba(234,224,204,0.08));
   transition:color 0.2s,padding-left 0.2s;text-decoration:none;}
 .side-menu-nav a:first-child{border-top:0.5px solid var(--border,rgba(234,224,204,0.08));}
 .side-menu-nav a:hover{color:var(--text,#EAE0CC);padding-left:0.5rem;}
 .side-menu-issue{margin-top:auto;font-family:'DM Mono',monospace;font-size:13px;
-  letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim,rgba(234,224,204,0.4));}
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim,rgba(234,224,204,0.88));}
 .side-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);
   z-index:299;opacity:0;pointer-events:none;transition:opacity 0.4s ease;}
 .side-overlay.open{opacity:1;pointer-events:auto;}

@@ -292,15 +292,11 @@
       --frame-bg:#F4EEE2;
     }
 
-    /* Index Authorities theme-aware colors */
-    .ia-name { color: #ffffff; }
-    [data-theme="light"] .ia-name { color: #1B2340; }
-    .ia-sub { color: rgba(255,255,255,0.72); }
-    [data-theme="light"] .ia-sub { color: rgba(27,35,64,0.75); }
-    .ia-year { color: #D4A84B; font-weight: 600; }
-    [data-theme="light"] .ia-year { color: #1B2340; font-weight: 600; }
-    .ia-prov { color: rgba(255,255,255,0.9); }
-    [data-theme="light"] .ia-prov { color: #1B2340; }
+    /* Index Authorities — follows var(--text) exactly like Available Through */
+    .ia-name { color: var(--text); }
+    .ia-sub  { color: var(--text-dim); }
+    .ia-year { color: var(--gold); font-weight: 600; }
+    .ia-prov { color: var(--text); }
 
     *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
     html { font-size:16px; }

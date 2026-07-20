@@ -292,6 +292,12 @@
       --frame-bg:#F4EEE2;
     }
 
+    /* Index Authorities theme-aware colors */
+    .ia-name { color: #f0ece3; }
+    [data-theme="light"] .ia-name { color: #1B2340; }
+    .ia-year { color: var(--gold); }
+    [data-theme="light"] .ia-year { color: #1B2340; font-weight: 600; }
+
     *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
     html { font-size:16px; }
     body { font-family:var(--font-ed); background:var(--bg); color:var(--text);
@@ -786,25 +792,25 @@
       <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem">Index Authorities</p>
       <div style="display:flex;flex-wrap:wrap;gap:2.5rem">
         <div>
-          <p style="font-family:var(--font-display);font-weight:400;font-size:clamp(18px,1.8vw,22px);color:#f0ece3;margin-bottom:5px">Marie-Christine Gilbert PhD</p>
+          <p class="ia-name" style="font-family:var(--font-display);font-weight:400;font-size:clamp(18px,1.8vw,22px);margin-bottom:5px">Marie-Christine Gilbert PhD</p>
           <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)">National Gallery of Canada</p>
         </div>
         <div>
-          <p style="font-family:var(--font-display);font-weight:400;font-size:clamp(18px,1.8vw,22px);color:#f0ece3;margin-bottom:5px">Cleber Papa</p>
+          <p class="ia-name" style="font-family:var(--font-display);font-weight:400;font-size:clamp(18px,1.8vw,22px);margin-bottom:5px">Cleber Papa</p>
           <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)">Cultural Director · MIS São Paulo, Brazil</p>
         </div>
         <div>
-          <p style="font-family:var(--font-display);font-weight:400;font-size:clamp(18px,1.8vw,22px);color:#f0ece3;margin-bottom:5px">Daniel Armon Stanford</p>
+          <p class="ia-name" style="font-family:var(--font-display);font-weight:400;font-size:clamp(18px,1.8vw,22px);margin-bottom:5px">Daniel Armon Stanford</p>
           <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)">Editor-in-Chief · MODUS</p>
         </div>
       </div>
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:0.5px solid var(--border)">
         <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.25rem">Institutional Provenance Chain</p>
         <div style="display:flex;flex-direction:column;gap:0.85rem">
-          <p style="font-family:var(--font-mono);font-size:13px;line-height:1.7;color:var(--text)"><span style="color:var(--gold);margin-right:0.6em">2014–2015</span>Art Basel Week, Miami &middot; Solo and group exhibitions, Macaya Gallery and private estate placement</p>
-          <p style="font-family:var(--font-mono);font-size:13px;line-height:1.7;color:var(--text)"><span style="color:var(--gold);margin-right:0.6em">2016</span>Cornell Art Museum &middot; Debut group exhibition, shown alongside Andy Warhol and Russell Young</p>
-          <p style="font-family:var(--font-mono);font-size:13px;line-height:1.7;color:var(--text)"><span style="color:var(--gold);margin-right:0.6em">2017</span>Chamber of Commerce Brazil-Canada (CCBC) &middot; Official Canadian photographer, "Exchanging Glances" Brasília–Ottawa edition</p>
-          <p style="font-family:var(--font-mono);font-size:13px;line-height:1.7;color:var(--text)"><span style="color:var(--gold);margin-right:0.6em">2018</span>Museu da Imagem e do Som (MIS), São Paulo &middot; Cleber Papa, Cultural Director, rated 49/50, solo exhibition invitation (ongoing)</p>
+          <p style="font-family:var(--font-mono);font-size:13px;line-height:1.7;color:var(--text)"><span class="ia-year" style="margin-right:0.6em">2014–2015</span>Art Basel Week, Miami &middot; Solo and group exhibitions, Macaya Gallery and private estate placement</p>
+          <p style="font-family:var(--font-mono);font-size:13px;line-height:1.7;color:var(--text)"><span class="ia-year" style="margin-right:0.6em">2016</span>Cornell Art Museum &middot; Debut group exhibition, shown alongside Andy Warhol and Russell Young</p>
+          <p style="font-family:var(--font-mono);font-size:13px;line-height:1.7;color:var(--text)"><span class="ia-year" style="margin-right:0.6em">2017</span>Chamber of Commerce Brazil-Canada (CCBC) &middot; Official Canadian photographer, "Exchanging Glances" Brasília–Ottawa edition</p>
+          <p style="font-family:var(--font-mono);font-size:13px;line-height:1.7;color:var(--text)"><span class="ia-year" style="margin-right:0.6em">2018</span>Museu da Imagem e do Som (MIS), São Paulo &middot; Cleber Papa, Cultural Director, rated 49/50, solo exhibition invitation (ongoing)</p>
         </div>
       </div>
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:0.5px solid var(--border)">

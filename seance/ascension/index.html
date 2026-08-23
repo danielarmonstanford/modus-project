@@ -91,14 +91,18 @@
 
     /* ── Hero ── */
     .hero-cover{position:relative;width:100%;overflow:hidden;line-height:0}
-    .hero-cover img{width:100%;height:100svh;min-height:600px;object-fit:cover;object-position:52% 12%;display:block}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.45) 0%,rgba(6,8,12,0.05) 38%,rgba(6,8,12,0.12) 58%,rgba(6,8,12,0.88) 100%);pointer-events:none}
-    .hero-text{position:absolute;bottom:0;left:0;right:0;padding:clamp(2.5rem,6vw,5rem) var(--gutter)}
-    .hero-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;display:block}
-    .hero-h1{font-family:var(--font-display);font-size:clamp(5rem,15vw,11rem);font-weight:normal;letter-spacing:-0.05em;line-height:0.85;color:#F0E8D5;margin:0 0 0.5rem}
-    .hero-tagline{font-family:var(--font-ed);font-size:clamp(1.1rem,2.5vw,1.8rem);font-style:italic;color:rgba(240,232,213,0.82);margin:0 0 0.35rem;line-height:1.2}
-    .hero-translation{font-family:var(--font-mono);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.5rem;display:block}
-    .hero-goat-year{font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,232,213,0.55);margin-bottom:1.75rem;display:block}
+    .hero-cover img{width:100%;height:100svh;min-height:600px;object-fit:cover;object-position:50% 18%;display:block}
+    /* heavy gradient: dark top for ASCENSION, dark bottom for body copy */
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.72) 0%,rgba(6,8,12,0.28) 42%,rgba(6,8,12,0.55) 65%,rgba(6,8,12,0.92) 100%);pointer-events:none}
+    /* space-between: title at top, copy at bottom */
+    .hero-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(2rem,5vw,4.5rem) clamp(2rem,5vw,5rem)}
+    .hero-top{display:flex;flex-direction:column}
+    .hero-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+    .hero-h1{font-family:var(--font-display);font-size:clamp(4.5rem,14vw,11rem);font-weight:normal;letter-spacing:-0.05em;line-height:0.85;color:#F0E8D5;margin:0}
+    .hero-bottom{display:flex;flex-direction:column;gap:0}
+    .hero-tagline{font-family:var(--font-ed);font-size:clamp(1.25rem,2.8vw,2rem);font-style:italic;color:#F0E8D5;margin:0 0 0.5rem;line-height:1.2}
+    .hero-translation{font-family:var(--font-mono);font-size:clamp(11px,1.2vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,1);margin:0 0 0.6rem;display:block}
+    .hero-goat-year{font-family:var(--font-mono);font-size:clamp(10px,1.1vw,12px);letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,232,213,0.8);margin-bottom:1.5rem;display:block;line-height:1.6}
     .hero-ctas{display:flex;gap:0.75rem;flex-wrap:wrap}
     .btn-gold{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--font-mono);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:var(--gold);padding:13px 28px;transition:opacity var(--ease)}
     .btn-gold:hover{opacity:0.85}
@@ -264,12 +268,17 @@
     @media(max-width:600px){
       :root{--gutter:1.25rem}
       .mod-grid,.testi-grid,.fac-grid{grid-template-columns:1fr}
-      .hero-cover img{height:88svh;object-position:52% 10%}
+      .hero-cover img{height:92svh;object-position:50% 15%}
       .footer{flex-direction:column;text-align:center}
-      .hero-text{text-align:center;padding-left:1.25rem;padding-right:1.25rem;padding-bottom:2.5rem}
-      .lang-sw{justify-content:center}
-      .hero-ctas{justify-content:center}
-      .hero-h1{font-size:clamp(3.5rem,16vw,7rem)}
+      .hero-text{padding:1.25rem 1.25rem 1.5rem}
+      .hero-top{gap:0}
+      .hero-h1{font-size:clamp(3.8rem,15vw,7rem)}
+      .hero-tagline{font-size:1.25rem}
+      .hero-translation{font-size:12px}
+      .hero-goat-year{font-size:11px;letter-spacing:0.1em}
+      .lang-sw{justify-content:flex-start}
+      .hero-ctas{justify-content:flex-start;flex-direction:column;gap:0.5rem}
+      .btn-gold,.btn-outline{text-align:center;justify-content:center;font-size:12px;padding:14px 20px}
       .wrap{padding-left:1.25rem;padding-right:1.25rem}
       .dept-bar,.subnav a{padding-left:1.25rem;padding-right:1.25rem}
     }
@@ -355,64 +364,60 @@
 ══════════════════════════════════════ -->
 <div class="hero-cover">
   <img
-    src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_1800,h_1200,q_auto,f_auto/v1787492002/nano-banana-2_upscale_this_image-1_cj7lzi.jpg"
+    src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_face,w_1800,h_1200,q_auto,f_auto/v1787504880/nano-banana-2_upscale_this_image_increase_the_statue_pull_back_and_sharpen_depth_HK_similar_vi-0_oyfqsj.jpg"
     alt="MODUS Séance — ASCENSION Retreat, Da Nang, Vietnam"
     loading="eager" fetchpriority="high">
   <div class="hero-overlay"></div>
   <div class="hero-text">
 
-    <div class="lang-sw">
-      <button id="lsw-en" class="lsw-active" onclick="setLang('en')">EN</button>
-      <button id="lsw-vi" onclick="setLang('vi')">VI</button>
-      <button id="lsw-fr" onclick="setLang('fr')">FR</button>
+    <!-- TOP: lang switcher + eyebrow + title -->
+    <div class="hero-top">
+      <div class="lang-sw">
+        <button id="lsw-en" class="lsw-active" onclick="setLang('en')">EN</button>
+        <button id="lsw-vi" onclick="setLang('vi')">VI</button>
+        <button id="lsw-fr" onclick="setLang('fr')">FR</button>
+      </div>
+      <span class="hero-eyebrow">
+        <span class="l-en">MODUS S&eacute;ance &middot; Tết Preparation Retreat 2027</span>
+        <span class="l-vi">MODUS S&eacute;ance &middot; Khóa Tu Chuẩn Bị Tết 2027</span>
+        <span class="l-fr">MODUS S&eacute;ance &middot; Retraite de Pr&eacute;paration au Tết 2027</span>
+      </span>
+      <h1 class="hero-h1">ASCENSION</h1>
     </div>
 
-    <span class="hero-eyebrow">
-      <span class="l-en">MODUS S&eacute;ance &middot; Our First Live Event</span>
-      <span class="l-vi">MODUS S&eacute;ance &middot; Sự Kiện Trực Tiếp Đầu Tiên</span>
-      <span class="l-fr">MODUS S&eacute;ance &middot; Notre Premier &Eacute;v&eacute;nement Live</span>
-    </span>
+    <!-- BOTTOM: tagline + date + CTAs -->
+    <div class="hero-bottom">
+      <p class="hero-tagline">
+        <span class="l-en">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</span>
+        <span class="l-vi">Hãy Trở Thành Phiên Bản Vĩ Đại Nhất Của Bạn &#x1F525;&#x1F410;</span>
+        <span class="l-fr">Sois Ton Plus Grand Moi &#x1F525;&#x1F410;</span>
+      </p>
+      <span class="hero-translation">
+        <span class="l-en">Sự Thăng Hoa &nbsp;&middot;&nbsp; Sois Ton Plus Grand Moi</span>
+        <span class="l-vi">Ascension &nbsp;&middot;&nbsp; Sois Ton Plus Grand Moi</span>
+        <span class="l-fr">Sự Thăng Hoa &nbsp;&middot;&nbsp; Ascension</span>
+      </span>
+      <span class="hero-goat-year">
+        <span class="l-en">Prepare for Tết Nguyên Đán &mdash; Year of the Fire Goat &#x1F525;&#x1F410;<br>January 12&ndash;26, 2027 &nbsp;&middot;&nbsp; Da Nang, Vietnam &nbsp;&middot;&nbsp; 7-Day &amp; 14-Day</span>
+        <span class="l-vi">Chuẩn bị cho Tết Nguyên Đán &mdash; Năm Con Dê Lửa &#x1F525;&#x1F410;<br>12&ndash;26 Tháng Giêng, 2027 &nbsp;&middot;&nbsp; Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 7 &amp; 14 ngày</span>
+        <span class="l-fr">Préparez-vous au Tết Nguyên Đán &mdash; Ann&eacute;e de la Ch&egrave;vre de Feu &#x1F525;&#x1F410;<br>12&ndash;26 Janvier 2027 &nbsp;&middot;&nbsp; Da Nang, Viêt Nam &nbsp;&middot;&nbsp; 7 et 14 jours</span>
+      </span>
 
-    <h1 class="hero-h1">ASCENSION</h1>
+      <div class="hero-ctas">
+        <a class="btn-gold" href="/acquire#attend">
+          <span class="l-en">Prepare for Tết &mdash; Reserve Now &rarr;</span>
+          <span class="l-vi">Chuẩn Bị Tết &mdash; Đặt Ngay &rarr;</span>
+          <span class="l-fr">Préparer le Tết &mdash; Réserver &rarr;</span>
+        </a>
+        <a class="btn-outline" href="#arc">
+          <span class="l-en">View Full Schedule &darr;</span>
+          <span class="l-vi">Xem Lịch Trình &darr;</span>
+          <span class="l-fr">Voir le Programme &darr;</span>
+        </a>
+      </div>
+    </div><!-- end hero-bottom -->
 
-    <p class="hero-tagline">
-      <span class="l-en">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</span>
-      <span class="l-vi">Hãy Trở Thành Phiên Bản Vĩ Đại Nhất Của Bạn &#x1F525;&#x1F410;</span>
-      <span class="l-fr">Sois Ton Plus Grand Moi &#x1F525;&#x1F410;</span>
-    </p>
-
-    <span class="hero-translation">
-      <span class="l-en">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</span>
-      <span class="l-vi">Ascension &nbsp;|&nbsp; Sois Ton Plus Grand Moi</span>
-      <span class="l-fr">Sự Thăng Hoa &nbsp;|&nbsp; Ascension</span>
-    </span>
-
-    <span class="hero-goat-year">
-      <span class="l-en">Prepare your body, mind, and spirit for Tết Nguyên Đán &mdash; Year of the Fire Goat &#x1F525;&#x1F410;</span>
-      <span class="l-vi">Chuẩn bị thân, tâm và tinh thần cho Tết Nguyên Đán &mdash; Năm Con Dê Lửa &#x1F525;&#x1F410;</span>
-      <span class="l-fr">Préparez votre corps, votre esprit pour le Tết Nguyên Đán &mdash; Ann&eacute;e de la Ch&egrave;vre de Feu &#x1F525;&#x1F410;</span>
-    </span>
-
-    <span class="hero-goat-year" style="opacity:0.65;margin-top:0.4rem;">
-      <span class="l-en">January 12&ndash;26, 2027 &nbsp;&middot;&nbsp; Da Nang, Vietnam &nbsp;&middot;&nbsp; 7-Day &amp; 14-Day options</span>
-      <span class="l-vi">12&ndash;26 Tháng Giêng, 2027 &nbsp;&middot;&nbsp; Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 7 ngày &amp; 14 ngày</span>
-      <span class="l-fr">12&ndash;26 Janvier 2027 &nbsp;&middot;&nbsp; Da Nang, Viêt Nam &nbsp;&middot;&nbsp; Options 7 et 14 jours</span>
-    </span>
-
-    <div class="hero-ctas">
-      <a class="btn-gold" href="/acquire#attend">
-        <span class="l-en">Prepare for Tết &mdash; Reserve Now &rarr;</span>
-        <span class="l-vi">Chuẩn Bị Tết &mdash; Đặt Ngay &rarr;</span>
-        <span class="l-fr">Préparer le Tết &mdash; Réserver &rarr;</span>
-      </a>
-      <a class="btn-outline" href="#arc">
-        <span class="l-en">View Full Schedule &darr;</span>
-        <span class="l-vi">Xem Lịch Trình &darr;</span>
-        <span class="l-fr">Voir le Programme &darr;</span>
-      </a>
-    </div>
-
-  </div>
+  </div><!-- end hero-text -->
 </div>
 
 <!-- sticky subnav -->

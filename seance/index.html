@@ -243,7 +243,7 @@
     .retreat-hero{position:relative;width:100%;overflow:hidden;line-height:0}
     .retreat-hero img{width:100%;height:100svh;min-height:560px;object-fit:cover;object-position:center 28%;display:block}
     .retreat-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.18) 0%,rgba(6,8,12,0.55) 60%,rgba(6,8,12,0.82) 100%);pointer-events:none}
-    .retreat-hero-text{position:absolute;bottom:0;left:0;right:0;padding:clamp(2.5rem,6vw,5rem) var(--gutter);text-align:left;line-height:1}
+    .retreat-hero-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(2.5rem,6vw,5rem) var(--gutter);text-align:left;line-height:1}
     .retreat-hero-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block}
     .retreat-hero-title{font-family:var(--font-display);font-size:clamp(4rem,12vw,10rem);font-weight:normal;letter-spacing:-0.04em;line-height:0.88;color:#F0E8D5;margin-bottom:1rem}
     .retreat-hero-meta{font-family:var(--font-mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,232,213,0.7);margin-bottom:2rem;display:block}
@@ -389,13 +389,61 @@
     fetchpriority="high">
   <div class="retreat-hero-overlay"></div>
   <div class="retreat-hero-text">
-    <span class="retreat-hero-eyebrow">MODUS S&eacute;ance &middot; Our First Live Event</span>
-    <h1 class="retreat-hero-title">ASCENSION</h1>
-    <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0.4rem 0 0.3rem;line-height:1.2;">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</p>
-    <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</p>
-    <span class="retreat-hero-meta">Year of the Fire Goat &#x1F525;&#x1F410; 2027 &nbsp;&middot;&nbsp; Da Nang, Vietnam &nbsp;&middot;&nbsp; January 15&ndash;29</span>
-    <a class="retreat-hero-cta" href="/seance/ascension">Discover the Retreat &rarr;</a>
+    <!-- top: ASCENSION in dark sky -->
+    <div>
+      <span class="retreat-hero-eyebrow">MODUS S&eacute;ance &middot; Our First Live Event</span>
+      <h1 class="retreat-hero-title">ASCENSION</h1>
+    </div>
+    <!-- bottom: lang switcher + taglines + CTA -->
+    <div>
+      <!-- language switcher -->
+      <div style="display:flex;gap:0.5rem;margin-bottom:1rem;">
+        <button onclick="seanceLang('en')" id="sl-en" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:#D4A84B;cursor:pointer;padding:0;">EN</button>
+        <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;color:rgba(240,232,213,0.3);">·</span>
+        <button onclick="seanceLang('vi')" id="sl-vi" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:rgba(240,232,213,0.45);cursor:pointer;padding:0;">VI</button>
+        <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;color:rgba(240,232,213,0.3);">·</span>
+        <button onclick="seanceLang('fr')" id="sl-fr" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:rgba(240,232,213,0.45);cursor:pointer;padding:0;">FR</button>
+      </div>
+      <!-- EN -->
+      <div class="sl-l-en">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</p>
+        <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</p>
+        <span class="retreat-hero-meta">Year of the Fire Goat &#x1F525;&#x1F410; 2027 &nbsp;&middot;&nbsp; Da Nang, Vietnam &nbsp;&middot;&nbsp; January 15&ndash;29</span>
+        <a class="retreat-hero-cta" href="/seance/ascension" style="display:inline-flex;margin-top:1.25rem;">Discover the Retreat &rarr;</a>
+      </div>
+      <!-- VI -->
+      <div class="sl-l-vi" style="display:none;">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Hãy Trở Thành Phiên Bản Vĩ Đại Nhất Của Bạn &mdash; GoAt &#x1F525;&#x1F410;</p>
+        <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">Sự Thăng Hoa &nbsp;|&nbsp; ASCENSION</p>
+        <span class="retreat-hero-meta">Năm Dê Lửa &#x1F525;&#x1F410; 2027 &nbsp;&middot;&nbsp; Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 15&ndash;29 Tháng 1</span>
+        <a class="retreat-hero-cta" href="/seance/ascension" style="display:inline-flex;margin-top:1.25rem;">Khám Phá Retreat &rarr;</a>
+      </div>
+      <!-- FR -->
+      <div class="sl-l-fr" style="display:none;">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Sois Ton Plus Grand Moi &mdash; GoAt &#x1F525;&#x1F410;</p>
+        <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">ASCENSION &nbsp;|&nbsp; Sự Thăng Hoa</p>
+        <span class="retreat-hero-meta">Année de la Chèvre de Feu &#x1F525;&#x1F410; 2027 &nbsp;&middot;&nbsp; Đà Nẵng, Viêt Nam &nbsp;&middot;&nbsp; 15&ndash;29 Janvier</span>
+        <a class="retreat-hero-cta" href="/seance/ascension" style="display:inline-flex;margin-top:1.25rem;">Découvrir la Retraite &rarr;</a>
+      </div>
+    </div>
   </div>
+  <script>
+    (function(){
+      var k='ascension-lang';
+      function seanceLang(l){
+        localStorage.setItem(k,l);
+        document.querySelectorAll('.sl-l-en,.sl-l-vi,.sl-l-fr').forEach(function(el){el.style.display='none';});
+        var el=document.querySelector('.sl-l-'+l);
+        if(el)el.style.display='';
+        ['en','vi','fr'].forEach(function(x){
+          var btn=document.getElementById('sl-'+x);
+          if(btn)btn.style.color=x===l?'#D4A84B':'rgba(240,232,213,0.45)';
+        });
+      }
+      window.seanceLang=seanceLang;
+      seanceLang(localStorage.getItem(k)||'en');
+    })();
+  </script>
 </div>
 
 <!-- OVERVIEW -->

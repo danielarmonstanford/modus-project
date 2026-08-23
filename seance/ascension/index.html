@@ -31,7 +31,7 @@
       --font-display:'Lovine','Cormorant Garamond',Georgia,serif;
       --font-ed:'Cormorant Garamond',Georgia,serif;
       --font-mono:'DM Mono','Courier New',monospace;
-      --gutter:clamp(1.25rem,5vw,4.5rem);--ease:0.28s ease;--nav-h:64px;
+      --gutter:clamp(1.5rem,6vw,4.5rem);--ease:0.28s ease;--nav-h:64px;
     }
     [data-theme="dark"]{--bg:#06080C;--bg2:#0C0E14;--bg3:#131620;--text:#F0E8D5;--text-dim:rgba(240,232,213,0.78);--border:rgba(240,232,213,0.1);--border-s:rgba(240,232,213,0.85);--border-gold:rgba(212,168,75,0.25);--nav-bg:rgba(6,8,12,0.94)}
     [data-theme="light"]{--bg:#F4EEE2;--bg2:#EBE4D4;--bg3:#E2DAC8;--text:#06080C;--text-dim:rgba(6,8,12,0.75);--border:rgba(6,8,12,0.1);--border-s:rgba(6,8,12,0.88);--border-gold:rgba(212,168,75,0.35);--nav-bg:rgba(244,238,226,0.94)}
@@ -90,7 +90,7 @@
 
     /* ── Hero ── */
     .hero-cover{position:relative;width:100%;overflow:hidden;line-height:0}
-    .hero-cover img{width:100%;height:100svh;min-height:600px;object-fit:cover;object-position:55% 20%;display:block}
+    .hero-cover img{width:100%;height:100svh;min-height:600px;object-fit:cover;object-position:52% 12%;display:block}
     .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.45) 0%,rgba(6,8,12,0.05) 38%,rgba(6,8,12,0.12) 58%,rgba(6,8,12,0.88) 100%);pointer-events:none}
     .hero-text{position:absolute;bottom:0;left:0;right:0;padding:clamp(2.5rem,6vw,5rem) var(--gutter)}
     .hero-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;display:block}
@@ -255,13 +255,16 @@
       .arc-detail.arc-show{grid-template-columns:1fr}
     }
     @media(max-width:600px){
+      :root{--gutter:1.25rem}
       .mod-grid,.testi-grid,.fac-grid{grid-template-columns:1fr}
-      .hero-cover img{height:88svh}
+      .hero-cover img{height:88svh;object-position:52% 10%}
       .footer{flex-direction:column;text-align:center}
-      .hero-text{text-align:center}
+      .hero-text{text-align:center;padding-left:1.25rem;padding-right:1.25rem;padding-bottom:2.5rem}
       .lang-sw{justify-content:center}
       .hero-ctas{justify-content:center}
-      .hero-h1{font-size:clamp(4rem,18vw,8rem)}
+      .hero-h1{font-size:clamp(3.5rem,16vw,7rem)}
+      .wrap{padding-left:1.25rem;padding-right:1.25rem}
+      .dept-bar,.subnav a{padding-left:1.25rem;padding-right:1.25rem}
     }
     @media(max-width:768px){
       html{font-size:20px}

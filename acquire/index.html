@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acquire — MODUS</title>
-  <meta name="description" content="Acquire MODUS. Reserve the print collector edition of Issue No. 1. Digital access via Payhip. Original FASCINASIA artworks by Daniel Stanford.">
+  <meta name="description" content="Attend MODUS Séance: Heal Your Soul Retreat in Da Nang, Vietnam. Sponsor events. Partner as a practitioner. Acquire editions and original works.">
   <meta name="author" content="Daniel Stanford">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://modus.gallery/acquire">
@@ -387,6 +387,210 @@
       .vtext p,.compare-table th,.axis-bar-label,.mi-car-sub,
       .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:12px!important}
     }
+
+    /* ── Hero quick anchors ── */
+    .hero-anchors {
+      display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;
+    }
+    .hero-anchor {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--text-dim);
+      border-bottom: 0.5px solid var(--border-gold); padding-bottom: 4px;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .hero-anchor:hover { color: var(--gold); border-color: var(--gold); }
+    .hero-anchor-primary {
+      color: var(--gold); border-color: var(--gold);
+    }
+    .hero-anchor-primary:hover { opacity: 0.8; }
+
+    /* ── Section heading with number ── */
+    .section-num {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--text-dim); opacity: 0.55;
+      margin-bottom: 0.4rem;
+    }
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: normal; letter-spacing: -0.03em; line-height: 0.95;
+      color: var(--text); margin-bottom: 0.75rem;
+    }
+    .section-subhead {
+      font-family: var(--font-ed); font-size: clamp(1rem, 1.6vw, 1.15rem);
+      font-style: italic; color: var(--text-dim); line-height: 1.6;
+      margin-bottom: 3rem;
+    }
+
+    /* ── Pricing grid ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5px; background: var(--border);
+      margin-bottom: 3rem;
+    }
+    .pricing-card {
+      background: var(--bg); padding: 2rem 1.75rem;
+      display: flex; flex-direction: column;
+      transition: background var(--ease);
+    }
+    .pricing-card:hover { background: var(--bg2); }
+    .pricing-tier {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem;
+    }
+    .pricing-amount {
+      font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: normal; color: var(--gold); letter-spacing: -0.02em;
+      line-height: 1; margin-bottom: 0.4rem;
+    }
+    .pricing-label {
+      font-family: var(--font-ed); font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      font-style: italic; font-weight: 300; color: var(--text);
+      line-height: 1.2; margin-bottom: auto; padding-bottom: 1.25rem;
+    }
+    .pricing-note {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-dim); opacity: 0.7;
+      margin-top: 1rem;
+    }
+
+    /* ── Includes list ── */
+    .includes-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem 3rem; margin-bottom: 3rem;
+    }
+    .includes-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .includes-check {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--gold); margin-top: 0.3rem; flex-shrink: 0;
+      letter-spacing: 0;
+    }
+    .includes-text {
+      font-family: var(--font-ed); font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+      color: var(--text-dim); line-height: 1.55;
+    }
+
+    /* ── Attend CTA row ── */
+    .cta-row {
+      display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;
+      margin-top: 0.5rem;
+    }
+    .cta-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--bg); background: var(--gold);
+      padding: 14px 28px; transition: opacity var(--ease);
+    }
+    .cta-primary:hover { opacity: 0.85; }
+    .cta-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--text);
+      border: 0.5px solid var(--border); padding: 14px 28px;
+      transition: border-color var(--ease), color var(--ease);
+    }
+    .cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── Sponsor tiers ── */
+    .sponsor-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px; background: var(--border); margin-bottom: 3rem;
+    }
+    .tier-card {
+      background: var(--bg); padding: 2.5rem 2rem;
+      display: flex; flex-direction: column;
+      transition: background var(--ease);
+    }
+    .tier-card:hover { background: var(--bg2); }
+    .tier-rank {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem;
+    }
+    .tier-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: normal; letter-spacing: -0.02em; line-height: 1;
+      color: var(--text); margin-bottom: 0.5rem;
+    }
+    .tier-price {
+      font-family: var(--font-mono); font-size: clamp(1rem, 1.5vw, 1.15rem);
+      letter-spacing: 0.12em; color: var(--text-dim);
+      border-bottom: 0.5px solid var(--border-gold);
+      padding-bottom: 1.25rem; margin-bottom: 1.25rem;
+    }
+    .tier-features {
+      list-style: none; flex: 1;
+    }
+    .tier-features li {
+      font-family: var(--font-ed); font-size: clamp(0.9rem, 1.3vw, 1rem);
+      color: var(--text-dim); line-height: 1.6;
+      padding: 0.35rem 0; border-bottom: 0.5px solid rgba(234,224,204,0.06);
+    }
+    .tier-features li::before {
+      content: '— '; color: var(--gold); font-family: var(--font-mono);
+      font-size: 9px; letter-spacing: 0;
+    }
+
+    /* ── Partner details ── */
+    .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); }
+    .partner-detail-list { list-style: none; margin-bottom: 2rem; }
+    .partner-detail-list li {
+      font-family: var(--font-ed); font-size: clamp(1rem, 1.5vw, 1.1rem);
+      color: var(--text-dim); line-height: 1.7;
+      padding: 0.5rem 0; border-bottom: 0.5px solid rgba(234,224,204,0.06);
+      display: flex; gap: 0.75rem;
+    }
+    .partner-detail-list li::before {
+      content: '→'; color: var(--gold); font-family: var(--font-mono);
+      font-size: 10px; flex-shrink: 0; margin-top: 0.3rem;
+    }
+    .disciplines-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;
+    }
+    .discipline-tag {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-dim);
+      border: 0.5px solid var(--border-gold); padding: 5px 12px;
+    }
+
+    /* ── Opportunity links ── */
+    .opportunity-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5px; background: var(--border);
+    }
+    .opportunity-card {
+      background: var(--bg); padding: 2rem 1.75rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      transition: background var(--ease); text-decoration: none;
+    }
+    .opportunity-card:hover { background: var(--bg2); }
+    .opp-label {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--text-dim);
+    }
+    .opp-title {
+      font-family: var(--font-ed); font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      font-style: italic; font-weight: 300; color: var(--text);
+      margin-top: auto;
+    }
+    .opp-cta {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .sponsor-grid { grid-template-columns: 1fr; }
+      .partner-grid { grid-template-columns: 1fr; }
+      .includes-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .hero-anchors { gap: 1.2rem; }
+    }
   </style>
 </head>
 <body>
@@ -445,133 +649,254 @@
 
   <div class="page">
 
+    <!-- ── Hero ── -->
     <div class="hero">
-      <p class="hero-kicker" data-en="MODUS · Acquire" data-fr="MODUS · Acquérir">MODUS &middot; Acquire</p>
-      <h1 class="hero-title" data-en="Acquire." data-fr="Acquérir.">Acquire.</h1>
-      <p class="hero-sub" data-en="Print editions. Digital access. Original works. Everything MODUS produces is made in limited quantity and not reprinted." data-fr="Éditions imprimées. Accès numérique. Œuvres originales. Tout ce que produit MODUS est fabriqué en quantité limitée et n'est pas réimprimé.">Print editions. Digital access. Original works. Everything MODUS produces is made in limited quantity and not reprinted.</p>
+      <p class="hero-kicker">MODUS &middot; S&eacute;ance</p>
+      <h1 class="hero-title">Transform.<br>Support.<br>Create.</h1>
+      <p class="hero-sub">Join us. Partner with us. Sponsor us.</p>
+      <div class="hero-anchors">
+        <a class="hero-anchor hero-anchor-primary" href="#attend">Attend &darr;</a>
+        <a class="hero-anchor" href="#sponsor">Sponsor &darr;</a>
+        <a class="hero-anchor" href="#partner">Partner &darr;</a>
+      </div>
     </div>
 
     <div class="rule-gold"></div>
 
-    <!-- ── Digital + Print ── -->
-    <section class="section">
-      <p class="section-label" data-en="Issue No. 1 · 2026" data-fr="Numéro 1 · 2026">Issue No. 1 &middot; 2026</p>
-      <div class="acquire-grid">
+    <!-- ── 01: ATTEND ── -->
+    <section class="section" id="attend">
+      <p class="section-num">01 &mdash; Attend</p>
+      <h2 class="section-heading">Heal Your Soul<br>Retreat</h2>
+      <p class="section-subhead">Da Nang, Vietnam &middot; January 2027</p>
 
-        <!-- Digital -->
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <p class="pricing-tier">1-Week Immersion</p>
+          <p class="pricing-amount">$1,200</p>
+          <p class="pricing-label">Early Bird</p>
+          <p class="pricing-note">7 nights &middot; Full programme</p>
+        </div>
+        <div class="pricing-card">
+          <p class="pricing-tier">2-Week Fortnight</p>
+          <p class="pricing-amount">$1,800</p>
+          <p class="pricing-label">Early Bird</p>
+          <p class="pricing-note">14 nights &middot; Full programme</p>
+        </div>
+        <div class="pricing-card" style="border-left:1.5px solid var(--gold);">
+          <p class="pricing-tier" style="color:var(--gold);">VIP Intensive</p>
+          <p class="pricing-amount">$2,800</p>
+          <p class="pricing-label">Private sessions &middot; Priority access</p>
+          <p class="pricing-note">All inclusions + VIP benefits</p>
+        </div>
+        <div class="pricing-card">
+          <p class="pricing-tier">Day Pass</p>
+          <p class="pricing-amount">$120</p>
+          <p class="pricing-label">Per Day</p>
+          <p class="pricing-note">Single-day access</p>
+        </div>
+      </div>
+
+      <div class="includes-grid">
+        <div class="includes-item">
+          <span class="includes-check">✓</span>
+          <span class="includes-text">3 meals per day + all beverages throughout the retreat</span>
+        </div>
+        <div class="includes-item">
+          <span class="includes-check">✓</span>
+          <span class="includes-text">All group sessions, ceremonies, and curated programming</span>
+        </div>
+        <div class="includes-item">
+          <span class="includes-check">✓</span>
+          <span class="includes-text">Welcome community, integration support, and post-retreat connection</span>
+        </div>
+        <div class="includes-item">
+          <span class="includes-check">✗</span>
+          <span class="includes-text">Accommodation not included — book separately (venue recommendations provided)</span>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="cta-primary" href="/seance/heal-your-soul">View Full Retreat &rarr;</a>
+        <!-- Replace href with GHL application form URL -->
+        <a class="cta-secondary" href="mailto:seance@modus.gallery?subject=Heal Your Soul Retreat — Application">Apply Now &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ── 02: SPONSOR ── -->
+    <section class="section" id="sponsor">
+      <p class="section-num">02 &mdash; Sponsor</p>
+      <h2 class="section-heading">Partner with<br>MODUS</h2>
+      <p class="section-subhead">Align your brand with luxury + consciousness.</p>
+
+      <div class="sponsor-grid">
+        <div class="tier-card">
+          <p class="tier-rank">Presenting Partner</p>
+          <p class="tier-name">Presenting</p>
+          <p class="tier-price">$35,000</p>
+          <ul class="tier-features">
+            <li>Exclusive presenting credit across all event materials</li>
+            <li>Primary logo placement — stage, signage, digital</li>
+            <li>Full attendee reach (200+ international guests)</li>
+            <li>Branded moment in opening and closing ceremony</li>
+            <li>Media exposure across MODUS channels</li>
+            <li>Custom-negotiated benefits package</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <p class="tier-rank">Platinum Partner</p>
+          <p class="tier-name">Platinum</p>
+          <p class="tier-price">$20,000</p>
+          <ul class="tier-features">
+            <li>Prominent logo placement — venue + digital</li>
+            <li>Dedicated feature in MODUS Séance programme</li>
+            <li>Full attendee reach (200+ international guests)</li>
+            <li>Social media integration + co-branded content</li>
+            <li>Editorial mention in post-event MODUS coverage</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <p class="tier-rank">Gold Partner</p>
+          <p class="tier-name">Gold</p>
+          <p class="tier-price">$10,000</p>
+          <ul class="tier-features">
+            <li>Logo placement in event programme + website</li>
+            <li>Acknowledgement at opening ceremony</li>
+            <li>Access to attendee demographic report</li>
+            <li>Social media acknowledgement</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <!-- Replace href with GHL sponsorship inquiry form URL -->
+        <a class="cta-primary" href="mailto:partners@modus.gallery?subject=Sponsorship Inquiry — MODUS Séance">Explore Sponsorship &rarr;</a>
+        <a class="cta-secondary" href="mailto:partners@modus.gallery">Contact Us &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ── 03: PARTNER ── -->
+    <section class="section" id="partner">
+      <p class="section-num">03 &mdash; Partner</p>
+      <h2 class="section-heading">Facilitate at<br>S&eacute;ance</h2>
+      <p class="section-subhead">Practitioners, facilitators, educators wanted.</p>
+
+      <div class="partner-grid">
+        <div>
+          <ul class="partner-detail-list">
+            <li>Lead yoga, sound healing, energy work, and transformative sessions</li>
+            <li>Support MODUS&rsquo;s curation of authentic healing experiences</li>
+            <li>Reach 200+ internationally mobile, wellness-conscious attendees</li>
+            <li>All expenses covered — flights, accommodation, and meals</li>
+            <li>Honorarium provided for selected practitioners</li>
+          </ul>
+          <div class="cta-row" style="margin-top:2rem;">
+            <!-- Replace href with GHL practitioner application form URL -->
+            <a class="cta-primary" href="mailto:seance@modus.gallery?subject=Practitioner Application — MODUS Séance">Apply as Practitioner &rarr;</a>
+          </div>
+        </div>
+        <div>
+          <p class="section-label" style="margin-bottom:1.25rem;">Who we&rsquo;re looking for</p>
+          <p style="font-family:var(--font-ed);font-size:clamp(1rem,1.4vw,1.05rem);font-style:italic;color:var(--text-dim);line-height:1.7;margin-bottom:1.5rem;">Experienced facilitators with a proven practice and international presence. MODUS curates for quality over quantity — we seek practitioners whose work passes the same standard we apply to every subject in the Index.</p>
+          <div class="disciplines-row">
+            <span class="discipline-tag">Yoga</span>
+            <span class="discipline-tag">Sound Healing</span>
+            <span class="discipline-tag">Energy Work</span>
+            <span class="discipline-tag">Acupressure</span>
+            <span class="discipline-tag">Nutrition</span>
+            <span class="discipline-tag">Art</span>
+            <span class="discipline-tag">Movement</span>
+            <span class="discipline-tag">Breathwork</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Other Ways to Engage ── -->
+    <section class="section">
+      <p class="section-label">Other Ways to Engage</p>
+      <div class="opportunity-grid">
+        <a class="opportunity-card" href="/join">
+          <p class="opp-label">Membership</p>
+          <p class="opp-title">Subscribe to MODUS Magazine</p>
+          <p class="opp-cta">Join &rarr;</p>
+        </a>
+        <a class="opportunity-card" href="/methodology">
+          <p class="opp-label">The Index</p>
+          <p class="opp-title">Submit for MODUS Index Review</p>
+          <p class="opp-cta">Learn More &rarr;</p>
+        </a>
+        <a class="opportunity-card" href="/atelier">
+          <p class="opp-label">Creative</p>
+          <p class="opp-title">Collaborate with Us</p>
+          <p class="opp-cta">Atelier &rarr;</p>
+        </a>
+        <a class="opportunity-card" href="/manifeste">
+          <p class="opp-label">Foundation</p>
+          <p class="opp-title">Read the Manifesto</p>
+          <p class="opp-cta">Manifeste &rarr;</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── Editions + Works ── -->
+    <section class="section">
+      <p class="section-label">Issue No. 1 &middot; 2026</p>
+      <div class="acquire-grid">
         <div class="acquire-card">
           <p class="card-num">01 &mdash;</p>
-          <h2 class="card-title" data-en="Digital Edition" data-fr="Édition numérique">Digital Edition</h2>
-          <p class="card-desc" data-en="Full Issue No. 1 · Immediate access · All departments · MODUS Index scores · PDF + Web" data-fr="Numéro 1 complet · Accès immédiat · Tous les départements · Scores de l'Index MODUS · PDF + Web">Full Issue No. 1 &middot; Immediate access<br>All departments &middot; MODUS Index scores<br>PDF + Web</p>
-          <p class="card-detail" data-en="The complete Issue No. 1 — Objects, Figures, Terrain, Décover, Atelier, The Last Word — available immediately via Payhip." data-fr="Le Numéro 1 complet — Objets, Figures, Terrain, Décover, Atelier, Le Dernier Mot — disponible immédiatement via Payhip.">The complete Issue No. 1 — Objects, Figures, Terrain, D&eacute;cover, Atelier, The Last Word — available immediately via Payhip.</p>
-          <span class="card-tag" data-en="Available Now" data-fr="Disponible maintenant">Available Now</span>
-          <a class="card-cta" href="https://payhip.com/DanielArmonStanford" target="_blank" rel="noopener">
-            <!-- Replace href with your Payhip URL -->
-            <span data-en="Acquire Digital →" data-fr="Acquérir le numérique →">Acquire Digital <span class="card-cta-arrow">&rarr;</span></span>
-          </a>
+          <h2 class="card-title">Digital Edition</h2>
+          <p class="card-desc">Full Issue No. 1 &middot; Immediate access<br>All departments &middot; MODUS Index scores<br>PDF + Web</p>
+          <p class="card-detail">The complete Issue No. 1 — Objects, Figures, Terrain, D&eacute;cover, Atelier, The Last Word — available immediately via Payhip.</p>
+          <span class="card-tag">Available Now</span>
+          <a class="card-cta" href="https://payhip.com/DanielArmonStanford" target="_blank" rel="noopener">Acquire Digital <span class="card-cta-arrow">&rarr;</span></a>
         </div>
-
-        <!-- Print -->
         <div class="acquire-card">
           <p class="card-num">02 &mdash;</p>
-          <h2 class="card-title"><span data-en="Collector" data-fr="Édition">Collector</span><br><span data-en="Edition" data-fr="Collection">Edition</span></h2>
-          <p class="card-desc" data-en="Limited run · No reprint · Ever · Subscriber cover variant · Numbered · Archival paper · Collector quality" data-fr="Tirage limité · Pas de réimpression · Jamais · Couverture variante abonné · Numéroté · Papier archival · Qualité collection">Limited run &middot; No reprint &middot; Ever<br>Subscriber cover variant &middot; Numbered<br>Archival paper &middot; Collector quality</p>
-          <p class="card-detail" data-en="MODUS Issue No. 1 in print — once. When the run sells through, it is gone; there will be no second printing. Reservation holders receive the numbered subscriber cover variant, unavailable on any newsstand. No payment now: reserving secures your number in the sequence." data-fr="MODUS Numéro 1 en impression — une seule fois. Lorsque le tirage est épuisé, c'est terminé ; il n'y aura pas de deuxième impression. Les détenteurs de réservation reçoivent la couverture variante abonné numérotée, indisponible en kiosque. Pas de paiement maintenant : réserver sécurise votre numéro dans la séquence.">MODUS Issue No. 1 in print — once. When the run sells through, it is gone; there will be no second printing. Reservation holders receive the numbered subscriber cover variant, unavailable on any newsstand. No payment now: reserving secures your number in the sequence.</p>
-          <span class="card-tag" data-en="Reserve Your Number — Free" data-fr="Réservez votre numéro — Gratuit">Reserve Your Number &mdash; Free</span>
-          <!-- Reserve form below -->
+          <h2 class="card-title">Collector<br>Edition</h2>
+          <p class="card-desc">Limited run &middot; No reprint &middot; Ever<br>Subscriber cover variant &middot; Numbered<br>Archival paper &middot; Collector quality</p>
+          <p class="card-detail">MODUS Issue No. 1 in print — once. When the run sells through, it is gone. Reservation holders receive the numbered subscriber cover variant. No payment now.</p>
+          <span class="card-tag">Reserve Your Number &mdash; Free</span>
           <div class="reserve-form" style="margin-top:1rem;">
             <div class="form-row">
               <input type="email" id="reserveEmail" placeholder="your@email.com" autocomplete="email">
               <button class="form-submit" id="reserveBtn" type="button">Reserve &rarr;</button>
             </div>
-            <p class="form-note" data-en="No payment. No obligation. We write when the print run is confirmed." data-fr="Aucun paiement. Aucune obligation. Nous écrivons lorsque le tirage est confirmé.">No payment. No obligation. We write when the print run is confirmed.</p>
+            <p class="form-note">No payment. No obligation. We write when the print run is confirmed.</p>
             <p class="form-confirm" id="reserveConfirm"></p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ── Original Works ── -->
     <section class="section">
-      <p class="section-label" data-en="Original Works" data-fr="Œuvres originales">Original Works</p>
+      <p class="section-label">Original Works</p>
       <div class="collections-note">
         <div>
-          <h3><span data-en="FASCINASIA — Mixed Media Originals" data-fr="FASCINASIA — Originaux en techniques mixtes">FASCINASIA &mdash;<br>Mixed Media Originals</span></h3>
-          <p data-en="Works by Daniel Stanford. Combining fine art photography, oil, gold leaf, calligraphy, and cultural layering on wood panel. Adopted into private homes and architectural commissions. Three works in the FBI Stolen Art Database — an involuntary form of institutional validation most galleries cannot provide." data-fr="Œuvres de Daniel Stanford. Combinant la photographie des beaux-arts, l'huile, la feuille d'or, la calligraphie et la superposition culturelle sur panneau de bois. Adoptées dans des maisons privées et des commissions architecturales. Trois œuvres dans la base de données du FBI sur l'art volé — une forme involontaire de validation institutionnelle que la plupart des galeries ne peuvent pas fournir.">Works by Daniel Stanford. Combining fine art photography, oil, gold leaf, calligraphy, and cultural layering on wood panel. Adopted into private homes and architectural commissions. Three works in the FBI Stolen Art Database — an involuntary form of institutional validation most galleries cannot provide.</p>
-          <p data-en="Editions of one. No reproductions. Inquiries handled directly." data-fr="Éditions uniques. Pas de reproductions. Demandes traitées directement.">Editions of one. No reproductions. Inquiries handled directly.</p>
+          <h3>FASCINASIA &mdash;<br>Mixed Media Originals</h3>
+          <p>Works by Daniel Stanford. Combining fine art photography, oil, gold leaf, calligraphy, and cultural layering on wood panel. Adopted into private homes and architectural commissions. Three works in the FBI Stolen Art Database — an involuntary form of institutional validation most galleries cannot provide.</p>
+          <p>Editions of one. No reproductions. Inquiries handled directly.</p>
           <a class="contact-link" href="mailto:collections@modus.gallery">collections@modus.gallery &rarr;</a>
         </div>
         <div>
-          <h3><span data-en="Fine Art Photography Collections" data-fr="Collections de photographie des beaux-arts">Fine Art Photography<br>Collections</span></h3>
-          <p data-en="Prints from the Nosara (Costa Rica), FASCINASIA (Asia), and Lençóis Maranhenses (Brazil) series. Edition of 8 + 2 AP. Archival pigment on Hahnemühle paper. No open editions." data-fr="Tirages des séries Nosara (Costa Rica), FASCINASIA (Asie) et Lençóis Maranhenses (Brésil). Édition de 8 + 2 EA. Pigment d'archive sur papier Hahnemühle. Pas d'éditions ouvertes.">Prints from the Nosara (Costa Rica), FASCINASIA (Asia), and Lençóis Maranhenses (Brazil) series. Edition of 8 + 2 AP. Archival pigment on Hahnem&uuml;hle paper. No open editions.</p>
-          <p data-en="Sizes from 24×36 in. Custom framing available through Stanford Emporium." data-fr="Formats à partir de 24×36 po. Encadrement sur mesure disponible via Stanford Emporium.">Sizes from 24&times;36 in. Custom framing available through Stanford Emporium.</p>
+          <h3>Fine Art Photography<br>Collections</h3>
+          <p>Prints from the Nosara (Costa Rica), FASCINASIA (Asia), and Lençóis Maranhenses (Brazil) series. Edition of 8 + 2 AP. Archival pigment on Hahnem&uuml;hle paper. No open editions.</p>
+          <p>Sizes from 24&times;36 in. Custom framing available through Stanford Emporium.</p>
           <a class="contact-link" href="mailto:collections@modus.gallery">Inquire &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- ── Membership ── -->
     <section class="section">
-      <p class="section-label" data-en="Membership" data-fr="Adhésion">Membership</p>
+      <p class="section-label">Stanford Emporium</p>
       <div class="collections-note">
         <div>
-          <h3 data-en="Join MODUS" data-fr="Rejoindre MODUS">Join MODUS</h3>
-          <p data-en="Three tiers. Reader access is free. Private and Black memberships open intelligence reports, curated introductions, and collector circles. The Black tier is invitation only." data-fr="Trois niveaux. L'accès Lecteur est gratuit. Les adhésions Privé et Black ouvrent les rapports d'intelligence, les introductions curatorées et les cercles de collectionneurs. Le niveau Black est sur invitation uniquement.">Three tiers. Reader access is free. Private and Black memberships open intelligence reports, curated introductions, and collector circles. The Black tier is invitation only.</p>
-          <a class="contact-link" href="/join">View membership &rarr;</a>
-        </div>
-        <div>
-          <h3 data-en="Authority Placement" data-fr="Placement par autorité">Authority Placement</h3>
-          <p data-en="Brands, hotels, and ateliers that meet the MODUS Index threshold may be considered for editorial coverage. No pay-for-coverage. Placement is earned by score." data-fr="Les marques, hôtels et ateliers qui satisfont au seuil de l'Index MODUS peuvent être considérés pour une couverture éditoriale. Pas de rémunération pour la couverture. Le placement se mérite par le score.">Brands, hotels, and ateliers that meet the MODUS Index threshold may be considered for editorial coverage. No pay-for-coverage. Placement is earned by score.</p>
-          <p data-en="Partnership and brand strategy inquiries handled through SEERKA." data-fr="Les demandes de partenariat et de stratégie de marque sont traitées via SEERKA.">Partnership and brand strategy inquiries handled through SEERKA.</p>
-          <a class="contact-link" href="mailto:partners@modus.gallery">partners@modus.gallery &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="section-label" data-en="Séance · Events" data-fr="Séance · Événements">S&eacute;ance &middot; Events</p>
-      <div class="collections-note">
-        <div>
-          <h3 data-en="Event Tickets" data-fr="Billets d'événement">Event Tickets</h3>
-          <p data-en="All MODUS Séance events are ticketed. Access is limited; once a venue reaches capacity, reservations close. Tickets are non-transferable and non-refundable." data-fr="Tous les événements MODUS Séance sont à accès payant. Les places sont limitées ; une fois la capacité atteinte, les réservations se ferment. Les billets sont non transférables et non remboursables.">All MODUS S&eacute;ance events are ticketed. Access is limited; once a venue reaches capacity, reservations close. Tickets are non-transferable and non-refundable.</p>
-          <a class="contact-link" href="/seance">View upcoming events &rarr;</a>
-        </div>
-        <div>
-          <h3 data-en="Exclusive Access" data-fr="Accès exclusif">Exclusive Access</h3>
-          <p data-en="Private members and Black tier subscribers receive priority access and reserved seating at all Séance events before general ticket release." data-fr="Les membres Privé et les abonnés Black reçoivent un accès prioritaire et des sièges réservés à tous les événements Séance avant la mise en vente générale.">Private members and Black tier subscribers receive priority access and reserved seating at all S&eacute;ance events before general ticket release.</p>
-          <a class="contact-link" href="/join">Membership &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="section-label" data-en="Sponsorship &amp; Partnerships" data-fr="Commandite &amp; Partenariats">Sponsorship &amp; Partnerships</p>
-      <div class="collections-note">
-        <div>
-          <h3 data-en="Event Sponsorship" data-fr="Commandite d'événement">Event Sponsorship</h3>
-          <p data-en="Brands seeking association with the MODUS audience — design-literate, high-income, internationally mobile — may sponsor individual Séance events or the full Séance season. Placement is visible and credited, never embedded." data-fr="Les marques souhaitant s'associer au public MODUS — cultivé en design, revenu élevé, mobile à l'international — peuvent commanditer des événements Séance individuels ou toute la saison Séance. Le placement est visible et crédité, jamais intégré.">Brands seeking association with the MODUS audience &mdash; design-literate, high-income, internationally mobile &mdash; may sponsor individual S&eacute;ance events or the full S&eacute;ance season. Placement is visible and credited, never embedded.</p>
-          <a class="contact-link" href="mailto:partners@modus.gallery">Request sponsorship package &rarr;</a>
-        </div>
-        <div>
-          <h3 data-en="Partnership Inquiries" data-fr="Demandes de partenariat">Partnership Inquiries</h3>
-          <p data-en="Co-produced events, venue partnerships, hospitality collaborations, and brand strategy integrations are considered on a case-by-case basis. All partnership decisions pass the MODUS Index threshold; score informs placement." data-fr="Les événements co-produits, les partenariats de lieu, les collaborations hôtelières et les intégrations de stratégie de marque sont étudiés au cas par cas. Toutes les décisions de partenariat passent le seuil de l'Index MODUS ; le score détermine le placement.">Co-produced events, venue partnerships, hospitality collaborations, and brand strategy integrations are considered case by case. All partnership decisions pass the MODUS Index threshold.</p>
-          <a class="contact-link" href="mailto:partners@modus.gallery">partners@modus.gallery &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="section-label" data-en="Stanford Emporium" data-fr="Stanford Emporium">Stanford Emporium</p>
-      <div class="collections-note">
-        <div>
-          <h3 data-en="Merchandise &amp; Objects" data-fr="Marchandise &amp; Objets">Merchandise &amp; Objects</h3>
-          <p data-en="MODUS-adjacent merchandise, limited objects, and collector pieces are available through Stanford Emporium — the publishing house behind MODUS. Custom framing, archival editions, and select collaborations ship internationally." data-fr="La marchandise adjacente à MODUS, les objets limités et les pièces de collection sont disponibles via Stanford Emporium — la maison d'édition derrière MODUS. Encadrement sur mesure, éditions archivales et collaborations sélectionnées avec livraison internationale.">MODUS-adjacent merchandise, limited objects, and collector pieces are available through Stanford Emporium — the publishing house behind MODUS. Custom framing, archival editions, and select collaborations ship internationally.</p>
+          <h3>Merchandise &amp; Objects</h3>
+          <p>MODUS-adjacent merchandise, limited objects, and collector pieces available through Stanford Emporium. Custom framing, archival editions, and select collaborations ship internationally.</p>
           <a class="contact-link" href="https://stanfordemporium.com/acquisitions" target="_blank" rel="noopener">Stanford Emporium &rarr;</a>
         </div>
         <div>
-          <h3 data-en="Acquisitions Sourcing" data-fr="Approvisionnement d'acquisitions">Acquisitions Sourcing</h3>
-          <p data-en="Stanford Emporium's acquisitions desk sources fine art, design objects, rare editions, and investment-grade collectibles for private clients. MODUS Index scores inform all sourcing decisions." data-fr="Le bureau d'acquisitions de Stanford Emporium s'approvisionne en beaux-arts, objets de design, éditions rares et objets de collection de qualité investissement pour des clients privés. Les scores de l'Index MODUS informent toutes les décisions d'approvisionnement.">Stanford Emporium&rsquo;s acquisitions desk sources fine art, design objects, rare editions, and investment-grade collectibles for private clients. MODUS Index scores inform all sourcing decisions.</p>
+          <h3>Acquisitions Sourcing</h3>
+          <p>Stanford Emporium&rsquo;s acquisitions desk sources fine art, design objects, rare editions, and investment-grade collectibles for private clients. MODUS Index scores inform all sourcing decisions.</p>
           <a class="contact-link" href="https://stanfordemporium.com/acquisitions" target="_blank" rel="noopener">Acquisitions desk &rarr;</a>
         </div>
       </div>

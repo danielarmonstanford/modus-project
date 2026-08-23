@@ -741,26 +741,27 @@
 
   <div class="page">
 
-    <!-- ── Hero image ── -->
-    <div style="width:100%;overflow:hidden;position:relative;line-height:0;">
+    <!-- ── Cover Hero ── -->
+    <div style="position:relative;width:100%;overflow:hidden;line-height:0;">
       <img
-        src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_1600,h_700,q_auto,f_auto/v1787491510/Screen_Shot_2026-08-23_at_9.24.02_AM_finbe7.png"
+        src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_1800,h_1100,q_auto,f_auto/v1787491510/Screen_Shot_2026-08-23_at_9.24.02_AM_finbe7.png"
         alt="MODUS Séance — Heal Your Soul Retreat"
-        style="width:100%;aspect-ratio:21/9;object-fit:cover;object-position:center 30%;display:block;"
+        style="width:100%;height:90svh;min-height:560px;object-fit:cover;object-position:center 28%;display:block;"
         loading="eager"
         fetchpriority="high">
-      <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(8,7,10,0) 55%, rgba(8,7,10,0.55) 100%);pointer-events:none;"></div>
-    </div>
+      <!-- gradient: dark top bar + heavy bottom fade -->
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.52) 0%,rgba(6,8,12,0.08) 35%,rgba(6,8,12,0.1) 55%,rgba(6,8,12,0.82) 100%);pointer-events:none;"></div>
 
-    <!-- ── Hero ── -->
-    <div class="hero">
-      <p class="hero-kicker">MODUS &middot; S&eacute;ance</p>
-      <h1 class="hero-title">Transform.<br>Support.<br>Create.</h1>
-      <p class="hero-sub">Join us. Partner with us. Sponsor us.</p>
-      <div class="hero-anchors">
-        <a class="hero-anchor hero-anchor-primary" href="#attend">Attend &darr;</a>
-        <a class="hero-anchor" href="#sponsor">Sponsor &darr;</a>
-        <a class="hero-anchor" href="#partner">Partner &darr;</a>
+      <!-- cover title block -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(2.5rem,6vw,5rem) clamp(1.25rem,5vw,4.5rem);">
+        <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(212,168,75,1);margin-bottom:1.25rem;display:block;">MODUS &middot; S&Eacute;ANCE &middot; ACQUIRE</span>
+        <h1 style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(4.5rem,13vw,11rem);font-weight:normal;letter-spacing:-0.04em;line-height:0.87;color:#F0E8D5;margin:0 0 1.75rem;">Transform.<br>Support.<br>Create.</h1>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.2rem);font-style:italic;color:rgba(240,232,213,0.72);margin-bottom:2rem;line-height:1.5;">Join us. Partner with us. Sponsor us.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Attend &darr;</a>
+          <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Sponsor &darr;</a>
+          <a href="#partner" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Partner &darr;</a>
+        </div>
       </div>
     </div>
 

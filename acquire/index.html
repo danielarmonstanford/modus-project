@@ -755,20 +755,78 @@
       <!-- gradient: dark top bar + heavy bottom fade -->
       <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.52) 0%,rgba(6,8,12,0.08) 35%,rgba(6,8,12,0.1) 55%,rgba(6,8,12,0.82) 100%);pointer-events:none;"></div>
 
-      <!-- cover title block -->
-      <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(2rem,6vw,5rem) clamp(1.25rem,5vw,4.5rem);">
-        <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(212,168,75,1);margin-bottom:1.25rem;display:block;">MODUS &middot; S&Eacute;ANCE &middot; ACQUIRE</span>
-        <h1 style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(3.5rem,12vw,11rem);font-weight:normal;letter-spacing:-0.05em;line-height:0.87;color:#F0E8D5;margin:0 0 0.4rem;">ASCENSION</h1>
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</p>
-        <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</p>
-        <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.75rem;">Transform. Support. Create.</p>
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:2rem;line-height:1.5;">Da Nang, Vietnam &nbsp;&middot;&nbsp; January 15&ndash;29, 2027 &nbsp;&middot;&nbsp; Join us. Partner with us. Sponsor us.</p>
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Attend &darr;</a>
-          <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Sponsor &darr;</a>
-          <a href="#partner" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Partner &darr;</a>
+      <!-- cover title block: ASCENSION pinned to sky, rest at bottom -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(2rem,6vw,5rem) clamp(1.25rem,5vw,4.5rem);">
+        <!-- top: ASCENSION in the dark sky -->
+        <div>
+          <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(212,168,75,1);margin-bottom:1.25rem;display:block;">MODUS &middot; S&Eacute;ANCE &middot; ACQUIRE</span>
+          <h1 style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(3.5rem,12vw,11rem);font-weight:normal;letter-spacing:-0.05em;line-height:0.87;color:#F0E8D5;margin:0;">ASCENSION</h1>
+        </div>
+        <!-- bottom: lang switcher, taglines, CTAs -->
+        <div>
+          <!-- language switcher -->
+          <div id="aq-lsw" style="display:flex;gap:0.5rem;margin-bottom:1rem;">
+            <button onclick="aqLang('en')" id="aq-en" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:#D4A84B;cursor:pointer;padding:0;opacity:1;">EN</button>
+            <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;color:rgba(240,232,213,0.3);">·</span>
+            <button onclick="aqLang('vi')" id="aq-vi" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:rgba(240,232,213,0.45);cursor:pointer;padding:0;">VI</button>
+            <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;color:rgba(240,232,213,0.3);">·</span>
+            <button onclick="aqLang('fr')" id="aq-fr" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:rgba(240,232,213,0.45);cursor:pointer;padding:0;">FR</button>
+          </div>
+          <!-- EN taglines -->
+          <div class="aq-l-en">
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</p>
+            <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</p>
+            <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.25rem;">Transform. Support. Create.</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Da Nang, Vietnam &nbsp;&middot;&nbsp; January 15&ndash;29, 2027 &nbsp;&middot;&nbsp; Join us. Partner with us. Sponsor us.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Attend &darr;</a>
+              <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Sponsor &darr;</a>
+              <a href="#partner" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Partner &darr;</a>
+            </div>
+          </div>
+          <!-- VI taglines -->
+          <div class="aq-l-vi" style="display:none;">
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">Hãy Trở Thành Phiên Bản Vĩ Đại Nhất Của Bạn &mdash; GoAt &#x1F525;&#x1F410;</p>
+            <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">Sự Thăng Hoa &nbsp;|&nbsp; ASCENSION</p>
+            <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.25rem;">Chuyển Hóa. Hỗ Trợ. Sáng Tạo.</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 15&ndash;29 Tháng 1, 2027 &nbsp;&middot;&nbsp; Tham gia. Đồng hành. Hợp tác.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Tham Gia &darr;</a>
+              <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Tài Trợ &darr;</a>
+              <a href="#partner" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Đối Tác &darr;</a>
+            </div>
+          </div>
+          <!-- FR taglines -->
+          <div class="aq-l-fr" style="display:none;">
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">Sois Ton Plus Grand Moi &mdash; GoAt &#x1F525;&#x1F410;</p>
+            <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">ASCENSION &nbsp;|&nbsp; Sự Thăng Hoa</p>
+            <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.25rem;">Transformer. Soutenir. Créer.</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Đà Nẵng, Viêt Nam &nbsp;&middot;&nbsp; 15&ndash;29 Janvier 2027 &nbsp;&middot;&nbsp; Participez. Accompagnez. Partenariat.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Participer &darr;</a>
+              <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Commanditer &darr;</a>
+              <a href="#partner" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Partenariat &darr;</a>
+            </div>
+          </div>
         </div>
       </div>
+      <script>
+        (function(){
+          var k='ascension-lang';
+          function aqLang(l){
+            localStorage.setItem(k,l);
+            document.querySelectorAll('.aq-l-en,.aq-l-vi,.aq-l-fr').forEach(function(el){el.style.display='none';});
+            var el=document.querySelector('.aq-l-'+l);
+            if(el)el.style.display='';
+            ['en','vi','fr'].forEach(function(x){
+              var btn=document.getElementById('aq-'+x);
+              if(btn)btn.style.color=x===l?'#D4A84B':'rgba(240,232,213,0.45)';
+            });
+          }
+          window.aqLang=aqLang;
+          aqLang(localStorage.getItem(k)||'en');
+        })();
+      </script>
     </div>
 
     <div class="rule-gold"></div>

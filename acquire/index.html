@@ -831,6 +831,80 @@
 
     <div class="rule-gold"></div>
 
+    <!-- ── SOUND BATH PLAYER ── -->
+    <div id="player-bar" style="background:#0A0C10;border-bottom:0.5px solid rgba(212,168,75,0.2);padding:0.75rem clamp(1.25rem,5vw,4.5rem);display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;">
+      <!-- play/pause -->
+      <button id="yt-play" onclick="ytToggle()" aria-label="Play / Pause" style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--gold,#D4A84B);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+        <svg id="yt-icon-play" width="12" height="14" viewBox="0 0 12 14" fill="#06080C"><path d="M0 0l12 7-12 7z"/></svg>
+        <svg id="yt-icon-pause" width="12" height="14" viewBox="0 0 12 14" fill="#06080C" style="display:none;"><rect x="0" y="0" width="4" height="14"/><rect x="8" y="0" width="4" height="14"/></svg>
+      </button>
+      <!-- track info -->
+      <div style="flex:1;min-width:180px;">
+        <p id="yt-track-name" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#F0E8D5;margin:0;line-height:1.3;">Samsara</p>
+        <p id="yt-track-credit" style="font-family:'DM Mono','Courier New',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(212,168,75,0.7);margin:0.1rem 0 0;">Thousand Hands &nbsp;·&nbsp; Michael Stearns &nbsp;·&nbsp; Bonnie Jo Hunt &nbsp;·&nbsp; Ron Sunsinger</p>
+      </div>
+      <!-- track list -->
+      <div style="display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center;">
+        <button onclick="ytLoad(0)" id="yt-t0" style="font-family:'DM Mono','Courier New',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;padding:5px 12px;border:0.5px solid #D4A84B;background:#D4A84B;color:#06080C;cursor:pointer;transition:all 0.2s;">01 · Samsara</button>
+      </div>
+      <!-- label -->
+      <p style="font-family:'DM Mono','Courier New',monospace;font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,232,213,0.25);margin:0;white-space:nowrap;">MODUS Sound</p>
+    </div>
+    <!-- hidden YouTube iframe -->
+    <div style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;" aria-hidden="true">
+      <iframe id="yt-frame" width="1" height="1"
+        src="https://www.youtube.com/embed/2qpLS0hs7A8?enablejsapi=1&autoplay=0&loop=1&playlist=2qpLS0hs7A8"
+        allow="autoplay; encrypted-media" frameborder="0"></iframe>
+    </div>
+    <script>
+    (function(){
+      var tracks=[
+        {id:'2qpLS0hs7A8',name:'Samsara',credit:'Thousand Hands · Michael Stearns · Bonnie Jo Hunt · Ron Sunsinger'}
+      ];
+      var current=0, playing=false, player=null;
+      function onYTReady(){
+        player=new YT.Player('yt-frame',{
+          events:{
+            'onReady':function(e){},
+            'onStateChange':function(e){
+              if(e.data===YT.PlayerState.ENDED && tracks.length>1){ ytLoad((current+1)%tracks.length); }
+            }
+          }
+        });
+      }
+      window.onYouTubeIframeAPIReady=onYTReady;
+      // load API
+      if(!window.YT){
+        var s=document.createElement('script');
+        s.src='https://www.youtube.com/iframe_api';
+        document.head.appendChild(s);
+      } else { onYTReady(); }
+
+      window.ytLoad=function(i){
+        current=i;
+        var t=tracks[i];
+        document.getElementById('yt-track-name').textContent=t.name;
+        document.getElementById('yt-track-credit').textContent=t.credit;
+        document.querySelectorAll('[id^="yt-t"]').forEach(function(b,idx){
+          b.style.background=idx===i?'#D4A84B':'transparent';
+          b.style.color=idx===i?'#06080C':'rgba(212,168,75,0.7)';
+        });
+        if(player && player.loadVideoById){ player.loadVideoById(t.id); playing=true; syncIcons(); }
+      };
+      window.ytToggle=function(){
+        if(!player||!player.getPlayerState) return;
+        var s=player.getPlayerState();
+        if(s===1){ player.pauseVideo(); playing=false; }
+        else { player.playVideo(); playing=true; }
+        syncIcons();
+      };
+      function syncIcons(){
+        document.getElementById('yt-icon-play').style.display=playing?'none':'block';
+        document.getElementById('yt-icon-pause').style.display=playing?'block':'none';
+      }
+    })();
+    </script>
+
     <!-- ── 01: ATTEND ── -->
     <section class="section" id="attend">
       <p class="section-num">01 &mdash; Attend</p>

@@ -293,6 +293,13 @@
       .experiences-grid{grid-template-columns:1fr}
       .gallery-grid{grid-template-columns:1fr 1fr}
       .retreat-hero img{height:75svh;object-position:center 15%}
+      /* compress bottom text block so it sits tight above CTA */
+      .retreat-hero-text{padding-bottom:1.75rem}
+      .rh-tagline{margin-bottom:0.2rem!important}
+      .rh-sub{margin-bottom:0.4rem!important}
+      .retreat-hero-cta{margin-top:0.75rem!important}
+      /* date line: tight kerning + no-wrap so it stays one line */
+      .retreat-hero-meta{letter-spacing:0.03em;font-size:9px;white-space:nowrap}
     }
     @media(max-width:480px){
       .gallery-grid{grid-template-columns:1fr}
@@ -406,22 +413,22 @@
       </div>
       <!-- EN -->
       <div class="sl-l-en">
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</p>
-        <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</p>
+        <p class="rh-tagline" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</p>
+        <p class="rh-sub" style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</p>
         <span class="retreat-hero-meta">Da Nang, Vietnam &nbsp;&middot;&nbsp; January 15&ndash;29, 2027</span>
         <a class="retreat-hero-cta" href="/seance/ascension" style="display:inline-flex;margin-top:1.25rem;">Discover the Retreat &rarr;</a>
       </div>
       <!-- VI -->
       <div class="sl-l-vi" style="display:none;">
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Hãy Trở Thành Phiên Bản Vĩ Đại Nhất Của Bạn &mdash; GoAt &#x1F525;&#x1F410;</p>
-        <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">Sự Thăng Hoa &nbsp;|&nbsp; ASCENSION</p>
+        <p class="rh-tagline" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Hãy Trở Thành Phiên Bản Vĩ Đại Nhất Của Bạn &mdash; GoAt &#x1F525;&#x1F410;</p>
+        <p class="rh-sub" style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">Sự Thăng Hoa &nbsp;|&nbsp; ASCENSION</p>
         <span class="retreat-hero-meta">Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 15&ndash;29 Tháng 1, 2027</span>
         <a class="retreat-hero-cta" href="/seance/ascension" style="display:inline-flex;margin-top:1.25rem;">Khám Phá Retreat &rarr;</a>
       </div>
       <!-- FR -->
       <div class="sl-l-fr" style="display:none;">
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Sois Ton Plus Grand Moi &mdash; GoAt &#x1F525;&#x1F410;</p>
-        <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">ASCENSION &nbsp;|&nbsp; Sự Thăng Hoa</p>
+        <p class="rh-tagline" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:rgba(240,232,213,0.78);margin:0 0 0.3rem;line-height:1.2;">Sois Ton Plus Grand Moi &mdash; GoAt &#x1F525;&#x1F410;</p>
+        <p class="rh-sub" style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.75);margin:0 0 1.25rem;">ASCENSION &nbsp;|&nbsp; Sự Thăng Hoa</p>
         <span class="retreat-hero-meta">Đà Nẵng, Viêt Nam &nbsp;&middot;&nbsp; 15&ndash;29 Janvier 2027</span>
         <a class="retreat-hero-cta" href="/seance/ascension" style="display:inline-flex;margin-top:1.25rem;">Découvrir la Retraite &rarr;</a>
       </div>

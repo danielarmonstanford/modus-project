@@ -591,6 +591,98 @@
       .pricing-grid { grid-template-columns: 1fr; }
       .hero-anchors { gap: 1.2rem; }
     }
+
+    /* ── Modals ── */
+    .form-modal {
+      position: fixed; inset: 0; z-index: 500;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .form-modal.hidden { display: none; }
+    .form-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    }
+    .form-container {
+      position: relative; z-index: 1;
+      background: var(--bg2); border: 0.5px solid var(--border);
+      width: 100%; max-width: 620px; max-height: 90svh;
+      overflow-y: auto; padding: clamp(2rem,5vw,3.5rem);
+      -ms-overflow-style: none; scrollbar-width: none;
+    }
+    .form-container::-webkit-scrollbar { display: none; }
+    .form-close {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      background: none; border: none; cursor: pointer;
+      font-family: var(--font-mono); font-size: 16px;
+      color: var(--text-dim); min-width: 44px; min-height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      transition: color var(--ease);
+    }
+    .form-close:hover { color: var(--text); }
+    .form-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: normal; letter-spacing: -0.02em; line-height: 1;
+      color: var(--text); margin-bottom: 0.5rem;
+    }
+    .form-subtitle {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 2.5rem;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label {
+      display: block; font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; background: transparent;
+      border: none; border-bottom: 0.5px solid var(--border);
+      padding: 0.6rem 0; font-family: var(--font-ed); font-size: 1rem;
+      color: var(--text); outline: none;
+      transition: border-color var(--ease);
+      appearance: none; -webkit-appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23D4A84B' opacity='0.6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 0 center;
+      cursor: pointer; padding-right: 1.25rem;
+    }
+    .form-group select option { background: #0E0C10; color: #EAE0CC; }
+    [data-theme="light"] .form-group select option { background: #EBE4D4; color: #1B2340; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-dim); font-style: italic; opacity: 0.5; }
+    .form-group textarea { min-height: 90px; resize: vertical; line-height: 1.6; }
+    .form-group input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px var(--bg2) inset;
+      -webkit-text-fill-color: var(--text);
+    }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .form-btn {
+      margin-top: 2.5rem; width: 100%;
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--bg); background: var(--gold);
+      border: none; cursor: pointer; padding: 16px;
+      transition: opacity var(--ease);
+    }
+    .form-btn:hover { opacity: 0.85; }
+    .form-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .form-result {
+      margin-top: 1.25rem; font-family: var(--font-ed); font-size: 1rem;
+      font-style: italic; line-height: 1.65; min-height: 1.5rem;
+    }
+    .form-result.success { color: var(--gold); }
+    .form-result.error { color: rgba(234,224,204,0.5); }
+    @media (max-width: 560px) {
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -717,8 +809,7 @@
 
       <div class="cta-row">
         <a class="cta-primary" href="/seance/heal-your-soul">View Full Retreat &rarr;</a>
-        <!-- Replace href with GHL application form URL -->
-        <a class="cta-secondary" href="mailto:seance@modus.gallery?subject=Heal Your Soul Retreat — Application">Apply Now &rarr;</a>
+        <button class="cta-secondary" onclick="openModal('modal-attend')">Apply Now &rarr;</button>
       </div>
     </section>
 
@@ -768,9 +859,8 @@
       </div>
 
       <div class="cta-row">
-        <!-- Replace href with GHL sponsorship inquiry form URL -->
-        <a class="cta-primary" href="mailto:partners@modus.gallery?subject=Sponsorship Inquiry — MODUS Séance">Explore Sponsorship &rarr;</a>
-        <a class="cta-secondary" href="mailto:partners@modus.gallery">Contact Us &rarr;</a>
+        <button class="cta-primary" onclick="openModal('modal-sponsor')">Explore Sponsorship &rarr;</button>
+        <button class="cta-secondary" onclick="openModal('modal-sponsor')">Contact Us &rarr;</button>
       </div>
     </section>
 
@@ -790,8 +880,7 @@
             <li>Honorarium provided for selected practitioners</li>
           </ul>
           <div class="cta-row" style="margin-top:2rem;">
-            <!-- Replace href with GHL practitioner application form URL -->
-            <a class="cta-primary" href="mailto:seance@modus.gallery?subject=Practitioner Application — MODUS Séance">Apply as Practitioner &rarr;</a>
+            <button class="cta-primary" onclick="openModal('modal-partner')">Apply as Practitioner &rarr;</button>
           </div>
         </div>
         <div>
@@ -987,5 +1076,345 @@
   </script>
 
 <script src="/assets/js/lang.js"></script>
+
+<!-- ══════════════════════════════════════════
+     MODAL 1 — ATTEND
+══════════════════════════════════════════ -->
+<div id="modal-attend" class="form-modal hidden" role="dialog" aria-modal="true" aria-labelledby="attend-title">
+  <div class="form-overlay"></div>
+  <div class="form-container">
+    <button class="form-close" aria-label="Close">&times;</button>
+    <h2 class="form-title" id="attend-title">Heal Your Soul<br>Retreat</h2>
+    <p class="form-subtitle">Da Nang, Vietnam &middot; January 2027 &middot; Application</p>
+    <form id="form-attend" novalidate>
+      <input type="hidden" name="_subject" value="New Retreat Application — MODUS Séance">
+      <input type="hidden" name="form_type" value="Attend: Heal Your Soul Retreat">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="a-name">Full Name *</label>
+          <input type="text" id="a-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="a-email">Email *</label>
+          <input type="email" id="a-email" name="email" required autocomplete="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="a-program">Which program? *</label>
+        <select id="a-program" name="program" required>
+          <option value="">Select...</option>
+          <option value="1-Week Immersion ($1,200 early bird)">1-Week Immersion — $1,200</option>
+          <option value="2-Week Fortnight ($1,800 early bird)">2-Week Fortnight — $1,800</option>
+          <option value="VIP Intensive ($2,800)">VIP Intensive — $2,800</option>
+          <option value="Day Pass ($120/day)">Day Pass — $120/day</option>
+        </select>
+      </div>
+      <div class="form-group" id="a-days-group" style="display:none">
+        <label for="a-days">How many days?</label>
+        <input type="number" id="a-days" name="days" min="1" max="14" placeholder="e.g. 3">
+      </div>
+      <div class="form-group">
+        <label for="a-dietary">Dietary restrictions</label>
+        <textarea id="a-dietary" name="dietary" placeholder="Vegetarian, vegan, allergies, etc."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="a-exp">Have you attended a wellness retreat before?</label>
+        <select id="a-exp" name="retreat_experience">
+          <option value="">Select...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No — this would be my first</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="a-motivation">What draws you to this retreat? *</label>
+        <textarea id="a-motivation" name="motivation" required placeholder="Tell us what you're looking for..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="a-source">How did you hear about us?</label>
+        <select id="a-source" name="source">
+          <option value="">Select...</option>
+          <option value="Instagram">Instagram</option>
+          <option value="MODUS Magazine">MODUS Magazine</option>
+          <option value="Friend / Referral">Friend / Referral</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <button type="submit" class="form-btn">Submit Application</button>
+      <p class="form-result" id="attend-result"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL 2 — SPONSOR
+══════════════════════════════════════════ -->
+<div id="modal-sponsor" class="form-modal hidden" role="dialog" aria-modal="true" aria-labelledby="sponsor-title">
+  <div class="form-overlay"></div>
+  <div class="form-container">
+    <button class="form-close" aria-label="Close">&times;</button>
+    <h2 class="form-title" id="sponsor-title">Partner with<br>MODUS</h2>
+    <p class="form-subtitle">Sponsorship Inquiry</p>
+    <form id="form-sponsor" novalidate>
+      <input type="hidden" name="_subject" value="Sponsorship Inquiry — MODUS Séance">
+      <input type="hidden" name="form_type" value="Sponsor: MODUS Séance">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="s-company">Company Name *</label>
+          <input type="text" id="s-company" name="company" required>
+        </div>
+        <div class="form-group">
+          <label for="s-contact">Contact Name *</label>
+          <input type="text" id="s-contact" name="contact_name" required autocomplete="name">
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="s-email">Email *</label>
+          <input type="email" id="s-email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="s-phone">Phone</label>
+          <input type="tel" id="s-phone" name="phone" autocomplete="tel" placeholder="Optional">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="s-tier">Which tier interests you? *</label>
+        <select id="s-tier" name="tier" required>
+          <option value="">Select...</option>
+          <option value="Presenting Partner ($35,000)">Presenting Partner — $35,000</option>
+          <option value="Platinum Partner ($20,000)">Platinum Partner — $20,000</option>
+          <option value="Gold Partner ($10,000)">Gold Partner — $10,000</option>
+          <option value="Open to discussion">Open to discussion</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="s-other">Interested in other partnership opportunities?</label>
+        <select id="s-other" name="other_partnerships">
+          <option value="">Select...</option>
+          <option value="Yes">Yes — tell me more</option>
+          <option value="No">No — event sponsorship only</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="s-align">Why does your brand align with MODUS? *</label>
+        <textarea id="s-align" name="brand_alignment" required placeholder="Tell us about your brand and audience..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="s-timeline">Timeline for decision?</label>
+        <select id="s-timeline" name="timeline">
+          <option value="">Select...</option>
+          <option value="Immediate">Immediate</option>
+          <option value="This month">This month</option>
+          <option value="Next month">Next month</option>
+          <option value="Exploring options">Exploring options</option>
+        </select>
+      </div>
+      <button type="submit" class="form-btn">Submit Sponsorship Inquiry</button>
+      <p class="form-result" id="sponsor-result"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL 3 — PARTNER (PRACTITIONER)
+══════════════════════════════════════════ -->
+<div id="modal-partner" class="form-modal hidden" role="dialog" aria-modal="true" aria-labelledby="partner-title">
+  <div class="form-overlay"></div>
+  <div class="form-container">
+    <button class="form-close" aria-label="Close">&times;</button>
+    <h2 class="form-title" id="partner-title">Apply as<br>Facilitator</h2>
+    <p class="form-subtitle">MODUS S&eacute;ance &middot; Practitioner Application</p>
+    <form id="form-partner" novalidate>
+      <input type="hidden" name="_subject" value="Practitioner Application — MODUS Séance">
+      <input type="hidden" name="form_type" value="Partner: Practitioner Application">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="p-name">Full Name *</label>
+          <input type="text" id="p-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="p-email">Email *</label>
+          <input type="email" id="p-email" name="email" required autocomplete="email">
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="p-spec">Primary Specialization *</label>
+          <select id="p-spec" name="specialization" required>
+            <option value="">Select...</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Sound Healing">Sound Healing</option>
+            <option value="Energy Work">Energy Work</option>
+            <option value="Acupressure">Acupressure</option>
+            <option value="Nutrition">Nutrition</option>
+            <option value="Art">Art</option>
+            <option value="Movement">Movement</option>
+            <option value="Breathwork">Breathwork</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="p-years">Years of Experience *</label>
+          <input type="number" id="p-years" name="years_experience" required min="1" placeholder="e.g. 8">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="p-creds">Certifications &amp; Credentials *</label>
+        <textarea id="p-creds" name="credentials" required placeholder="List your certifications, training, and relevant credentials..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="p-portfolio">Website or Portfolio</label>
+        <input type="url" id="p-portfolio" name="portfolio_url" placeholder="https://...">
+      </div>
+      <div class="form-group">
+        <label for="p-facilitate">What would you facilitate at the retreat? *</label>
+        <textarea id="p-facilitate" name="proposed_sessions" required placeholder="Describe the sessions or experiences you would lead..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="p-avail">Available January 2027?</label>
+        <select id="p-avail" name="availability_jan_2027">
+          <option value="">Select...</option>
+          <option value="Yes — fully available">Yes — fully available</option>
+          <option value="Partially available">Partially available</option>
+          <option value="Need to confirm">Need to confirm</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="p-countries">Countries you&rsquo;ve taught or practiced in</label>
+        <input type="text" id="p-countries" name="countries" placeholder="e.g. Canada, Thailand, India, Portugal">
+      </div>
+      <div class="form-group">
+        <label for="p-why">Why do you want to join S&eacute;ance? *</label>
+        <textarea id="p-why" name="why_seance" required placeholder="Tell us what draws you to MODUS and this retreat..."></textarea>
+      </div>
+      <button type="submit" class="form-btn">Submit Practitioner Application</button>
+      <p class="form-result" id="partner-result"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+  // ── Modal open/close ──
+  function openModal(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    m.querySelector('.form-close').focus();
+  }
+  function closeModal(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  // Close on overlay click or × button
+  document.querySelectorAll('.form-modal').forEach(function(modal) {
+    modal.querySelector('.form-overlay').addEventListener('click', function() {
+      closeModal(modal.id);
+    });
+    modal.querySelector('.form-close').addEventListener('click', function() {
+      closeModal(modal.id);
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.form-modal:not(.hidden)').forEach(function(m) {
+        closeModal(m.id);
+      });
+    }
+  });
+
+  // ── Attend: show days field for Day Pass ──
+  var progSelect = document.getElementById('a-program');
+  if (progSelect) {
+    progSelect.addEventListener('change', function() {
+      var dg = document.getElementById('a-days-group');
+      if (dg) dg.style.display = this.value.startsWith('Day Pass') ? 'block' : 'none';
+    });
+  }
+
+  // ── Generic AJAX form submit ──
+  function bindForm(formId, resultId, modalId, successMsg) {
+    var form = document.getElementById(formId);
+    var result = document.getElementById(resultId);
+    if (!form || !result) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Basic required-field validation
+      var missing = false;
+      form.querySelectorAll('[required]').forEach(function(field) {
+        if (!field.value.trim()) {
+          field.style.borderColor = 'rgba(234,224,204,0.3)';
+          missing = true;
+        } else {
+          field.style.borderColor = '';
+        }
+      });
+      if (missing) {
+        result.textContent = 'Please fill in all required fields.';
+        result.className = 'form-result error';
+        return;
+      }
+
+      var btn = form.querySelector('.form-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      result.textContent = '';
+      result.className = 'form-result';
+
+      var data = {};
+      new FormData(form).forEach(function(v, k) { data[k] = v; });
+
+      fetch('https://formspree.io/f/xbdekqyr', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(r) { return r.json().then(function(j) { return { ok: r.ok, json: j }; }); })
+      .then(function(res) {
+        if (res.ok) {
+          form.reset();
+          // Show day-pass field reset
+          var dg = document.getElementById('a-days-group');
+          if (dg) dg.style.display = 'none';
+          result.textContent = successMsg;
+          result.className = 'form-result success';
+          btn.textContent = 'Sent';
+        } else {
+          result.textContent = 'Something went wrong. Email us: hello@modus.gallery';
+          result.className = 'form-result error';
+          btn.disabled = false;
+          btn.textContent = 'Try Again';
+        }
+      })
+      .catch(function() {
+        result.textContent = 'Connection error. Email us: hello@modus.gallery';
+        result.className = 'form-result error';
+        btn.disabled = false;
+        btn.textContent = 'Try Again';
+      });
+    });
+  }
+
+  bindForm(
+    'form-attend', 'attend-result', 'modal-attend',
+    'Thank you. We’ll review your application and respond within 48 hours.'
+  );
+  bindForm(
+    'form-sponsor', 'sponsor-result', 'modal-sponsor',
+    'Thank you. Our partnerships team will be in touch within 24 hours.'
+  );
+  bindForm(
+    'form-partner', 'partner-result', 'modal-partner',
+    'Thank you for applying. We’ll review your submission and respond within 5 business days.'
+  );
+</script>
 </body>
 </html>

@@ -793,6 +793,7 @@
     <button class="side-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
     <p class="side-menu-label">MODUS &middot; Navigate</p>
     <nav class="side-menu-nav">
+      <a href="/acquire#ascension" style="color:var(--gold,#D4A84B);font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;border-bottom:0.5px solid rgba(212,168,75,0.35);padding-bottom:0.6rem;margin-bottom:0.2rem;">ASCENSION 2027 ↓</a>
       <a href="/manifeste" data-en="Manifeste" data-fr="Manifeste">Manifeste</a>
       <a href="/seance" data-en="Séance" data-fr="Séance">Séance</a>
       <a href="/acquire" data-en="Acquire" data-fr="Acquérir">Acquire</a>
@@ -862,19 +863,23 @@
         <!-- bottom: lang switcher, taglines, CTAs -->
         <div>
           <!-- language switcher -->
-          <div id="aq-lsw" style="display:flex;gap:0.5rem;margin-bottom:1rem;">
+          <div id="aq-lsw" style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
             <button onclick="aqLang('en')" id="aq-en" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:#D4A84B;cursor:pointer;padding:0;opacity:1;">EN</button>
             <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;color:rgba(240,232,213,0.3);">·</span>
             <button onclick="aqLang('vi')" id="aq-vi" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:rgba(240,232,213,0.45);cursor:pointer;padding:0;">VI</button>
             <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;color:rgba(240,232,213,0.3);">·</span>
             <button onclick="aqLang('fr')" id="aq-fr" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:rgba(240,232,213,0.45);cursor:pointer;padding:0;">FR</button>
+            <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;color:rgba(240,232,213,0.3);">·</span>
+            <button onclick="aqLang('zh')" id="aq-zh" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:rgba(240,232,213,0.45);cursor:pointer;padding:0;">中文</button>
+            <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;color:rgba(240,232,213,0.3);">·</span>
+            <button onclick="aqLang('ko')" id="aq-ko" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;background:none;border:none;color:rgba(240,232,213,0.45);cursor:pointer;padding:0;">한국어</button>
           </div>
           <!-- EN taglines -->
           <div class="aq-l-en">
             <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</p>
             <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</p>
             <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.25rem;">Transform. Support. Create.</p>
-            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Da Nang, Vietnam &nbsp;&middot;&nbsp; January 15&ndash;29, 2027 &nbsp;&middot;&nbsp; Join us. Partner with us. Sponsor us.</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Da Nang, Vietnam &nbsp;&middot;&nbsp; January 12&ndash;26, 2027 &nbsp;&middot;&nbsp; Join us. Partner with us. Sponsor us.</p>
             <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
               <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Attend &darr;</a>
               <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Sponsor &darr;</a>
@@ -886,7 +891,7 @@
             <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">Hãy Trở Thành Phiên Bản Vĩ Đại Nhất Của Bạn &mdash; GoAt &#x1F525;&#x1F410;</p>
             <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">Sự Thăng Hoa &nbsp;|&nbsp; ASCENSION</p>
             <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.25rem;">Chuyển Hóa. Hỗ Trợ. Sáng Tạo.</p>
-            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 15&ndash;29 Tháng 1, 2027 &nbsp;&middot;&nbsp; Tham gia. Đồng hành. Hợp tác.</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 12&ndash;26 Tháng 1, 2027 &nbsp;&middot;&nbsp; Tham gia. Đồng hành. Hợp tác.</p>
             <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
               <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Tham Gia &darr;</a>
               <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Tài Trợ &darr;</a>
@@ -907,15 +912,46 @@
           </div>
         </div>
       </div>
+          <!-- ZH taglines -->
+          <div class="aq-l-zh" style="display:none;">
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">成为最好的自己 &mdash; GoAt &#x1F525;&#x1F410;</p>
+            <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">ASCENSION &nbsp;|&nbsp; 升华</p>
+            <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.25rem;">蜕变。支持。创造。</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">越南岘港 &nbsp;&middot;&nbsp; 2027年1月12–26日 &nbsp;&middot;&nbsp; 参与。赞助。合作。</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">参与 &darr;</a>
+              <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">赞助 &darr;</a>
+              <a href="#partner" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">合作 &darr;</a>
+            </div>
+          </div>
+          <!-- KO taglines -->
+          <div class="aq-l-ko" style="display:none;">
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">최고의 자신이 되십시오 &mdash; GoAt &#x1F525;&#x1F410;</p>
+            <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">ASCENSION &nbsp;|&nbsp; 상승</p>
+            <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.25rem;">변화하다. 지속하다. 창조하다.</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">베트남 다낭 &nbsp;&middot;&nbsp; 2027년 1월 12–26일 &nbsp;&middot;&nbsp; 참여. 후원. 파트너십.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">참여 &darr;</a>
+              <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">후원 &darr;</a>
+              <a href="#partner" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">파트너십 &darr;</a>
+            </div>
+          </div>
       <script>
         (function(){
           var k='ascension-lang';
           function aqLang(l){
             localStorage.setItem(k,l);
-            document.querySelectorAll('.aq-l-en,.aq-l-vi,.aq-l-fr').forEach(function(el){el.style.display='none';});
-            var el=document.querySelector('.aq-l-'+l);
-            if(el)el.style.display='';
-            ['en','vi','fr'].forEach(function(x){
+            // Show/hide hero blocks
+            document.querySelectorAll('.aq-l-en,.aq-l-vi,.aq-l-fr,.aq-l-zh,.aq-l-ko').forEach(function(el){el.style.display='none';});
+            var heroBlock=document.querySelector('.aq-l-'+l);
+            if(heroBlock)heroBlock.style.display='';
+            // Swap body translations on [data-en] elements
+            document.querySelectorAll('[data-en]').forEach(function(node){
+              var t=node.dataset[l];
+              node.innerHTML=t!==undefined&&t!==''?t:node.dataset.en;
+            });
+            // Highlight active language button
+            ['en','vi','fr','zh','ko'].forEach(function(x){
               var btn=document.getElementById('aq-'+x);
               if(btn)btn.style.color=x===l?'#D4A84B':'rgba(240,232,213,0.45)';
             });
@@ -1003,224 +1039,398 @@
     </script>
 
     <!-- ══════════════════════════════════════════════════════ -->
-    <!-- ASCENSION MARKETPLACE — 7 sections                    -->
+    <!-- ASCENSION MARKETPLACE — 7 sections (EN + FR)          -->
     <!-- ══════════════════════════════════════════════════════ -->
 
     <!-- SECTION 1: BUILD YOUR ASCENSION -->
     <section class="mkt-section" id="build-ascension">
-      <span class="mkt-eyebrow">ASCENSION · Da Nang, Vietnam · January 12–26, 2027</span>
-      <h2 class="mkt-h2">Build Your<br>ASCENSION</h2>
-      <p class="mkt-subhead">One destination. Multiple ways to experience it. Choose your stay, your depth, your journey.</p>
+      <span class="mkt-eyebrow"
+        data-en="ASCENSION · Da Nang, Vietnam · January 12–26, 2027"
+        data-fr="ASCENSION · Đà Nẵng, Viêt Nam · 12–26 Janvier 2027"
+        data-zh="ASCENSION · 越南岘港 · 2027年1月12–26日"
+        data-ko="ASCENSION · 베트남 다낭 · 2027년 1월 12–26일"
+        >ASCENSION · Da Nang, Vietnam · January 12–26, 2027</span>
+      <h2 class="mkt-h2"
+        data-en="Build Your&lt;br&gt;ASCENSION"
+        data-fr="Construisez&lt;br&gt;Votre ASCENSION"
+        >Build Your<br>ASCENSION</h2>
+      <p class="mkt-subhead"
+        data-en="One destination. Multiple ways to experience it. Choose your stay, your depth, your journey."
+        data-fr="Une destination. De multiples façons de l&apos;explorer. Choisissez votre hébergement, votre niveau d&apos;immersion, votre parcours."
+        >One destination. Multiple ways to experience it. Choose your stay, your depth, your journey.</p>
 
-      <h3 class="mkt-h3">The Modular Experience</h3>
+      <h3 class="mkt-h3"
+        data-en="The Modular Experience"
+        data-fr="L&apos;Expérience Modulaire"
+        >The Modular Experience</h3>
       <div class="modules-grid">
         <div class="module-card">
           <span class="module-card-icon">🏨</span>
-          <div class="module-card-title">Stay</div>
-          <p>Our anchor hotel hosts opening/closing ceremonies and daily wellness coordination. Alternatively, choose from 4 curated hotels across Da Nang ($57–$135/night). Preferred ASCENSION rates available exclusively to participants.</p>
+          <div class="module-card-title" data-en="Stay" data-fr="Séjour">Stay</div>
+          <p data-en="Our anchor hotel hosts opening/closing ceremonies and daily wellness coordination. Alternatively, choose from 4 curated hotels across Da Nang ($57–$135/night). Preferred ASCENSION rates available exclusively to participants."
+             data-fr="Notre hôtel d&apos;ancrage accueille les cérémonies d&apos;ouverture et de clôture ainsi que la coordination bien-être quotidienne. Vous pouvez également choisir parmi 4 hôtels sélectionnés à Da Nang (57–135&nbsp;$/nuit). Des tarifs ASCENSION préférentiels, réservés exclusivement aux participants."
+            >Our anchor hotel hosts opening/closing ceremonies and daily wellness coordination. Alternatively, choose from 4 curated hotels across Da Nang ($57–$135/night). Preferred ASCENSION rates available exclusively to participants.</p>
         </div>
         <div class="module-card">
           <span class="module-card-icon">💎</span>
-          <div class="module-card-title">Restore</div>
-          <p>Hideout Wellness thermal rituals, massage, spa days, and recovery protocols. 4–5 thermal recovery sessions included in your passport.</p>
+          <div class="module-card-title" data-en="Restore" data-fr="Récupération">Restore</div>
+          <p data-en="Hideout Wellness thermal rituals, massage, spa days, and recovery protocols. 4–5 thermal recovery sessions included in your passport."
+             data-fr="Rituels thermaux Hideout Wellness, massages, journées spa et protocoles de récupération. 4 à 5 séances de récupération thermale incluses dans votre passeport."
+            >Hideout Wellness thermal rituals, massage, spa days, and recovery protocols. 4–5 thermal recovery sessions included in your passport.</p>
         </div>
         <div class="module-card">
           <span class="module-card-icon">🧘</span>
-          <div class="module-card-title">Move</div>
-          <p>Budokon Yoga, somatic movement, breathwork intensives. Daily group classes included. Private sessions available ($80–$150).</p>
+          <div class="module-card-title" data-en="Move" data-fr="Mouvement">Move</div>
+          <p data-en="Budokon Yoga, somatic movement, breathwork intensives. Daily group classes included. Private sessions available ($80–$150)."
+             data-fr="Yoga Budokon, mouvement somatique, intensifs de respiration. Cours collectifs quotidiens inclus. Séances privées disponibles (80–150&nbsp;$)."
+            >Budokon Yoga, somatic movement, breathwork intensives. Daily group classes included. Private sessions available ($80–$150).</p>
         </div>
         <div class="module-card">
           <span class="module-card-icon">🍽️</span>
-          <div class="module-card-title">Taste</div>
-          <p>Curated dinners, cooking classes, farm-to-table experiences. Group meals included. Extended culinary packages available.</p>
+          <div class="module-card-title" data-en="Taste" data-fr="Saveurs">Taste</div>
+          <p data-en="Curated dinners, cooking classes, farm-to-table experiences. Group meals included. Extended culinary packages available."
+             data-fr="Dîners curatés, cours de cuisine, expériences du jardin à la table. Repas en groupe inclus. Forfaits culinaires prolongés disponibles."
+            >Curated dinners, cooking classes, farm-to-table experiences. Group meals included. Extended culinary packages available.</p>
         </div>
         <div class="module-card">
           <span class="module-card-icon">🌏</span>
-          <div class="module-card-title">Discover</div>
-          <p>Culture, architecture, natural sites, local wisdom traditions. Marble Mountains, Hội An ancient town, Tết cultural immersion (14-day cohort).</p>
+          <div class="module-card-title" data-en="Discover" data-fr="Découverte">Discover</div>
+          <p data-en="Culture, architecture, natural sites, local wisdom traditions. Marble Mountains, Hội An ancient town, Tết cultural immersion (14-day cohort)."
+             data-fr="Culture, architecture, sites naturels, traditions de sagesse locale. Montagne de Marbre, vieille ville de Hội An, immersion culturelle Tết (cohorte 14 jours)."
+            >Culture, architecture, natural sites, local wisdom traditions. Marble Mountains, Hội An ancient town, Tết cultural immersion (14-day cohort).</p>
         </div>
         <div class="module-card">
           <span class="module-card-icon">🔊</span>
-          <div class="module-card-title">Sound</div>
-          <p>Gong baths, Tibetan bowls, vocal toning. Sound healing is our signature modality. Daily rituals and evening ceremonies.</p>
+          <div class="module-card-title" data-en="Sound" data-fr="Son">Sound</div>
+          <p data-en="Gong baths, Tibetan bowls, vocal toning. Sound healing is our signature modality. Daily rituals and evening ceremonies."
+             data-fr="Bains de gong, bols tibétains, tonification vocale. La guérison sonore est notre modalité signature. Rituels quotidiens et cérémonies du soir."
+            >Gong baths, Tibetan bowls, vocal toning. Sound healing is our signature modality. Daily rituals and evening ceremonies.</p>
         </div>
         <div class="module-card">
           <span class="module-card-icon">👥</span>
-          <div class="module-card-title">Deeper</div>
-          <p>Private practitioners: Vietnamese acupressure, sleep science, shamanic work, Rolfing. Book private sessions ($110–$250 each).</p>
+          <div class="module-card-title" data-en="Deeper" data-fr="Profondeur">Deeper</div>
+          <p data-en="Private practitioners: Vietnamese acupressure, sleep science, shamanic work, Rolfing. Book private sessions ($110–$250 each)."
+             data-fr="Praticiens en séance privée : acupression vietnamienne, science du sommeil, travail chamanique, Rolfing. Réservez des séances privées (110–250&nbsp;$)."
+            >Private practitioners: Vietnamese acupressure, sleep science, shamanic work, Rolfing. Book private sessions ($110–$250 each).</p>
         </div>
         <div class="module-card">
           <span class="module-card-icon">📸</span>
-          <div class="module-card-title">Media</div>
-          <p>Photography, content creation, personal brand sessions. Attendees co-create MODUS editorial. Your story documented.</p>
+          <div class="module-card-title" data-en="Media" data-fr="Médias">Media</div>
+          <p data-en="Photography, content creation, personal brand sessions. Attendees co-create MODUS editorial. Your story documented."
+             data-fr="Photographie, création de contenu, séances de personal branding. Les participants co-créent l&apos;édition MODUS. Votre histoire documentée."
+            >Photography, content creation, personal brand sessions. Attendees co-create MODUS editorial. Your story documented.</p>
         </div>
       </div>
 
-      <h3 class="mkt-h3">Your Hotel Options</h3>
-      <p class="mkt-subhead" style="margin-bottom:1.5rem;">Our anchor hotel hosts opening/closing ceremonies and daily coordination. Choose from 4 curated alternatives across Da Nang — you book direct, transparent pricing, no markups.</p>
+      <h3 class="mkt-h3"
+        data-en="Your Hotel Options"
+        data-fr="Vos Options d&apos;Hébergement"
+        >Your Hotel Options</h3>
+      <p class="mkt-subhead" style="margin-bottom:1.5rem;"
+        data-en="Our anchor hotel hosts opening/closing ceremonies and daily coordination. Choose from 4 curated alternatives across Da Nang — you book direct, transparent pricing, no markups."
+        data-fr="Notre hôtel d&apos;ancrage accueille les cérémonies d&apos;ouverture et de clôture ainsi que la coordination quotidienne. Choisissez parmi 4 alternatives sélectionnées à Da Nang — vous réservez en direct, tarification transparente, sans commission MODUS."
+        >Our anchor hotel hosts opening/closing ceremonies and daily coordination. Choose from 4 curated alternatives across Da Nang — you book direct, transparent pricing, no markups.</p>
       <div class="hotel-grid">
         <div class="hotel-card anchor">
-          <span class="hotel-card-badge">Anchor Hotel — TBD on LOI</span>
+          <span class="hotel-card-badge"
+            data-en="Anchor Hotel — TBD on LOI"
+            data-fr="Hôtel d&apos;Ancrage — TBD selon LOI"
+            >Anchor Hotel — TBD on LOI</span>
           <div class="hotel-card-name">[HOTEL NAME — TBD]</div>
-          <div class="hotel-card-tags">Wellness Amenities &nbsp;·&nbsp; Event Spaces &nbsp;·&nbsp; Central Coordination</div>
-          <p>Central hub for ASCENSION. Opening ceremony, closing celebration, daily gathering point. Preferred rates locked in for participants.</p>
+          <div class="hotel-card-tags"
+            data-en="Wellness Amenities &amp;nbsp;·&amp;nbsp; Event Spaces &amp;nbsp;·&amp;nbsp; Central Coordination"
+            data-fr="Équipements Bien-être &amp;nbsp;·&amp;nbsp; Espaces Événementiels &amp;nbsp;·&amp;nbsp; Coordination Centrale"
+            >Wellness Amenities &nbsp;·&nbsp; Event Spaces &nbsp;·&nbsp; Central Coordination</div>
+          <p data-en="Central hub for ASCENSION. Opening ceremony, closing celebration, daily gathering point. Preferred rates locked in for participants."
+             data-fr="Centre névralgique d&apos;ASCENSION. Cérémonie d&apos;ouverture, célébration de clôture, point de rassemblement quotidien. Tarifs préférentiels bloqués pour les participants."
+            >Central hub for ASCENSION. Opening ceremony, closing celebration, daily gathering point. Preferred rates locked in for participants.</p>
         </div>
         <div class="hotel-card">
-          <span class="hotel-card-badge">Alternative Option</span>
+          <span class="hotel-card-badge"
+            data-en="Alternative Option"
+            data-fr="Option Alternative"
+            >Alternative Option</span>
           <div class="hotel-card-name">TUI BLUE Han River</div>
-          <div class="hotel-card-tags">Central &nbsp;·&nbsp; Rooftop Venue &nbsp;·&nbsp; New Property</div>
-          <p>Central Da Nang, iconic rooftop views, BLUE Spa on-site. Modern boutique positioning.</p>
+          <div class="hotel-card-tags"
+            data-en="Central &amp;nbsp;·&amp;nbsp; Rooftop Venue &amp;nbsp;·&amp;nbsp; New Property"
+            data-fr="Centre-ville &amp;nbsp;·&amp;nbsp; Rooftop &amp;nbsp;·&amp;nbsp; Nouveau Bâtiment"
+            >Central &nbsp;·&nbsp; Rooftop Venue &nbsp;·&nbsp; New Property</div>
+          <p data-en="Central Da Nang, iconic rooftop views, BLUE Spa on-site. Modern boutique positioning."
+             data-fr="Centre de Da Nang, vue iconique sur le toit, spa BLUE sur place. Positionnement boutique moderne."
+            >Central Da Nang, iconic rooftop views, BLUE Spa on-site. Modern boutique positioning.</p>
         </div>
         <div class="hotel-card">
-          <span class="hotel-card-badge">Alternative Option</span>
+          <span class="hotel-card-badge"
+            data-en="Alternative Option"
+            data-fr="Option Alternative"
+            >Alternative Option</span>
           <div class="hotel-card-name">Chicland Hotel</div>
-          <div class="hotel-card-tags">Beachfront &nbsp;·&nbsp; 21st-Floor Spa &nbsp;·&nbsp; Eco Design</div>
-          <p>My Khe Beach, wellness-aligned, rooftop dining. Best value-to-quality ratio.</p>
+          <div class="hotel-card-tags"
+            data-en="Beachfront &amp;nbsp;·&amp;nbsp; 21st-Floor Spa &amp;nbsp;·&amp;nbsp; Eco Design"
+            data-fr="Front de Mer &amp;nbsp;·&amp;nbsp; Spa 21e Étage &amp;nbsp;·&amp;nbsp; Éco-Design"
+            >Beachfront &nbsp;·&nbsp; 21st-Floor Spa &nbsp;·&nbsp; Eco Design</div>
+          <p data-en="My Khe Beach, wellness-aligned, rooftop dining. Best value-to-quality ratio."
+             data-fr="Plage de My Khe, axé bien-être, restauration en rooftop. Meilleur rapport qualité-prix."
+            >My Khe Beach, wellness-aligned, rooftop dining. Best value-to-quality ratio.</p>
         </div>
         <div class="hotel-card">
-          <span class="hotel-card-badge">Alternative Option</span>
+          <span class="hotel-card-badge"
+            data-en="Alternative Option"
+            data-fr="Option Alternative"
+            >Alternative Option</span>
           <div class="hotel-card-name">TMS Hotel Da Nang Beach</div>
-          <div class="hotel-card-tags">Beachfront &nbsp;·&nbsp; Infinity Pool &nbsp;·&nbsp; Strong Spa</div>
-          <p>My Khe Beach, walkable district, exceptional reviews (9.4/10).</p>
+          <div class="hotel-card-tags"
+            data-en="Beachfront &amp;nbsp;·&amp;nbsp; Infinity Pool &amp;nbsp;·&amp;nbsp; Strong Spa"
+            data-fr="Front de Mer &amp;nbsp;·&amp;nbsp; Piscine à Débordement &amp;nbsp;·&amp;nbsp; Spa Réputé"
+            >Beachfront &nbsp;·&nbsp; Infinity Pool &nbsp;·&nbsp; Strong Spa</div>
+          <p data-en="My Khe Beach, walkable district, exceptional reviews (9.4/10)."
+             data-fr="Plage de My Khe, quartier accessible à pied, avis exceptionnels (9,4/10)."
+            >My Khe Beach, walkable district, exceptional reviews (9.4/10).</p>
         </div>
         <div class="hotel-card">
-          <span class="hotel-card-badge">Alternative Option</span>
+          <span class="hotel-card-badge"
+            data-en="Alternative Option"
+            data-fr="Option Alternative"
+            >Alternative Option</span>
           <div class="hotel-card-name">Le Sands Oceanfront</div>
-          <div class="hotel-card-tags">Oceanfront &nbsp;·&nbsp; Highest Rated &nbsp;·&nbsp; Spa-Forward</div>
-          <p>My Khe Beach, 9.6/10 guest reviews, direct oceanfront access.</p>
+          <div class="hotel-card-tags"
+            data-en="Oceanfront &amp;nbsp;·&amp;nbsp; Highest Rated &amp;nbsp;·&amp;nbsp; Spa-Forward"
+            data-fr="Face à l&apos;Océan &amp;nbsp;·&amp;nbsp; Mieux Noté &amp;nbsp;·&amp;nbsp; Spa Premium"
+            >Oceanfront &nbsp;·&nbsp; Highest Rated &nbsp;·&nbsp; Spa-Forward</div>
+          <p data-en="My Khe Beach, 9.6/10 guest reviews, direct oceanfront access."
+             data-fr="Plage de My Khe, avis clients 9,6/10, accès direct à l&apos;océan."
+            >My Khe Beach, 9.6/10 guest reviews, direct oceanfront access.</p>
         </div>
       </div>
-      <p class="mkt-note">Passport covers programme only. Accommodation is booked separately at preferred group rates. You book direct — no markups from MODUS.</p>
+      <p class="mkt-note"
+        data-en="Passport covers programme only. Accommodation is booked separately at preferred group rates. You book direct — no markups from MODUS."
+        data-fr="Le passeport couvre uniquement le programme. L&apos;hébergement est réservé séparément aux tarifs de groupe préférentiels. Vous réservez en direct — sans majoration de MODUS."
+        >Passport covers programme only. Accommodation is booked separately at preferred group rates. You book direct — no markups from MODUS.</p>
     </section>
 
     <!-- SECTION 2: PRICING TRANSPARENCY -->
     <section class="mkt-section" id="pricing-transparent">
-      <span class="mkt-eyebrow">Programme Pricing</span>
-      <h2 class="mkt-h2">Pricing That<br>Makes Sense</h2>
-      <p class="mkt-subhead">Clear pricing. Your choices. No hidden costs. Accommodation is separate — you book the hotel that suits you.</p>
+      <span class="mkt-eyebrow"
+        data-en="Programme Pricing"
+        data-fr="Tarification du Programme"
+        >Programme Pricing</span>
+      <h2 class="mkt-h2"
+        data-en="Pricing That&lt;br&gt;Makes Sense"
+        data-fr="Une Tarification&lt;br&gt;Transparente"
+        >Pricing That<br>Makes Sense</h2>
+      <p class="mkt-subhead"
+        data-en="Clear pricing. Your choices. No hidden costs. Accommodation is separate — you book the hotel that suits you."
+        data-fr="Tarification claire. Vos choix. Aucun coût caché. L&apos;hébergement est séparé — réservez l&apos;hôtel qui vous convient."
+        >Clear pricing. Your choices. No hidden costs. Accommodation is separate — you book the hotel that suits you.</p>
       <div class="mkt-table-wrap">
         <table class="mkt-table">
           <thead>
             <tr>
-              <th>Passport</th>
-              <th>Duration</th>
-              <th>Price</th>
-              <th>Includes</th>
-              <th>Hotel (separate)</th>
+              <th data-en="Passport" data-fr="Passeport">Passport</th>
+              <th data-en="Duration" data-fr="Durée">Duration</th>
+              <th data-en="Price" data-fr="Prix">Price</th>
+              <th data-en="Includes" data-fr="Inclus">Includes</th>
+              <th data-en="Hotel (separate)" data-fr="Hôtel (séparé)">Hotel (separate)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Core Passport</strong></td>
-              <td>7 Days</td>
+              <td data-en="&lt;strong&gt;Core Passport&lt;/strong&gt;" data-fr="&lt;strong&gt;Passeport Essentiel&lt;/strong&gt;"><strong>Core Passport</strong></td>
+              <td data-en="7 Days" data-fr="7 Jours">7 Days</td>
               <td class="price">$1,200</td>
-              <td>Group programming, 2 spa, Hideout thermal recovery, specialist sessions</td>
-              <td>Your choice · $57–$135/night</td>
+              <td data-en="Group programming, 2 spa, Hideout thermal recovery, specialist sessions"
+                  data-fr="Programme collectif, 2 soins spa, récupération thermale Hideout, séances spécialistes"
+                  >Group programming, 2 spa, Hideout thermal recovery, specialist sessions</td>
+              <td data-en="Your choice · $57–$135/night" data-fr="Au choix · 57–135&nbsp;$/nuit">Your choice · $57–$135/night</td>
             </tr>
             <tr>
-              <td><strong>Extended Passport</strong></td>
-              <td>14 Days</td>
+              <td data-en="&lt;strong&gt;Extended Passport&lt;/strong&gt;" data-fr="&lt;strong&gt;Passeport Prolongé&lt;/strong&gt;"><strong>Extended Passport</strong></td>
+              <td data-en="14 Days" data-fr="14 Jours">14 Days</td>
               <td class="price">$2,000</td>
-              <td>Everything above × 2, plus 2 additional practitioners + Tết ceremony</td>
-              <td>Your choice · $57–$135/night</td>
+              <td data-en="Everything above × 2, plus 2 additional practitioners + Tết ceremony"
+                  data-fr="Tout ci-dessus × 2, plus 2 praticiens supplémentaires + cérémonie Tết"
+                  >Everything above × 2, plus 2 additional practitioners + Tết ceremony</td>
+              <td data-en="Your choice · $57–$135/night" data-fr="Au choix · 57–135&nbsp;$/nuit">Your choice · $57–$135/night</td>
             </tr>
             <tr>
-              <td><strong>VIP Upgrade</strong></td>
-              <td>Add to 7 or 14 Day</td>
+              <td data-en="&lt;strong&gt;VIP Upgrade&lt;/strong&gt;" data-fr="&lt;strong&gt;Upgrade VIP&lt;/strong&gt;"><strong>VIP Upgrade</strong></td>
+              <td data-en="Add to 7 or 14 Day" data-fr="En supplément 7 ou 14 j.">Add to 7 or 14 Day</td>
               <td class="price">$2,200 / $3,000</td>
-              <td>3 private sessions, concierge itinerary, priority booking</td>
-              <td>Upgrade available</td>
+              <td data-en="3 private sessions, concierge itinerary, priority booking"
+                  data-fr="3 séances privées, itinéraire conciergerie, réservation prioritaire"
+                  >3 private sessions, concierge itinerary, priority booking</td>
+              <td data-en="Upgrade available" data-fr="Upgrade disponible">Upgrade available</td>
             </tr>
             <tr>
-              <td><strong>Conference Day Pass</strong></td>
-              <td>1 Day</td>
+              <td data-en="&lt;strong&gt;Conference Day Pass&lt;/strong&gt;" data-fr="&lt;strong&gt;Pass Journée Conférence&lt;/strong&gt;"><strong>Conference Day Pass</strong></td>
+              <td data-en="1 Day" data-fr="1 Jour">1 Day</td>
               <td class="price">$50</td>
-              <td>Keynotes, breakout sessions, group dinner — select conference days</td>
-              <td>Not included</td>
+              <td data-en="Keynotes, breakout sessions, group dinner — select conference days"
+                  data-fr="Conférences principales, ateliers, dîner en groupe — jours de conférence sélectionnés"
+                  >Keynotes, breakout sessions, group dinner — select conference days</td>
+              <td data-en="Not included" data-fr="Non inclus">Not included</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="mkt-note">Example: $1,200 passport + $57/night Chicland (7 nights) = $1,599 total for 7 days of full transformation programming.</p>
+      <p class="mkt-note"
+        data-en="Example: $1,200 passport + $57/night Chicland (7 nights) = $1,599 total for 7 days of full transformation programming."
+        data-fr="Exemple : passeport à 1&nbsp;200&nbsp;$ + Chicland à 57&nbsp;$/nuit (7 nuits) = 1&nbsp;599&nbsp;$ au total pour 7 jours de programmation transformatrice complète."
+        >Example: $1,200 passport + $57/night Chicland (7 nights) = $1,599 total for 7 days of full transformation programming.</p>
     </section>
 
     <!-- SECTION 3: TIERED ACCESS -->
     <section class="mkt-section" id="tiered-access">
-      <span class="mkt-eyebrow">Access Tiers</span>
-      <h2 class="mkt-h2">Four Ways<br>to Participate</h2>
-      <p class="mkt-subhead">Core retreat remains intimate — 20 curated people, no compromises. Conferences let specialists teach at scale. Choose your level of immersion.</p>
+      <span class="mkt-eyebrow"
+        data-en="Access Tiers"
+        data-fr="Niveaux d&apos;Accès"
+        >Access Tiers</span>
+      <h2 class="mkt-h2"
+        data-en="Four Ways&lt;br&gt;to Participate"
+        data-fr="Quatre Façons&lt;br&gt;de Participer"
+        >Four Ways<br>to Participate</h2>
+      <p class="mkt-subhead"
+        data-en="Core retreat remains intimate — 20 curated people, no compromises. Conferences let specialists teach at scale. Choose your level of immersion."
+        data-fr="Le séjour central reste intime — 20 personnes sélectionnées, sans compromis. Les conférences permettent aux spécialistes d&apos;enseigner à plus grande échelle. Choisissez votre niveau d&apos;immersion."
+        >Core retreat remains intimate — 20 curated people, no compromises. Conferences let specialists teach at scale. Choose your level of immersion.</p>
       <div class="tiers-grid">
         <div class="tier-cell t1">
-          <div class="tier-cell-badge">TIER 1</div>
-          <div class="tier-cell-title">Core Retreat</div>
-          <div class="tier-cell-size">20 curated guests</div>
-          <div class="tier-cell-detail">Full 7–14 day immersion<br>All programming<br>Community access<br>Intimate curation</div>
+          <div class="tier-cell-badge" data-en="TIER 1" data-fr="NIVEAU 1">TIER 1</div>
+          <div class="tier-cell-title" data-en="Core Retreat" data-fr="Séjour Central">Core Retreat</div>
+          <div class="tier-cell-size" data-en="20 curated guests" data-fr="20 participants sélectionnés">20 curated guests</div>
+          <div class="tier-cell-detail"
+            data-en="Full 7–14 day immersion&lt;br&gt;All programming&lt;br&gt;Community access&lt;br&gt;Intimate curation"
+            data-fr="Immersion complète 7–14 jours&lt;br&gt;Toute la programmation&lt;br&gt;Accès à la communauté&lt;br&gt;Curation intime"
+            >Full 7–14 day immersion<br>All programming<br>Community access<br>Intimate curation</div>
         </div>
         <div class="tier-cell t2">
-          <div class="tier-cell-badge">TIER 2</div>
-          <div class="tier-cell-title">Conferences</div>
-          <div class="tier-cell-size">50–100 guests</div>
-          <div class="tier-cell-detail">Sleep Science · Sound Healing<br>Keynotes + breakouts<br>$50 day pass</div>
+          <div class="tier-cell-badge" data-en="TIER 2" data-fr="NIVEAU 2">TIER 2</div>
+          <div class="tier-cell-title" data-en="Conferences" data-fr="Conférences">Conferences</div>
+          <div class="tier-cell-size" data-en="50–100 guests" data-fr="50–100 participants">50–100 guests</div>
+          <div class="tier-cell-detail"
+            data-en="Sleep Science · Sound Healing&lt;br&gt;Keynotes + breakouts&lt;br&gt;$50 day pass"
+            data-fr="Science du Sommeil · Guérison Sonore&lt;br&gt;Conférences + ateliers&lt;br&gt;Pass journée 50&nbsp;$"
+            >Sleep Science · Sound Healing<br>Keynotes + breakouts<br>$50 day pass</div>
         </div>
         <div class="tier-cell t3">
-          <div class="tier-cell-badge">TIER 3</div>
-          <div class="tier-cell-title">Hotel Add-Ons</div>
-          <div class="tier-cell-size">10–30 guests</div>
-          <div class="tier-cell-detail">À la carte sessions<br>Drop-in classes<br>$50–$150/session</div>
+          <div class="tier-cell-badge" data-en="TIER 3" data-fr="NIVEAU 3">TIER 3</div>
+          <div class="tier-cell-title" data-en="Hotel Add-Ons" data-fr="Modules Hôtel">Hotel Add-Ons</div>
+          <div class="tier-cell-size" data-en="10–30 guests" data-fr="10–30 participants">10–30 guests</div>
+          <div class="tier-cell-detail"
+            data-en="À la carte sessions&lt;br&gt;Drop-in classes&lt;br&gt;$50–$150/session"
+            data-fr="Séances à la carte&lt;br&gt;Cours ponctuels&lt;br&gt;50–150&nbsp;$/séance"
+            >À la carte sessions<br>Drop-in classes<br>$50–$150/session</div>
         </div>
         <div class="tier-cell t4">
-          <div class="tier-cell-badge">TIER 4</div>
-          <div class="tier-cell-title">Community</div>
-          <div class="tier-cell-size">Open</div>
-          <div class="tier-cell-detail">Evening events<br>Group ceremonies<br>DJ sets · Free–$30</div>
+          <div class="tier-cell-badge" data-en="TIER 4" data-fr="NIVEAU 4">TIER 4</div>
+          <div class="tier-cell-title" data-en="Community" data-fr="Communauté">Community</div>
+          <div class="tier-cell-size" data-en="Open" data-fr="Ouvert">Open</div>
+          <div class="tier-cell-detail"
+            data-en="Evening events&lt;br&gt;Group ceremonies&lt;br&gt;DJ sets · Free–$30"
+            data-fr="Soirées événementielles&lt;br&gt;Cérémonies collectives&lt;br&gt;Sets DJ · Gratuit–30&nbsp;$"
+            >Evening events<br>Group ceremonies<br>DJ sets · Free–$30</div>
         </div>
       </div>
     </section>
 
     <!-- SECTION 4: HOW TO PARTICIPATE -->
     <section class="mkt-section" id="partner-funnel">
-      <span class="mkt-eyebrow">Partner With MODUS</span>
-      <h2 class="mkt-h2">How to<br>Participate</h2>
-      <p class="mkt-subhead">Every partner plays a distinct role. What's yours?</p>
+      <span class="mkt-eyebrow"
+        data-en="Partner With MODUS"
+        data-fr="Partenariat avec MODUS"
+        >Partner With MODUS</span>
+      <h2 class="mkt-h2"
+        data-en="How to&lt;br&gt;Participate"
+        data-fr="Comment&lt;br&gt;Participer"
+        >How to<br>Participate</h2>
+      <p class="mkt-subhead"
+        data-en="Every partner plays a distinct role. What&apos;s yours?"
+        data-fr="Chaque partenaire joue un rôle distinct. Quel est le vôtre ?"
+        >Every partner plays a distinct role. What's yours?</p>
       <div class="funnel-block">
         <div class="funnel-step">
-          <div class="funnel-badge">Hotel / Venue Partner</div>
-          <div class="funnel-q">Want to host ASCENSION attendees?</div>
-          <p class="funnel-copy">We curate and recommend verified hotels to our participants. Your property gains direct access to a global wellness audience seeking quality stays in Da Nang.</p>
+          <div class="funnel-badge" data-en="Hotel / Venue Partner" data-fr="Hôtel / Lieu Partenaire">Hotel / Venue Partner</div>
+          <div class="funnel-q"
+            data-en="Want to host ASCENSION attendees?"
+            data-fr="Souhaitez-vous accueillir les participants ASCENSION ?"
+            >Want to host ASCENSION attendees?</div>
+          <p class="funnel-copy"
+            data-en="We curate and recommend verified hotels to our participants. Your property gains direct access to a global wellness audience seeking quality stays in Da Nang."
+            data-fr="Nous sélectionnons et recommandons des hôtels vérifiés à nos participants. Votre établissement gagne un accès direct à une audience mondiale de bien-être à la recherche de séjours de qualité à Da Nang."
+            >We curate and recommend verified hotels to our participants. Your property gains direct access to a global wellness audience seeking quality stays in Da Nang.</p>
           <div class="funnel-btns">
-            <button class="funnel-btn" onclick="openModal('modal-sponsor')">Hotel Partnership Inquiry</button>
+            <button class="funnel-btn" onclick="openModal('modal-sponsor')"
+              data-en="Hotel Partnership Inquiry"
+              data-fr="Demande de Partenariat Hôtel"
+              >Hotel Partnership Inquiry</button>
           </div>
         </div>
         <div class="funnel-step">
-          <div class="funnel-badge">Experience / Wellness Partner</div>
-          <div class="funnel-q">Offering wellness or cultural experiences?</div>
-          <p class="funnel-copy">We feature your services in ASCENSION programming. Attendees book directly with you. Your expertise reaches a verified, curated audience.</p>
+          <div class="funnel-badge" data-en="Experience / Wellness Partner" data-fr="Partenaire Expérience / Bien-être">Experience / Wellness Partner</div>
+          <div class="funnel-q"
+            data-en="Offering wellness or cultural experiences?"
+            data-fr="Proposez-vous des expériences bien-être ou culturelles ?"
+            >Offering wellness or cultural experiences?</div>
+          <p class="funnel-copy"
+            data-en="We feature your services in ASCENSION programming. Attendees book directly with you. Your expertise reaches a verified, curated audience."
+            data-fr="Nous intégrons vos services dans la programmation ASCENSION. Les participants réservent directement chez vous. Votre expertise atteint une audience vérifiée et sélectionnée."
+            >We feature your services in ASCENSION programming. Attendees book directly with you. Your expertise reaches a verified, curated audience.</p>
           <div class="funnel-btns">
-            <button class="funnel-btn" onclick="openModal('modal-sponsor')">Experience Partnership</button>
+            <button class="funnel-btn" onclick="openModal('modal-sponsor')"
+              data-en="Experience Partnership"
+              data-fr="Partenariat Expérience"
+              >Experience Partnership</button>
           </div>
         </div>
         <div class="funnel-step">
-          <div class="funnel-badge">Practitioner / Facilitator</div>
-          <div class="funnel-q">Want to teach or facilitate?</div>
-          <p class="funnel-copy">Core facilitators receive accommodation and honorarium. Marketplace practitioners earn revenue from session bookings. Both paths available.</p>
+          <div class="funnel-badge" data-en="Practitioner / Facilitator" data-fr="Praticien / Facilitateur">Practitioner / Facilitator</div>
+          <div class="funnel-q"
+            data-en="Want to teach or facilitate?"
+            data-fr="Souhaitez-vous enseigner ou faciliter ?"
+            >Want to teach or facilitate?</div>
+          <p class="funnel-copy"
+            data-en="Core facilitators receive accommodation and honorarium. Marketplace practitioners earn revenue from session bookings. Both paths available."
+            data-fr="Les facilitateurs principaux bénéficient de l&apos;hébergement et d&apos;un honoraire. Les praticiens du marché perçoivent des revenus sur les réservations de séances. Les deux parcours sont disponibles."
+            >Core facilitators receive accommodation and honorarium. Marketplace practitioners earn revenue from session bookings. Both paths available.</p>
           <div class="funnel-btns">
-            <button class="funnel-btn" onclick="openModal('modal-partner')">Practitioner Application</button>
+            <button class="funnel-btn" onclick="openModal('modal-partner')"
+              data-en="Practitioner Application"
+              data-fr="Candidature Praticien"
+              >Practitioner Application</button>
           </div>
         </div>
         <div class="funnel-step">
-          <div class="funnel-badge">Brand / Sponsor</div>
-          <div class="funnel-q">Want to reach 20 wellness influencers + professionals?</div>
-          <p class="funnel-copy">Partnership tiers from $5K–$25K. Product integration, guaranteed audience reach, MODUS editorial exposure, and measurable engagement.</p>
+          <div class="funnel-badge" data-en="Brand / Sponsor" data-fr="Marque / Sponsor">Brand / Sponsor</div>
+          <div class="funnel-q"
+            data-en="Want to reach 20 wellness influencers + professionals?"
+            data-fr="Souhaitez-vous toucher 20 influenceurs et professionnels du bien-être ?"
+            >Want to reach 20 wellness influencers + professionals?</div>
+          <p class="funnel-copy"
+            data-en="Partnership tiers from $5K–$25K. Product integration, guaranteed audience reach, MODUS editorial exposure, and measurable engagement."
+            data-fr="Niveaux de partenariat de 5&nbsp;000&nbsp;$ à 25&nbsp;000&nbsp;$. Intégration de produits, portée garantie, exposition éditoriale MODUS et engagement mesurable."
+            >Partnership tiers from $5K–$25K. Product integration, guaranteed audience reach, MODUS editorial exposure, and measurable engagement.</p>
           <div class="funnel-btns">
-            <button class="funnel-btn" onclick="openModal('modal-sponsor')">Sponsorship Inquiry</button>
+            <button class="funnel-btn" onclick="openModal('modal-sponsor')"
+              data-en="Sponsorship Inquiry"
+              data-fr="Demande de Sponsoring"
+              >Sponsorship Inquiry</button>
           </div>
         </div>
         <div class="funnel-step">
-          <div class="funnel-badge">Cultural / Media Partner</div>
-          <div class="funnel-q">Documenting or amplifying ASCENSION?</div>
-          <p class="funnel-copy">Photographers, videographers, journalists, media platforms. Revenue share or sponsored coverage options. Co-branding and audience access.</p>
+          <div class="funnel-badge" data-en="Cultural / Media Partner" data-fr="Partenaire Culturel / Médias">Cultural / Media Partner</div>
+          <div class="funnel-q"
+            data-en="Documenting or amplifying ASCENSION?"
+            data-fr="Documentez-vous ou amplifiez-vous ASCENSION ?"
+            >Documenting or amplifying ASCENSION?</div>
+          <p class="funnel-copy"
+            data-en="Photographers, videographers, journalists, media platforms. Revenue share or sponsored coverage options. Co-branding and audience access."
+            data-fr="Photographes, vidéastes, journalistes, plateformes médias. Options de partage de revenus ou de couverture sponsorisée. Co-branding et accès à l&apos;audience."
+            >Photographers, videographers, journalists, media platforms. Revenue share or sponsored coverage options. Co-branding and audience access.</p>
           <div class="funnel-btns">
-            <button class="funnel-btn" onclick="openModal('modal-sponsor')">Media Partnership</button>
+            <button class="funnel-btn" onclick="openModal('modal-sponsor')"
+              data-en="Media Partnership"
+              data-fr="Partenariat Médias"
+              >Media Partnership</button>
           </div>
         </div>
       </div>
@@ -1228,55 +1438,64 @@
 
     <!-- SECTION 5: PARTNERSHIP INVESTMENT TIERS -->
     <section class="mkt-section" id="partner-tiers">
-      <span class="mkt-eyebrow">Partnership Tiers</span>
-      <h2 class="mkt-h2">Partnership<br>Investment</h2>
-      <p class="mkt-subhead">Transparent options. Different partnership types, different investments. All tiers gain access to a curated cohort of 20 wellness professionals and influencers.</p>
+      <span class="mkt-eyebrow"
+        data-en="Partnership Tiers"
+        data-fr="Niveaux de Partenariat"
+        >Partnership Tiers</span>
+      <h2 class="mkt-h2"
+        data-en="Partnership&lt;br&gt;Investment"
+        data-fr="Investissement&lt;br&gt;Partenaire"
+        >Partnership<br>Investment</h2>
+      <p class="mkt-subhead"
+        data-en="Transparent options. Different partnership types, different investments. All tiers gain access to a curated cohort of 20 wellness professionals and influencers."
+        data-fr="Options transparentes. Différents types de partenariats, différents investissements. Tous les niveaux donnent accès à une cohorte sélectionnée de 20 professionnels du bien-être et influenceurs."
+        >Transparent options. Different partnership types, different investments. All tiers gain access to a curated cohort of 20 wellness professionals and influencers.</p>
       <div class="ptier-grid">
         <div class="ptier-card p1">
-          <div class="ptier-label">Revenue Share</div>
-          <div class="ptier-sub">Experience / Wellness / Practitioner</div>
+          <div class="ptier-label" data-en="Revenue Share" data-fr="Partage de Revenus">Revenue Share</div>
+          <div class="ptier-sub" data-en="Experience / Wellness / Practitioner" data-fr="Expérience / Bien-être / Praticien">Experience / Wellness / Practitioner</div>
           <div class="ptier-amount">15–20%</div>
           <ul class="ptier-list">
-            <li>Per-booking revenue share</li>
-            <li>You set your price</li>
-            <li>Attendees book directly with you</li>
-            <li>Zero upfront investment</li>
+            <li data-en="Per-booking revenue share" data-fr="Partage de revenus par réservation">Per-booking revenue share</li>
+            <li data-en="You set your price" data-fr="Vous définissez votre tarif">You set your price</li>
+            <li data-en="Attendees book directly with you" data-fr="Les participants réservent directement chez vous">Attendees book directly with you</li>
+            <li data-en="Zero upfront investment" data-fr="Zéro investissement initial">Zero upfront investment</li>
           </ul>
         </div>
         <div class="ptier-card p2">
-          <div class="ptier-label">Experience Partner</div>
-          <div class="ptier-sub">Hotel / Wellness / Cultural</div>
+          <div class="ptier-label" data-en="Experience Partner" data-fr="Partenaire Expérience">Experience Partner</div>
+          <div class="ptier-sub" data-en="Hotel / Wellness / Cultural" data-fr="Hôtel / Bien-être / Culturel">Hotel / Wellness / Cultural</div>
           <div class="ptier-amount">$5K–$10K</div>
           <ul class="ptier-list">
-            <li>Built into passport</li>
-            <li>Guaranteed attendee access</li>
-            <li>MODUS marketing &amp; promotion</li>
-            <li>Featured in retreat materials</li>
+            <li data-en="Built into passport" data-fr="Intégré dans le passeport">Built into passport</li>
+            <li data-en="Guaranteed attendee access" data-fr="Accès garanti aux participants">Guaranteed attendee access</li>
+            <li data-en="MODUS marketing &amp; promotion" data-fr="Marketing et promotion MODUS">MODUS marketing &amp; promotion</li>
+            <li data-en="Featured in retreat materials" data-fr="Présence dans les supports du séjour">Featured in retreat materials</li>
           </ul>
         </div>
         <div class="ptier-card p3">
-          <div class="ptier-label">Brand Activation</div>
-          <div class="ptier-sub">Sports / Beauty / Nutrition / Tech</div>
+          <div class="ptier-label" data-en="Brand Activation" data-fr="Activation de Marque">Brand Activation</div>
+          <div class="ptier-sub" data-en="Sports / Beauty / Nutrition / Tech" data-fr="Sport / Beauté / Nutrition / Tech">Sports / Beauty / Nutrition / Tech</div>
           <div class="ptier-amount">$5K–$15K</div>
           <ul class="ptier-list">
-            <li>Product integration in programming</li>
-            <li>Direct attendee engagement</li>
-            <li>MODUS editorial feature</li>
-            <li>Social media amplification</li>
-            <li>UGC + influencer content seeding</li>
-            <li>Post-event performance insights</li>
+            <li data-en="Product integration in programming" data-fr="Intégration produit dans le programme">Product integration in programming</li>
+            <li data-en="Direct attendee engagement" data-fr="Engagement direct avec les participants">Direct attendee engagement</li>
+            <li data-en="MODUS editorial feature" data-fr="Reportage éditorial MODUS">MODUS editorial feature</li>
+            <li data-en="Social media amplification" data-fr="Amplification sur les réseaux sociaux">Social media amplification</li>
+            <li data-en="UGC + influencer content seeding" data-fr="Création de contenu UGC + influenceurs">UGC + influencer content seeding</li>
+            <li data-en="Post-event performance insights" data-fr="Bilan de performance post-événement">Post-event performance insights</li>
           </ul>
         </div>
         <div class="ptier-card p4">
-          <div class="ptier-label">Presenting Print</div>
-          <div class="ptier-sub">Flagship / Cultural / Major Sponsor</div>
+          <div class="ptier-label" data-en="Presenting Print" data-fr="Partenaire Présentateur">Presenting Print</div>
+          <div class="ptier-sub" data-en="Flagship / Cultural / Major Sponsor" data-fr="Phare / Culturel / Grand Sponsor">Flagship / Cultural / Major Sponsor</div>
           <div class="ptier-amount">$25K</div>
           <ul class="ptier-list">
-            <li>Brand names the experience</li>
-            <li>Controls programming and flow</li>
-            <li>Featured in all MODUS marketing</li>
-            <li>Entire attendee cohort engagement</li>
-            <li>Premium media and editorial rights</li>
+            <li data-en="Brand names the experience" data-fr="La marque donne son nom à l&apos;expérience">Brand names the experience</li>
+            <li data-en="Controls programming and flow" data-fr="Contrôle de la programmation">Controls programming and flow</li>
+            <li data-en="Featured in all MODUS marketing" data-fr="Présence dans tout le marketing MODUS">Featured in all MODUS marketing</li>
+            <li data-en="Entire attendee cohort engagement" data-fr="Engagement de toute la cohorte">Entire attendee cohort engagement</li>
+            <li data-en="Premium media and editorial rights" data-fr="Droits médias et éditoriaux premium">Premium media and editorial rights</li>
           </ul>
         </div>
       </div>
@@ -1284,74 +1503,128 @@
 
     <!-- SECTION 6: MODUS CURATION STANDARD -->
     <section class="mkt-section" id="curation-standard">
-      <span class="mkt-eyebrow">Selection Criteria</span>
-      <h2 class="mkt-h2">The MODUS<br>Curation Standard</h2>
-      <p class="mkt-subhead">Every ASCENSION partner is evaluated against 8 criteria. We don't accept every hotel, brand, or practitioner. Curation is the product.</p>
+      <span class="mkt-eyebrow"
+        data-en="Selection Criteria"
+        data-fr="Critères de Sélection"
+        >Selection Criteria</span>
+      <h2 class="mkt-h2"
+        data-en="The MODUS&lt;br&gt;Curation Standard"
+        data-fr="Le Standard de&lt;br&gt;Curation MODUS"
+        >The MODUS<br>Curation Standard</h2>
+      <p class="mkt-subhead"
+        data-en="Every ASCENSION partner is evaluated against 8 criteria. We don&apos;t accept every hotel, brand, or practitioner. Curation is the product."
+        data-fr="Chaque partenaire ASCENSION est évalué selon 8 critères. Nous n&apos;acceptons pas chaque hôtel, marque ou praticien. La curation est le produit."
+        >Every ASCENSION partner is evaluated against 8 criteria. We don't accept every hotel, brand, or practitioner. Curation is the product.</p>
       <div class="curation-grid">
         <div class="curation-cell">
           <div class="curation-num">01</div>
-          <div class="curation-title">Quality</div>
-          <div class="curation-desc">Does the experience deliver authentic transformation or tangible value?</div>
+          <div class="curation-title" data-en="Quality" data-fr="Qualité">Quality</div>
+          <div class="curation-desc"
+            data-en="Does the experience deliver authentic transformation or tangible value?"
+            data-fr="L&apos;expérience génère-t-elle une transformation authentique ou une valeur tangible ?"
+            >Does the experience deliver authentic transformation or tangible value?</div>
         </div>
         <div class="curation-cell">
           <div class="curation-num">02</div>
-          <div class="curation-title">Aesthetic</div>
-          <div class="curation-desc">Does it fit the MODUS world? Design, atmosphere, visual coherence.</div>
+          <div class="curation-title" data-en="Aesthetic" data-fr="Esthétique">Aesthetic</div>
+          <div class="curation-desc"
+            data-en="Does it fit the MODUS world? Design, atmosphere, visual coherence."
+            data-fr="S&apos;inscrit-elle dans l&apos;univers MODUS ? Design, atmosphère, cohérence visuelle."
+            >Does it fit the MODUS world? Design, atmosphere, visual coherence.</div>
         </div>
         <div class="curation-cell">
           <div class="curation-num">03</div>
-          <div class="curation-title">Authenticity</div>
-          <div class="curation-desc">Is there substance behind the brand or service? Real expertise, not hype.</div>
+          <div class="curation-title" data-en="Authenticity" data-fr="Authenticité">Authenticity</div>
+          <div class="curation-desc"
+            data-en="Is there substance behind the brand or service? Real expertise, not hype."
+            data-fr="Y a-t-il du fond derrière la marque ou le service ? Une véritable expertise, pas du marketing."
+            >Is there substance behind the brand or service? Real expertise, not hype.</div>
         </div>
         <div class="curation-cell">
           <div class="curation-num">04</div>
-          <div class="curation-title">People</div>
-          <div class="curation-desc">Who delivers this? Background, training, and integrity.</div>
+          <div class="curation-title" data-en="People" data-fr="Les Gens">People</div>
+          <div class="curation-desc"
+            data-en="Who delivers this? Background, training, and integrity."
+            data-fr="Qui assure la prestation ? Formation, parcours et intégrité."
+            >Who delivers this? Background, training, and integrity.</div>
         </div>
         <div class="curation-cell">
           <div class="curation-num">05</div>
-          <div class="curation-title">Place</div>
-          <div class="curation-desc">Does it have a meaningful relationship with Da Nang and the destination?</div>
+          <div class="curation-title" data-en="Place" data-fr="Le Lieu">Place</div>
+          <div class="curation-desc"
+            data-en="Does it have a meaningful relationship with Da Nang and the destination?"
+            data-fr="A-t-il un lien authentique avec Da Nang et la destination ?"
+            >Does it have a meaningful relationship with Da Nang and the destination?</div>
         </div>
         <div class="curation-cell">
           <div class="curation-num">06</div>
-          <div class="curation-title">Sustainability</div>
-          <div class="curation-desc">Is the operation responsible? Environmentally, socially, ethically?</div>
+          <div class="curation-title" data-en="Sustainability" data-fr="Durabilité">Sustainability</div>
+          <div class="curation-desc"
+            data-en="Is the operation responsible? Environmentally, socially, ethically?"
+            data-fr="L&apos;activité est-elle responsable ? Sur les plans environnemental, social et éthique ?"
+            >Is the operation responsible? Environmentally, socially, ethically?</div>
         </div>
         <div class="curation-cell">
           <div class="curation-num">07</div>
-          <div class="curation-title">Story</div>
-          <div class="curation-desc">Can it contribute to the larger ASCENSION narrative?</div>
+          <div class="curation-title" data-en="Story" data-fr="Histoire">Story</div>
+          <div class="curation-desc"
+            data-en="Can it contribute to the larger ASCENSION narrative?"
+            data-fr="Peut-elle contribuer à la narration ASCENSION dans son ensemble ?"
+            >Can it contribute to the larger ASCENSION narrative?</div>
         </div>
         <div class="curation-cell">
           <div class="curation-num">08</div>
-          <div class="curation-title">Guest Value</div>
-          <div class="curation-desc">Would we personally recommend it? Would we attend ourselves?</div>
+          <div class="curation-title" data-en="Guest Value" data-fr="Valeur Client">Guest Value</div>
+          <div class="curation-desc"
+            data-en="Would we personally recommend it? Would we attend ourselves?"
+            data-fr="Le recommanderions-nous personnellement ? Y participerions-nous nous-mêmes ?"
+            >Would we personally recommend it? Would we attend ourselves?</div>
         </div>
       </div>
-      <p class="mkt-note">This standard certifies that every ASCENSION partner has been thoughtfully selected to serve our attendees' transformation.</p>
+      <p class="mkt-note"
+        data-en="This standard certifies that every ASCENSION partner has been thoughtfully selected to serve our attendees&apos; transformation."
+        data-fr="Ce standard certifie que chaque partenaire ASCENSION a été sélectionné avec soin pour servir la transformation de nos participants."
+        >This standard certifies that every ASCENSION partner has been thoughtfully selected to serve our attendees' transformation.</p>
     </section>
 
     <!-- SECTION 7: MARKETPLACE CTA BAND -->
     <section class="mkt-section" id="marketplace-cta" style="padding-bottom:0;">
-      <span class="mkt-eyebrow">Ready to Participate?</span>
-      <h2 class="mkt-h2" style="margin-bottom:2rem;">Choose Your Path</h2>
+      <span class="mkt-eyebrow"
+        data-en="Ready to Participate?"
+        data-fr="Prêt à Participer ?"
+        >Ready to Participate?</span>
+      <h2 class="mkt-h2" style="margin-bottom:2rem;"
+        data-en="Choose Your Path"
+        data-fr="Choisissez Votre Voie"
+        >Choose Your Path</h2>
       <div class="mkt-cta-band">
         <div class="mkt-cta-cell">
-          <h4>Attend</h4>
-          <a class="mkt-cta-btn" href="https://buy.stripe.com/dRm8wQ2FR5tr9vL0izcfK00" target="_blank" rel="noopener">Reserve — $300 Deposit</a>
+          <h4 data-en="Attend" data-fr="Participer">Attend</h4>
+          <a class="mkt-cta-btn" href="https://buy.stripe.com/dRm8wQ2FR5tr9vL0izcfK00" target="_blank" rel="noopener"
+            data-en="Reserve — $300 Deposit"
+            data-fr="Réserver — Acompte 300&nbsp;$"
+            >Reserve — $300 Deposit</a>
         </div>
         <div class="mkt-cta-cell">
-          <h4>Partner</h4>
-          <button class="mkt-cta-btn secondary" onclick="openModal('modal-sponsor')">Partnership Inquiry</button>
+          <h4 data-en="Partner" data-fr="Partenariat">Partner</h4>
+          <button class="mkt-cta-btn secondary" onclick="openModal('modal-sponsor')"
+            data-en="Partnership Inquiry"
+            data-fr="Demande de Partenariat"
+            >Partnership Inquiry</button>
         </div>
         <div class="mkt-cta-cell">
-          <h4>Teach</h4>
-          <button class="mkt-cta-btn secondary" onclick="openModal('modal-partner')">Practitioner Application</button>
+          <h4 data-en="Teach" data-fr="Enseigner">Teach</h4>
+          <button class="mkt-cta-btn secondary" onclick="openModal('modal-partner')"
+            data-en="Practitioner Application"
+            data-fr="Candidature Praticien"
+            >Practitioner Application</button>
         </div>
         <div class="mkt-cta-cell">
-          <h4>Host</h4>
-          <button class="mkt-cta-btn secondary" onclick="openModal('modal-sponsor')">Hotel Partnership</button>
+          <h4 data-en="Host" data-fr="Accueillir">Host</h4>
+          <button class="mkt-cta-btn secondary" onclick="openModal('modal-sponsor')"
+            data-en="Hotel Partnership"
+            data-fr="Partenariat Hôtelier"
+            >Hotel Partnership</button>
         </div>
       </div>
     </section>
@@ -1717,6 +1990,45 @@
   </script>
 
 <script src="/assets/js/lang.js"></script>
+<script>
+/* Acquire-page override: replace lang.js EN↔FR toggle with 5-language cycle via aqLang().
+   lang.js already ran and set textContent on [data-en] elements; aqLang() (defined above)
+   runs on DOMContentLoaded and overwrites with innerHTML, winning the race. Here we also
+   re-wire the langBtn so the nav button drives all 5 languages on this page. */
+(function(){
+  var langs=['en','vi','fr','zh','ko'];
+  var labels={en:'EN',vi:'VI',fr:'FR',zh:'中文',ko:'한국어'};
+  var k='ascension-lang';
+
+  function setLabel(l){
+    var lbl=document.getElementById('langLabel');
+    if(lbl)lbl.textContent=labels[l]||l.toUpperCase();
+  }
+
+  var btn=document.getElementById('langBtn');
+  if(btn){
+    // Clone to drop lang.js's click listener
+    var fresh=btn.cloneNode(true);
+    btn.parentNode.replaceChild(fresh,btn);
+    fresh.addEventListener('click',function(){
+      var cur=localStorage.getItem(k)||'en';
+      var next=langs[(langs.indexOf(cur)+1)%langs.length];
+      if(window.aqLang)window.aqLang(next);
+      setLabel(next);
+    });
+  }
+
+  // Sync label on load (aqLang already restored content; just fix the label)
+  setLabel(localStorage.getItem(k)||'en');
+
+  // Prevent lang.js resize handler from clobbering innerHTML; re-apply aqLang on resize
+  window.addEventListener('resize',function(){
+    var cur=localStorage.getItem(k)||'en';
+    setLabel(cur);
+    if(window.aqLang)window.aqLang(cur);
+  },{passive:true});
+})();
+</script>
 
 <!-- ══════════════════════════════════════════
      MODAL 1 — ATTEND

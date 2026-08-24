@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCENSION — Sponsorship Tiers · MODUS Partners</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.woff2') format('woff2'),
+           url('/assets/fonts/lovine.woff') format('woff'),
+           url('/assets/fonts/lovine.otf') format('opentype');
+      font-display: swap;
+    }
+    :root {
+      --bg: #08070A; --bg2: #0E0C10; --gold: #D4A84B; --text: #EDEAE4;
+      --muted: #8A8681; --rule: rgba(212,168,75,0.22);
+      --gutter: clamp(1.5rem, 5vw, 5rem);
+      --font-display: 'Lovine','Cormorant Garamond',Georgia,serif;
+      --font-ed: 'Cormorant Garamond',Georgia,serif;
+      --font-mono: 'DM Mono','Courier New',monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-ed);min-height:100vh}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);height:56px;border-bottom:0.5px solid var(--rule)}
+    .nav-brand{font-family:var(--font-mono);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+    .nav-back{font-family:var(--font-mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+    .nav-back:hover{color:var(--gold)}
+    .hero{padding:clamp(4rem,9vw,8rem) var(--gutter) clamp(3rem,6vw,5rem);border-bottom:0.5px solid var(--rule)}
+    .eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+    h1{font-family:var(--font-display);font-size:clamp(3rem,8vw,7rem);font-weight:normal;letter-spacing:-0.04em;line-height:0.88;color:var(--text);margin-bottom:1.25rem}
+    .hero-sub{font-family:var(--font-ed);font-size:clamp(1rem,1.5vw,1.2rem);font-style:italic;color:var(--muted);max-width:560px;line-height:1.75}
+    .sec{padding:clamp(3rem,6vw,5rem) var(--gutter);border-bottom:0.5px solid var(--rule)}
+    .sec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:block}
+    h2{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:normal;letter-spacing:-0.02em;color:var(--text);margin-bottom:1rem;line-height:1}
+    .body-copy{font-family:var(--font-ed);font-size:clamp(1rem,1.4vw,1.05rem);font-style:italic;color:var(--muted);line-height:1.8;max-width:680px}
+    /* Tier grid */
+    .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--rule);margin-top:2rem}
+    .tier-card{background:var(--bg);padding:clamp(2rem,3.5vw,3rem);display:flex;flex-direction:column}
+    .tier-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+    .tier-name{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:normal;letter-spacing:-0.03em;line-height:0.9;color:var(--text);margin-bottom:0.5rem}
+    .tier-amount{font-family:var(--font-mono);font-size:clamp(1rem,1.6vw,1.25rem);letter-spacing:0.06em;color:var(--gold);border-bottom:0.5px solid var(--rule);padding-bottom:1.25rem;margin-bottom:1.25rem}
+    .tier-amount em{font-size:0.65em;opacity:0.6;font-style:normal}
+    .tier-target{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);background:rgba(212,168,75,0.06);padding:0.6rem 0.75rem;margin-bottom:1.25rem;line-height:1.7}
+    .tier-features{list-style:none;flex:1;margin-bottom:1.5rem}
+    .tier-features li{font-family:var(--font-ed);font-size:clamp(0.9rem,1.2vw,1rem);color:var(--muted);padding:0.45rem 0;border-bottom:0.5px solid rgba(212,168,75,0.06);font-style:italic;display:flex;gap:0.75rem;line-height:1.5}
+    .tier-features li::before{content:'—';color:var(--gold);font-family:var(--font-mono);font-size:9px;flex-shrink:0;margin-top:0.2rem}
+    .tier-cta{display:block;text-align:center;font-family:var(--font-mono);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:var(--gold);padding:13px;text-decoration:none;transition:opacity 0.2s;border-radius:0}
+    .tier-cta:hover{opacity:0.85}
+    /* Deliverables table */
+    .deliv-table{width:100%;border-collapse:collapse;margin-top:1.5rem;overflow-x:auto;display:block}
+    .deliv-table th{font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-align:left;padding:0.6rem 1.5rem 0.6rem 0;border-bottom:0.5px solid var(--rule);white-space:nowrap}
+    .deliv-table td{font-family:var(--font-ed);font-size:clamp(0.9rem,1.2vw,0.95rem);color:var(--muted);padding:0.7rem 1.5rem 0.7rem 0;border-bottom:0.5px solid rgba(212,168,75,0.06);font-style:italic;text-align:center;vertical-align:middle}
+    .deliv-table td:first-child{text-align:left;color:var(--text);font-style:normal}
+    .check{color:var(--gold)}
+    .dash{opacity:0.3}
+    .note{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);opacity:0.55;line-height:1.8;margin-top:1.25rem}
+    .contact-block{background:var(--bg2);border:0.5px solid var(--rule);padding:2rem;margin-top:1.5rem}
+    .contact-block p{font-family:var(--font-ed);font-size:clamp(0.9rem,1.3vw,1rem);font-style:italic;color:var(--muted);line-height:1.75}
+    .contact-block a{color:var(--gold);text-decoration:none}
+    .footer{padding:1.5rem var(--gutter);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer span{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);opacity:0.4}
+    @media(max-width:900px){.tier-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/ascension/partners/">← Partner Hub</a>
+  <a class="nav-back" href="index.html">All Partner Sections</a>
+</nav>
+
+<div class="hero">
+  <span class="eyebrow">ASCENSION Partner Portal · Confidential</span>
+  <h1>Sponsorship<br>Tiers</h1>
+  <p class="hero-sub">Three sponsorship tiers with defined deliverables. All tiers represent an authentic alignment with the ASCENSION audience — high-performance individuals investing in transformation. January 12–26, 2027 · Da Nang, Vietnam.</p>
+</div>
+
+<!-- PHILOSOPHY -->
+<div class="sec">
+  <span class="sec-label">Philosophy</span>
+  <h2>Integration,<br>not interruption.</h2>
+  <p class="body-copy">ASCENSION does not run traditional sponsorship activations. Every brand present is editorially chosen by MODUS as congruent with the retreat's values: mastery, longevity, intentional living. Sponsorship is a collaboration, not a placement. Deliverables are co-created with MODUS to feel native to the experience.</p>
+  <p class="body-copy" style="margin-top:1rem;">Per the Critical Content Rule: per-partner negotiated numbers and bespoke commercial terms are discussed directly and are not published here. What follows is the tier structure and standard deliverable set.</p>
+</div>
+
+<!-- TIERS -->
+<div class="sec">
+  <span class="sec-label">Sponsor Tiers</span>
+  <div class="tier-grid">
+
+    <div class="tier-card">
+      <span class="tier-tag">Tier One</span>
+      <h3 class="tier-name">Luminary</h3>
+      <p class="tier-amount">$2,500 <em>USD · entry</em></p>
+      <p class="tier-target">Target fit: Activewear &amp; Movement<br>Lululemon · Alo Yoga · Vuori · Girlfriend Collective</p>
+      <ul class="tier-features">
+        <li>Logo on retreat welcome materials &amp; digital programme</li>
+        <li>Branded product in welcome kit (1 item, curated by MODUS)</li>
+        <li>1 editorial mention in post-retreat MODUS content</li>
+        <li>Instagram story feature during retreat (1 post)</li>
+        <li>Access to retreat content package (photography credit)</li>
+      </ul>
+      <a class="tier-cta" href="mailto:daniel@stanfordemporium.com?subject=ASCENSION%20Luminary%20Sponsorship">Express Interest →</a>
+    </div>
+
+    <div class="tier-card">
+      <span class="tier-tag">Tier Two</span>
+      <h3 class="tier-name">Visionary</h3>
+      <p class="tier-amount">$5,000 <em>USD · mid</em></p>
+      <p class="tier-target">Target fit: Wellness Technology &amp; Nutrition<br>WHOOP · Oura · Eight Sleep · AG1 · Momentous</p>
+      <ul class="tier-features">
+        <li>All Luminary deliverables</li>
+        <li>On-site branded station or activation (1 session, MODUS-designed)</li>
+        <li>2 editorial mentions in post-retreat content</li>
+        <li>1 dedicated Instagram post + story series</li>
+        <li>Attendee list access (post-retreat, opt-in only)</li>
+        <li>Logo placement on /ascension public page</li>
+        <li>Co-branded email to retreat mailing list (post-retreat)</li>
+      </ul>
+      <a class="tier-cta" href="mailto:daniel@stanfordemporium.com?subject=ASCENSION%20Visionary%20Sponsorship">Express Interest →</a>
+    </div>
+
+    <div class="tier-card">
+      <span class="tier-tag">Tier Three</span>
+      <h3 class="tier-name">Founding<br>Partner</h3>
+      <p class="tier-amount">$10,000 <em>USD · founding</em></p>
+      <p class="tier-target">Target fit: Luxury Travel &amp; Lifestyle<br>Amex Centurion · Black Tomato · Aman · Condé Nast</p>
+      <ul class="tier-features">
+        <li>All Visionary deliverables</li>
+        <li>Named partnership designation in all ASCENSION materials</li>
+        <li>Multi-session integrated experience (designed with MODUS)</li>
+        <li>Lead position in post-retreat editorial (long-form)</li>
+        <li>Right of first refusal for ASCENSION 2028</li>
+        <li>4 complimentary attendee programme passports</li>
+        <li>MODUS editorial feature in next annual publication</li>
+        <li>Dedicated retreat content day (photography + video)</li>
+      </ul>
+      <a class="tier-cta" href="mailto:daniel@stanfordemporium.com?subject=ASCENSION%20Founding%20Partner">Express Interest →</a>
+    </div>
+
+  </div>
+  <p class="note">All tiers are subject to editorial approval by MODUS. Sponsorship is a collaboration — brand and deliverables are co-designed. Availability: 2 Luminary, 2 Visionary, 1 Founding Partner.</p>
+</div>
+
+<!-- DELIVERABLES TABLE -->
+<div class="sec">
+  <span class="sec-label">Deliverables at a Glance</span>
+  <table class="deliv-table">
+    <thead>
+      <tr>
+        <th>Deliverable</th>
+        <th>Luminary</th>
+        <th>Visionary</th>
+        <th>Founding Partner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Logo in digital programme</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Product in welcome kit</td><td class="check">1 item</td><td class="check">1 item</td><td class="check">Featured</td></tr>
+      <tr><td>Editorial mentions</td><td class="check">1</td><td class="check">2</td><td class="check">Lead position</td></tr>
+      <tr><td>Instagram story</td><td class="check">1</td><td class="check">✓ + series</td><td class="check">✓ + series</td></tr>
+      <tr><td>On-site activation</td><td class="dash">—</td><td class="check">1 session</td><td class="check">Multi-session</td></tr>
+      <tr><td>Opt-in attendee list</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Logo on public page</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Co-branded email</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Named partnership</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+      <tr><td>Complimentary passports</td><td class="dash">—</td><td class="dash">—</td><td class="check">4</td></tr>
+      <tr><td>Right of first refusal 2028</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+      <tr><td>MODUS editorial feature</td><td class="dash">—</td><td class="dash">—</td><td class="check">Annual publication</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PROCESS -->
+<div class="sec">
+  <span class="sec-label">How to Proceed</span>
+  <h2>Letter of Intent<br>by July 31, 2026.</h2>
+  <p class="body-copy">To reserve a sponsorship tier, submit a Letter of Intent by July 31, 2026. MODUS will confirm fit and initiate the co-design process. Tiers are limited by availability. A 50% deposit secures the tier; the balance is due 30 days before the retreat opens.</p>
+  <div class="contact-block">
+    <p>Submit LOI or discuss bespoke terms: <a href="mailto:daniel@stanfordemporium.com?subject=ASCENSION%20Sponsorship%20LOI">daniel@stanfordemporium.com</a></p>
+    <p style="margin-top:0.75rem;">Please include your organisation name, preferred tier, and a brief note on why ASCENSION aligns with your brand this season.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>MODUS · ASCENSION Sponsorship · Confidential · Tier structures only — per-partner numbers are agreed directly</span>
+  <span><a href="index.html" style="color:var(--muted);text-decoration:none;">← Partner Hub</a></span>
+</footer>
+
+</body>
+</html>

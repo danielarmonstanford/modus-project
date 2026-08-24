@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCENSION — Practitioner Terms · MODUS Partners</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.woff2') format('woff2'),
+           url('/assets/fonts/lovine.woff') format('woff'),
+           url('/assets/fonts/lovine.otf') format('opentype');
+      font-display: swap;
+    }
+    :root {
+      --bg: #08070A; --bg2: #0E0C10; --gold: #D4A84B; --text: #EDEAE4;
+      --muted: #8A8681; --rule: rgba(212,168,75,0.22);
+      --gutter: clamp(1.5rem, 5vw, 5rem);
+      --font-display: 'Lovine','Cormorant Garamond',Georgia,serif;
+      --font-ed: 'Cormorant Garamond',Georgia,serif;
+      --font-mono: 'DM Mono','Courier New',monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-ed);min-height:100vh}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);height:56px;border-bottom:0.5px solid var(--rule)}
+    .nav-brand{font-family:var(--font-mono);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+    .nav-back{font-family:var(--font-mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+    .nav-back:hover{color:var(--gold)}
+    .hero{padding:clamp(4rem,9vw,8rem) var(--gutter) clamp(3rem,6vw,5rem);border-bottom:0.5px solid var(--rule)}
+    .eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+    h1{font-family:var(--font-display);font-size:clamp(3rem,8vw,7rem);font-weight:normal;letter-spacing:-0.04em;line-height:0.88;color:var(--text);margin-bottom:1.25rem}
+    .hero-sub{font-family:var(--font-ed);font-size:clamp(1rem,1.5vw,1.2rem);font-style:italic;color:var(--muted);max-width:560px;line-height:1.75}
+    .sec{padding:clamp(3rem,6vw,5rem) var(--gutter);border-bottom:0.5px solid var(--rule)}
+    .sec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:block}
+    h2{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:normal;letter-spacing:-0.02em;color:var(--text);margin-bottom:1rem;line-height:1}
+    .body-copy{font-family:var(--font-ed);font-size:clamp(1rem,1.4vw,1.05rem);font-style:italic;color:var(--muted);line-height:1.8;max-width:680px}
+    .body-copy+.body-copy{margin-top:1rem}
+    .term-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--rule);margin-top:1.75rem}
+    .term-cell{background:var(--bg);padding:2rem}
+    .term-cell-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:block}
+    .term-cell-val{font-family:var(--font-display);font-size:clamp(1.1rem,2vw,1.6rem);font-weight:normal;color:var(--text);line-height:1.1;margin-bottom:0.5rem}
+    .term-cell-note{font-family:var(--font-ed);font-size:0.9rem;font-style:italic;color:var(--muted);line-height:1.6}
+    .model-list{list-style:none;margin-top:1.5rem}
+    .model-list li{display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid rgba(212,168,75,0.08);font-family:var(--font-ed);font-size:clamp(0.9rem,1.3vw,1rem);color:var(--muted);font-style:italic;line-height:1.6}
+    .model-list li::before{content:'—';color:var(--gold);font-family:var(--font-mono);font-size:9px;flex-shrink:0;margin-top:0.25rem}
+    .model-list li strong{color:var(--text);font-style:normal;font-weight:normal;margin-right:0.4rem}
+    .role-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--rule);margin-top:1.5rem}
+    .role-card{background:var(--bg);padding:1.5rem}
+    .role-card-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;display:block}
+    .role-card-name{font-family:var(--font-display);font-size:clamp(1rem,1.8vw,1.4rem);font-weight:normal;color:var(--text);margin-bottom:0.4rem}
+    .role-card-note{font-family:var(--font-ed);font-size:0.85rem;font-style:italic;color:var(--muted);line-height:1.5}
+    .contact-block{background:var(--bg2);border:0.5px solid var(--rule);padding:2rem;margin-top:1.5rem}
+    .contact-block p{font-family:var(--font-ed);font-size:clamp(0.9rem,1.3vw,1rem);font-style:italic;color:var(--muted);line-height:1.75}
+    .contact-block a{color:var(--gold);text-decoration:none}
+    .note{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);opacity:0.55;line-height:1.8;margin-top:1.25rem}
+    .footer{padding:1.5rem var(--gutter);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer span{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);opacity:0.4}
+    @media(max-width:768px){.term-grid,.role-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/ascension/partners/">← Partner Hub</a>
+  <a class="nav-back" href="index.html">All Partner Sections</a>
+</nav>
+
+<div class="hero">
+  <span class="eyebrow">ASCENSION Partner Portal · Confidential</span>
+  <h1>Practitioner<br>Terms</h1>
+  <p class="hero-sub">Compensation model, referral structure, accommodation terms, sponsored-training benefits, and editorial rights for ASCENSION practitioner collaborators. January 12–26, 2027 · Da Nang, Vietnam.</p>
+</div>
+
+<!-- PHILOSOPHY -->
+<div class="sec">
+  <span class="sec-label">Philosophy</span>
+  <h2>Mastery<br>is the standard.</h2>
+  <p class="body-copy">MODUS selects practitioners by reputation, specificity of mastery, and congruence with the ASCENSION arc. There are no generalists in this programme. Each practitioner is the best available for their modality — and is treated accordingly: full accommodation, visible attribution, and fair compensation.</p>
+  <p class="body-copy">The model is designed so that practitioners benefit beyond the immediate engagement: editorial exposure, referral income, and the credibility of being a MODUS Séance collaborator. This is a long-term relationship, not a one-time contract.</p>
+</div>
+
+<!-- COMPENSATION MODEL -->
+<div class="sec">
+  <span class="sec-label">Compensation Model</span>
+  <h2>How practitioners<br>are paid.</h2>
+  <p class="body-copy">Practitioner compensation is structured across three components: a session fee, a referral percentage, and an optional sponsored-training credit. Per-practitioner negotiated amounts are agreed directly with MODUS and are not published in this portal. The structure below applies to all practitioners.</p>
+  <div class="term-grid">
+    <div class="term-cell">
+      <span class="term-cell-label">Session Fee</span>
+      <p class="term-cell-val">Flat per-session fee</p>
+      <p class="term-cell-note">Agreed pre-retreat. Paid within 14 days of retreat close. Covers both group sessions and any assigned private sessions.</p>
+    </div>
+    <div class="term-cell">
+      <span class="term-cell-label">Referral Fee</span>
+      <p class="term-cell-val">10% of referred passport</p>
+      <p class="term-cell-note">For each confirmed attendee who lists the practitioner as their referral source on application. Paid with session fee after retreat.</p>
+    </div>
+    <div class="term-cell">
+      <span class="term-cell-label">Accommodation</span>
+      <p class="term-cell-val">Covered by MODUS</p>
+      <p class="term-cell-note">Full accommodation for the duration of your programme engagement, at a curated property from the stay menu. Category agreed on LOI.</p>
+    </div>
+    <div class="term-cell">
+      <span class="term-cell-label">Sponsored Training</span>
+      <p class="term-cell-val">Optional credit</p>
+      <p class="term-cell-note">Select practitioners may participate in a cross-training day with another modality. MODUS covers the cost. Available to all practitioners who opt in.</p>
+    </div>
+  </div>
+  <p class="note">Per-practitioner session fee amounts are agreed directly and confidentially. This portal publishes structure only.</p>
+</div>
+
+<!-- ROLES -->
+<div class="sec">
+  <span class="sec-label">Practitioner Roles — ASCENSION 2027</span>
+  <h2>Eight modalities.<br>Eight seats.</h2>
+  <p class="body-copy">Each modality has one lead practitioner. Additional practitioners may be brought in as co-leads or for private session coverage, subject to cohort size and MODUS approval.</p>
+  <div class="role-grid">
+    <div class="role-card">
+      <span class="role-card-label">01</span>
+      <p class="role-card-name">Rolfing / Fascial</p>
+      <p class="role-card-note">Structural integration lead. 2 private sessions per attendee.</p>
+    </div>
+    <div class="role-card">
+      <span class="role-card-label">02</span>
+      <p class="role-card-name">Sleep Science</p>
+      <p class="role-card-note">Conference lead. Personal sleep assessment (30 min/attendee).</p>
+    </div>
+    <div class="role-card">
+      <span class="role-card-label">03</span>
+      <p class="role-card-name">Somatic / Reiki</p>
+      <p class="role-card-note">Trauma-informed somatic practice and energy work lead.</p>
+    </div>
+    <div class="role-card">
+      <span class="role-card-label">04</span>
+      <p class="role-card-name">Shamanic Ceremony</p>
+      <p class="role-card-note">Plant ceremony and fire ritual lead. Day 7 and Day 14.</p>
+    </div>
+    <div class="role-card">
+      <span class="role-card-label">05</span>
+      <p class="role-card-name">Budokon Yoga</p>
+      <p class="role-card-note">Daily morning movement practice. All-cohort group format.</p>
+    </div>
+    <div class="role-card">
+      <span class="role-card-label">06</span>
+      <p class="role-card-name">Sound Healing</p>
+      <p class="role-card-note">Gong bath, Tibetan bowls, vocal toning. Evening ceremony.</p>
+    </div>
+    <div class="role-card">
+      <span class="role-card-label">07</span>
+      <p class="role-card-name">Vietnamese Medicine</p>
+      <p class="role-card-note">Acupressure and herbal protocols. Local Da Nang lineage.</p>
+    </div>
+    <div class="role-card">
+      <span class="role-card-label">08</span>
+      <p class="role-card-name">Tết Facilitation</p>
+      <p class="role-card-note">Cultural immersion — bánh chưng, ancestor veneration, calligraphy. Day 13 only (14-Day cohort).</p>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS -->
+<div class="sec">
+  <span class="sec-label">General Terms</span>
+  <ul class="model-list">
+    <li><strong>Exclusivity:</strong> Practitioners do not facilitate competing retreats in Da Nang within the programme window (Jan 12–26) without MODUS consent.</li>
+    <li><strong>Attribution:</strong> All MODUS editorial content featuring the retreat credits practitioners by full name and modality. Practitioners may use this credit in their own marketing materials.</li>
+    <li><strong>Editorial rights:</strong> MODUS retains editorial rights to retreat photography and video. Practitioners receive a curated content package (10–20 assets) for personal use within 30 days of retreat close.</li>
+    <li><strong>Intellectual property:</strong> Session content, protocols, and teaching methodologies remain the intellectual property of the practitioner. MODUS may describe the session in editorial copy with practitioner approval.</li>
+    <li><strong>Cancellation:</strong> Withdrawal by either party up to 90 days before the retreat (October 14, 2026) carries no penalty. Within 90 days, a kill fee of 25% of agreed session fee applies.</li>
+    <li><strong>Conduct:</strong> Practitioners are expected to maintain the tone and standards of the ASCENSION experience. MODUS has the right to remove a practitioner from the programme if standards are not upheld, with session fee pro-rated to sessions delivered.</li>
+    <li><strong>Travel:</strong> International flights are the responsibility of the practitioner. MODUS may contribute a travel stipend in some cases — this is agreed individually on LOI and not a standard term.</li>
+  </ul>
+</div>
+
+<!-- SPONSORED TRAINING -->
+<div class="sec">
+  <span class="sec-label">Sponsored Training</span>
+  <h2>Learn from<br>each other.</h2>
+  <p class="body-copy">ASCENSION practitioners are invited to observe and participate in one modality outside their own, facilitated by a fellow practitioner. MODUS covers the cost. This is a voluntary programme designed to generate cross-disciplinary insight and build genuine relationships between the cohort's facilitators.</p>
+  <p class="body-copy" style="margin-top:1rem;">Opt-in at LOI or during the programme. Pairings are suggested by MODUS based on modality complementarity — final pairings confirmed with both practitioners.</p>
+</div>
+
+<!-- CONTACT -->
+<div class="sec">
+  <span class="sec-label">Contact</span>
+  <div class="contact-block">
+    <p>To discuss practitioner terms, submit an LOI, or ask questions about the ASCENSION programme: <a href="mailto:daniel@stanfordemporium.com?subject=ASCENSION%20Practitioner%20LOI">daniel@stanfordemporium.com</a></p>
+    <p style="margin-top:0.75rem;">Reference your modality and years of practice in your first message. MODUS will respond within 5 business days.</p>
+    <p style="margin-top:0.75rem;">LOI deadline: July 31, 2026. Practitioner roster announced to confirmed attendees by September 1, 2026.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>MODUS · ASCENSION Practitioner Terms · Confidential · Per-practitioner amounts agreed directly</span>
+  <span><a href="index.html" style="color:var(--muted);text-decoration:none;">← Partner Hub</a></span>
+</footer>
+
+</body>
+</html>

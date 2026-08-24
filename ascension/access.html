@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCENSION — Partner Access · MODUS</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.woff2') format('woff2'),
+           url('/assets/fonts/lovine.woff') format('woff'),
+           url('/assets/fonts/lovine.otf') format('opentype');
+      font-display: swap;
+    }
+    :root {
+      --bg: #08070A;
+      --gold: #D4A84B;
+      --text: #EDEAE4;
+      --muted: #8A8681;
+      --rule: rgba(212,168,75,0.22);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+      padding: 2rem 1.5rem;
+    }
+    .gate-wrap {
+      width: 100%;
+      max-width: 420px;
+    }
+    .gate-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+    .gate-title {
+      font-family: 'Lovine', 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.4rem, 8vw, 3.5rem);
+      font-weight: normal;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .gate-sub {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+    .gate-rule {
+      height: 0.5px;
+      background: var(--rule);
+      margin-bottom: 2.5rem;
+    }
+    label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 0.5px solid var(--rule);
+      color: var(--text);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      padding: 0.6rem 0;
+      margin-bottom: 1.75rem;
+      outline: none;
+      border-radius: 0;
+      transition: border-color 0.2s;
+    }
+    input:focus { border-color: var(--gold); }
+    input::placeholder { color: var(--muted); opacity: 0.5; }
+    button[type="submit"] {
+      width: 100%;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #06080C;
+      background: var(--gold);
+      border: none;
+      padding: 15px 28px;
+      cursor: pointer;
+      border-radius: 0;
+      transition: opacity 0.2s;
+      margin-top: 0.5rem;
+    }
+    button[type="submit"]:hover { opacity: 0.85; }
+    button[type="submit"]:disabled { opacity: 0.45; cursor: not-allowed; }
+    #err {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #C0392B;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+    .gate-footer {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3rem;
+      opacity: 0.5;
+    }
+    .gate-footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="gate-wrap">
+    <span class="gate-logo">MODUS &middot; Séance &middot; ASCENSION</span>
+    <h1 class="gate-title">Partner<br>Access</h1>
+    <p class="gate-sub">For verified partners, sponsors, and facilitators only.<br>Request access via <a href="mailto:daniel@stanfordemporium.com" style="color:var(--gold);text-decoration:none;">daniel@stanfordemporium.com</a></p>
+    <div class="gate-rule"></div>
+    <form id="gate" novalidate>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" placeholder="your@email.com" required>
+      <label for="password">Access Key</label>
+      <input id="password" type="password" autocomplete="current-password" placeholder="••••••••••" required>
+      <button type="submit" id="submit-btn">Enter &rarr;</button>
+      <p id="err" role="alert" hidden></p>
+    </form>
+    <p class="gate-footer">
+      <a href="/ascension">Public retreat page</a> &nbsp;&middot;&nbsp; <a href="/">modus.gallery</a>
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('gate').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var err = document.getElementById('err');
+      var btn = document.getElementById('submit-btn');
+      err.hidden = true;
+      btn.disabled = true;
+      btn.textContent = 'Verifying…';
+      try {
+        var res = await fetch('/api/partner-auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+          }),
+        });
+        if (res.ok) {
+          var next = new URLSearchParams(location.search).get('next');
+          location.href = (next && next.startsWith('/ascension/partners/'))
+            ? next
+            : '/ascension/partners/';
+        } else {
+          var d = await res.json().catch(function(){ return {}; });
+          err.textContent = d.error || 'Access denied.';
+          err.hidden = false;
+          btn.disabled = false;
+          btn.textContent = 'Enter →';
+        }
+      } catch {
+        err.textContent = 'Network error. Please try again.';
+        err.hidden = false;
+        btn.disabled = false;
+        btn.textContent = 'Enter →';
+      }
+    });
+  </script>
+</body>
+</html>

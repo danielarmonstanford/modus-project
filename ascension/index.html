@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCENSION — Be Your Greatest Self · MODUS Séance · Da Nang · January 2027</title>
+  <meta name="description" content="ASCENSION: Tết Preparation Retreat. A 7–14 day luxury transformation retreat in Da Nang, Vietnam. Rolfing, sleep science, sound healing, somatic work, and ceremony. January 12–26, 2027.">
+  <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://modus.gallery/ascension">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.woff2') format('woff2'),
+           url('/assets/fonts/lovine.woff') format('woff'),
+           url('/assets/fonts/lovine.otf') format('opentype');
+      font-display: swap;
+    }
+    :root {
+      --bg: #08070A;
+      --bg2: #0E0C10;
+      --gold: #D4A84B;
+      --text: #EDEAE4;
+      --muted: #8A8681;
+      --rule: rgba(212,168,75,0.22);
+      --gutter: clamp(1.5rem, 5vw, 5rem);
+      --font-display: 'Lovine', 'Cormorant Garamond', Georgia, serif;
+      --font-ed: 'Cormorant Garamond', Georgia, serif;
+      --font-mono: 'DM Mono', 'Courier New', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-ed); }
+
+    /* ── Nav ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,7,10,0.88); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--rule); display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter); height: 56px; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.02em; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── Hero ── */
+    .hero { position: relative; width: 100%; overflow: hidden; }
+    .hero img { width: 100%; height: 100svh; min-height: 600px; object-fit: cover; object-position: 50% 18%; display: block; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(8,7,10,0.72) 0%, rgba(8,7,10,0.2) 40%, rgba(8,7,10,0.6) 68%, rgba(8,7,10,0.95) 100%); pointer-events: none; }
+    .hero-text { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(2rem,5vw,4.5rem) var(--gutter); }
+    .hero-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: block; }
+    .hero-h1 { font-family: var(--font-display); font-size: clamp(4.5rem,14vw,11rem); font-weight: normal; letter-spacing: -0.05em; line-height: 0.85; color: var(--text); }
+    .hero-tagline { font-family: var(--font-ed); font-size: clamp(1.2rem,2.5vw,1.8rem); font-style: italic; color: var(--text); margin-bottom: 0.5rem; }
+    .hero-meta { font-family: var(--font-mono); font-size: clamp(10px,1.1vw,12px); letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,168,75,0.9); margin-bottom: 0.4rem; display: block; }
+    .hero-date { font-family: var(--font-mono); font-size: clamp(10px,1.1vw,12px); letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,234,228,0.7); margin-bottom: 1.75rem; display: block; }
+    .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn-gold { display: inline-flex; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #06080C; background: var(--gold); padding: 13px 28px; text-decoration: none; transition: opacity 0.2s; border-radius: 0; }
+    .btn-gold:hover { opacity: 0.85; }
+    .btn-outline { display: inline-flex; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text); border: 0.5px solid rgba(237,234,228,0.3); padding: 13px 28px; text-decoration: none; transition: border-color 0.2s, color 0.2s; border-radius: 0; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── Sections ── */
+    .sec { padding: clamp(3.5rem,7vw,6rem) var(--gutter); border-bottom: 0.5px solid var(--rule); }
+    .eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; display: block; }
+    .sec-title { font-family: var(--font-display); font-size: clamp(2rem,5vw,4rem); font-weight: normal; letter-spacing: -0.03em; line-height: 1; color: var(--text); margin-bottom: 1.25rem; }
+    .sec-body { font-family: var(--font-ed); font-size: clamp(1rem,1.5vw,1.1rem); font-style: italic; color: var(--muted); line-height: 1.8; max-width: 680px; }
+    .sec-body + .sec-body { margin-top: 1rem; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem 5rem; }
+    .rule { height: 0.5px; background: var(--rule); margin: 2.5rem 0; }
+
+    /* ── Modalities ── */
+    .mod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: var(--rule); margin-top: 2.5rem; }
+    .mod-card { background: var(--bg); padding: 1.75rem 1.5rem; }
+    .mod-num { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 0.75rem; display: block; }
+    .mod-name { font-family: var(--font-display); font-size: clamp(1.1rem,1.8vw,1.5rem); font-weight: normal; letter-spacing: -0.02em; line-height: 1.1; color: var(--text); margin-bottom: 0.5rem; }
+    .mod-desc { font-family: var(--font-ed); font-size: 0.9rem; font-style: italic; color: var(--muted); line-height: 1.6; }
+
+    /* ── Pricing ── */
+    .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--rule); margin-top: 2.5rem; }
+    .price-card { background: var(--bg); padding: clamp(2rem,4vw,3rem); display: flex; flex-direction: column; }
+    .price-card.featured { background: var(--bg2); }
+    .price-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+    .price-title { font-family: var(--font-display); font-size: clamp(2rem,4vw,3.2rem); font-weight: normal; letter-spacing: -0.03em; line-height: 0.95; color: var(--text); margin-bottom: 0.5rem; }
+    .price-amount { font-family: var(--font-mono); font-size: clamp(1.2rem,2vw,1.5rem); letter-spacing: 0.06em; color: var(--gold); border-bottom: 0.5px solid var(--rule); padding-bottom: 1.25rem; margin-bottom: 1.25rem; }
+    .price-amount span { font-size: 0.65em; opacity: 0.6; }
+    .price-features { list-style: none; flex: 1; margin-bottom: 1.75rem; }
+    .price-features li { font-family: var(--font-ed); font-size: clamp(0.9rem,1.3vw,1rem); color: var(--muted); padding: 0.4rem 0; border-bottom: 0.5px solid rgba(212,168,75,0.08); font-style: italic; display: flex; gap: 0.75rem; line-height: 1.5; }
+    .price-features li::before { content: '—'; color: var(--gold); font-family: var(--font-mono); font-size: 9px; flex-shrink: 0; margin-top: 0.2rem; }
+    .price-note { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); opacity: 0.6; margin-bottom: 1.5rem; line-height: 1.7; }
+    .price-cta { display: block; text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #06080C; background: var(--gold); padding: 14px; text-decoration: none; transition: opacity 0.2s; border-radius: 0; }
+    .price-cta:hover { opacity: 0.85; }
+
+    /* ── Stay menu ── */
+    .stay-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+    .stay-table th { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); text-align: left; padding: 0.5rem 1rem 0.5rem 0; border-bottom: 0.5px solid var(--rule); }
+    .stay-table td { font-family: var(--font-ed); font-size: clamp(0.9rem,1.3vw,1rem); font-style: italic; color: var(--muted); padding: 0.65rem 1rem 0.65rem 0; border-bottom: 0.5px solid rgba(212,168,75,0.06); line-height: 1.5; }
+    .stay-table td:first-child { color: var(--text); font-style: normal; }
+
+    /* ── CTA band ── */
+    .cta-band { background: var(--bg2); padding: clamp(4rem,8vw,7rem) var(--gutter); text-align: center; border-top: 0.5px solid var(--rule); }
+    .cta-band-title { font-family: var(--font-display); font-size: clamp(2.5rem,6vw,5rem); font-weight: normal; letter-spacing: -0.04em; line-height: 0.9; color: var(--text); margin-bottom: 1rem; }
+    .cta-band-sub { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem; line-height: 1.7; }
+    .cta-band-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Footer ── */
+    .footer { border-top: 0.5px solid var(--rule); padding: 2rem var(--gutter); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); opacity: 0.5; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); text-decoration: none; opacity: 0.5; transition: opacity 0.2s; }
+    .footer-links a:hover { opacity: 1; color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .two-col, .mod-grid, .price-grid { grid-template-columns: 1fr; }
+      .mod-grid { gap: 1px; }
+      .hero-text { padding: 1.5rem 1.25rem; }
+      .hero-ctas { flex-direction: column; }
+      .btn-gold, .btn-outline { text-align: center; justify-content: center; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="/">MODUS</a>
+  <div class="nav-links">
+    <a href="/seance">Séance</a>
+    <a href="/seance/ascension">Full Retreat Brief</a>
+    <a href="/acquire">Acquire</a>
+    <a href="/#attend">Apply</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img
+    src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_face,w_1800,h_1200,q_auto,f_auto/v1787504880/nano-banana-2_upscale_this_image_increase_the_statue_pull_back_and_sharpen_depth_HK_similar_vi-0_oyfqsj.jpg"
+    alt="ASCENSION Retreat — Da Nang, Vietnam"
+    loading="eager" fetchpriority="high">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <div>
+      <span class="hero-eyebrow">MODUS Séance &middot; Tết Preparation Retreat 2027</span>
+      <h1 class="hero-h1">ASCENSION</h1>
+    </div>
+    <div>
+      <p class="hero-tagline">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</p>
+      <span class="hero-meta">Prepare for Tết Nguyên Đán &middot; Year of the Fire Goat</span>
+      <span class="hero-date">January 12&ndash;26, 2027 &middot; Da Nang, Vietnam &middot; 7-Day &amp; 14-Day</span>
+      <div class="hero-ctas">
+        <a class="btn-gold" href="#apply">Apply to Attend &rarr;</a>
+        <a class="btn-outline" href="/seance/ascension">Full Retreat Brief &darr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CURATOR THESIS -->
+<div class="sec">
+  <div class="two-col">
+    <div>
+      <span class="eyebrow">The Edit</span>
+      <h2 class="sec-title">MODUS curates<br>the experience.</h2>
+      <p class="sec-body">ASCENSION is not a resort package. It is a precisely curated seven-day encounter — practitioners chosen for mastery, modalities sequenced for transformation, and a location chosen because Da Nang in January is, simply, right.</p>
+      <p class="sec-body" style="margin-top:1rem;">You choose where you stay. MODUS curates what you do there. This is the difference between a holiday and a change.</p>
+    </div>
+    <div>
+      <span class="eyebrow">The Moment</span>
+      <h2 class="sec-title">Prepare for<br>the New Year.</h2>
+      <p class="sec-body">Tết Nguyên Đán — the Lunar New Year — is the most auspicious day in the Vietnamese calendar. The Year of the Fire Goat begins January 29, 2027. ASCENSION ends January 26. You will arrive at that threshold already transformed.</p>
+      <p class="sec-body" style="margin-top:1rem;">The 14-Day Fortnight includes a full Tết preparation day on January 24: ancestor veneration, bánh chưng making, calligraphy, red envelope ritual, and fire ceremony. Then you step into the New Year with intention.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODALITIES -->
+<div class="sec">
+  <span class="eyebrow">Modalities</span>
+  <h2 class="sec-title">Eight dimensions.<br>One arc.</h2>
+  <p class="sec-body">Every modality earns its place. The sequence is intentional: each day builds on the last, moving from physical release to mental clarity to spiritual integration.</p>
+  <div class="mod-grid">
+    <div class="mod-card">
+      <span class="mod-num">01</span>
+      <p class="mod-name">Rolfing &amp;<br>Fascial Release</p>
+      <p class="mod-desc">Structural integration — release the armour the body has been holding for years.</p>
+    </div>
+    <div class="mod-card">
+      <span class="mod-num">02</span>
+      <p class="mod-name">Sleep Science<br>Conference</p>
+      <p class="mod-desc">Neuroscience of recovery. Personal sleep assessment. Deep sleep ceremony.</p>
+    </div>
+    <div class="mod-card">
+      <span class="mod-num">03</span>
+      <p class="mod-name">Somatic &amp;<br>Energy Work</p>
+      <p class="mod-desc">Trauma-informed somatic practice and Reiki — the nervous system reset.</p>
+    </div>
+    <div class="mod-card">
+      <span class="mod-num">04</span>
+      <p class="mod-name">Shamanic<br>Ceremony</p>
+      <p class="mod-desc">Guided plant ceremony, ancestral connection, and fire ritual.</p>
+    </div>
+    <div class="mod-card">
+      <span class="mod-num">05</span>
+      <p class="mod-name">Budokon<br>Yoga</p>
+      <p class="mod-desc">Movement arts that bridge martial intelligence and yogic flow.</p>
+    </div>
+    <div class="mod-card">
+      <span class="mod-num">06</span>
+      <p class="mod-name">Sound<br>Healing</p>
+      <p class="mod-desc">Gong bath, Tibetan bowls, and vocal toning as deep cellular reset.</p>
+    </div>
+    <div class="mod-card">
+      <span class="mod-num">07</span>
+      <p class="mod-name">Traditional<br>Vietnamese Medicine</p>
+      <p class="mod-desc">Acupressure, herbal protocols, and lineage healing from Da Nang practitioners.</p>
+    </div>
+    <div class="mod-card">
+      <span class="mod-num">08</span>
+      <p class="mod-name">Tết<br>Preparation</p>
+      <p class="mod-desc">Lunar New Year integration — ritual, intention, and cultural immersion. 14-day only.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PASSPORT / PRICING -->
+<div class="sec" id="pricing">
+  <span class="eyebrow">Passport</span>
+  <h2 class="sec-title">Choose your<br>immersion.</h2>
+  <p class="sec-body">ASCENSION operates on a passport model. Your passport covers the full programme — every modality, every session, every meal within the retreat schedule. Accommodation is separate and chosen by you from the curated stay menu below.</p>
+  <div class="price-grid">
+    <div class="price-card">
+      <span class="price-label">7-Day Passport</span>
+      <h3 class="price-title">One Week</h3>
+      <p class="price-amount">$1,200 <span>USD &middot; Programme only</span></p>
+      <ul class="price-features">
+        <li>All group modalities &amp; workshops</li>
+        <li>2 private fascial release sessions</li>
+        <li>Sleep Science Conference access</li>
+        <li>Personal sleep assessment (30 min)</li>
+        <li>3 meals daily — plant-based, ceremonial</li>
+        <li>Airport transfer (arrival + departure)</li>
+        <li>Home practice protocols</li>
+        <li>Tết preparation workshop</li>
+      </ul>
+      <p class="price-note">Early Bird 15%: $1,020 — reserve by June 30, 2026<br>Group 10%: $1,080 — 3 or more</p>
+      <a class="price-cta" href="#apply">Apply for 7-Day &rarr;</a>
+    </div>
+    <div class="price-card featured">
+      <span class="price-label">14-Day Fortnight</span>
+      <h3 class="price-title">Enter Tết<br>Transformed</h3>
+      <p class="price-amount">$2,000 <span>USD &middot; Programme only</span></p>
+      <ul class="price-features">
+        <li>Everything in 7-Day, extended</li>
+        <li>5 private fascial release sessions</li>
+        <li>Personal transformation coaching</li>
+        <li>Advanced sleep mastery module</li>
+        <li>Tết Rituals &amp; Blessings — Jan 24</li>
+        <li>Closing ceremony &amp; Tết blessing — Jan 25</li>
+        <li>Optional: Tết Celebration Jan 26–29</li>
+      </ul>
+      <p class="price-note">Early Bird 15%: $1,700 — reserve by June 30, 2026<br>Group 10%: $1,800 — 3 or more</p>
+      <a class="price-cta" href="#apply">Apply for 14-Day &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- STAY MENU -->
+<div class="sec">
+  <span class="eyebrow">Stay Menu</span>
+  <h2 class="sec-title">Where you stay<br>is yours to choose.</h2>
+  <p class="sec-body">MODUS has curated a shortlist of Da Nang properties that match the standard of the programme. Book directly — the retreat passport covers everything else.</p>
+  <table class="stay-table">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Category</th>
+        <th>Range / Night</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fusion Maia Da Nang</td>
+        <td>Luxury — All-Spa Inclusive</td>
+        <td>~$150–230</td>
+        <td>#2 International Wellness Retreat globally</td>
+      </tr>
+      <tr>
+        <td>Sheraton Grand Da Nang</td>
+        <td>5-Star</td>
+        <td>~$120–180</td>
+        <td>Direct beach access, large pool</td>
+      </tr>
+      <tr>
+        <td>Naman Retreat</td>
+        <td>Luxury Villa</td>
+        <td>~$130–200</td>
+        <td>Purpose-built wellness environment</td>
+      </tr>
+      <tr>
+        <td>The Hideout Hostel</td>
+        <td>Boutique / Social</td>
+        <td>~$45–80</td>
+        <td>Best value, strong community energy</td>
+      </tr>
+      <tr>
+        <td>Pullman Da Nang Beach</td>
+        <td>4-Star</td>
+        <td>~$90–130</td>
+        <td>Non Nuoc beach, reliable quality</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);opacity:0.5;margin-top:1rem;line-height:1.7;">Rates are indicative for January 2027. Book direct for best availability. Group block rates available for 3+ rooms — contact MODUS.</p>
+</div>
+
+<!-- APPLY CTA -->
+<div class="cta-band" id="apply">
+  <h2 class="cta-band-title">Ready to<br>Ascend into Tết?</h2>
+  <p class="cta-band-sub">Da Nang, Vietnam &nbsp;&middot;&nbsp; January 12&ndash;26, 2027 &nbsp;&middot;&nbsp; Cohort is limited by design.</p>
+  <div class="cta-band-btns">
+    <a class="btn-gold" href="/acquire#attend">Apply to Attend &rarr;</a>
+    <a class="btn-outline" href="/seance/ascension">Full Programme Brief &rarr;</a>
+    <a class="btn-outline" href="/ascension/access.html">Partner / Sponsor Access &rarr;</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <span class="footer-copy">&copy; 2026 MODUS &middot; Stanford Emporium Inc.</span>
+  <div class="footer-links">
+    <a href="/">MODUS</a>
+    <a href="/seance">Séance</a>
+    <a href="/acquire">Acquire</a>
+    <a href="/manifeste">Manifeste</a>
+  </div>
+</footer>
+
+</body>
+</html>

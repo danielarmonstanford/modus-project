@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCENSION — Partner Hub · MODUS</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.woff2') format('woff2'),
+           url('/assets/fonts/lovine.woff') format('woff'),
+           url('/assets/fonts/lovine.otf') format('opentype');
+      font-display: swap;
+    }
+    :root {
+      --bg: #08070A;
+      --bg2: #0E0C10;
+      --gold: #D4A84B;
+      --text: #EDEAE4;
+      --muted: #8A8681;
+      --rule: rgba(212,168,75,0.22);
+      --gutter: clamp(1.5rem, 5vw, 5rem);
+      --font-display: 'Lovine', 'Cormorant Garamond', Georgia, serif;
+      --font-ed: 'Cormorant Garamond', Georgia, serif;
+      --font-mono: 'DM Mono', 'Courier New', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-ed); min-height: 100vh; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter); height: 56px; border-bottom: 0.5px solid var(--rule); }
+    .nav-brand { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .hero { padding: clamp(4rem,9vw,8rem) var(--gutter) clamp(3rem,6vw,5rem); border-bottom: 0.5px solid var(--rule); }
+    .eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+    h1 { font-family: var(--font-display); font-size: clamp(3rem,8vw,7rem); font-weight: normal; letter-spacing: -0.04em; line-height: 0.88; color: var(--text); margin-bottom: 1.25rem; }
+    .hero-sub { font-family: var(--font-ed); font-size: clamp(1rem,1.5vw,1.2rem); font-style: italic; color: var(--muted); max-width: 560px; line-height: 1.75; }
+    .hero-meta { margin-top: 1.25rem; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(212,168,75,0.7); line-height: 2; }
+    .sec { padding: clamp(3rem,6vw,5rem) var(--gutter); border-bottom: 0.5px solid var(--rule); }
+    .sec-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: block; }
+    .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--rule); }
+    .nav-card { background: var(--bg); padding: clamp(1.75rem,3vw,2.5rem); text-decoration: none; display: block; transition: background 0.2s; }
+    .nav-card:hover { background: var(--bg2); }
+    .nav-card-num { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 0.75rem; display: block; }
+    .nav-card-title { font-family: var(--font-display); font-size: clamp(1.3rem,2.5vw,2rem); font-weight: normal; letter-spacing: -0.02em; line-height: 1.1; color: var(--text); margin-bottom: 0.5rem; }
+    .nav-card-desc { font-family: var(--font-ed); font-size: 0.95rem; font-style: italic; color: var(--muted); line-height: 1.6; }
+    .nav-card-arrow { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--gold); margin-top: 1.25rem; display: block; }
+    .dates-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5px; background: var(--rule); margin-top: 1.5rem; }
+    .date-cell { background: var(--bg); padding: 1.5rem; }
+    .date-cell-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; display: block; }
+    .date-cell-val { font-family: var(--font-display); font-size: clamp(1rem,2vw,1.5rem); font-weight: normal; color: var(--text); line-height: 1.2; }
+    .action-list { list-style: none; margin-top: 1.5rem; }
+    .action-list li { display: flex; align-items: center; gap: 1rem; padding: 0.85rem 0; border-bottom: 0.5px solid rgba(212,168,75,0.08); }
+    .action-list li::before { content: '→'; font-family: var(--font-mono); font-size: 10px; color: var(--gold); flex-shrink: 0; }
+    .action-list a { font-family: var(--font-ed); font-size: clamp(0.95rem,1.4vw,1.1rem); font-style: italic; color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .action-list a:hover { color: var(--gold); }
+    .action-list span { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-left: auto; }
+    .contact-block { background: var(--bg2); border: 0.5px solid var(--rule); padding: 2rem; margin-top: 1.5rem; }
+    .contact-block p { font-family: var(--font-ed); font-size: clamp(0.9rem,1.3vw,1rem); font-style: italic; color: var(--muted); line-height: 1.75; }
+    .contact-block a { color: var(--gold); text-decoration: none; }
+    .footer { padding: 1.5rem var(--gutter); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer span { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); opacity: 0.4; }
+    @media (max-width: 768px) { .nav-grid, .dates-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/ascension/partners/">MODUS · Partner Portal</a>
+  <div class="nav-links">
+    <a href="venues.html">Venues</a>
+    <a href="sponsorship.html">Sponsorship</a>
+    <a href="practitioners.html">Practitioners</a>
+    <a href="/ascension">Public Page</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="eyebrow">MODUS Séance · ASCENSION · Partner Portal</span>
+  <h1>Partner<br>Hub</h1>
+  <p class="hero-sub">Confidential materials for verified partners, sponsors, facilitators, and venue representatives. Thank you for being part of the ASCENSION collaboration.</p>
+  <p class="hero-meta">
+    Da Nang, Vietnam &nbsp;·&nbsp; January 12–26, 2027<br>
+    Year of the Fire Goat &nbsp;·&nbsp; Tết Preparation Retreat
+  </p>
+</div>
+
+<!-- NAVIGATION -->
+<div class="sec">
+  <span class="sec-label">Partner Sections</span>
+  <div class="nav-grid">
+    <a class="nav-card" href="venues.html">
+      <span class="nav-card-num">01</span>
+      <p class="nav-card-title">Venues &amp;<br>Accommodation</p>
+      <p class="nav-card-desc">Group rates, commission structures, booking codes, and accommodation terms for venue partners.</p>
+      <span class="nav-card-arrow">View Venue Terms →</span>
+    </a>
+    <a class="nav-card" href="sponsorship.html">
+      <span class="nav-card-num">02</span>
+      <p class="nav-card-title">Sponsorship<br>Tiers &amp; Deliverables</p>
+      <p class="nav-card-desc">Sponsor tier cards, deliverable packages, and brand integration opportunities.</p>
+      <span class="nav-card-arrow">View Sponsorship →</span>
+    </a>
+    <a class="nav-card" href="practitioners.html">
+      <span class="nav-card-num">03</span>
+      <p class="nav-card-title">Practitioner<br>Terms</p>
+      <p class="nav-card-desc">Compensation model, referral fees, accommodation, and collaborative editorial rights.</p>
+      <span class="nav-card-arrow">View Practitioner Terms →</span>
+    </a>
+  </div>
+</div>
+
+<!-- KEY DATES -->
+<div class="sec">
+  <span class="sec-label">Key Dates</span>
+  <div class="dates-grid">
+    <div class="date-cell">
+      <span class="date-cell-label">Early Bird Closes</span>
+      <p class="date-cell-val">June 30, 2026</p>
+    </div>
+    <div class="date-cell">
+      <span class="date-cell-label">Partner LOI Deadline</span>
+      <p class="date-cell-val">July 31, 2026</p>
+    </div>
+    <div class="date-cell">
+      <span class="date-cell-label">Retreat Opens</span>
+      <p class="date-cell-val">January 12, 2027</p>
+    </div>
+    <div class="date-cell">
+      <span class="date-cell-label">Tết / Retreat Closes</span>
+      <p class="date-cell-val">January 26, 2027</p>
+    </div>
+    <div class="date-cell">
+      <span class="date-cell-label">Tết Nguyên Đán</span>
+      <p class="date-cell-val">January 29, 2027 — Year of the Fire Goat</p>
+    </div>
+    <div class="date-cell">
+      <span class="date-cell-label">Cohort Size</span>
+      <p class="date-cell-val">Limited by design — curated application</p>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK ACTIONS -->
+<div class="sec">
+  <span class="sec-label">Quick Actions</span>
+  <ul class="action-list">
+    <li>
+      <a href="sponsorship.html">Review sponsor tier deliverables</a>
+      <span>Sponsorship</span>
+    </li>
+    <li>
+      <a href="venues.html">View accommodation rate menu</a>
+      <span>Venues</span>
+    </li>
+    <li>
+      <a href="practitioners.html">Review practitioner compensation model</a>
+      <span>Practitioners</span>
+    </li>
+    <li>
+      <a href="mailto:daniel@stanfordemporium.com?subject=ASCENSION%20LOI&body=Hi%20Daniel%2C%0A%0AI%20would%20like%20to%20submit%20a%20Letter%20of%20Intent%20for%20ASCENSION%20(January%2012%E2%80%9326%2C%202027).%0A%0AName%3A%20%0AOrganization%3A%20%0APartnership%20type%20(Venue%2FSponsor%2FPractitioner)%3A%20%0A%0ADetails%3A%20">Submit Letter of Intent via Email</a>
+      <span>Action</span>
+    </li>
+    <li>
+      <a href="/seance/ascension">View Public Retreat Brief</a>
+      <span>Reference</span>
+    </li>
+  </ul>
+</div>
+
+<!-- CONTACT -->
+<div class="sec">
+  <span class="sec-label">Contact</span>
+  <div class="contact-block">
+    <p>For partnership enquiries, LOI submissions, and bespoke discussions: <a href="mailto:daniel@stanfordemporium.com">daniel@stanfordemporium.com</a></p>
+    <p style="margin-top:0.75rem;">For questions about these materials or access issues: reference ASCENSION 2027 in your subject line.</p>
+    <p style="margin-top:0.75rem;">All materials in this portal are confidential and intended solely for the verified recipient. Please do not forward or share your access key.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>MODUS · ASCENSION Partner Portal · Confidential</span>
+  <span>January 12–26, 2027 · Da Nang, Vietnam</span>
+</footer>
+
+</body>
+</html>

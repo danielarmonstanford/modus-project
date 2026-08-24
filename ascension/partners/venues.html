@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCENSION — Venue Terms · MODUS Partners</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.woff2') format('woff2'),
+           url('/assets/fonts/lovine.woff') format('woff'),
+           url('/assets/fonts/lovine.otf') format('opentype');
+      font-display: swap;
+    }
+    :root {
+      --bg: #08070A; --bg2: #0E0C10; --gold: #D4A84B; --text: #EDEAE4;
+      --muted: #8A8681; --rule: rgba(212,168,75,0.22);
+      --gutter: clamp(1.5rem, 5vw, 5rem);
+      --font-display: 'Lovine','Cormorant Garamond',Georgia,serif;
+      --font-ed: 'Cormorant Garamond',Georgia,serif;
+      --font-mono: 'DM Mono','Courier New',monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-ed);min-height:100vh}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);height:56px;border-bottom:0.5px solid var(--rule)}
+    .nav-brand{font-family:var(--font-mono);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+    .nav-back{font-family:var(--font-mono);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+    .nav-back:hover{color:var(--gold)}
+    .hero{padding:clamp(4rem,9vw,8rem) var(--gutter) clamp(3rem,6vw,5rem);border-bottom:0.5px solid var(--rule)}
+    .eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+    h1{font-family:var(--font-display);font-size:clamp(3rem,8vw,7rem);font-weight:normal;letter-spacing:-0.04em;line-height:0.88;color:var(--text);margin-bottom:1.25rem}
+    .hero-sub{font-family:var(--font-ed);font-size:clamp(1rem,1.5vw,1.2rem);font-style:italic;color:var(--muted);max-width:560px;line-height:1.75}
+    .sec{padding:clamp(3rem,6vw,5rem) var(--gutter);border-bottom:0.5px solid var(--rule)}
+    .sec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:block}
+    h2{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:normal;letter-spacing:-0.02em;color:var(--text);margin-bottom:1rem;line-height:1}
+    .body-copy{font-family:var(--font-ed);font-size:clamp(1rem,1.4vw,1.05rem);font-style:italic;color:var(--muted);line-height:1.8;max-width:680px}
+    .body-copy+.body-copy{margin-top:1rem}
+    table{width:100%;border-collapse:collapse;margin-top:1.5rem;overflow-x:auto;display:block}
+    thead th{font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);text-align:left;padding:0.6rem 1rem 0.6rem 0;border-bottom:0.5px solid var(--rule);white-space:nowrap}
+    tbody td{font-family:var(--font-ed);font-size:clamp(0.9rem,1.3vw,1rem);font-style:italic;color:var(--muted);padding:0.7rem 1rem 0.7rem 0;border-bottom:0.5px solid rgba(212,168,75,0.07);line-height:1.5;vertical-align:top}
+    tbody td:first-child{color:var(--text);font-style:normal;white-space:nowrap}
+    .term-list{list-style:none;margin-top:1.5rem}
+    .term-list li{display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid rgba(212,168,75,0.08);font-family:var(--font-ed);font-size:clamp(0.9rem,1.3vw,1rem);color:var(--muted);font-style:italic;line-height:1.6}
+    .term-list li::before{content:'—';color:var(--gold);font-family:var(--font-mono);font-size:9px;flex-shrink:0;margin-top:0.25rem}
+    .term-list li strong{color:var(--text);font-style:normal;font-weight:normal;margin-right:0.4rem}
+    .note{font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);opacity:0.55;line-height:1.8;margin-top:1.25rem}
+    .contact-block{background:var(--bg2);border:0.5px solid var(--rule);padding:2rem;margin-top:1.5rem}
+    .contact-block p{font-family:var(--font-ed);font-size:clamp(0.9rem,1.3vw,1rem);font-style:italic;color:var(--muted);line-height:1.75}
+    .contact-block a{color:var(--gold);text-decoration:none}
+    .footer{padding:1.5rem var(--gutter);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer span{font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);opacity:0.4}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/ascension/partners/">← Partner Hub</a>
+  <a class="nav-back" href="index.html">All Partner Sections</a>
+</nav>
+
+<div class="hero">
+  <span class="eyebrow">ASCENSION Partner Portal · Confidential</span>
+  <h1>Venues &amp;<br>Accommodation</h1>
+  <p class="hero-sub">Group rates, commission structure, booking codes, and no-attrition terms for verified venue partners. January 12–26, 2027 · Da Nang, Vietnam.</p>
+</div>
+
+<!-- OVERVIEW -->
+<div class="sec">
+  <span class="sec-label">How It Works</span>
+  <h2>MODUS curates.<br>Partners host.</h2>
+  <p class="body-copy">ASCENSION operates on a passport model — attendees pay MODUS for the programme. Accommodation is booked independently by each attendee. Venue partners who provide group rates and a booking code receive commission per room-night confirmed through that code.</p>
+  <p class="body-copy">There is no attrition clause. MODUS does not guarantee room blocks. This is a referral and endorsement relationship, not a contracted group booking. Volume depends on cohort size and attendee preference.</p>
+</div>
+
+<!-- RATE MENU -->
+<div class="sec">
+  <span class="sec-label">Curated Rate Menu — January 2027</span>
+  <p class="body-copy">The following indicative rates are shared with MODUS by venue partners. MODUS promotes these rates on the stay menu visible to all attendees. Final rates are agreed directly between attendee and venue.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Category</th>
+        <th>Indicative Rate / Night</th>
+        <th>Min. Nights</th>
+        <th>Commission</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fusion Maia Da Nang</td>
+        <td>Luxury — All-Spa Inclusive</td>
+        <td>~$150–230</td>
+        <td>3</td>
+        <td>10% per confirmed room-night</td>
+        <td>#2 International Wellness Retreat globally; spa included</td>
+      </tr>
+      <tr>
+        <td>Sheraton Grand Da Nang</td>
+        <td>5-Star Resort</td>
+        <td>~$120–180</td>
+        <td>2</td>
+        <td>8% per confirmed room-night</td>
+        <td>Direct beach access; large pool deck</td>
+      </tr>
+      <tr>
+        <td>Naman Retreat</td>
+        <td>Luxury Villa</td>
+        <td>~$130–200</td>
+        <td>3</td>
+        <td>10% per confirmed room-night</td>
+        <td>Purpose-built wellness environment</td>
+      </tr>
+      <tr>
+        <td>Pullman Da Nang Beach</td>
+        <td>4-Star</td>
+        <td>~$90–130</td>
+        <td>2</td>
+        <td>7% per confirmed room-night</td>
+        <td>Non Nuoc beach; strong infrastructure</td>
+      </tr>
+      <tr>
+        <td>The Hideout Hostel</td>
+        <td>Boutique / Social</td>
+        <td>~$45–80</td>
+        <td>1</td>
+        <td>5% per confirmed room-night</td>
+        <td>Best value; community energy; recommended for solo travellers</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Rates are indicative. Final rates are set by each property for January 2027. Commission is on confirmed bookings attributed to the ASCENSION booking code.</p>
+</div>
+
+<!-- BOOKING CODE SYSTEM -->
+<div class="sec">
+  <span class="sec-label">Booking Code System</span>
+  <h2>Tracking &amp;<br>Attribution</h2>
+  <p class="body-copy">Each venue partner receives a unique booking code (e.g. <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--gold);">MODUS-ASC27</code>). Attendees are directed to quote this code when booking directly with your property. Commission is paid quarterly on verified room-night conversions.</p>
+  <ul class="term-list">
+    <li><strong>Code format:</strong> Agreed on LOI signature — unique per property</li>
+    <li><strong>Tracking:</strong> Venue confirms attributed bookings monthly to daniel@stanfordemporium.com</li>
+    <li><strong>Commission timing:</strong> Paid 30 days after the retreat closes (by February 25, 2027)</li>
+    <li><strong>Minimum threshold:</strong> No minimum — commission is paid on any confirmed attributed room-nights</li>
+    <li><strong>Currency:</strong> USD, via wire or Wise (agreed on LOI)</li>
+  </ul>
+</div>
+
+<!-- NO-ATTRITION TERMS -->
+<div class="sec">
+  <span class="sec-label">No-Attrition Terms</span>
+  <h2>No blocks.<br>No guarantees.</h2>
+  <p class="body-copy">MODUS does not hold room blocks and is not liable for any attrition. This relationship is a promotional partnership: MODUS endorses your property to the ASCENSION cohort and promotes your rates. In exchange, verified bookings earn commission.</p>
+  <ul class="term-list">
+    <li><strong>No minimum commitment:</strong> MODUS does not guarantee a minimum number of room-nights</li>
+    <li><strong>No cancellation penalty:</strong> Either party may withdraw from the partnership up to 90 days before the retreat (October 14, 2026) with no financial obligation</li>
+    <li><strong>Attendee relationship:</strong> Attendee contracts are directly with your property — MODUS has no liability for individual booking disputes</li>
+    <li><strong>Rate parity:</strong> Rates offered through the MODUS programme should be at parity with or better than rates available through OTAs at time of enquiry</li>
+  </ul>
+</div>
+
+<!-- GROUP ENQUIRIES -->
+<div class="sec">
+  <span class="sec-label">Group Enquiries</span>
+  <p class="body-copy">For groups of 3 or more rooms, MODUS can facilitate a direct group enquiry to the venue on behalf of the cohort. This applies additional group rates (typically 8–12% off published rates) and may include shared transfer arrangements.</p>
+  <div class="contact-block">
+    <p>To initiate a group enquiry or discuss bespoke venue terms: <a href="mailto:daniel@stanfordemporium.com?subject=ASCENSION%20Venue%20Group%20Enquiry">daniel@stanfordemporium.com</a></p>
+    <p style="margin-top:0.75rem;">Please include your property name, January 2027 availability window, and group rate availability. We will cross-reference with confirmed attendee preferences.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>MODUS · ASCENSION Venue Terms · Confidential</span>
+  <span><a href="index.html" style="color:var(--muted);text-decoration:none;">← Partner Hub</a></span>
+</footer>
+
+</body>
+</html>

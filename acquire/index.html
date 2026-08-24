@@ -686,6 +686,103 @@
     @media (max-width: 560px) {
       .form-row-2 { grid-template-columns: 1fr; }
     }
+
+    /* ── Marketplace: additional tokens ── */
+    :root {
+      --muted: #8A8681;
+      --rule: rgba(212,168,75,0.22);
+      --accent-sand: #D4B8A8;
+      --accent-ocean: #3A7CA5;
+      --accent-earth: #6B5A47;
+      --accent-fire: #C85A3A;
+    }
+
+    /* ── Marketplace: Build Your ASCENSION ── */
+    .mkt-section { padding: clamp(3rem,6vw,5rem) var(--gutter); border-top: 0.5px solid var(--rule); }
+    .mkt-eyebrow { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: block; }
+    .mkt-h2 { font-family: var(--font-display); font-size: clamp(2rem,4vw,3.5rem); font-weight: normal; letter-spacing: -0.03em; color: var(--text); margin-bottom: 1rem; line-height: 1; }
+    .mkt-subhead { font-family: var(--font-ed); font-size: clamp(1rem,1.5vw,1.1rem); font-style: italic; color: var(--muted); margin-bottom: 2rem; line-height: 1.7; }
+    .mkt-h3 { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin: 1.75rem 0 1rem; }
+
+    .modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; background: var(--rule); margin: 1rem 0 2rem; }
+    .module-card { background: var(--bg); padding: 2rem; transition: background 0.25s; }
+    .module-card:hover { background: rgba(212,168,75,0.06); }
+    .module-card-icon { font-size: 1.4rem; margin-bottom: 0.75rem; display: block; }
+    .module-card-title { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .module-card p { font-family: var(--font-ed); font-size: clamp(0.9rem,1.3vw,1rem); color: var(--text-dim); line-height: 1.65; font-style: italic; }
+
+    .hotel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5px; background: var(--rule); margin: 1rem 0; }
+    .hotel-card { background: var(--bg); padding: 2rem; transition: background 0.25s; }
+    .hotel-card:hover { background: rgba(212,168,75,0.06); }
+    .hotel-card.anchor { background: rgba(212,168,75,0.07); border: 0.5px solid rgba(212,168,75,0.4); }
+    .hotel-card-badge { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: block; }
+    .hotel-card-name { font-family: var(--font-display); font-size: clamp(1rem,1.8vw,1.4rem); font-weight: normal; color: var(--text); margin-bottom: 0.4rem; line-height: 1.1; }
+    .hotel-card-tags { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+    .hotel-card p { font-family: var(--font-ed); font-size: 0.9rem; color: var(--muted); font-style: italic; line-height: 1.6; }
+
+    /* ── Marketplace: Pricing ── */
+    .mkt-table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem; }
+    .mkt-table th { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); padding: 0.75rem 1rem; text-align: left; background: rgba(212,168,75,0.07); border-bottom: 0.5px solid var(--rule); }
+    .mkt-table td { font-family: var(--font-ed); font-size: clamp(0.88rem,1.3vw,0.95rem); color: var(--text-dim); padding: 1rem; border-bottom: 0.5px solid var(--rule); vertical-align: top; line-height: 1.55; }
+    .mkt-table td.price { color: var(--gold); font-weight: 600; white-space: nowrap; }
+    .mkt-table-wrap { overflow-x: auto; }
+
+    /* ── Marketplace: Tiered Access ── */
+    .tiers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5px; background: var(--rule); margin: 1rem 0 2rem; }
+    .tier-cell { background: var(--bg); padding: 2rem; text-align: center; }
+    .tier-cell.t1 { border-top: 2px solid var(--gold); }
+    .tier-cell.t2 { border-top: 2px solid var(--accent-ocean); }
+    .tier-cell.t3 { border-top: 2px solid var(--accent-sand); }
+    .tier-cell.t4 { border-top: 2px solid var(--muted); }
+    .tier-cell-badge { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+    .tier-cell-title { font-family: var(--font-display); font-size: clamp(1.1rem,2vw,1.6rem); font-weight: normal; color: var(--text); margin-bottom: 0.4rem; }
+    .tier-cell-size { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 1rem; }
+    .tier-cell-detail { font-family: var(--font-ed); font-size: 0.9rem; font-style: italic; color: var(--muted); line-height: 1.6; }
+    @media (max-width: 900px) { .tiers-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .tiers-grid { grid-template-columns: 1fr; } }
+
+    /* ── Marketplace: Partner Funnel ── */
+    .funnel-block { background: var(--bg2); border: 0.5px solid var(--rule); padding: 2rem; margin: 1rem 0; }
+    .funnel-step { padding: 1.5rem 0; border-bottom: 0.5px dashed var(--rule); }
+    .funnel-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .funnel-badge { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    .funnel-q { font-family: var(--font-display); font-size: clamp(1rem,1.8vw,1.4rem); font-weight: normal; color: var(--text); margin-bottom: 1rem; }
+    .funnel-copy { font-family: var(--font-ed); font-size: clamp(0.9rem,1.3vw,1rem); color: var(--muted); font-style: italic; line-height: 1.7; margin-bottom: 1rem; }
+    .funnel-btns { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .funnel-btn { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 0.5px solid var(--gold); background: transparent; padding: 10px 20px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+    .funnel-btn:hover { background: var(--gold); color: var(--bg); }
+
+    /* ── Marketplace: Partnership Tiers ── */
+    .ptier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5px; background: var(--rule); margin: 1rem 0 2rem; }
+    .ptier-card { background: var(--bg); padding: 2rem; }
+    .ptier-card.p1 { border-top: 2px solid var(--accent-earth); }
+    .ptier-card.p2 { border-top: 2px solid var(--accent-sand); }
+    .ptier-card.p3 { border-top: 2px solid var(--accent-ocean); }
+    .ptier-card.p4 { border-top: 2px solid var(--accent-fire); }
+    .ptier-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .ptier-sub { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1rem; }
+    .ptier-amount { font-family: var(--font-display); font-size: clamp(1.5rem,3vw,2.2rem); font-weight: normal; color: var(--text); margin-bottom: 1rem; line-height: 1; }
+    .ptier-list { list-style: none; }
+    .ptier-list li { font-family: var(--font-ed); font-size: 0.9rem; font-style: italic; color: var(--muted); padding: 0.4rem 0; padding-left: 1.25rem; position: relative; line-height: 1.5; border-bottom: 0.5px solid rgba(212,168,75,0.06); }
+    .ptier-list li:last-child { border-bottom: none; }
+    .ptier-list li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-family: var(--font-mono); font-size: 9px; top: 0.55rem; font-style: normal; }
+
+    /* ── Marketplace: Curation Standard ── */
+    .curation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.5px; background: var(--rule); margin: 1rem 0 2rem; }
+    .curation-cell { background: var(--bg); padding: 2rem; text-align: center; }
+    .curation-num { font-family: var(--font-display); font-size: clamp(2rem,4vw,3rem); color: rgba(212,168,75,0.35); margin-bottom: 0.5rem; line-height: 1; }
+    .curation-title { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text); margin-bottom: 0.5rem; }
+    .curation-desc { font-family: var(--font-ed); font-size: 0.88rem; font-style: italic; color: var(--muted); line-height: 1.55; }
+
+    /* ── Marketplace: CTA Band ── */
+    .mkt-cta-band { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.5px; background: var(--rule); margin: 0; }
+    .mkt-cta-cell { background: var(--bg); padding: 2.5rem 2rem; text-align: center; }
+    .mkt-cta-cell h4 { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+    .mkt-cta-btn { display: inline-block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 0.5px solid var(--gold); background: transparent; padding: 12px 24px; cursor: pointer; transition: background 0.2s, color 0.2s; text-decoration: none; }
+    .mkt-cta-btn:hover { background: var(--gold); color: var(--bg); }
+    .mkt-cta-btn.secondary { border-color: var(--muted); color: var(--muted); }
+    .mkt-cta-btn.secondary:hover { background: var(--muted); color: var(--bg); }
+    .mkt-note { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); opacity: 0.6; line-height: 1.8; margin-top: 1.25rem; }
   </style>
 </head>
 <body>
@@ -801,7 +898,7 @@
             <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-style:italic;color:rgba(240,232,213,0.75);margin:0 0 0.3rem;line-height:1.2;">Sois Ton Plus Grand Moi &mdash; GoAt &#x1F525;&#x1F410;</p>
             <p style="font-family:'DM Mono','Courier New',monospace;font-size:clamp(11px,1.3vw,13px);letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 0.6rem;">ASCENSION &nbsp;|&nbsp; Sự Thăng Hoa</p>
             <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:rgba(240,232,213,0.55);margin:0 0 1.25rem;">Transformer. Soutenir. Créer.</p>
-            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Đà Nẵng, Viêt Nam &nbsp;&middot;&nbsp; 15&ndash;29 Janvier 2027 &nbsp;&middot;&nbsp; Participez. Accompagnez. Partenariat.</p>
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1rem,1.8vw,1.15rem);font-style:italic;color:rgba(240,232,213,0.6);margin-bottom:1.5rem;line-height:1.5;">Đà Nẵng, Viêt Nam &nbsp;&middot;&nbsp; 12&ndash;26 Janvier 2027 &nbsp;&middot;&nbsp; Participez. Accompagnez. Partenariat.</p>
             <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
               <a href="#attend" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#06080C;background:#D4A84B;padding:13px 28px;text-decoration:none;transition:opacity 0.25s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Participer &darr;</a>
               <a href="#sponsor" style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#F0E8D5;border:0.5px solid rgba(240,232,213,0.4);padding:13px 28px;text-decoration:none;transition:border-color 0.25s,color 0.25s;" onmouseover="this.style.borderColor='#D4A84B';this.style.color='#D4A84B'" onmouseout="this.style.borderColor='rgba(240,232,213,0.4)';this.style.color='#F0E8D5'">Commanditer &darr;</a>
@@ -905,6 +1002,362 @@
     })();
     </script>
 
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ASCENSION MARKETPLACE — 7 sections                    -->
+    <!-- ══════════════════════════════════════════════════════ -->
+
+    <!-- SECTION 1: BUILD YOUR ASCENSION -->
+    <section class="mkt-section" id="build-ascension">
+      <span class="mkt-eyebrow">ASCENSION · Da Nang, Vietnam · January 12–26, 2027</span>
+      <h2 class="mkt-h2">Build Your<br>ASCENSION</h2>
+      <p class="mkt-subhead">One destination. Multiple ways to experience it. Choose your stay, your depth, your journey.</p>
+
+      <h3 class="mkt-h3">The Modular Experience</h3>
+      <div class="modules-grid">
+        <div class="module-card">
+          <span class="module-card-icon">🏨</span>
+          <div class="module-card-title">Stay</div>
+          <p>Our anchor hotel hosts opening/closing ceremonies and daily wellness coordination. Alternatively, choose from 4 curated hotels across Da Nang ($57–$135/night). Preferred ASCENSION rates available exclusively to participants.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-icon">💎</span>
+          <div class="module-card-title">Restore</div>
+          <p>Hideout Wellness thermal rituals, massage, spa days, and recovery protocols. 4–5 thermal recovery sessions included in your passport.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-icon">🧘</span>
+          <div class="module-card-title">Move</div>
+          <p>Budokon Yoga, somatic movement, breathwork intensives. Daily group classes included. Private sessions available ($80–$150).</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-icon">🍽️</span>
+          <div class="module-card-title">Taste</div>
+          <p>Curated dinners, cooking classes, farm-to-table experiences. Group meals included. Extended culinary packages available.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-icon">🌏</span>
+          <div class="module-card-title">Discover</div>
+          <p>Culture, architecture, natural sites, local wisdom traditions. Marble Mountains, Hội An ancient town, Tết cultural immersion (14-day cohort).</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-icon">🔊</span>
+          <div class="module-card-title">Sound</div>
+          <p>Gong baths, Tibetan bowls, vocal toning. Sound healing is our signature modality. Daily rituals and evening ceremonies.</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-icon">👥</span>
+          <div class="module-card-title">Deeper</div>
+          <p>Private practitioners: Vietnamese acupressure, sleep science, shamanic work, Rolfing. Book private sessions ($110–$250 each).</p>
+        </div>
+        <div class="module-card">
+          <span class="module-card-icon">📸</span>
+          <div class="module-card-title">Media</div>
+          <p>Photography, content creation, personal brand sessions. Attendees co-create MODUS editorial. Your story documented.</p>
+        </div>
+      </div>
+
+      <h3 class="mkt-h3">Your Hotel Options</h3>
+      <p class="mkt-subhead" style="margin-bottom:1.5rem;">Our anchor hotel hosts opening/closing ceremonies and daily coordination. Choose from 4 curated alternatives across Da Nang — you book direct, transparent pricing, no markups.</p>
+      <div class="hotel-grid">
+        <div class="hotel-card anchor">
+          <span class="hotel-card-badge">Anchor Hotel — TBD on LOI</span>
+          <div class="hotel-card-name">[HOTEL NAME — TBD]</div>
+          <div class="hotel-card-tags">Wellness Amenities &nbsp;·&nbsp; Event Spaces &nbsp;·&nbsp; Central Coordination</div>
+          <p>Central hub for ASCENSION. Opening ceremony, closing celebration, daily gathering point. Preferred rates locked in for participants.</p>
+        </div>
+        <div class="hotel-card">
+          <span class="hotel-card-badge">Alternative Option</span>
+          <div class="hotel-card-name">TUI BLUE Han River</div>
+          <div class="hotel-card-tags">Central &nbsp;·&nbsp; Rooftop Venue &nbsp;·&nbsp; New Property</div>
+          <p>Central Da Nang, iconic rooftop views, BLUE Spa on-site. Modern boutique positioning.</p>
+        </div>
+        <div class="hotel-card">
+          <span class="hotel-card-badge">Alternative Option</span>
+          <div class="hotel-card-name">Chicland Hotel</div>
+          <div class="hotel-card-tags">Beachfront &nbsp;·&nbsp; 21st-Floor Spa &nbsp;·&nbsp; Eco Design</div>
+          <p>My Khe Beach, wellness-aligned, rooftop dining. Best value-to-quality ratio.</p>
+        </div>
+        <div class="hotel-card">
+          <span class="hotel-card-badge">Alternative Option</span>
+          <div class="hotel-card-name">TMS Hotel Da Nang Beach</div>
+          <div class="hotel-card-tags">Beachfront &nbsp;·&nbsp; Infinity Pool &nbsp;·&nbsp; Strong Spa</div>
+          <p>My Khe Beach, walkable district, exceptional reviews (9.4/10).</p>
+        </div>
+        <div class="hotel-card">
+          <span class="hotel-card-badge">Alternative Option</span>
+          <div class="hotel-card-name">Le Sands Oceanfront</div>
+          <div class="hotel-card-tags">Oceanfront &nbsp;·&nbsp; Highest Rated &nbsp;·&nbsp; Spa-Forward</div>
+          <p>My Khe Beach, 9.6/10 guest reviews, direct oceanfront access.</p>
+        </div>
+      </div>
+      <p class="mkt-note">Passport covers programme only. Accommodation is booked separately at preferred group rates. You book direct — no markups from MODUS.</p>
+    </section>
+
+    <!-- SECTION 2: PRICING TRANSPARENCY -->
+    <section class="mkt-section" id="pricing-transparent">
+      <span class="mkt-eyebrow">Programme Pricing</span>
+      <h2 class="mkt-h2">Pricing That<br>Makes Sense</h2>
+      <p class="mkt-subhead">Clear pricing. Your choices. No hidden costs. Accommodation is separate — you book the hotel that suits you.</p>
+      <div class="mkt-table-wrap">
+        <table class="mkt-table">
+          <thead>
+            <tr>
+              <th>Passport</th>
+              <th>Duration</th>
+              <th>Price</th>
+              <th>Includes</th>
+              <th>Hotel (separate)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Core Passport</strong></td>
+              <td>7 Days</td>
+              <td class="price">$1,200</td>
+              <td>Group programming, 2 spa, Hideout thermal recovery, specialist sessions</td>
+              <td>Your choice · $57–$135/night</td>
+            </tr>
+            <tr>
+              <td><strong>Extended Passport</strong></td>
+              <td>14 Days</td>
+              <td class="price">$2,000</td>
+              <td>Everything above × 2, plus 2 additional practitioners + Tết ceremony</td>
+              <td>Your choice · $57–$135/night</td>
+            </tr>
+            <tr>
+              <td><strong>VIP Upgrade</strong></td>
+              <td>Add to 7 or 14 Day</td>
+              <td class="price">$2,200 / $3,000</td>
+              <td>3 private sessions, concierge itinerary, priority booking</td>
+              <td>Upgrade available</td>
+            </tr>
+            <tr>
+              <td><strong>Conference Day Pass</strong></td>
+              <td>1 Day</td>
+              <td class="price">$50</td>
+              <td>Keynotes, breakout sessions, group dinner — select conference days</td>
+              <td>Not included</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mkt-note">Example: $1,200 passport + $57/night Chicland (7 nights) = $1,599 total for 7 days of full transformation programming.</p>
+    </section>
+
+    <!-- SECTION 3: TIERED ACCESS -->
+    <section class="mkt-section" id="tiered-access">
+      <span class="mkt-eyebrow">Access Tiers</span>
+      <h2 class="mkt-h2">Four Ways<br>to Participate</h2>
+      <p class="mkt-subhead">Core retreat remains intimate — 20 curated people, no compromises. Conferences let specialists teach at scale. Choose your level of immersion.</p>
+      <div class="tiers-grid">
+        <div class="tier-cell t1">
+          <div class="tier-cell-badge">TIER 1</div>
+          <div class="tier-cell-title">Core Retreat</div>
+          <div class="tier-cell-size">20 curated guests</div>
+          <div class="tier-cell-detail">Full 7–14 day immersion<br>All programming<br>Community access<br>Intimate curation</div>
+        </div>
+        <div class="tier-cell t2">
+          <div class="tier-cell-badge">TIER 2</div>
+          <div class="tier-cell-title">Conferences</div>
+          <div class="tier-cell-size">50–100 guests</div>
+          <div class="tier-cell-detail">Sleep Science · Sound Healing<br>Keynotes + breakouts<br>$50 day pass</div>
+        </div>
+        <div class="tier-cell t3">
+          <div class="tier-cell-badge">TIER 3</div>
+          <div class="tier-cell-title">Hotel Add-Ons</div>
+          <div class="tier-cell-size">10–30 guests</div>
+          <div class="tier-cell-detail">À la carte sessions<br>Drop-in classes<br>$50–$150/session</div>
+        </div>
+        <div class="tier-cell t4">
+          <div class="tier-cell-badge">TIER 4</div>
+          <div class="tier-cell-title">Community</div>
+          <div class="tier-cell-size">Open</div>
+          <div class="tier-cell-detail">Evening events<br>Group ceremonies<br>DJ sets · Free–$30</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: HOW TO PARTICIPATE -->
+    <section class="mkt-section" id="partner-funnel">
+      <span class="mkt-eyebrow">Partner With MODUS</span>
+      <h2 class="mkt-h2">How to<br>Participate</h2>
+      <p class="mkt-subhead">Every partner plays a distinct role. What's yours?</p>
+      <div class="funnel-block">
+        <div class="funnel-step">
+          <div class="funnel-badge">Hotel / Venue Partner</div>
+          <div class="funnel-q">Want to host ASCENSION attendees?</div>
+          <p class="funnel-copy">We curate and recommend verified hotels to our participants. Your property gains direct access to a global wellness audience seeking quality stays in Da Nang.</p>
+          <div class="funnel-btns">
+            <button class="funnel-btn" onclick="openModal('modal-sponsor')">Hotel Partnership Inquiry</button>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-badge">Experience / Wellness Partner</div>
+          <div class="funnel-q">Offering wellness or cultural experiences?</div>
+          <p class="funnel-copy">We feature your services in ASCENSION programming. Attendees book directly with you. Your expertise reaches a verified, curated audience.</p>
+          <div class="funnel-btns">
+            <button class="funnel-btn" onclick="openModal('modal-sponsor')">Experience Partnership</button>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-badge">Practitioner / Facilitator</div>
+          <div class="funnel-q">Want to teach or facilitate?</div>
+          <p class="funnel-copy">Core facilitators receive accommodation and honorarium. Marketplace practitioners earn revenue from session bookings. Both paths available.</p>
+          <div class="funnel-btns">
+            <button class="funnel-btn" onclick="openModal('modal-partner')">Practitioner Application</button>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-badge">Brand / Sponsor</div>
+          <div class="funnel-q">Want to reach 20 wellness influencers + professionals?</div>
+          <p class="funnel-copy">Partnership tiers from $5K–$25K. Product integration, guaranteed audience reach, MODUS editorial exposure, and measurable engagement.</p>
+          <div class="funnel-btns">
+            <button class="funnel-btn" onclick="openModal('modal-sponsor')">Sponsorship Inquiry</button>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-badge">Cultural / Media Partner</div>
+          <div class="funnel-q">Documenting or amplifying ASCENSION?</div>
+          <p class="funnel-copy">Photographers, videographers, journalists, media platforms. Revenue share or sponsored coverage options. Co-branding and audience access.</p>
+          <div class="funnel-btns">
+            <button class="funnel-btn" onclick="openModal('modal-sponsor')">Media Partnership</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PARTNERSHIP INVESTMENT TIERS -->
+    <section class="mkt-section" id="partner-tiers">
+      <span class="mkt-eyebrow">Partnership Tiers</span>
+      <h2 class="mkt-h2">Partnership<br>Investment</h2>
+      <p class="mkt-subhead">Transparent options. Different partnership types, different investments. All tiers gain access to a curated cohort of 20 wellness professionals and influencers.</p>
+      <div class="ptier-grid">
+        <div class="ptier-card p1">
+          <div class="ptier-label">Revenue Share</div>
+          <div class="ptier-sub">Experience / Wellness / Practitioner</div>
+          <div class="ptier-amount">15–20%</div>
+          <ul class="ptier-list">
+            <li>Per-booking revenue share</li>
+            <li>You set your price</li>
+            <li>Attendees book directly with you</li>
+            <li>Zero upfront investment</li>
+          </ul>
+        </div>
+        <div class="ptier-card p2">
+          <div class="ptier-label">Experience Partner</div>
+          <div class="ptier-sub">Hotel / Wellness / Cultural</div>
+          <div class="ptier-amount">$5K–$10K</div>
+          <ul class="ptier-list">
+            <li>Built into passport</li>
+            <li>Guaranteed attendee access</li>
+            <li>MODUS marketing &amp; promotion</li>
+            <li>Featured in retreat materials</li>
+          </ul>
+        </div>
+        <div class="ptier-card p3">
+          <div class="ptier-label">Brand Activation</div>
+          <div class="ptier-sub">Sports / Beauty / Nutrition / Tech</div>
+          <div class="ptier-amount">$5K–$15K</div>
+          <ul class="ptier-list">
+            <li>Product integration in programming</li>
+            <li>Direct attendee engagement</li>
+            <li>MODUS editorial feature</li>
+            <li>Social media amplification</li>
+            <li>UGC + influencer content seeding</li>
+            <li>Post-event performance insights</li>
+          </ul>
+        </div>
+        <div class="ptier-card p4">
+          <div class="ptier-label">Presenting Print</div>
+          <div class="ptier-sub">Flagship / Cultural / Major Sponsor</div>
+          <div class="ptier-amount">$25K</div>
+          <ul class="ptier-list">
+            <li>Brand names the experience</li>
+            <li>Controls programming and flow</li>
+            <li>Featured in all MODUS marketing</li>
+            <li>Entire attendee cohort engagement</li>
+            <li>Premium media and editorial rights</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: MODUS CURATION STANDARD -->
+    <section class="mkt-section" id="curation-standard">
+      <span class="mkt-eyebrow">Selection Criteria</span>
+      <h2 class="mkt-h2">The MODUS<br>Curation Standard</h2>
+      <p class="mkt-subhead">Every ASCENSION partner is evaluated against 8 criteria. We don't accept every hotel, brand, or practitioner. Curation is the product.</p>
+      <div class="curation-grid">
+        <div class="curation-cell">
+          <div class="curation-num">01</div>
+          <div class="curation-title">Quality</div>
+          <div class="curation-desc">Does the experience deliver authentic transformation or tangible value?</div>
+        </div>
+        <div class="curation-cell">
+          <div class="curation-num">02</div>
+          <div class="curation-title">Aesthetic</div>
+          <div class="curation-desc">Does it fit the MODUS world? Design, atmosphere, visual coherence.</div>
+        </div>
+        <div class="curation-cell">
+          <div class="curation-num">03</div>
+          <div class="curation-title">Authenticity</div>
+          <div class="curation-desc">Is there substance behind the brand or service? Real expertise, not hype.</div>
+        </div>
+        <div class="curation-cell">
+          <div class="curation-num">04</div>
+          <div class="curation-title">People</div>
+          <div class="curation-desc">Who delivers this? Background, training, and integrity.</div>
+        </div>
+        <div class="curation-cell">
+          <div class="curation-num">05</div>
+          <div class="curation-title">Place</div>
+          <div class="curation-desc">Does it have a meaningful relationship with Da Nang and the destination?</div>
+        </div>
+        <div class="curation-cell">
+          <div class="curation-num">06</div>
+          <div class="curation-title">Sustainability</div>
+          <div class="curation-desc">Is the operation responsible? Environmentally, socially, ethically?</div>
+        </div>
+        <div class="curation-cell">
+          <div class="curation-num">07</div>
+          <div class="curation-title">Story</div>
+          <div class="curation-desc">Can it contribute to the larger ASCENSION narrative?</div>
+        </div>
+        <div class="curation-cell">
+          <div class="curation-num">08</div>
+          <div class="curation-title">Guest Value</div>
+          <div class="curation-desc">Would we personally recommend it? Would we attend ourselves?</div>
+        </div>
+      </div>
+      <p class="mkt-note">This standard certifies that every ASCENSION partner has been thoughtfully selected to serve our attendees' transformation.</p>
+    </section>
+
+    <!-- SECTION 7: MARKETPLACE CTA BAND -->
+    <section class="mkt-section" id="marketplace-cta" style="padding-bottom:0;">
+      <span class="mkt-eyebrow">Ready to Participate?</span>
+      <h2 class="mkt-h2" style="margin-bottom:2rem;">Choose Your Path</h2>
+      <div class="mkt-cta-band">
+        <div class="mkt-cta-cell">
+          <h4>Attend</h4>
+          <a class="mkt-cta-btn" href="https://buy.stripe.com/dRm8wQ2FR5tr9vL0izcfK00" target="_blank" rel="noopener">Reserve — $300 Deposit</a>
+        </div>
+        <div class="mkt-cta-cell">
+          <h4>Partner</h4>
+          <button class="mkt-cta-btn secondary" onclick="openModal('modal-sponsor')">Partnership Inquiry</button>
+        </div>
+        <div class="mkt-cta-cell">
+          <h4>Teach</h4>
+          <button class="mkt-cta-btn secondary" onclick="openModal('modal-partner')">Practitioner Application</button>
+        </div>
+        <div class="mkt-cta-cell">
+          <h4>Host</h4>
+          <button class="mkt-cta-btn secondary" onclick="openModal('modal-sponsor')">Hotel Partnership</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-gold" style="margin-top:clamp(3rem,6vw,5rem);"></div>
+
     <!-- ── 01: ATTEND ── -->
     <section class="section" id="attend">
       <p class="section-num">01 &mdash; Attend</p>
@@ -913,28 +1366,28 @@
 
       <div class="pricing-grid">
         <div class="pricing-card">
-          <p class="pricing-tier">1-Week Immersion</p>
+          <p class="pricing-tier">7-Day Passport</p>
           <p class="pricing-amount">$1,200</p>
-          <p class="pricing-label">Early Bird</p>
-          <p class="pricing-note">7 nights &middot; Full programme</p>
+          <p class="pricing-label">Programme only</p>
+          <p class="pricing-note">7 days &middot; Full programme &middot; Accommodation separate</p>
         </div>
         <div class="pricing-card">
-          <p class="pricing-tier">2-Week Fortnight</p>
-          <p class="pricing-amount">$1,800</p>
-          <p class="pricing-label">Early Bird</p>
-          <p class="pricing-note">14 nights &middot; Full programme</p>
+          <p class="pricing-tier">14-Day Passport</p>
+          <p class="pricing-amount">$2,000</p>
+          <p class="pricing-label">Programme only</p>
+          <p class="pricing-note">14 days &middot; Full programme &middot; Accommodation separate</p>
         </div>
         <div class="pricing-card" style="border-left:1.5px solid var(--gold);">
-          <p class="pricing-tier" style="color:var(--gold);">VIP Intensive</p>
-          <p class="pricing-amount">$2,800</p>
-          <p class="pricing-label">Private sessions &middot; Priority access</p>
-          <p class="pricing-note">All inclusions + VIP benefits</p>
+          <p class="pricing-tier" style="color:var(--gold);">VIP Upgrade</p>
+          <p class="pricing-amount">$2,200</p>
+          <p class="pricing-label">7-Day VIP &middot; Private sessions</p>
+          <p class="pricing-note">$3,000 for 14-Day VIP</p>
         </div>
         <div class="pricing-card">
           <p class="pricing-tier">Day Pass</p>
-          <p class="pricing-amount">$120</p>
-          <p class="pricing-label">Per Day</p>
-          <p class="pricing-note">Single-day access</p>
+          <p class="pricing-amount">$50</p>
+          <p class="pricing-label">Conference Day</p>
+          <p class="pricing-note">Selected conference days only</p>
         </div>
       </div>
 

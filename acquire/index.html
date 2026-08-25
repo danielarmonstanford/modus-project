@@ -1203,11 +1203,11 @@
           data-zh="ASCENSION存在的原因"
           data-ko="ASCENSION이 존재하는 이유">WHY ASCENSION EXISTS</span>
         <h2 class="mkt-h2"
-          data-en="Modern wellness<br>is fragmented."
-          data-fr="Le bien-être<br>est fragmenté."
-          data-vi="Sức khỏe hiện đại<br>bị phân mảnh."
-          data-zh="现代健康<br>是碎片化的。"
-          data-ko="현대의 웰니스는<br>파편화되어 있습니다.">Modern wellness<br>is fragmented.</h2>
+          data-en="Modern wellness&lt;br&gt;is fragmented."
+          data-fr="Le bien-être&lt;br&gt;est fragmenté."
+          data-vi="Sức khỏe hiện đại&lt;br&gt;bị phân mảnh."
+          data-zh="现代健康&lt;br&gt;是碎片化的。"
+          data-ko="현대의 웰니스는&lt;br&gt;파편화되어 있습니다.">Modern wellness<br>is fragmented.</h2>
         <p class="mkt-subhead" style="margin-bottom:1.5rem;"
           data-en="You book a hotel here. A yoga class there. A spa somewhere else. A practitioner somewhere else. A dinner somewhere else."
           data-fr="Vous réservez un hôtel ici. Un cours de yoga là. Un spa ailleurs. Un praticien ailleurs. Un dîner ailleurs."
@@ -2626,7 +2626,12 @@
 
   // Re-apply after full DOM is ready (aqLang in hero ran before body was complete)
   function init(){
-    var l=localStorage.getItem(k)||'en';
+    // Prefer ascension-lang; if unset, inherit modus-lang (en/fr only) from other pages
+    var l=localStorage.getItem(k);
+    if(!l||langs.indexOf(l)===-1){
+      var site=localStorage.getItem('modus-lang');
+      l=(site==='fr')?'fr':'en';
+    }
     apply(l);
   }
   if(document.readyState==='loading'){

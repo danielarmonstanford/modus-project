@@ -107,14 +107,21 @@
       --nav-bg: rgba(8,7,10,0.94);
     }
     [data-theme="light"] {
-      --bg: #F4EEE2;
-      --bg2: #EBE4D4;
-      --bg3: #E1DAC8;
-      --text: #1B2340;
-      --text-dim: rgba(27,35,64,0.88);
-      --border: rgba(27,35,64,0.88);
-      --border-gold: rgba(212,168,75,0.35);
-      --nav-bg: rgba(244,238,226,0.94);
+      --bg: #D6E8F0;
+      --bg2: #C4DDE9;
+      --bg3: #B2D1E2;
+      --text: #0D1F2D;
+      --text-dim: rgba(13,31,45,0.85);
+      --border: rgba(13,31,45,0.75);
+      --gold: #8A6A1A;
+      --border-gold: rgba(138,106,26,0.45);
+      --nav-bg: rgba(214,232,240,0.96);
+      --rule: rgba(138,106,26,0.22);
+      --muted: rgba(13,31,45,0.55);
+    }
+    [data-theme="light"] body {
+      background: linear-gradient(160deg, #C8E0EE 0%, #D6E8F0 40%, #BFD4E8 100%);
+      background-attachment: fixed;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1101,37 +1108,37 @@
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem 2.5rem;">
 
         <div>
-          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:#F0E8D5;margin:0 0 0.6rem;"
+          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="RESTORE" data-fr="RESTAURER" data-vi="PHỤC HỒI" data-zh="恢复" data-ko="회복">RESTORE</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.65);margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Body · Recovery · Nervous System" data-fr="Corps · Récupération · Système nerveux" data-vi="Cơ thể · Phục hồi · Hệ thần kinh" data-zh="身体 · 康复 · 神经系统" data-ko="신체 · 회복 · 신경계">Body · Recovery · Nervous System</p>
         </div>
 
         <div>
-          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:#F0E8D5;margin:0 0 0.6rem;"
+          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="MOVE" data-fr="BOUGER" data-vi="VẬN ĐỘNG" data-zh="运动" data-ko="무브">MOVE</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.65);margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Movement · Breath · Strength · Mobility" data-fr="Mouvement · Souffle · Force · Mobilité" data-vi="Chuyển động · Hơi thở · Sức mạnh · Linh hoạt" data-zh="运动 · 呼吸 · 力量 · 灵活性" data-ko="움직임 · 호흡 · 근력 · 가동성">Movement · Breath · Strength · Mobility</p>
         </div>
 
         <div>
-          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:#F0E8D5;margin:0 0 0.6rem;"
+          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="EXPERIENCE" data-fr="VIVRE" data-vi="TRẢI NGHIỆM" data-zh="体验" data-ko="경험">EXPERIENCE</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.65);margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Food · Sound · Culture · Nature" data-fr="Gastronomie · Son · Culture · Nature" data-vi="Ẩm thực · Âm thanh · Văn hóa · Thiên nhiên" data-zh="饮食 · 声音 · 文化 · 自然" data-ko="음식 · 사운드 · 문화 · 자연">Food · Sound · Culture · Nature</p>
         </div>
 
         <div>
-          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:#F0E8D5;margin:0 0 0.6rem;"
+          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="CONNECT" data-fr="RELIER" data-vi="KẾT NỐI" data-zh="连接" data-ko="연결">CONNECT</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.65);margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Practitioners · Community · Conversation" data-fr="Praticiens · Communauté · Conversation" data-vi="Chuyên gia · Cộng đồng · Trò chuyện" data-zh="从业者 · 社区 · 交流" data-ko="전문가 · 커뮤니티 · 대화">Practitioners · Community · Conversation</p>
         </div>
 
         <div>
-          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:#F0E8D5;margin:0 0 0.6rem;"
+          <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="CREATE" data-fr="CRÉER" data-vi="SÁNG TẠO" data-zh="创造" data-ko="창조">CREATE</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.65);margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Art · Photography · Music · Expression" data-fr="Art · Photographie · Musique · Expression" data-vi="Nghệ thuật · Nhiếp ảnh · Âm nhạc · Biểu đạt" data-zh="艺术 · 摄影 · 音乐 · 表达" data-ko="예술 · 사진 · 음악 · 표현">Art · Photography · Music · Expression</p>
         </div>
 

@@ -1112,6 +1112,7 @@
       <script>
         (function(){
           var k='ascension-lang';
+          var labels={en:'EN',vi:'VI',fr:'FR',zh:'中文',ko:'한국어'};
           function aqLang(l){
             localStorage.setItem(k,l);
             // Show/hide hero blocks
@@ -1126,6 +1127,9 @@
             // Sync the select dropdown value
             var sel=document.getElementById('aq-lsw');
             if(sel)sel.value=l;
+            // Sync nav button label
+            var lbl=document.getElementById('langLabel');
+            if(lbl)lbl.textContent=labels[l]||l.toUpperCase();
           }
           window.aqLang=aqLang;
           aqLang(localStorage.getItem(k)||'en');
@@ -2583,46 +2587,53 @@
     })();
   </script>
 
-<script src="/assets/js/lang.js"></script>
 <script>
-/* Acquire-page override: replace lang.js EN↔FR toggle with 5-language cycle via aqLang().
-   lang.js already ran and set textContent on [data-en] elements; aqLang() (defined above)
-   runs on DOMContentLoaded and overwrites with innerHTML, winning the race. Here we also
-   re-wire the langBtn so the nav button drives all 5 languages on this page. */
+/* Single source of truth for language on this page.
+   lang.js is NOT loaded here — it only handles EN/FR and its resize handler
+   would overwrite the 5-language aqLang() system.
+   aqLang() is defined in the hero inline script and exposed on window.
+   This block: wires the nav button, re-applies on DOMContentLoaded (catches
+   all [data-en] below the hero), and syncs modus-lang for other pages. */
 (function(){
   var langs=['en','vi','fr','zh','ko'];
   var labels={en:'EN',vi:'VI',fr:'FR',zh:'中文',ko:'한국어'};
   var k='ascension-lang';
 
-  function setLabel(l){
+  function apply(l){
+    if(langs.indexOf(l)===-1)l='en';
+    // aqLang handles hero blocks + [data-en] innerHTML swap + select sync
+    if(window.aqLang)window.aqLang(l);
+    // Sync nav label
     var lbl=document.getElementById('langLabel');
     if(lbl)lbl.textContent=labels[l]||l.toUpperCase();
+    // Sync modus-lang so EN/FR pages stay in step
+    localStorage.setItem('modus-lang',l==='fr'?'fr':'en');
+    // html[lang] attribute for accessibility
+    document.documentElement.lang=l;
   }
 
+  // Wire nav button — clone to ensure no stale listeners
   var btn=document.getElementById('langBtn');
   if(btn){
-    // Clone to drop lang.js's click listener
     var fresh=btn.cloneNode(true);
     btn.parentNode.replaceChild(fresh,btn);
     fresh.addEventListener('click',function(){
       var cur=localStorage.getItem(k)||'en';
       var next=langs[(langs.indexOf(cur)+1)%langs.length];
-      if(window.aqLang)window.aqLang(next);
-      setLabel(next);
+      apply(next);
     });
   }
 
-  // Re-apply aqLang to undo lang.js's textContent clobber, then sync label
-  var initLang=localStorage.getItem(k)||'en';
-  if(window.aqLang)window.aqLang(initLang);
-  setLabel(initLang);
-
-  // Prevent lang.js resize handler from clobbering innerHTML; re-apply aqLang on resize
-  window.addEventListener('resize',function(){
-    var cur=localStorage.getItem(k)||'en';
-    setLabel(cur);
-    if(window.aqLang)window.aqLang(cur);
-  },{passive:true});
+  // Re-apply after full DOM is ready (aqLang in hero ran before body was complete)
+  function init(){
+    var l=localStorage.getItem(k)||'en';
+    apply(l);
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',init);
+  } else {
+    init();
+  }
 })();
 </script>
 

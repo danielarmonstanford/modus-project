@@ -919,6 +919,40 @@
     .mkt-cta-btn.secondary { border-color: var(--muted); color: var(--muted); }
     .mkt-cta-btn.secondary:hover { background: var(--muted); color: var(--bg); }
     .mkt-note { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); opacity: 0.6; line-height: 1.8; margin-top: 1.25rem; }
+
+    /* ── Light-mode inline-color overrides ── */
+    /* Catch all hardcoded cream (#F0E8D5 / rgba(240,232,213)) in inline styles */
+    [data-theme="light"] [style*="#F0E8D5"] { color: var(--text) !important; }
+    [data-theme="light"] [style*="rgba(240,232,213"] { color: var(--text-dim) !important; }
+    /* Catch all hardcoded dark gold (rgba(212,168,75)) in inline styles */
+    [data-theme="light"] [style*="rgba(212,168,75"] { color: var(--gold) !important; border-color: var(--gold) !important; }
+    /* Fix section/border bg tokens */
+    [data-theme="light"] .section { background: transparent; }
+    [data-theme="light"] .mkt-section { background: transparent; }
+    /* Pricing cards on light */
+    [data-theme="light"] .pricing-card,
+    [data-theme="light"] .module-card,
+    [data-theme="light"] .hotel-card,
+    [data-theme="light"] .tier-card,
+    [data-theme="light"] .tier-cell,
+    [data-theme="light"] .ptier-card,
+    [data-theme="light"] .opportunity-card,
+    [data-theme="light"] .curation-cell,
+    [data-theme="light"] .mkt-cta-cell { background: rgba(255,255,255,0.35); }
+    /* Deposit CTA button — readable on both themes */
+    .deposit-cta-btn {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 15px 32px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .deposit-cta-btn:hover { opacity: 0.85; }
   </style>
 </head>
 <body>
@@ -1551,6 +1585,23 @@
           <span style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;padding:9px 18px;border:0.5px solid rgba(212,168,75,0.45);color:rgba(212,168,75,0.85);" data-en="Seeker" data-fr="Chercheur" data-vi="Người Tìm Kiếm" data-zh="探求者" data-ko="시커">Seeker</span>
         </div>
         <p style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.55);margin:0;">&#8594;&nbsp; <span data-en="Build your Passport" data-fr="Construisez votre Passeport" data-vi="Xây dựng Hộ chiếu" data-zh="构建您的护照" data-ko="패스포트 구성하기">Build your Passport</span></p>
+      </div>
+
+      <!-- ── TOP DEPOSIT CTA ── -->
+      <div style="margin:0 0 3.5rem;">
+        <a href="https://buy.stripe.com/dRm8wQ2FR5tr9vL0izcfK00" target="_blank" rel="noopener"
+           class="deposit-cta-btn"
+           data-en="Reserve Your Place — $300 Deposit"
+           data-fr="Réservez Votre Place — Acompte 300 $"
+           data-vi="Đặt Chỗ Của Bạn — Đặt Cọc 300 $"
+           data-zh="预留您的位置 — 300 美元定金"
+           data-ko="자리 예약하기 — $300 보증금">Reserve Your Place — $300 Deposit</a>
+        <p style="font-family:'DM Mono','Courier New',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.55);margin:0.85rem 0 0;"
+           data-en="20 places · Fully refundable if ASCENSION does not proceed"
+           data-fr="20 places · Entièrement remboursable si ASCENSION n'a pas lieu"
+           data-vi="20 chỗ · Hoàn tiền đầy đủ nếu ASCENSION không diễn ra"
+           data-zh="20个名额 · 如ASCENSION未能举行，全额退款"
+           data-ko="20자리 · ASCENSION이 진행되지 않을 경우 전액 환불">20 places · Fully refundable if ASCENSION does not proceed</p>
       </div>
 
       <!-- ── YOUR PASSPORT INCLUDES ── -->

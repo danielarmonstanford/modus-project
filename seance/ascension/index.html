@@ -85,9 +85,11 @@
     .lang-sw button.lsw-active{background:var(--gold);color:#06080C;border-color:var(--gold)}
 
     /* multilang helpers */
-    [data-lang="en"] .l-vi,[data-lang="en"] .l-fr{display:none}
-    [data-lang="vi"] .l-en,[data-lang="vi"] .l-fr{display:none}
-    [data-lang="fr"] .l-en,[data-lang="fr"] .l-vi{display:none}
+    [data-lang="en"] .l-vi,[data-lang="en"] .l-fr,[data-lang="en"] .l-zh,[data-lang="en"] .l-ko{display:none}
+    [data-lang="vi"] .l-en,[data-lang="vi"] .l-fr,[data-lang="vi"] .l-zh,[data-lang="vi"] .l-ko{display:none}
+    [data-lang="fr"] .l-en,[data-lang="fr"] .l-vi,[data-lang="fr"] .l-zh,[data-lang="fr"] .l-ko{display:none}
+    [data-lang="zh"] .l-en,[data-lang="zh"] .l-vi,[data-lang="zh"] .l-fr,[data-lang="zh"] .l-ko{display:none}
+    [data-lang="ko"] .l-en,[data-lang="ko"] .l-vi,[data-lang="ko"] .l-fr,[data-lang="ko"] .l-zh{display:none}
 
     /* ── Hero ── */
     .hero-cover{position:relative;width:100%;overflow:hidden;line-height:0}
@@ -372,15 +374,25 @@
 
     <!-- TOP: lang switcher + eyebrow + title -->
     <div class="hero-top">
-      <div class="lang-sw">
-        <button id="lsw-en" class="lsw-active" onclick="setLang('en')">EN</button>
-        <button id="lsw-vi" onclick="setLang('vi')">VI</button>
-        <button id="lsw-fr" onclick="setLang('fr')">FR</button>
+      <div style="position:relative;display:inline-block;margin-bottom:2rem;">
+        <select id="lsw-sel" onchange="setLang(this.value)" aria-label="Choose language"
+          style="background:rgba(6,8,12,0.55);border:0.5px solid rgba(212,168,75,0.45);color:rgba(240,232,213,0.85);
+                 font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;
+                 padding:7px 28px 7px 12px;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;">
+          <option value="en">EN — English</option>
+          <option value="vi">VI — Tiếng Việt</option>
+          <option value="fr">FR — Français</option>
+          <option value="zh">中文</option>
+          <option value="ko">한국어</option>
+        </select>
+        <span style="position:absolute;right:9px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:9px;pointer-events:none;">▾</span>
       </div>
       <span class="hero-eyebrow">
         <span class="l-en">MODUS S&eacute;ance &middot; Tết Preparation Retreat 2027</span>
         <span class="l-vi">MODUS S&eacute;ance &middot; Khóa Tu Chuẩn Bị Tết 2027</span>
         <span class="l-fr">MODUS S&eacute;ance &middot; Retraite de Pr&eacute;paration au Tết 2027</span>
+        <span class="l-zh">MODUS S&eacute;ance &middot; 2027年春节准备静修</span>
+        <span class="l-ko">MODUS S&eacute;ance &middot; 2027 설 준비 리트릿</span>
       </span>
       <h1 class="hero-h1">ASCENSION</h1>
     </div>
@@ -388,19 +400,25 @@
     <!-- BOTTOM: tagline + date + CTAs -->
     <div class="hero-bottom">
       <p class="hero-tagline">
-        <span class="l-en">Be Your Greatest Self &mdash; GoAt &#x1F525;&#x1F410;</span>
+        <span class="l-en">Be Your Greatest Self &#x1F525;&#x1F410;</span>
         <span class="l-vi">Hãy Trở Thành Phiên Bản Vĩ Đại Nhất Của Bạn &#x1F525;&#x1F410;</span>
         <span class="l-fr">Sois Ton Plus Grand Moi &#x1F525;&#x1F410;</span>
+        <span class="l-zh">成为最好的自己 &#x1F525;&#x1F410;</span>
+        <span class="l-ko">최고의 자신이 되십시오 &#x1F525;&#x1F410;</span>
       </p>
       <span class="hero-translation">
         <span class="l-en">Sự Thăng Hoa &nbsp;&middot;&nbsp; Sois Ton Plus Grand Moi</span>
         <span class="l-vi">Ascension &nbsp;&middot;&nbsp; Sois Ton Plus Grand Moi</span>
         <span class="l-fr">Sự Thăng Hoa &nbsp;&middot;&nbsp; Ascension</span>
+        <span class="l-zh">升华 &nbsp;&middot;&nbsp; 蜕变</span>
+        <span class="l-ko">상승 &nbsp;&middot;&nbsp; 변화</span>
       </span>
       <span class="hero-goat-year">
         <span class="l-en">Prepare for Tết Nguyên Đán &mdash; Year of the Fire Goat &#x1F525;&#x1F410;<br>January 12&ndash;26, 2027 &nbsp;&middot;&nbsp; Da Nang, Vietnam &nbsp;&middot;&nbsp; 7-Day &amp; 14-Day</span>
         <span class="l-vi">Chuẩn bị cho Tết Nguyên Đán &mdash; Năm Con Dê Lửa &#x1F525;&#x1F410;<br>12&ndash;26 Tháng Giêng, 2027 &nbsp;&middot;&nbsp; Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 7 &amp; 14 ngày</span>
         <span class="l-fr">Préparez-vous au Tết Nguyên Đán &mdash; Ann&eacute;e de la Ch&egrave;vre de Feu &#x1F525;&#x1F410;<br>12&ndash;26 Janvier 2027 &nbsp;&middot;&nbsp; Da Nang, Viêt Nam &nbsp;&middot;&nbsp; 7 et 14 jours</span>
+        <span class="l-zh">准备迎接春节 &mdash; 火羊年 &#x1F525;&#x1F410;<br>2027年1月12&#8211;26日 &nbsp;&middot;&nbsp; 越南岘港 &nbsp;&middot;&nbsp; 7天 &amp; 14天</span>
+        <span class="l-ko">뗏 응우옌 단 준비 &mdash; 불의 양의 해 &#x1F525;&#x1F410;<br>2027년 1월 12&#8211;26일 &nbsp;&middot;&nbsp; 베트남 다낭 &nbsp;&middot;&nbsp; 7일 &amp; 14일</span>
       </span>
 
       <div class="hero-ctas">
@@ -408,11 +426,15 @@
           <span class="l-en">Prepare for Tết &mdash; Reserve Now &rarr;</span>
           <span class="l-vi">Chuẩn Bị Tết &mdash; Đặt Ngay &rarr;</span>
           <span class="l-fr">Préparer le Tết &mdash; Réserver &rarr;</span>
+          <span class="l-zh">准备春节 &mdash; 立即预订 &rarr;</span>
+          <span class="l-ko">설 준비 &mdash; 지금 예약 &rarr;</span>
         </a>
         <a class="btn-outline" href="#arc">
           <span class="l-en">View Full Schedule &darr;</span>
           <span class="l-vi">Xem Lịch Trình &darr;</span>
           <span class="l-fr">Voir le Programme &darr;</span>
+          <span class="l-zh">查看完整日程 &darr;</span>
+          <span class="l-ko">전체 일정 보기 &darr;</span>
         </a>
       </div>
     </div><!-- end hero-bottom -->
@@ -1355,22 +1377,30 @@
     <span class="l-en">Ready to<br>Ascend into Tết?</span>
     <span class="l-vi">Sẵn Sàng<br>Thăng Hoa?</span>
     <span class="l-fr">Prêt(e) à<br>Vous &Eacute;lever?</span>
+    <span class="l-zh">准备好<br>迎接新年了吗？</span>
+    <span class="l-ko">뗏을 향해<br>상승할 준비가 되었나요?</span>
   </h2>
   <p>
     <span class="l-en">Da Nang, Vietnam &nbsp;&middot;&nbsp; January 12&ndash;26, 2027 &nbsp;&middot;&nbsp; Prepare for the Year of the Fire Goat &#x1F525;&#x1F410;</span>
     <span class="l-vi">Đà Nẵng, Việt Nam &nbsp;&middot;&nbsp; 12&ndash;26 Tháng Giêng, 2027 &nbsp;&middot;&nbsp; Số lượng có hạn.</span>
     <span class="l-fr">Da Nang, Vietnam &nbsp;&middot;&nbsp; 12&ndash;26 Janvier 2027 &nbsp;&middot;&nbsp; Places limit&eacute;es.</span>
+    <span class="l-zh">越南岘港 &nbsp;&middot;&nbsp; 2027年1月12&#8211;26日 &nbsp;&middot;&nbsp; 名额有限。</span>
+    <span class="l-ko">베트남 다낭 &nbsp;&middot;&nbsp; 2027년 1월 12&#8211;26일 &nbsp;&middot;&nbsp; 정원 제한.</span>
   </p>
   <div class="cta-row">
     <a class="btn-gold" href="/acquire#attend">
       <span class="l-en">Participate &rarr;</span>
       <span class="l-vi">Tham Gia &rarr;</span>
       <span class="l-fr">Participer &rarr;</span>
+      <span class="l-zh">参与 &rarr;</span>
+      <span class="l-ko">참여 &rarr;</span>
     </a>
     <a class="btn-outline" style="color:var(--text);" href="/seance">
       <span class="l-en">&larr; Back to S&eacute;ance</span>
       <span class="l-vi">&larr; Quay lại S&eacute;ance</span>
       <span class="l-fr">&larr; Retour &agrave; S&eacute;ance</span>
+      <span class="l-zh">&larr; 返回 S&eacute;ance</span>
+      <span class="l-ko">&larr; S&eacute;ance로 돌아가기</span>
     </a>
   </div>
 </div>
@@ -1392,11 +1422,9 @@
   // Language switcher
   function setLang(l){
     document.documentElement.setAttribute('data-lang',l);
-    ['en','vi','fr'].forEach(function(k){
-      var b=document.getElementById('lsw-'+k);
-      if(b){ b.classList.toggle('lsw-active',k===l); }
-    });
     localStorage.setItem('ascension-lang',l);
+    var sel=document.getElementById('lsw-sel');
+    if(sel)sel.value=l;
   }
   (function(){ setLang(localStorage.getItem('ascension-lang')||'en'); })();
 

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Partner with ASCENSION — Hotel &amp; Venue</title>
+  <meta name="description" content="Hotel and venue partnership for ASCENSION Da Nang 2027. Commission model, editorial exposure, preferred-partner program.">
+  <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://modus.gallery/acquire/partner">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --bg: #08070A; --bg2: #0F0E13; --bg3: #141219;
+      --text: #EAE0CC; --text-dim: rgba(234,224,204,0.72);
+      --gold: #D4A84B; --border-gold: rgba(212,168,75,0.28);
+      --muted: #8A8681; --rule: rgba(212,168,75,0.14);
+      --font-display: 'Lovine','Cormorant Garamond',serif;
+      --font-body: 'Cormorant Garamond',serif;
+      --font-mono: 'DM Mono',monospace;
+    }
+    [data-theme="light"] {
+      --bg: #D6E8F0; --bg2: #C4DDE9; --bg3: rgba(255,255,255,0.35);
+      --text: #0D1F2D; --text-dim: rgba(13,31,45,0.8);
+      --gold: #8A6A1A; --border-gold: rgba(138,106,26,0.4);
+      --muted: rgba(13,31,45,0.5); --rule: rgba(138,106,26,0.18);
+    }
+    [data-theme="light"] body { background: linear-gradient(160deg,#C8E0EE 0%,#D6E8F0 40%,#BFD4E8 100%) fixed; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem clamp(1.5rem,5vw,4rem); background: rgba(8,7,10,0.88); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--rule); }
+    [data-theme="light"] nav { background: rgba(214,232,240,0.92); }
+    .nav-logo { font-family: var(--font-display); font-size: clamp(1rem,1.5vw,1.2rem); letter-spacing: 0.28em; text-transform: uppercase; color: var(--text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text); }
+    #themeBtn { background: none; border: 0.5px solid var(--border-gold); color: var(--gold); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; cursor: pointer; }
+
+    .wrap { max-width: 800px; margin: 0 auto; padding: clamp(6rem,10vw,8rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem); }
+    .eyebrow { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .back-link { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2.5rem; transition: color 0.2s; }
+    .back-link:hover { color: var(--text-dim); }
+    .back-link::before { content: '←'; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.4rem,6vw,4.5rem); font-weight: 300; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; text-wrap: balance; }
+    .lead { font-family: var(--font-body); font-size: clamp(1.1rem,1.6vw,1.3rem); color: var(--text-dim); line-height: 1.7; margin-bottom: 3rem; }
+    .rule { border: none; border-top: 0.5px solid var(--rule); margin: 3rem 0; }
+
+    /* Tier cards */
+    .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-bottom: 3rem; }
+    @media (max-width: 560px) { .tier-grid { grid-template-columns: 1fr; } }
+    .tier-card { background: var(--bg); padding: 2rem; }
+    .tier-card.featured { background: rgba(212,168,75,0.06); border: 0.5px solid rgba(212,168,75,0.35); }
+    [data-theme="light"] .tier-card { background: rgba(255,255,255,0.35); }
+    [data-theme="light"] .tier-card.featured { background: rgba(212,168,75,0.08); }
+    .tier-name { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .tier-title { font-family: var(--font-display); font-size: clamp(1.2rem,2vw,1.5rem); color: var(--text); margin-bottom: 1rem; line-height: 1.2; }
+    .tier-desc { font-family: var(--font-body); font-size: 0.95rem; color: var(--text-dim); line-height: 1.65; margin-bottom: 1.25rem; }
+    .tier-includes { list-style: none; }
+    .tier-includes li { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); padding: 0.4rem 0; border-top: 0.5px solid var(--rule); display: flex; gap: 0.6rem; }
+    .tier-includes li::before { content: '·'; color: var(--gold); }
+
+    /* Form */
+    h2 { font-family: var(--font-display); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 300; color: var(--text); margin-bottom: 2rem; }
+    .field-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2rem; margin-bottom: 1.5rem; }
+    @media (max-width: 560px) { .field-group { grid-template-columns: 1fr; } }
+    .field { margin-bottom: 1.5rem; }
+    label { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem; }
+    input[type=text], input[type=email], input[type=url], select, textarea { width: 100%; background: var(--bg2); border: 0.5px solid var(--border-gold); color: var(--text); font-family: var(--font-body); font-size: 1rem; padding: 0.75rem 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+    [data-theme="light"] input[type=text],[data-theme="light"] input[type=email],[data-theme="light"] input[type=url],[data-theme="light"] select,[data-theme="light"] textarea { background: rgba(255,255,255,0.55); }
+    .cta-btn { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: 15px 32px; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.85; }
+    .form-note { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em; color: var(--muted); margin-top: 0.75rem; }
+    #partner-success { display: none; border: 0.5px solid var(--gold); padding: 2.5rem; background: rgba(212,168,75,0.06); }
+    #partner-success p:first-child { font-family: var(--font-display); font-size: clamp(1.4rem,2.5vw,1.8rem); color: var(--gold); margin-bottom: 0.75rem; }
+    #partner-success p:last-child { font-family: var(--font-body); font-size: 1rem; color: var(--text-dim); line-height: 1.7; }
+    footer { text-align: center; padding: 2rem clamp(1.5rem,5vw,4rem); border-top: 0.5px solid var(--rule); }
+    footer p { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text-dim); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">MODUS</a>
+    <div class="nav-right">
+      <a href="/acquire" class="nav-link">← Back</a>
+      <button id="themeBtn">Light</button>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <a href="/acquire" class="back-link">All portals</a>
+    <p class="eyebrow">Hotel &amp; Venue Portal · ASCENSION 2027</p>
+    <h1>Partner with<br>the retreat.</h1>
+    <p class="lead">ASCENSION brings 20 high-trust international guests to Da Nang for 7–14 nights in January 2027. Two partnership tiers are available — Anchor and Preferred.</p>
+
+    <div class="tier-grid">
+      <div class="tier-card featured">
+        <div class="tier-name">Anchor Hotel</div>
+        <div class="tier-title">Opening ceremonies, daily coordination, and exclusive group booking</div>
+        <p class="tier-desc">The Anchor is the logistical and experiential center of ASCENSION. We host opening and closing events on your property and direct the participant group to book with you first.</p>
+        <ul class="tier-includes">
+          <li>Exclusive group commission on room nights</li>
+          <li>Opening &amp; closing ceremony hosting</li>
+          <li>MODUS editorial feature</li>
+          <li>First-listed in participant portal</li>
+          <li>Co-branded ASCENSION assets</li>
+          <li>One LOI required · One anchor only</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Preferred Partner</div>
+        <div class="tier-title">Participant discount code, editorial inclusion, and referral commission</div>
+        <p class="tier-desc">Preferred partners receive a unique participant booking code distributed to all ASCENSION guests, generating direct bookings from the cohort and any referral audience.</p>
+        <ul class="tier-includes">
+          <li>Participant discount code (ASCENSION-[HOTEL])</li>
+          <li>Commission on tracked bookings</li>
+          <li>Listed in participant hotel portal</li>
+          <li>MODUS gallery mention</li>
+          <li>Up to 4 preferred partners</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <h2>Partnership inquiry</h2>
+    <form id="partner-form" action="https://formspree.io/f/xbdekqyr" method="POST">
+      <input type="hidden" name="form_type" value="partner-hotel">
+      <input type="hidden" name="_subject" value="Hotel Partnership Inquiry — ASCENSION 2027">
+
+      <div class="field-group">
+        <div class="field">
+          <label>Contact Name *</label>
+          <input type="text" name="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label>Email *</label>
+          <input type="email" name="email" required placeholder="you@hotel.com">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="field">
+          <label>Hotel / Venue Name *</label>
+          <input type="text" name="hotel_name" required placeholder="Hotel name">
+        </div>
+        <div class="field">
+          <label>Role / Title</label>
+          <input type="text" name="role" placeholder="GM, Sales Director...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Partnership tier of interest</label>
+        <select name="tier">
+          <option value="">Select...</option>
+          <option value="anchor">Anchor Hotel (exclusive)</option>
+          <option value="preferred">Preferred Partner</option>
+          <option value="explore">Open to discussion</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Hotel location in Da Nang</label>
+        <input type="text" name="location" placeholder="Beach road, district...">
+      </div>
+
+      <div class="field">
+        <label>Notes or questions</label>
+        <textarea name="notes" rows="4" placeholder="Room availability January 2027, group rate expectations, event spaces..."></textarea>
+      </div>
+
+      <button type="submit" class="cta-btn">Send Inquiry</button>
+      <p class="form-note">We respond to all partnership inquiries within 5 business days.</p>
+    </form>
+
+    <div id="partner-success">
+      <p>Inquiry received.</p>
+      <p>Thank you — we'll be in touch within 5 business days to discuss the partnership structure.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 MODUS · <a href="/acquire">All portals</a> &nbsp;·&nbsp; <a href="/acquire/attend">Attend the retreat</a></p>
+  </footer>
+
+  <script>
+  (function(){
+    var btn=document.getElementById('themeBtn');
+    var cur=localStorage.getItem('modus-theme')||'dark';
+    function apply(t){document.documentElement.setAttribute('data-theme',t);if(btn)btn.textContent=t==='dark'?'Light':'Dark';localStorage.setItem('modus-theme',t);}
+    apply(cur);
+    if(btn)btn.addEventListener('click',function(){apply(cur=cur==='dark'?'light':'dark');});
+    var form=document.getElementById('partner-form');
+    if(form){form.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(form);fetch(form.action,{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){if(r.ok){form.style.display='none';document.getElementById('partner-success').style.display='block';}else{alert('Something went wrong — please try again.');}}).catch(function(){alert('Connection error — please try again.');});});}
+  })();
+  </script>
+</body>
+</html>

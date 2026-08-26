@@ -120,7 +120,7 @@
     </a>
     <div class="nav-right">
       <a href="/acquire" class="nav-link">← Back</a>
-      <button id="themeBtn">Light</button>
+      <button id="langBtn" style="background:none;border:0.5px solid var(--border-gold);color:var(--gold);font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;padding:5px 12px;cursor:pointer;margin-right:0.5rem;"><span id="langLabel">EN</span></button><button id="themeBtn">Light</button>
     </div>
   </nav>
 
@@ -260,6 +260,19 @@
   <script>
   (function(){
     var btn=document.getElementById('themeBtn');
+    var langs=['en','vi','fr','zh','ko'];
+    var langLabels={en:'EN',vi:'VI',fr:'FR',zh:'中文',ko:'한국어'};
+    var lk='ascension-lang';
+    var langBtn=document.getElementById('langBtn'),langLbl=document.getElementById('langLabel');
+    function applyLang(l){
+      if(langs.indexOf(l)===-1)l='en';
+      document.querySelectorAll('[data-en]').forEach(function(el){var t=el.dataset[l];el.innerHTML=(t!==undefined&&t!=='')?t:el.dataset.en;});
+      if(langLbl)langLbl.textContent=langLabels[l]||l.toUpperCase();
+      localStorage.setItem(lk,l);
+      localStorage.setItem('modus-lang',l==='fr'?'fr':'en');
+    }
+    (function(){var sl=localStorage.getItem(lk)||localStorage.getItem('modus-lang')||'en';applyLang(sl);})();
+    if(langBtn){langBtn.addEventListener('click',function(){var cur=localStorage.getItem(lk)||'en';var next=langs[(langs.indexOf(cur)+1)%langs.length];applyLang(next);});}
     var cur=localStorage.getItem('modus-theme')||'dark';
     function apply(t){document.documentElement.setAttribute('data-theme',t);if(btn)btn.textContent=t==='dark'?'Light':'Dark';localStorage.setItem('modus-theme',t);}
     apply(cur);

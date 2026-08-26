@@ -70,14 +70,11 @@
       border-bottom: 0.5px solid var(--rule);
     }
     [data-theme="light"] nav { background: rgba(214,232,240,0.92); }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: clamp(1rem,1.5vw,1.2rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-    }
+    .nav-logo { display: flex; align-items: center; min-height: 44px; line-height: 0; flex-shrink: 0; text-decoration: none; }
+    .nav-logo img { height: 28px; width: auto; }
+    [data-theme="dark"] .logo-black { display: none; }
+    [data-theme="light"] .logo-beige { display: none; }
+    :root:not([data-theme]) .logo-black { display: none; }
     .nav-right { display: flex; align-items: center; gap: 1.5rem; }
     .nav-link {
       font-family: var(--font-mono);
@@ -233,7 +230,10 @@
 </head>
 <body>
   <nav>
-    <a href="/" class="nav-logo">MODUS</a>
+    <a class="nav-logo" href="/" aria-label="MODUS home">
+      <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
+      <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
+    </a>
     <div class="nav-right">
       <a href="/" class="nav-link">Gallery</a>
       <a href="/seance" class="nav-link">Séance</a>

@@ -54,6 +54,18 @@
     .contact-block a{color:var(--gold);text-decoration:none}
     .footer{padding:1.5rem var(--gutter);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
     .footer span{font-family:var(--font-mono);font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);opacity:0.4}
+
+    /* ── Browser surfaces: theme what you didn't draw ── */
+    ::selection { background: rgba(212,168,75,0.32); color: var(--text, #EAE0CC); }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: var(--bg, #08070A); }
+    ::-webkit-scrollbar-thumb { background: rgba(212,168,75,0.35); border-radius: 5px; border: 2px solid var(--bg, #08070A); }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(212,168,75,0.55); }
+    * { scrollbar-color: rgba(212,168,75,0.35) var(--bg, #08070A); scrollbar-width: thin; }
+    a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--gold, #D4A84B); outline-offset: 3px; border-radius: 2px;
+    }
+    .pricing-amount, .modus-index-score, .modus-axis-val, .hero-date { font-variant-numeric: tabular-nums; }
   </style>
 </head>
 <body>

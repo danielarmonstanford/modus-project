@@ -118,6 +118,192 @@
     <h1>Align your brand<br>with transformation.</h1>
     <p class="lead">ASCENSION selects a small number of brand partners whose products genuinely belong in the retreat context. Integration is editorial, not transactional.</p>
 
+    <!-- ── Sponsor Carousel ── -->
+    <div id="spon-carousel" aria-label="Sponsor integration examples">
+      <div class="sc-track">
+
+        <div class="sc-slide">
+          <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_face,w_1800,h_900,q_auto,f_auto/v1787491510/Screen_Shot_2026-08-23_at_9.24.02_AM_finbe7.png" alt="MODUS editorial feature" loading="lazy">
+          <div class="sc-caption">
+            <span class="sc-tag">MODUS Gallery</span>
+            <p class="sc-label">Editorial feature distributed to our full creative audience</p>
+          </div>
+        </div>
+
+        <div class="sc-slide">
+          <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Khalumia_Fortune_D80_6035_fxajcu.jpg" alt="Retreat photography" loading="lazy">
+          <div class="sc-caption">
+            <span class="sc-tag">Retreat Documentation</span>
+            <p class="sc-label">Your brand present in every editorial frame — photography, film, archive</p>
+          </div>
+        </div>
+
+        <div class="sc-slide">
+          <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663027/seedream-4.0_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-3_1_fqojli.jpg" alt="Opening ceremony" loading="lazy">
+          <div class="sc-caption">
+            <span class="sc-tag">Named Session</span>
+            <p class="sc-label">Your brand anchors a ceremony, practice, or ritual — full room attention</p>
+          </div>
+        </div>
+
+        <div class="sc-slide">
+          <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663027/seedream-4.0_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-3_uew011.jpg" alt="Welcome kit placement" loading="lazy">
+          <div class="sc-caption">
+            <span class="sc-tag">Welcome Kit</span>
+            <p class="sc-label">Day-one product placement — first touchpoint for every participant</p>
+          </div>
+        </div>
+
+        <div class="sc-slide">
+          <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663013/lucid-origin_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-0_wk3pll.jpg" alt="Group dinners" loading="lazy">
+          <div class="sc-caption">
+            <span class="sc-tag">Curated Dinners</span>
+            <p class="sc-label">Brand moments woven into 3–6 group dinners across the retreat</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="sc-btn sc-prev" aria-label="Previous">&#8592;</button>
+      <button class="sc-btn sc-next" aria-label="Next">&#8594;</button>
+
+      <!-- Dots -->
+      <div class="sc-dots">
+        <button class="sc-dot sc-dot-active" data-i="0" aria-label="Slide 1"></button>
+        <button class="sc-dot" data-i="1" aria-label="Slide 2"></button>
+        <button class="sc-dot" data-i="2" aria-label="Slide 3"></button>
+        <button class="sc-dot" data-i="3" aria-label="Slide 4"></button>
+        <button class="sc-dot" data-i="4" aria-label="Slide 5"></button>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="sc-progress"><div class="sc-bar" id="sc-bar"></div></div>
+    </div>
+
+    <style>
+      #spon-carousel {
+        position: relative;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        margin-bottom: 3rem;
+        overflow: hidden;
+      }
+      .sc-track {
+        display: flex;
+        transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+        will-change: transform;
+      }
+      .sc-slide {
+        flex: 0 0 100%;
+        position: relative;
+        height: clamp(300px,45vw,560px);
+        overflow: hidden;
+      }
+      .sc-slide img {
+        width: 100%; height: 100%;
+        object-fit: cover; object-position: center;
+        display: block;
+      }
+      .sc-slide::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, rgba(6,5,9,0.82) 0%, rgba(6,5,9,0.18) 55%, transparent 100%);
+      }
+      .sc-caption {
+        position: absolute; bottom: 0; left: 0; right: 0;
+        padding: clamp(1.25rem,4vw,2.5rem) clamp(1.5rem,5vw,3rem);
+        z-index: 2;
+      }
+      .sc-tag {
+        display: inline-block;
+        font-family: 'DM Mono', monospace;
+        font-size: clamp(10px,1.1vw,11px);
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: rgba(212,168,75,0.9);
+        border: 0.5px solid rgba(212,168,75,0.4);
+        padding: 4px 10px;
+        margin-bottom: 0.65rem;
+      }
+      .sc-label {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.05rem,2vw,1.4rem);
+        color: #EAE0CC;
+        line-height: 1.4;
+        max-width: 600px;
+      }
+      .sc-btn {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        background: rgba(8,7,10,0.55); border: 0.5px solid rgba(212,168,75,0.3);
+        color: rgba(212,168,75,0.85); font-size: 1.1rem;
+        width: 44px; height: 44px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.2s; z-index: 3;
+        backdrop-filter: blur(6px);
+      }
+      .sc-btn:hover { background: rgba(212,168,75,0.18); }
+      .sc-prev { left: clamp(0.75rem,2vw,1.5rem); }
+      .sc-next { right: clamp(0.75rem,2vw,1.5rem); }
+      .sc-dots {
+        position: absolute; bottom: clamp(0.75rem,2vw,1.25rem); left: 50%; transform: translateX(-50%);
+        display: flex; gap: 0.5rem; z-index: 3;
+      }
+      .sc-dot {
+        width: 7px; height: 7px; border-radius: 50%;
+        background: rgba(212,168,75,0.3); border: none; cursor: pointer;
+        transition: background 0.25s, transform 0.25s;
+      }
+      .sc-dot-active { background: rgba(212,168,75,0.9); transform: scale(1.3); }
+      .sc-progress {
+        position: absolute; bottom: 0; left: 0; right: 0;
+        height: 2px; background: rgba(212,168,75,0.12); z-index: 3;
+      }
+      .sc-bar {
+        height: 100%; background: rgba(212,168,75,0.6);
+        width: 0%; transition: width linear;
+      }
+    </style>
+    <script>
+    (function(){
+      var track=document.querySelector('#spon-carousel .sc-track');
+      var dots=document.querySelectorAll('#spon-carousel .sc-dot');
+      var bar=document.getElementById('sc-bar');
+      var total=5, cur=0, timer=null, INTERVAL=5000;
+      function go(n){
+        cur=(n+total)%total;
+        track.style.transform='translateX(-'+cur*100+'%)';
+        dots.forEach(function(d,i){ d.classList.toggle('sc-dot-active',i===cur); });
+        startBar();
+      }
+      function startBar(){
+        if(bar){ bar.style.transition='none'; bar.style.width='0%'; }
+        clearTimeout(timer);
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){
+            if(bar){ bar.style.transition='width '+INTERVAL+'ms linear'; bar.style.width='100%'; }
+            timer=setTimeout(function(){ go(cur+1); },INTERVAL);
+          });
+        });
+      }
+      document.querySelector('.sc-prev').addEventListener('click',function(){ go(cur-1); });
+      document.querySelector('.sc-next').addEventListener('click',function(){ go(cur+1); });
+      dots.forEach(function(d){ d.addEventListener('click',function(){ go(parseInt(d.dataset.i)); }); });
+      /* touch swipe */
+      var tx=0;
+      track.addEventListener('touchstart',function(e){ tx=e.touches[0].clientX; },{ passive:true });
+      track.addEventListener('touchend',function(e){
+        var dx=e.changedTouches[0].clientX-tx;
+        if(Math.abs(dx)>40){ go(dx<0?cur+1:cur-1); }
+      },{ passive:true });
+      /* pause on hover */
+      document.getElementById('spon-carousel').addEventListener('mouseenter',function(){ clearTimeout(timer); if(bar){ bar.style.transition='none'; } });
+      document.getElementById('spon-carousel').addEventListener('mouseleave',function(){ go(cur); });
+      go(0);
+    })();
+    </script>
+
     <div class="stats-row">
       <div class="stat">
         <div class="stat-num">20</div>

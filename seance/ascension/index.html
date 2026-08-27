@@ -121,6 +121,16 @@
     /* ── Sections ── */
     .wrap{max-width:1200px;margin:0 auto;padding:clamp(3.5rem,7vw,6rem) var(--gutter)}
     .sec-border{border-bottom:0.5px solid var(--border)}
+    #philosophy {
+      background: linear-gradient(rgba(6,5,9,0.82),rgba(6,5,9,0.88)),
+        url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787827128/zen_sunset_beach_pool_da_nang_ovllnz.jpg') center/cover fixed;
+    }
+    #philosophy .eyebrow { color: var(--gold) !important; }
+    #philosophy .sec-title,
+    #philosophy .sec-sub { color: #F2E4DC !important; }
+    @media (max-width: 768px), (hover: none) {
+      #philosophy { background-attachment: scroll !important; }
+    }
     .eyebrow{font-family:var(--font-mono);font-size:14px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.75rem;display:block}
     .sec-title{font-family:var(--font-display);font-size:clamp(2.5rem,5.5vw,5rem);font-weight:normal;letter-spacing:-0.03em;line-height:0.92;color:var(--text);margin-bottom:1.25rem}
     .sec-sub{font-family:var(--font-ed);font-size:clamp(1rem,1.6vw,1.15rem);font-style:italic;color:var(--text-dim);line-height:1.78;max-width:640px}

@@ -48,6 +48,10 @@
         center/cover fixed;
       color: var(--text); font-family: var(--font-body); line-height: 1.6;
     }
+    /* Mobile: fixed bg-attachment is broken on iOS — fall back to scroll */
+    @media (max-width: 768px), (hover: none) {
+      body { background-attachment: scroll !important; }
+    }
 
     /* ── NAV ── */
     nav {
@@ -77,6 +81,10 @@
       background-position: center;
     }
     .img-section.parallax { background-attachment: fixed; }
+    /* iOS/Android: fixed background-attachment is broken — fall back to scroll */
+    @media (max-width: 768px), (hover: none) {
+      .img-section.parallax { background-attachment: scroll; }
+    }
     .img-section.tall { height: clamp(320px,55vw,600px); }
     .img-section.mid  { height: clamp(240px,40vw,440px); }
     .img-section.short{ height: clamp(180px,28vw,320px); }

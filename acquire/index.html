@@ -67,10 +67,14 @@
     [data-theme="dark"] .logo-black { display: none; }
     [data-theme="light"] .logo-beige { display: none; }
     :root:not([data-theme]) .logo-black { display: none; }
-    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
-    .nav-link { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; min-width: 0; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-link { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
     .nav-link:hover { color: var(--text); }
-    .nav-btn { background: none; border: 0.5px solid var(--border-gold); color: var(--gold); font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; cursor: pointer; }
+    .nav-btn { background: none; border: 0.5px solid var(--border-gold); color: var(--gold); font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 900px) {
+      .nav-links { gap: 1rem !important; }
+    }
 
     /* ── IMAGE SECTIONS ── */
     .img-section {
@@ -272,10 +276,21 @@
       <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
     </a>
     <div class="nav-right">
-      <a href="/" class="nav-link">Gallery</a>
-      <a href="/seance" class="nav-link">Séance</a>
+      <div class="nav-links" style="display:flex;gap:1.5rem;align-items:center;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;">
+        <a href="/manifeste" class="nav-link">Manifeste</a>
+        <a href="/seance" class="nav-link">Séance</a>
+        <a href="/acquire" class="nav-link" style="color:var(--gold);">Acquire</a>
+        <a href="/figures" class="nav-link">Figures</a>
+        <a href="/objects" class="nav-link">Objects</a>
+        <a href="/space" class="nav-link">Space</a>
+        <a href="/terrain" class="nav-link">Terrain</a>
+        <a href="/decover" class="nav-link">Décover</a>
+        <a href="/atelier" class="nav-link">Atelier</a>
+        <a href="/last-word" class="nav-link">Last Word</a>
+      </div>
       <button id="langBtn" class="nav-btn"><span id="langLabel">EN</span></button>
       <button id="themeBtn" class="nav-btn">Light</button>
+      <a href="/acquire/attend" class="nav-btn" style="background:var(--gold);color:var(--bg);border-color:var(--gold);text-decoration:none;">Reserve</a>
     </div>
   </nav>
 

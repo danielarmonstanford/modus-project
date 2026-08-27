@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ASCENSION — How Will You Join?</title>
-  <meta name="description" content="Da Nang, Vietnam · January 12–26, 2027. Attend, facilitate, partner, or sponsor ASCENSION.">
+  <title>ASCENSION — Da Nang 2027</title>
+  <meta name="description" content="A curated 7 or 14-day wellness retreat in Da Nang, Vietnam. January 12–26, 2027. 20 places.">
   <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="canonical" href="https://modus.gallery/acquire">
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
@@ -17,56 +17,34 @@
     @font-face {
       font-family: 'Lovine';
       src: url('/assets/fonts/lovine.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
+      font-weight: normal; font-style: normal; font-display: swap;
     }
     :root {
-      --bg: #08070A;
-      --bg2: #0F0E13;
-      --text: #EAE0CC;
-      --text-dim: rgba(234,224,204,0.72);
-      --gold: #D4A84B;
-      --border-gold: rgba(212,168,75,0.28);
-      --muted: #8A8681;
-      --rule: rgba(212,168,75,0.14);
+      --bg: #08070A; --bg2: #0F0E13; --bg3: #141219;
+      --text: #EAE0CC; --text-dim: rgba(234,224,204,0.72);
+      --gold: #D4A84B; --border-gold: rgba(212,168,75,0.28);
+      --muted: #8A8681; --rule: rgba(212,168,75,0.14);
       --font-display: 'Lovine','Cormorant Garamond',serif;
       --font-body: 'Cormorant Garamond',serif;
       --font-mono: 'DM Mono',monospace;
     }
     [data-theme="light"] {
-      --bg: #D6E8F0;
-      --bg2: #C4DDE9;
-      --text: #0D1F2D;
-      --text-dim: rgba(13,31,45,0.8);
-      --gold: #8A6A1A;
-      --border-gold: rgba(138,106,26,0.4);
-      --muted: rgba(13,31,45,0.5);
-      --rule: rgba(138,106,26,0.18);
+      --bg: #D6E8F0; --bg2: #C4DDE9;
+      --text: #0D1F2D; --text-dim: rgba(13,31,45,0.8);
+      --gold: #8A6A1A; --border-gold: rgba(138,106,26,0.4);
+      --muted: rgba(13,31,45,0.5); --rule: rgba(138,106,26,0.18);
     }
     [data-theme="light"] body { background: linear-gradient(160deg,#C8E0EE 0%,#D6E8F0 40%,#BFD4E8 100%) fixed; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; }
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 1.25rem clamp(1.5rem,5vw,4rem);
-      background: rgba(8,7,10,0.88);
-      backdrop-filter: blur(12px);
+      background: rgba(8,7,10,0.88); backdrop-filter: blur(12px);
       border-bottom: 0.5px solid var(--rule);
     }
     [data-theme="light"] nav { background: rgba(214,232,240,0.92); }
@@ -75,160 +53,190 @@
     [data-theme="dark"] .logo-black { display: none; }
     [data-theme="light"] .logo-beige { display: none; }
     :root:not([data-theme]) .logo-black { display: none; }
-    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
-    .nav-link {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-link { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
     .nav-link:hover { color: var(--text); }
-    #themeBtn {
-      background: none;
-      border: 0.5px solid var(--border-gold);
-      color: var(--gold);
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      cursor: pointer;
-    }
+    .nav-btn { background: none; border: 0.5px solid var(--border-gold); color: var(--gold); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; cursor: pointer; }
 
-    /* ── MAIN ── */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(6rem,12vw,9rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem);
-      min-height: 100vh;
-    }
-    .hub-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    .hub-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem,6vw,5rem);
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      line-height: 1.05;
-      color: var(--text);
-      text-align: center;
-      margin-bottom: 1rem;
-      text-wrap: balance;
-    }
-    .hub-sub {
-      font-family: var(--font-body);
-      font-size: clamp(1rem,1.5vw,1.2rem);
-      color: var(--text-dim);
-      text-align: center;
-      margin-bottom: clamp(3rem,5vw,4.5rem);
-      line-height: 1.6;
-    }
-
-    /* ── PORTAL CARDS ── */
-    .portal-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-      gap: 1.5px;
+    /* ── IMAGE SECTIONS ── */
+    .img-section {
       width: 100%;
-      max-width: 1120px;
-      background: var(--rule);
-    }
-    .portal-card {
-      background: var(--bg);
-      padding: clamp(2rem,3.5vw,3rem) clamp(1.75rem,3vw,2.5rem);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      transition: background 0.25s;
       position: relative;
       overflow: hidden;
+      background-size: cover;
+      background-position: center;
     }
-    .portal-card:hover { background: rgba(212,168,75,0.05); }
-    .portal-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1.5px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s;
+    .img-section.parallax { background-attachment: fixed; }
+    .img-section.tall { height: clamp(320px,55vw,600px); }
+    .img-section.mid  { height: clamp(240px,40vw,440px); }
+    .img-section.short{ height: clamp(180px,28vw,320px); }
+    .img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(8,7,10,0.28) 0%, rgba(8,7,10,0.54) 100%);
     }
-    .portal-card:hover::after { transform: scaleX(1); }
-    [data-theme="light"] .portal-card { background: rgba(255,255,255,0.4); }
-    [data-theme="light"] .portal-card:hover { background: rgba(255,255,255,0.65); }
+    .img-caption {
+      position: absolute; bottom: 2rem; left: clamp(1.5rem,5vw,4rem);
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: rgba(234,224,204,0.55);
+    }
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      width: 32px; height: 32px; border: 0.5px solid rgba(234,224,204,0.4);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: rgba(234,224,204,0.6); font-size: 14px;
+      animation: bob 2s ease-in-out infinite;
+    }
+    @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
 
-    .portal-label {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
+    /* Hero centered content */
+    .hero-content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
     }
-    .portal-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem,2.5vw,2rem);
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      line-height: 1.15;
+    .hero-eyebrow {
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.36em;
+      text-transform: uppercase; color: rgba(212,168,75,0.85); margin-bottom: 1.25rem;
     }
-    .portal-desc {
-      font-family: var(--font-body);
-      font-size: clamp(0.9rem,1.2vw,1rem);
-      color: var(--text-dim);
-      line-height: 1.65;
-      flex: 1;
+    .hero-title {
+      font-family: var(--font-display); font-size: clamp(3.5rem,10vw,7rem);
+      font-weight: 300; letter-spacing: -0.03em; line-height: 0.95;
+      color: rgba(234,224,204,0.96); margin-bottom: 1.25rem;
     }
-    .portal-cta {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    .hero-sub {
+      font-family: var(--font-body); font-style: italic;
+      font-size: clamp(1rem,1.8vw,1.35rem); color: rgba(234,224,204,0.72);
     }
-    .portal-cta::after { content: '→'; transition: transform 0.2s; }
-    .portal-card:hover .portal-cta::after { transform: translateX(4px); }
 
-    /* ── FOOTER ── */
-    footer {
+    /* ── CONTENT SECTIONS ── */
+    .section {
+      padding: clamp(3rem,6vw,5.5rem) clamp(1.5rem,5vw,4rem);
+    }
+    .section-inner { max-width: 700px; margin: 0 auto; }
+    .section-inner.wide { max-width: 1100px; }
+
+    .eyebrow {
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+    }
+    h2 {
+      font-family: var(--font-display); font-size: clamp(1.8rem,4vw,3rem);
+      font-weight: 300; letter-spacing: -0.02em; line-height: 1.1;
+      color: var(--text); margin-bottom: 1.5rem; text-wrap: balance;
+    }
+    .lead {
+      font-family: var(--font-body); font-size: clamp(1.05rem,1.6vw,1.25rem);
+      color: var(--text-dim); line-height: 1.75;
+    }
+    .lead strong { color: var(--text); font-weight: 400; }
+    .rule { border: none; border-top: 0.5px solid var(--rule); margin: 2.5rem 0; }
+
+    /* Dark section */
+    .section.dark { background: var(--bg2); }
+    [data-theme="light"] .section.dark { background: rgba(13,31,45,0.06); }
+
+    /* Brand DNA pull quote */
+    .pull-quote {
+      font-family: var(--font-body); font-style: italic;
+      font-size: clamp(1.4rem,3vw,2.2rem); font-weight: 300;
+      color: var(--text); line-height: 1.4; text-align: center;
+      max-width: 680px; margin: 0 auto;
+      padding: clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem);
+      border-top: 0.5px solid var(--rule); border-bottom: 0.5px solid var(--rule);
+    }
+
+    /* Five W's grid */
+    .ws-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0; background: var(--rule);
+      margin-top: 2.5rem;
+    }
+    .ws-item {
+      background: var(--bg); padding: 2rem 2rem 2rem 1.75rem;
+      border-left: 2px solid var(--gold);
+    }
+    [data-theme="light"] .ws-item { background: rgba(255,255,255,0.45); }
+    .ws-label {
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
+    }
+    .ws-value {
+      font-family: var(--font-body); font-size: clamp(0.95rem,1.3vw,1.05rem);
+      color: var(--text-dim); line-height: 1.65;
+    }
+
+    /* Curation statement */
+    .curation-block {
+      border: 0.5px solid var(--border-gold);
+      background: rgba(212,168,75,0.04);
+      padding: clamp(2.5rem,4vw,3.5rem) clamp(2rem,4vw,3.5rem);
       text-align: center;
-      padding: 2rem clamp(1.5rem,5vw,4rem);
-      border-top: 0.5px solid var(--rule);
     }
-    footer p {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
+    .curation-block p {
+      font-family: var(--font-body); font-style: italic;
+      font-size: clamp(1rem,1.5vw,1.2rem); color: var(--text-dim);
+      line-height: 1.8; margin-bottom: 1.25rem;
     }
+    .curation-block strong {
+      font-family: var(--font-display); font-style: normal; font-weight: 400;
+      font-size: clamp(1.1rem,1.8vw,1.4rem); color: var(--text);
+    }
+
+    /* Participation cards */
+    .part-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2px; background: var(--rule); margin-top: 2.5rem;
+    }
+    .part-card {
+      background: var(--bg); padding: 2rem 1.75rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: background 0.2s; text-decoration: none;
+      position: relative; overflow: hidden;
+    }
+    .part-card:hover { background: rgba(212,168,75,0.06); }
+    .part-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1.5px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+    }
+    .part-card:hover::after { transform: scaleX(1); }
+    [data-theme="light"] .part-card { background: rgba(255,255,255,0.4); }
+    [data-theme="light"] .part-card:hover { background: rgba(255,255,255,0.65); }
+    .part-num { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+    .part-title { font-family: var(--font-display); font-size: clamp(1.25rem,2vw,1.6rem); font-weight: 300; color: var(--text); line-height: 1.15; }
+    .part-desc { font-family: var(--font-body); font-size: clamp(0.9rem,1.2vw,1rem); color: var(--text-dim); line-height: 1.6; flex: 1; }
+    .part-cta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; }
+    .part-cta::after { content: '→'; transition: transform 0.2s; }
+    .part-card:hover .part-cta::after { transform: translateX(4px); }
+
+    /* Deposit CTA */
+    .deposit-block { text-align: center; padding: clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem); }
+    .deposit-btn {
+      display: inline-block; font-family: var(--font-mono);
+      font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+      background: var(--gold); color: var(--bg); padding: 15px 36px;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .deposit-btn:hover { opacity: 0.85; }
+    .deposit-note {
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em;
+      color: var(--muted); margin-top: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem clamp(1.5rem,5vw,4rem);
+      border-top: 0.5px solid var(--rule); text-align: center;
+    }
+    footer p { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); line-height: 2; }
     footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { color: var(--text-dim); }
-
-    @media (max-width: 600px) {
-      .portal-grid { grid-template-columns: 1fr; }
-    }
   </style>
 </head>
 <body>
+
   <nav>
     <a class="nav-logo" href="/" aria-label="MODUS home">
       <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
@@ -237,53 +245,134 @@
     <div class="nav-right">
       <a href="/" class="nav-link">Gallery</a>
       <a href="/seance" class="nav-link">Séance</a>
-      <button id="langBtn" style="background:none;border:0.5px solid var(--border-gold);color:var(--gold);font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;padding:5px 12px;cursor:pointer;margin-right:0.5rem;"><span id="langLabel">EN</span></button><button id="themeBtn">Light</button>
+      <button id="langBtn" class="nav-btn"><span id="langLabel">EN</span></button>
+      <button id="themeBtn" class="nav-btn">Light</button>
     </div>
   </nav>
 
-  <main>
-    <p class="hub-eyebrow">Da Nang, Vietnam · January 12–26, 2027</p>
-    <h1 class="hub-heading">How will you<br>join ASCENSION?</h1>
-    <p class="hub-sub">20 places. Choose your role.</p>
-
-    <div class="portal-grid">
-      <a href="/acquire/attend" class="portal-card">
-        <span class="portal-label">01 — Attend</span>
-        <div class="portal-title">The Retreat</div>
-        <p class="portal-desc">7 or 14 days of integrated wellness, movement, and creation in Da Nang. Choose your passport. Book your place.</p>
-        <span class="portal-cta">Reserve your place</span>
-      </a>
-
-      <a href="/acquire/facilitate" class="portal-card">
-        <span class="portal-label">02 — Facilitate</span>
-        <div class="portal-title">Lead a Session</div>
-        <p class="portal-desc">Practitioners, coaches, and artists. Bring your modality. We handle logistics — you lead the room.</p>
-        <span class="portal-cta">Apply to facilitate</span>
-      </a>
-
-      <a href="/acquire/partner" class="portal-card">
-        <span class="portal-label">03 — Partner</span>
-        <div class="portal-title">Hotel &amp; Venue</div>
-        <p class="portal-desc">Hotel and venue partnerships for ASCENSION — currently being finalized for January 2027.</p>
-        <span class="portal-cta">Explore partnership</span>
-      </a>
-
-      <a href="/acquire/sponsor" class="portal-card">
-        <span class="portal-label">04 — Sponsor</span>
-        <div class="portal-title">Brand Integration</div>
-        <p class="portal-desc">Align your brand with transformation. Product placement, editorial, and experiential opportunities.</p>
-        <span class="portal-cta">See sponsorship tiers</span>
-      </a>
+  <!-- ── HERO IMAGE ── -->
+  <section class="img-section tall parallax" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663013/lucid-origin_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-0_wk3pll.jpg');">
+    <div class="img-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-en="Da Nang, Vietnam · January 2027" data-fr="Da Nang, Vietnam · Janvier 2027" data-vi="Đà Nẵng, Việt Nam · Tháng 1, 2027" data-zh="越南岘港 · 2027年1月" data-ko="베트남 다낭 · 2027년 1월">Da Nang, Vietnam · January 2027</p>
+      <h1 class="hero-title">ASCENSION</h1>
+      <p class="hero-sub" data-en="January 12–26, 2027 · 20 places" data-fr="12–26 janvier 2027 · 20 places" data-vi="12–26 tháng 1, 2027 · 20 chỗ" data-zh="2027年1月12–26日 · 20个名额" data-ko="2027년 1월 12–26일 · 20자리">January 12–26, 2027 · 20 places</p>
     </div>
-  </main>
+    <div class="scroll-hint">↓</div>
+  </section>
+
+  <!-- ── BRAND DNA PULL QUOTE ── -->
+  <div class="pull-quote" data-en="What if feeling better became an adventure?" data-fr="Et si se sentir mieux devenait une aventure ?" data-vi="Nếu cảm thấy tốt hơn trở thành một cuộc phiêu lưu thì sao?" data-zh="如果变得更好成为一种冒险呢？" data-ko="더 나아지는 것이 하나의 모험이 된다면?">What if feeling better became an adventure?</div>
+
+  <!-- ── MISSION ── -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="eyebrow" data-en="Why ASCENSION exists" data-fr="Pourquoi ASCENSION existe" data-vi="Tại sao ASCENSION tồn tại" data-zh="ASCENSION存在的原因" data-ko="ASCENSION이 존재하는 이유">Why ASCENSION exists</p>
+      <h2 data-en="Two decades. Many continents. One invitation." data-fr="Deux décennies. De nombreux continents. Une invitation." data-vi="Hai thập kỷ. Nhiều lục địa. Một lời mời." data-zh="二十年。多大洲。一个邀请。" data-ko="이십 년. 여러 대륙. 하나의 초대.">Two decades. Many continents. One invitation.</h2>
+      <p class="lead" data-en="Twenty years searching across cultures and continents for practitioners, traditions, and modalities that genuinely change how we feel — in our bodies and our minds. <strong>ASCENSION brings them together.</strong>" data-fr="Vingt ans à explorer cultures et continents pour trouver des praticiens, traditions et pratiques qui changent vraiment la façon dont nous nous sentons. <strong>ASCENSION les réunit.</strong>" data-vi="Hai mươi năm tìm kiếm khắp các nền văn hóa và châu lục để tìm ra những người thực hành, truyền thống và phương pháp thực sự thay đổi cảm giác của chúng ta. <strong>ASCENSION đưa tất cả lại gần nhau.</strong>" data-zh="二十年来，穿越文化与大陆，寻找真正改变我们身心感受的从业者、传统和方法。<strong>ASCENSION将它们汇聚在一起。</strong>" data-ko="이십 년간 문화와 대륙을 넘나들며 우리의 몸과 마음을 진정으로 변화시키는 실천가, 전통, 방법론을 탐구해왔습니다. <strong>ASCENSION은 이 모든 것을 한자리에 모읍니다.</strong>">Twenty years searching across cultures and continents for practitioners, traditions, and modalities that genuinely change how we feel — in our bodies and our minds. <strong>ASCENSION brings them together.</strong></p>
+    </div>
+  </section>
+
+  <!-- ── SECOND IMAGE ── -->
+  <section class="img-section mid parallax" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663027/seedream-4.0_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-3_1_fqojli.jpg');">
+    <div class="img-overlay"></div>
+    <span class="img-caption" data-en="Da Nang · January 2027" data-fr="Da Nang · Janvier 2027" data-vi="Đà Nẵng · Tháng 1 2027" data-zh="岘港 · 2027年1月" data-ko="다낭 · 2027년 1월">Da Nang · January 2027</span>
+  </section>
+
+  <!-- ── FIVE W'S ── -->
+  <section class="section dark">
+    <div class="section-inner wide">
+      <p class="eyebrow" data-en="The essentials" data-fr="L'essentiel" data-vi="Những điều cơ bản" data-zh="基本信息" data-ko="핵심 정보">The essentials</p>
+      <div class="ws-grid">
+        <div class="ws-item">
+          <div class="ws-label" data-en="Who" data-fr="Qui" data-vi="Ai" data-zh="谁" data-ko="누구">Who</div>
+          <div class="ws-value" data-en="Daniel Stanford (curator) · 6–8 international facilitators · 20 participants" data-fr="Daniel Stanford (curateur) · 6–8 facilitateurs internationaux · 20 participants" data-vi="Daniel Stanford (người tổ chức) · 6–8 người hướng dẫn quốc tế · 20 người tham dự" data-zh="Daniel Stanford（策展人）· 6–8位国际引导师 · 20名参与者" data-ko="Daniel Stanford(큐레이터) · 국제 퍼실리테이터 6–8명 · 참가자 20명">Daniel Stanford (curator) · 6–8 international facilitators · 20 participants</div>
+        </div>
+        <div class="ws-item">
+          <div class="ws-label" data-en="What" data-fr="Quoi" data-vi="Cái gì" data-zh="什么" data-ko="무엇">What</div>
+          <div class="ws-value" data-en="7 or 14 days of curated wellness, movement, culture, and community" data-fr="7 ou 14 jours de bien-être, mouvement, culture et communauté" data-vi="7 hoặc 14 ngày của sức khỏe, vận động, văn hóa và cộng đồng được tuyển chọn" data-zh="7或14天的精选健康、运动、文化与社群体验" data-ko="7일 또는 14일의 큐레이션된 웰니스, 움직임, 문화, 그리고 커뮤니티">7 or 14 days of curated wellness, movement, culture, and community</div>
+        </div>
+        <div class="ws-item">
+          <div class="ws-label" data-en="When" data-fr="Quand" data-vi="Khi nào" data-zh="何时" data-ko="언제">When</div>
+          <div class="ws-value" data-en="January 12–26, 2027 · 7-day option: January 12–19" data-fr="12–26 janvier 2027 · Option 7 jours : 12–19 janvier" data-vi="12–26 tháng 1, 2027 · Tùy chọn 7 ngày: 12–19 tháng 1" data-zh="2027年1月12–26日 · 7天选项：1月12–19日" data-ko="2027년 1월 12–26일 · 7일 옵션: 1월 12–19일">January 12–26, 2027 · 7-day option: January 12–19</div>
+        </div>
+        <div class="ws-item">
+          <div class="ws-label" data-en="Where" data-fr="Où" data-vi="Ở đâu" data-zh="哪里" data-ko="어디서">Where</div>
+          <div class="ws-value" data-en="Da Nang, Vietnam · Venue in curation" data-fr="Da Nang, Vietnam · Lieu en cours de sélection" data-vi="Đà Nẵng, Việt Nam · Địa điểm đang được chọn lọc" data-zh="越南岘港 · 场地正在策划中" data-ko="베트남 다낭 · 장소 큐레이션 중">Da Nang, Vietnam · Venue in curation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THIRD IMAGE ── -->
+  <section class="img-section short parallax" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663027/seedream-4.0_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-3_uew011.jpg');">
+    <div class="img-overlay" style="background:linear-gradient(to bottom,rgba(8,7,10,0.1),rgba(8,7,10,0.45));"></div>
+  </section>
+
+  <!-- ── CURATION STATEMENT ── -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="curation-block">
+        <p data-en="The first edition is currently being curated. Confirmed practitioners, partners, experiences, and sponsors will be progressively revealed as commitments solidify." data-fr="La première édition est actuellement en cours de conception. Les praticiens, partenaires, expériences et sponsors confirmés seront révélés progressivement à mesure que les engagements se concrétisent." data-vi="Phiên bản đầu tiên hiện đang được tuyển chọn. Các học viên, đối tác, trải nghiệm và nhà tài trợ đã được xác nhận sẽ dần được công bố khi các cam kết được củng cố." data-zh="第一届正在策划中。已确认的从业者、合作伙伴、体验和赞助商将随着承诺的落实逐步公布。" data-ko="첫 번째 에디션은 현재 기획 중입니다. 확정된 진행자, 파트너, 체험, 스폰서는 약속이 구체화됨에 따라 순차적으로 공개됩니다.">The first edition is currently being curated. Confirmed practitioners, partners, experiences, and sponsors will be progressively revealed as commitments solidify.</p>
+        <strong data-en="You're not booking into uncertainty — you're joining something in the making." data-fr="Vous ne réservez pas dans l'incertitude — vous rejoignez quelque chose en train de naître." data-vi="Bạn không đặt chỗ vào sự không chắc chắn — bạn đang tham gia vào điều gì đó đang được tạo ra." data-zh="您不是在不确定中预订——您是在加入一个正在诞生的事物。" data-ko="불확실성 속에 예약하는 것이 아닙니다 — 만들어지고 있는 무언가에 합류하는 것입니다.">You're not booking into uncertainty — you're joining something in the making.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOUR WAYS TO ENGAGE ── -->
+  <section class="section dark">
+    <div class="section-inner wide">
+      <p class="eyebrow" data-en="Four ways to engage" data-fr="Quatre façons de participer" data-vi="Bốn cách tham gia" data-zh="四种参与方式" data-ko="네 가지 참여 방법">Four ways to engage</p>
+      <div class="part-grid">
+        <a href="/acquire/attend" class="part-card">
+          <span class="part-num">01 — Attend</span>
+          <div class="part-title">The Retreat</div>
+          <p class="part-desc" data-en="7 or 14 days of integrated wellness and creation in Da Nang. Choose your passport and secure your place." data-fr="7 ou 14 jours de bien-être et de création intégrés à Da Nang. Choisissez votre passeport et réservez votre place." data-vi="7 hoặc 14 ngày của sức khỏe và sáng tạo tổng hợp tại Đà Nẵng. Chọn hộ chiếu và đặt chỗ của bạn." data-zh="在岘港度过7或14天的综合健康与创作之旅。选择您的护照并锁定名额。" data-ko="다낭에서 7일 또는 14일의 통합 웰니스와 창작. 패스포트를 선택하고 자리를 확보하세요.">7 or 14 days of integrated wellness and creation in Da Nang. Choose your passport and secure your place.</p>
+          <span class="part-cta" data-en="Reserve your place" data-fr="Réservez votre place" data-vi="Đặt chỗ của bạn" data-zh="预留名额" data-ko="자리 예약하기">Reserve your place</span>
+        </a>
+        <a href="/acquire/facilitate" class="part-card">
+          <span class="part-num">02 — Facilitate</span>
+          <div class="part-title">Lead a Session</div>
+          <p class="part-desc" data-en="Practitioners, coaches, and artists. Bring your modality — we handle logistics, curation, and promotion." data-fr="Praticiens, coachs et artistes. Apportez votre pratique — nous gérons la logistique, la curation et la promotion." data-vi="Các nhà thực hành, huấn luyện viên và nghệ sĩ. Mang phương pháp của bạn — chúng tôi xử lý hậu cần, tuyển chọn và quảng bá." data-zh="从业者、教练和艺术家。带来您的方法——我们负责后勤、策划和推广。" data-ko="실천가, 코치, 아티스트. 당신의 방법론을 가져오세요 — 물류, 큐레이션, 홍보는 우리가 담당합니다.">Practitioners, coaches, and artists. Bring your modality — we handle logistics, curation, and promotion.</p>
+          <span class="part-cta" data-en="Apply to facilitate" data-fr="Postuler comme facilitateur" data-vi="Đăng ký hướng dẫn" data-zh="申请引导" data-ko="퍼실리테이터 지원">Apply to facilitate</span>
+        </a>
+        <a href="/acquire/partner" class="part-card">
+          <span class="part-num">03 — Partner</span>
+          <div class="part-title">Hotel &amp; Venue</div>
+          <p class="part-desc" data-en="Hotel and venue partnerships for ASCENSION — currently being finalized for January 2027." data-fr="Partenariats hôteliers et de lieux pour ASCENSION — en cours de finalisation pour janvier 2027." data-vi="Quan hệ đối tác khách sạn và địa điểm cho ASCENSION — hiện đang được hoàn thiện cho tháng 1 năm 2027." data-zh="ASCENSION的酒店和场地合作伙伴关系——目前正在为2027年1月敲定。" data-ko="ASCENSION을 위한 호텔 및 장소 파트너십 — 현재 2027년 1월을 위해 최종화 중입니다.">Hotel and venue partnerships for ASCENSION — currently being finalized for January 2027.</p>
+          <span class="part-cta" data-en="Explore partnership" data-fr="Explorer le partenariat" data-vi="Khám phá hợp tác" data-zh="探索合作" data-ko="파트너십 알아보기">Explore partnership</span>
+        </a>
+        <a href="/acquire/sponsor" class="part-card">
+          <span class="part-num">04 — Sponsor</span>
+          <div class="part-title">Brand Integration</div>
+          <p class="part-desc" data-en="Align your brand with transformation. Product placement, editorial, and experiential opportunities." data-fr="Alignez votre marque avec la transformation. Placement produit, éditorial et opportunités expérientielles." data-vi="Gắn thương hiệu của bạn với sự chuyển đổi. Cơ hội sản phẩm, biên tập và trải nghiệm." data-zh="将您的品牌与转变相结合。产品植入、编辑和体验机会。" data-ko="브랜드를 변화와 연결하세요. 제품 배치, 에디토리얼, 체험 기회.">Align your brand with transformation. Product placement, editorial, and experiential opportunities.</p>
+          <span class="part-cta" data-en="See sponsorship tiers" data-fr="Voir les niveaux de sponsoring" data-vi="Xem các cấp độ tài trợ" data-zh="查看赞助层级" data-ko="스폰서십 등급 보기">See sponsorship tiers</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEPOSIT CTA ── -->
+  <div class="deposit-block">
+    <a href="/acquire/attend" class="deposit-btn" data-en="Reserve Your Place — $300 Deposit" data-fr="Réservez votre place — Acompte 300 $" data-vi="Đặt Chỗ — Đặt Cọc $300" data-zh="预留名额 — $300定金" data-ko="자리 예약 — $300 보증금">Reserve Your Place — $300 Deposit</a>
+    <p class="deposit-note" data-en="20 places · Fully refundable if ASCENSION does not proceed" data-fr="20 places · Entièrement remboursable si ASCENSION n'a pas lieu" data-vi="20 chỗ · Hoàn tiền đầy đủ nếu ASCENSION không diễn ra" data-zh="20个名额 · 如ASCENSION未举行则全额退款" data-ko="20자리 · 리트릿 미진행 시 전액 환불">20 places · Fully refundable if ASCENSION does not proceed</p>
+  </div>
 
   <footer>
-    <p>© 2026 MODUS · ASCENSION &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/acquire/attend">Full retreat details</a></p>
+    <p>
+      <span data-en="Organized by Daniel Stanford, curator · Da Nang, Vietnam · January 12–26, 2027" data-fr="Organisé par Daniel Stanford, curateur · Da Nang, Vietnam · 12–26 janvier 2027" data-vi="Tổ chức bởi Daniel Stanford, người tổ chức · Đà Nẵng, Việt Nam · 12–26 tháng 1, 2027" data-zh="由策展人Daniel Stanford组织 · 越南岘港 · 2027年1月12–26日" data-ko="큐레이터 Daniel Stanford 주관 · 베트남 다낭 · 2027년 1월 12–26일">Organized by Daniel Stanford, curator · Da Nang, Vietnam · January 12–26, 2027</span><br>
+      © 2026 MODUS &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/acquire/attend">Full retreat details</a>
+    </p>
   </footer>
 
   <script>
   (function(){
     var btn=document.getElementById('themeBtn');
+    var cur=localStorage.getItem('modus-theme')||'dark';
+    function applyTheme(t){document.documentElement.setAttribute('data-theme',t);if(btn)btn.textContent=t==='dark'?'Light':'Dark';localStorage.setItem('modus-theme',t);}
+    applyTheme(cur);
+    if(btn)btn.addEventListener('click',function(){applyTheme(cur=cur==='dark'?'light':'dark');});
+
     var langs=['en','vi','fr','zh','ko'];
     var langLabels={en:'EN',vi:'VI',fr:'FR',zh:'中文',ko:'한국어'};
     var lk='ascension-lang';
@@ -296,15 +385,7 @@
       localStorage.setItem('modus-lang',l==='fr'?'fr':'en');
     }
     (function(){var sl=localStorage.getItem(lk)||localStorage.getItem('modus-lang')||'en';applyLang(sl);})();
-    if(langBtn){langBtn.addEventListener('click',function(){var cur=localStorage.getItem(lk)||'en';var next=langs[(langs.indexOf(cur)+1)%langs.length];applyLang(next);});}
-    var cur=localStorage.getItem('modus-theme')||'dark';
-    function apply(t){
-      document.documentElement.setAttribute('data-theme',t);
-      if(btn)btn.textContent=t==='dark'?'Light':'Dark';
-      localStorage.setItem('modus-theme',t);
-    }
-    apply(cur);
-    if(btn)btn.addEventListener('click',function(){apply(cur=cur==='dark'?'light':'dark');});
+    if(langBtn){langBtn.addEventListener('click',function(){var cur=localStorage.getItem(lk)||'en';applyLang(langs[(langs.indexOf(cur)+1)%langs.length]);});}
   })();
   </script>
 </body>

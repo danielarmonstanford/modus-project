@@ -626,4 +626,10 @@ grep -rEo 'font-size:[[:space:]]*(clamp\([0-9.]+(px|rem)|[0-9.]+px)' *.html */in
   | grep -vE '(1[4-9]|[2-9][0-9])(\.[0-9])?px|0\.(875|9|95|1)'
 ```
 
+### Font sizes are locked — this is a design principle, not a suggestion
+
+**Readable > compact. Hierarchy > density. Whitespace > shrinking type. Content clarity > fitting everything above the fold.**
+
+**Never reduce font size to preserve a visual composition.** If copy doesn't fit, doesn't wrap cleanly, or breaks a layout at some viewport, the fix is the layout — widen a container, add a breakpoint, stack elements, increase section height, shorten the copy — never a smaller font-size. The composition adapts to the typography; the typography never adapts to the composition. This applies to every future edit on this site, not just the pages already audited. Before shipping any layout change, re-run the verification command above — it must still return nothing.
+
 *This file is the canonical source for all MODUS design and editorial decisions. When in doubt, consult this file first. When this file is ambiguous, ask before building.*

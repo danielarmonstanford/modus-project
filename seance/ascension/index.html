@@ -142,6 +142,9 @@
     .sec-title{font-family:var(--font-display);font-size:clamp(2.5rem,5.5vw,5rem);font-weight:normal;letter-spacing:-0.03em;line-height:0.92;color:var(--text);margin-bottom:1.25rem}
     .sec-sub{font-family:var(--font-ed);font-size:clamp(1rem,1.6vw,1.15rem);font-style:italic;color:var(--text-dim);line-height:1.78;max-width:640px}
     .gold-rule{height:0.5px;background:linear-gradient(to right,var(--gold),transparent);opacity:0.3}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 900ms cubic-bezier(0.22,1,0.36,1),transform 900ms cubic-bezier(0.22,1,0.36,1)}
+    .reveal.in-view{opacity:1;transform:translateY(0)}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
     /* ── 2-col layout ── */
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
@@ -489,7 +492,7 @@
 <!-- ══════════════════════════════════════
      2. PHILOSOPHY
 ══════════════════════════════════════ -->
-<div class="sec-border" id="philosophy">
+<div class="sec-border reveal" id="philosophy">
   <div class="wrap">
     <span class="eyebrow">Why ASCENSION Exists</span>
     <div class="two-col" style="margin-bottom:2.5rem;">
@@ -512,7 +515,7 @@
 <!-- ══════════════════════════════════════
      3. 7-DAY ARC
 ══════════════════════════════════════ -->
-<div class="sec-border" id="arc">
+<div class="sec-border reveal" id="arc">
   <div class="wrap">
     <span class="eyebrow">The Journey</span>
     <h2 class="sec-title" style="margin-bottom:2.5rem;">The Journey.</h2>
@@ -549,7 +552,7 @@
 <!-- ══════════════════════════════════════
      4. MODALITIES
 ══════════════════════════════════════ -->
-<div class="sec-border" id="modalities">
+<div class="sec-border reveal" id="modalities">
   <div class="wrap">
     <span class="eyebrow">Six Modalities</span>
     <h2 class="sec-title" style="margin-bottom:2.5rem;">The Modalities.</h2>
@@ -592,7 +595,7 @@
 <!-- ══════════════════════════════════════
      6. FACILITATORS
 ══════════════════════════════════════ -->
-<div class="sec-border" id="facilitators">
+<div class="sec-border reveal" id="facilitators">
   <div class="wrap">
     <span class="eyebrow">Meet Your Guides</span>
     <div class="two-col" style="margin-bottom:2.5rem;">
@@ -612,7 +615,7 @@
 <!-- ══════════════════════════════════════
      8. PRICING
 ══════════════════════════════════════ -->
-<div class="sec-border" id="pricing">
+<div class="sec-border reveal" id="pricing">
   <div class="wrap">
     <span class="eyebrow">Edition &amp; Investment</span>
     <h2 class="sec-title">Join<br>the Cohort.</h2>
@@ -699,7 +702,7 @@
 <!-- ══════════════════════════════════════
      WHY DA NANG
 ══════════════════════════════════════ -->
-<div class="sec-border" id="why-da-nang">
+<div class="sec-border reveal" id="why-da-nang">
   <div class="wrap">
     <span class="eyebrow">Why Da Nang</span>
     <h2 class="sec-title" style="margin-bottom:0.5rem;">Sea. Mountains.<br>City. Culture.</h2>
@@ -788,6 +791,19 @@
     }
     window.addEventListener('scroll',onScroll,{passive:true});
     onScroll();
+  })();
+
+  // Scroll-reveal for major sections
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!els.length) return;
+    if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('in-view'); }); return; }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+      });
+    },{ threshold:0.12, rootMargin:'0px 0px -60px 0px' });
+    els.forEach(function(el){ io.observe(el); });
   })();
 
   // Side menu

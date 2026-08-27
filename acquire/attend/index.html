@@ -120,15 +120,18 @@
       --muted: rgba(13,31,45,0.55);
     }
     [data-theme="light"] body {
-      background: linear-gradient(160deg, #C8E0EE 0%, #D6E8F0 40%, #BFD4E8 100%);
-      background-attachment: fixed;
+      background:
+        linear-gradient(160deg,rgba(200,224,238,0.76) 0%,rgba(214,232,240,0.76) 40%,rgba(191,212,232,0.76) 100%),
+        url('https://res.cloudinary.com/dno3ruh7b/image/upload/v1787663013/lucid-origin_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-0_wk3pll.jpg')
+        center/cover fixed;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; }
-    body { font-family: var(--font-ed); background: var(--bg); color: var(--text);
-           min-height: 100vh; overflow-x: hidden;
-           transition: background var(--ease), color var(--ease); }
+    body { font-family: var(--font-ed);
+           background: url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663027/seedream-4.0_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-3_1_fqojli.jpg') center/cover fixed;
+           color: var(--text); min-height: 100vh; overflow-x: hidden;
+           transition: color var(--ease); }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
 
@@ -235,7 +238,7 @@
       background: var(--border);
     }
     .acquire-card {
-      background: var(--bg);
+      background: rgba(6,5,9,0.90);
       padding: clamp(2rem, 4vw, 3rem);
       display: flex; flex-direction: column;
       transition: background var(--ease);
@@ -440,7 +443,7 @@
       margin-bottom: 3rem;
     }
     .pricing-card {
-      background: var(--bg); padding: 2rem 1.75rem;
+      background: rgba(6,5,9,0.90); padding: 2rem 1.75rem;
       display: flex; flex-direction: column;
       transition: background var(--ease);
     }
@@ -510,11 +513,11 @@
       gap: 1.5px; background: var(--border); margin-bottom: 3rem;
     }
     .tier-card {
-      background: var(--bg); padding: 2.5rem 2rem;
+      background: rgba(6,5,9,0.90); padding: 2.5rem 2rem;
       display: flex; flex-direction: column;
       transition: background var(--ease);
     }
-    .tier-card:hover { background: var(--bg2); }
+    .tier-card:hover { background: rgba(15,14,19,0.92); }
     .tier-rank {
       font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em;
       text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem;
@@ -572,7 +575,7 @@
       gap: 1.5px; background: var(--border);
     }
     .opportunity-card {
-      background: var(--bg); padding: 2rem 1.75rem;
+      background: rgba(6,5,9,0.90); padding: 2rem 1.75rem;
       display: flex; flex-direction: column; gap: 0.5rem;
       transition: background var(--ease); text-decoration: none;
     }
@@ -708,6 +711,7 @@
     .mkt-section {
       padding: clamp(4.5rem,9vw,8rem) var(--gutter);
       border-top: 0.5px solid var(--rule);
+      background: rgba(6,5,9,0.78);
     }
     .mkt-eyebrow {
       font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em;
@@ -736,7 +740,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
-    .module-card { background: var(--bg); padding: clamp(2rem,3.5vw,3rem); transition: background 0.25s; }
+    .module-card { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); transition: background 0.25s; }
     .module-card:hover { background: rgba(212,168,75,0.06); }
     .module-card-icon { font-size: 1.75rem; margin-bottom: 1.1rem; display: block; }
     .module-card-title {
@@ -753,7 +757,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0;
     }
-    .hotel-card { background: var(--bg); padding: clamp(2rem,3vw,2.75rem); transition: background 0.25s; }
+    .hotel-card { background: rgba(6,5,9,0.90); padding: clamp(2rem,3vw,2.75rem); transition: background 0.25s; }
     .hotel-card:hover { background: rgba(212,168,75,0.06); }
     .hotel-card.anchor { background: rgba(212,168,75,0.07); border: 0.5px solid rgba(212,168,75,0.4); }
     .hotel-card-badge {
@@ -797,7 +801,7 @@
       display: grid; grid-template-columns: repeat(4,1fr);
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
-    .tier-cell { background: var(--bg); padding: clamp(2rem,3.5vw,3rem); text-align: center; }
+    .tier-cell { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); text-align: center; }
     .tier-cell.t1 { border-top: 2px solid var(--gold); }
     .tier-cell.t2 { border-top: 2px solid var(--accent-ocean); }
     .tier-cell.t3 { border-top: 2px solid var(--accent-sand); }
@@ -823,7 +827,7 @@
 
     /* Partner funnel */
     .funnel-block {
-      background: var(--bg2); border: 0.5px solid var(--rule);
+      background: rgba(15,14,19,0.90); border: 0.5px solid var(--rule);
       padding: clamp(2rem,4vw,3.5rem); margin: 1.5rem 0;
     }
     .funnel-step { padding: 2rem 0; border-bottom: 0.5px dashed var(--rule); }
@@ -855,7 +859,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
-    .ptier-card { background: var(--bg); padding: clamp(2rem,3.5vw,3rem); }
+    .ptier-card { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); }
     .ptier-card.p1 { border-top: 2px solid var(--accent-earth); }
     .ptier-card.p2 { border-top: 2px solid var(--accent-sand); }
     .ptier-card.p3 { border-top: 2px solid var(--accent-ocean); }
@@ -890,7 +894,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
-    .curation-cell { background: var(--bg); padding: clamp(2rem,3.5vw,3rem); text-align: center; }
+    .curation-cell { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); text-align: center; }
     .curation-num {
       font-family: var(--font-display); font-size: clamp(2.5rem,5vw,3.5rem);
       color: rgba(212,168,75,0.28); margin-bottom: 0.75rem; line-height: 1;
@@ -909,7 +913,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
       gap: 1.5px; background: var(--rule); margin: 0;
     }
-    .mkt-cta-cell { background: var(--bg); padding: clamp(3rem,5vw,4rem) 2rem; text-align: center; }
+    .mkt-cta-cell { background: rgba(6,5,9,0.90); padding: clamp(3rem,5vw,4rem) 2rem; text-align: center; }
     .mkt-cta-cell h4 {
       font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
       text-transform: uppercase; color: var(--text-dim); opacity: 0.65; margin-bottom: 1.5rem;
@@ -928,7 +932,7 @@
     [data-theme="light"] [style*="rgba(212,168,75"] { color: var(--gold) !important; border-color: var(--gold) !important; }
     /* Fix section/border bg tokens */
     [data-theme="light"] .section { background: transparent; }
-    [data-theme="light"] .mkt-section { background: transparent; }
+    [data-theme="light"] .mkt-section { background: rgba(214,232,240,0.78); }
     /* Pricing cards on light */
     [data-theme="light"] .pricing-card,
     [data-theme="light"] .module-card,

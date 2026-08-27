@@ -239,6 +239,23 @@
     .part-title { font-family: var(--font-display); font-size: clamp(1.25rem,2vw,1.6rem); font-weight:400; color: var(--text); line-height: 1.15; }
     .part-desc { font-family: var(--font-body); font-size: clamp(1.1rem,1.4vw,1.2rem); color: var(--text-dim); line-height: 1.65; flex: 1; }
     .part-cta { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; }
+
+    /* ── Not attending? portal cards ── */
+    .not-attend-card { display: block; text-decoration: none; background: rgba(6,5,9,0.9); transition: background 0.25s; }
+    .not-attend-card:hover { background: rgba(212,168,75,0.06); }
+    .not-attend-card:hover .not-attend-img { filter: saturate(1.1) brightness(1.05); }
+    .not-attend-img {
+      aspect-ratio: 4/3; background-size: cover; background-position: center;
+      transition: filter 0.3s;
+    }
+    .not-attend-label {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text);
+    }
+    .not-attend-label span:last-child { color: var(--gold); font-size: 1.2rem; transition: transform 0.2s; }
+    .not-attend-card:hover .not-attend-label span:last-child { transform: translateX(4px); }
     .part-cta::after { content: '→'; transition: transform 0.2s; }
     .part-card:hover .part-cta::after { transform: translateX(4px); }
 
@@ -547,15 +564,31 @@
   </div>
 
   <!-- ── NOT ATTENDING? secondary engagement row ── -->
-  <section class="section" style="padding-top:2rem;padding-bottom:3rem;text-align:center;">
-    <div class="section-inner">
-      <p class="eyebrow" data-en="Not attending?" data-fr="Vous ne participez pas ?" data-vi="Không tham dự?" data-zh="不参加？" data-ko="참석하지 않으시나요?" style="margin-bottom:1rem;">Not attending?</p>
-      <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
-        <a href="/acquire/facilitate" class="part-cta" data-en="Facilitate" data-fr="Faciliter" data-vi="Hướng dẫn" data-zh="引导" data-ko="퍼실리테이트">Facilitate</a>
-        <span style="color:var(--text-dim);">·</span>
-        <a href="/acquire/partner" class="part-cta" data-en="Partner" data-fr="Partenaire" data-vi="Đối tác" data-zh="合作伙伴" data-ko="파트너">Partner</a>
-        <span style="color:var(--text-dim);">·</span>
-        <a href="/acquire/sponsor" class="part-cta" data-en="Sponsor" data-fr="Sponsor" data-vi="Nhà tài trợ" data-zh="赞助商" data-ko="스폰서">Sponsor</a>
+  <section class="section dark" style="padding-top:4rem;padding-bottom:4.5rem;text-align:center;">
+    <div class="section-inner wide">
+      <p class="eyebrow" data-en="Not attending?" data-fr="Vous ne participez pas ?" data-vi="Không tham dự?" data-zh="不参加？" data-ko="참석하지 않으시나요?" style="margin-bottom:2rem;">Not attending?</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5px;background:var(--border);">
+        <a href="/acquire/facilitate" class="not-attend-card">
+          <div class="not-attend-img" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663027/seedream-4.0_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-3_1_fqojli.jpg');"></div>
+          <div class="not-attend-label">
+            <span data-en="Facilitate" data-fr="Faciliter" data-vi="Hướng dẫn" data-zh="引导" data-ko="퍼실리테이트">Facilitate</span>
+            <span aria-hidden="true">&rarr;</span>
+          </div>
+        </a>
+        <a href="/acquire/partner" class="not-attend-card">
+          <div class="not-attend-img" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1800/Khalumia_Fortune_D80_6035_fxajcu.jpg');"></div>
+          <div class="not-attend-label">
+            <span data-en="Partner" data-fr="Partenaire" data-vi="Đối tác" data-zh="合作伙伴" data-ko="파트너">Partner</span>
+            <span aria-hidden="true">&rarr;</span>
+          </div>
+        </a>
+        <a href="/acquire/sponsor" class="not-attend-card">
+          <div class="not-attend-img" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_face,w_1800,h_900,q_auto,f_auto/v1787491510/Screen_Shot_2026-08-23_at_9.24.02_AM_finbe7.png');"></div>
+          <div class="not-attend-label">
+            <span data-en="Sponsor" data-fr="Sponsor" data-vi="Nhà tài trợ" data-zh="赞助商" data-ko="스폰서">Sponsor</span>
+            <span aria-hidden="true">&rarr;</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>

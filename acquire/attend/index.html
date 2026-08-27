@@ -933,6 +933,9 @@
     /* Fix section/border bg tokens */
     [data-theme="light"] .section { background: transparent; }
     [data-theme="light"] .mkt-section { background: rgba(214,232,240,0.78); }
+    /* Program + pricing section: solid backing so text is legible over illustration */
+    [data-theme="light"] #build-ascension { background: rgba(240,248,252,0.96); }
+    [data-theme="light"] #reserve { background: rgba(240,248,252,0.96); }
     /* Pricing cards on light */
     [data-theme="light"] .pricing-card,
     [data-theme="light"] .acquire-card,
@@ -1637,7 +1640,7 @@
       </div>
 
       <!-- ── YOUR PASSPORT INCLUDES ── -->
-      <div style="margin:3rem 0;border-top:0.5px solid rgba(212,168,75,0.18);padding-top:2.5rem;">
+      <div class="passport-includes-block" style="margin:3rem 0;border-top:0.5px solid rgba(212,168,75,0.18);padding-top:2.5rem;">
         <p data-en="YOUR PASSPORT INCLUDES" data-fr="VOTRE PASSEPORT COMPREND" data-vi="HỘ CHIẾU CỦA BẠN BAO GỒM" data-zh="您的护照包含" data-ko="패스포트 포함 항목"
            style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(212,168,75,0.85);margin:0 0 2rem;">YOUR PASSPORT INCLUDES</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem 3rem;margin-bottom:3rem;">

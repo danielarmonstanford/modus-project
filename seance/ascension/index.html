@@ -224,7 +224,7 @@
 
     /* ── Pricing ── */
     .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border)}
-    .pg2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5px;background:var(--border)}
+    .pg2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5px;background:var(--border)}
     .price-card{background:var(--bg);padding:clamp(2rem,4vw,3rem);display:flex;flex-direction:column}
     .price-card.price-feat{background:var(--bg2)}
     .price-card.price-attend{background:#1A1408;border-top:3px solid var(--gold);padding-top:0;overflow:hidden}
@@ -286,7 +286,7 @@
 
     /* ── Responsive ── */
     @media(max-width:900px){
-      .two-col,.phil-grid,.sleep-grid,.venue-grid,.price-grid,.pg2{grid-template-columns:minmax(0,1fr)}
+      .two-col,.phil-grid,.sleep-grid,.venue-grid,.price-grid{grid-template-columns:minmax(0,1fr)}
       .mod-grid,.testi-grid{grid-template-columns:1fr 1fr}
       .arc-detail.arc-show{grid-template-columns:minmax(0,1fr)}
     }

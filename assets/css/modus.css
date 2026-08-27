@@ -46,7 +46,7 @@
   --text-micro:    14px;   /* was 10px, then 13px — hard floor is now 14px, no exceptions */
   --text-caption:  14px;
   --text-label:    14px;
-  --text-body:     17px;
+  --text-body:     19px;   /* was 17px — larger, more readable main body text */
   --text-intro:    21px;
   --text-subhead:  30px;
   --text-head:     46px;
@@ -186,8 +186,8 @@ body.grain::before {
 }
 .body-text {
   font-family: var(--font-editorial);
-  font-size: clamp(1.1rem, 2vw, var(--text-body));
-  font-weight: 400; line-height: 1.9; color: var(--navy);
+  font-size: clamp(1.15rem, 2vw, var(--text-body));
+  font-weight: 400; line-height: 1.75; color: var(--navy);
 }
 .body-text p + p { margin-top: 1.4em; }
 .label {

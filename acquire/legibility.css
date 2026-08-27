@@ -42,7 +42,7 @@
   font-size: 14px !important;
 }
 
-/* ── Body / card copy: no font-weight:300, proper line-height ── */
+/* ── Body / card copy: no font-weight:300, proper line-height, larger readable size ── */
 .pricing-label,
 .section-subhead,
 .module-card p,
@@ -53,10 +53,14 @@
 .modus-index-view p,
 .card-intro,
 .intro,
-.subhead,
 .mkt-subhead {
   font-weight: 400 !important;
-  line-height: 1.6 !important;
+  line-height: 1.65 !important;
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem) !important;
+}
+.subhead {
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
 }
 
 /* ── Letter-spacing: cap at 0.20em on all UI labels ── */
@@ -119,7 +123,7 @@ a:focus-visible, button:focus-visible, input:focus-visible,
     letter-spacing: 0.14em !important;
   }
 
-  /* Card/feature body text: 16px minimum on mobile */
+  /* Card/feature body text: 18px on mobile — larger, more readable */
   .pricing-label,
   .section-subhead,
   .module-card p,
@@ -127,6 +131,6 @@ a:focus-visible, button:focus-visible, input:focus-visible,
   .opportunity-card p,
   .tier-features li,
   .card-intro, .mkt-subhead {
-    font-size: 16px !important;
+    font-size: 18px !important;
   }
 }

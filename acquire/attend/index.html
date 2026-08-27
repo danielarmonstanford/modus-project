@@ -107,31 +107,26 @@
       --nav-bg: rgba(8,7,10,0.94);
     }
     [data-theme="light"] {
-      --bg: #D6E8F0;
-      --bg2: #C4DDE9;
-      --bg3: #B2D1E2;
-      --text: #0D1F2D;
-      --text-dim: rgba(13,31,45,0.85);
-      --border: rgba(13,31,45,0.75);
-      --gold: #8A6A1A;
-      --border-gold: rgba(138,106,26,0.45);
-      --nav-bg: rgba(214,232,240,0.96);
-      --rule: rgba(138,106,26,0.22);
-      --muted: rgba(13,31,45,0.55);
+      --bg: #152040;
+      --bg2: #1e3060;
+      --bg3: #243870;
+      --text: #EAE0CC;
+      --text-dim: rgba(234,224,204,0.75);
+      --border: rgba(234,224,204,0.18);
+      --gold: #D4A84B;
+      --border-gold: rgba(212,168,75,0.28);
+      --nav-bg: rgba(21,32,64,0.90);
+      --rule: rgba(212,168,75,0.14);
+      --muted: rgba(234,224,204,0.45);
     }
-    [data-theme="light"] body {
-      background:
-        linear-gradient(160deg,rgba(200,224,238,0.76) 0%,rgba(214,232,240,0.76) 40%,rgba(191,212,232,0.76) 100%),
-        url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663027/seedream-4.0_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-3_1_fqojli.jpg')
-        center/cover fixed;
-    }
-
+    /* Both themes: navy base — illustration shows only through explicit img-section elements */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; }
     body { font-family: var(--font-ed);
-           background: url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663027/seedream-4.0_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-3_1_fqojli.jpg') center/cover fixed;
+           background: #152040;
            color: var(--text); min-height: 100vh; overflow-x: hidden;
            transition: color var(--ease); }
+    [data-theme="light"] body { background: #152040; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
 
@@ -149,7 +144,9 @@
     .nav-logo { display: flex; align-items: center; min-height: 44px; line-height: 0; flex-shrink:0;}
     .nav-logo img { height: 28px; width: auto; }
     [data-theme="dark"]  .logo-black { display: none; }
-    [data-theme="light"] .logo-beige { display: none; }
+    /* Light mode is now navy — show beige logo, not black */
+    [data-theme="light"] .logo-black { display: none; }
+    :root:not([data-theme]) .logo-black { display: none; }
     .menu-btn { background: none; border: none; cursor: pointer; padding: 10px 8px;
       display: flex; flex-direction: column; gap: 5px; min-height: 44px; justify-content: center; }
     .menu-btn span { display: block; width: 22px; height: 1px; background: var(--text);
@@ -238,7 +235,7 @@
       background: var(--border);
     }
     .acquire-card {
-      background: rgba(6,5,9,0.90);
+      background: #1e3060;
       padding: clamp(2rem, 4vw, 3rem);
       display: flex; flex-direction: column;
       transition: background var(--ease);
@@ -443,7 +440,7 @@
       margin-bottom: 3rem;
     }
     .pricing-card {
-      background: rgba(6,5,9,0.90); padding: 2rem 1.75rem;
+      background: #1e3060; padding: 2rem 1.75rem;
       display: flex; flex-direction: column;
       transition: background var(--ease);
     }
@@ -513,11 +510,11 @@
       gap: 1.5px; background: var(--border); margin-bottom: 3rem;
     }
     .tier-card {
-      background: rgba(6,5,9,0.90); padding: 2.5rem 2rem;
+      background: #1e3060; padding: 2.5rem 2rem;
       display: flex; flex-direction: column;
       transition: background var(--ease);
     }
-    .tier-card:hover { background: rgba(15,14,19,0.92); }
+    .tier-card:hover { background: #243870; }
     .tier-rank {
       font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em;
       text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem;
@@ -575,7 +572,7 @@
       gap: 1.5px; background: var(--border);
     }
     .opportunity-card {
-      background: rgba(6,5,9,0.90); padding: 2rem 1.75rem;
+      background: #1e3060; padding: 2rem 1.75rem;
       display: flex; flex-direction: column; gap: 0.5rem;
       transition: background var(--ease); text-decoration: none;
     }
@@ -711,7 +708,7 @@
     .mkt-section {
       padding: clamp(4.5rem,9vw,8rem) var(--gutter);
       border-top: 0.5px solid var(--rule);
-      background: rgba(6,5,9,0.78);
+      background: #152040;
     }
     .mkt-eyebrow {
       font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em;
@@ -740,7 +737,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
-    .module-card { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); transition: background 0.25s; }
+    .module-card { background: #1e3060; padding: clamp(2rem,3.5vw,3rem); transition: background 0.25s; }
     .module-card:hover { background: rgba(212,168,75,0.06); }
     .module-card-icon { font-size: 1.75rem; margin-bottom: 1.1rem; display: block; }
     .module-card-title {
@@ -757,7 +754,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0;
     }
-    .hotel-card { background: rgba(6,5,9,0.90); padding: clamp(2rem,3vw,2.75rem); transition: background 0.25s; }
+    .hotel-card { background: #1e3060; padding: clamp(2rem,3vw,2.75rem); transition: background 0.25s; }
     .hotel-card:hover { background: rgba(212,168,75,0.06); }
     .hotel-card.anchor { background: rgba(212,168,75,0.07); border: 0.5px solid rgba(212,168,75,0.4); }
     .hotel-card-badge {
@@ -801,7 +798,7 @@
       display: grid; grid-template-columns: repeat(4,1fr);
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
-    .tier-cell { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); text-align: center; }
+    .tier-cell { background: #1e3060; padding: clamp(2rem,3.5vw,3rem); text-align: center; }
     .tier-cell.t1 { border-top: 2px solid var(--gold); }
     .tier-cell.t2 { border-top: 2px solid var(--accent-ocean); }
     .tier-cell.t3 { border-top: 2px solid var(--accent-sand); }
@@ -827,7 +824,7 @@
 
     /* Partner funnel */
     .funnel-block {
-      background: rgba(15,14,19,0.90); border: 0.5px solid var(--rule);
+      background: #1a2a50; border: 0.5px solid rgba(212,168,75,0.28);
       padding: clamp(2rem,4vw,3.5rem); margin: 1.5rem 0;
     }
     .funnel-step { padding: 2rem 0; border-bottom: 0.5px dashed var(--rule); }
@@ -859,7 +856,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
-    .ptier-card { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); }
+    .ptier-card { background: #1e3060; padding: clamp(2rem,3.5vw,3rem); }
     .ptier-card.p1 { border-top: 2px solid var(--accent-earth); }
     .ptier-card.p2 { border-top: 2px solid var(--accent-sand); }
     .ptier-card.p3 { border-top: 2px solid var(--accent-ocean); }
@@ -894,7 +891,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
-    .curation-cell { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); text-align: center; }
+    .curation-cell { background: #1e3060; padding: clamp(2rem,3.5vw,3rem); text-align: center; }
     .curation-num {
       font-family: var(--font-display); font-size: clamp(2.5rem,5vw,3.5rem);
       color: rgba(212,168,75,0.28); margin-bottom: 0.75rem; line-height: 1;
@@ -913,7 +910,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
       gap: 1.5px; background: var(--rule); margin: 0;
     }
-    .mkt-cta-cell { background: rgba(6,5,9,0.90); padding: clamp(3rem,5vw,4rem) 2rem; text-align: center; }
+    .mkt-cta-cell { background: #1e3060; padding: clamp(3rem,5vw,4rem) 2rem; text-align: center; }
     .mkt-cta-cell h4 {
       font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
       text-transform: uppercase; color: var(--text-dim); opacity: 0.65; margin-bottom: 1.5rem;
@@ -925,9 +922,9 @@
     .mkt-note { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); opacity: 0.6; line-height: 1.8; margin-top: 1.25rem; }
 
     /* ── Light-mode inline-color overrides ── */
-    /* Catch all hardcoded cream (#F0E8D5 / rgba(240,232,213)) in inline styles */
-    [data-theme="light"] [style*="#F0E8D5"] { color: var(--text) !important; }
-    [data-theme="light"] [style*="rgba(240,232,213"] { color: var(--text-dim) !important; }
+    /* Light mode is now also navy — keep cream text on all inline styles */
+    [data-theme="light"] [style*="#F0E8D5"] { color: #F0E8D5 !important; }
+    [data-theme="light"] [style*="rgba(240,232,213"] { color: rgba(240,232,213,0.80) !important; }
     /* Hero always uses cream — photo gradient provides contrast regardless of theme */
     [data-theme="light"] .hero-cover [style*="#F0E8D5"] { color: #F0E8D5 !important; }
     [data-theme="light"] .hero-cover [style*="rgba(240,232,213"] { color: rgba(240,232,213,0.88) !important; }
@@ -936,10 +933,10 @@
     [data-theme="light"] [style*="rgba(212,168,75"] { color: var(--gold) !important; border-color: var(--gold) !important; }
     /* Fix section/border bg tokens */
     [data-theme="light"] .section { background: transparent; }
-    [data-theme="light"] .mkt-section { background: rgba(214,232,240,0.78); }
+    [data-theme="light"] .mkt-section { background: #152040; }
     /* Program + pricing section: solid backing so text is legible over illustration */
-    [data-theme="light"] #build-ascension { background: rgba(240,248,252,0.96); }
-    [data-theme="light"] #reserve { background: rgba(240,248,252,0.96); }
+    [data-theme="light"] #build-ascension { background: #152040; }
+    [data-theme="light"] #reserve { background: #152040; }
 
     /* Content card — deep navy, pops text out from busy illustrations */
     .content-card {
@@ -964,8 +961,8 @@
       border-color: rgba(212,168,75,0.35) !important;
       color: rgba(234,224,204,0.7) !important;
     }
-    #partner { background: rgba(6,5,9,0.78); }
-    [data-theme="light"] #partner { background: rgba(214,232,240,0.78); }
+    #partner { background: #152040; }
+    [data-theme="light"] #partner { background: #152040; }
     /* Pricing cards on light */
     [data-theme="light"] .pricing-card,
     [data-theme="light"] .acquire-card,
@@ -976,8 +973,8 @@
     [data-theme="light"] .ptier-card,
     [data-theme="light"] .opportunity-card,
     [data-theme="light"] .curation-cell,
-    [data-theme="light"] .mkt-cta-cell { background: rgba(196,221,233,0.90); }
-    [data-theme="light"] .funnel-block { background: rgba(196,221,233,0.90) !important; border-color: rgba(138,106,26,0.25) !important; }
+    [data-theme="light"] .mkt-cta-cell { background: #1e3060; }
+    [data-theme="light"] .funnel-block { background: #1a2a50 !important; border-color: rgba(212,168,75,0.28) !important; }
     /* Deposit CTA button — readable on both themes */
     .deposit-cta-btn {
       display: inline-block;

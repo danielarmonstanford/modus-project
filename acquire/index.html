@@ -142,9 +142,16 @@
     .lead strong { color: var(--text); font-weight: 400; }
     .rule { border: none; border-top: 0.5px solid var(--rule); margin: 2.5rem 0; }
 
+    /* Light mode section overrides — must come after the base rgba declarations */
+    [data-theme="light"] .section { background: rgba(214,232,240,0.78); }
+    [data-theme="light"] .pull-quote { background: rgba(214,232,240,0.78); }
+    [data-theme="light"] .curation-block { background: rgba(196,221,233,0.90); }
+    [data-theme="light"] .deposit-block { background: rgba(214,232,240,0.78); }
+    [data-theme="light"] footer { background: rgba(214,232,240,0.78); }
+
     /* Dark section */
     .section.dark { background: rgba(15,14,19,0.78); }
-    [data-theme="light"] .section.dark { background: rgba(13,31,45,0.14); }
+    [data-theme="light"] .section.dark { background: rgba(196,215,228,0.82); }
 
     /* Brand DNA pull quote */
     .pull-quote {

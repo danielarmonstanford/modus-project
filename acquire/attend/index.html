@@ -232,6 +232,16 @@
        zero contrast against the pale image. */
     #attend { background: var(--bg); max-width: 100%; }
     #attend > * { max-width: 1100px; margin-left: auto; margin-right: auto; }
+    /* Light mode: rose tone pulled from the page's own illustration palette
+       gives the pricing/passport text more pop than the flat pale-blue bg */
+    [data-theme="light"] #attend { background: #E3B8A8 !important; }
+    [data-theme="light"] #attend [style*="color:#F0E8D5"],
+    [data-theme="light"] #attend [style*="rgba(240,232,213"] { color: #2A1810 !important; }
+    [data-theme="light"] #attend [style*="rgba(212,168,75"] { color: #6B3F1D !important; }
+    [data-theme="light"] #venue-testimonial {
+      background: #E3B8A8 !important;
+      --text-dim: #2A1810; --muted: #6B3F1D;
+    }
     .section + .section { border-top: 0.5px solid var(--border); }
 
     .section-label {
@@ -1889,7 +1899,7 @@
     </section>
 
     <!-- ── VENUE REFERENCE TESTIMONIAL ── -->
-    <section class="section" style="text-align:center;background:var(--bg);max-width:100%;">
+    <section class="section" id="venue-testimonial" style="text-align:center;background:var(--bg);max-width:100%;">
       <div style="max-width:640px;margin:0 auto;">
         <p class="section-num" style="margin-bottom:1rem;"
            data-en="What guests say about our host venue" data-fr="Ce que disent les hôtes sur notre lieu d'accueil" data-vi="Khách nói gì về địa điểm tổ chức của chúng tôi" data-zh="宾客对我们的接待场所的评价" data-ko="주최 장소에 대한 게스트들의 평가"

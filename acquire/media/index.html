@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Media Partnership — ASCENSION</title>
+  <meta name="description" content="Journalists, videographers, filmmakers, and podcasters: cover ASCENSION, Da Nang, January 2027.">
+  <link rel="preload" href="/assets/fonts/lovine.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://modus.gallery/acquire/media">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Lovine';
+      src: url('/assets/fonts/lovine.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --bg: #08070A; --bg2: #0F0E13; --bg3: #141219;
+      --text: #EAE0CC; --text-dim: rgba(234,224,204,0.72);
+      --gold: #D4A84B; --border-gold: rgba(212,168,75,0.28);
+      --muted: #8A8681; --rule: rgba(212,168,75,0.14);
+      --font-display: 'Lovine','Cormorant Garamond',serif;
+      --font-body: 'Cormorant Garamond',serif;
+      --font-mono: 'DM Mono',monospace;
+    }
+    [data-theme="light"] {
+      --bg: #D6E8F0; --bg2: #C4DDE9; --bg3: rgba(255,255,255,0.35);
+      --text: #0D1F2D; --text-dim: rgba(13,31,45,0.8);
+      --gold: #8A6A1A; --border-gold: rgba(138,106,26,0.4);
+      --muted: rgba(13,31,45,0.5); --rule: rgba(138,106,26,0.18);
+    }
+    [data-theme="light"] body { background: linear-gradient(160deg,#C8E0EE 0%,#D6E8F0 40%,#BFD4E8 100%) fixed; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem clamp(1.5rem,5vw,4rem);
+      background: rgba(8,7,10,0.88); backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--rule);
+    }
+    [data-theme="light"] nav { background: rgba(214,232,240,0.92); }
+    .nav-logo { display: flex; align-items: center; min-height: 44px; line-height: 0; flex-shrink: 0; text-decoration: none; }
+    .nav-logo img { height: 28px; width: auto; }
+    [data-theme="dark"] .logo-black { display: none; }
+    [data-theme="light"] .logo-beige { display: none; }
+    :root:not([data-theme]) .logo-black { display: none; }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--text); }
+    #themeBtn { background: none; border: 0.5px solid var(--border-gold); color: var(--gold); font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; cursor: pointer; }
+
+    .wrap { max-width: 800px; margin: 0 auto; padding: clamp(6rem,10vw,8rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem); }
+
+    .eyebrow { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .back-link { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2.5rem; transition: color 0.2s; }
+    .back-link:hover { color: var(--text-dim); }
+    .back-link::before { content: '←'; }
+
+    h1 { font-family: var(--font-display); font-size: clamp(2.4rem,6vw,4.5rem); font-weight:300; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; text-wrap: balance; }
+    .lead { font-family: var(--font-body); font-size: clamp(1.15rem,1.6vw,1.35rem); color: var(--text-dim); line-height: 1.7; margin-bottom: 3rem; }
+    h2 { font-family: var(--font-display); font-size: clamp(1.5rem,2.5vw,2rem); font-weight:300; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1.5rem; }
+    .rule { border: none; border-top: 0.5px solid var(--rule); margin: 3rem 0; }
+
+    /* Who we're looking for */
+    .who-list { list-style: none; margin-bottom: 3rem; }
+    .who-list li { font-family: var(--font-body); font-size: 1.05rem; color: var(--text-dim); line-height: 1.9; padding-left: 1.5rem; position: relative; }
+    .who-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); }
+
+    /* What you get */
+    .props-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 2px; background: var(--rule); margin-bottom: 3rem; }
+    .prop { background: var(--bg); padding: 1.75rem 2rem; }
+    [data-theme="light"] .prop { background: rgba(255,255,255,0.35); }
+    .prop-label { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .prop-note { font-family: var(--font-body); font-size: 0.95rem; color: var(--text-dim); line-height: 1.6; }
+
+    /* Partnership models */
+    .tier-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 2px; background: var(--rule); margin-bottom: 3rem; }
+    .tier-card { background: var(--bg); padding: 2rem; }
+    [data-theme="light"] .tier-card { background: rgba(255,255,255,0.35); }
+    .tier-name { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .tier-title { font-family: var(--font-display); font-size: clamp(1.2rem,2vw,1.5rem); color: var(--text); margin-bottom: 1rem; line-height: 1.2; }
+    .tier-desc { font-family: var(--font-body); font-size: 0.95rem; color: var(--text-dim); line-height: 1.65; }
+
+    /* Form */
+    .field-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2rem; margin-bottom: 1.5rem; }
+    @media (max-width: 560px) { .field-group { grid-template-columns: 1fr; } }
+    .field { margin-bottom: 1.5rem; }
+    label { display: block; font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem; }
+    input[type=text], input[type=email], input[type=url], select, textarea {
+      width: 100%; background: var(--bg2); border: 0.5px solid var(--border-gold);
+      color: var(--text); font-family: var(--font-body); font-size: 1rem;
+      padding: 0.75rem 1rem; outline: none; transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+    [data-theme="light"] input[type=text], [data-theme="light"] input[type=email],
+    [data-theme="light"] input[type=url], [data-theme="light"] select,
+    [data-theme="light"] textarea { background: rgba(255,255,255,0.55); }
+
+    .cta-btn { display: inline-block; font-family: var(--font-mono); font-size:14px; letter-spacing: 0.28em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: 15px 32px; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.85; }
+    .form-note { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.16em; color: var(--muted); margin-top: 0.75rem; }
+
+    #media-success { display: none; border: 0.5px solid var(--gold); padding: 2.5rem; background: rgba(212,168,75,0.06); }
+    #media-success p:first-child { font-family: var(--font-display); font-size: clamp(1.4rem,2.5vw,1.8rem); color: var(--gold); margin-bottom: 0.75rem; }
+    #media-success p:last-child { font-family: var(--font-body); font-size: 1rem; color: var(--text-dim); line-height: 1.7; }
+
+    footer { text-align: center; padding: 2rem clamp(1.5rem,5vw,4rem); border-top: 0.5px solid var(--rule); }
+    footer p { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text-dim); }
+  </style>
+  <link rel="stylesheet" href="../legibility.css">
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="/" aria-label="MODUS home">
+      <img class="logo-beige" src="/assets/images/modus-logo-beige.png" alt="MODUS">
+      <img class="logo-black" src="/assets/images/modus-logo-black.png" alt="MODUS">
+    </a>
+    <div class="nav-right">
+      <a href="/acquire" class="nav-link">← Back</a>
+      <button id="langBtn" style="background:none;border:0.5px solid var(--border-gold);color:var(--gold);font-family:var(--font-mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;padding:5px 12px;cursor:pointer;margin-right:0.5rem;"><span id="langLabel">EN</span></button><button id="themeBtn">Light</button>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <a href="/acquire" class="back-link">All portals</a>
+    <p class="eyebrow">Media Portal · ASCENSION 2027</p>
+    <h1>Cover<br>ASCENSION.</h1>
+    <p class="lead">A documentary opportunity. A global wellness audience. An editorial partnership. ASCENSION is a story worth telling — Journalists, videographers, filmmakers, and podcasters welcome.</p>
+
+    <h2>Who we're looking for</h2>
+    <ul class="who-list">
+      <li>Journalists covering wellness, travel, and transformation</li>
+      <li>Videographers — short-form and long-form content</li>
+      <li>Podcast hosts in the wellness / transformation space</li>
+      <li>Documentary filmmakers</li>
+      <li>Photography collectives</li>
+    </ul>
+
+    <h2>What you get</h2>
+    <div class="props-grid">
+      <div class="prop">
+        <div class="prop-label">Access</div>
+        <p class="prop-note">Direct access to 20 curated wellness professionals. Behind-the-scenes documentation rights, exclusive practitioner interviews.</p>
+      </div>
+      <div class="prop">
+        <div class="prop-label">Immersion</div>
+        <p class="prop-note">Full retreat immersion — optional day pass or full attendance, whichever suits your coverage.</p>
+      </div>
+      <div class="prop">
+        <div class="prop-label">Distribution</div>
+        <p class="prop-note">Co-branding with MODUS editorial reach. Syndication rights to MODUS platforms.</p>
+      </div>
+    </div>
+
+    <h2>Partnership models</h2>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">Sponsored Coverage</div>
+        <div class="tier-title">$5,000–$10,000</div>
+        <p class="tier-desc">Negotiate exclusive media coverage rights. Your outlet gets first-look editorial; ASCENSION gets distribution.</p>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Revenue Share</div>
+        <div class="tier-title">Negotiated per project</div>
+        <p class="tier-desc">A profit-share model for a documentary or series partnership — negotiated per project.</p>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Ambassador Media</div>
+        <div class="tier-title">Zero cost to attend</div>
+        <p class="tier-desc">Attend as a journalist at no cost. You produce content independently; ASCENSION gets tag/credit in your work.</p>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <h2>Media inquiry</h2>
+    <form id="media-form" action="https://formspree.io/f/xbdekqyr" method="POST">
+      <input type="hidden" name="form_type" value="media">
+      <input type="hidden" name="_subject" value="Media Partnership Inquiry — ASCENSION 2027">
+
+      <div class="field-group">
+        <div class="field">
+          <label>Full Name *</label>
+          <input type="text" name="name" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label>Email *</label>
+          <input type="email" name="email" required placeholder="you@example.com">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Outlet / Channel / Publication</label>
+        <input type="text" name="outlet" placeholder="Where does your work appear?">
+      </div>
+
+      <div class="field">
+        <label>Portfolio or Channel Link</label>
+        <input type="url" name="website" placeholder="https://...">
+      </div>
+
+      <div class="field">
+        <label>Media Type *</label>
+        <select name="media_type" required>
+          <option value="">Select...</option>
+          <option>Journalism / Written</option>
+          <option>Videography</option>
+          <option>Podcast</option>
+          <option>Documentary Film</option>
+          <option>Photography</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Which partnership model interests you? *</label>
+        <select name="model" required>
+          <option value="">Select...</option>
+          <option>Sponsored Coverage ($5K–$10K)</option>
+          <option>Revenue Share</option>
+          <option>Ambassador Media</option>
+          <option>Not sure — let's discuss</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Tell us about your coverage plan *</label>
+        <textarea name="pitch" rows="4" required placeholder="What would you produce? Audience size, format, timeline..."></textarea>
+      </div>
+
+      <button type="submit" class="cta-btn">Submit Inquiry</button>
+      <p class="form-note">We review all inquiries within 2 weeks.</p>
+    </form>
+
+    <div id="media-success">
+      <p>Inquiry received.</p>
+      <p>We'll review and be in touch within two weeks. Thank you for your interest in covering ASCENSION.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:2rem 0;border-top:0.5px solid var(--border,rgba(212,168,75,0.2));">
+    <p style="font-family:var(--font-mono,monospace);font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:0.5rem;">Questions? Media</p>
+    <a href="mailto:media@ascension.modus.gallery" style="font-family:var(--font-ed,serif);font-size:1.1rem;color:var(--text,inherit);">media@ascension.modus.gallery</a>
+  </div>
+
+  <footer>
+    <p>© 2026 MODUS · <a href="/acquire">All portals</a> &nbsp;·&nbsp; <a href="/acquire/attend">Attend the retreat</a></p>
+  </footer>
+
+  <script>
+  (function(){
+    var btn=document.getElementById('themeBtn');
+    var langs=['en','vi','fr','zh','ko'];
+    var langLabels={en:'EN',vi:'VI',fr:'FR',zh:'中文',ko:'한국어'};
+    var lk='ascension-lang';
+    var langBtn=document.getElementById('langBtn'),langLbl=document.getElementById('langLabel');
+    function applyLang(l){
+      if(langs.indexOf(l)===-1)l='en';
+      document.querySelectorAll('[data-en]').forEach(function(el){var t=el.dataset[l];el.innerHTML=(t!==undefined&&t!=='')?t:el.dataset.en;});
+      if(langLbl)langLbl.textContent=langLabels[l]||l.toUpperCase();
+      localStorage.setItem(lk,l);
+      localStorage.setItem('modus-lang',l==='fr'?'fr':'en');
+    }
+    (function(){var sl=localStorage.getItem(lk)||localStorage.getItem('modus-lang')||'en';applyLang(sl);})();
+    if(langBtn){langBtn.addEventListener('click',function(){var cur=localStorage.getItem(lk)||'en';var next=langs[(langs.indexOf(cur)+1)%langs.length];applyLang(next);});}
+    var cur=localStorage.getItem('modus-theme')||'dark';
+    function apply(t){document.documentElement.setAttribute('data-theme',t);if(btn)btn.textContent=t==='dark'?'Light':'Dark';localStorage.setItem('modus-theme',t);}
+    apply(cur);
+    if(btn)btn.addEventListener('click',function(){apply(cur=cur==='dark'?'light':'dark');});
+    var form=document.getElementById('media-form');
+    if(form){form.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(form);fetch(form.action,{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){if(r.ok){form.style.display='none';document.getElementById('media-success').style.display='block';}else{alert('Something went wrong — please try again.');}}).catch(function(){alert('Connection error — please try again.');});});}
+  })();
+  </script>
+</body>
+</html>

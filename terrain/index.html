@@ -106,7 +106,7 @@
     [data-theme="dark"] .logo-black{display:none}
     [data-theme="light"] .logo-beige{display:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
-    .nav-link{font-family:var(--font-mono);font-size: 11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
     .nav-link:hover,.nav-link.active{color:var(--text)}
 
     /* THEME TOGGLE */
@@ -165,13 +165,13 @@
     }
     .hero-title{
       font-family:var(--font-display);font-size:clamp(97px,9.5vw,208px);
-      font-weight:300;letter-spacing:-0.03em;line-height:0.88;color:var(--white);
+      font-weight:400;letter-spacing:-0.03em;line-height:0.88;color:var(--white);
       opacity:0;animation:fadeU 1.2s ease 0.55s forwards;
     }
     .hero-title em{font-style:italic;color:rgba(240,232,213,0.52)}
     .hero-sub{
       margin-top:1.6rem;font-family:var(--font-ed);
-      font-size:clamp(15px,2vw,20px);font-style:italic;font-weight:300;
+      font-size:clamp(15px,2vw,20px);font-style:italic;font-weight:400;
       color:rgba(240,232,213,0.65);line-height:1.55;max-width:480px;
       opacity:0;animation:fadeU 1s ease 0.8s forwards;
     }
@@ -182,7 +182,7 @@
     }
     .hero-credit{
       position:absolute;bottom:1.4rem;right:var(--gutter);z-index:3;
-      font-family:var(--font-ui);font-size:12px;letter-spacing:0.18em;
+      font-family:var(--font-ui);font-size:13px;letter-spacing:0.18em;
       text-transform:uppercase;color:rgba(255,255,255,0.28);
       opacity:0;animation:fadeU 0.8s ease 1.8s forwards;
     }
@@ -196,7 +196,7 @@
     .feature-banner{width:100%;margin-bottom:3rem;overflow:hidden;position:relative}
     .feature-banner img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block}
     @media(min-width:900px){.feature-banner img{aspect-ratio:21/9}}
-    .feature-banner .photo-credit{padding:0.5rem 0 0;font-family:var(--font-ui);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)}
+    .feature-banner .photo-credit{padding:0.5rem 0 0;font-family:var(--font-ui);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)}
     .lead-grid{
       display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;
     }
@@ -215,7 +215,7 @@
     .lead-body{margin-top:2rem}
     .lead-body p{
       font-family:var(--font-ed);font-size:clamp(15px,1.6vw,18px);
-      font-weight:300;line-height:1.82;color:var(--text);
+      font-weight:400;line-height:1.82;color:var(--text);
     }
     .lead-body p+p{margin-top:1.2em}
 
@@ -231,14 +231,14 @@
       text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;
     }
     .mi-score{
-      font-family:var(--font-ed);font-size:50px;font-weight:300;
+      font-family:var(--font-ed);font-size:50px;font-weight:400;
       letter-spacing:-0.04em;line-height:1;margin-bottom:1rem;
       display:flex;align-items:baseline;gap:4px;color:var(--text);
     }
-    .mi-score span{font-size:20px;color:var(--text-dim);font-weight:300}
+    .mi-score span{font-size:20px;color:var(--text-dim);font-weight:400}
     .mi-axes{display:flex;flex-direction:column;gap:9px}
     .mi-axis{display:grid;grid-template-columns:1fr 90px 24px;align-items:center;gap:10px}
-    .mi-aname{font-family:var(--font-ui);font-size:10px;color:var(--text-dim);letter-spacing:0.14em}
+    .mi-aname{font-family:var(--font-ui);font-size:13px;color:var(--text-dim);letter-spacing:0.14em}
     .mi-bar{height:2px;background:var(--border);border-radius:1px;overflow:hidden}
     .mi-fill{height:100%;background:var(--gold);border-radius:1px;transition:width 1.2s var(--ease-spring)}
     .mi-val{font-family:var(--font-ed);font-size:15px;font-weight:400;text-align:right;color:var(--text)}
@@ -249,7 +249,7 @@
     .lead-photo-2{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 35%;margin-top:0.8rem}
     .photo-cap {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size:13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -261,7 +261,7 @@
       padding:4rem var(--gutter) 2rem;max-width:1200px;margin:0 auto;
       display:flex;align-items:baseline;justify-content:space-between;
     }
-    .section-label{font-family:var(--font-ui);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim)}
+    .section-label{font-family:var(--font-ui);font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim)}
     .section-title{font-family:var(--font-ed);font-size:clamp(24px,3vw,36px);font-weight:400;letter-spacing:-0.02em;color:var(--text)}
 
     /* ===== CARD GRID ===== */
@@ -275,10 +275,10 @@
     .tc-img{width:100%;aspect-ratio:4/3;overflow:hidden}
     .tc-photo{width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--ease-spring)}
     .tc:hover .tc-photo{transform:scale(1.04)}
-    .tc-loc{font-family:var(--font-ui);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-top:0.2rem}
+    .tc-loc{font-family:var(--font-ui);font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-top:0.2rem}
     .tc-name{font-family:var(--font-ed);font-size:clamp(18px,2vw,24px);font-weight:400;letter-spacing:-0.02em;line-height:1.1;color:var(--text)}
     .tc-desc{font-family:var(--font-ed);font-size:16.5px;font-style:italic;color:var(--text);line-height:1.7}
-    .tc-meta{font-family:var(--font-ui);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);display:flex;gap:1rem}
+    .tc-meta{font-family:var(--font-ui);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);display:flex;gap:1rem}
     .tc-score{color:var(--gold)}
 
     /* Placeholder cards for Amangiri / La Réserve / Six Senses */
@@ -287,7 +287,7 @@
     .cc3{background:linear-gradient(145deg,#4a7a60,#6B9E80,#9BBE9A,#C5D4BA)}
     .ph-label{
       width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-      font-family:var(--font-ui);font-size:12px;letter-spacing:0.16em;
+      font-family:var(--font-ui);font-size:13px;letter-spacing:0.16em;
       text-transform:uppercase;color:rgba(240,232,213,0.3);text-align:center;
       line-height:1.8;padding:1rem;
     }
@@ -313,7 +313,7 @@
     }
     .art-body p{
       font-family:var(--font-ed);font-size:clamp(15px,1.6vw,17px);
-      font-weight:300;line-height:1.82;color:var(--text);
+      font-weight:400;line-height:1.82;color:var(--text);
     }
     .art-body p+p{margin-top:1.1em}
     .art-meta{
@@ -335,7 +335,7 @@
       transition:border-color var(--ease);
     }
     .footer-brand{font-family:var(--font-ed);font-size:22px;letter-spacing:-0.02em;color:var(--text)}
-    .footer-copy{font-family:var(--font-ui);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
+    .footer-copy{font-family:var(--font-ui);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
 
     /* ===== ANIMATIONS ===== */
     @keyframes fadeU{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
@@ -388,7 +388,7 @@
     }
     .side-menu-close:hover { color:var(--text); }
     .side-menu-label {
-      font-family:var(--font-mono,'DM Mono',monospace); font-size:12px;
+      font-family:var(--font-mono,'DM Mono',monospace); font-size:13px;
       letter-spacing:0.32em; text-transform:uppercase;
       color:var(--gold); margin-bottom:1.2rem;
     white-space:nowrap;}
@@ -396,7 +396,7 @@
     .side-menu-nav a {
       font-family:var(--font-ed,'Lovine','Cormorant Garamond',serif);
       font-size:clamp(0.9rem,2vw,1.15rem);
-      font-weight:300; font-style:italic;
+      font-weight:400; font-style:italic;
       color:var(--text-dim); line-height:1.1;
       padding:0.09rem 0;
       border-bottom:0.5px solid var(--border);
@@ -406,7 +406,7 @@
     .side-menu-nav a:hover { color:var(--text); padding-left:0.5rem; }
     .side-menu-issue {
       margin-top:auto;
-      font-family:var(--font-mono,'DM Mono',monospace); font-size:12px;
+      font-family:var(--font-mono,'DM Mono',monospace); font-size:13px;
       letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim);
     }
     .side-overlay {
@@ -448,7 +448,7 @@
       margin-top: var(--nav-h);
     }
     .dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue {
-      font-family: var(--font-mono); font-size: 9px;
+      font-family: var(--font-mono); font-size:13px;
       letter-spacing: 0.28em; text-transform: uppercase;
     }
     .dept-id-label { color: var(--text-dim); }
@@ -479,7 +479,7 @@
       .card-meta,.card-byline,.coming-sub,.sa-attr,.mi-note,.ed-pos-label,
       .video-label,.spec-title,.spec-key,.deck-attr,.testimony-attr,
       .vtext p,.compare-table th,.axis-bar-label,.mi-car-sub,
-      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:12px!important}
+      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:13px!important}
     }
   </style>
   <!-- AI agent discoverability -->
@@ -780,7 +780,7 @@
           <div class="mi-axis"><span class="mi-aname">Cultural Programming</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
         </div>
       </div>
-      <a href="/terrain/residences-boutique" class="btn-outline" style="display:inline-block;margin-top:2rem;padding:0.6rem 1.4rem;border:1px solid var(--border-gold);color:var(--gold);font-family:var(--font-ui);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;">Read Full Feature →</a>
+      <a href="/terrain/residences-boutique" class="btn-outline" style="display:inline-block;margin-top:2rem;padding:0.6rem 1.4rem;border:1px solid var(--border-gold);color:var(--gold);font-family:var(--font-ui);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;">Read Full Feature →</a>
     </div>
     <div class="lead-img-col">
       <img class="lead-photo" src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/v1786721827/Screen_Shot_2026-08-14_at_11.33.51_AM_bx82c7.png" alt="Chef Hamza Bousaidan at the kitchen grill — Résidences Boutique">
@@ -824,7 +824,7 @@
           <div class="mi-axis"><span class="mi-aname">Investment Value</span><div class="mi-bar"><div class="mi-fill" style="width:100%"></div></div><span class="mi-val">10</span></div>
         </div>
       </div>
-      <a href="https://www.aman.com/resorts/amanwella" target="_blank" rel="noopener" class="btn-outline" style="display:inline-block;margin-top:2rem;padding:0.6rem 1.4rem;border:1px solid var(--border-gold);color:var(--gold);font-family:var(--font-ui);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;">Amanwella · aman.com →</a>
+      <a href="https://www.aman.com/resorts/amanwella" target="_blank" rel="noopener" class="btn-outline" style="display:inline-block;margin-top:2rem;padding:0.6rem 1.4rem;border:1px solid var(--border-gold);color:var(--gold);font-family:var(--font-ui);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;">Amanwella · aman.com →</a>
     </div>
     <div class="lead-img-col">
       <img class="lead-photo" src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_800,h_600,q_auto,f_auto/v1786729053/Screen_Shot_2026-08-14_at_1.37.26_PM_hjb3wm.png" alt="Amanwella — suite interior, Tangalle, Sri Lanka">
@@ -916,50 +916,50 @@
 
   <!-- Credit -->
   <section style="max-width:1240px;margin:0 auto;padding:1.5rem clamp(1.25rem,5vw,4rem) 0">
-    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim,rgba(234,224,204,0.88))">Photography: Daniel Armon Stanford</p>
+    <p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim,rgba(234,224,204,0.88))">Photography: Daniel Armon Stanford</p>
   </section>
 
   <!-- Continue Reading -->
   <section style="max-width:1240px;margin:0 auto;padding:3rem clamp(1.25rem,5vw,4rem) 0" aria-label="Continue reading">
-    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:1.2rem">Continue Reading</p>
+    <p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:1.2rem">Continue Reading</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px">
       <a href="/terrain/sagrada-familia" style="display:block;border:0.5px solid var(--border-gold,rgba(212,168,75,0.3));text-decoration:none;overflow:hidden">
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_480,h_280,q_auto,f_auto/sagrada-familia-hero.jpg" alt="Sagrada Família — Barcelona bucket list" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block">
         <span style="display:block;padding:0.85rem 1.1rem 1rem">
-          <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Terrain · Barcelona</span>
-          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Sagrada Fam&iacute;lia — The Building That Outlived Everyone</span>
+          <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Terrain · Barcelona</span>
+          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Sagrada Fam&iacute;lia — The Building That Outlived Everyone</span>
         </span>
       </a>
       <a href="/space" style="display:block;border:0.5px solid var(--border,rgba(234,224,204,0.1));text-decoration:none;overflow:hidden">
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_480,h_280,q_auto,f_auto/v1777553333/Stanford-Brasilia-32_full-Space_neqp0o.jpg" alt="Brasília — Oscar Niemeyer" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block">
         <span style="display:block;padding:0.85rem 1.1rem 1rem">
-          <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Space</span>
-          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Bras&iacute;lia — Architecture of Intent</span>
+          <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Space</span>
+          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Bras&iacute;lia — Architecture of Intent</span>
         </span>
       </a>
       <a href="/space/xingu" style="display:block;border:0.5px solid var(--border,rgba(234,224,204,0.1));text-decoration:none;overflow:hidden">
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_480,h_280,q_auto,f_auto/xingu-hero.jpg" alt="Casa Xingu — Tetro Arquitetura" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block">
         <span style="display:block;padding:0.85rem 1.1rem 1rem">
-          <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Space</span>
-          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Casa Xingu — 50/50 CANON</span>
+          <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Space</span>
+          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Casa Xingu — 50/50 CANON</span>
         </span>
       </a>
       <a href="/figures" style="display:block;border:0.5px solid var(--border,rgba(234,224,204,0.1));text-decoration:none;overflow:hidden">
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_480,h_280,q_auto,f_auto/Gabriela_Warrior_D80_1857_ybwbj7.jpg" alt="Gabriela Warrior — Figures" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block">
         <span style="display:block;padding:0.85rem 1.1rem 1rem">
-          <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Figures</span>
-          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Gabriela Warrior — Fine Art Editorial</span>
+          <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Figures</span>
+          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Gabriela Warrior — Fine Art Editorial</span>
         </span>
       </a>
     </div>
-    <p style="margin-top:1rem;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase"><a href="/scores" style="color:var(--gold,#D4A84B);text-decoration:none">View all MODUS Index scores &rarr;</a></p>
+    <p style="margin-top:1rem;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase"><a href="/scores" style="color:var(--gold,#D4A84B);text-decoration:none">View all MODUS Index scores &rarr;</a></p>
   </section>
 
   <!-- Acquire hook -->
   <section style="max-width:1240px;margin:0 auto;padding:2.5rem clamp(1.25rem,5vw,4rem) 0">
     <a href="/acquire" style="display:block;border:0.5px solid var(--border-gold,rgba(212,168,75,0.3));background:var(--bg2,rgba(255,255,255,0.02));padding:1.8rem 2rem;text-decoration:none">
-      <span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold,#D4A84B)">MODUS &middot; Acquire</span>
-      <span style="display:block;margin-top:0.5rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--text,#EAE0CC)">Reserve the Print Collector Edition &middot; Limited run &middot; No reprint &rarr;</span>
+      <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold,#D4A84B)">MODUS &middot; Acquire</span>
+      <span style="display:block;margin-top:0.5rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--text,#EAE0CC)">Reserve the Print Collector Edition &middot; Limited run &middot; No reprint &rarr;</span>
     </a>
   </section>
 
@@ -967,10 +967,10 @@
   <section itemscope itemtype="https://schema.org/Person" style="max-width:1240px;margin:0 auto;padding:3rem clamp(1.25rem,5vw,4rem) 3rem" aria-label="About the author">
     <div style="border-top:0.5px solid var(--border-gold,rgba(212,168,75,0.3));padding-top:2rem;display:flex;gap:1.5rem;align-items:baseline;flex-wrap:wrap">
       <div>
-        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:0.5rem">The Author</p>
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(1.4rem,2.4vw,1.8rem);color:var(--text,#EAE0CC)"><span itemprop="name">Daniel Stanford</span> &mdash; <span itemprop="jobTitle">Editor-in-Chief</span></p>
-        <p style="margin-top:0.6rem;max-width:640px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.75;color:var(--text-dim,rgba(234,224,204,0.88))" itemprop="description">Founder of MODUS and principal of Stanford Emporium Inc., Montréal. Twenty-five years in luxury branding, fine art, and editorial direction. Every score on this site is his.</p>
-        <p style="margin-top:0.8rem"><a itemprop="url" href="https://daniel-stanford.com" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold,#D4A84B);text-decoration:none">daniel-stanford.com &rarr;</a></p>
+        <p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:0.5rem">The Author</p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.4rem,2.4vw,1.8rem);color:var(--text,#EAE0CC)"><span itemprop="name">Daniel Stanford</span> &mdash; <span itemprop="jobTitle">Editor-in-Chief</span></p>
+        <p style="margin-top:0.6rem;max-width:640px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.75;color:var(--text-dim,rgba(234,224,204,0.88))" itemprop="description">Founder of MODUS and principal of Stanford Emporium Inc., Montréal. Twenty-five years in luxury branding, fine art, and editorial direction. Every score on this site is his.</p>
+        <p style="margin-top:0.8rem"><a itemprop="url" href="https://daniel-stanford.com" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold,#D4A84B);text-decoration:none">daniel-stanford.com &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -979,14 +979,14 @@
   <span class="footer-brand">MODUS</span>
   <span class="footer-copy">A Stanford Emporium publication &nbsp;·&nbsp; © MODUS MMXXVI</span>
   <div style="width:100%;padding:0 0 1.2rem 0;border-bottom:0.5px solid var(--border);margin-bottom:1.2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);line-height:1.7;">
+    <div style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);line-height:1.7;">
       MODUS — Taste Intelligence<br>
       Published by <a href="https://stanfordemporium.com" rel="publisher" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--border-gold);">Stanford Emporium Inc.</a>
     </div>
     <div style="display:flex;align-items:center;gap:1.25rem;">
-      <a href="https://www.instagram.com/modus.luxmag" target="_blank" rel="noopener me" aria-label="@modus.luxmag on Instagram" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>@modus.luxmag</a>
-      <a href="https://stanfordemporium.com" rel="publisher" target="_blank" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Stanford Emporium Inc. →</a>
-      <a href="/press" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Press →</a>
+      <a href="https://www.instagram.com/modus.luxmag" target="_blank" rel="noopener me" aria-label="@modus.luxmag on Instagram" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>@modus.luxmag</a>
+      <a href="https://stanfordemporium.com" rel="publisher" target="_blank" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Stanford Emporium Inc. →</a>
+      <a href="/press" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Press →</a>
     </div>
   </div>
   </footer>

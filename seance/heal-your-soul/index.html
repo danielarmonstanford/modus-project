@@ -108,7 +108,7 @@
     [data-theme="dark"] .logo-black { display:none; }
     [data-theme="light"] .logo-beige { display:none; }
     .nav-links { display:flex; gap:2rem; align-items:center; }
-    .nav-link { font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em;
+    .nav-link { font-family:var(--font-mono); font-size:13px; letter-spacing:0.1em;
       text-transform:uppercase; color:var(--text-dim); transition:color var(--ease); }
     .nav-link:hover { color:var(--text); }
     .nav-link.active { color:var(--gold); }
@@ -120,7 +120,7 @@
       transition:transform 0.3s,opacity 0.3s; }
     .theme-btn { background:transparent; border:0.5px solid var(--border-strong);
       border-radius:20px; padding:5px 14px; cursor:pointer; font-family:var(--font-mono);
-      font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim);
+      font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim);
       transition:all var(--ease); display:flex; align-items:center; gap:6px; min-height:44px; }
     .theme-btn:hover { color:var(--text); border-color:var(--border-gold); }
     .theme-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); }
@@ -137,23 +137,23 @@
     .side-menu-close { align-self:flex-end; background:none; border:none; cursor:pointer;
       font-size:1.5rem; color:var(--text-dim); margin-bottom:2rem; transition:color var(--ease); }
     .side-menu-close:hover { color:var(--text); }
-    .side-menu-label { font-family:var(--font-mono); font-size:9px; letter-spacing:0.28em;
+    .side-menu-label { font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--gold); margin-bottom:2rem; }
     .side-menu-nav { display:flex; flex-direction:column; overflow-y:auto; flex:1 1 0; min-height:0; }
     .side-menu-nav a { font-family:var(--font-ed); font-size:clamp(0.9rem,2vw,1.15rem);
-      font-weight:300; font-style:italic; color:var(--text-dim); line-height:1.1;
+      font-weight:400; font-style:italic; color:var(--text-dim); line-height:1.1;
       padding:0.09rem 0; border-bottom:0.5px solid var(--border); transition:color 0.2s,padding-left 0.2s; }
     .side-menu-nav a:first-child { border-top:0.5px solid var(--border); }
     .side-menu-nav a:hover, .side-menu-nav a.active { color:var(--text); padding-left:0.5rem; }
     .side-menu-issue { margin-top:auto; padding-top:1.5rem; font-family:var(--font-mono);
-      font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); }
+      font-size:13px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); }
 
     /* ── Dept identifier ── */
     .dept-identifier { display:flex; align-items:center; gap:0.6rem;
       padding:0.75rem var(--gutter); border-bottom:0.5px solid var(--border-gold);
       background:var(--bg); margin-top:var(--nav-h); }
     .dept-id-label,.dept-id-sep,.dept-id-name,.dept-id-issue {
-      font-family:var(--font-mono); font-size:9px; letter-spacing:0.28em; text-transform:uppercase; }
+      font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em; text-transform:uppercase; }
     .dept-id-label { color:var(--text-dim); }
     .dept-id-sep { color:var(--gold); opacity:0.5; }
     .dept-id-name { color:var(--gold); }
@@ -168,21 +168,21 @@
       pointer-events:none; }
     .retreat-hero-text { position:absolute; bottom:0; left:0; right:0;
       padding:clamp(3rem,7vw,6rem) var(--gutter); }
-    .retreat-hero-eyebrow { font-family:var(--font-mono); font-size:10px; letter-spacing:0.32em;
+    .retreat-hero-eyebrow { font-family:var(--font-mono); font-size:13px; letter-spacing:0.32em;
       text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; display:block; }
     .retreat-hero-title { font-family:var(--font-display);
       font-size:clamp(3.5rem,10vw,9rem); font-weight:normal;
       letter-spacing:-0.04em; line-height:0.9; color:#F0E8D5; margin-bottom:1.25rem; }
-    .retreat-hero-meta { font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em;
+    .retreat-hero-meta { font-family:var(--font-mono); font-size:13px; letter-spacing:0.22em;
       text-transform:uppercase; color:rgba(240,232,213,0.65); margin-bottom:2.5rem; display:block; }
     .retreat-hero-ctas { display:flex; gap:1rem; flex-wrap:wrap; }
     .cta-gold { display:inline-flex; align-items:center; gap:0.4rem;
-      font-family:var(--font-mono); font-size:11px; letter-spacing:0.28em;
+      font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--bg); background:var(--gold);
       padding:13px 28px; transition:opacity var(--ease); }
     .cta-gold:hover { opacity:0.85; }
     .cta-outline { display:inline-flex; align-items:center; gap:0.4rem;
-      font-family:var(--font-mono); font-size:11px; letter-spacing:0.28em;
+      font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:#F0E8D5;
       border:0.5px solid rgba(240,232,213,0.4); padding:13px 28px;
       transition:border-color var(--ease),color var(--ease); }
@@ -193,7 +193,7 @@
       background:var(--bg2); border-bottom:0.5px solid var(--border-gold);
       display:flex; overflow-x:auto; scrollbar-width:none; }
     .sub-nav::-webkit-scrollbar { display:none; }
-    .sub-nav a { font-family:var(--font-mono); font-size:10px; letter-spacing:0.22em;
+    .sub-nav a { font-family:var(--font-mono); font-size:13px; letter-spacing:0.22em;
       text-transform:uppercase; color:var(--text-dim); padding:1rem var(--gutter);
       white-space:nowrap; border-right:0.5px solid var(--border);
       transition:color var(--ease),background var(--ease); flex-shrink:0; }
@@ -203,7 +203,7 @@
     /* ── Sections ── */
     .section { padding:clamp(3.5rem,7vw,6rem) var(--gutter); max-width:1200px; margin:0 auto; }
     .section-wrap { border-bottom:0.5px solid var(--border); }
-    .eyebrow { font-family:var(--font-mono); font-size:10px; letter-spacing:0.32em;
+    .eyebrow { font-family:var(--font-mono); font-size:13px; letter-spacing:0.32em;
       text-transform:uppercase; color:var(--gold); margin-bottom:2rem; display:block; }
     .section-title { font-family:var(--font-display);
       font-size:clamp(2.5rem,5.5vw,5rem); font-weight:normal;
@@ -218,7 +218,7 @@
     .positioning-list li { font-family:var(--font-ed); font-size:clamp(1rem,1.5vw,1.1rem);
       color:var(--text-dim); line-height:1.7; padding:0.65rem 0;
       border-bottom:0.5px solid var(--border); display:flex; gap:1rem; }
-    .positioning-list li::before { content:'✦'; color:var(--gold); font-size:10px;
+    .positioning-list li::before { content:'✦'; color:var(--gold); font-size:13px;
       flex-shrink:0; margin-top:0.35rem; font-style:normal; }
 
     /* ── Modalities grid ── */
@@ -227,13 +227,13 @@
     .modality-icon { font-family:var(--font-mono); font-size:18px; margin-bottom:1rem;
       color:var(--text-dim); display:block; line-height:1; }
     .modality-badge { position:absolute; top:1.25rem; right:1.25rem;
-      font-family:var(--font-mono); font-size:9px; letter-spacing:0.2em;
+      font-family:var(--font-mono); font-size:13px; letter-spacing:0.2em;
       text-transform:uppercase; color:var(--gold); border:0.5px solid var(--border-gold);
       padding:3px 8px; }
     .modality-title { font-family:var(--font-ed); font-size:clamp(1.1rem,1.8vw,1.35rem);
       font-style:italic; font-weight:400; color:var(--text); margin-bottom:0.75rem; line-height:1.2; }
     .modality-items { list-style:none; }
-    .modality-items li { font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em;
+    .modality-items li { font-family:var(--font-mono); font-size:13px; letter-spacing:0.12em;
       text-transform:uppercase; color:var(--text-dim); padding:0.3rem 0;
       border-bottom:0.5px solid var(--border); line-height:1.4; }
     .modality-items li:last-child { border-bottom:none; }
@@ -242,7 +242,7 @@
     .fascia-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,5rem); align-items:start; }
     .fascia-offering { margin-top:2.5rem; display:flex; flex-direction:column; gap:1.5px; background:var(--border); }
     .fascia-offering-item { background:var(--bg2); padding:1.5rem 1.75rem; }
-    .fascia-offering-title { font-family:var(--font-mono); font-size:10px; letter-spacing:0.28em;
+    .fascia-offering-title { font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--gold); margin-bottom:0.4rem; display:block; }
     .fascia-offering-desc { font-family:var(--font-ed); font-size:clamp(0.9rem,1.3vw,1rem);
       font-style:italic; color:var(--text-dim); line-height:1.65; }
@@ -251,21 +251,21 @@
       padding:3rem; text-align:center; min-height:420px; }
     .fascia-diagram { font-family:var(--font-display); font-size:clamp(5rem,10vw,9rem);
       color:var(--border-gold); line-height:1; margin-bottom:2rem; font-style:italic; }
-    .fascia-diagram-caption { font-family:var(--font-mono); font-size:9px; letter-spacing:0.28em;
+    .fascia-diagram-caption { font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--text-dim); line-height:2; }
 
     /* ── Sleep conference ── */
     .sleep-banner { background:linear-gradient(135deg,rgba(212,168,75,0.06) 0%,rgba(212,168,75,0.02) 100%);
       border:0.5px solid var(--border-gold); padding:clamp(2rem,4vw,3.5rem); margin-bottom:2.5rem; }
-    .sleep-banner-label { font-family:var(--font-mono); font-size:10px; letter-spacing:0.32em;
+    .sleep-banner-label { font-family:var(--font-mono); font-size:13px; letter-spacing:0.32em;
       text-transform:uppercase; color:var(--gold); margin-bottom:1rem; display:block; }
     .sleep-banner-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,3.5rem);
       font-weight:normal; letter-spacing:-0.03em; line-height:0.95; color:var(--text); margin-bottom:0.75rem; }
-    .sleep-banner-meta { font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em;
+    .sleep-banner-meta { font-family:var(--font-mono); font-size:13px; letter-spacing:0.18em;
       text-transform:uppercase; color:var(--text-dim); }
     .sleep-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5px; background:var(--border); }
     .sleep-panel { background:var(--bg); padding:2rem 1.75rem; }
-    .sleep-panel-label { font-family:var(--font-mono); font-size:9px; letter-spacing:0.28em;
+    .sleep-panel-label { font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; display:block; }
     .sleep-panel-title { font-family:var(--font-ed); font-size:clamp(1.1rem,1.8vw,1.35rem);
       font-style:italic; color:var(--text); margin-bottom:1rem; line-height:1.2; }
@@ -274,14 +274,14 @@
       color:var(--text-dim); padding:0.5rem 0; border-bottom:0.5px solid var(--border);
       font-style:italic; display:flex; gap:0.75rem; line-height:1.55; }
     .topic-list li::before { content:'→'; color:var(--gold); font-family:var(--font-mono);
-      font-size:9px; flex-shrink:0; margin-top:0.25rem; }
+      font-size:13px; flex-shrink:0; margin-top:0.25rem; }
     .speaker-slot { background:var(--bg2); border:0.5px solid var(--border);
       padding:1.5rem; display:flex; flex-direction:column; gap:0.5rem; }
-    .speaker-slot-role { font-family:var(--font-mono); font-size:9px; letter-spacing:0.24em;
+    .speaker-slot-role { font-family:var(--font-mono); font-size:13px; letter-spacing:0.24em;
       text-transform:uppercase; color:var(--gold); }
     .speaker-slot-name { font-family:var(--font-ed); font-size:clamp(1rem,1.5vw,1.1rem);
       font-style:italic; color:var(--text-dim); }
-    .speaker-slot-status { font-family:var(--font-mono); font-size:9px; letter-spacing:0.18em;
+    .speaker-slot-status { font-family:var(--font-mono); font-size:13px; letter-spacing:0.18em;
       text-transform:uppercase; color:var(--text-dim); opacity:0.5; margin-top:0.25rem; }
 
     /* ── Schedule tabs ── */
@@ -289,7 +289,7 @@
       border-bottom:0.5px solid var(--border); margin-bottom:0; }
     .schedule-tabs::-webkit-scrollbar { display:none; }
     .tab-btn { background:none; border:none; border-bottom:2px solid transparent;
-      cursor:pointer; font-family:var(--font-mono); font-size:10px; letter-spacing:0.22em;
+      cursor:pointer; font-family:var(--font-mono); font-size:13px; letter-spacing:0.22em;
       text-transform:uppercase; color:var(--text-dim); padding:1rem 1.5rem;
       white-space:nowrap; transition:color var(--ease),border-color var(--ease);
       margin-bottom:-0.5px; }
@@ -297,7 +297,7 @@
     .tab-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
     .tab-panel { display:none; padding:2.5rem 0; }
     .tab-panel.active { display:grid; grid-template-columns:1fr 1.6fr; gap:3rem; }
-    .day-phase { font-family:var(--font-mono); font-size:9px; letter-spacing:0.28em;
+    .day-phase { font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; display:block; }
     .day-title { font-family:var(--font-display); font-size:clamp(1.6rem,3vw,2.6rem);
       font-weight:normal; letter-spacing:-0.02em; line-height:1; color:var(--text); margin-bottom:1.25rem; }
@@ -307,18 +307,18 @@
     .time-block { display:grid; grid-template-columns:80px 1fr; gap:1rem;
       padding:0.9rem 0; border-bottom:0.5px solid var(--border); align-items:start; }
     .time-block:last-child { border-bottom:none; }
-    .time-label { font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em;
+    .time-label { font-family:var(--font-mono); font-size:13px; letter-spacing:0.14em;
       text-transform:uppercase; color:var(--text-dim); opacity:0.7; padding-top:0.1rem; }
     .time-activity { font-family:var(--font-ed); font-size:clamp(0.9rem,1.3vw,1rem);
       color:var(--text-dim); line-height:1.5; }
     .time-activity.highlight { color:var(--text); font-style:italic; }
     .time-activity .highlight-mark { color:var(--gold); font-family:var(--font-mono);
-      font-size:9px; letter-spacing:0; margin-right:0.3rem; }
+      font-size:13px; letter-spacing:0; margin-right:0.3rem; }
 
     /* ── Fortnight extension ── */
     .fortnight-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:var(--border); }
     .fortnight-card { background:var(--bg); padding:2rem 1.75rem; }
-    .fortnight-range { font-family:var(--font-mono); font-size:9px; letter-spacing:0.28em;
+    .fortnight-range { font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; display:block; }
     .fortnight-title { font-family:var(--font-ed); font-size:clamp(1.05rem,1.7vw,1.25rem);
       font-style:italic; color:var(--text); margin-bottom:0.75rem; line-height:1.3; }
@@ -328,21 +328,21 @@
     /* ── Speaker slots ── */
     .speakers-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5px; background:var(--border); }
     .speaker-card { background:var(--bg); padding:2rem 1.75rem; display:flex; flex-direction:column; }
-    .speaker-category { font-family:var(--font-mono); font-size:9px; letter-spacing:0.28em;
+    .speaker-category { font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; display:block; }
     .speaker-placeholder { width:64px; height:64px; border:0.5px solid var(--border-gold);
       margin-bottom:1.25rem; display:flex; align-items:center; justify-content:center;
       font-family:var(--font-mono); font-size:16px; color:var(--border-gold); }
     .speaker-role { font-family:var(--font-ed); font-size:clamp(1rem,1.6vw,1.15rem);
       font-style:italic; color:var(--text); margin-bottom:0.3rem; line-height:1.3; }
-    .speaker-tba { font-family:var(--font-mono); font-size:9px; letter-spacing:0.22em;
+    .speaker-tba { font-family:var(--font-mono); font-size:13px; letter-spacing:0.22em;
       text-transform:uppercase; color:var(--text-dim); opacity:0.55; margin-top:auto; padding-top:1rem; }
 
     /* ── Pricing ── */
     .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5px; background:var(--border); }
     .pricing-card { background:var(--bg); padding:clamp(2rem,4vw,3rem); display:flex; flex-direction:column; }
     .pricing-card.featured { background:var(--bg2); }
-    .pricing-label { font-family:var(--font-mono); font-size:10px; letter-spacing:0.28em;
+    .pricing-label { font-family:var(--font-mono); font-size:13px; letter-spacing:0.28em;
       text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; display:block; }
     .pricing-title { font-family:var(--font-display); font-size:clamp(2rem,4vw,3.5rem);
       font-weight:normal; letter-spacing:-0.03em; line-height:0.95; color:var(--text); margin-bottom:0.5rem; }
@@ -355,17 +355,17 @@
       color:var(--text-dim); padding:0.5rem 0; border-bottom:0.5px solid var(--border);
       font-style:italic; display:flex; gap:0.75rem; line-height:1.5; }
     .pricing-features li::before { content:'—'; color:var(--gold); font-family:var(--font-mono);
-      font-size:9px; flex-shrink:0; margin-top:0.2rem; letter-spacing:0; }
-    .pricing-discount { font-family:var(--font-mono); font-size:9px; letter-spacing:0.18em;
+      font-size:13px; flex-shrink:0; margin-top:0.2rem; letter-spacing:0; }
+    .pricing-discount { font-family:var(--font-mono); font-size:13px; letter-spacing:0.18em;
       text-transform:uppercase; color:var(--text-dim); background:var(--gold-dim);
       border:0.5px solid var(--border-gold); padding:8px 12px; margin-bottom:1.5rem; line-height:1.6; }
     .pricing-cta { display:block; text-align:center; font-family:var(--font-mono);
-      font-size:11px; letter-spacing:0.28em; text-transform:uppercase;
+      font-size:13px; letter-spacing:0.28em; text-transform:uppercase;
       color:var(--bg); background:var(--gold); padding:15px; transition:opacity var(--ease); }
     .pricing-cta:hover { opacity:0.85; }
     .pricing-notes { display:grid; grid-template-columns:1fr 1fr; gap:1rem;
       margin-top:2rem; padding-top:2rem; border-top:0.5px solid var(--border); }
-    .pricing-note { font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em;
+    .pricing-note { font-family:var(--font-mono); font-size:13px; letter-spacing:0.14em;
       text-transform:uppercase; color:var(--text-dim); line-height:1.8; }
     .pricing-note strong { color:var(--gold); display:block; margin-bottom:0.25rem; }
 
@@ -384,7 +384,7 @@
     .footer { border-top:0.5px solid var(--border-strong); padding:3rem var(--gutter);
       display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
     .footer-brand { font-family:var(--font-ed); font-size:22px; letter-spacing:-0.02em; color:var(--text); }
-    .footer-copy { font-family:var(--font-mono); font-size:9px; letter-spacing:0.18em;
+    .footer-copy { font-family:var(--font-mono); font-size:13px; letter-spacing:0.18em;
       text-transform:uppercase; color:var(--text-dim); text-align:center; flex:1; }
 
     /* ── Mobile ── */
@@ -413,7 +413,7 @@
     @media(max-width:768px) {
       html { font-size:20px; }
       .footer-copy,.dept-identifier,.eyebrow,.sub-nav a,.speaker-slot-role,
-      .speaker-tba,.pricing-label,.modality-badge { font-size:12px !important; }
+      .speaker-tba,.pricing-label,.modality-badge { font-size:13px !important; }
     }
   </style>
 </head>
@@ -491,9 +491,9 @@
 
     <!-- Language switcher — EN / VI / FR -->
     <div id="lang-switcher" style="display:flex;gap:0;margin-bottom:1.75rem;align-items:center;">
-      <button onclick="setLang('en')" id="ls-en" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;background:#D4A84B;color:#06080C;border:none;padding:6px 14px;cursor:pointer;transition:opacity 0.2s;">EN</button>
-      <button onclick="setLang('vi')" id="ls-vi" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;background:transparent;color:rgba(240,232,213,0.55);border:0.5px solid rgba(240,232,213,0.25);border-left:none;padding:6px 14px;cursor:pointer;transition:all 0.2s;">VI</button>
-      <button onclick="setLang('fr')" id="ls-fr" style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;background:transparent;color:rgba(240,232,213,0.55);border:0.5px solid rgba(240,232,213,0.25);border-left:none;padding:6px 14px;cursor:pointer;transition:all 0.2s;">FR</button>
+      <button onclick="setLang('en')" id="ls-en" style="font-family:'DM Mono','Courier New',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;background:#D4A84B;color:#06080C;border:none;padding:6px 14px;cursor:pointer;transition:opacity 0.2s;">EN</button>
+      <button onclick="setLang('vi')" id="ls-vi" style="font-family:'DM Mono','Courier New',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;background:transparent;color:rgba(240,232,213,0.55);border:0.5px solid rgba(240,232,213,0.25);border-left:none;padding:6px 14px;cursor:pointer;transition:all 0.2s;">VI</button>
+      <button onclick="setLang('fr')" id="ls-fr" style="font-family:'DM Mono','Courier New',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;background:transparent;color:rgba(240,232,213,0.55);border:0.5px solid rgba(240,232,213,0.25);border-left:none;padding:6px 14px;cursor:pointer;transition:all 0.2s;">FR</button>
     </div>
 
     <span class="retreat-hero-eyebrow">
@@ -510,7 +510,7 @@
       <span class="rl-fr" style="display:none;">Sois Ton Plus Grand Moi &#x1F525;&#x1F410;</span>
     </p>
 
-    <p style="font-family:'DM Mono','Courier New',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 1.5rem;">
+    <p style="font-family:'DM Mono','Courier New',monospace;font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(212,168,75,0.8);margin:0 0 1.5rem;">
       <span class="rl-en">Sự Thăng Hoa &nbsp;|&nbsp; Sois Ton Plus Grand Moi</span>
       <span class="rl-vi" style="display:none;">Sự Thăng Hoa &nbsp;|&nbsp; Ascension &nbsp;|&nbsp; S&eacute;ance</span>
       <span class="rl-fr" style="display:none;">Sự Thăng Hoa &nbsp;|&nbsp; Ascension &nbsp;|&nbsp; S&eacute;ance</span>
@@ -584,7 +584,7 @@
     style="width:100%;aspect-ratio:2/1;object-fit:cover;object-position:center;display:block;"
     loading="lazy">
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.08) 60%,rgba(6,8,12,0.55) 100%);pointer-events:none;"></div>
-  <p style="position:absolute;bottom:1.5rem;right:var(--gutter);font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,232,213,0.55);">Da Nang, Vietnam &middot; January 2027</p>
+  <p style="position:absolute;bottom:1.5rem;right:var(--gutter);font-family:var(--font-mono);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,232,213,0.55);">Da Nang, Vietnam &middot; January 2027</p>
 </div>
 
 <!-- ══ MODALITIES ══ -->
@@ -746,7 +746,7 @@
           <p style="font-family:var(--font-ed);font-size:clamp(1.1rem,1.7vw,1.25rem);font-style:italic;color:var(--text);line-height:1.65;">
             &ldquo;Yoga + breathwork alone won&rsquo;t release deep fascia. Specific massage techniques reshape fascia at molecular level. After fascial release: better posture, easier movement, emotional ease.&rdquo;
           </p>
-          <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-top:1rem;">MODUS S&Eacute;ANCE &middot; Programme Philosophy</p>
+          <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-top:1rem;">MODUS S&Eacute;ANCE &middot; Programme Philosophy</p>
         </div>
         <div style="margin-top:1.5rem;">
           <a class="cta-gold" style="display:block;text-align:center;" href="/acquire#attend">Reserve &amp; Book a Private Session &rarr;</a>
@@ -1014,42 +1014,42 @@
         <span class="speaker-category">Sleep Science Panel</span>
         <div class="speaker-placeholder">?</div>
         <p class="speaker-role">Sleep Science Expert</p>
-        <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">Neuroscience &middot; Sleep Architecture</p>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">Neuroscience &middot; Sleep Architecture</p>
         <span class="speaker-tba">Announcement — Fall 2026</span>
       </div>
       <div class="speaker-card">
         <span class="speaker-category">Sleep Science Panel</span>
         <div class="speaker-placeholder">?</div>
         <p class="speaker-role">Sleep Optimization Coach</p>
-        <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">Protocols &middot; Biohacking &middot; Performance</p>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">Protocols &middot; Biohacking &middot; Performance</p>
         <span class="speaker-tba">Announcement — Fall 2026</span>
       </div>
       <div class="speaker-card">
         <span class="speaker-category">Sleep Science Panel</span>
         <div class="speaker-placeholder">?</div>
         <p class="speaker-role">Luxury Wellness Sleep Strategist</p>
-        <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">High-Performance Sleep Environments</p>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">High-Performance Sleep Environments</p>
         <span class="speaker-tba">Announcement — Fall 2026</span>
       </div>
       <div class="speaker-card">
         <span class="speaker-category">Wisdom Talks — Daily</span>
         <div class="speaker-placeholder">?</div>
         <p class="speaker-role">Transformation Speaker</p>
-        <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">Personal Transformation &middot; Integration</p>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">Personal Transformation &middot; Integration</p>
         <span class="speaker-tba">Announcement — Fall 2026</span>
       </div>
       <div class="speaker-card">
         <span class="speaker-category">Fascial Release Specialists</span>
         <div class="speaker-placeholder">?</div>
         <p class="speaker-role">Myofascial Massage Specialist</p>
-        <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">Deep Tissue &middot; Fascia-Specific Bodywork</p>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">Deep Tissue &middot; Fascia-Specific Bodywork</p>
         <span class="speaker-tba">Announcement — Fall 2026</span>
       </div>
       <div class="speaker-card">
         <span class="speaker-category">Additional Facilitators</span>
         <div class="speaker-placeholder">?</div>
         <p class="speaker-role">Additional Specialists TBD</p>
-        <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">All Modalities &middot; Curated Selection</p>
+        <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8;">All Modalities &middot; Curated Selection</p>
         <span class="speaker-tba">Announcement — Fall 2026</span>
       </div>
     </div>
@@ -1093,7 +1093,7 @@
       <div class="pricing-card featured">
         <span class="pricing-label" style="display:flex;justify-content:space-between;align-items:center;">
           14-Day Fortnight
-          <span style="background:var(--gold);color:var(--bg);padding:3px 8px;font-size:9px;letter-spacing:0.2em;">Recommended</span>
+          <span style="background:var(--gold);color:var(--bg);padding:3px 8px;font-size:13px;letter-spacing:0.2em;">Recommended</span>
         </span>
         <h3 class="pricing-title">Two Weeks</h3>
         <p class="pricing-amount">$8,400 <span>USD · All-Inclusive</span></p>
@@ -1163,14 +1163,14 @@
   <span class="footer-brand">MODUS</span>
   <span class="footer-copy">S&eacute;ance &middot; ASCENSION &middot; Da Nang 2027 &middot; Stanford Emporium Inc.</span>
   <div style="width:100%;padding:1.2rem 0 0;border-top:0.5px solid var(--border);margin-top:0.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);line-height:1.7;">
+    <div style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);line-height:1.7;">
       MODUS — Taste Intelligence<br>
       Published by <a href="https://stanfordemporium.com" rel="publisher" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--border-gold);">Stanford Emporium Inc.</a>
     </div>
     <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
-      <a href="/seance" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Séance</a>
-      <a href="/acquire" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Participate →</a>
-      <a href="/manifeste" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Manifeste →</a>
+      <a href="/seance" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">← Séance</a>
+      <a href="/acquire" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Participate →</a>
+      <a href="/manifeste" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Manifeste →</a>
     </div>
   </div>
 </footer>

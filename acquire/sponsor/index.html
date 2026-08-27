@@ -48,16 +48,16 @@
     [data-theme="light"] .logo-beige { display: none; }
     :root:not([data-theme]) .logo-black { display: none; }
     .nav-right { display: flex; align-items: center; gap: 1.5rem; }
-    .nav-link { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .nav-link { font-family: var(--font-mono); font-size:13px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
     .nav-link:hover { color: var(--text); }
-    #themeBtn { background: none; border: 0.5px solid var(--border-gold); color: var(--gold); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; cursor: pointer; }
+    #themeBtn { background: none; border: 0.5px solid var(--border-gold); color: var(--gold); font-family: var(--font-mono); font-size:13px; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; cursor: pointer; }
 
     .wrap { max-width: 860px; margin: 0 auto; padding: clamp(6rem,10vw,8rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem); }
-    .eyebrow { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
-    .back-link { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2.5rem; transition: color 0.2s; }
+    .eyebrow { font-family: var(--font-mono); font-size:13px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .back-link { font-family: var(--font-mono); font-size:13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2.5rem; transition: color 0.2s; }
     .back-link:hover { color: var(--text-dim); }
     .back-link::before { content: '←'; }
-    h1 { font-family: var(--font-display); font-size: clamp(2.4rem,6vw,4.5rem); font-weight: 300; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; text-wrap: balance; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.4rem,6vw,4.5rem); font-weight:300; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; text-wrap: balance; }
     .lead { font-family: var(--font-body); font-size: clamp(1.1rem,1.6vw,1.3rem); color: var(--text-dim); line-height: 1.7; margin-bottom: 3rem; }
     .rule { border: none; border-top: 0.5px solid var(--rule); margin: 3rem 0; }
 
@@ -66,12 +66,12 @@
     .stat { background: var(--bg); padding: 1.5rem 1.75rem; }
     [data-theme="light"] .stat { background: rgba(255,255,255,0.35); }
     .stat-num { font-family: var(--font-display); font-size: clamp(2rem,4vw,3rem); color: var(--gold); letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.4rem; }
-    .stat-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); }
+    .stat-label { font-family: var(--font-mono); font-size:13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); }
 
     /* Tier table */
     .tier-table { width: 100%; border-collapse: collapse; margin-bottom: 3rem; overflow-x: auto; display: block; }
     .tier-table th, .tier-table td { text-align: left; padding: 1rem 1.25rem; border-bottom: 0.5px solid var(--rule); vertical-align: top; }
-    .tier-table th { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); background: var(--bg2); white-space: nowrap; }
+    .tier-table th { font-family: var(--font-mono); font-size:13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); background: var(--bg2); white-space: nowrap; }
     [data-theme="light"] .tier-table th { background: rgba(255,255,255,0.4); }
     .tier-table td { font-family: var(--font-body); font-size: 0.95rem; color: var(--text-dim); line-height: 1.5; }
     .tier-table td:first-child { font-family: var(--font-display); font-size: 1.05rem; color: var(--text); white-space: nowrap; }
@@ -80,22 +80,22 @@
     .dash { color: var(--muted); }
 
     /* Form */
-    h2 { font-family: var(--font-display); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 300; color: var(--text); margin-bottom: 2rem; }
+    h2 { font-family: var(--font-display); font-size: clamp(1.5rem,2.5vw,2rem); font-weight:300; color: var(--text); margin-bottom: 2rem; }
     .field-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2rem; margin-bottom: 1.5rem; }
     @media (max-width: 560px) { .field-group { grid-template-columns: 1fr; } }
     .field { margin-bottom: 1.5rem; }
-    label { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem; }
+    label { display: block; font-family: var(--font-mono); font-size:13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem; }
     input[type=text], input[type=email], input[type=url], select, textarea { width: 100%; background: var(--bg2); border: 0.5px solid var(--border-gold); color: var(--text); font-family: var(--font-body); font-size: 1rem; padding: 0.75rem 1rem; outline: none; transition: border-color 0.2s; }
     input:focus, select:focus, textarea:focus { border-color: var(--gold); }
     [data-theme="light"] input[type=text],[data-theme="light"] input[type=email],[data-theme="light"] input[type=url],[data-theme="light"] select,[data-theme="light"] textarea { background: rgba(255,255,255,0.55); }
-    .cta-btn { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: 15px 32px; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .cta-btn { display: inline-block; font-family: var(--font-mono); font-size:13px; letter-spacing: 0.28em; text-transform: uppercase; background: var(--gold); color: var(--bg); padding: 15px 32px; border: none; cursor: pointer; transition: opacity 0.2s; }
     .cta-btn:hover { opacity: 0.85; }
-    .form-note { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em; color: var(--muted); margin-top: 0.75rem; }
+    .form-note { font-family: var(--font-mono); font-size:13px; letter-spacing: 0.16em; color: var(--muted); margin-top: 0.75rem; }
     #spon-success { display: none; border: 0.5px solid var(--gold); padding: 2.5rem; background: rgba(212,168,75,0.06); }
     #spon-success p:first-child { font-family: var(--font-display); font-size: clamp(1.4rem,2.5vw,1.8rem); color: var(--gold); margin-bottom: 0.75rem; }
     #spon-success p:last-child { font-family: var(--font-body); font-size: 1rem; color: var(--text-dim); line-height: 1.7; }
     footer { text-align: center; padding: 2rem clamp(1.5rem,5vw,4rem); border-top: 0.5px solid var(--rule); }
-    footer p { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    footer p { font-family: var(--font-mono); font-size:13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
     footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { color: var(--text-dim); }
   </style>
@@ -109,7 +109,7 @@
     </a>
     <div class="nav-right">
       <a href="/acquire" class="nav-link">← Back</a>
-      <button id="langBtn" style="background:none;border:0.5px solid var(--border-gold);color:var(--gold);font-family:var(--font-mono);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;padding:5px 12px;cursor:pointer;margin-right:0.5rem;"><span id="langLabel">EN</span></button><button id="themeBtn">Light</button>
+      <button id="langBtn" style="background:none;border:0.5px solid var(--border-gold);color:var(--gold);font-family:var(--font-mono);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;padding:5px 12px;cursor:pointer;margin-right:0.5rem;"><span id="langLabel">EN</span></button><button id="themeBtn">Light</button>
     </div>
   </nav>
 

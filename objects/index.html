@@ -65,9 +65,9 @@
     [data-theme="dark"] .logo-black{display:none}
     [data-theme="light"] .logo-beige{display:none}
     .nav-links{display:flex;gap:2rem;align-items:center}
-    .nav-link{font-family:var(--font-mono);font-size: 11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
+    .nav-link{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);transition:color var(--ease)}
     .nav-link:hover,.nav-link.active{color:var(--text)}
-    .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
+    .theme-btn{background:transparent;border:0.5px solid var(--border);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px}
     .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
         [data-theme="dark"] #langBtn{background:#EDE6D5;color:#06080C;border-color:transparent}
@@ -79,14 +79,14 @@
     .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(5,5,10,0.55) 0%,rgba(5,5,10,0.08) 25%,transparent 40%,transparent 55%,rgba(5,5,10,0.52) 78%,rgba(5,5,10,0.9) 100%)}
     .hero-content{position:relative;z-index:2;max-width:880px}
     .hero-flag{display:inline-flex;align-items:center;gap:8px;background:var(--gold);padding:4px 14px;margin-bottom:1.4rem;opacity:0;animation:fadeU 0.8s ease 0.3s forwards}
-    .hero-flag span{font-family:var(--font-mono);font-size:12px;letter-spacing:0.26em;text-transform:uppercase;color:#000}
-    .hero-title{font-family:var(--font-display);font-size:clamp(75px,8vw,190px);font-weight:300;letter-spacing:-0.03em;line-height:0.88;color:#fff;opacity:0;animation:fadeU 1.2s ease 0.48s forwards}
+    .hero-flag span{font-family:var(--font-mono);font-size:13px;letter-spacing:0.26em;text-transform:uppercase;color:#000}
+    .hero-title{font-family:var(--font-display);font-size:clamp(75px,8vw,190px);font-weight:400;letter-spacing:-0.03em;line-height:0.88;color:#fff;opacity:0;animation:fadeU 1.2s ease 0.48s forwards}
     .hero-title em{font-style:italic;color:rgba(240,232,213,0.72)}
     .hero-byline{margin-top:1.6rem;display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap;opacity:0;animation:fadeU 1s ease 0.8s forwards}
-    .hero-byline-name{font-family:var(--font-mono);font-size: 10px;letter-spacing: 0.22em;text-transform:uppercase;color:var(--gold)}
+    .hero-byline-name{font-family:var(--font-mono);font-size:13px;letter-spacing: 0.22em;text-transform:uppercase;color:var(--gold)}
     .hero-byline-sub{font-family:var(--font-ed);font-size:16px;font-style:italic;color:rgba(240,232,216,0.82)}
     .hero-rule{width:0;height:0.5px;background:linear-gradient(to right,var(--gold),transparent);margin-top:1.5rem;animation:drawL 1.2s ease 1s forwards}
-    .hero-credit{position:absolute;bottom:1.4rem;right:var(--gutter);z-index:2;font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);opacity:0;animation:fadeU 0.8s ease 2.2s forwards}
+    .hero-credit{position:absolute;bottom:1.4rem;right:var(--gutter);z-index:2;font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);opacity:0;animation:fadeU 0.8s ease 2.2s forwards}
 
     /* LAYOUT */
     main{padding-top:var(--nav-h)}
@@ -96,58 +96,58 @@
 
     /* OPENING DECK */
     .deck{padding:4.5rem var(--gutter) 0;border-left:2.5px solid var(--gold);padding-left:calc(var(--gutter) + 1.5rem)}
-    .deck p{font-family:var(--font-ed);font-size:clamp(19px,2.6vw,28px);font-style:italic;font-weight:300;line-height:1.55;color:var(--text)}
-    .deck-attr{margin-top:1rem;font-family:var(--font-mono);font-size: 10px;letter-spacing: 0.24em;text-transform:uppercase;color:var(--text-dim);}
+    .deck p{font-family:var(--font-ed);font-size:clamp(19px,2.6vw,28px);font-style:italic;font-weight:400;line-height:1.55;color:var(--text)}
+    .deck-attr{margin-top:1rem;font-family:var(--font-mono);font-size:13px;letter-spacing: 0.24em;text-transform:uppercase;color:var(--text-dim);}
 
     /* PART DIVIDER */
     .part-div{display:flex;align-items:center;gap:1.5rem;padding:4rem var(--gutter) 0;max-width:1240px;margin:0 auto}
-    .part-no{font-family:var(--font-mono);font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold)}
+    .part-no{font-family:var(--font-mono);font-size:13px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold)}
     .part-line{flex:1;height:0.5px;background:var(--border-gold)}
-    .part-title{font-family:var(--font-ed);font-size:clamp(32px,5vw,64px);font-weight:300;letter-spacing:-0.03em;line-height:1;color:var(--text);padding:1rem var(--gutter) 0;max-width:1240px;margin:0 auto}
+    .part-title{font-family:var(--font-ed);font-size:clamp(32px,5vw,64px);font-weight:400;letter-spacing:-0.03em;line-height:1;color:var(--text);padding:1rem var(--gutter) 0;max-width:1240px;margin:0 auto}
     .part-title em{font-style:italic;color:var(--text-dim)}
-    .part-sub{font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.26em;text-transform:uppercase;color:var(--text-dim);padding:0.6rem var(--gutter) 0;max-width:1240px;margin:0 auto;}
+    .part-sub{font-family:var(--font-mono);font-size:13px;letter-spacing: 0.26em;text-transform:uppercase;color:var(--text-dim);padding:0.6rem var(--gutter) 0;max-width:1240px;margin:0 auto;}
 
     /* ARTICLE GRID */
     .article-grid{display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:start}
-    .body p{font-family:var(--font-ed);font-size:clamp(1.15rem,1.6vw,1.35rem);font-weight:300;line-height:1.85;color:var(--text)}
+    .body p{font-family:var(--font-ed);font-size:clamp(1.15rem,1.6vw,1.35rem);font-weight:400;line-height:1.85;color:var(--text)}
     .body p+p{margin-top:1.3em}
     .body h3{font-family:var(--font-display);font-size:clamp(20px,2.2vw,27px);font-weight:400;letter-spacing:-0.02em;margin:2.5rem 0 1rem;color:var(--text)}
 
     /* TESTIMONY */
     .testimony{background:var(--bg2);border:0.5px solid var(--border-gold);border-left:3px solid var(--gold);padding:2rem 2.5rem;margin:2.5rem 0}
-    .testimony p{font-family:var(--font-ed);font-size:clamp(16px,1.8vw,20px);font-style:italic;font-weight:300;line-height:1.65;color:var(--text)}
-    .testimony-attr{margin-top:1rem;font-family:var(--font-mono);font-size: 10px;letter-spacing: 0.24em;text-transform:uppercase;color:var(--gold)}
+    .testimony p{font-family:var(--font-ed);font-size:clamp(16px,1.8vw,20px);font-style:italic;font-weight:400;line-height:1.65;color:var(--text)}
+    .testimony-attr{margin-top:1rem;font-family:var(--font-mono);font-size:13px;letter-spacing: 0.24em;text-transform:uppercase;color:var(--gold)}
 
     /* FIGURES */
     .fig{margin:2.5rem 0}
     .fig img{width:100%;display:block}
-    .fig figcaption{margin-top:0.55rem;font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.18em;text-transform:uppercase;color:var(--text-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.4rem;}
+    .fig figcaption{margin-top:0.55rem;font-family:var(--font-mono);font-size:13px;letter-spacing: 0.18em;text-transform:uppercase;color:var(--text-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.4rem;}
 
     /* FULL-BLEED IMAGE (between sections) */
     .full-bleed{width:100%;position:relative;overflow:hidden;margin:3rem 0}
     .full-bleed img{width:100%;display:block;max-height:620px;object-fit:cover;object-position:center 45%}
-    .full-bleed figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,6,12,0.72));padding:3rem var(--gutter) 1rem;font-family:var(--font-mono);font-size: 9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,232,213,0.82);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+    .full-bleed figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,6,12,0.72));padding:3rem var(--gutter) 1rem;font-family:var(--font-mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,232,213,0.82);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
 
     /* SIDEBAR */
     .sidebar{display:flex;flex-direction:column;gap:2rem;position:sticky;top:calc(var(--nav-h)+2rem)}
     .mi-card{background:var(--bg2);border:0.5px solid var(--border-gold);padding:1.8rem;transition:background var(--ease)}
-    .mi-card-label{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+    .mi-card-label{font-family:var(--font-mono);font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
     .mi-car-name{font-family:var(--font-ed);font-size:20px;font-weight:400;letter-spacing:-0.02em;margin-bottom:0.25rem;color:var(--text)}
-    .mi-car-sub{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
-    .mi-score-big{font-family:var(--font-ed);font-size:56px;font-weight:300;letter-spacing:-0.05em;line-height:1;color:var(--text);display:flex;align-items:baseline;gap:4px;margin-bottom:1.1rem}
+    .mi-car-sub{font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
+    .mi-score-big{font-family:var(--font-ed);font-size:56px;font-weight:400;letter-spacing:-0.05em;line-height:1;color:var(--text);display:flex;align-items:baseline;gap:4px;margin-bottom:1.1rem}
     .mi-score-big span{font-size:20px;color:var(--text-dim)}
     .mi-axes{display:flex;flex-direction:column;gap:10px}
     .mi-axis{display:grid;grid-template-columns:1fr 58px 20px;align-items:center;gap:8px}
-    .mi-aname{font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.14em;text-transform:uppercase;color:var(--text-dim)}
+    .mi-aname{font-family:var(--font-mono);font-size:13px;letter-spacing: 0.14em;text-transform:uppercase;color:var(--text-dim)}
     .mi-bar{height:1.5px;background:var(--border);overflow:hidden}
     .mi-fill{height:100%;background:var(--gold)}
     .mi-val{font-family:var(--font-ed);font-size:16px;font-weight:400;text-align:right;color:var(--text)}
-    .mi-note{margin-top:1.2rem;padding-top:1.2rem;border-top:0.5px solid var(--border);font-family:var(--font-mono);font-size: 9px;letter-spacing: 0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
+    .mi-note{margin-top:1.2rem;padding-top:1.2rem;border-top:0.5px solid var(--border);font-family:var(--font-mono);font-size:13px;letter-spacing: 0.14em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
     .spec-card{background:var(--bg2);border:0.5px solid var(--border);padding:1.5rem 1.8rem}
-    .spec-title{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem}
+    .spec-title{font-family:var(--font-mono);font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem}
     .spec-row{display:flex;justify-content:space-between;align-items:baseline;padding:0.5rem 0;border-bottom:0.5px solid var(--border);gap:1rem}
     .spec-row:last-child{border-bottom:none}
-    .spec-key{font-family:var(--font-mono);font-size: 10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);flex-shrink:0}
+    .spec-key{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);flex-shrink:0}
     .spec-val{font-family:var(--font-ed);font-size:15px;font-weight:400;color:var(--text);text-align:right}
     .spec-val strong{color:var(--gold)}
 
@@ -157,45 +157,45 @@
     .gallery figure img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s var(--spring)}
     .gallery figure:hover img{transform:scale(1.03)}
     .gallery figure.full{grid-column:1/-1}
-    .gallery figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,6,12,0.78));padding:2rem 1rem 0.8rem;font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,232,213,0.6);opacity:0;transition:opacity 0.3s ease}
+    .gallery figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,6,12,0.78));padding:2rem 1rem 0.8rem;font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,232,213,0.6);opacity:0;transition:opacity 0.3s ease}
     .gallery figure:hover figcaption{opacity:1}
 
     /* COMPARISON */
     .compare{padding:5rem var(--gutter);max-width:1240px;margin:0 auto}
     .compare-title{font-family:var(--font-ed);font-size:clamp(22px,2.5vw,30px);font-weight:400;letter-spacing:-0.02em;color:var(--text);margin-bottom:2rem}
     .compare-table{width:100%;border-collapse:collapse}
-    .compare-table th{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);padding:0.8rem 1rem;border-bottom:0.5px solid var(--border-gold);text-align:left}
+    .compare-table th{font-family:var(--font-mono);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);padding:0.8rem 1rem;border-bottom:0.5px solid var(--border-gold);text-align:left}
     .compare-table th:not(:first-child){text-align:center}
-    .compare-table td{font-family:var(--font-ed);font-size:16px;font-weight:300;color:var(--text);padding:0.85rem 1rem;border-bottom:0.5px solid var(--border)}
+    .compare-table td{font-family:var(--font-ed);font-size:16px;font-weight:400;color:var(--text);padding:0.85rem 1rem;border-bottom:0.5px solid var(--border)}
     .compare-table td:not(:first-child){text-align:center;color:var(--text-dim)}
     .compare-table td.w{color:var(--gold);font-weight:400}
-    .compare-table td.label{font-family:var(--font-mono);font-size: 10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim)}
+    .compare-table td.label{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim)}
     .compare-table tr:last-child td{border-bottom:none}
     .ed-pos{margin-top:2rem;padding:1.8rem 2rem;background:var(--bg2);border-left:3px solid var(--gold)}
-    .ed-pos-label{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
-    .ed-pos p{font-family:var(--font-ed);font-size:clamp(15px,1.5vw,17px);font-weight:300;line-height:1.78;color:var(--text)}
+    .ed-pos-label{font-family:var(--font-mono);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+    .ed-pos p{font-family:var(--font-ed);font-size:clamp(15px,1.5vw,17px);font-weight:400;line-height:1.78;color:var(--text)}
 
     /* VIDEO */
     .video-block{margin:3rem 0}
-    .video-label{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:flex;align-items:center;gap:8px}
+    .video-label{font-family:var(--font-mono);font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;display:flex;align-items:center;gap:8px}
     .video-label::before{content:'▶';font-size:13px}
     .video-link{background:var(--bg2);border:0.5px solid var(--border-gold);padding:2rem;display:flex;align-items:center;gap:1.5rem}
     .vplay{width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;color:#000}
     .vtext h4{font-family:var(--font-ed);font-size:20px;font-weight:400;color:var(--text);margin-bottom:0.25rem}
-    .vtext p{font-family:var(--font-mono);font-size: 10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim)}
+    .vtext p{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim)}
     .vtext a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
 
     /* CREATIVE SLOT */
     .img-slot{width:100%;background:var(--bg3);border:0.5px dashed var(--border-gold);display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;margin:2.5rem 0}
-    .img-slot-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.65;text-align:center;line-height:2.2;padding:2rem}
+    .img-slot-label{font-family:var(--font-mono);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.65;text-align:center;line-height:2.2;padding:2rem}
 
     /* FOOTER */
     .footer{border-top:0.5px solid var(--border);padding:3rem var(--gutter);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
     .footer-brand{font-family:var(--font-ed);font-size:22px;letter-spacing:-0.02em;color:var(--text)}
-    .footer-copy{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
+    .footer-copy{font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim)}
 
     /* CREDIT LINE */
-    .credit-line{font-family:var(--font-mono);font-size: 9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);padding:0.8rem var(--gutter);max-width:1240px;margin:0 auto;}
+    .credit-line{font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);padding:0.8rem var(--gutter);max-width:1240px;margin:0 auto;}
 
     @keyframes fadeU{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     @keyframes drawL{from{width:0}to{width:min(280px,45vw)}}
@@ -248,7 +248,7 @@
     }
     .side-menu-close:hover { color:var(--text); }
     .side-menu-label {
-      font-family:var(--font-mono,'DM Mono',monospace); font-size:12px;
+      font-family:var(--font-mono,'DM Mono',monospace); font-size:13px;
       letter-spacing:0.32em; text-transform:uppercase;
       color:var(--gold); margin-bottom:1.2rem;
     white-space:nowrap;}
@@ -256,7 +256,7 @@
     .side-menu-nav a {
       font-family:var(--font-ed,'Lovine','Cormorant Garamond',serif);
       font-size:clamp(0.9rem,2vw,1.15rem);
-      font-weight:300; font-style:italic;
+      font-weight:400; font-style:italic;
       color:var(--text-dim); line-height:1.1;
       padding:0.09rem 0;
       border-bottom:0.5px solid var(--border);
@@ -266,7 +266,7 @@
     .side-menu-nav a:hover { color:var(--text); padding-left:0.5rem; }
     .side-menu-issue {
       margin-top:auto;
-      font-family:var(--font-mono,'DM Mono',monospace); font-size:12px;
+      font-family:var(--font-mono,'DM Mono',monospace); font-size:13px;
       letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim);
     }
     .side-overlay {
@@ -305,7 +305,7 @@
       margin-top: var(--nav-h);
     }
     .dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue {
-      font-family: var(--font-mono); font-size: 9px;
+      font-family: var(--font-mono); font-size:13px;
       letter-spacing: 0.28em; text-transform: uppercase;
     }
     .dept-id-label { color: var(--text-dim); }
@@ -321,7 +321,7 @@
       .card-meta,.card-byline,.coming-sub,.sa-attr,.mi-note,.ed-pos-label,
       .video-label,.spec-title,.spec-key,.deck-attr,.testimony-attr,
       .vtext p,.compare-table th,.axis-bar-label,.mi-car-sub,
-      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:12px!important}
+      .kicker,.mi-num,.mi-view-label,.article .kicker{font-size:13px!important}
     }
   </style>
   <!-- AI agent discoverability -->
@@ -669,7 +669,7 @@
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_800/porsche-911-st-side.jpg"
              alt="Porsche 911 S/T — Jet Black — side profile — official press photography"
              loading="lazy" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;object-position:center">
-        <figcaption style="margin-top:0.5rem;font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)">911 S/T · Photo: Porsche AG</figcaption>
+        <figcaption style="margin-top:0.5rem;font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)">911 S/T · Photo: Porsche AG</figcaption>
       </figure>
     </aside>
   </div>
@@ -681,7 +681,7 @@
     <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1400/porsche-911-st-interior.jpg"
          alt="Porsche 911 S/T — rear view — coastal road — official press photography"
          loading="lazy" style="width:100%;display:block;object-fit:cover" />
-    <figcaption style="margin-top:0.6rem;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)">911 S/T · Hardtop · Coastal road · Photo: Porsche AG</figcaption>
+    <figcaption style="margin-top:0.6rem;font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim)">911 S/T · Hardtop · Coastal road · Photo: Porsche AG</figcaption>
   </figure>
 </div>
 
@@ -782,7 +782,7 @@
 
 <!-- GT3 S/C GALLERY — overhead + badge + rear red + side grey -->
 <section style="max-width:1240px;margin:0 auto;padding:0 var(--gutter) 1rem">
-  <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem">GT3 S/C Press Gallery · 2026</p>
+  <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem">GT3 S/C Press Gallery · 2026</p>
 </section>
 <div class="gallery" style="max-width:1240px;margin:0 auto var(--gutter)">
   <figure class="full" style="aspect-ratio:21/9">
@@ -837,43 +837,43 @@
 
   <!-- Credit -->
   <section style="max-width:1240px;margin:0 auto;padding:1.5rem clamp(1.25rem,5vw,4rem) 0">
-    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim,rgba(234,224,204,0.88))">Photography: Porsche AG &middot; Press</p>
+    <p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim,rgba(234,224,204,0.88))">Photography: Porsche AG &middot; Press</p>
   </section>
 
   <!-- Continue Reading -->
   <section style="max-width:1240px;margin:0 auto;padding:3rem clamp(1.25rem,5vw,4rem) 0" aria-label="Continue reading">
-    <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:1.2rem" data-en="Continue Reading" data-fr="Continuer la lecture">Continue Reading</p>
+    <p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:1.2rem" data-en="Continue Reading" data-fr="Continuer la lecture">Continue Reading</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px">
       <a href="/space/xingu" style="display:block;border:0.5px solid var(--border,rgba(234,224,204,0.1));text-decoration:none;overflow:hidden">
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_480,h_280,q_auto,f_auto/xingu-hero.jpg" alt="Casa Xingu — Tetro Arquitetura" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block">
         <span style="display:block;padding:0.85rem 1.1rem 1rem">
-          <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Space</span>
-          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Casa Xingu — 50/50 CANON</span>
+          <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Space</span>
+          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Casa Xingu — 50/50 CANON</span>
         </span>
       </a>
       <a href="/figures" style="display:block;border:0.5px solid var(--border,rgba(234,224,204,0.1));text-decoration:none;overflow:hidden">
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_480,h_280,q_auto,f_auto/Gabriela_Warrior_D80_1857_ybwbj7.jpg" alt="Gabriela Warrior — Figures" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block">
         <span style="display:block;padding:0.85rem 1.1rem 1rem">
-          <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Figures</span>
-          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Gabriela Warrior — The Body as the First Object</span>
+          <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Figures</span>
+          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Gabriela Warrior — The Body as the First Object</span>
         </span>
       </a>
       <a href="/terrain" style="display:block;border:0.5px solid var(--border,rgba(234,224,204,0.1));text-decoration:none;overflow:hidden">
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_auto,w_480,h_280,q_auto,f_auto/D80_9701_q4bnng.jpg" alt="Terrain — Amanwella Sri Lanka" loading="lazy" style="width:100%;height:140px;object-fit:cover;display:block">
         <span style="display:block;padding:0.85rem 1.1rem 1rem">
-          <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Terrain</span>
-          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Amanwella Tangalle — Sri Lanka</span>
+          <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold,#D4A84B)">Terrain</span>
+          <span style="display:block;margin-top:0.3rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.25;color:var(--text,#EAE0CC)">Amanwella Tangalle — Sri Lanka</span>
         </span>
       </a>
     </div>
-    <p style="margin-top:1rem;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase"><a href="/scores" style="color:var(--gold,#D4A84B);text-decoration:none">View all MODUS Index scores &rarr;</a></p>
+    <p style="margin-top:1rem;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.22em;text-transform:uppercase"><a href="/scores" style="color:var(--gold,#D4A84B);text-decoration:none">View all MODUS Index scores &rarr;</a></p>
   </section>
 
   <!-- Acquire hook -->
   <section style="max-width:1240px;margin:0 auto;padding:2.5rem clamp(1.25rem,5vw,4rem) 0">
     <a href="/acquire" style="display:block;border:0.5px solid var(--border-gold,rgba(212,168,75,0.3));background:var(--bg2,rgba(255,255,255,0.02));padding:1.8rem 2rem;text-decoration:none">
-      <span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold,#D4A84B)">MODUS &middot; Acquire</span>
-      <span style="display:block;margin-top:0.5rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:300;font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--text,#EAE0CC)">Reserve the Print Collector Edition &middot; Limited run &middot; No reprint &rarr;</span>
+      <span style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold,#D4A84B)">MODUS &middot; Acquire</span>
+      <span style="display:block;margin-top:0.5rem;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--text,#EAE0CC)">Reserve the Print Collector Edition &middot; Limited run &middot; No reprint &rarr;</span>
     </a>
   </section>
 
@@ -881,10 +881,10 @@
   <section itemscope itemtype="https://schema.org/Person" style="max-width:1240px;margin:0 auto;padding:3rem clamp(1.25rem,5vw,4rem) 3rem" aria-label="About the author">
     <div style="border-top:0.5px solid var(--border-gold,rgba(212,168,75,0.3));padding-top:2rem;display:flex;gap:1.5rem;align-items:baseline;flex-wrap:wrap">
       <div>
-        <p style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:0.5rem" data-en="The Author" data-fr="L'auteur">The Author</p>
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(1.4rem,2.4vw,1.8rem);color:var(--text,#EAE0CC)"><span itemprop="name">Daniel Stanford</span> &mdash; <span itemprop="jobTitle">Editor-in-Chief</span></p>
-        <p style="margin-top:0.6rem;max-width:640px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.75;color:var(--text-dim,rgba(234,224,204,0.88))" itemprop="description" data-en="Founder of MODUS and principal of Stanford Emporium Inc., Montréal. Twenty-five years in luxury branding, fine art, and editorial direction. Every score on this site is his." data-fr="Fondateur de MODUS et directeur de Stanford Emporium Inc., Montréal. Vingt-cinq ans dans le luxe, les beaux-arts et la direction éditoriale. Chaque score sur ce site est le sien.">Founder of MODUS and principal of Stanford Emporium Inc., Montréal. Twenty-five years in luxury branding, fine art, and editorial direction. Every score on this site is his.</p>
-        <p style="margin-top:0.8rem"><a itemprop="url" href="https://daniel-stanford.com" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold,#D4A84B);text-decoration:none">daniel-stanford.com &rarr;</a></p>
+        <p style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold,#D4A84B);margin-bottom:0.5rem" data-en="The Author" data-fr="L'auteur">The Author</p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(1.4rem,2.4vw,1.8rem);color:var(--text,#EAE0CC)"><span itemprop="name">Daniel Stanford</span> &mdash; <span itemprop="jobTitle">Editor-in-Chief</span></p>
+        <p style="margin-top:0.6rem;max-width:640px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.75;color:var(--text-dim,rgba(234,224,204,0.88))" itemprop="description" data-en="Founder of MODUS and principal of Stanford Emporium Inc., Montréal. Twenty-five years in luxury branding, fine art, and editorial direction. Every score on this site is his." data-fr="Fondateur de MODUS et directeur de Stanford Emporium Inc., Montréal. Vingt-cinq ans dans le luxe, les beaux-arts et la direction éditoriale. Chaque score sur ce site est le sien.">Founder of MODUS and principal of Stanford Emporium Inc., Montréal. Twenty-five years in luxury branding, fine art, and editorial direction. Every score on this site is his.</p>
+        <p style="margin-top:0.8rem"><a itemprop="url" href="https://daniel-stanford.com" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold,#D4A84B);text-decoration:none">daniel-stanford.com &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -893,14 +893,14 @@
   <span class="footer-brand">MODUS</span>
   <span class="footer-copy">Stanford Emporium Inc. &nbsp;·&nbsp; Objects No. 1 &nbsp;·&nbsp; © MODUS MMXXVI</span>
   <div style="width:100%;padding:0 0 1.2rem 0;border-bottom:0.5px solid var(--border);margin-bottom:1.2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);line-height:1.7;">
+    <div style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);line-height:1.7;">
       MODUS — Taste Intelligence<br>
       Published by <a href="https://stanfordemporium.com" rel="publisher" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--border-gold);">Stanford Emporium Inc.</a>
     </div>
     <div style="display:flex;align-items:center;gap:1.25rem;">
-      <a href="https://www.instagram.com/modus.luxmag" target="_blank" rel="noopener me" aria-label="@modus.luxmag on Instagram" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>@modus.luxmag</a>
-      <a href="https://stanfordemporium.com" rel="publisher" target="_blank" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Stanford Emporium Inc. →</a>
-      <a href="/press" style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Press →</a>
+      <a href="https://www.instagram.com/modus.luxmag" target="_blank" rel="noopener me" aria-label="@modus.luxmag on Instagram" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>@modus.luxmag</a>
+      <a href="https://stanfordemporium.com" rel="publisher" target="_blank" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Stanford Emporium Inc. →</a>
+      <a href="/press" style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;opacity:0.75;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">Press →</a>
     </div>
   </div>
   </footer>

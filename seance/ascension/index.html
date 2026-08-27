@@ -84,7 +84,7 @@
 
     /* ── Language switcher (hero) ── */
     .lang-sw{display:flex;gap:0;margin-bottom:2rem}
-    .lang-sw button{font-family:var(--font-mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;border:0.5px solid rgba(240,232,213,0.25);padding:6px 16px;cursor:pointer;transition:all 0.2s;background:transparent;color:rgba(240,232,213,0.5)}
+    .lang-sw button{font-family:var(--font-mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;border:0.5px solid rgba(240,232,213,0.25);padding:6px 16px;cursor:pointer;transition:all 0.2s;background:transparent;color:rgba(240,232,213,0.5);min-height:44px}
     .lang-sw button:not(:first-child){border-left:none}
     .lang-sw button.lsw-active{background:var(--gold);color:#06080C;border-color:var(--gold)}
 
@@ -316,6 +316,7 @@
       .nav-links::-webkit-scrollbar{display:none}
       .side-menu{width:100%;border-right:none}
       .arc-days{grid-template-columns:repeat(4,1fr);gap:0.5rem}
+      .arc-day-label{display:none}
     }
 
     /* ── Browser surfaces: theme what you didn't draw ── */

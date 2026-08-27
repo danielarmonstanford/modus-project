@@ -237,6 +237,14 @@
        mobile (broken on iOS) */
     #ascension-method, #ascension-method * { color: #EAE0CC !important; }
     #ascension-method [style*="color:rgba(212,168,75"] { color: var(--cta-gold) !important; }
+    /* The Place / pricing table now sits on a dark photo regardless of
+       theme — scope text tokens locally so table/heading text stays
+       cream instead of the theme's navy value in light mode */
+    #the-place {
+      --text: #F2E4DC;
+      --text-dim: rgba(242,228,220,0.85);
+      --rule: rgba(242,228,220,0.28);
+    }
     @media (max-width: 768px), (hover: none) {
       #ascension-method { background-attachment: scroll !important; }
       #the-place { background-attachment: scroll !important; }

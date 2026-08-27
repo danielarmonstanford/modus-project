@@ -1736,71 +1736,73 @@
           <!-- Passport choice -->
           <p class="mkt-eyebrow" style="margin-bottom:1.5rem;"
              data-en="CHOOSE YOUR PASSPORT" data-fr="CHOISISSEZ VOTRE PASSEPORT" data-vi="CHỌN HỘ CHIẾU" data-zh="选择您的护照" data-ko="패스포트 선택">CHOOSE YOUR PASSPORT</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:rgba(212,168,75,0.18);margin-bottom:1.5px;">
+          <div class="passport-grid-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:rgba(212,168,75,0.18);margin-bottom:1.5px;">
 
             <!-- 7-Day -->
-            <label id="pcard-7" style="display:block;background:var(--bg);padding:2rem 1.75rem;cursor:pointer;border:1.5px solid transparent;transition:border-color 0.2s;">
+            <label id="pcard-7" style="display:block;background:var(--bg);padding:clamp(1.5rem,3vw,2.5rem);cursor:pointer;border:2px solid transparent;transition:border-color 0.2s,background 0.2s;position:relative;">
               <input type="radio" name="aq-passport" value="1200" style="position:absolute;opacity:0;pointer-events:none;">
-              <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin:0 0 0.5rem;"
+              <p style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vw,13px);letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin:0 0 0.75rem;"
                  data-en="7-DAY PASSPORT · Jan 12–19" data-fr="PASSEPORT 7 JOURS · 12–19 Jan" data-vi="HỘ CHIẾU 7 NGÀY · 12–19 Jan" data-zh="7天护照 · 1月12–19日" data-ko="7일 패스포트 · 1월 12–19일">7-DAY PASSPORT · Jan 12–19</p>
-              <p style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:normal;color:var(--gold);letter-spacing:-0.02em;line-height:1;margin:0 0 1rem;">$1,200</p>
-              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem;">
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ Daily movement &amp; breath sessions" data-fr="✓ Sessions quotidiennes de mouvement &amp; souffle" data-vi="✓ Buổi vận động &amp; hơi thở hàng ngày" data-zh="✓ 每日运动与呼吸课程" data-ko="✓ 매일 움직임 및 호흡 세션">✓ Daily movement &amp; breath sessions</li>
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ 3 curated group dinners" data-fr="✓ 3 dîners collectifs curatés" data-vi="✓ 3 bữa tối nhóm được tuyển chọn" data-zh="✓ 3次精选团体晚宴" data-ko="✓ 큐레이션 단체 석식 3회">✓ 3 curated group dinners</li>
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ Hideout Wellness morning ritual" data-fr="✓ Rituel matinal Hideout Wellness" data-vi="✓ Nghi lễ buổi sáng Hideout Wellness" data-zh="✓ Hideout Wellness晨间仪式" data-ko="✓ 하이드아웃 웰니스 모닝 리추얼">✓ Hideout Wellness morning ritual</li>
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ Opening &amp; closing ceremonies" data-fr="✓ Cérémonies d'ouverture &amp; de clôture" data-vi="✓ Lễ khai mạc &amp; bế mạc" data-zh="✓ 开幕式和闭幕式" data-ko="✓ 개막 및 폐막 행사">✓ Opening &amp; closing ceremonies</li>
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ Daily gong bath &amp; community" data-fr="✓ Bain de gong quotidien &amp; communauté" data-vi="✓ Tắm cồng hàng ngày &amp; cộng đồng" data-zh="✓ 每日铜锣浴与社区" data-ko="✓ 매일 공 배스 및 커뮤니티">✓ Daily gong bath &amp; community</li>
+              <p style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:normal;color:#EAE0CC;letter-spacing:-0.02em;line-height:1;margin:0 0 1.25rem;">$1,200</p>
+              <ul style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ Daily movement &amp; breath sessions" data-fr="✓ Sessions quotidiennes de mouvement &amp; souffle" data-vi="✓ Buổi vận động &amp; hơi thở hàng ngày" data-zh="✓ 每日运动与呼吸课程" data-ko="✓ 매일 움직임 및 호흡 세션">✓ Daily movement &amp; breath sessions</li>
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ 3 curated group dinners" data-fr="✓ 3 dîners collectifs curatés" data-vi="✓ 3 bữa tối nhóm được tuyển chọn" data-zh="✓ 3次精选团体晚宴" data-ko="✓ 큐레이션 단체 석식 3회">✓ 3 curated group dinners</li>
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ Hideout Wellness morning ritual" data-fr="✓ Rituel matinal Hideout Wellness" data-vi="✓ Nghi lễ buổi sáng Hideout Wellness" data-zh="✓ Hideout Wellness晨间仪式" data-ko="✓ 하이드아웃 웰니스 모닝 리추얼">✓ Hideout Wellness morning ritual</li>
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ Opening &amp; closing ceremonies" data-fr="✓ Cérémonies d'ouverture &amp; de clôture" data-vi="✓ Lễ khai mạc &amp; bế mạc" data-zh="✓ 开幕式和闭幕式" data-ko="✓ 개막 및 폐막 행사">✓ Opening &amp; closing ceremonies</li>
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ Daily gong bath &amp; community" data-fr="✓ Bain de gong quotidien &amp; communauté" data-vi="✓ Tắm cồng hàng ngày &amp; cộng đồng" data-zh="✓ 每日铜锣浴与社区" data-ko="✓ 매일 공 배스 및 커뮤니티">✓ Daily gong bath &amp; community</li>
               </ul>
+              <span class="passport-select-btn" data-en="Select 7-Day" data-fr="Choisir 7 Jours" data-vi="Chọn 7 Ngày" data-zh="选择7天" data-ko="7일 선택">Select 7-Day</span>
             </label>
 
             <!-- 14-Day -->
-            <label id="pcard-14" style="display:block;background:var(--bg);padding:2rem 1.75rem;cursor:pointer;border:1.5px solid transparent;transition:border-color 0.2s;">
+            <label id="pcard-14" style="display:block;background:var(--bg);padding:clamp(1.5rem,3vw,2.5rem);cursor:pointer;border:2px solid transparent;transition:border-color 0.2s,background 0.2s;position:relative;">
               <input type="radio" name="aq-passport" value="2000" style="position:absolute;opacity:0;pointer-events:none;">
-              <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin:0 0 0.5rem;"
+              <p style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vw,13px);letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin:0 0 0.75rem;"
                  data-en="14-DAY PASSPORT · Jan 12–26 · TẾT" data-fr="PASSEPORT 14 JOURS · 12–26 Jan · TẾT" data-vi="HỘ CHIẾU 14 NGÀY · 12–26 Jan · TẾT" data-zh="14天护照 · 1月12–26日 · 春节" data-ko="14일 패스포트 · 1월 12–26일 · 뗏">14-DAY PASSPORT · Jan 12–26 · TẾT</p>
-              <p style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:normal;color:var(--gold);letter-spacing:-0.02em;line-height:1;margin:0 0 1rem;">$2,000</p>
-              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem;">
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ Everything in 7-Day, plus:" data-fr="✓ Tout ce qui est dans 7 jours, plus :" data-vi="✓ Tất cả trong 7 ngày, cộng thêm:" data-zh="✓ 7天所有内容，加上：" data-ko="✓ 7일 모든 것 포함, 추가:">✓ Everything in 7-Day, plus:</li>
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ Tết cultural immersion arc" data-fr="✓ Arc d'immersion culturelle Tết" data-vi="✓ Hành trình đắm mình vào văn hóa Tết" data-zh="✓ 春节文化沉浸之旅" data-ko="✓ 뗏 문화 몰입 아크">✓ Tết cultural immersion arc</li>
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ Deeper modality exploration" data-fr="✓ Exploration approfondie des modalités" data-vi="✓ Khám phá phương thức chuyên sâu" data-zh="✓ 深度方式探索" data-ko="✓ 깊은 방식 탐구">✓ Deeper modality exploration</li>
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ 6 curated group dinners" data-fr="✓ 6 dîners collectifs curatés" data-vi="✓ 6 bữa tối nhóm được tuyển chọn" data-zh="✓ 6次精选团体晚宴" data-ko="✓ 큐레이션 단체 석식 6회">✓ 6 curated group dinners</li>
-                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);line-height:1.4;" data-en="✓ Extended cohort bonding &amp; access" data-fr="✓ Cohésion de cohorte étendue &amp; accès" data-vi="✓ Gắn kết nhóm mở rộng &amp; quyền truy cập" data-zh="✓ 延长队列凝聚与权限" data-ko="✓ 확장된 코호트 유대 및 접근">✓ Extended cohort bonding &amp; access</li>
+              <p style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:normal;color:#EAE0CC;letter-spacing:-0.02em;line-height:1;margin:0 0 1.25rem;">$2,000</p>
+              <ul style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ Everything in 7-Day, plus:" data-fr="✓ Tout ce qui est dans 7 jours, plus :" data-vi="✓ Tất cả trong 7 ngày, cộng thêm:" data-zh="✓ 7天所有内容，加上：" data-ko="✓ 7일 모든 것 포함, 추가:">✓ Everything in 7-Day, plus:</li>
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ Tết cultural immersion arc" data-fr="✓ Arc d'immersion culturelle Tết" data-vi="✓ Hành trình đắm mình vào văn hóa Tết" data-zh="✓ 春节文化沉浸之旅" data-ko="✓ 뗏 문화 몰입 아크">✓ Tết cultural immersion arc</li>
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ Deeper modality exploration" data-fr="✓ Exploration approfondie des modalités" data-vi="✓ Khám phá phương thức chuyên sâu" data-zh="✓ 深度方式探索" data-ko="✓ 깊은 방식 탐구">✓ Deeper modality exploration</li>
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ 6 curated group dinners" data-fr="✓ 6 dîners collectifs curatés" data-vi="✓ 6 bữa tối nhóm được tuyển chọn" data-zh="✓ 6次精选团体晚宴" data-ko="✓ 큐레이션 단체 석식 6회">✓ 6 curated group dinners</li>
+                <li style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);line-height:1.45;" data-en="✓ Extended cohort bonding &amp; access" data-fr="✓ Cohésion de cohorte étendue &amp; accès" data-vi="✓ Gắn kết nhóm mở rộng &amp; quyền truy cập" data-zh="✓ 延长队列凝聚与权限" data-ko="✓ 확장된 코호트 유대 및 접근">✓ Extended cohort bonding &amp; access</li>
               </ul>
+              <span class="passport-select-btn" data-en="Select 14-Day" data-fr="Choisir 14 Jours" data-vi="Chọn 14 Ngày" data-zh="选择14天" data-ko="14일 선택">Select 14-Day</span>
             </label>
           </div>
 
           <!-- VIP upgrade -->
-          <label id="vip-card" style="display:flex;gap:1.5rem;align-items:flex-start;background:var(--bg);padding:1.75rem;cursor:pointer;border:1.5px solid transparent;transition:border-color 0.2s;margin-bottom:1.5px;">
-            <div style="flex-shrink:0;margin-top:0.2rem;">
-              <input type="checkbox" id="aq-vip" name="aq-vip" style="width:18px;height:18px;cursor:pointer;accent-color:var(--gold);">
+          <label id="vip-card" style="display:flex;gap:1.5rem;align-items:flex-start;background:var(--bg);padding:clamp(1.25rem,2.5vw,2rem);cursor:pointer;border:2px solid transparent;transition:border-color 0.2s;margin-bottom:1.5px;">
+            <div style="flex-shrink:0;margin-top:0.3rem;">
+              <input type="checkbox" id="aq-vip" name="aq-vip" style="width:22px;height:22px;cursor:pointer;accent-color:var(--gold);">
             </div>
             <div style="flex:1;">
-              <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin:0 0 0.4rem;"
+              <p style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.3vw,14px);letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin:0 0 0.75rem;"
                  data-en="VIP UPGRADE · +$2,200" data-fr="UPGRADE VIP · +2 200 $" data-vi="NÂNG CẤP VIP · +$2.200" data-zh="VIP升级 · +$2,200" data-ko="VIP 업그레이드 · +$2,200">VIP UPGRADE · +$2,200</p>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem 2rem;">
-                <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);margin:0;line-height:1.5;"
+              <div class="vip-grid-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem 2.5rem;">
+                <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);margin:0;line-height:1.5;"
                    data-en="3 private practitioner sessions (your choice of modality)" data-fr="3 séances privées avec praticiens (modalité au choix)" data-vi="3 buổi riêng tư với chuyên gia (chọn phương thức)" data-zh="3次私人导师课（自选方式）" data-ko="3회 개인 전문가 세션 (방식 선택 가능)">3 private practitioner sessions (your choice of modality)</p>
-                <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);margin:0;line-height:1.5;"
+                <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);margin:0;line-height:1.5;"
                    data-en="Dedicated concierge + personal itinerary built before arrival" data-fr="Concierge dédié + itinéraire personnel construit avant l'arrivée" data-vi="Lễ tân riêng + lịch trình cá nhân trước khi đến" data-zh="专属礼宾 + 抵达前个人行程规划" data-ko="전담 컨시어지 + 도착 전 개인 일정 구성">Dedicated concierge + personal itinerary built before arrival</p>
-                <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);margin:0;line-height:1.5;"
+                <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);margin:0;line-height:1.5;"
                    data-en="Priority booking — reserved slots, premium ceremony seating" data-fr="Réservation prioritaire — créneaux réservés, sièges premium" data-vi="Đặt chỗ ưu tiên — chỗ ngồi cao cấp, vị trí riêng" data-zh="优先预订 — 专属席位和优先场次" data-ko="우선 예약 — 예약 슬롯, 프리미엄 행사 좌석">Priority booking — reserved slots, premium ceremony seating</p>
-                <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,1.3vw,1.05rem);color:var(--text-dim);margin:0;line-height:1.5;"
+                <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);margin:0;line-height:1.5;"
                    data-en="30-min post-retreat debrief + continued community access" data-fr="Bilan post-retraite de 30 min + accès communautaire continu" data-vi="30 phút tổng kết sau khóa tu + tiếp tục tiếp cận cộng đồng" data-zh="30分钟退修后总结 + 持续社区权限" data-ko="30분 사후 디브리핑 + 지속적인 커뮤니티 접근">30-min post-retreat debrief + continued community access</p>
               </div>
-              <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;color:var(--muted);margin:0.75rem 0 0;"
-                 data-en="Value ~$3,200. You save ~$1,000 by bundling." data-fr="Valeur ~3 200 $. Économisez ~1 000 $ en combinant." data-vi="Giá trị ~$3.200. Tiết kiệm ~$1.000 khi gộp." data-zh="价值约$3,200。捆绑购买节省约$1,000。" data-ko="가치 ~$3,200. 번들 시 ~$1,000 절약.">Value ~$3,200. You save ~$1,000 by bundling.</p>
+              <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.3vw,1.05rem);color:var(--gold);margin:1rem 0 0;font-style:italic;"
+                 data-en="Value ~$3,200 — you save ~$1,000 by bundling." data-fr="Valeur ~3 200 $ — vous économisez ~1 000 $ en combinant." data-vi="Giá trị ~$3.200 — tiết kiệm ~$1.000 khi gộp." data-zh="价值约$3,200 — 捆绑购买节省约$1,000。" data-ko="가치 ~$3,200 — 번들 시 ~$1,000 절약.">Value ~$3,200 — you save ~$1,000 by bundling.</p>
             </div>
           </label>
 
           <!-- Live total -->
-          <div style="background:var(--bg2);border-top:1.5px solid var(--gold);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <div style="background:var(--bg2);border-top:2px solid var(--gold);padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,3vw,2.5rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
             <div>
-              <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin:0 0 0.35rem;"
+              <p style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.1vw,13px);letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin:0 0 0.35rem;"
                  data-en="YOUR TOTAL" data-fr="VOTRE TOTAL" data-vi="TỔNG CỦA BẠN" data-zh="您的合计" data-ko="합계">YOUR TOTAL</p>
-              <p id="aq-total-display" style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:normal;color:var(--gold);letter-spacing:-0.02em;line-height:1;margin:0;">—</p>
-              <p id="aq-total-note" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;color:var(--muted);margin:0.4rem 0 0;">Select a passport above</p>
+              <p id="aq-total-display" style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4rem);font-weight:normal;color:#EAE0CC;letter-spacing:-0.02em;line-height:1;margin:0;">—</p>
+              <p id="aq-total-note" style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.1vw,12px);letter-spacing:0.14em;color:var(--muted);margin:0.5rem 0 0;">Select a passport above</p>
             </div>
-            <div style="text-align:right;">
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.85rem;">
               <a href="https://buy.stripe.com/dRm8wQ2FR5tr9vL0izcfK00" target="_blank" rel="noopener"
                  class="deposit-cta-btn" id="aq-reserve-btn"
                  data-en="Reserve — $300 Deposit"
@@ -1808,7 +1810,9 @@
                  data-vi="Đặt Chỗ — Đặt Cọc $300"
                  data-zh="预留位置 — $300 定金"
                  data-ko="예약하기 — $300 보증금">Reserve — $300 Deposit</a>
-              <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.16em;color:var(--muted);margin:0.65rem 0 0;text-align:right;"
+              <a href="mailto:daniel@StanfordEmporium.com" style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.1vw,12px);letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:0.5px solid rgba(212,168,75,0.4);padding-bottom:2px;"
+                 data-en="More Information" data-fr="Plus d'Informations" data-vi="Thông Tin Thêm" data-zh="更多信息" data-ko="추가 정보">More Information</a>
+              <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.9rem,1.2vw,1rem);color:var(--text-dim);margin:0;text-align:right;line-height:1.5;"
                  data-en="Balance due 30 days before · Fully refundable if retreat does not proceed"
                  data-fr="Solde dû 30 jours avant · Entièrement remboursable si la retraite n'a pas lieu"
                  data-vi="Số dư đến hạn 30 ngày trước · Hoàn tiền đầy đủ nếu khóa tu không diễn ra"
@@ -1817,9 +1821,27 @@
             </div>
           </div>
           <style>
-            #pcard-7.selected,#pcard-14.selected{border-color:var(--gold);}
-            #vip-card.vip-active{border-color:var(--gold);}
-            @media(max-width:640px){#aq-pricing .passport-grid-inner{grid-template-columns:1fr;} #vip-card>div:last-child>div{grid-template-columns:1fr;}}
+            #pcard-7.selected,#pcard-14.selected{border-color:var(--gold);background:rgba(212,168,75,0.06);}
+            #pcard-7.selected .passport-select-btn,#pcard-14.selected .passport-select-btn{background:var(--gold);color:#0D0C10;}
+            #vip-card.vip-active{border-color:var(--gold);background:rgba(212,168,75,0.05);}
+            .passport-select-btn{
+              display:inline-block;
+              font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;
+              color:var(--gold);border:1px solid rgba(212,168,75,0.5);
+              padding:0.6rem 1.25rem;transition:background 0.2s,color 0.2s;
+            }
+            @media(max-width:680px){
+              .passport-grid-inner{grid-template-columns:1fr !important;}
+              .vip-grid-inner{grid-template-columns:1fr !important;}
+              #aq-pricing>div:last-of-type{flex-direction:column;align-items:flex-start;}
+              #aq-pricing>div:last-of-type>div:last-child{align-items:flex-start;}
+            }
+            [data-theme="light"] #pcard-7,[data-theme="light"] #pcard-14{background:#152040;}
+            [data-theme="light"] #pcard-7 *,[data-theme="light"] #pcard-14 *{color:#EAE0CC !important;}
+            [data-theme="light"] #pcard-7 .passport-select-btn,[data-theme="light"] #pcard-14 .passport-select-btn{border-color:rgba(212,168,75,0.5);color:var(--gold) !important;}
+            [data-theme="light"] #vip-card{background:#1a2a50;}
+            [data-theme="light"] #vip-card *{color:#EAE0CC !important;}
+            [data-theme="light"] #vip-card p[style*="color:var(--gold)"]{color:var(--gold) !important;}
           </style>
           <script>
           (function(){

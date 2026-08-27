@@ -270,30 +270,41 @@
     </div>
   </nav>
 
-  <!-- ── HERO VIDEO ── -->
-  <section class="vimeo-hero" aria-label="ASCENSION retreat hero">
-    <!-- Vimeo background=1: autoplay, loop, muted, no controls -->
+  <!-- ── HERO VIDEO (clean — no text overlay) ── -->
+  <section class="vimeo-hero" aria-label="ASCENSION retreat film">
     <div class="vimeo-bg">
       <iframe src="https://player.vimeo.com/video/1221665573?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
         frameborder="0" allow="autoplay; fullscreen" allowfullscreen
         title="ASCENSION retreat film"></iframe>
     </div>
-    <!-- Fallback poster shown until iframe loads -->
     <div class="vimeo-poster" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663013/lucid-origin_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-0_wk3pll.jpg');"></div>
-    <div class="img-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow" data-en="Da Nang, Vietnam · January 2027" data-fr="Da Nang, Vietnam · Janvier 2027" data-vi="Đà Nẵng, Việt Nam · Tháng 1, 2027" data-zh="越南岘港 · 2027年1月" data-ko="베트남 다낭 · 2027년 1월">Da Nang, Vietnam · January 2027</p>
-      <h1 class="hero-title">ASCENSION</h1>
-      <p class="hero-sub" data-en="January 12–26, 2027 · 20 places" data-fr="12–26 janvier 2027 · 20 places" data-vi="12–26 tháng 1, 2027 · 20 chỗ" data-zh="2027年1月12–26日 · 20个名额" data-ko="2027년 1월 12–26일 · 20자리">January 12–26, 2027 · 20 places</p>
-    </div>
-    <div class="scroll-hint">↓</div>
+    <!-- subtle bottom-only scrim so the title block below reads cleanly against it -->
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,transparent 60%,rgba(6,5,9,0.55) 100%);pointer-events:none;"></div>
   </section>
+
+  <!-- ── TITLE BLOCK (below video) ── -->
+  <div class="hero-below">
+    <p class="hero-eyebrow"
+       data-en="Da Nang, Vietnam · January 2027"
+       data-fr="Da Nang, Vietnam · Janvier 2027"
+       data-vi="Đà Nẵng, Việt Nam · Tháng 1, 2027"
+       data-zh="越南岘港 · 2027年1月"
+       data-ko="베트남 다낭 · 2027년 1월">Da Nang, Vietnam · January 2027</p>
+    <h1 class="hero-title" style="margin-bottom:0.75rem;">ASCENSION</h1>
+    <p class="hero-date"
+       data-en="January 12–26, 2027 &nbsp;·&nbsp; 20 places"
+       data-fr="12–26 janvier 2027 &nbsp;·&nbsp; 20 places"
+       data-vi="12–26 tháng 1, 2027 &nbsp;·&nbsp; 20 chỗ"
+       data-zh="2027年1月12–26日 &nbsp;·&nbsp; 20个名额"
+       data-ko="2027년 1월 12–26일 &nbsp;·&nbsp; 20자리">January 12–26, 2027 &nbsp;·&nbsp; 20 places</p>
+    <div class="scroll-hint" style="position:relative;transform:none;left:auto;bottom:auto;margin-top:1.5rem;">↓</div>
+  </div>
 
   <style>
     .vimeo-hero {
       position: relative;
       width: 100%;
-      height: clamp(420px, 72vh, 860px);
+      height: clamp(380px, 65vh, 800px);
       overflow: hidden;
       background: #08070A;
     }
@@ -305,12 +316,9 @@
     .vimeo-poster.loaded { opacity: 0; pointer-events: none; }
     .vimeo-bg {
       position: absolute;
-      /* Oversized to fill any aspect ratio without letterboxing */
       top: 50%; left: 50%;
-      width: 177.78vh;  /* 16/9 × 100vh */
-      min-width: 100%;
-      height: 56.25vw;  /* 9/16 × 100vw */
-      min-height: 100%;
+      width: max(177.78vh, 100%);
+      height: max(56.25vw, 100%);
       transform: translate(-50%, -50%);
       pointer-events: none;
     }
@@ -319,38 +327,44 @@
       width: 100%; height: 100%;
       border: none;
     }
-    .vimeo-hero .img-overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to bottom,
-        rgba(6,5,9,0.30) 0%,
-        rgba(6,5,9,0.08) 35%,
-        rgba(6,5,9,0.22) 65%,
-        rgba(6,5,9,0.72) 100%);
-    }
-    .vimeo-hero .hero-content { z-index: 2; }
-    .vimeo-hero .scroll-hint { z-index: 2; }
-    /* Hide poster once Vimeo iframe signals ready */
     @media (prefers-reduced-motion: reduce) {
       .vimeo-bg { display: none; }
       .vimeo-poster { opacity: 1 !important; }
     }
+    /* Title block sitting flush under the video */
+    .hero-below {
+      background: var(--bg);
+      padding: clamp(1.75rem,3.5vw,2.75rem) clamp(1.5rem,5vw,4rem) clamp(1.25rem,2.5vw,2rem);
+      text-align: center;
+      border-bottom: 0.5px solid var(--rule);
+    }
+    .hero-below .hero-eyebrow {
+      margin-bottom: 0.6rem;
+    }
+    .hero-below .hero-title {
+      font-size: clamp(3rem,8vw,5.5rem);
+    }
+    .hero-date {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: clamp(1.15rem,2vw,1.55rem);
+      color: rgba(234,224,204,0.82);
+      letter-spacing: 0.01em;
+    }
+    [data-theme="light"] .hero-below { background: var(--bg); }
+    [data-theme="light"] .hero-date { color: var(--text-dim); }
   </style>
   <script>
   (function(){
-    /* Fade out the poster image once Vimeo player fires its first timeupdate */
     var poster = document.querySelector('.vimeo-poster');
-    var iframe = document.querySelector('.vimeo-bg iframe');
-    if (!poster || !iframe) return;
+    if (!poster) return;
     window.addEventListener('message', function(e){
       if (e.origin !== 'https://player.vimeo.com') return;
       try {
-        var data = JSON.parse(e.data);
-        if (data.event === 'playProgress' || data.event === 'play') {
-          poster.classList.add('loaded');
-        }
-      } catch(e) {}
+        var d = JSON.parse(e.data);
+        if (d.event === 'playProgress' || d.event === 'play') poster.classList.add('loaded');
+      } catch(x){}
     });
-    /* Also fade after 2s as a fallback */
     setTimeout(function(){ poster.classList.add('loaded'); }, 2000);
   })();
   </script>

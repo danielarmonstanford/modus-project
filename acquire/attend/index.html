@@ -1916,10 +1916,10 @@
         </div>
       </div>
       <p class="mkt-note"
-        data-en="Passport covers programme only. Accommodation is separate — hotel recommendations will be shared once partnerships are confirmed. Not included: international flights, travel insurance, and personal spending."
+        data-en="Edition covers programme only. Accommodation is separate — hotel recommendations will be shared once partnerships are confirmed. Not included: international flights, travel insurance, and personal spending."
         data-fr="Le passeport couvre uniquement le programme. L&apos;hébergement est réservé séparément aux tarifs de groupe préférentiels. Vous réservez en direct — sans majoration de MODUS."
                   data-vi="Hộ chiếu chỉ bao gồm chương trình. Chỗ ở đặt riêng theo giá nhóm ưu tiên. Bạn đặt trực tiếp — không phụ phí từ MODUS." data-ko="패스포트는 프로그램만 포함됩니다. 숙박은 선호 그룹 요금으로 별도 예약됩니다. 직접 예약 — MODUS의 추가 마진 없음."
-        >Passport covers programme only. Accommodation is separate — hotel recommendations will be shared once partnerships are confirmed. Not included: international flights, travel insurance, and personal spending.</p>
+        >Edition covers programme only. Accommodation is separate — hotel recommendations will be shared once partnerships are confirmed. Not included: international flights, travel insurance, and personal spending.</p>
     </section>
 
     <!-- ── VENUE REFERENCE TESTIMONIAL ── -->
@@ -1978,7 +1978,7 @@
           <span style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;padding:9px 18px;border:0.5px solid rgba(212,168,75,0.45);color:rgba(212,168,75,0.85);" data-en="Creator" data-fr="Créateur" data-vi="Người Sáng Tạo" data-zh="创作者" data-ko="크리에이터">Creator</span>
           <span style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;padding:9px 18px;border:0.5px solid rgba(212,168,75,0.45);color:rgba(212,168,75,0.85);" data-en="Seeker" data-fr="Chercheur" data-vi="Người Tìm Kiếm" data-zh="探求者" data-ko="시커">Seeker</span>
         </div>
-        <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.55);margin:0;">&#8594;&nbsp; <span data-en="Build your Passport" data-fr="Construisez votre Passeport" data-vi="Xây dựng Hộ chiếu" data-zh="构建您的护照" data-ko="패스포트 구성하기">Build your Passport</span></p>
+        <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,75,0.55);margin:0;">&#8594;&nbsp; <span data-en="Build your Edition" data-fr="Construisez votre Édition" data-vi="Xây dựng Hộ chiếu" data-zh="构建您的版" data-ko="패스포트 구성하기">Build your Edition</span></p>
       </div>
 
       <!-- ── TOP DEPOSIT CTA ── -->
@@ -2058,7 +2058,7 @@
 
           <!-- Passport choice -->
           <p class="mkt-eyebrow" style="margin-bottom:1.5rem;"
-             data-en="CHOOSE YOUR PASSPORT" data-fr="CHOISISSEZ VOTRE PASSEPORT" data-vi="CHỌN HỘ CHIẾU" data-zh="选择您的护照" data-ko="패스포트 선택">CHOOSE YOUR PASSPORT</p>
+             data-en="CHOOSE YOUR PASSPORT" data-fr="CHOISISSEZ VOTRE PASSEPORT" data-vi="CHỌN HỘ CHIẾU" data-zh="选择您的版" data-ko="패스포트 선택">CHOOSE YOUR PASSPORT</p>
           <div class="passport-grid-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:rgba(212,168,75,0.18);margin-bottom:1.5px;">
 
             <!-- 7-Day -->
@@ -2123,7 +2123,7 @@
               <p style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.1vw,15px);letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin:0 0 0.35rem;"
                  data-en="YOUR TOTAL" data-fr="VOTRE TOTAL" data-vi="TỔNG CỦA BẠN" data-zh="您的合计" data-ko="합계">YOUR TOTAL</p>
               <p id="aq-total-display" style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4rem);font-weight:normal;color:#EAE0CC;letter-spacing:-0.02em;line-height:1;margin:0;">—</p>
-              <p id="aq-total-note" style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.1vw,15px);letter-spacing:0.14em;color:var(--muted);margin:0.5rem 0 0;">Select a passport above</p>
+              <p id="aq-total-note" style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.1vw,15px);letter-spacing:0.14em;color:var(--muted);margin:0.5rem 0 0;">Select an edition above</p>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.85rem;">
               <a href="https://buy.stripe.com/dRm8wQ2FR5tr9vL0izcfK00" target="_blank" rel="noopener"
@@ -2176,7 +2176,7 @@
             var disp=document.getElementById('aq-total-display'),note=document.getElementById('aq-total-note');
             var passportDays=0;
             function update(){
-              if(!passportDays){disp.textContent='—';note.textContent='Select a passport above';return;}
+              if(!passportDays){disp.textContent='—';note.textContent='Select an edition above';return;}
               var base=isEarly?PRICES.earlyBird[passportDays]:PRICES.passport[passportDays];
               var vip=vipChk&&vipChk.checked?PRICES.vip:0;
               var total=base+vip;
@@ -2255,11 +2255,11 @@
          data-en="YOUR SELECTION" data-fr="VOTRE SÉLECTION" data-vi="LỰA CHỌN CỦA BẠN" data-zh="您的选择" data-ko="선택 내역">YOUR SELECTION</p>
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;">
         <p id="f-passport-label" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.5vw,1.15rem);color:var(--text-dim);margin:0;"
-           data-en="Select a Passport in the pricing section above →"
+           data-en="Select an Edition in the pricing section above →"
            data-fr="Sélectionnez un Passeport dans la section tarifs ci-dessus →"
            data-vi="Chọn Hộ chiếu ở phần giá trên →"
            data-zh="请在上方定价部分选择护照 →"
-           data-ko="위의 가격 섹션에서 패스포트를 선택하세요 →">Select a Passport in the pricing section above →</p>
+           data-ko="위의 가격 섹션에서 패스포트를 선택하세요 →">Select an Edition in the pricing section above →</p>
         <p id="f-total-label" style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--cta-gold);letter-spacing:-0.02em;margin:0;"></p>
       </div>
     </div>
@@ -2347,7 +2347,7 @@
       if(ta)ta.value=p.totalPrice;
       if(eb)eb.value=p.isEarlyBird?'yes':'no';
       var pl=document.getElementById('f-passport-label'),tl=document.getElementById('f-total-label');
-      if(pl)pl.textContent=(p.passport==='7day'?'7-Day':'14-Day')+' Passport'+(p.isEarlyBird?' (Early Bird)':'')+(p.vipSelected?' + VIP':'');
+      if(pl)pl.textContent=(p.passport==='7day'?'7-Day':'14-Day')+' Edition'+(p.isEarlyBird?' (Early Bird)':'')+(p.vipSelected?' + VIP':'');
       if(tl)tl.textContent='$'+p.totalPrice.toLocaleString();
     });
     // Form submission via Formspree → then redirect to Stripe
@@ -2356,7 +2356,7 @@
       form.addEventListener('submit',function(e){
         e.preventDefault();
         if(!window.ascensionPricing||!window.ascensionPricing.passport){
-          alert('Please select a 7-Day or 14-Day Passport above before submitting.');
+          alert('Please select a 7-Day or 14-Day Edition above before submitting.');
           document.getElementById('aq-pricing')&&document.getElementById('aq-pricing').scrollIntoView({behavior:'smooth'});
           return;
         }
@@ -2482,8 +2482,8 @@
         <table class="mkt-table">
           <thead>
             <tr>
-              <th data-en="Passport" data-fr="Passeport"
-                  data-vi="Hộ chiếu" data-ko="패스포트">Passport</th>
+              <th data-en="Edition" data-fr="Édition"
+                  data-vi="Ấn bản" data-ko="에디션">Edition</th>
               <th data-en="Duration" data-fr="Durée"
                   data-vi="Thời gian" data-ko="기간">Duration</th>
               <th data-en="Price" data-fr="Prix"
@@ -2496,8 +2496,8 @@
           </thead>
           <tbody>
             <tr>
-              <td data-en="&lt;strong&gt;Core Passport&lt;/strong&gt;" data-fr="&lt;strong&gt;Passeport Essentiel&lt;/strong&gt;"
-                  data-vi="&lt;strong&gt;Hộ chiếu Cốt lõi&lt;/strong&gt;" data-ko="&lt;strong&gt;코어 패스포트&lt;/strong&gt;"><strong>Core Passport</strong></td>
+              <td data-en="&lt;strong&gt;Core Edition&lt;/strong&gt;" data-fr="&lt;strong&gt;Édition Essentielle&lt;/strong&gt;"
+                  data-vi="&lt;strong&gt;Hộ chiếu Cốt lõi&lt;/strong&gt;" data-ko="&lt;strong&gt;코어 패스포트&lt;/strong&gt;"><strong>Core Edition</strong></td>
               <td data-en="7 Days" data-fr="7 Jours"
                   data-vi="7 Ngày" data-ko="7일">7 Days</td>
               <td class="price">$1,200</td>
@@ -2509,8 +2509,8 @@
                   data-vi="Không bao gồm · tùy chọn sẽ thông báo" data-ko="포함 안됨 · 옵션 추후 공지">Not included · options TBA</td>
             </tr>
             <tr>
-              <td data-en="&lt;strong&gt;Extended Passport&lt;/strong&gt;" data-fr="&lt;strong&gt;Passeport Prolongé&lt;/strong&gt;"
-                  data-vi="&lt;strong&gt;Hộ chiếu Mở rộng&lt;/strong&gt;" data-ko="&lt;strong&gt;익스텐디드 패스포트&lt;/strong&gt;"><strong>Extended Passport</strong></td>
+              <td data-en="&lt;strong&gt;Extended Edition&lt;/strong&gt;" data-fr="&lt;strong&gt;Édition Prolongée&lt;/strong&gt;"
+                  data-vi="&lt;strong&gt;Hộ chiếu Mở rộng&lt;/strong&gt;" data-ko="&lt;strong&gt;익스텐디드 패스포트&lt;/strong&gt;"><strong>Extended Edition</strong></td>
               <td data-en="14 Days" data-fr="14 Jours"
                   data-vi="14 Ngày" data-ko="14일">14 Days</td>
               <td class="price">$2,000</td>
@@ -2551,12 +2551,12 @@
         </table>
       </div>
       <p class="mkt-note"
-        data-en="Passport price covers the full programme. Accommodation is separate — hotel options will be announced once partnerships are confirmed."
+        data-en="Edition price covers the full programme. Accommodation is separate — hotel options will be announced once partnerships are confirmed."
         data-fr="Le prix du passeport couvre l'intégralité du programme. L'hébergement est séparé — les options hôtelières seront annoncées une fois les partenariats confirmés."
         data-vi="Giá hộ chiếu bao gồm toàn bộ chương trình. Chỗ ở tính riêng — tùy chọn khách sạn sẽ được thông báo khi xác nhận quan hệ đối tác."
         data-zh="护照价格涵盖全部课程。住宿另计——合作确认后将公布酒店选项。"
         data-ko="패스포트 가격은 전체 프로그램을 포함합니다. 숙박은 별도 — 파트너십 확인 후 호텔 옵션이 공지됩니다."
-        >Passport price covers the full programme. Accommodation is separate — hotel options will be announced once partnerships are confirmed.</p>
+        >Edition price covers the full programme. Accommodation is separate — hotel options will be announced once partnerships are confirmed.</p>
     </section>
 
 <section class="mkt-section" id="curation-standard">
@@ -2831,8 +2831,8 @@
                   data-vi="Khách sạn / Sức khỏe / Văn hóa" data-ko="호텔 / 웰니스 / 문화">Hotel / Wellness / Cultural</div>
           <div class="ptier-amount">$5K–$10K</div>
           <ul class="ptier-list">
-            <li data-en="Built into passport" data-fr="Intégré dans le passeport"
-                  data-vi="Bao gồm trong hộ chiếu" data-ko="패스포트에 포함">Built into passport</li>
+            <li data-en="Built into edition" data-fr="Intégré dans le passeport"
+                  data-vi="Bao gồm trong hộ chiếu" data-ko="패스포트에 포함">Built into edition</li>
             <li data-en="Guaranteed attendee access" data-fr="Accès garanti aux participants"
                   data-vi="Tiếp cận người tham dự được đảm bảo" data-ko="참가자 접근 보장">Guaranteed attendee access</li>
             <li data-en="MODUS marketing &amp; promotion" data-fr="Marketing et promotion MODUS"
@@ -3179,7 +3179,7 @@
         </details>
         <details style="border-bottom:0.5px solid var(--border-gold);padding:1.25rem 0;">
           <summary style="cursor:pointer;font-family:var(--font-ed);font-size:1.125rem;font-style:italic;color:var(--text);">What does "all-inclusive" actually include?</summary>
-          <p style="margin-top:0.75rem;font-size:16px;line-height:1.7;color:var(--text-dim);">The passport covers all group modalities and workshops, private fascial release sessions (2 for 7-day / 5 for 14-day), 4–5 Hideout Wellness thermal recovery sessions, Sleep Science Conference access and personal sleep assessment, daily breakfast, lunch and dinner plus non-alcoholic beverages, and airport transfers on arrival and departure day. Accommodation, international flights, travel insurance, and personal spending are not included — attendees book their own hotel from the curated list, with group rates and booking codes provided.</p>
+          <p style="margin-top:0.75rem;font-size:16px;line-height:1.7;color:var(--text-dim);">The edition covers all group modalities and workshops, private fascial release sessions (2 for 7-day / 5 for 14-day), 4–5 Hideout Wellness thermal recovery sessions, Sleep Science Conference access and personal sleep assessment, daily breakfast, lunch and dinner plus non-alcoholic beverages, and airport transfers on arrival and departure day. Accommodation, international flights, travel insurance, and personal spending are not included — attendees book their own hotel from the curated list, with group rates and booking codes provided.</p>
         </details>
         <details style="border-bottom:0.5px solid var(--border-gold);padding:1.25rem 0;">
           <summary style="cursor:pointer;font-family:var(--font-ed);font-size:1.125rem;font-style:italic;color:var(--text);">What is fascial release and why does it matter?</summary>
@@ -3195,7 +3195,7 @@
         </details>
         <details style="border-bottom:0.5px solid var(--border-gold);padding:1.25rem 0;">
           <summary style="cursor:pointer;font-family:var(--font-ed);font-size:1.125rem;font-style:italic;color:var(--text);">Can I attend the 14-day Fortnight or do I have to decide upfront?</summary>
-          <p style="margin-top:0.75rem;font-size:16px;line-height:1.7;color:var(--text-dim);">You can reserve either the 7-Day Passport or the full 14-Day Fortnight at booking. The 14-day option includes the Tết Rituals day and the Closing Ceremony &amp; Tết Blessing. If you book the 7-day and wish to extend, we will accommodate subject to availability — but the Fortnight rate cannot be guaranteed after arrival. We recommend deciding before you arrive.</p>
+          <p style="margin-top:0.75rem;font-size:16px;line-height:1.7;color:var(--text-dim);">You can reserve either the 7-Day Edition or the full 14-Day Fortnight at booking. The 14-day option includes the Tết Rituals day and the Closing Ceremony &amp; Tết Blessing. If you book the 7-day and wish to extend, we will accommodate subject to availability — but the Fortnight rate cannot be guaranteed after arrival. We recommend deciding before you arrive.</p>
         </details>
         <details style="border-bottom:0.5px solid var(--border-gold);padding:1.25rem 0;">
           <summary style="cursor:pointer;font-family:var(--font-ed);font-size:1.125rem;font-style:italic;color:var(--text);">I am a practitioner. How do I apply to facilitate?</summary>

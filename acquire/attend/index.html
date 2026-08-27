@@ -960,7 +960,7 @@
     .content-card a.cta-primary { background: transparent; border-color: rgba(212,168,75,0.6) !important; color: var(--gold) !important; }
     #partner { background: rgba(6,5,9,0.78); }
     [data-theme="light"] #partner { background: rgba(214,232,240,0.78); }
-    /* Pricing cards on light */
+    /* All inner cards: navy on light so they pop off the pale blue background */
     [data-theme="light"] .pricing-card,
     [data-theme="light"] .acquire-card,
     [data-theme="light"] .module-card,
@@ -970,8 +970,20 @@
     [data-theme="light"] .ptier-card,
     [data-theme="light"] .opportunity-card,
     [data-theme="light"] .curation-cell,
-    [data-theme="light"] .mkt-cta-cell { background: rgba(196,221,233,0.90); }
-    [data-theme="light"] .funnel-block { background: rgba(196,221,233,0.90) !important; border-color: rgba(138,106,26,0.25) !important; }
+    [data-theme="light"] .mkt-cta-cell { background: #1e3060 !important; }
+    /* Cream text inside all those navy cards */
+    [data-theme="light"] .pricing-card *,
+    [data-theme="light"] .acquire-card *,
+    [data-theme="light"] .module-card *,
+    [data-theme="light"] .hotel-card *,
+    [data-theme="light"] .tier-card *,
+    [data-theme="light"] .tier-cell *,
+    [data-theme="light"] .ptier-card *,
+    [data-theme="light"] .opportunity-card *,
+    [data-theme="light"] .curation-cell *,
+    [data-theme="light"] .mkt-cta-cell * { color: #EAE0CC !important; }
+    [data-theme="light"] .funnel-block { background: #1e3060 !important; border-color: rgba(212,168,75,0.28) !important; }
+    [data-theme="light"] .funnel-block * { color: #EAE0CC !important; }
     /* Deposit CTA button — readable on both themes */
     .deposit-cta-btn {
       display: inline-block;

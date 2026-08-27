@@ -589,4 +589,18 @@ Do not build SEERKA pages inside the MODUS domain. Keep the referral link clean 
 
 ---
 
+---
+
+## Frontend Typography Legibility Standard
+
+**Readability over decorative minimalism.** Never use thin, tiny, or faint typography for ordinary user-facing content. Design all body and interface text to remain comfortably readable for users aged 45+ on mobile screens.
+
+**Rules:**
+- Body copy: **16px minimum** on mobile; line-height 1.45–1.65; font-weight 400 or higher (never 300)
+- Functional UI labels (buttons, tags, metadata): **14px minimum**; DM Mono UI labels floor at **12px** (decorative-only exception)
+- Never render text below 12px for any user-facing element
+- Color opacity for body text: **0.82 minimum**; UI/meta text: 0.72 minimum — never 0.5 or 0.55 on readable content
+- Letter-spacing: max 0.20em on labels ≤12px; 0.12em max on body copy
+- Contrast: light-mode text must never be cream/beige on light-blue backgrounds — use `#0D1F2D` navy
+
 *This file is the canonical source for all MODUS design and editorial decisions. When in doubt, consult this file first. When this file is ambiguous, ask before building.*

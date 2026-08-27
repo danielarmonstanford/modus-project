@@ -1315,6 +1315,44 @@
         height: 100%; background: rgba(212,168,75,0.6);
         width: 0%; transition: width linear;
       }
+
+    /* ── TYPOGRAPHY LEGIBILITY FIXES ── */
+    /* Raise all sub-12px DM Mono labels & tags to 12px floor */
+    .dept-id-label,.dept-id-sep,.dept-id-name,.dept-id-issue,
+    .section-num,.pricing-tier,.hero-anchor,.hero-anchor-primary,
+    .discipline-tag,.tier-cell-badge,.hotel-card-badge,.hotel-card-tags,
+    .tier-cell-detail,.tier-cell-size,.module-card-title,
+    .mkt-eyebrow,.opportunity-card .op-label,
+    .hotel-card p,.tier-cell p {
+      font-size: 12px !important;
+    }
+    /* Pseudo-element bullets/arrows: keep at 12px */
+    .tier-features li::before, .partner-detail-list li::before {
+      font-size: 12px !important;
+    }
+    /* Remove font-weight:300 from body/interface copy */
+    .pricing-label { font-weight: 400 !important; }
+    /* Tighten excessive letter-spacing on small text */
+    .section-num { letter-spacing: 0.20em !important; opacity: 0.72 !important; }
+    .dept-id-issue { letter-spacing: 0.18em !important; }
+    .discipline-tag { letter-spacing: 0.18em !important; }
+    /* Lift faint opacity — floor at 0.72 */
+    .dept-id-sep { opacity: 0.72 !important; }
+    /* Body copy line-height — 1.55 minimum */
+    .section-subhead,.pricing-label,.module-card p,
+    .hotel-card p,.opportunity-card p,.tier-features li {
+      line-height: 1.55 !important;
+    }
+    /* Mobile: enforce 12px floor consistently */
+    @media (max-width: 768px) {
+      .section-num,.pricing-tier,.dept-id-label,.dept-id-sep,
+      .dept-id-name,.dept-id-issue,.hero-anchor,.hero-anchor-primary,
+      .discipline-tag,.tier-cell-badge,.hotel-card-badge,.hotel-card-tags,
+      .tier-cell-detail,.tier-cell-size,.module-card-title,
+      .mkt-eyebrow,.opportunity-card .op-label {
+        font-size: 12px !important;
+      }
+    }
     </style>
     <div id="attend-carousel" class="portal-carousel" aria-label="Gallery">
       <div class="sc-track">

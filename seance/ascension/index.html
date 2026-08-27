@@ -59,6 +59,9 @@
     .menu-btn{background:none;border:none;cursor:pointer;padding:10px 8px;display:flex;flex-direction:column;gap:5px;min-height:44px;justify-content:center;color:var(--text)}
     .menu-btn span{display:block;width:22px;height:1px;background:currentColor}
     .theme-btn{background:transparent;border:0.5px solid var(--border-s);border-radius:20px;padding:5px 14px;cursor:pointer;font-family:var(--font-mono);font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);transition:all var(--ease);display:flex;align-items:center;gap:6px;min-height:44px}
+    .sticky-reserve{background:var(--gold);color:#06080C;font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;padding:9px 18px;border-radius:20px;text-decoration:none;white-space:nowrap;opacity:0;pointer-events:none;transform:translateY(-4px);transition:opacity 0.25s,transform 0.25s;display:flex;align-items:center;min-height:38px}
+    .sticky-reserve.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+    @media(max-width:700px){.sticky-reserve{font-size:14px;padding:8px 14px}}
     .theme-btn:hover{color:var(--text);border-color:var(--border-gold)}
     .theme-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
 
@@ -386,6 +389,7 @@
     <button class="theme-btn" id="themeBtn">
       <span class="theme-dot"></span><span id="themeLabel">Light</span>
     </button>
+    <a href="/acquire#attend" class="sticky-reserve" id="stickyReserve">Reserve &mdash; $300 &rarr;</a>
   </div>
 </nav>
 
@@ -771,6 +775,19 @@
     function set(v){ h.dataset.theme=v; localStorage.setItem('modus-theme',v); lbl.textContent=v==='dark'?'Light':'Dark'; }
     set(localStorage.getItem('modus-theme')||'dark');
     btn.addEventListener('click',function(){ set(h.dataset.theme==='dark'?'light':'dark'); });
+  })();
+
+  // Sticky reserve button: show once hero is scrolled past
+  (function(){
+    var sr=document.getElementById('stickyReserve');
+    var hero=document.querySelector('.hero-cover');
+    if(!sr||!hero) return;
+    function onScroll(){
+      var threshold=hero.offsetTop+hero.offsetHeight-100;
+      sr.classList.toggle('show', window.scrollY>threshold);
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
   })();
 
   // Side menu

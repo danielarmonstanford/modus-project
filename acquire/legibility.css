@@ -1,0 +1,114 @@
+/* ============================================================
+   ASCENSION / ACQUIRE — Brute-Force Legibility Override
+   Loaded last on every acquire page. Raises all sub-14px
+   text and removes font-weight:300 from body copy.
+   Target: comfortable reading for ages 45–65+ on mobile.
+   ============================================================ */
+
+/* ── Token remaps for the acquire dark theme ── */
+:root {
+  --muted: #9A9490;           /* was #8A8681 — slightly lighter for dark bg */
+}
+
+/* ── All DM Mono UI labels: 12px floor, reduced tracking ── */
+[style*="font-size:9px"], [style*="font-size: 9px"],
+[style*="font-size:10px"], [style*="font-size: 10px"],
+[style*="font-size:11px"], [style*="font-size: 11px"] {
+  font-size: 13px !important;
+}
+
+/* ── Class-based micro labels ── */
+.section-label,
+.dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue,
+.section-num,
+.pricing-tier,
+.hero-anchor, .hero-anchor-primary,
+.discipline-tag,
+.tier-cell-badge, .tier-cell-size, .tier-cell-detail,
+.hotel-card-badge, .hotel-card-tags,
+.module-card-title,
+.mkt-eyebrow,
+.card-meta, .card-byline, .card-dept,
+.kicker, .article-dept, .article-byline,
+.footer-copy, .photo-credit, .photo-cap,
+.coming-sub, .sa-attr, .mi-note,
+.video-label, .spec-title, .spec-key,
+.deck-attr, .testimony-attr,
+.mi-label, .mi-axis-label, .mi-aname, .mi-num, .mi-view-label,
+.compare-table th,
+.axis-bar-label, .mi-car-sub,
+.ed-pos-label, .vtext p {
+  font-size: 13px !important;
+  letter-spacing: 0.18em !important;
+}
+
+/* Pseudoelement bullets/dashes — keep at 13px */
+.tier-features li::before,
+.partner-detail-list li::before,
+.modus-index-why ul li::before {
+  font-size: 13px !important;
+}
+
+/* ── Body / card copy: no font-weight:300, proper line-height ── */
+.pricing-label,
+.section-subhead,
+.module-card p,
+.hotel-card p,
+.opportunity-card p,
+.tier-features li,
+.modus-index-verdict,
+.modus-index-view p,
+.card-intro,
+.intro,
+.subhead,
+.mkt-subhead {
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
+/* ── Letter-spacing: cap at 0.20em on all UI labels ── */
+.section-num { letter-spacing: 0.18em !important; }
+.dept-id-issue { letter-spacing: 0.16em !important; }
+.discipline-tag { letter-spacing: 0.16em !important; }
+
+/* ── Opacity floor: nothing user-facing below 0.72 ── */
+.dept-id-sep { opacity: 0.75 !important; }
+.section-num { opacity: 0.75 !important; }
+
+/* ── Navigation on dark pages ── */
+.nav.dark .nav-link { color: rgba(234,224,204,0.82) !important; }
+
+/* ── Footer on dark surface ── */
+.dark-surface .footer-copy,
+.dark-surface .footer-brand { color: rgba(234,224,204,0.82) !important; }
+
+/* ── Email input ── */
+.email-row input { font-size: 16px !important; }
+
+/* ── Mobile: ensure 13px floor survives 20px root scaling ── */
+@media (max-width: 768px) {
+  .section-label,
+  .dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue,
+  .section-num, .pricing-tier,
+  .hero-anchor, .hero-anchor-primary,
+  .discipline-tag,
+  .tier-cell-badge, .tier-cell-size, .tier-cell-detail,
+  .hotel-card-badge, .hotel-card-tags,
+  .module-card-title, .mkt-eyebrow,
+  .card-meta, .card-byline, .card-dept,
+  .kicker, .footer-copy, .photo-credit {
+    font-size: 13px !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  /* Card/feature body text: 16px minimum on mobile */
+  .pricing-label,
+  .section-subhead,
+  .module-card p,
+  .hotel-card p,
+  .opportunity-card p,
+  .tier-features li,
+  .card-intro, .mkt-subhead {
+    font-size: 16px !important;
+  }
+}

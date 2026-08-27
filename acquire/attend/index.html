@@ -87,6 +87,7 @@
     :root {
       --gold: #D4A84B;
       --gold-dim: rgba(212,168,75,0.22);
+      --cta-gold: #D4AF37;
       --font-ed: 'Cormorant Garamond', Georgia, serif;
       --font-display: 'Lovine', 'Cormorant Garamond', Georgia, serif;
       --font-mono: 'DM Mono', 'Courier New', monospace;
@@ -164,7 +165,7 @@
       letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);
       transition: all var(--ease); display: flex; align-items: center; gap: 6px; min-height: 44px; }
     .theme-btn:hover { color: var(--text); border-color: var(--border-gold); }
-    .theme-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .theme-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cta-gold); }
 
     /* ── Side menu ── */
     .side-menu { position: fixed; top: 0; left: 0; bottom: 0; width: 300px;
@@ -179,7 +180,7 @@
       display: flex; align-items: center; justify-content: center; }
     .side-menu-close:hover { color: var(--text); }
     .side-menu-label { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.32em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
+      text-transform: uppercase; color: var(--cta-gold); margin-bottom: 2rem; }
     .side-menu-nav { display: flex; flex-direction: column; overflow-y:auto;flex:1 1 0;min-height:0;}
     .side-menu-nav a { font-family: var(--font-ed); font-size: clamp(0.9rem,2vw,1.15rem);
       font-weight:400; font-style: italic; color: var(--text-dim); line-height: 1.1;
@@ -204,7 +205,7 @@
     }
     .hero-kicker {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.32em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;
+      text-transform: uppercase; color: var(--cta-gold); margin-bottom: 1.5rem;
     }
     .hero-title {
       font-family: var(--font-display);
@@ -221,7 +222,7 @@
     /* ── Gold rule ── */
     .rule-gold {
       height: 0.5px; margin: 0;
-      background: linear-gradient(to right, var(--gold), transparent);
+      background: linear-gradient(to right, var(--cta-gold), transparent);
       opacity: 0.4;
     }
 
@@ -246,7 +247,7 @@
 
     .section-label {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.32em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 2.5rem;
+      text-transform: uppercase; color: var(--cta-gold); margin-bottom: 2.5rem;
     }
 
     /* ── Acquire cards ── */
@@ -286,7 +287,7 @@
     .card-tag {
       display: inline-block;
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold);
+      text-transform: uppercase; color: var(--cta-gold);
       border: 0.5px solid var(--border-gold);
       padding: 4px 10px; margin-bottom: 1.5rem;
     }
@@ -298,7 +299,7 @@
       transition: color var(--ease), border-color var(--ease);
       width: fit-content;
     }
-    .card-cta:hover { color: var(--gold); border-color: var(--gold); }
+    .card-cta:hover { color: var(--cta-gold); border-color: var(--cta-gold); }
     .card-cta-arrow { transition: transform 0.2s; }
     .card-cta:hover .card-cta-arrow { transform: translateX(4px); }
 
@@ -329,7 +330,7 @@
     .form-submit {
       background: none; border: none; cursor: pointer;
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold);
+      text-transform: uppercase; color: var(--cta-gold);
       transition: opacity var(--ease); padding: 0; min-height: 44px;
     }
     .form-submit:hover { opacity: 0.7; }
@@ -339,7 +340,7 @@
     }
     .form-confirm {
       font-family: var(--font-ed); font-size:14px; font-style: italic;
-      color: var(--gold); min-height: 20px; margin-top: 0.5rem;
+      color: var(--cta-gold); min-height: 20px; margin-top: 0.5rem;
     }
 
     /* ── Collections note ── */
@@ -358,11 +359,11 @@
     }
     .contact-link {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold);
+      text-transform: uppercase; color: var(--cta-gold);
       border-bottom: 0.5px solid var(--border-gold); padding-bottom: 3px;
       transition: border-color var(--ease);
     }
-    .contact-link:hover { border-color: var(--gold); }
+    .contact-link:hover { border-color: var(--cta-gold); }
 
     /* ── Footer ── */
     footer {
@@ -430,9 +431,9 @@
       border-bottom: 0.5px solid var(--border-gold); padding-bottom: 4px;
       transition: color var(--ease), border-color var(--ease);
     }
-    .hero-anchor:hover { color: var(--gold); border-color: var(--gold); }
+    .hero-anchor:hover { color: var(--cta-gold); border-color: var(--cta-gold); }
     .hero-anchor-primary {
-      color: var(--gold); border-color: var(--gold);
+      color: var(--cta-gold); border-color: var(--cta-gold);
     }
     .hero-anchor-primary:hover { opacity: 0.8; }
 
@@ -497,7 +498,7 @@
     }
     .includes-check {
       font-family: var(--font-mono); font-size:14px;
-      color: var(--gold); margin-top: 0.3rem; flex-shrink: 0;
+      color: var(--cta-gold); margin-top: 0.3rem; flex-shrink: 0;
       letter-spacing: 0;
     }
     .includes-text {
@@ -513,7 +514,7 @@
     .cta-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--bg); background: var(--gold);
+      text-transform: uppercase; color: #1A1200; background: var(--cta-gold);
       padding: 14px 28px; transition: opacity var(--ease);
     }
     .cta-primary:hover { opacity: 0.85; }
@@ -524,7 +525,7 @@
       border: 0.5px solid var(--border); padding: 14px 28px;
       transition: border-color var(--ease), color var(--ease);
     }
-    .cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .cta-secondary:hover { border-color: var(--cta-gold); color: var(--cta-gold); }
 
     /* ── Sponsor tiers ── */
     .sponsor-grid {
@@ -539,7 +540,7 @@
     .tier-card:hover { background: rgba(15,14,19,0.92); }
     .tier-rank {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.32em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem;
+      text-transform: uppercase; color: var(--cta-gold); margin-bottom: 1.25rem;
     }
     .tier-name {
       font-family: var(--font-display);
@@ -562,7 +563,7 @@
       padding: 0.35rem 0; border-bottom: 0.5px solid rgba(234,224,204,0.06);
     }
     .tier-features li::before {
-      content: '— '; color: var(--gold); font-family: var(--font-mono);
+      content: '— '; color: var(--cta-gold); font-family: var(--font-mono);
       font-size:14px; letter-spacing: 0;
     }
 
@@ -576,7 +577,7 @@
       display: flex; gap: 0.75rem;
     }
     .partner-detail-list li::before {
-      content: '→'; color: var(--gold); font-family: var(--font-mono);
+      content: '→'; color: var(--cta-gold); font-family: var(--font-mono);
       font-size:14px; flex-shrink: 0; margin-top: 0.3rem;
     }
     .disciplines-row {
@@ -610,7 +611,7 @@
     }
     .opp-cta {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold);
+      text-transform: uppercase; color: var(--cta-gold);
     }
 
     @media (max-width: 768px) {
@@ -661,7 +662,7 @@
     }
     .form-subtitle {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 2.5rem;
+      text-transform: uppercase; color: var(--cta-gold); margin-bottom: 2.5rem;
     }
     .form-group { margin-bottom: 1.5rem; }
     .form-group label {
@@ -688,7 +689,7 @@
     [data-theme="light"] .form-group select option { background: #EBE4D4; color: #1B2340; }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea:focus { border-color: var(--cta-gold); }
     .form-group input::placeholder,
     .form-group textarea::placeholder { color: var(--text-dim); font-style: italic; opacity: 0.5; }
     .form-group textarea { min-height: 90px; resize: vertical; line-height: 1.6; }
@@ -700,7 +701,7 @@
     .form-btn {
       margin-top: 2.5rem; width: 100%;
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.28em;
-      text-transform: uppercase; color: var(--bg); background: var(--gold);
+      text-transform: uppercase; color: var(--bg); background: var(--cta-gold);
       border: none; cursor: pointer; padding: 16px;
       transition: opacity var(--ease);
     }
@@ -710,7 +711,7 @@
       margin-top: 1.25rem; font-family: var(--font-ed); font-size: 1rem;
       font-style: italic; line-height: 1.65; min-height: 1.5rem;
     }
-    .form-result.success { color: var(--gold); }
+    .form-result.success { color: var(--cta-gold); }
     .form-result.error { color: rgba(234,224,204,0.5); }
     @media (max-width: 560px) {
       .form-row-2 { grid-template-columns: 1fr; }
@@ -734,7 +735,7 @@
     }
     .mkt-eyebrow {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.28em;
-      text-transform: uppercase; color: var(--gold);
+      text-transform: uppercase; color: var(--cta-gold);
       margin-bottom: 1.25rem; display: block;
     }
     .mkt-h2 {
@@ -751,7 +752,7 @@
     }
     .mkt-h3 {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.28em;
-      text-transform: uppercase; color: var(--gold); margin: 2.25rem 0 1.25rem;
+      text-transform: uppercase; color: var(--cta-gold); margin: 2.25rem 0 1.25rem;
     }
 
     /* Module cards */
@@ -764,7 +765,7 @@
     .module-card-icon { font-size: 1.75rem; margin-bottom: 1.1rem; display: block; }
     .module-card-title {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem;
+      text-transform: uppercase; color: var(--cta-gold); margin-bottom: 0.85rem;
     }
     .module-card p {
       font-family: var(--font-ed); font-size: clamp(1rem,1.4vw,1.12rem);
@@ -781,7 +782,7 @@
     .hotel-card.anchor { background: rgba(212,168,75,0.07); border: 0.5px solid rgba(212,168,75,0.4); }
     .hotel-card-badge {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: block;
+      text-transform: uppercase; color: var(--cta-gold); margin-bottom: 0.75rem; display: block;
     }
     .hotel-card-name {
       font-family: var(--font-display); font-size: clamp(1.3rem,2.2vw,1.8rem);
@@ -800,7 +801,7 @@
     .mkt-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2.5rem; }
     .mkt-table th {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold);
+      text-transform: uppercase; color: var(--cta-gold);
       padding: 1rem 1.25rem; text-align: left;
       background: rgba(212,168,75,0.07); border-bottom: 0.5px solid var(--rule);
     }
@@ -810,7 +811,7 @@
       border-bottom: 0.5px solid var(--rule); vertical-align: top; line-height: 1.65;
     }
     .mkt-table td.price {
-      color: var(--gold); font-weight: 600; white-space: nowrap;
+      color: var(--cta-gold); font-weight: 600; white-space: nowrap;
       font-size: clamp(1rem,1.5vw,1.15rem);
     }
     .mkt-table-wrap { overflow-x: auto; }
@@ -821,7 +822,7 @@
       gap: 1.5px; background: var(--rule); margin: 1.5rem 0 2.5rem;
     }
     .tier-cell { background: rgba(6,5,9,0.90); padding: clamp(2rem,3.5vw,3rem); text-align: center; }
-    .tier-cell.t1 { border-top: 2px solid var(--gold); }
+    .tier-cell.t1 { border-top: 2px solid var(--cta-gold); }
     .tier-cell.t2 { border-top: 2px solid var(--accent-ocean); }
     .tier-cell.t3 { border-top: 2px solid var(--accent-sand); }
     .tier-cell.t4 { border-top: 2px solid var(--muted); }
@@ -835,7 +836,7 @@
     }
     .tier-cell-size {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.14em;
-      color: var(--gold); margin-bottom: 1.25rem;
+      color: var(--cta-gold); margin-bottom: 1.25rem;
     }
     .tier-cell-detail {
       font-family: var(--font-ed); font-size: clamp(0.95rem,1.3vw,1.05rem);
@@ -866,12 +867,12 @@
     .funnel-btns { display: flex; flex-wrap: wrap; gap: 0.75rem; }
     .funnel-btn {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold);
-      border: 0.5px solid var(--gold); background: transparent;
+      text-transform: uppercase; color: var(--cta-gold);
+      border: 0.5px solid var(--cta-gold); background: transparent;
       padding: 13px 24px; cursor: pointer; transition: background 0.2s, color 0.2s;
       min-height: 44px;
     }
-    .funnel-btn:hover { background: var(--gold); color: var(--bg); }
+    .funnel-btn:hover { background: var(--cta-gold); color: #1A1200; }
 
     /* Partnership tiers */
     .ptier-grid {
@@ -885,7 +886,7 @@
     .ptier-card.p4 { border-top: 2px solid var(--accent-fire); }
     .ptier-label {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
+      text-transform: uppercase; color: var(--cta-gold); margin-bottom: 0.5rem;
     }
     .ptier-sub {
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.1em;
@@ -904,7 +905,7 @@
     }
     .ptier-list li:last-child { border-bottom: none; }
     .ptier-list li::before {
-      content: '→'; position: absolute; left: 0; color: var(--gold);
+      content: '→'; position: absolute; left: 0; color: var(--cta-gold);
       font-family: var(--font-mono); font-size:14px; top: 0.65rem; font-style: normal;
     }
 
@@ -937,8 +938,8 @@
       font-family: var(--font-mono); font-size:14px; letter-spacing: 0.22em;
       text-transform: uppercase; color: var(--text-dim); opacity: 0.65; margin-bottom: 1.5rem;
     }
-    .mkt-cta-btn { display: inline-block; font-family: var(--font-mono); font-size:14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 0.5px solid var(--gold); background: transparent; padding: 12px 24px; cursor: pointer; transition: background 0.2s, color 0.2s; text-decoration: none; }
-    .mkt-cta-btn:hover { background: var(--gold); color: var(--bg); }
+    .mkt-cta-btn { display: inline-block; font-family: var(--font-mono); font-size:14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cta-gold); border: 0.5px solid var(--cta-gold); background: transparent; padding: 12px 24px; cursor: pointer; transition: background 0.2s, color 0.2s; text-decoration: none; }
+    .mkt-cta-btn:hover { background: var(--cta-gold); color: var(--bg); }
     .mkt-cta-btn.secondary { border-color: var(--muted); color: var(--muted); }
     .mkt-cta-btn.secondary:hover { background: var(--muted); color: var(--bg); }
     .mkt-note { font-family: var(--font-mono); font-size:14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); opacity: 0.6; line-height: 1.8; margin-top: 1.25rem; }
@@ -952,7 +953,7 @@
     [data-theme="light"] .hero-cover [style*="rgba(240,232,213"] { color: rgba(240,232,213,0.88) !important; }
     [data-theme="light"] .hero-cover a[style*="#F0E8D5"] { color: #F0E8D5 !important; border-color: rgba(240,232,213,0.4) !important; }
     /* Catch all hardcoded dark gold (rgba(212,168,75)) in inline styles */
-    [data-theme="light"] [style*="rgba(212,168,75"] { color: var(--gold) !important; border-color: var(--gold) !important; }
+    [data-theme="light"] [style*="rgba(212,168,75"] { color: var(--cta-gold) !important; border-color: var(--cta-gold) !important; }
     /* Fix section/border bg tokens */
     [data-theme="light"] .section { background: transparent; }
     [data-theme="light"] .mkt-section { background: rgba(214,232,240,0.78); }
@@ -976,7 +977,7 @@
     .content-card .section-label,
     .content-card .mkt-eyebrow { color: rgba(212,168,75,0.85) !important; }
     .content-card .discipline-tag { border-color: rgba(212,168,75,0.3) !important; color: rgba(234,224,204,0.65) !important; }
-    .content-card a.cta-primary { background: transparent; border-color: rgba(212,168,75,0.6) !important; color: var(--gold) !important; }
+    .content-card a.cta-primary { background: transparent; border-color: rgba(212,168,75,0.6) !important; color: var(--cta-gold) !important; }
     #partner { background: rgba(6,5,9,0.78); }
     [data-theme="light"] #partner { background: rgba(214,232,240,0.78); }
     /* All inner cards: navy on light so they pop off the pale blue background */
@@ -1010,8 +1011,8 @@
       font-size:14px;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      background: var(--gold);
-      color: var(--bg);
+      background: var(--cta-gold);
+      color: #1A1200;
       padding: 15px 32px;
       text-decoration: none;
       transition: opacity 0.2s;
@@ -1477,35 +1478,35 @@
         <div>
           <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="RESTORE" data-fr="RESTAURER" data-vi="PHỤC HỒI" data-zh="恢复" data-ko="회복">RESTORE</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cta-gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Body · Recovery · Nervous System" data-fr="Corps · Récupération · Système nerveux" data-vi="Cơ thể · Phục hồi · Hệ thần kinh" data-zh="身体 · 康复 · 神经系统" data-ko="신체 · 회복 · 신경계">Body · Recovery · Nervous System</p>
         </div>
 
         <div>
           <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="MOVE" data-fr="BOUGER" data-vi="VẬN ĐỘNG" data-zh="运动" data-ko="무브">MOVE</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cta-gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Movement · Breath · Strength · Mobility" data-fr="Mouvement · Souffle · Force · Mobilité" data-vi="Chuyển động · Hơi thở · Sức mạnh · Linh hoạt" data-zh="运动 · 呼吸 · 力量 · 灵活性" data-ko="움직임 · 호흡 · 근력 · 가동성">Movement · Breath · Strength · Mobility</p>
         </div>
 
         <div>
           <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="EXPERIENCE" data-fr="VIVRE" data-vi="TRẢI NGHIỆM" data-zh="体验" data-ko="경험">EXPERIENCE</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cta-gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Food · Sound · Culture · Nature" data-fr="Gastronomie · Son · Culture · Nature" data-vi="Ẩm thực · Âm thanh · Văn hóa · Thiên nhiên" data-zh="饮食 · 声音 · 文化 · 自然" data-ko="음식 · 사운드 · 문화 · 자연">Food · Sound · Culture · Nature</p>
         </div>
 
         <div>
           <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="CONNECT" data-fr="RELIER" data-vi="KẾT NỐI" data-zh="连接" data-ko="연결">CONNECT</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cta-gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Practitioners · Community · Conversation" data-fr="Praticiens · Communauté · Conversation" data-vi="Chuyên gia · Cộng đồng · Trò chuyện" data-zh="从业者 · 社区 · 交流" data-ko="전문가 · 커뮤니티 · 대화">Practitioners · Community · Conversation</p>
         </div>
 
         <div>
           <p style="font-family:'Lovine','Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:normal;letter-spacing:-0.02em;line-height:1;color:var(--text);margin:0 0 0.6rem;"
              data-en="CREATE" data-fr="CRÉER" data-vi="SÁNG TẠO" data-zh="创造" data-ko="창조">CREATE</p>
-          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin:0;line-height:1.7;"
+          <p style="font-family:'DM Mono','Courier New',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cta-gold);opacity:0.75;margin:0;line-height:1.7;"
              data-en="Art · Photography · Music · Expression" data-fr="Art · Photographie · Musique · Expression" data-vi="Nghệ thuật · Nhiếp ảnh · Âm nhạc · Biểu đạt" data-zh="艺术 · 摄影 · 音乐 · 表达" data-ko="예술 · 사진 · 음악 · 표현">Art · Photography · Music · Expression</p>
         </div>
 
@@ -2040,7 +2041,7 @@
             <!-- 7-Day -->
             <label id="pcard-7" style="display:block;background:var(--bg);padding:clamp(1.5rem,3vw,2.5rem);cursor:pointer;border:2px solid transparent;transition:border-color 0.2s,background 0.2s;position:relative;">
               <input type="radio" name="aq-passport" value="1200" style="position:absolute;opacity:0;pointer-events:none;">
-              <p style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.2vw,15px);letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin:0 0 0.75rem;"
+              <p style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.2vw,15px);letter-spacing:0.24em;text-transform:uppercase;color:var(--cta-gold);margin:0 0 0.75rem;"
                  data-en="7-DAY PASSPORT · Jan 12–19" data-fr="PASSEPORT 7 JOURS · 12–19 Jan" data-vi="HỘ CHIẾU 7 NGÀY · 12–19 Jan" data-zh="7天护照 · 1月12–19日" data-ko="7일 패스포트 · 1월 12–19일">7-DAY PASSPORT · Jan 12–19</p>
               <p style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:normal;color:#EAE0CC;letter-spacing:-0.02em;line-height:1;margin:0 0 1.25rem;">$1,200</p>
               <ul style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
@@ -2056,7 +2057,7 @@
             <!-- 14-Day -->
             <label id="pcard-14" style="display:block;background:var(--bg);padding:clamp(1.5rem,3vw,2.5rem);cursor:pointer;border:2px solid transparent;transition:border-color 0.2s,background 0.2s;position:relative;">
               <input type="radio" name="aq-passport" value="2000" style="position:absolute;opacity:0;pointer-events:none;">
-              <p style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.2vw,15px);letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin:0 0 0.75rem;"
+              <p style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.2vw,15px);letter-spacing:0.24em;text-transform:uppercase;color:var(--cta-gold);margin:0 0 0.75rem;"
                  data-en="14-DAY PASSPORT · Jan 12–26 · TẾT" data-fr="PASSEPORT 14 JOURS · 12–26 Jan · TẾT" data-vi="HỘ CHIẾU 14 NGÀY · 12–26 Jan · TẾT" data-zh="14天护照 · 1月12–26日 · 春节" data-ko="14일 패스포트 · 1월 12–26일 · 뗏">14-DAY PASSPORT · Jan 12–26 · TẾT</p>
               <p style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:normal;color:#EAE0CC;letter-spacing:-0.02em;line-height:1;margin:0 0 1.25rem;">$2,000</p>
               <ul style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
@@ -2073,10 +2074,10 @@
           <!-- VIP upgrade -->
           <label id="vip-card" style="display:flex;gap:1.5rem;align-items:flex-start;background:var(--bg);padding:clamp(1.25rem,2.5vw,2rem);cursor:pointer;border:2px solid transparent;transition:border-color 0.2s;margin-bottom:1.5px;">
             <div style="flex-shrink:0;margin-top:0.3rem;">
-              <input type="checkbox" id="aq-vip" name="aq-vip" style="width:22px;height:22px;cursor:pointer;accent-color:var(--gold);">
+              <input type="checkbox" id="aq-vip" name="aq-vip" style="width:22px;height:22px;cursor:pointer;accent-color:var(--cta-gold);">
             </div>
             <div style="flex:1;">
-              <p style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.3vw,14px);letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin:0 0 0.75rem;"
+              <p style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.3vw,14px);letter-spacing:0.22em;text-transform:uppercase;color:var(--cta-gold);margin:0 0 0.75rem;"
                  data-en="VIP UPGRADE · +$2,200" data-fr="UPGRADE VIP · +2 200 $" data-vi="NÂNG CẤP VIP · +$2.200" data-zh="VIP升级 · +$2,200" data-ko="VIP 업그레이드 · +$2,200">VIP UPGRADE · +$2,200</p>
               <div class="vip-grid-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem 2.5rem;">
                 <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);margin:0;line-height:1.5;"
@@ -2088,13 +2089,13 @@
                 <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.1rem);color:var(--text-dim);margin:0;line-height:1.5;"
                    data-en="30-min post-retreat debrief + continued community access" data-fr="Bilan post-retraite de 30 min + accès communautaire continu" data-vi="30 phút tổng kết sau khóa tu + tiếp tục tiếp cận cộng đồng" data-zh="30分钟退修后总结 + 持续社区权限" data-ko="30분 사후 디브리핑 + 지속적인 커뮤니티 접근">30-min post-retreat debrief + continued community access</p>
               </div>
-              <p class="vip-save-line" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.3vw,1.05rem);color:var(--gold);margin:1rem 0 0;font-style:italic;"
+              <p class="vip-save-line" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.3vw,1.05rem);color:var(--cta-gold);margin:1rem 0 0;font-style:italic;"
                  data-en="Value ~$3,200 — you save ~$1,000 by bundling." data-fr="Valeur ~3 200 $ — vous économisez ~1 000 $ en combinant." data-vi="Giá trị ~$3.200 — tiết kiệm ~$1.000 khi gộp." data-zh="价值约$3,200 — 捆绑购买节省约$1,000。" data-ko="가치 ~$3,200 — 번들 시 ~$1,000 절약.">Value ~$3,200 — you save ~$1,000 by bundling.</p>
             </div>
           </label>
 
           <!-- Live total -->
-          <div style="background:var(--bg2);border-top:2px solid var(--gold);padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,3vw,2.5rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+          <div style="background:var(--bg2);border-top:2px solid var(--cta-gold);padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,3vw,2.5rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
             <div>
               <p style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.1vw,15px);letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin:0 0 0.35rem;"
                  data-en="YOUR TOTAL" data-fr="VOTRE TOTAL" data-vi="TỔNG CỦA BẠN" data-zh="您的合计" data-ko="합계">YOUR TOTAL</p>
@@ -2109,7 +2110,7 @@
                  data-vi="Đặt Chỗ — Đặt Cọc $300"
                  data-zh="预留位置 — $300 定金"
                  data-ko="예약하기 — $300 보증금">Reserve — $300 Deposit</a>
-              <a href="mailto:daniel@StanfordEmporium.com" style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.1vw,15px);letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:0.5px solid rgba(212,168,75,0.4);padding-bottom:2px;"
+              <a href="mailto:daniel@StanfordEmporium.com" style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.1vw,15px);letter-spacing:0.18em;text-transform:uppercase;color:var(--cta-gold);text-decoration:none;border-bottom:0.5px solid rgba(212,168,75,0.4);padding-bottom:2px;"
                  data-en="More Information" data-fr="Plus d'Informations" data-vi="Thông Tin Thêm" data-zh="更多信息" data-ko="추가 정보">More Information</a>
               <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.9rem,1.2vw,1rem);color:var(--text-dim);margin:0;text-align:right;line-height:1.5;"
                  data-en="Balance due 30 days before · Fully refundable if retreat does not proceed"
@@ -2120,13 +2121,13 @@
             </div>
           </div>
           <style>
-            #pcard-7.selected,#pcard-14.selected{border-color:var(--gold);background:rgba(212,168,75,0.06);}
-            #pcard-7.selected .passport-select-btn,#pcard-14.selected .passport-select-btn{background:var(--gold);color:#0D0C10;}
-            #vip-card.vip-active{border-color:var(--gold);background:rgba(212,168,75,0.05);}
+            #pcard-7.selected,#pcard-14.selected{border-color:var(--cta-gold);background:rgba(212,168,75,0.06);}
+            #pcard-7.selected .passport-select-btn,#pcard-14.selected .passport-select-btn{background:var(--cta-gold);color:#0D0C10;}
+            #vip-card.vip-active{border-color:var(--cta-gold);background:rgba(212,168,75,0.05);}
             .passport-select-btn{
               display:inline-block;
               font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.22em;text-transform:uppercase;
-              color:var(--gold);border:1px solid rgba(212,168,75,0.5);
+              color:var(--cta-gold);border:1px solid rgba(212,168,75,0.5);
               padding:0.6rem 1.25rem;transition:background 0.2s,color 0.2s;
             }
             @media(max-width:680px){
@@ -2177,7 +2178,7 @@
             // Show early bird banner if active
             if(isEarly){
               var eb=document.createElement('p');
-              eb.style.cssText='font-family:\'DM Mono\',monospace;font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin:0 0 1.25rem;';
+              eb.style.cssText='font-family:\'DM Mono\',monospace;font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cta-gold);margin:0 0 1.25rem;';
               eb.textContent='EARLY BIRD PRICING ACTIVE · ENDS OCTOBER 31';
               var pricing=document.getElementById('aq-pricing');
               if(pricing)pricing.insertBefore(eb,pricing.firstChild);
@@ -2227,7 +2228,7 @@
 
     <!-- Pricing summary (synced from calculator) -->
     <div id="f-pricing-summary" style="border:0.5px solid var(--border-gold);padding:1.5rem 2rem;margin-bottom:2rem;background:rgba(212,168,75,0.04);">
-      <p style="font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin:0 0 0.85rem;"
+      <p style="font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cta-gold);margin:0 0 0.85rem;"
          data-en="YOUR SELECTION" data-fr="VOTRE SÉLECTION" data-vi="LỰA CHỌN CỦA BẠN" data-zh="您的选择" data-ko="선택 내역">YOUR SELECTION</p>
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;">
         <p id="f-passport-label" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.5vw,1.15rem);color:var(--text-dim);margin:0;"
@@ -2236,7 +2237,7 @@
            data-vi="Chọn Hộ chiếu ở phần giá trên →"
            data-zh="请在上方定价部分选择护照 →"
            data-ko="위의 가격 섹션에서 패스포트를 선택하세요 →">Select a Passport in the pricing section above →</p>
-        <p id="f-total-label" style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--gold);letter-spacing:-0.02em;margin:0;"></p>
+        <p id="f-total-label" style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--cta-gold);letter-spacing:-0.02em;margin:0;"></p>
       </div>
     </div>
 
@@ -2278,7 +2279,7 @@
     </div>
 
     <div style="display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:2rem;">
-      <input type="checkbox" id="f-terms" name="terms" required style="width:16px;height:16px;margin-top:0.2rem;accent-color:var(--gold);flex-shrink:0;">
+      <input type="checkbox" id="f-terms" name="terms" required style="width:16px;height:16px;margin-top:0.2rem;accent-color:var(--cta-gold);flex-shrink:0;">
       <label for="f-terms" style="font-family:'Cormorant Garamond',serif;font-size:clamp(0.9rem,1.3vw,1rem);color:var(--text-dim);line-height:1.5;cursor:pointer;"
              data-en="I agree to the ASCENSION Terms &amp; Conditions and Privacy Policy"
              data-fr="J'accepte les Conditions générales et la Politique de confidentialité d'ASCENSION"
@@ -2302,8 +2303,8 @@
   </form>
 
   <!-- Success state -->
-  <div id="f-success" style="display:none;padding:2.5rem;border:0.5px solid var(--gold);background:rgba(212,168,75,0.06);max-width:720px;">
-    <p style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--gold);margin:0 0 0.75rem;">Reservation received.</p>
+  <div id="f-success" style="display:none;padding:2.5rem;border:0.5px solid var(--cta-gold);background:rgba(212,168,75,0.06);max-width:720px;">
+    <p style="font-family:'Lovine','Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--cta-gold);margin:0 0 0.75rem;">Reservation received.</p>
     <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.4vw,1.12rem);color:var(--text-dim);margin:0;line-height:1.7;"
        data-en="Check your email for next steps. A member of our team will follow up within 24 hours."
        data-fr="Vérifiez votre e-mail pour les prochaines étapes. Notre équipe vous contactera sous 24 heures."
@@ -3312,7 +3313,7 @@
         .then(function(r){
           if (r.ok) {
             confirm.textContent = 'Reserved. We will write when the print run is confirmed.';
-            confirm.style.color = 'var(--gold)';
+            confirm.style.color = 'var(--cta-gold)';
             input.value = '';
           } else {
             confirm.textContent = 'Something went wrong. Email us: hello@modus.gallery';
@@ -3321,7 +3322,7 @@
         .catch(function(){
           // Offline fallback — confirm visually, flag for follow-up
           confirm.textContent = 'Reserved. We will write when the print run is confirmed.';
-          confirm.style.color = 'var(--gold)';
+          confirm.style.color = 'var(--cta-gold)';
           input.value = '';
         });
       });

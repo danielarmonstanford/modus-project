@@ -1074,17 +1074,63 @@
 
     <!-- ── Cover Hero ── -->
     <div class="hero-cover" style="position:relative;width:100%;overflow:hidden;line-height:0;">
-      <img
+      <!-- Vimeo background loop -->
+      <div class="attend-vimeo-bg">
+        <iframe src="https://player.vimeo.com/video/1221665573?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+          frameborder="0" allow="autoplay; fullscreen" allowfullscreen
+          title="ASCENSION retreat film"></iframe>
+      </div>
+      <!-- Fallback image poster (fades out once video plays) -->
+      <img class="attend-hero-poster"
         src="https://res.cloudinary.com/dno3ruh4b/image/upload/c_fill,g_face,w_1800,h_1100,q_auto,f_auto/v1787491510/Screen_Shot_2026-08-23_at_9.24.02_AM_finbe7.png"
         alt="MODUS Séance — ASCENSION Retreat, Da Nang, Vietnam"
-        style="width:100%;height:90svh;min-height:560px;object-fit:cover;object-position:55% 20%;display:block;"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 20%;display:block;transition:opacity 0.8s ease;z-index:1;"
         loading="eager"
         fetchpriority="high">
+      <!-- Spacer to set the section height -->
+      <div style="width:100%;height:90svh;min-height:560px;display:block;pointer-events:none;"></div>
       <!-- gradient: dark top bar + heavy bottom fade -->
-      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.55) 0%,rgba(6,8,12,0.10) 30%,rgba(6,8,12,0.22) 55%,rgba(6,8,12,0.88) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,12,0.55) 0%,rgba(6,8,12,0.10) 30%,rgba(6,8,12,0.22) 55%,rgba(6,8,12,0.88) 100%);pointer-events:none;z-index:2;"></div>
+      <style>
+        .attend-vimeo-bg {
+          position: absolute; inset: 0; z-index: 0;
+          overflow: hidden; pointer-events: none;
+        }
+        .attend-vimeo-bg::before {
+          /* 16:9 oversized iframe centering */
+          content: ''; display: block;
+        }
+        .attend-vimeo-bg iframe {
+          position: absolute;
+          top: 50%; left: 50%;
+          width: max(177.78vh, 100%);
+          height: max(56.25vw, 100%);
+          transform: translate(-50%, -50%);
+          border: none;
+        }
+        .attend-hero-poster.v-loaded { opacity: 0; }
+        @media (prefers-reduced-motion: reduce) {
+          .attend-vimeo-bg { display: none; }
+          .attend-hero-poster { opacity: 1 !important; }
+        }
+      </style>
+      <script>
+      (function(){
+        var poster = document.querySelector('.attend-hero-poster');
+        if (!poster) return;
+        window.addEventListener('message', function(e){
+          if (e.origin !== 'https://player.vimeo.com') return;
+          try {
+            var d = JSON.parse(e.data);
+            if (d.event === 'playProgress' || d.event === 'play') poster.classList.add('v-loaded');
+          } catch(x){}
+        });
+        setTimeout(function(){ poster.classList.add('v-loaded'); }, 2000);
+      })();
+      </script>
 
       <!-- cover title block: ASCENSION pinned to sky, rest at bottom -->
-      <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(2rem,6vw,5rem) clamp(1.25rem,5vw,4.5rem);">
+      <div style="position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(2rem,6vw,5rem) clamp(1.25rem,5vw,4.5rem);">
         <!-- top: ASCENSION in the dark sky -->
         <div>
           <span style="font-family:'DM Mono','Courier New',monospace;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(212,168,75,1);margin-bottom:1.25rem;display:block;">MODUS &middot; S&Eacute;ANCE &middot; ACQUIRE</span>

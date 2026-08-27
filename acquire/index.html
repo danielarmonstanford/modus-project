@@ -270,8 +270,16 @@
     </div>
   </nav>
 
-  <!-- ── HERO IMAGE ── -->
-  <section class="img-section tall parallax" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663013/lucid-origin_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-0_wk3pll.jpg');">
+  <!-- ── HERO VIDEO ── -->
+  <section class="vimeo-hero" aria-label="ASCENSION retreat hero">
+    <!-- Vimeo background=1: autoplay, loop, muted, no controls -->
+    <div class="vimeo-bg">
+      <iframe src="https://player.vimeo.com/video/1221665573?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen
+        title="ASCENSION retreat film"></iframe>
+    </div>
+    <!-- Fallback poster shown until iframe loads -->
+    <div class="vimeo-poster" style="background-image:url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663013/lucid-origin_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-0_wk3pll.jpg');"></div>
     <div class="img-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow" data-en="Da Nang, Vietnam · January 2027" data-fr="Da Nang, Vietnam · Janvier 2027" data-vi="Đà Nẵng, Việt Nam · Tháng 1, 2027" data-zh="越南岘港 · 2027年1月" data-ko="베트남 다낭 · 2027년 1월">Da Nang, Vietnam · January 2027</p>
@@ -280,6 +288,72 @@
     </div>
     <div class="scroll-hint">↓</div>
   </section>
+
+  <style>
+    .vimeo-hero {
+      position: relative;
+      width: 100%;
+      height: clamp(420px, 72vh, 860px);
+      overflow: hidden;
+      background: #08070A;
+    }
+    .vimeo-poster {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      transition: opacity 0.8s ease;
+    }
+    .vimeo-poster.loaded { opacity: 0; pointer-events: none; }
+    .vimeo-bg {
+      position: absolute;
+      /* Oversized to fill any aspect ratio without letterboxing */
+      top: 50%; left: 50%;
+      width: 177.78vh;  /* 16/9 × 100vh */
+      min-width: 100%;
+      height: 56.25vw;  /* 9/16 × 100vw */
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .vimeo-bg iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .vimeo-hero .img-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to bottom,
+        rgba(6,5,9,0.30) 0%,
+        rgba(6,5,9,0.08) 35%,
+        rgba(6,5,9,0.22) 65%,
+        rgba(6,5,9,0.72) 100%);
+    }
+    .vimeo-hero .hero-content { z-index: 2; }
+    .vimeo-hero .scroll-hint { z-index: 2; }
+    /* Hide poster once Vimeo iframe signals ready */
+    @media (prefers-reduced-motion: reduce) {
+      .vimeo-bg { display: none; }
+      .vimeo-poster { opacity: 1 !important; }
+    }
+  </style>
+  <script>
+  (function(){
+    /* Fade out the poster image once Vimeo player fires its first timeupdate */
+    var poster = document.querySelector('.vimeo-poster');
+    var iframe = document.querySelector('.vimeo-bg iframe');
+    if (!poster || !iframe) return;
+    window.addEventListener('message', function(e){
+      if (e.origin !== 'https://player.vimeo.com') return;
+      try {
+        var data = JSON.parse(e.data);
+        if (data.event === 'playProgress' || data.event === 'play') {
+          poster.classList.add('loaded');
+        }
+      } catch(e) {}
+    });
+    /* Also fade after 2s as a fallback */
+    setTimeout(function(){ poster.classList.add('loaded'); }, 2000);
+  })();
+  </script>
 
   <!-- ── BRAND DNA PULL QUOTE ── -->
   <div class="pull-quote" data-en="What if feeling better became an adventure?" data-fr="Et si se sentir mieux devenait une aventure ?" data-vi="Nếu cảm thấy tốt hơn trở thành một cuộc phiêu lưu thì sao?" data-zh="如果变得更好成为一种冒险呢？" data-ko="더 나아지는 것이 하나의 모험이 된다면?">What if feeling better became an adventure?</div>

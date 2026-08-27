@@ -943,14 +943,21 @@
 
     /* Content card — pops text out from busy illustrations */
     .content-card {
-      background: rgba(6,5,9,0.90);
-      border: 0.5px solid var(--border-gold, rgba(212,168,75,0.25));
+      background: #152040;
+      border: 0.5px solid rgba(212,168,75,0.30);
       padding: clamp(2rem,4vw,3.5rem);
     }
     [data-theme="light"] .content-card {
-      background: rgba(240,248,252,0.96);
-      border-color: rgba(138,106,26,0.2);
+      background: #152040;
+      border-color: rgba(212,168,75,0.35);
     }
+    /* Ensures text inside navy cards always reads as cream regardless of theme */
+    .content-card, .content-card * { color: #EAE0CC !important; }
+    .content-card .section-num,
+    .content-card .section-label,
+    .content-card .mkt-eyebrow { color: rgba(212,168,75,0.85) !important; }
+    .content-card .discipline-tag { border-color: rgba(212,168,75,0.3) !important; color: rgba(234,224,204,0.65) !important; }
+    .content-card a.cta-primary { background: transparent; border-color: rgba(212,168,75,0.6) !important; color: var(--gold) !important; }
     #partner { background: rgba(6,5,9,0.78); }
     [data-theme="light"] #partner { background: rgba(214,232,240,0.78); }
     /* Pricing cards on light */
@@ -1221,7 +1228,7 @@
 
     <!-- ── THE IDEA ── -->
     <section class="mkt-section" id="the-idea" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center;">
-      <div>
+      <div class="content-card">
         <span class="mkt-eyebrow"
           data-en="WHY ASCENSION EXISTS"
           data-fr="POURQUOI ASCENSION EXISTE"
@@ -1248,7 +1255,7 @@
           data-zh="ASCENSION将这些世界融合为一个精心策划的生态系统。"
           data-ko="ASCENSION은 이 세계들을 하나의 큐레이션된 생태계로 통합합니다."
           >ASCENSION brings these worlds into one curated ecosystem.</p>
-      </div>
+      </div><!-- /content-card -->
       <div style="position:relative;">
         <img src="https://res.cloudinary.com/dno3ruh4b/image/upload/v1787663013/lucid-origin_The_illustrations_should_feel_intellectually_curious_sensual_refined_and_slightl-0_wk3pll.jpg"
           alt="ASCENSION — body, mind, culture"
@@ -2576,6 +2583,7 @@
     </section>
 
 <section class="section" id="sponsor">
+      <div class="content-card">
       <p class="section-num">02 &mdash; Sponsor</p>
       <h2 class="section-heading">Partner with<br>MODUS</h2>
       <p class="section-subhead">Align your brand with luxury + consciousness.</p>
@@ -2660,6 +2668,7 @@
         <button class="cta-primary" onclick="openModal('modal-sponsor')">Explore Sponsorship &rarr;</button>
         <button class="cta-secondary" onclick="openModal('modal-sponsor')">Contact Us &rarr;</button>
       </div>
+      </div><!-- /content-card -->
     </section>
 
 <section class="section" id="partner">
@@ -2740,6 +2749,7 @@
 
     <!-- ── Other Ways to Engage ── -->
     <section class="section">
+      <div class="content-card">
       <p class="section-label">Other Ways to Engage</p>
       <div class="opportunity-grid">
         <a class="opportunity-card" href="/join">
@@ -2763,10 +2773,12 @@
           <p class="opp-cta">Manifeste &rarr;</p>
         </a>
       </div>
+      </div><!-- /content-card -->
     </section>
 
     <!-- ── Editions + Works ── -->
     <section class="section">
+      <div class="content-card">
       <p class="section-label">Issue No. 1 &middot; 2026</p>
       <div class="acquire-grid">
         <div class="acquire-card">
@@ -2793,9 +2805,11 @@
           </div>
         </div>
       </div>
+      </div><!-- /content-card -->
     </section>
 
     <section class="section">
+      <div class="content-card">
       <p class="section-label">Original Works</p>
       <div class="collections-note">
         <div>
@@ -2811,9 +2825,11 @@
           <a class="contact-link" href="mailto:collections@modus.gallery">Inquire &rarr;</a>
         </div>
       </div>
+      </div><!-- /content-card -->
     </section>
 
     <section class="section">
+      <div class="content-card">
       <p class="section-label">Stanford Emporium</p>
       <div class="collections-note">
         <div>
@@ -2827,6 +2843,7 @@
           <a class="contact-link" href="https://stanfordemporium.com/acquisitions" target="_blank" rel="noopener">Acquisitions desk &rarr;</a>
         </div>
       </div>
+      </div><!-- /content-card -->
     </section>
 
   </div>

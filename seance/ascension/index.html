@@ -38,7 +38,11 @@
     [data-theme="light"]{--bg:#F4EEE2;--bg2:#EBE4D4;--bg3:#E2DAC8;--text:#06080C;--text-dim:rgba(6,8,12,0.75);--border:rgba(6,8,12,0.1);--border-s:rgba(6,8,12,0.88);--border-gold:rgba(212,168,75,0.35);--nav-bg:rgba(244,238,226,0.94)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{font-size:16px;scroll-behavior:smooth}
-    body{font-family:var(--font-ed);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background var(--ease),color var(--ease)}
+    body{font-family:var(--font-ed);background:linear-gradient(rgba(244,238,226,0.90),rgba(244,238,226,0.90)),url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787828365/thai_style_full_doors_contrast_llcw5b.jpg') center/cover fixed;color:var(--text);min-height:100vh;overflow-x:hidden;transition:background var(--ease),color var(--ease)}
+    [data-theme="dark"] body{background:linear-gradient(rgba(6,8,12,0.88),rgba(6,8,12,0.88)),url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787828365/thai_style_full_doors_contrast_llcw5b.jpg') center/cover fixed}
+    @media (max-width: 768px), (hover: none) {
+      body{background-attachment:scroll !important}
+    }
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
 

@@ -225,6 +225,7 @@
     /* ── Pricing ── */
     .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border)}
     .pg2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5px;background:var(--border)}
+    .g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .price-card{background:var(--bg);padding:clamp(2rem,4vw,3rem);display:flex;flex-direction:column}
     .price-card.price-feat{background:var(--bg2)}
     .price-card.price-attend{background:#1A1408;border-top:3px solid var(--gold);padding-top:0;overflow:hidden}
@@ -242,8 +243,8 @@
     .price-attend .price-cta{background:#D4A84B;color:#06080C}
     .spon-target{font-family:var(--font-mono);font-size:14px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(212,168,75,0.6);display:block;margin-top:0.2rem}
     .price-label{font-family:var(--font-mono);font-size:14px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;display:block}
-    .price-title{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:normal;letter-spacing:-0.03em;line-height:0.95;color:var(--text);margin-bottom:0.5rem}
-    .price-amount{font-family:var(--font-mono);font-size:clamp(1.1rem,1.8vw,1.4rem);letter-spacing:0.06em;color:var(--gold);border-bottom:0.5px solid var(--border-gold);padding-bottom:1.5rem;margin-bottom:1.5rem}
+    .price-title{font-family:var(--font-display);font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:normal;letter-spacing:-0.03em;line-height:0.95;color:var(--text);margin-bottom:0.5rem}
+    .price-amount{font-family:var(--font-mono);font-size:clamp(1.3rem,2.4vw,1.75rem);letter-spacing:0.04em;color:var(--gold);border-bottom:0.5px solid var(--border-gold);padding-bottom:1.5rem;margin-bottom:1.5rem}
     .price-amount span{font-size:0.65em;opacity:0.7}
     .price-features{list-style:none;flex:1;margin-bottom:2rem}
     .price-features li{font-family:var(--font-ed);font-size:clamp(0.875rem,1.3vw,1rem);color:var(--text-dim);padding:0.45rem 0;border-bottom:0.5px solid var(--border);font-style:italic;display:flex;gap:0.75rem;line-height:1.5}
@@ -1095,7 +1096,7 @@
     <!-- Deposit anchor -->
     <div id="deposit" style="border:0.5px solid var(--border-gold);padding:2rem;background:var(--gold-glow);margin-bottom:2rem;">
       <span class="eyebrow" style="margin-bottom:0.75rem;">Reserve Your Seat</span>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+      <div class="g2" style="gap:2rem;align-items:center;">
         <div>
           <p style="font-family:var(--font-ed);font-size:clamp(1rem,1.5vw,1.15rem);font-style:italic;color:var(--text);line-height:1.65;margin-bottom:1rem;">Secure your place with a $300 deposit. Refundable and transferable within 72 hours. Balance due December 1, 2026.</p>
           <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-dim);line-height:1.9;">$300 deposit &nbsp;·&nbsp; Refundable &amp; transferable<br>72-hour cooling-off period<br>Balance due Dec 1, 2026<br>Stripe secure checkout</p>
@@ -1108,7 +1109,7 @@
     </div>
 
     <!-- Facilitate card -->
-    <div style="display:grid;grid-template-columns:1fr 2fr;gap:1.5px;background:var(--border);">
+    <div class="g2" style="gap:1.5px;background:var(--border);">
       <div class="price-card">
         <span class="price-label">Facilitate — Practitioner</span>
         <h3 class="price-title">Lead a<br>Session</h3>
@@ -1127,7 +1128,7 @@
       <div class="price-card" style="background:var(--bg2);">
         <span class="price-label">Not Included in Any Passport</span>
         <h3 class="price-title" style="font-size:clamp(1.3rem,2.5vw,2rem);">What the passport<br>doesn't cover</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;">
+        <div class="g2" style="gap:1.5rem;margin-top:1rem;">
           <div>
             <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Accommodation</p>
             <p style="font-family:var(--font-ed);font-size:clamp(0.875rem,1.2vw,1rem);font-style:italic;color:var(--text-dim);line-height:1.65;">Booked independently by each attendee. MODUS curates 5 premium Da Nang hotels with group rates from $57–$135/night. Booking codes and commissions handled for you.</p>
@@ -1153,7 +1154,7 @@
     <h2 class="sec-title" style="margin-bottom:0.5rem;">Because the best transformation<br>happens in the right place.</h2>
     <p style="font-family:var(--font-ed);font-size:clamp(1.1rem,1.8vw,1.35rem);font-style:italic;color:rgba(240,232,213,0.5);margin-bottom:3.5rem;line-height:1.5;">Not Bali. Not Costa Rica. Not Tulum.<br><strong style="color:var(--gold);font-style:normal;">Da Nang.</strong></p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 4rem;margin-bottom:3.5rem;">
+    <div class="g2" style="gap:2.5rem 4rem;margin-bottom:3.5rem;">
 
       <!-- THE BEACHES -->
       <div>

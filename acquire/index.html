@@ -282,6 +282,23 @@
     <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,transparent 60%,rgba(6,5,9,0.55) 100%);pointer-events:none;"></div>
   </section>
 
+  <!-- ── SOUND TOGGLE (right at video edge, before title) ── -->
+  <div class="sound-seam">
+    <button id="sound-btn" class="sound-btn muted" aria-label="Unmute video audio" title="Play sound">
+      <svg class="sound-icon sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <line x1="23" y1="9" x2="17" y2="15"/>
+        <line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+      <svg class="sound-icon sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      </svg>
+      <span class="sound-label">Sound</span>
+    </button>
+  </div>
+
   <!-- ── TITLE BLOCK (below video) ── -->
   <div class="hero-below">
     <p class="hero-eyebrow"
@@ -356,19 +373,78 @@
     [data-theme="light"] .hero-below .hero-title { color: #0D1F2D; }
     [data-theme="light"] .hero-date { color: #0D1F2D; }
     [data-theme="light"] .hero-below .scroll-hint { color: #0D1F2D; }
+
+    /* ── Sound seam ── */
+    .sound-seam {
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      padding: clamp(0.85rem,1.5vw,1.25rem) 0 0;
+    }
+    .sound-btn {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: none;
+      border: 0.5px solid rgba(212,168,75,0.45);
+      color: rgba(212,168,75,0.85);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+      padding: 9px 18px 9px 14px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .sound-btn:hover { background: rgba(212,168,75,0.1); color: var(--gold); border-color: var(--gold); }
+    .sound-btn.unmuted { border-color: var(--gold); color: var(--gold); }
+    .sound-icon { width: 16px; height: 16px; flex-shrink: 0; }
+    /* Toggle which icon shows */
+    .sound-btn.muted   .sound-on  { display: none; }
+    .sound-btn.unmuted .sound-off { display: none; }
+    .sound-label { display: inline-block; width: 3.5em; text-align: left; }
+    /* ripple animation on active */
+    @keyframes sound-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+    .sound-btn.unmuted .sound-label { animation: sound-pulse 2.4s ease-in-out infinite; }
+    [data-theme="light"] .sound-seam { background: var(--bg); }
+    [data-theme="light"] .sound-btn { color: #8A6A1A; border-color: rgba(138,106,26,0.4); }
+    [data-theme="light"] .sound-btn:hover { background: rgba(138,106,26,0.1); }
+    [data-theme="light"] .sound-btn.unmuted { border-color: #8A6A1A; color: #8A6A1A; }
   </style>
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
   (function(){
+    /* Poster fade */
     var poster = document.querySelector('.vimeo-poster');
-    if (!poster) return;
-    window.addEventListener('message', function(e){
-      if (e.origin !== 'https://player.vimeo.com') return;
-      try {
-        var d = JSON.parse(e.data);
-        if (d.event === 'playProgress' || d.event === 'play') poster.classList.add('loaded');
-      } catch(x){}
+    if (poster) {
+      window.addEventListener('message', function(e){
+        if (e.origin !== 'https://player.vimeo.com') return;
+        try {
+          var d = JSON.parse(e.data);
+          if (d.event === 'playProgress' || d.event === 'play') poster.classList.add('loaded');
+        } catch(x){}
+      });
+      setTimeout(function(){ poster.classList.add('loaded'); }, 2000);
+    }
+
+    /* Sound toggle via Vimeo Player API */
+    var iframe = document.querySelector('.vimeo-bg iframe');
+    var btn    = document.getElementById('sound-btn');
+    var label  = btn && btn.querySelector('.sound-label');
+    if (!iframe || !btn) return;
+
+    var player = new Vimeo.Player(iframe);
+    var muted = true;
+
+    /* Try to autoplay with sound (allowed after user gesture or on some browsers) */
+    player.ready().then(function(){
+      player.setVolume(0); /* start silent — matches background=1 behaviour */
+    }).catch(function(){});
+
+    btn.addEventListener('click', function(){
+      muted = !muted;
+      player.setVolume(muted ? 0 : 1).catch(function(){});
+      btn.classList.toggle('muted',   muted);
+      btn.classList.toggle('unmuted', !muted);
+      btn.setAttribute('aria-label', muted ? 'Unmute video audio' : 'Mute video audio');
+      if (label) label.textContent = muted ? 'Sound' : 'Playing';
     });
-    setTimeout(function(){ poster.classList.add('loaded'); }, 2000);
   })();
   </script>
 

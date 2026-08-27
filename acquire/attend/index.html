@@ -232,6 +232,14 @@
        overlay in between — solid bg fixes the gold/cream pricing text having
        zero contrast against the pale image. */
     #attend { background: var(--bg); max-width: 100%; }
+    /* Ascension Method section always sits on a dark photo bg, regardless
+       of theme, so force text to cream and disable fixed-attachment on
+       mobile (broken on iOS) */
+    #ascension-method, #ascension-method * { color: #EAE0CC !important; }
+    #ascension-method [style*="color:rgba(212,168,75"] { color: var(--cta-gold) !important; }
+    @media (max-width: 768px), (hover: none) {
+      #ascension-method { background-attachment: scroll !important; }
+    }
     #attend > * { max-width: 1100px; margin-left: auto; margin-right: auto; }
     /* Light mode: rose tone pulled from the page's own illustration palette
        gives the pricing/passport text more pop than the flat pale-blue bg */
@@ -1468,7 +1476,7 @@
     </script>
 
     <!-- ── THE ASCENSION METHOD ── -->
-    <section style="padding:clamp(3.5rem,8vw,6rem) clamp(1.25rem,5vw,4.5rem);border-bottom:0.5px solid rgba(212,168,75,0.18);">
+    <section id="ascension-method" style="padding:clamp(3.5rem,8vw,6rem) clamp(1.25rem,5vw,4.5rem);border-bottom:0.5px solid rgba(212,168,75,0.18);background:linear-gradient(rgba(6,5,9,0.82),rgba(6,5,9,0.88)),url('https://res.cloudinary.com/dno3ruh4b/image/upload/v1787823818/Black_Gold-water-D80_5523_fgh0eu.jpg') center/cover fixed;">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start;">
       <div>
       <p data-en="THE ASCENSION METHOD" data-fr="LA MÉTHODE ASCENSION" data-vi="PHƯƠNG PHÁP ASCENSION" data-zh="ASCENSION 方法" data-ko="ASCENSION 방법론"

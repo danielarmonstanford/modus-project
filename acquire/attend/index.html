@@ -232,6 +232,9 @@
        overlay in between — solid bg fixes the gold/cream pricing text having
        zero contrast against the pale image. */
     #attend { background: var(--bg); max-width: 100%; }
+    /* #faq had the same problem — the vintage collage bled through at full
+       strength behind the accordion text with no backing at all. */
+    #faq { background: var(--bg); }
     /* Ascension Method section always sits on a dark photo bg, regardless
        of theme, so force text to cream and disable fixed-attachment on
        mobile (broken on iOS) */
@@ -1005,8 +1008,11 @@
     .content-card .mkt-eyebrow { color: rgba(212,168,75,0.85) !important; }
     .content-card .discipline-tag { border-color: rgba(212,168,75,0.3) !important; color: rgba(234,224,204,0.65) !important; }
     .content-card a.cta-primary { background: transparent; border-color: rgba(212,168,75,0.6) !important; color: var(--cta-gold) !important; }
-    #partner { background: rgba(6,5,9,0.78); }
-    [data-theme="light"] #partner { background: rgba(214,232,240,0.78); }
+    #partner { background: var(--bg); }
+    /* Same illustration-bleed-through fix applied to every remaining plain
+       .section — they had no backing at all and sat directly on the fixed
+       body image. */
+    #sponsor, #facilitate, #media, #schedule { background: var(--bg); }
     /* All inner cards: navy on light so they pop off the pale blue background */
     [data-theme="light"] .pricing-card,
     [data-theme="light"] .acquire-card,

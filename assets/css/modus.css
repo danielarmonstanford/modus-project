@@ -43,14 +43,21 @@
   --font-ui:        system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 
   /* Type scale */
-  --text-micro:    13px;   /* was 10px — floor raised for legibility */
-  --text-caption:  14px;   /* was 12px */
-  --text-label:    14px;   /* was 13px */
+  --text-micro:    14px;   /* was 10px, then 13px — hard floor is now 14px, no exceptions */
+  --text-caption:  14px;
+  --text-label:    14px;
   --text-body:     17px;
   --text-intro:    21px;
   --text-subhead:  30px;
   --text-head:     46px;
   --text-display:  80px;
+
+  /* Legibility tokens — brute-force typography standard, see CLAUDE.md */
+  --font-body:        16px;
+  --font-body-small:  14px;
+  --font-meta:        14px;
+  --font-nav:         14px;
+  --font-button:      15px;
 
   /* Letter-spacing */
   --track-tight:  -0.02em;
@@ -117,12 +124,12 @@ body.grain::before {
 .nav-logo img { height: 28px; width: auto; }
 .nav-links { display: flex; gap: var(--space-4); align-items: center; }
 .nav-link {
-  font-family: var(--font-ui); font-size: 13px;
+  font-family: var(--font-ui); font-size: 14px;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--mid); transition: color var(--ease-std);
 }
 .nav-link:hover, .nav-link.active { color: var(--navy); }
-.nav.dark .nav-link { color: rgba(240,232,213,0.55); }
+.nav.dark .nav-link { color: rgba(240,232,213,0.82); }
 .nav.dark .nav-link:hover { color: var(--white); }
 
 /* ── Page wrapper ── */
@@ -226,7 +233,7 @@ body.grain::before {
 /* Classification tier — MODUS SIGNIFICANT etc. */
 .modus-index-classification {
   font-family: var(--font-display);
-  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   letter-spacing: var(--track-widest);
   text-transform: uppercase;
   color: var(--mid);
@@ -281,7 +288,7 @@ body.grain::before {
 }
 .modus-axis-name {
   font-family: var(--font-ui);
-  font-size: clamp(0.6rem, 1.2vw, 0.7rem);
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
   color: var(--mid);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -310,7 +317,7 @@ body.grain::before {
 .modus-axis-desc {
   grid-column: 1 / -1;
   font-family: var(--font-editorial);
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
   color: var(--mid);
   opacity: 0.8;
@@ -353,7 +360,7 @@ body.grain::before {
   position: absolute;
   left: 0;
   color: var(--gold);
-  font-size: 11px;
+  font-size: 14px;
   top: 3px;
 }
 
@@ -448,7 +455,7 @@ body.dept-frontier  .dept-accent { color: #7A9EB8; }
 .email-row input::placeholder { color: var(--mid); font-style: italic; }
 .email-row button { background: none; border: none; color: var(--gold); font-size: 17px; opacity: 0.75; transition: opacity var(--ease-std), transform var(--ease-std); padding: 0; }
 .email-row button:hover { opacity: 1; transform: translateX(3px); }
-.email-confirm { font-family: var(--font-editorial); font-size: 13px; font-style: italic; color: var(--gold); min-height: 20px; letter-spacing: 0.04em; }
+.email-confirm { font-family: var(--font-editorial); font-size: 14px; font-style: italic; color: var(--gold); min-height: 20px; letter-spacing: 0.04em; }
 
 /* ── Footer ── */
 .footer {
@@ -612,7 +619,7 @@ body.dept-frontier  .dept-accent { color: #7A9EB8; }
   .footer-copy, .terrain-card-location, .collection-card-series,
   .email-capture label, .modus-index-label, .modus-index-why-label,
   .modus-index-view-label, .nav-link {
-    font-size: 13px !important;
+    font-size: 14px !important;
     letter-spacing: 0.16em !important;
   }
   /* Caption text minimum 14px on mobile */
@@ -628,8 +635,8 @@ body.dept-frontier  .dept-accent { color: #7A9EB8; }
    ============================================================ */
 
 /* Raise all remaining hardcoded micro text */
-.modus-axis-name { font-size: 13px !important; letter-spacing: 0.08em !important; }
-.modus-index-why ul li::before { font-size: 13px !important; }
+.modus-axis-name { font-size: 14px !important; letter-spacing: 0.08em !important; }
+.modus-index-why ul li::before { font-size: 14px !important; }
 .nav.dark .nav-link { color: rgba(240,232,213,0.82) !important; }
 
 /* Body/card text: enforce 400 weight, no 300 */

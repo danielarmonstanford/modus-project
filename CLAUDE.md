@@ -93,16 +93,21 @@ All tokens live in `modus.css`. Always use CSS custom properties:
 /* Never use Inter, Roboto, or Arial for editorial content */
 ```
 
-### Type Size Minimums — HARD RULE, never violate
+### Type Size Minimums — HARD RULE, never violate (superseded 2026, non-negotiable)
 
-- **12px absolute floor** for any text (mono labels, badges, captions, footers)
-- **13px** for nav links, CTAs, and interactive labels
-- **20px html base** in the mobile media query (`@media(max-width:768px){ html{font-size:20px} }`)
+- **14px absolute floor for ALL readable text, everywhere.** No exceptions for badges, captions, footers, metadata, or "decorative" labels. 8px/9px/10px/11px/12px/13px must never appear in font-size anywhere in the codebase — plain, clamp() px min, or clamp() rem min (0.875rem = 14px at 16px root).
+- **Preferred body size: 16px.** Secondary/supporting text minimum 14px.
+- **Navigation: 14px minimum.** Buttons/CTAs: 14px minimum (15px preferred). Cards: 14–16px.
+- Paragraph line-height: 1.5–1.7.
+- **20px html base** in the mobile media query (`@media(max-width:768px){ html{font-size:20px} }`) — never use mobile breakpoints to shrink type below the 14px floor; fix layout/spacing instead.
+- **No `font-weight:300` on body or interface copy.** 300 is permitted only on display headlines (h1/h2, `.display`, `.headline`) — never on paragraphs, labels, or UI text.
 - Score numerals use the display font (Lovine italic serif), never DM Mono
 - Every MODUS Index score must carry a visible label ("MODUS INDEX" + classification)
   plus `aria-label` and `data-modus-index` attributes for machines
 - Each page carries its own embedded CSS — a fix on one page does NOT propagate.
-  When adjusting type, sweep ALL pages: `grep -oE 'font-size: *(6|7|8|9|10|11)px' */index.html index.html`
+  When adjusting type, sweep ALL pages and check three forms: plain `font-size:Npx`,
+  `clamp(Npx, ...)`, and `clamp(0.Nrem, ...)`:
+  `grep -rEo "font-size:[[:space:]]*(clamp\([0-9.]+(px|rem)|[0-9.]+px)" *.html */index.html */*/index.html`
 
 ---
 
@@ -593,14 +598,32 @@ Do not build SEERKA pages inside the MODUS domain. Keep the referral link clean 
 
 ## Frontend Typography Legibility Standard
 
-**Readability over decorative minimalism.** Never use thin, tiny, or faint typography for ordinary user-facing content. Design all body and interface text to remain comfortably readable for users aged 45+ on mobile screens.
+**Readability over decorative minimalism — this is a usability/accessibility requirement, not an aesthetic preference.** Design all body and interface text to remain comfortably readable for users aged 45–65+ on mobile screens. Mobile-first is mandatory.
 
-**Rules:**
-- Body copy: **16px minimum** on mobile; line-height 1.45–1.65; font-weight 400 or higher (never 300)
-- Functional UI labels (buttons, tags, metadata): **14px minimum**; DM Mono UI labels floor at **12px** (decorative-only exception)
-- Never render text below 12px for any user-facing element
-- Color opacity for body text: **0.82 minimum**; UI/meta text: 0.72 minimum — never 0.5 or 0.55 on readable content
-- Letter-spacing: max 0.20em on labels ≤12px; 0.12em max on body copy
-- Contrast: light-mode text must never be cream/beige on light-blue backgrounds — use `#0D1F2D` navy
+**Type tokens (see `assets/css/modus.css`):**
+```
+--font-body:        16px   /* preferred body size */
+--font-body-small:  14px   /* secondary/supporting text minimum */
+--font-meta:        14px   /* metadata/captions/eyebrows — absolute floor, no exceptions */
+--font-nav:         14px   /* navigation minimum */
+--font-button:      15px   /* buttons/CTAs */
+```
+
+**Hard rules:**
+- **Global minimum: 14px for any readable text, anywhere.** 8px/9px/10px/11px/12px/13px must never appear in a `font-size` declaration — plain px, `clamp()` px minimum, or `clamp()` rem minimum.
+- Body text: 16–18px desktop, 16px mobile. Never shrink below this via a responsive override — fix layout/spacing/width instead.
+- Supporting text, nav, buttons, form labels, cards: 14px minimum on both desktop and mobile.
+- Headings: H1 ≈ 40–56px, H2 ≈ 30–40px, H3 ≈ 22–28px. Editorial display type (Lovine, `.display`, `h1`, `h2`) may keep `font-weight:300` — that is the one sanctioned exception.
+- **No `font-weight:300` anywhere else** (body, labels, buttons, captions, nav) — use 400 minimum.
+- Line-height: 1.5–1.7 for paragraphs.
+- Color opacity for body text: **0.82 minimum**; UI/meta text: 0.72 minimum — never 0.5 or 0.55 on readable content.
+- Letter-spacing: max 0.20em on labels, 0.12em max on body copy.
+- Contrast: light-mode text must never be cream/beige on light-blue backgrounds — use `#0D1F2D` navy.
+
+**Verification command** (must return nothing before any typography change is considered done):
+```
+grep -rEo 'font-size:[[:space:]]*(clamp\([0-9.]+(px|rem)|[0-9.]+px)' *.html */index.html */*/index.html \
+  | grep -vE '(1[4-9]|[2-9][0-9])(\.[0-9])?px|0\.(875|9|95|1)'
+```
 
 *This file is the canonical source for all MODUS design and editorial decisions. When in doubt, consult this file first. When this file is ambiguous, ask before building.*

@@ -10,13 +10,6 @@
   --muted: #9A9490;           /* was #8A8681 — slightly lighter for dark bg */
 }
 
-/* ── All DM Mono UI labels: 12px floor, reduced tracking ── */
-[style*="font-size:9px"], [style*="font-size: 9px"],
-[style*="font-size:10px"], [style*="font-size: 10px"],
-[style*="font-size:11px"], [style*="font-size: 11px"] {
-  font-size: 13px !important;
-}
-
 /* ── Class-based micro labels ── */
 .section-label,
 .dept-id-label, .dept-id-sep, .dept-id-name, .dept-id-issue,
@@ -38,7 +31,7 @@
 .compare-table th,
 .axis-bar-label, .mi-car-sub,
 .ed-pos-label, .vtext p {
-  font-size: 13px !important;
+  font-size: 14px !important;
   letter-spacing: 0.18em !important;
 }
 
@@ -46,7 +39,7 @@
 .tier-features li::before,
 .partner-detail-list li::before,
 .modus-index-why ul li::before {
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 /* ── Body / card copy: no font-weight:300, proper line-height ── */
@@ -97,7 +90,7 @@
   .module-card-title, .mkt-eyebrow,
   .card-meta, .card-byline, .card-dept,
   .kicker, .footer-copy, .photo-credit {
-    font-size: 13px !important;
+    font-size: 14px !important;
     letter-spacing: 0.14em !important;
   }
 

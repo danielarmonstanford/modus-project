@@ -510,6 +510,21 @@
     /* No side screens */
     .cover-hero::before, .cover-hero::after { display:none; }
 
+    /* Cover video — fades in over the still image once it starts playing;
+       the <img> stays in the DOM underneath as the pre-loader/poster. */
+    .hero-video-wrap {
+      position:absolute; inset:0; z-index:1; overflow:hidden;
+      opacity:0; transition:opacity 1.4s ease;
+      pointer-events:none;
+    }
+    .hero-video-wrap.is-loaded { opacity:1; }
+    .hero-video-wrap iframe {
+      position:absolute; inset:0; width:100%; height:100%; border:0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video-wrap { display:none; }
+    }
+
     /* Only bottom gradient to protect text — no top screen */
     .hero-overlay {
       position:absolute; inset:0; z-index:2;
@@ -756,6 +771,9 @@
 
     <div class="cover-hero">
       <img class="hero-img" src="https://res.cloudinary.com/dno3ruh4b/image/upload/f_auto,q_auto,w_1400/Khalumia_Fortune_D80_6035_fxajcu.jpg" alt="MODUS Issue No. 1 — Khalumia Fortune" />
+      <div class="hero-video-wrap" id="heroVideoWrap">
+        <iframe id="heroVideoFrame" src="https://player.vimeo.com/video/1222059704?background=1&autoplay=1&loop=1&muted=1&app_id=122963" allow="autoplay; fullscreen" title="MODUS cover video"></iframe>
+      </div>
       <div class="hero-overlay"></div>
       <img class="cover-logo" src="/assets/images/modus-logo-beige.png" alt="MODUS" />
       <div class="gold-rule"></div>
@@ -954,6 +972,15 @@
     menuClose.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
     document.addEventListener('keydown', function(e) { if(e.key === 'Escape') closeMenu(); });
+
+    // Cover video — crossfade in over the still image once the player loads
+    var videoWrap = document.getElementById('heroVideoWrap');
+    var videoFrame = document.getElementById('heroVideoFrame');
+    if (videoWrap && videoFrame && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      videoFrame.addEventListener('load', function() {
+        setTimeout(function() { videoWrap.classList.add('is-loaded'); }, 400);
+      });
+    }
   })();
   </script>
 

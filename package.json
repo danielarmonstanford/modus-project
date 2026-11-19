@@ -1,0 +1,13 @@
+{
+  "name": "modus-gallery",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:subscribe": "node --test tests/subscribe.test.mjs",
+    "migrate:subscribers": "node scripts/migrate-subscribers.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.1",
+    "redis": "^6.3.1"
+  }
+}

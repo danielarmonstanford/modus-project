@@ -1,154 +1,202 @@
-/**
- * MODUS / api/subscribe.js
- * Vercel Serverless Function — Email Collection
- * Stores to Vercel KV + forwards to DanielArmonStanford@gmail.com
- *
- * Deploy: place this file at /api/subscribe.js in your GitHub repo
- * Vercel detects it automatically as a serverless function
- *
- * Environment variables to set in Vercel dashboard:
- *   NOTIFY_EMAIL = DanielArmonStanford@gmail.com
- *   RESEND_API_KEY = (get free key at resend.com — 3,000 emails/month free)
- */
+import { createHash } from 'node:crypto';
+import { neon } from '@neondatabase/serverless';
+import { createClient } from 'redis';
 
-export default async function handler(req, res) {
-  // Only POST
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+// Durable primary storage: MODUS_DB_DATABASE_URL (injected by Neon/Vercel).
+// REDIS_URL is optional and is used only for distributed rate limiting.
+const ALLOWED_ORIGINS = new Set(['https://modus.gallery', 'https://www.modus.gallery']);
+const SOURCES = {
+  modus_join: { tier: 'reader', label: 'MODUS Join' },
+  modus_private_waitlist: { tier: 'private', label: 'MODUS Private Waitlist' },
+};
+const EMAIL_PATTERN = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
+const RATE_LIMIT = 5;
+const RATE_WINDOW_SECONDS = 60 * 60;
+const memoryRateLimits = new Map();
+let redisClientPromise;
+
+function normalizeEmail(value) {
+  return String(value || '').normalize('NFKC').trim().toLowerCase();
+}
+
+function escapeHtml(value) {
+  return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
+}
+
+function hash(value) {
+  return createHash('sha256').update(value).digest('hex');
+}
+
+function clientIp(req) {
+  const forwarded = req.headers?.['x-forwarded-for'];
+  return String(Array.isArray(forwarded) ? forwarded[0] : forwarded || req.socket?.remoteAddress || 'unknown')
+    .split(',')[0].trim();
+}
+
+function setCors(req, res) {
+  const origin = req.headers?.origin;
+  if (ALLOWED_ORIGINS.has(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
   }
-
-  // CORS — allow modus.gallery
-  res.setHeader('Access-Control-Allow-Origin', 'https://modus.gallery');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
-  try {
-    const { email, source = 'join', tier = 'reader' } = req.body;
-
-    // Basic validation
-    if (!email || !email.includes('@') || email.length > 254) {
-      return res.status(400).json({ error: 'Invalid email address' });
-    }
-
-    const ts = new Date().toISOString();
-    const entry = { email, source, tier, ts };
-
-    // ── 1. STORE IN VERCEL KV ──────────────────────────────────────────
-    // Set up: vercel.com → your project → Storage → Create KV Database
-    // Then: vercel env pull to get KV_REST_API_URL and KV_REST_API_TOKEN
-    if (process.env.KV_REST_API_URL) {
-      const { kv } = await import('@vercel/kv');
-      // Store individual entry
-      await kv.set(`subscriber:${email}`, entry);
-      // Add to sorted set for easy listing (score = timestamp)
-      await kv.zadd('subscribers', { score: Date.now(), member: email });
-    }
-
-    // ── 2. SEND NOTIFICATION EMAIL via Resend ─────────────────────────
-    // Free tier: resend.com — 3,000 emails/month, no credit card
-    // Get API key at: resend.com/api-keys
-    if (process.env.RESEND_API_KEY) {
-      await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          from: 'MODUS <noreply@modus.gallery>',
-          to: [process.env.NOTIFY_EMAIL || 'DanielArmonStanford@gmail.com'],
-          subject: `MODUS / New subscriber — ${email}`,
-          html: `
-            <div style="font-family: Georgia, serif; max-width: 480px; margin: 0 auto; padding: 2rem; background: #0A0C14; color: #EAE4D8;">
-              <div style="font-family: monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A84B; margin-bottom: 1rem;">
-                MODUS / The List
-              </div>
-              <h1 style="font-size: 24px; font-weight: 300; letter-spacing: -0.02em; margin: 0 0 1rem;">
-                New subscriber
-              </h1>
-              <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                <tr>
-                  <td style="font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #8B7B60; padding: 0.5rem 0; border-bottom: 0.5px solid rgba(234,228,216,0.1);">Email</td>
-                  <td style="padding: 0.5rem 0; border-bottom: 0.5px solid rgba(234,228,216,0.1); color: #D4A84B;">${email}</td>
-                </tr>
-                <tr>
-                  <td style="font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #8B7B60; padding: 0.5rem 0; border-bottom: 0.5px solid rgba(234,228,216,0.1);">Source</td>
-                  <td style="padding: 0.5rem 0; border-bottom: 0.5px solid rgba(234,228,216,0.1);">${source}</td>
-                </tr>
-                <tr>
-                  <td style="font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #8B7B60; padding: 0.5rem 0; border-bottom: 0.5px solid rgba(234,228,216,0.1);">Tier</td>
-                  <td style="padding: 0.5rem 0; border-bottom: 0.5px solid rgba(234,228,216,0.1);">${tier}</td>
-                </tr>
-                <tr>
-                  <td style="font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #8B7B60; padding: 0.5rem 0;">Time</td>
-                  <td style="padding: 0.5rem 0;">${ts}</td>
-                </tr>
-              </table>
-              <div style="margin-top: 2rem; font-family: monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(234,228,216,0.3);">
-                MODUS · Stanford Emporium Inc. · modus.gallery
-              </div>
-            </div>
-          `
-        })
-      });
-    }
-
-    // ── 3. SEND WELCOME EMAIL to subscriber ──────────────────────────
-    if (process.env.RESEND_API_KEY) {
-      await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          from: 'Daniel Stanford / MODUS <daniel@modus.gallery>',
-          to: [email],
-          subject: 'You are on the MODUS list.',
-          html: `
-            <div style="font-family: Georgia, serif; max-width: 520px; margin: 0 auto; padding: 3rem 2rem; background: #07080E; color: #EAE0CC;">
-              <div style="font-family: monospace; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: #D4A84B; margin-bottom: 2rem;">
-                MODUS / The List
-              </div>
-              <h1 style="font-size: clamp(28px, 5vw, 42px); font-weight: 300; letter-spacing: -0.03em; line-height: 1.1; margin: 0 0 1.5rem;">
-                You are on<br>the list.
-              </h1>
-              <p style="font-size: 17px; font-style: italic; font-weight: 300; color: rgba(234,224,204,0.6); line-height: 1.65; margin: 0 0 2rem;">
-                MODUS is read by the people who understand why these things matter.
-              </p>
-              <p style="font-size: 16px; font-weight: 300; color: rgba(234,224,204,0.75); line-height: 1.7; margin: 0 0 2rem;">
-                You will hear from us when there is something worth saying. Not before.
-              </p>
-              <div style="border-top: 0.5px solid rgba(212,168,75,0.22); padding-top: 1.5rem; margin-top: 1.5rem;">
-                <p style="font-size: 14px; font-weight: 300; color: rgba(234,224,204,0.45); line-height: 1.65; margin: 0 0 1.5rem;">
-                  In the meantime — the publication is live at modus.gallery. Five departments. The MODUS Index. Fine art, bodywork, Porsche, Sri Lanka.
-                </p>
-                <a href="https://modus.gallery" style="display: inline-block; font-family: monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A84B; text-decoration: none; border: 0.5px solid rgba(212,168,75,0.35); padding: 10px 20px;">
-                  Read MODUS →
-                </a>
-              </div>
-              <div style="margin-top: 3rem; font-family: monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(234,224,204,0.2); line-height: 1.8;">
-                Daniel Stanford · Editor-in-Chief<br>
-                MODUS · Stanford Emporium Inc. · Montreal<br>
-                modus.gallery
-              </div>
-            </div>
-          `
-        })
-      });
-    }
-
-    return res.status(200).json({
-      success: true,
-      message: 'Subscribed successfully'
-    });
-
-  } catch (err) {
-    console.error('Subscribe error:', err);
-    return res.status(500).json({ error: 'Subscription failed. Please try again.' });
-  }
+  res.setHeader('Cache-Control', 'no-store');
 }
+
+function databaseUrl(env) {
+  return env.MODUS_DB_DATABASE_URL || env.DATABASE_URL || '';
+}
+
+function defaultGetDatabase(env) {
+  const url = databaseUrl(env);
+  return url ? neon(url) : null;
+}
+
+async function defaultGetRedis(env) {
+  if (!env.REDIS_URL) return null;
+  if (!redisClientPromise) {
+    const client = createClient({ url: env.REDIS_URL });
+    client.on('error', () => console.error('Subscribe rate-limit service error'));
+    redisClientPromise = client.connect().then(() => client).catch(error => {
+      redisClientPromise = undefined;
+      throw error;
+    });
+  }
+  return redisClientPromise;
+}
+
+function enforceMemoryRateLimit(req, nowMs) {
+  const key = hash(clientIp(req)).slice(0, 32);
+  const current = memoryRateLimits.get(key);
+  if (!current || current.expiresAt <= nowMs) {
+    memoryRateLimits.set(key, { count: 1, expiresAt: nowMs + RATE_WINDOW_SECONDS * 1000 });
+    return true;
+  }
+  current.count += 1;
+  return current.count <= RATE_LIMIT;
+}
+
+async function enforceRateLimit(redis, req, nowMs) {
+  if (!redis) return enforceMemoryRateLimit(req, nowMs);
+  const key = `modus:subscribe:rate:${hash(clientIp(req)).slice(0, 32)}`;
+  const count = Number(await redis.incr(key));
+  if (count === 1) await redis.expire(key, RATE_WINDOW_SECONDS);
+  return count <= RATE_LIMIT;
+}
+
+async function persistSubscriber(sql, record) {
+  const crmStatus = record.crmRequested ? 'pending' : 'not_requested';
+  const rows = await sql`
+    INSERT INTO subscribers (email, source, marketing_consent, consent_at, crm_sync_status)
+    VALUES (${record.email}, ${record.source}, TRUE, ${record.consentAt}, ${crmStatus})
+    ON CONFLICT (email, source) DO UPDATE SET
+      marketing_consent = TRUE,
+      consent_at = EXCLUDED.consent_at,
+      updated_at = NOW(),
+      crm_sync_status = CASE
+        WHEN subscribers.crm_sync_status = 'synced' THEN subscribers.crm_sync_status
+        ELSE EXCLUDED.crm_sync_status
+      END
+    RETURNING id, (xmax <> 0) AS duplicate
+  `;
+  if (rows.length !== 1 || !rows[0].id) throw new Error('subscriber_commit_unconfirmed');
+  return { id: rows[0].id, duplicate: Boolean(rows[0].duplicate) };
+}
+
+async function updateCrmStatus(sql, id, status) {
+  await sql`
+    UPDATE subscribers
+    SET crm_sync_status = ${status},
+        crm_synced_at = CASE WHEN ${status} = 'synced' THEN NOW() ELSE crm_synced_at END,
+        updated_at = NOW()
+    WHERE id = ${id}
+  `;
+}
+
+async function sendNotification(record, env, fetchImpl) {
+  if (!env.RESEND_API_KEY || !env.NOTIFY_EMAIL) return;
+  const response = await fetchImpl('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      from: env.RESEND_FROM_EMAIL || 'MODUS <noreply@modus.gallery>',
+      to: [env.NOTIFY_EMAIL],
+      subject: `${SOURCES[record.source].label} / New lead`,
+      html: `<p><strong>Source:</strong> ${escapeHtml(SOURCES[record.source].label)}</p>` +
+        `<p><strong>Email:</strong> ${escapeHtml(record.email)}</p>` +
+        `<p><strong>Consent recorded:</strong> ${escapeHtml(record.consentAt)}</p>`,
+    }),
+  });
+  if (!response.ok) throw new Error('notification_failed');
+}
+
+async function syncCrm(record, env, fetchImpl) {
+  if (!env.CRM_WEBHOOK_URL) return false;
+  const headers = { 'Content-Type': 'application/json' };
+  if (env.CRM_WEBHOOK_TOKEN) headers.Authorization = `Bearer ${env.CRM_WEBHOOK_TOKEN}`;
+  const response = await fetchImpl(env.CRM_WEBHOOK_URL, { method: 'POST', headers, body: JSON.stringify(record) });
+  if (!response.ok) throw new Error('crm_sync_failed');
+  return true;
+}
+
+export function createSubscribeHandler({ env = process.env, fetchImpl = fetch, now = () => new Date(), getDatabase = defaultGetDatabase, getRedis = defaultGetRedis } = {}) {
+  return async function handler(req, res) {
+    setCors(req, res);
+    if (req.method === 'OPTIONS') return res.status(204).end();
+    if (req.method !== 'POST') return res.status(405).json({ success: false, code: 'method_not_allowed', error: 'Method not allowed.' });
+    if (!databaseUrl(env)) return res.status(503).json({ success: false, code: 'storage_not_configured', error: 'Subscriptions are temporarily unavailable.' });
+
+    const body = req.body && typeof req.body === 'object' ? req.body : {};
+    const email = normalizeEmail(body.email);
+    const source = String(body.source || '');
+    if (!EMAIL_PATTERN.test(email) || email.length > 254) return res.status(400).json({ success: false, code: 'invalid_email', error: 'Enter a valid email address.' });
+    if (!SOURCES[source]) return res.status(400).json({ success: false, code: 'invalid_source', error: 'Invalid signup source.' });
+    if (body.consent !== true) return res.status(400).json({ success: false, code: 'consent_required', error: 'Consent is required to receive MODUS emails.' });
+    if (String(body.website || '').trim()) return res.status(400).json({ success: false, code: 'spam_detected', error: 'Submission rejected.' });
+
+    try {
+      let redis = null;
+      if (env.REDIS_URL) {
+        try { redis = await getRedis(env); } catch { console.error('Subscribe rate-limit service unavailable'); }
+      }
+      const timestamp = now();
+      if (!await enforceRateLimit(redis, req, timestamp.getTime())) return res.status(429).json({ success: false, code: 'rate_limited', error: 'Too many attempts. Try again later.' });
+
+      const sql = getDatabase(env);
+      if (!sql) throw new Error('database_client_unavailable');
+      const record = {
+        email,
+        source,
+        sourceLabel: SOURCES[source].label,
+        tier: SOURCES[source].tier,
+        consent: true,
+        consentAt: timestamp.toISOString(),
+        crmRequested: Boolean(env.CRM_WEBHOOK_URL),
+      };
+      const stored = await persistSubscriber(sql, record);
+
+      const notification = sendNotification(record, env, fetchImpl).catch(() => console.error('Subscribe notification delivery failed'));
+      const crm = syncCrm(record, env, fetchImpl)
+        .then(synced => synced && updateCrmStatus(sql, stored.id, 'synced'))
+        .catch(async () => {
+          console.error('Subscribe CRM delivery failed');
+          try { await updateCrmStatus(sql, stored.id, 'failed'); } catch { console.error('Subscribe CRM status update failed'); }
+        });
+      await Promise.all([notification, crm]);
+
+      return res.status(stored.duplicate ? 200 : 201).json({
+        success: true,
+        saved: true,
+        duplicate: stored.duplicate,
+        message: stored.duplicate ? 'You are already on this list.' : 'Your signup has been saved.',
+      });
+    } catch {
+      console.error('Subscribe persistence failed');
+      return res.status(503).json({ success: false, code: 'persistence_failed', error: 'We could not save your signup. Please try again.' });
+    }
+  };
+}
+
+export default createSubscribeHandler();

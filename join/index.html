@@ -243,6 +243,23 @@
       letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--text-dim); line-height: 1.7;
     }
+    .form-consent {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      margin-top: 0.9rem; font-family: var(--font-ed); font-size: 14px;
+      line-height: 1.45; color: var(--text-dim); text-align: left;
+    }
+    .form-consent input { margin-top: 0.2rem; accent-color: var(--gold); }
+    .form-consent a { color: inherit; text-underline-offset: 2px; }
+    .form-error {
+      min-height: 1.5em; margin-top: 0.65rem; font-family: var(--font-mono);
+      font-size: 12px; line-height: 1.5; color: #C86B65;
+    }
+    .private-signup { display: none; margin-top: 1rem; }
+    .private-signup.visible { display: block; animation: fadeU 0.35s ease forwards; }
+    .private-signup .form-row { flex-direction: column; gap: 0.65rem; }
+    .private-signup .form-input { width: 100%; border-right: 0.5px solid var(--border-gold); }
+    .private-signup .form-btn { width: 100%; justify-content: center; }
+    .hp-field { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
 
     /* SUCCESS STATE */
     .form-success {
@@ -698,10 +715,13 @@
           aria-required="true"
           aria-describedby="form-note-1"
         >
-        <button class="form-btn" id="hero-submit-btn" onclick="submitForm('hero-email', 'hero-form-wrap', 'hero-success')">
+        <button type="button" class="form-btn" id="hero-submit-btn" onclick="submitForm('hero-email', 'hero-form-wrap', 'hero-success')">
           Join
         </button>
       </div>
+      <label class="form-consent" for="hero-consent"><input type="checkbox" id="hero-consent"> <span>I agree to receive MODUS editorial and marketing emails. I can unsubscribe at any time. <a href="/privacy">Privacy Policy</a>.</span></label>
+      <input class="hp-field" type="text" id="hero-website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-error" id="hero-error" role="alert" aria-live="assertive"></div>
       <p class="form-note" id="form-note-1" data-en="No mass email. No advertising. One publication. Read by the right people." data-fr="Pas de courriels en masse. Pas de publicité. Une seule publication. Lue par les bonnes personnes.">
         No mass email. No advertising. One publication. Read by the right people.
       </p>
@@ -773,9 +793,20 @@
         <li class="tf"><div class="tf-dot" aria-hidden="true"></div><span class="tf-text" data-en="Priority access to MODUS events and private dinners" data-fr="Accès prioritaire aux événements MODUS et dîners privés">Priority access to MODUS events and private dinners</span></li>
       </ul>
       <div class="tier-cta">
-        <button class="tier-btn" onclick="notifyMe(this)" aria-label="Get notified when MODUS Private launches" data-en="Notify me when available" data-fr="Me notifier quand disponible">
+        <button type="button" class="tier-btn" id="private-toggle" onclick="notifyMe(this)" aria-controls="private-signup" aria-expanded="false" aria-label="Get notified when MODUS Private launches" data-en="Notify me when available" data-fr="Me notifier quand disponible">
           Notify me when available
         </button>
+        <div class="private-signup" id="private-signup">
+          <div class="form-row">
+            <label class="hp-field" for="private-email">Email address</label>
+            <input type="email" id="private-email" class="form-input" placeholder="your@email.com" autocomplete="email" aria-required="true">
+            <button type="button" class="form-btn" onclick="submitPrivateWaitlist()">Join waitlist</button>
+          </div>
+          <label class="form-consent" for="private-consent"><input type="checkbox" id="private-consent"> <span>I agree to receive MODUS Private launch and marketing emails. I can unsubscribe at any time. <a href="/privacy">Privacy Policy</a>.</span></label>
+          <input class="hp-field" type="text" id="private-website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-error" id="private-error" role="alert" aria-live="assertive"></div>
+          <div class="form-success" id="private-success" role="status" aria-live="polite"><div class="fs-label">You're on the Private waitlist.</div><div class="fs-text">MODUS will contact you when Private becomes available.</div></div>
+        </div>
       </div>
     </div>
 
@@ -882,10 +913,13 @@
         autocomplete="email" aria-label="Email address"
         aria-required="true"
       >
-      <button class="form-btn" onclick="submitForm('bottom-email', 'bottom-form-wrap', 'bottom-success')">
+      <button type="button" class="form-btn" onclick="submitForm('bottom-email', 'bottom-form-wrap', 'bottom-success')">
         Join
       </button>
     </div>
+    <label class="form-consent" for="bottom-consent"><input type="checkbox" id="bottom-consent"> <span>I agree to receive MODUS editorial and marketing emails. I can unsubscribe at any time. <a href="/privacy">Privacy Policy</a>.</span></label>
+    <input class="hp-field" type="text" id="bottom-website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="form-error" id="bottom-error" role="alert" aria-live="assertive"></div>
     <div class="form-success" id="bottom-success" role="status" aria-live="polite">
       <div class="fs-label" data-en="You're on the list." data-fr="Vous êtes sur la liste.">You're on the list.</div>
       <div class="fs-text" data-en="MODUS will reach you when it matters. Not before." data-fr="MODUS vous contactera quand cela compte. Pas avant.">MODUS will reach you when it matters. Not before.</div>
@@ -901,6 +935,7 @@
     <a class="footer-link" href="/objects">Objects</a>
     <a class="footer-link" href="/figures">Figures</a>
     <a class="footer-link" href="/decover">Décover</a>
+    <a class="footer-link" href="/privacy">Privacy</a>
   </nav>
   <span class="footer-copy">Stanford Emporium Inc. &nbsp;·&nbsp; © MODUS MMXXVI</span>
   <div style="width:100%;padding:0 0 1.2rem 0;border-bottom:0.5px solid var(--border);margin-bottom:1.2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
@@ -946,61 +981,74 @@
   }, { threshold: 0.08 });
   reveals.forEach(function(el) { observer.observe(el); });
 
-  // ── FORM SUBMIT ───────────────────────────────────────────────────
-  // In production: replace with your email service API call
-  // (Mailchimp, ConvertKit, Buttondown, or a Vercel serverless function)
-  window.submitForm = function(inputId, wrapId, successId) {
-    var input = document.getElementById(inputId);
-    var wrap = document.getElementById(wrapId);
-    var success = document.getElementById(successId);
+  // ── SUBSCRIPTIONS ─────────────────────────────────────────────────
+  async function saveSubscription(options) {
+    var input = document.getElementById(options.inputId);
+    var consent = document.getElementById(options.consentId);
+    var error = document.getElementById(options.errorId);
+    var success = document.getElementById(options.successId);
+    var website = document.getElementById(options.websiteId);
+    var button = options.button || document.getElementById(options.wrapId).querySelector('.form-btn');
     var email = input ? input.value.trim() : '';
+    var originalText = button ? button.textContent : '';
 
-    if (!email || !email.includes('@')) {
-      if (input) {
-        input.focus();
-        input.style.borderColor = 'rgba(180,60,60,0.6)';
-        setTimeout(function() {
-          input.style.borderColor = '';
-        }, 1500);
-      }
+    error.textContent = '';
+    if (!input || !input.validity.valid || !email) {
+      error.textContent = 'Enter a valid email address.';
+      if (input) input.focus();
+      return;
+    }
+    if (!consent || !consent.checked) {
+      error.textContent = 'Please consent to receive MODUS emails.';
+      if (consent) consent.focus();
       return;
     }
 
-    var btn = wrap ? wrap.querySelector('button') : null;
-    if (btn) { btn.disabled = true; btn.textContent = '...'; }
-
-    // ── REPLACE THIS with your actual email API ──────────────────────
-    // Example with Mailchimp serverless endpoint:
-    // fetch('/api/subscribe', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ email: email })
-    // }).then(function(r) { if (r.ok) showSuccess(); });
-    //
-    // For now: simulate success after brief delay
-    setTimeout(function() {
-      if (input) input.style.display = 'none';
-      if (btn) btn.style.display = 'none';
+    if (button) { button.disabled = true; button.textContent = 'Saving...'; }
+    try {
+      var response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          source: options.source,
+          consent: true,
+          website: website ? website.value : ''
+        })
+      });
+      var result = await response.json().catch(function() { return {}; });
+      if (!response.ok || result.saved !== true) {
+        throw new Error(result.error || 'We could not save your signup. Please try again.');
+      }
+      input.style.display = 'none';
+      consent.closest('.form-consent').style.display = 'none';
+      if (button) button.style.display = 'none';
       if (success) success.classList.add('visible');
+    } catch (submitError) {
+      error.textContent = submitError.message || 'We could not save your signup. Please try again.';
+      if (button) { button.disabled = false; button.textContent = originalText; }
+    }
+  }
 
-      // Store locally so we know this person signed up
-      try {
-        var list = JSON.parse(localStorage.getItem('modus_list') || '[]');
-        list.push({ email: email, ts: Date.now() });
-        localStorage.setItem('modus_list', JSON.stringify(list));
-      } catch(e) {}
-    }, 600);
+  window.submitForm = function(inputId, wrapId, successId) {
+    var input = document.getElementById(inputId);
+    var prefix = inputId.replace('-email', '');
+    return saveSubscription({ inputId: inputId, wrapId: wrapId, successId: successId,
+      consentId: prefix + '-consent', errorId: prefix + '-error', websiteId: prefix + '-website', source: 'modus_join' });
   };
 
   // ── NOTIFY ME (Private tier) ──────────────────────────────────────
   window.notifyMe = function(btn) {
-    var email = prompt('Enter your email to be notified when MODUS Private launches:');
-    if (email && email.includes('@')) {
-      btn.textContent = 'You\'re on the waitlist ✓';
-      btn.disabled = true;
-      btn.style.color = 'var(--gold)';
-      btn.style.borderColor = 'var(--border-gold)';
-    }
+    var signup = document.getElementById('private-signup');
+    signup.classList.add('visible');
+    btn.setAttribute('aria-expanded', 'true');
+    document.getElementById('private-email').focus();
+  };
+
+  window.submitPrivateWaitlist = function() {
+    return saveSubscription({ inputId: 'private-email', wrapId: 'private-signup', successId: 'private-success',
+      consentId: 'private-consent', errorId: 'private-error', websiteId: 'private-website',
+      source: 'modus_private_waitlist', button: document.querySelector('#private-signup .form-btn') });
   };
 
   // ── SMOOTH SCROLL for anchor links ───────────────────────────────
